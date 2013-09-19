@@ -47,18 +47,14 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-	<artifactId>maven-release-plugin</artifactId>
-	<configuration>
-	  <tagBase>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/tags</tagBase>
-	</configuration>
-      </plugin>
     </plugins>
   </build>	
 
-  <scm>
-    <developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/tmp-nav-fim-hendelse-v1</developerConnection>
-    <url>scm:svn:https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/tmp-nav-fim-hendelse-v1</url>
-  </scm>
+    <scm>
+        <developerConnection>
+            scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git
+        </developerConnection>
+        <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
+    </scm>
   
 </project>
