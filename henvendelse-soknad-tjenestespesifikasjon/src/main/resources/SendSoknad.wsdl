@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  name="SendSoknadService"
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1">
+    <wsdl:types>
+        <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1"
+                   elementFormDefault="unqualified"
+                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1"
+                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/sendsoknad/v1/meldinger/meldinger.xsd"/>
+
+            <xs:element name="startSoknad" type="meldinger:startSoknadRequest"/>
+            <xs:element name="startSoknadResponse" type="meldinger:startSoknadResponse"/>
+            <xs:element name="sendSoknad" type="meldinger:sendSoknadRequest"/>
+            <xs:element name="sendSoknadResponse" type="meldinger:sendSoknadResponse"/>
+            <xs:element name="hentSoknadData" type="meldinger:hentSoknadDataRequest"/>
+            <xs:element name="hentSoknadDataResponse" type="meldinger:hentSoknadDataResponse"/>
+            <xs:element name="hentSoknad" type="meldinger:hentSoknadRequest"/>
+            <xs:element name="hentSoknadResponse" type="meldinger:hentSoknadResponse"/>
+            <xs:element name="hentBrukerData" type="meldinger:hentBrukerDataRequest"/>
+            <xs:element name="hentBrukerDataResponse" type="meldinger:hentBrukerDataResponse"/>
+            <xs:element name="lagreBrukerData" type="meldinger:lagreBrukerDataRequest"/>
+            <xs:element name="lagreBrukerDataResponse" type="meldinger:lagreBrukerDataResponse"/>
+            <xs:element name="hentSoknadListe" type="meldinger:hentSoknadListeRequest"/>
+            <xs:element name="hentSoknadListeResponse" type="meldinger:hentSoknadListeResponse"/>
+            <xs:element name="avbrytSoknad" type="meldinger:avbrytSoknadRequest"/>
+            <xs:element name="avbrytSoknadResponse" type="meldinger:avbrytSoknadResponse"/>
+            <xs:element name="ping" type="meldinger:pingRequest"/>
+            <xs:element name="pingResponse" type="meldinger:pingResponse"/>
+        </xs:schema>
+    </wsdl:types>
+
+
+    <wsdl:message name="startSoknadRequest">
+        <wsdl:part element="tns:startSoknad" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="startSoknadResponse">
+        <wsdl:part element="tns:startSoknadResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendSoknadRequest">
+        <wsdl:part element="tns:sendSoknad" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendSoknadResponse">
+        <wsdl:part element="tns:sendSoknadResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadDataRequest">
+        <wsdl:part element="tns:hentSoknadData" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadDataResponse">
+        <wsdl:part element="tns:hentSoknadDataResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadRequest">
+        <wsdl:part element="tns:hentSoknad" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadResponse">
+        <wsdl:part element="tns:hentSoknadResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentBrukerDataRequest">
+        <wsdl:part element="tns:hentBrukerData" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentBrukerDataResponse">
+        <wsdl:part element="tns:hentBrukerDataResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="lagreBrukerDataRequest">
+        <wsdl:part element="tns:lagreBrukerData" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="lagreBrukerDataResponse">
+        <wsdl:part element="tns:lagreBrukerDataResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadListeRequest">
+        <wsdl:part element="tns:hentSoknadListe" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadListeResponse">
+        <wsdl:part element="tns:hentSoknadListeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="avbrytSoknadRequest">
+        <wsdl:part element="tns:avbrytSoknad" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="avbrytSoknadResponse">
+        <wsdl:part element="tns:avbrytSoknadResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pingRequest">
+        <wsdl:part element="tns:ping" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pingResponse">
+        <wsdl:part element="tns:pingResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+
+    <wsdl:portType name="SendSoknadPortType">
+        <wsdl:operation name="startSoknad">
+            <wsdl:input message="tns:startSoknadRequest" name="startSoknadRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:startSoknadResponse" name="startSoknadResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSoknad">
+            <wsdl:input message="tns:sendSoknadRequest" name="sendSoknadRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:sendSoknadResponse" name="sendSoknadResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentSoknadData">
+            <wsdl:input message="tns:hentSoknadDataRequest" name="hentSoknadDataRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentSoknadDataResponse" name="hentSoknadDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentSoknad">
+            <wsdl:input message="tns:hentSoknadRequest" name="hentSoknadRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentBrukerData">
+            <wsdl:input message="tns:hentBrukerDataRequest" name="hentBrukerDataRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentBrukerDataResponse" name="hentBrukerDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="lagreBrukerData">
+            <wsdl:input message="tns:lagreBrukerDataRequest" name="lagreBrukerDataRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:lagreBrukerDataResponse" name="lagreBrukerDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="hentSoknadListe">
+            <wsdl:input message="tns:hentSoknadListeRequest" name="hentSoknadListeRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentSoknadListeResponse" name="hentSoknadListeResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="avbrytSoknad">
+            <wsdl:input message="tns:avbrytSoknadRequest" name="avbrytSoknadRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:avbrytSoknadResponse" name="avbrytSoknadResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ping">
+            <wsdl:input message="tns:pingRequest" name="pingRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:pingResponse" name="pingResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SendSoknadBinding" type="tns:SendSoknadPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="startSoknad">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="startSoknadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="startSoknadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSoknad">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="sendSoknadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendSoknadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentSoknadData">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentSoknadDataRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentSoknadDataResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentSoknad">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentSoknadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentSoknadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentBrukerData">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentBrukerDataRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentBrukerDataResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="lagreBrukerData">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="lagreBrukerDataRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="lagreBrukerDataResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentSoknadListe">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentSoknadListeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentSoknadListeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="avbrytSoknad">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="avbrytSoknadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="avbrytSoknadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ping">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="pingRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="pingResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SendSoknadService">
+        <wsdl:port binding="tns:SendSoknadBinding" name="SendSoknadPort">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/SendSoknadService_v1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>	

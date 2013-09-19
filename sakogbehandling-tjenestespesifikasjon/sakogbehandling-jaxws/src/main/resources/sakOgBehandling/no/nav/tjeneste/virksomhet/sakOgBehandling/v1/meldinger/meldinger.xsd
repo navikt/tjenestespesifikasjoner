@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://nav.no/tjeneste/virksomhet/sakOgBehandling/v1/meldinger"
+           xmlns:informasjon="http://nav.no/tjeneste/virksomhet/sakOgBehandling/v1/informasjon"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:fsobl="http://nav.no/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/finnSakOgBehandlingskjedeListe"
+           xmlns:hbb="http://nav.no/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/hentBehandlingskjedensBehandlinger">
+	<xs:import namespace="http://nav.no/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/hentBehandlingskjedensBehandlinger" schemaLocation="../informasjon/hentBehandlingskjedensBehandlinger.xsd"/>
+	<xs:import namespace="http://nav.no/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/finnSakOgBehandlingskjedeListe" schemaLocation="../informasjon/finnSakOgBehandlingskjedeListe.xsd"/>
+	<xs:import namespace="http://nav.no/tjeneste/virksomhet/sakOgBehandling/v1/informasjon" schemaLocation="../informasjon/sakOgBehandling.xsd"/>
+	<xs:complexType name="FinnSakOgBehandlingskjedeListeRequest">
+		<xs:sequence>
+			<xs:element name="aktoerREF" type="informasjon:AktoerID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Angir hvilken aktør søket gjelder.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tema" type="informasjon:Temaer" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Angir filtrering på tema.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="behandlingskjedetype" type="informasjon:Behandlingskjedetyper" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Angir filtrering på behandlingskjedetype.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="kunAapneBehandlingskjeder" type="xs:boolean" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Hvis TRUE gjelder søket kun åpne behandlingskjeder.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tidspunkt" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Hvis satt gjelder søket kun behandlingskjeder som ikke er avsluttet før angitt tidspunkt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FinnSakOgBehandlingskjedeListeResponse">
+		<xs:sequence>
+			<xs:element name="sak" type="fsobl:Sak" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HentBehandlingRequest">
+		<xs:sequence>
+			<xs:element name="behandlingsREF" type="informasjon:BehandlingID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifiserer behandlingen.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HentBehandlingResponse">
+		<xs:sequence>
+			<xs:element name="behandling" type="informasjon:BehandlingVS" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HentBehandlingskjedensBehandlingerRequest">
+		<xs:sequence>
+			<xs:element name="behandlingskjedeREF" type="informasjon:BehandlingskjedeID" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Angir behandlingskjede hvis behandlinger man skal hente.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HentBehandlingskjedensBehandlingerResponse">
+		<xs:sequence>
+			<xs:element name="behandlingskjede" type="hbb:Behandlingskjede" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

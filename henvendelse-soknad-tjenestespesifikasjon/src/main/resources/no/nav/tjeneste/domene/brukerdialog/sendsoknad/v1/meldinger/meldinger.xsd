@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:informasjon="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1/informasjon">
+    <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1/informasjon" schemaLocation="../informasjon/sendsoknad.xsd"/>
+
+    <xs:complexType name="startSoknadRequest">
+        <xs:sequence>
+            <xs:element name="soknadGosysId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Nav sin id på soknaden som skal startes. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="startSoknadResponse">
+        <xs:sequence>
+            <xs:element name="soknadId" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="hentSoknadDataRequest">
+        <xs:sequence>
+            <xs:element name="soknadId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>Id på soknaden som skal hentes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hentSoknadDataResponse">
+        <xs:sequence>
+            <xs:element name="soknadData" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+	<xs:complexType name="hentSoknadRequest">
+        <xs:sequence>
+            <xs:element name="soknadId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>Id på soknaden som skal hentes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hentSoknadResponse">
+        <xs:sequence>
+            <xs:element name="soknadData" type="informasjon:soknadData"/>
+        </xs:sequence>
+    </xs:complexType>
+	
+	
+    <xs:complexType name="hentBrukerDataRequest">
+        <xs:sequence>
+            <xs:element name="soknadId" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hentBrukerDataResponse">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="brukerData" type="informasjon:brukerData"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="lagreBrukerDataRequest">
+        <xs:sequence>
+            <xs:element name="soknadId" type="xs:long"/>
+            <xs:element name="nokkel" type="xs:string"/>
+            <xs:element name="verdi" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="lagreBrukerDataResponse">
+        <xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sendSoknadRequest">
+        <xs:sequence>
+            <xs:element name="soknadId" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="sendSoknadResponse">
+        <xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+	
+	 <xs:complexType name="hentSoknadListeRequest">
+        <xs:sequence>
+            <xs:element name="aktorId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hentSoknadListeResponse">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="soknadData" type="informasjon:soknadDataOppsummering"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="avbrytSoknadRequest">
+        <xs:sequence>
+            <xs:element name="soknadId" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="avbrytSoknadResponse">
+        <xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pingRequest" />
+    <xs:complexType name="pingResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,23 @@
+<assembly>
+    <id>resources</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <outputDirectory>/</outputDirectory>
+            <directory>target/resources</directory>
+            <includes>
+                <include>**/Soknad.wsdl</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <outputDirectory>/</outputDirectory>
+            <directory>target/resources</directory>
+            <includes>
+                <include>**/*.xsd</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>no.nav.sbl.dialogarena</groupId>
+    <artifactId>dialogarena</artifactId>
+    <version>1.5.2</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>no.nav.sbl.dialogarena</groupId>
+  <artifactId>henvendelse-behandlingsresultat</artifactId>
+  <version>0.0.3-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <version>2.2</version>
+      <artifactId>joda-time</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+	<artifactId>maven-release-plugin</artifactId>
+	<configuration>
+	  <tagBase>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/tags</tagBase>
+	</configuration>
+      </plugin>
+    </plugins>
+  </build>	
+
+  <scm>
+    <developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/henvendelse-behandlingsresultat</developerConnection>
+    <url>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/henvendelse-behandlingsresultat</url>
+  </scm>
+
+</project>

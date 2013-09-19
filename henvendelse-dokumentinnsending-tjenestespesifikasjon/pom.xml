@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>dialogarena</artifactId>
+        <version>1.5.2</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>no.nav.sbl.dialogarena</groupId>
+    <artifactId>henvendelse-tjenestespesifikasjon</artifactId>
+    <version>2.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+	<modules>
+		<module>henvendelse-jaxws</module>
+		<module>henvendelse-informasjon-tjenestespesifikasjon</module>
+		<module>henvendelse-aktivitet-tjenestespesifikasjon</module>
+	</modules>
+
+    <scm>
+        <developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/henvendelse-tjenestespesifikasjon/trunk</developerConnection>
+        <url>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/henvendelse-tjenestespesifikasjon/trunk</url>
+    </scm>
+
+</project>

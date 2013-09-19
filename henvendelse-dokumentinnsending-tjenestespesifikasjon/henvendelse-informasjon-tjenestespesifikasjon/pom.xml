@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>henvendelse-tjenestespesifikasjon</artifactId>
+        <version>2.0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>no.nav.sbl.dialogarena</groupId>
+  <artifactId>henvendelse-informasjon-tjenestespesifikasjon</artifactId>
+  <packaging>jar</packaging>
+  <name>${project.artifactId}</name>
+
+  <properties>
+    <wsdl.directory>${project.build.directory}/resources</wsdl.directory>
+  </properties>
+  
+  <build>
+    
+	<plugins>
+	  <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.7</version>
+                <executions>
+                    <execution>
+                        <id>fetch-wsdls</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>no.nav.sbl.dialogarena</groupId>
+                                    <artifactId>henvendelse-jaxws</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${wsdl.directory}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>analyze</id>
+                        <goals>
+                            <goal>analyze-only</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+	  <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>henvendelsesbehandling</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attached</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+		  <appendAssemblyId>false</appendAssemblyId>
+          <descriptor>resources.xml</descriptor>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
