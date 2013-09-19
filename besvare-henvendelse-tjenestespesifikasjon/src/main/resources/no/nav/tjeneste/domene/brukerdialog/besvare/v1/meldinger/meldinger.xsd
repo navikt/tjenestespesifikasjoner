@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/besvare/v1/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sos="http://nav.no/tjeneste/domene/brukerdialog/besvare/v1/informasjon">
+    <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/besvare/v1/informasjon" schemaLocation="../informasjon/informasjon.xsd"/>
+
+    <xs:complexType name="hentSporsmalOgSvarRequest">
+        <xs:sequence>
+            <xs:element name="oppgaveId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hentSporsmalOgSvarResponse">
+        <xs:sequence>
+            <xs:element name="sporsmal" type="sos:sporsmalOgSvar"/>
+        </xs:sequence>
+    </xs:complexType>
+
+	<xs:complexType name="besvarSporsmalRequest">
+        <xs:sequence>
+            <xs:element name="svar" type="sos:svar" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="besvarSporsmalResponse">
+        <xs:sequence />
+    </xs:complexType>
+    
+    <xs:complexType name="pingRequest" />
+    <xs:complexType name="pingResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

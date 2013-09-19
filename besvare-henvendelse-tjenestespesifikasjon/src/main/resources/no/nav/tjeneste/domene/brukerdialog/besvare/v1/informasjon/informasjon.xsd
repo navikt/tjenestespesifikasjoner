@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/besvare/v1/informasjon"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:info="http://nav.no/tjeneste/domene/brukerdialog/besvare/v1/informasjon">
+
+    <xs:complexType name="sporsmal">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string" />
+            <xs:element name="tema" type="xs:string" />
+            <xs:element name="fritekst" type="xs:string" />
+            <xs:element name="opprettet" type="xs:dateTime" />
+            <xs:element name="traad" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="svar">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string" />
+            <xs:element name="tema" type="xs:string" minOccurs="0" />
+            <xs:element name="saksid" type="xs:string" minOccurs="0" />
+            <xs:element name="fritekst" type="xs:string" minOccurs="0" />
+            <xs:element name="sensitiv" type="xs:boolean" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sporsmalOgSvar">
+        <xs:sequence>
+            <xs:element name="sporsmal" type="info:sporsmal" />
+            <xs:element name="svar" type="info:svar" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ping"/>
+    <xs:annotation>
+        <xs:documentation>Retur-objekt for ping.</xs:documentation>
+    </xs:annotation>
+
+
+</xs:schema>
