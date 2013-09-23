@@ -100,18 +100,12 @@
                     <descriptor>resources.xml</descriptor>
                 </configuration>
             </plugin>
-			<plugin>
-				<artifactId>maven-release-plugin</artifactId>
-				<configuration>
-					<tagBase>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/tags</tagBase>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
     <scm>
-        <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner/oppgavebehandling-tjenestespesifikasjon.git</developerConnection>
-        <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner/oppgavebehandling-tjenestespesifikasjon.git</url>
+        <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git</developerConnection>
+        <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
     </scm>
 
 </project>
