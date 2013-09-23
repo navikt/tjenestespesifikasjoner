@@ -107,11 +107,11 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>	
+	</build>
 
     <scm>
-        <developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/oppgavebehandling-tjenestespesifikasjon</developerConnection>
-        <url>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/tjenestespesifikasjoner/oppgavebehandling-tjenestespesifikasjon</url>
+        <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner/oppgavebehandling-tjenestespesifikasjon.git</developerConnection>
+        <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner/oppgavebehandling-tjenestespesifikasjon.git</url>
     </scm>
 
 </project>
