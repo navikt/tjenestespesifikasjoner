@@ -5,9 +5,10 @@
     <xs:complexType name="hentHenvendelseListeRequest">
         <xs:sequence>
             <xs:element name="fodselsnummer" type="xs:string" />
+            <xs:element name="henvendelseType" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
-	
+
     <xs:complexType name="hentHenvendelseListeResponse">
         <xs:sequence>
         	<xs:element name="henvendelse" type="typer:Henvendelse" minOccurs="0" maxOccurs="unbounded"/>
