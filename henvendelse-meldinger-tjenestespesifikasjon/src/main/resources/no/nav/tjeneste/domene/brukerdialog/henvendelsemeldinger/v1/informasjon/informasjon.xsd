@@ -1,51 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/informasjon"
-	xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/informasjon">
+	targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon"
+	xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon">
 
-	<xs:element name="soknad">
+	<xs:element name="melding">
 		<xs:complexType>
 	        <xs:sequence>
 	            <xs:element name="behandlingsId" type="xs:string" />
-	            <xs:element name="hovedskjemaKodeverkId" type="xs:string" />
-	            <xs:element name="henvendelseType" type="tns:henvendelseType" />
-	            <xs:element name="erEttersending" type="xs:boolean" />
-	            <xs:element name="status" type="tns:status" />
+	            <xs:element name="traad" type="xs:string" />
+	            <xs:element name="meldingsType" type="xs:string" />
+	            <xs:element name="tekst" type="xs:boolean" />
+	            <xs:element name="status" type="xs:string" />
 	            <xs:element name="opprettetDato" type="xs:dateTime" />
-	            <xs:element name="sistEndretDato" type="xs:dateTime" />
-	            <xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0" />
-	            <xs:element name="dokumentforventninger">
-		            <xs:complexType>
-				        <xs:sequence>
-				            <xs:element name="dokumentforventning" type="tns:dokumentforventning" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType>
-	            </xs:element>
+	            <xs:element name="lestDato" type="xs:dateTime" />
 	        </xs:sequence>
     	</xs:complexType>
     </xs:element>
-
-    <xs:complexType name="dokumentforventning">
-        <xs:sequence>
-            <xs:element name="kodeverkId" type="xs:string" />
-            <xs:element name="egendefinertTittel" type="xs:string" minOccurs="0" />
-            <xs:element name="erInnsendt" type="xs:boolean" />
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:simpleType name="status">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="OPPRETTET"/>
-            <xs:enumeration value="UNDER_ARBEID"/>
-            <xs:enumeration value="FERDIG"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-	<xs:simpleType name="henvendelseType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="DOKUMENTINNSENDING"/>
-            <xs:enumeration value="SOKNADSINNSENDING"/>
-        </xs:restriction>
-    </xs:simpleType>
 
 </xs:schema>

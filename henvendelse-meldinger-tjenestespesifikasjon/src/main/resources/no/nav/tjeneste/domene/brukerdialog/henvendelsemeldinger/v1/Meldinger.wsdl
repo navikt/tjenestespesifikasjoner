@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1"
-	xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/meldinger"
+	xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1"
+	xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/meldinger"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	name="HenvendelseSoknaderService" targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1">
+	name="HenvendelseMeldingerService" targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1">
 
 	<wsdl:types>
 		<xs:schema
-			xmlns:informasjon="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/informasjon"
-			targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/meldinger">
-			<xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/informasjon" schemaLocation="informasjon/informasjon.xsd" />
+			xmlns:informasjon="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon"
+			targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/meldinger">
+			<xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon" schemaLocation="informasjon/informasjon.xsd" />
 
-			<xs:element name="hentSoknadListe">
+			<xs:element name="hentMeldingListe">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="fodselsnummer" type="xs:string" />
@@ -19,10 +19,10 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="hentSoknadListeResponse">
+			<xs:element name="hentMeldingListeResponse">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element ref="informasjon:soknad" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="informasjon:melding" minOccurs="0" maxOccurs="unbounded" />
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -38,11 +38,11 @@
 		</xs:schema>
 	</wsdl:types>
 
-	<wsdl:message name="hentSoknadListeRequest">
-		<wsdl:part element="meldinger:hentSoknadListe" name="parameters" />
+	<wsdl:message name="hentMeldingListeRequest">
+		<wsdl:part element="meldinger:hentMeldingListe" name="parameters" />
 	</wsdl:message>
-	<wsdl:message name="hentSoknadListeResponse">
-		<wsdl:part element="meldinger:hentSoknadListeResponse" name="parameters" />
+	<wsdl:message name="hentMeldingListeResponse">
+		<wsdl:part element="meldinger:hentMeldingListeResponse" name="parameters" />
 	</wsdl:message>
 
     <wsdl:message name="pingRequest">
@@ -52,10 +52,10 @@
         <wsdl:part element="meldinger:pingResponse" name="parameters" />
     </wsdl:message>
 
-	<wsdl:portType name="HenvendelseSoknaderPortType">
-		<wsdl:operation name="hentSoknadListe">
-			<wsdl:input message="tns:hentSoknadListeRequest" name="hentSoknadListeRequest" />
-			<wsdl:output message="tns:hentSoknadListeResponse" name="hentSoknadListeResponse" />
+	<wsdl:portType name="HenvendelseMeldingerPortType">
+		<wsdl:operation name="hentMeldingListe">
+			<wsdl:input message="tns:hentMeldingListeRequest" name="hentMeldingListeRequest" />
+			<wsdl:output message="tns:hentMeldingListeResponse" name="hentMeldingListeResponse" />
 		</wsdl:operation>
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest" />
@@ -63,14 +63,14 @@
         </wsdl:operation>
 	</wsdl:portType>
 
-	<wsdl:binding name="HenvendelseSoknaderBinding" type="tns:HenvendelseSoknaderPortType">
+	<wsdl:binding name="HenvendelseMeldingerBinding" type="tns:HenvendelseMeldingerPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-		<wsdl:operation name="hentSoknadListe">
+		<wsdl:operation name="hentMeldingListe">
 			<soap:operation soapAction="" style="document" />
-			<wsdl:input name="hentSoknadListeRequest">
+			<wsdl:input name="hentMeldingListeRequest">
 				<soap:body use="literal" />
 			</wsdl:input>
-			<wsdl:output name="hentSoknadListeResponse">
+			<wsdl:output name="hentMeldingListeResponse">
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
@@ -85,9 +85,9 @@
         </wsdl:operation>
 	</wsdl:binding>
 
-	<wsdl:service name="HenvendelseSoknaderService">
-		<wsdl:port binding="tns:HenvendelseSoknaderBinding" name="HenvendelseSoknaderPort">
-			<soap:address location="http://localhost:8081/domene.Brukerdialog/HenvendelseSoknaderService_v1" />
+	<wsdl:service name="HenvendelseMeldingerService">
+		<wsdl:port binding="tns:HenvendelseMeldingerBinding" name="HenvendelseMeldingerPort">
+			<soap:address location="http://localhost:8081/domene.Brukerdialog/HenvendelseMeldingerService_v1" />
 		</wsdl:port>
 	</wsdl:service>
 
