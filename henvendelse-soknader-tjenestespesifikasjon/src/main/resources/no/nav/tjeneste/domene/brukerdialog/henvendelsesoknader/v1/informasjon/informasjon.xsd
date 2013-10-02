@@ -8,9 +8,9 @@
 	        <xs:sequence>
 	            <xs:element name="behandlingsId" type="xs:string" />
 	            <xs:element name="hovedskjemaKodeverkId" type="xs:string" />
-	            <xs:element name="henvendelseType" type="xs:string" />
-	            <xs:element name="dokumentbehandlingType" type="xs:string" />
-	            <xs:element name="status" type="xs:string" />
+	            <xs:element name="henvendelseType" type="tns:henvendelseType" />
+	            <xs:element name="erEttersending" type="xs:boolean" />
+	            <xs:element name="status" type="tns:status" />
 	            <xs:element name="opprettetDato" type="xs:dateTime" />
 	            <xs:element name="sistEndretDato" type="xs:dateTime" />
 	            <xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0" />
@@ -28,8 +28,8 @@
     <xs:complexType name="dokumentforventning">
         <xs:sequence>
             <xs:element name="kodeverkId" type="xs:string" />
-            <xs:element name="innsendingsValg" type="xs:string" />
             <xs:element name="egendefinertTittel" type="xs:string" minOccurs="0" />
+            <xs:element name="erInnsendt" type="xs:boolean" />
         </xs:sequence>
     </xs:complexType>
 
@@ -41,15 +41,10 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="innsendingsValg">
+	<xs:simpleType name="henvendelseType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="IKKE_VALGT"/>
-            <xs:enumeration value="SEND_SENERE"/>
-            <xs:enumeration value="LASTET_OPP"/>
-            <xs:enumeration value="SEND_I_POST"/>
-            <xs:enumeration value="SENDES_AV_ANDRE"/>
-            <xs:enumeration value="SENDES_IKKE"/>
-            <xs:enumeration value="INNSENDT"/>
+            <xs:enumeration value="DOKUMENTINNSENDING"/>
+            <xs:enumeration value="SOKNADSINNSENDING"/>
         </xs:restriction>
     </xs:simpleType>
 
