@@ -7,8 +7,8 @@
 		<xs:complexType>
 	        <xs:sequence>
 	            <xs:element name="behandlingsId" type="xs:string" />
-	            <xs:element name="hovedskjemaId" type="xs:string" />
-	            <xs:element name="brukerBehandlingType" type="xs:string" />
+	            <xs:element name="hovedskjemaKodeverkId" type="xs:string" />
+	            <xs:element name="henvendelseType" type="xs:string" />
 	            <xs:element name="dokumentbehandlingType" type="xs:string" />
 	            <xs:element name="status" type="xs:string" />
 	            <xs:element name="opprettetDato" type="xs:dateTime" />
@@ -28,11 +28,18 @@
     <xs:complexType name="dokumentforventning">
         <xs:sequence>
             <xs:element name="kodeverkId" type="xs:string" />
-            <xs:element name="innsendingsValg" type="tns:innsendingsValg" />
-            <xs:element name="erHovedskjema" type="xs:boolean" />
+            <xs:element name="innsendingsValg" type="xs:string" />
             <xs:element name="egendefinertTittel" type="xs:string" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OPPRETTET"/>
+            <xs:enumeration value="UNDER_ARBEID"/>
+            <xs:enumeration value="FERDIG"/>
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:simpleType name="innsendingsValg">
         <xs:restriction base="xs:string">
