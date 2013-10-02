@@ -8,9 +8,9 @@
 	        <xs:sequence>
 	            <xs:element name="behandlingsId" type="xs:string" />
 	            <xs:element name="traad" type="xs:string" />
+	            <xs:element name="temastruktur" type="xs:string" />
 	            <xs:element name="meldingsType" type="xs:string" />
 	            <xs:element name="tekst" type="xs:boolean" />
-	            <xs:element name="status" type="xs:string" />
 	            <xs:element name="opprettetDato" type="xs:dateTime" />
 	            <xs:element name="lestDato" type="xs:dateTime" />
 	        </xs:sequence>
