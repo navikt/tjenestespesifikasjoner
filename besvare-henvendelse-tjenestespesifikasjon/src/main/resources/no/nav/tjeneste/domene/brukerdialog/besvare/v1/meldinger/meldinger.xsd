@@ -4,18 +4,18 @@
 
     <xs:complexType name="hentSporsmalOgSvarRequest">
         <xs:sequence>
-            <xs:element name="oppgaveId" type="xs:string"/>
+            <xs:element name="oppgaveId" type="xs:string" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="hentSporsmalOgSvarResponse">
         <xs:sequence>
-            <xs:element name="sporsmal" type="sos:sporsmalOgSvar"/>
+            <xs:element name="sporsmalOgSvar" type="sos:sporsmalOgSvar" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
 
 	<xs:complexType name="besvarSporsmalRequest">
         <xs:sequence>
-            <xs:element name="svar" type="sos:svar" />
+            <xs:element name="svar" type="sos:svar" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="besvarSporsmalResponse">
