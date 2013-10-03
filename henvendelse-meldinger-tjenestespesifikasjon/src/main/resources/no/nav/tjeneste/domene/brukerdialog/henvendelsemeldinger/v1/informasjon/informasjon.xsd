@@ -9,12 +9,19 @@
 	            <xs:element name="behandlingsId" type="xs:string" />
 	            <xs:element name="traad" type="xs:string" />
 	            <xs:element name="temastruktur" type="xs:string" />
-	            <xs:element name="meldingsType" type="xs:string" />
-	            <xs:element name="tekst" type="xs:boolean" />
+	            <xs:element name="meldingsType" type="tns:meldingstype" />
+	            <xs:element name="tekst" type="xs:string" />
 	            <xs:element name="opprettetDato" type="xs:dateTime" />
 	            <xs:element name="lestDato" type="xs:dateTime" />
 	        </xs:sequence>
     	</xs:complexType>
     </xs:element>
+
+    <xs:simpleType name="meldingstype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="INNGAENDE"/>
+            <xs:enumeration value="UTGAENDE"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
