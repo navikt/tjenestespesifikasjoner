@@ -2,60 +2,83 @@
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 	xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1"
 	xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/meldinger"
-	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	name="HenvendelseMeldingerService" targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1">
 
 	<wsdl:types>
-		<xs:schema
+		<xsd:schema
 			xmlns:informasjon="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon"
 			targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/meldinger">
-			<xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon" schemaLocation="informasjon/informasjon.xsd" />
+			<xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon" schemaLocation="informasjon/informasjon.xsd" />
 
-			<xs:element name="hentMeldingListe">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="fodselsnummer" type="xs:string" />
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xsd:element name="hentMeldingListe">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="fodselsnummer" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
 
-			<xs:element name="hentMeldingListeResponse">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element ref="informasjon:melding" minOccurs="0" maxOccurs="unbounded" />
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xsd:element name="hentMeldingListeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="informasjon:melding" minOccurs="0" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
 
-			<xs:element name="ping">
-				<xs:complexType />
-			</xs:element>
+            <xsd:element name="merkMeldingSomLest">
+	            <xsd:complexType>
+			        <xsd:sequence>
+			            <xsd:element name="behandlingsId" type="xsd:string"/>
+			        </xsd:sequence>
+			    </xsd:complexType>
+            </xsd:element>
 
-			<xs:element name="pingResponse">
-				<xs:complexType />
-			</xs:element>
+			<xsd:element name="merkMeldingSomLestResponse">
+				<xsd:complexType />
+			</xsd:element>
 
-		</xs:schema>
+			<xsd:element name="ping">
+				<xsd:complexType />
+			</xsd:element>
+
+			<xsd:element name="pingResponse">
+				<xsd:complexType />
+			</xsd:element>
+
+		</xsd:schema>
 	</wsdl:types>
 
 	<wsdl:message name="hentMeldingListeRequest">
-		<wsdl:part element="meldinger:hentMeldingListe" name="parameters" />
+		<wsdl:part element="meldinger:hentMeldingListe" name="hentMeldingListeRequest" />
 	</wsdl:message>
 	<wsdl:message name="hentMeldingListeResponse">
-		<wsdl:part element="meldinger:hentMeldingListeResponse" name="parameters" />
+		<wsdl:part element="meldinger:hentMeldingListeResponse" name="hentMeldingListeResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="merkMeldingSomLestRequest">
+		<wsdl:part element="meldinger:merkMeldingSomLest" name="merkMeldingSomLestRequest" />
+	</wsdl:message>
+	<wsdl:message name="merkMeldingSomLestResponse">
+		<wsdl:part element="meldinger:merkMeldingSomLestResponse" name="merkMeldingSomLestResponse" />
 	</wsdl:message>
 
     <wsdl:message name="pingRequest">
-        <wsdl:part element="meldinger:ping" name="parameters" />
+        <wsdl:part element="meldinger:ping" name="pingRequest" />
     </wsdl:message>
     <wsdl:message name="pingResponse">
-        <wsdl:part element="meldinger:pingResponse" name="parameters" />
+        <wsdl:part element="meldinger:pingResponse" name="pingResponse" />
     </wsdl:message>
 
 	<wsdl:portType name="HenvendelseMeldingerPortType">
 		<wsdl:operation name="hentMeldingListe">
 			<wsdl:input message="tns:hentMeldingListeRequest" name="hentMeldingListeRequest" />
 			<wsdl:output message="tns:hentMeldingListeResponse" name="hentMeldingListeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="merkMeldingSomLest">
+			<wsdl:input message="tns:merkMeldingSomLestRequest" name="merkMeldingSomLestRequest" />
+			<wsdl:output message="tns:merkMeldingSomLestResponse" name="merkMeldingSomLestResponse" />
 		</wsdl:operation>
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest" />
@@ -71,6 +94,15 @@
 				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output name="hentMeldingListeResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+        <wsdl:operation name="merkMeldingSomLest">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="merkMeldingSomLestRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="merkMeldingSomLestResponse">
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
