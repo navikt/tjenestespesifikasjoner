@@ -7,7 +7,7 @@
 		<xs:sequence>
 			<xs:element name="behandlingsId" type="xs:string" />
 			<xs:element name="henvendelseType" type="tns:henvendelseType" />
-			<xs:element name="status" type="tns:status" />
+			<xs:element name="henvendelseStatus" type="tns:henvendelseStatus" />
 			<xs:element name="opprettetDato" type="xs:dateTime" />
 			<xs:element ref="tns:soknadsdata" minOccurs="0" />
 		</xs:sequence>
@@ -17,7 +17,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="hovedskjemaKodeverkId" type="xs:string" />
-				<xs:element name="erEttersending" type="xs:boolean" />
+				<xs:element name="ettersending" type="xs:boolean" />
 				<xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0" />
 				<xs:element name="dokumentforventninger" minOccurs="0">
 					<xs:complexType>
@@ -34,13 +34,12 @@
 		<xs:sequence>
 			<xs:element name="kodeverkId" type="xs:string" />
 			<xs:element name="egendefinertTittel" type="xs:string" minOccurs="0" />
-			<xs:element name="erInnsendt" type="xs:boolean" />
+			<xs:element name="innsendt" type="xs:boolean" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:simpleType name="status">
+	<xs:simpleType name="henvendelseStatus">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="OPPRETTET" />
 			<xs:enumeration value="UNDER_ARBEID" />
 			<xs:enumeration value="FERDIG" />
 		</xs:restriction>
