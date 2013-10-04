@@ -7,7 +7,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>henvendelse-soknader-tjenestespesifikasjon</artifactId>
-	<version>0.0.9-SNAPSHOT</version>
+	<version>0.0.9</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -103,7 +103,7 @@
       scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git
     </developerConnection>
 		<url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-		<tag>HEAD</tag>
+		<tag>henvendelse-soknader-tjenestespesifikasjon-0.0.9</tag>
 	</scm>
 
 </project>
