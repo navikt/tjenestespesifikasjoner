@@ -100,9 +100,9 @@
 
 	<scm>
 		<developerConnection>
-      scm:git:ssh://git@stash.devillo.no:7999/dial/tjenestespesifikasjoner.git
+      scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git
     </developerConnection>
-		<url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
+		<url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
