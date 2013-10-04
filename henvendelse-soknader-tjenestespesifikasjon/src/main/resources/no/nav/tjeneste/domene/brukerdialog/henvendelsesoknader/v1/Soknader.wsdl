@@ -22,7 +22,7 @@
 			<xs:element name="hentSoknadListeResponse">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element ref="informasjon:soknad" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element name="soknad" type="informasjon:soknad" minOccurs="0" maxOccurs="unbounded" />
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
