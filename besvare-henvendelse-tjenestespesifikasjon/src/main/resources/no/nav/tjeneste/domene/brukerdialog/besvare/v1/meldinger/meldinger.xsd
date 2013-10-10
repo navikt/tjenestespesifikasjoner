@@ -8,8 +8,8 @@
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="hentSporsmalOgSvarResponse">
-        <xs:sequence>
-            <xs:element name="sporsmalOgSvar" type="sos:sporsmalOgSvar" minOccurs="0" maxOccurs="1"/>
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="sporsmalOgSvar" type="sos:sporsmalOgSvar"/>
         </xs:sequence>
     </xs:complexType>
 
