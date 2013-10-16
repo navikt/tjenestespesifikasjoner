@@ -12,7 +12,7 @@
 	            <xs:element name="meldingsType" type="tns:meldingstype" />
 	            <xs:element name="tekst" type="xs:string" />
 	            <xs:element name="opprettetDato" type="xs:dateTime" />
-	            <xs:element name="lestDato" type="xs:dateTime" />
+	            <xs:element name="lestDato" type="xs:dateTime" minOccurs="0" />
 	        </xs:sequence>
     	</xs:complexType>
     </xs:element>
