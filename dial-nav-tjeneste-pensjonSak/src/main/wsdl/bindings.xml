@@ -25,19 +25,19 @@
         </jxb:schemaBindings>
     </jxb:bindings>
 
-    <!--<jxb:globalBindings>-->
-        <!--<jxb:javaType-->
-                <!--name="org.joda.time.DateTime"-->
-                <!--xmlType="xs:dateTime"-->
-                <!--parseMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateTimeAdapter.unmarshal"-->
-                <!--printMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateTimeAdapter.marshal"-->
-                <!--/>-->
-        <!--<jxb:javaType-->
-                <!--name="org.joda.time.LocalDate"-->
-                <!--xmlType="xs:date"-->
-                <!--parseMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateAdapter.unmarshal"-->
-                <!--printMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateAdapter.marshal"-->
-                <!--/>-->
-    <!--</jxb:globalBindings>-->
+    <jxb:globalBindings>
+        <jxb:javaType
+                name="org.joda.time.DateTime"
+                xmlType="xs:dateTime"
+                parseMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateTimeAdapter.unmarshal"
+                printMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateTimeAdapter.marshal"
+                />
+        <jxb:javaType
+                name="org.joda.time.LocalDate"
+                xmlType="xs:date"
+                parseMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateAdapter.unmarshal"
+                printMethod="no.nav.sbl.dialogarena.oppgave.adapters.DateAdapter.marshal"
+                />
+    </jxb:globalBindings>
 
 </jxb:bindings>

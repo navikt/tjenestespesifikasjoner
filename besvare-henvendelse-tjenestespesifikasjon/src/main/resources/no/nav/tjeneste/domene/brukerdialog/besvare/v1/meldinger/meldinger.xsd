@@ -21,6 +21,18 @@
     <xs:complexType name="besvarSporsmalResponse">
         <xs:sequence />
     </xs:complexType>
+
+    <xs:complexType name="hentSakerRequest">
+        <xs:sequence>
+            <xs:element name="brukerId" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="tema" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hentSakerResponse">
+        <xs:sequence>
+            <xs:element name="saker" type="sos:sak" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
     
     <xs:complexType name="pingRequest" />
     <xs:complexType name="pingResponse">

@@ -15,6 +15,8 @@
 				schemaLocation="../no/nav/tjeneste/domene/brukerdialog/besvare/v1/meldinger/meldinger.xsd" />
             <xs:element name="hentSporsmalOgSvar" type="meldinger:hentSporsmalOgSvarRequest" />
             <xs:element name="hentSporsmalOgSvarResponse" type="meldinger:hentSporsmalOgSvarResponse" />
+            <xs:element name="hentSakerRequest" type="meldinger:hentSakerRequest" />
+            <xs:element name="hentSakerResponse" type="meldinger:hentSakerResponse" />
 			<xs:element name="besvarSporsmal" type="meldinger:besvarSporsmalRequest" />
 			<xs:element name="besvarSporsmalResponse" type="meldinger:besvarSporsmalResponse" />
             <xs:element name="ping" type="meldinger:pingRequest"/>
@@ -28,6 +30,15 @@
     </wsdl:message>
     <wsdl:message name="hentSporsmalOgSvarResponse">
         <wsdl:part element="tns:hentSporsmalOgSvarResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+
+    <wsdl:message name="hentSakerRequest">
+        <wsdl:part element="tns:hentSakerRequest" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSakerResponse">
+        <wsdl:part element="tns:hentSakerResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
 
@@ -59,6 +70,12 @@
 			<wsdl:input message="tns:besvarSporsmalRequest" name="besvarSporsmalRequest" />
 			<wsdl:output message="tns:besvarSporsmalResponse" name="besvarSporsmalResponse" />
 		</wsdl:operation>
+
+        <wsdl:operation name="hentSaker">
+            <wsdl:input message="tns:hentSakerRequest" name="hentSakerRequest" />
+            <wsdl:output message="tns:hentSakerResponse" name="hentSakerResponse" />
+        </wsdl:operation>
+
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest">
             </wsdl:input>
@@ -89,6 +106,17 @@
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
+
+        <wsdl:operation name="hentSaker">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="hentSakerRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="hentSakerResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+
         <wsdl:operation name="ping">
             <soap:operation soapAction="" style="document"/>
             <wsdl:input name="pingRequest">

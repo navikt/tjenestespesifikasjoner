@@ -22,7 +22,7 @@
                 printMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateTimeAdapter.marshal"
                 />
         <jxb:javaType
-                name="org.joda.time.DateMidnight"
+                name="org.joda.time.LocalDate"
                 xmlType="xs:date"
                 parseMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateAdapter.unmarshal"
                 printMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateAdapter.marshal"
