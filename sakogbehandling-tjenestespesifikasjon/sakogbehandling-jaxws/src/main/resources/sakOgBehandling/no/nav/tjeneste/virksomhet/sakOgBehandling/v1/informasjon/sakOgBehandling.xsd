@@ -52,13 +52,16 @@
 	<xs:simpleType name="SakID">
 		<xs:restriction base="informasjon:Identifikator"/>
 	</xs:simpleType>
+	<xs:simpleType name="OrganisasjonsenhetID">
+		<xs:restriction base="informasjon:Identifikator"/>
+	</xs:simpleType>
 	<xs:complexType name="Applikasjoner">
 		<xs:annotation>
 			<xs:documentation>http://nav.no/kodeverk/Kodeverk/Applikasjoner</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Applikasjoner" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Applikasjoner" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -68,7 +71,7 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Avslutningsstatuser" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Avslutningsstatuser" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -78,7 +81,7 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Behandlingskjedetype" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Behandlingskjedetype" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -90,7 +93,7 @@ http://nav.no/kodeverk/Kodeverk/Behandlingsstatuser</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Behandlingsstatuser" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Behandlingsstatuser" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -100,7 +103,7 @@ http://nav.no/kodeverk/Kodeverk/Behandlingsstatuser</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Behandlingsstegtyper" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Behandlingsstegtyper" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -112,7 +115,7 @@ http://nav.no/kodeverk/Kodeverk/Behandlingstidtyper</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Behandlingstidtyper" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Behandlingstidtyper" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -122,7 +125,7 @@ http://nav.no/kodeverk/Kodeverk/Behandlingstidtyper</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Behandlingstyper" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Behandlingstyper" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -134,7 +137,7 @@ http://nav.no/kodeverk/Kodeverk/Prim_c3_a6rRelasjonstyper</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Prim_c3_a6rRelasjonstyper" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Prim_c3_a6rRelasjonstyper" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -145,27 +148,37 @@ http://nav.no/kodeverk/Kodeverk/Sekund_c3_a6rRelasjonstyper</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Sekund_c3_a6rRelasjonstyper" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Sekund_c3_a6rRelasjonstyper" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:complexType name="Temaer">
+	<xs:complexType name="Sakstemaer">
 		<xs:annotation>
-			<xs:documentation>http://nav.no/kodeverk/Kodeverk/Temaer</xs:documentation>
+			<xs:documentation>http://nav.no/kodeverk/Kodeverk/Sakstemaer</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Temaer" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Sakstemaer" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:complexType name="Behandlingstemaer">
+        <xs:annotation>
+            <xs:documentation>http://nav.no/kodeverk/Kodeverk/Behandlingstemaer</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="informasjon:Kodeverdi">
+                <xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Behandlingstemaer" type="xs:anyURI"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
 	<xs:complexType name="Venteaarsaker">
 		<xs:annotation>
 			<xs:documentation>http://nav.no/kodeverk/Kodeverk/Vente_c3_a5rsaker</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="informasjon:Kodeverdi">
-				<xs:attribute name="kodeverksRef" use="optional" fixed="http://nav.no/kodeverk/Kodeverk/Vente_c3_a5rsaker" type="xs:anyURI"/>
+				<xs:attribute name="kodeverksRef" use="optional" default="http://nav.no/kodeverk/Kodeverk/Vente_c3_a5rsaker" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -195,9 +208,19 @@ Det må avklares når en sak skal opprettes og om alle behandlinger skal være k
 					<xs:documentation>Identifiserer en eller flere behandlinger som denne behandling har et forhold til. Forholdet kan enten være seOgså eller skalVarlses.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="start" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tidspunktet behandlingen ble påbegynt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>						
 			<xs:element name="sisteoppdatering" type="xs:dateTime" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tidspunktet det sist skjedde en endring i status av denne behandling.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="slutt" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tidspunktet behandlingen ble avsluttet.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -226,7 +249,7 @@ Det må avklares når en sak skal opprettes og om alle behandlinger skal være k
 		<xs:complexContent>
 			<xs:extension base="informasjon:Behandling">
 				<xs:sequence>
-					<xs:element name="sisteBehandlingssteg" type="informasjon:Behandlingsstegtyper" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="sisteBehandlingssteg" type="informasjon:Behandlingsstegtyper" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="applikasjonSakREF" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Identifiserer i hvilken sak behandlingen inngår, i gjeldende applikasjon (fagsystem) dersom en slik eksisterer.</xs:documentation>
@@ -237,14 +260,9 @@ Det må avklares når en sak skal opprettes og om alle behandlinger skal være k
 							<xs:documentation>Refererer til en eventuell mer spesifikk entitet i applikasjonen som svarer til behandlingen i MOD.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="start" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+                    <xs:element name="ansvarligEnhetREF" type="informasjon:OrganisasjonsenhetID" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Tidspunktet behandlingen ble avsluttet.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="slutt" type="xs:dateTime" minOccurs="0" maxOccurs="1">
-						<xs:annotation>
-							<xs:documentation>Tidspunktet behandlingen ble avsluttet.</xs:documentation>
+							<xs:documentation>Ansvarlig enhet som har utført/utfører behandlingen.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="avslutningsstatus" type="informasjon:Avslutningsstatuser" minOccurs="1" maxOccurs="1">
@@ -262,6 +280,9 @@ Det må avklares når en sak skal opprettes og om alle behandlinger skal være k
 							<xs:documentation>Det tidspunkt NAV skal være ferdig med sin behandling.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="sisteBehandlingsstegREF" type="informasjon:BehandlingsstegID" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="sisteBehandlingsstegtype" type="informasjon:Behandlingsstegtyper" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="sisteVenteaarsak" type="informasjon:Venteaarsaker" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -269,7 +290,6 @@ Det må avklares når en sak skal opprettes og om alle behandlinger skal være k
 	<xs:complexType name="Kodeverdi" abstract="true">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="kodeRef" use="optional" type="xs:anyURI"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>

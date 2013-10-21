@@ -16,7 +16,7 @@ I Sak og Behandling skal entiteten Sak ha oversikt over de Behandlinger som er r
 					<xs:documentation>saksId identifiserer saken</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="tema" type="informasjon:Temaer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="sakstema" type="informasjon:Sakstemaer" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="opprettet" type="xs:dateTime" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tidspunktet saken ble opprettet.</xs:documentation>
@@ -57,6 +57,11 @@ Den er unikt identifiserbar vha. behandlingskjedeID.</xs:documentation>
 					<xs:documentation>Identifiserer hvilken verdikjede som behandlingskjeden instansierer.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="behandlingstema" type="informasjon:Behandlingstemaer" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Tema knyttet til behandlingskjeden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
 			<xs:element name="start" type="xs:dateTime" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tidspunktet behandlingskjeden ble opprettet.</xs:documentation>
@@ -112,6 +117,11 @@ Den er unikt identifiserbar vha. behandlingskjedeID.</xs:documentation>
 					<xs:documentation>Uttrykker status i form av hvilken venteårsak som ligger til grunn dersom kjeden i øyeblikket befinner seg i en ventetilstand. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="behandlingsListeRef" type="informasjon:BehandlingID" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Liste med behandlingsid'er som inngår i behandlingskjeden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
