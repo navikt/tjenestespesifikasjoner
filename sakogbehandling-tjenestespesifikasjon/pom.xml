@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>sakogbehandling-tjenestespesifikasjon</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <modules>
         <module>sakogbehandling-jaxws</module>
     </modules>
@@ -16,6 +16,7 @@
     <scm>
         <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-    </scm>
+      <tag>sakogbehandling-tjenestespesifikasjon-1.0.2</tag>
+  </scm>
 
 </project>
