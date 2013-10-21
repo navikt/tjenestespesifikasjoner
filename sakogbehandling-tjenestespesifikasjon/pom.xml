@@ -6,7 +6,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sakogbehandling-tjenestespesifikasjon</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -143,7 +143,7 @@
     <scm>
         <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>sakogbehandling-tjenestespesifikasjon-1.0.8</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
