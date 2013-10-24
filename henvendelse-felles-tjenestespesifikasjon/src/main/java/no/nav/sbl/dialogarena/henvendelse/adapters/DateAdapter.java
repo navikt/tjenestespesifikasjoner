@@ -1,15 +1,17 @@
 package no.nav.sbl.dialogarena.henvendelse.adapters;
 
-import org.joda.time.DateMidnight;
-
+import org.joda.time.LocalDate;
+import org.joda.time.format.ISODateTimeFormat;
 
 public class DateAdapter {
-    public static DateMidnight unmarshal(String v) {
-        return new DateMidnight(v);
+    public static LocalDate unmarshal(String v)  {
+        if (v.contains("+")) {
+            return new LocalDate(v.substring(0, v.indexOf('+')));
+        }
+        return new LocalDate(v);
     }
 
-    public static String marshal(DateMidnight v) {
-        return v.toString();
+    public static String marshal(LocalDate v) {
+        return v != null ? v.toString(ISODateTimeFormat.date()) : null;
     }
 }
-
