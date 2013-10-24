@@ -114,52 +114,52 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.2</version>
-                <executions>
-                    <execution>
-                        <phase>process-sources</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
+            <!--<plugin>-->
+                <!--<groupId>com.google.code.maven-replacer-plugin</groupId>-->
+                <!--<artifactId>replacer</artifactId>-->
+                <!--<version>1.5.2</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>process-sources</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>replace</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
 
-                <configuration>
-                    <filesToInclude>target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/Utbetaling.java,
-                        target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/binding/Utbetaling.java</filesToInclude>
-                    <replacements>
-                        <replacement>
-                            <token>public interface Utbetaling</token>
-                            <value>public interface UtbetalingPortType</value>
-                        </replacement>
-                        <replacement>
-                            <token>no.nav.virksomhet.tjenester.utbetaling.v2.Utbetaling</token>
-                            <value>no.nav.virksomhet.tjenester.utbetaling.v2.UtbetalingPortType</value>
-                        </replacement>
-                    </replacements>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.7</version>
-                <executions>
-                    <execution>
-                        <phase>process-sources</phase>
-                        <configuration>
-                            <target>
-                                <move file="target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/Utbetaling.java"
-                                      tofile="target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/UtbetalingPortType.java" />
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+                <!--<configuration>-->
+                    <!--<filesToInclude>target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/Utbetaling.java,-->
+                        <!--target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/binding/Utbetaling.java</filesToInclude>-->
+                    <!--<replacements>-->
+                        <!--<replacement>-->
+                            <!--<token>public interface Utbetaling</token>-->
+                            <!--<value>public interface UtbetalingPortType</value>-->
+                        <!--</replacement>-->
+                        <!--<replacement>-->
+                            <!--<token>no.nav.virksomhet.tjenester.utbetaling.v2.Utbetaling</token>-->
+                            <!--<value>no.nav.virksomhet.tjenester.utbetaling.v2.UtbetalingPortType</value>-->
+                        <!--</replacement>-->
+                    <!--</replacements>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-antrun-plugin</artifactId>-->
+                <!--<version>1.7</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>process-sources</phase>-->
+                        <!--<configuration>-->
+                            <!--<target>-->
+                                <!--<move file="target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/Utbetaling.java"-->
+                                      <!--tofile="target/generated-sources/cxf/no/nav/virksomhet/tjenester/utbetaling/v2/UtbetalingPortType.java" />-->
+                            <!--</target>-->
+                        <!--</configuration>-->
+                        <!--<goals>-->
+                            <!--<goal>run</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
         <pluginManagement>
             <plugins>
