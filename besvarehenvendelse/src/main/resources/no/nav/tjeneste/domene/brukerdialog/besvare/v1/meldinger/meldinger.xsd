@@ -25,7 +25,6 @@
     <xs:complexType name="hentSakerRequest">
         <xs:sequence>
             <xs:element name="brukerId" type="xs:string" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="tema" type="xs:string" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="hentSakerResponse">
