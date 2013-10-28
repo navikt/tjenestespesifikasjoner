@@ -42,12 +42,27 @@
 		<xs:complexContent>
 			<xs:extension base="tns:faktum">
 				<xs:sequence>
+					<xs:element name="behandlingsId" type="xs:string" minOccurs="0" />
 					<xs:element name="aktor" type="tns:aktor" minOccurs="0" />
 					<xs:element name="meldingstekst" type="xs:string" minOccurs="0" />
 					<xs:element name="temastruktur" type="xs:string" minOccurs="0" />
-					<xs:element name="traad" type="xs:string" minOccurs="0" />
 					<xs:element name="lestDato" type="xs:dateTime" minOccurs="0" />
 					<xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0" />
+					<xs:element name="meldingsType" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="journalforingsdata">
+		<xs:complexContent>
+			<xs:extension base="tns:faktum">
+				<xs:sequence>
+					<xs:element name="behandlingsId" type="xs:string" minOccurs="0" />
+					<xs:element name="saksId" type="xs:string" minOccurs="0" />
+					<xs:element name="tema" type="xs:string" minOccurs="0" />
+					<xs:element name="journalpostId" type="xs:string" minOccurs="0" />
+					<xs:element name="journalfortDato" type="xs:string" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -58,6 +73,14 @@
 			<xs:sequence>
 				<xs:element name="type" type="xs:string" />
 				<xs:element ref="tns:behandlingsinformasjon" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="oppdaterMetadata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nyeFakta" type="tns:faktumListe" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
