@@ -19,6 +19,8 @@
             <xs:element name="hentSakerResponse" type="meldinger:hentSakerResponse" />
 			<xs:element name="besvarSporsmal" type="meldinger:besvarSporsmalRequest" />
 			<xs:element name="besvarSporsmalResponse" type="meldinger:besvarSporsmalResponse" />
+			<xs:element name="journalforMeldinger" type="meldinger:journalforMeldingerRequest" />
+			<xs:element name="journalforMeldingerResponse" type="meldinger:journalforMeldingerResponse" />
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
 		</xs:schema>
@@ -51,6 +53,15 @@
 		</wsdl:part>
 	</wsdl:message>
 
+    <wsdl:message name="journalforMeldingerRequest">
+        <wsdl:part element="tns:journalforMeldinger" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="journalforMeldingerResponse">
+        <wsdl:part element="tns:journalforMeldingerResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -76,6 +87,10 @@
             <wsdl:output message="tns:hentSakerResponse" name="hentSakerResponse" />
         </wsdl:operation>
 
+        <wsdl:operation name="journalforMeldinger">
+            <wsdl:input message="tns:journalforMeldingerRequest" name="journalforMeldingerRequest" />
+            <wsdl:output message="tns:journalforMeldingerResponse" name="journalforMeldingerResponse" />
+        </wsdl:operation>
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest">
             </wsdl:input>
@@ -113,6 +128,16 @@
                 <soap:body use="literal" />
             </wsdl:input>
             <wsdl:output name="hentSakerResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="journalforMeldinger">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="journalforMeldingerRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="journalforMeldingerResponse">
                 <soap:body use="literal" />
             </wsdl:output>
         </wsdl:operation>
