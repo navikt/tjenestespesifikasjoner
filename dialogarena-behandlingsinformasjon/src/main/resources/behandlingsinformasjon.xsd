@@ -42,13 +42,12 @@
 		<xs:complexContent>
 			<xs:extension base="tns:faktum">
 				<xs:sequence>
-					<xs:element name="behandlingsId" type="xs:string" minOccurs="0" />
-					<xs:element name="aktor" type="tns:aktor" minOccurs="0" />
-					<xs:element name="meldingstekst" type="xs:string" minOccurs="0" />
-					<xs:element name="temastruktur" type="xs:string" minOccurs="0" />
-					<xs:element name="lestDato" type="xs:dateTime" minOccurs="0" />
-					<xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0" />
-					<xs:element name="meldingsType" type="xs:string" minOccurs="0" />
+					<xs:element name="behandlingsId" type="xs:string" />
+					<xs:element name="aktor" type="tns:aktor" />
+					<xs:element name="meldingstekst" type="xs:string" />
+					<xs:element name="temastruktur" type="xs:string" />
+					<xs:element name="opprettetDato" type="xs:dateTime" />
+					<xs:element name="meldingsType" type="xs:string" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -58,11 +57,11 @@
 		<xs:complexContent>
 			<xs:extension base="tns:faktum">
 				<xs:sequence>
-					<xs:element name="behandlingsId" type="xs:string" minOccurs="0" />
-					<xs:element name="saksId" type="xs:string" minOccurs="0" />
+					<xs:element name="behandlingsId" type="xs:string" />
+					<xs:element name="saksId" type="xs:string" />
 					<xs:element name="tema" type="xs:string" minOccurs="0" />
 					<xs:element name="journalpostId" type="xs:string" minOccurs="0" />
-					<xs:element name="journalfortDato" type="xs:string" minOccurs="0" />
+					<xs:element name="journalfortDato" type="xs:dateTime" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
