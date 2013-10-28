@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1"
+	xmlns:tns="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1">
+
+	<xs:element name="behandlingsinformasjon">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="behandlingsId" type="xs:string" minOccurs="0" />
+				<xs:element name="behandlingskjedeId" type="xs:string" minOccurs="0" />
+				<xs:element name="aktor" type="tns:aktor" minOccurs="0"/>
+				<xs:element name="tema" type="xs:string" minOccurs="0" />
+				<xs:element name="behandlingsType" type="xs:string" minOccurs="0" />
+				<xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="anvendteFakta" type="tns:faktumListe" minOccurs="0" />
+				<xs:element name="produserteFakta" type="tns:faktumListe" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="aktor">
+		<xs:sequence>
+			<xs:element name="aktorId" type="xs:string" minOccurs="0"/>
+			<xs:element name="navIdent" type="xs:string" minOccurs="0"/>
+			<xs:element name="ansvarligEnhet" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="faktumListe">
+		<xs:sequence>
+			<xs:element name="faktum" type="tns:faktum" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="faktum">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="melding">
+		<xs:complexContent>
+			<xs:extension base="tns:faktum">
+				<xs:sequence>
+					<xs:element name="aktor" type="tns:aktor" minOccurs="0" />
+					<xs:element name="meldingstekst" type="xs:string" minOccurs="0" />
+					<xs:element name="temastruktur" type="xs:string" minOccurs="0" />
+					<xs:element name="traad" type="xs:string" minOccurs="0" />
+					<xs:element name="lestDato" type="xs:dateTime" minOccurs="0" />
+					<xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="startBehandling">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="xs:string" />
+				<xs:element ref="tns:behandlingsinformasjon" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
