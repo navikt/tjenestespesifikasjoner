@@ -34,12 +34,6 @@
     <jxb:globalBindings>
         <jxb:javaType
                 name="org.joda.time.DateTime"
-                xmlType="xs:dateTime"
-                parseMethod="no.nav.sbl.dialogarena.utbetaling.adapters.DateTimeAdapter.unmarshal"
-                printMethod="no.nav.sbl.dialogarena.utbetaling.adapters.DateTimeAdapter.marshal"
-                />
-        <jxb:javaType
-                name="org.joda.time.DateTime"
                 xmlType="xs:date"
                 parseMethod="no.nav.sbl.dialogarena.utbetaling.adapters.DateTimeAdapter.unmarshal"
                 printMethod="no.nav.sbl.dialogarena.utbetaling.adapters.DateTimeAdapter.marshal"
