@@ -46,6 +46,7 @@
             <xs:element name="saksId" type="xs:string" />
             <xs:element name="meldingstype" type="xs:string" />
             <xs:element name="temastruktur" type="xs:string" />
+            <xs:element name="arkivtema" type="xs:string" />
             <xs:element name="aktor" type="info:aktor" />
             <xs:element name="fritekst" type="xs:string" />
             <xs:element name="opprettetDato" type="xs:dateTime" />
