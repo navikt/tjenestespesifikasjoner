@@ -13,6 +13,9 @@
 	            <xs:element name="tekst" type="xs:string" />
 	            <xs:element name="opprettetDato" type="xs:dateTime" />
 	            <xs:element name="lestDato" type="xs:dateTime" minOccurs="0" />
+	            <xs:element name="journalfortDato" type="xs:dateTime" minOccurs="0" />
+	            <xs:element name="journalfortSaksId" type="xs:string" minOccurs="0" />
+	            <xs:element name="journalfortTema" type="xs:string" minOccurs="0" />
 	        </xs:sequence>
     	</xs:complexType>
     </xs:element>
