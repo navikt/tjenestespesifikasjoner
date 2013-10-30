@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>no.nav.sbl.dialogarena</groupId>
 			<artifactId>jaxb-adapters</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 
