@@ -14,14 +14,6 @@
         <wsdl.directory>src/main/resources</wsdl.directory>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <version>2.2</version>
-            <artifactId>joda-time</artifactId>
-        </dependency>
-    </dependencies>
-
     <build>
         <resources>
             <resource>
