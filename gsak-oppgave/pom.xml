@@ -36,8 +36,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-oppgavebehandling-tjenestespesifikasjon</artifactId>
-                                    <version>2.1.0-alpha002</version>
-                                    <!--<version>2.1.0-alpha003-SNAPSHOT</version>-->
+                                    <version>2.1.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgavebehandling</outputDirectory>
                                 </artifactItem>
