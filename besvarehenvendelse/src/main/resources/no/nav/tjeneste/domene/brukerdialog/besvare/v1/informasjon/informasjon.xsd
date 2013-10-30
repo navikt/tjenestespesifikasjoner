@@ -50,6 +50,7 @@
             <xs:element name="fodselsnummer" type="xs:string" />
             <xs:element name="fritekst" type="xs:string" />
             <xs:element name="opprettetDato" type="xs:dateTime" />
+            <xs:element name="sensitiv" type="xs:boolean" />
         </xs:sequence>
     </xs:complexType>
 
