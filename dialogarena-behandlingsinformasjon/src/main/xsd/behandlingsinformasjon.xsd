@@ -22,6 +22,7 @@
 	<xs:complexType name="aktor">
 		<xs:sequence>
 			<xs:element name="aktorId" type="xs:string" minOccurs="0"/>
+			<xs:element name="fodselsnummer" type="xs:string" minOccurs="0"/>
 			<xs:element name="navIdent" type="xs:string" minOccurs="0"/>
 			<xs:element name="ansvarligEnhet" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
@@ -45,6 +46,7 @@
 					<xs:element name="behandlingsId" type="xs:string" />
 					<xs:element name="aktor" type="tns:aktor" />
 					<xs:element name="meldingstekst" type="xs:string" />
+					<xs:element name="traad" type="xs:string" />
 					<xs:element name="temastruktur" type="xs:string" />
 					<xs:element name="opprettetDato" type="xs:dateTime" />
 					<xs:element name="meldingsType" type="xs:string" />
