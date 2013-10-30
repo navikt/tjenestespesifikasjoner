@@ -46,33 +46,11 @@
             <xs:element name="saksId" type="xs:string" />
             <xs:element name="meldingstype" type="xs:string" />
             <xs:element name="temastruktur" type="xs:string" />
-            <xs:element name="aktor" type="info:aktor" />
+            <xs:element name="arkivtema" type="xs:string" />
+            <xs:element name="fodselsnummer" type="xs:string" />
             <xs:element name="fritekst" type="xs:string" />
             <xs:element name="opprettetDato" type="xs:dateTime" />
         </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="aktor" abstract="true"/>
-
-    <xs:complexType name="navMedarbeider">
-        <xs:complexContent>
-            <xs:extension base="info:aktor">
-                <xs:sequence>
-                    <xs:element name="navIdent" type="xs:string" />
-                    <xs:element name="ansvarligEnhet" type="xs:string" />
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="bruker">
-        <xs:complexContent>
-            <xs:extension base="info:aktor">
-                <xs:sequence>
-                    <xs:element name="fodselsnummer" type="xs:string" />
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="ping"/>
