@@ -7,20 +7,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>oppgavebehandling-tjenestespesifikasjon</artifactId>
-    <version>0.0.8-SNAPSHOT</version>
+    <version>0.0.9-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
         <wsdl.directory>src/main/resources</wsdl.directory>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <version>2.2</version>
-            <artifactId>joda-time</artifactId>
-        </dependency>
-    </dependencies>
 
     <build>
         <resources>
