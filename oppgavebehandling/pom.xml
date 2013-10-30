@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>oppgavebehandling-tjenestespesifikasjon</artifactId>
-    <version>0.0.8-SNAPSHOT</version>
+    <version>0.0.8</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -97,7 +97,7 @@
     <scm>
         <developerConnection>scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-      <tag>HEAD</tag>
+      <tag>oppgavebehandling-tjenestespesifikasjon-0.0.8</tag>
   </scm>
 
 </project>
