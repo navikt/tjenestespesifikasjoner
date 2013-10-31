@@ -16,7 +16,12 @@
 			<version>2.2</version>
 			<artifactId>joda-time</artifactId>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<resources>

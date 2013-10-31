@@ -1,31 +1,16 @@
-<jxb:bindings version="1.0"
-  xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
-
-    <jxb:bindings schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon/informasjon.xsd" node="/xs:schema">
-        <jxb:schemaBindings>
-            <jxb:nameXmlTransform>
-                <jxb:typeName prefix="WS"/>
-                <jxb:anonymousTypeName prefix="WS"/>
-            </jxb:nameXmlTransform>
-        </jxb:schemaBindings>
-    </jxb:bindings>
-
-    <jxb:globalBindings>
-        <jxb:javaType
-                name="org.joda.time.DateTime"
-                xmlType="xs:dateTime"
-                parseMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateTimeAdapter.unmarshal"
-                printMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateTimeAdapter.marshal"
-                />
-        <jxb:javaType
-                name="org.joda.time.DateMidnight"
-                xmlType="xs:date"
-                parseMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateAdapter.unmarshal"
-                printMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateAdapter.marshal"
-                />
-    </jxb:globalBindings>
-
-</jxb:bindings>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               jaxb:extensionBindingPrefixes="xjc" jaxb:version="2.0">
+    <jaxb:globalBindings>
+        <xjc:javaType name="org.joda.time.DateTime" xmlType="xsd:dateTime" adapter="no.nav.sbl.dialogarena.adapters.DateTimeAdapter"/>
+        <xjc:javaType name="org.joda.time.LocalDate" xmlType="xsd:date" adapter="no.nav.sbl.dialogarena.adapters.DateAdapter"/>
+    </jaxb:globalBindings>
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/informasjon/informasjon.xsd" node="/xsd:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="WS"/>
+                <jaxb:elementName prefix="WS"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+</jaxb:bindings>
