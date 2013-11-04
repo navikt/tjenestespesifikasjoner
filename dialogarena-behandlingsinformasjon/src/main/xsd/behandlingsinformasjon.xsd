@@ -64,6 +64,7 @@
 					<xs:element name="tema" type="xs:string" minOccurs="0" />
 					<xs:element name="journalpostId" type="xs:string" minOccurs="0" />
 					<xs:element name="journalfortDato" type="xs:dateTime" minOccurs="0" />
+					<xs:element name="sensitiv" type="xs:boolean" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
