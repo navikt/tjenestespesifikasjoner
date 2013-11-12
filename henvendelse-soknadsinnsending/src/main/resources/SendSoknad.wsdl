@@ -16,16 +16,8 @@
             <xs:element name="startSoknadResponse" type="meldinger:startSoknadResponse"/>
             <xs:element name="sendSoknad" type="meldinger:sendSoknadRequest"/>
             <xs:element name="sendSoknadResponse" type="meldinger:sendSoknadResponse"/>
-            <xs:element name="hentSoknadData" type="meldinger:hentSoknadDataRequest"/>
-            <xs:element name="hentSoknadDataResponse" type="meldinger:hentSoknadDataResponse"/>
-            <xs:element name="hentSoknad" type="meldinger:hentSoknadRequest"/>
-            <xs:element name="hentSoknadResponse" type="meldinger:hentSoknadResponse"/>
-            <xs:element name="hentBrukerData" type="meldinger:hentBrukerDataRequest"/>
-            <xs:element name="hentBrukerDataResponse" type="meldinger:hentBrukerDataResponse"/>
-            <xs:element name="lagreBrukerData" type="meldinger:lagreBrukerDataRequest"/>
-            <xs:element name="lagreBrukerDataResponse" type="meldinger:lagreBrukerDataResponse"/>
-            <xs:element name="hentSoknadListe" type="meldinger:hentSoknadListeRequest"/>
-            <xs:element name="hentSoknadListeResponse" type="meldinger:hentSoknadListeResponse"/>
+            <xs:element name="lagreVedlegg" type="meldinger:lagreVedleggRequest"/>
+            <xs:element name="lagreVedleggResponse" type="meldinger:lagreVedleggResponse"/>
             <xs:element name="avbrytSoknad" type="meldinger:avbrytSoknadRequest"/>
             <xs:element name="avbrytSoknadResponse" type="meldinger:avbrytSoknadResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
@@ -50,44 +42,12 @@
         <wsdl:part element="tns:sendSoknadResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="hentSoknadDataRequest">
-        <wsdl:part element="tns:hentSoknadData" name="parameters">
+    <wsdl:message name="lagreVedleggRequest">
+        <wsdl:part element="tns:lagreVedlegg" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="hentSoknadDataResponse">
-        <wsdl:part element="tns:hentSoknadDataResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentSoknadRequest">
-        <wsdl:part element="tns:hentSoknad" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentSoknadResponse">
-        <wsdl:part element="tns:hentSoknadResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentBrukerDataRequest">
-        <wsdl:part element="tns:hentBrukerData" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentBrukerDataResponse">
-        <wsdl:part element="tns:hentBrukerDataResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="lagreBrukerDataRequest">
-        <wsdl:part element="tns:lagreBrukerData" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="lagreBrukerDataResponse">
-        <wsdl:part element="tns:lagreBrukerDataResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentSoknadListeRequest">
-        <wsdl:part element="tns:hentSoknadListe" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentSoknadListeResponse">
-        <wsdl:part element="tns:hentSoknadListeResponse" name="parameters">
+    <wsdl:message name="lagreVedleggResponse">
+        <wsdl:part element="tns:lagreVedleggResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="avbrytSoknadRequest">
@@ -120,34 +80,10 @@
             <wsdl:output message="tns:sendSoknadResponse" name="sendSoknadResponse">
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="hentSoknadData">
-            <wsdl:input message="tns:hentSoknadDataRequest" name="hentSoknadDataRequest">
+        <wsdl:operation name="lagreVedlegg">
+            <wsdl:input message="tns:lagreVedleggRequest" name="lagreVedleggRequest">
             </wsdl:input>
-            <wsdl:output message="tns:hentSoknadDataResponse" name="hentSoknadDataResponse">
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="hentSoknad">
-            <wsdl:input message="tns:hentSoknadRequest" name="hentSoknadRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="hentBrukerData">
-            <wsdl:input message="tns:hentBrukerDataRequest" name="hentBrukerDataRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:hentBrukerDataResponse" name="hentBrukerDataResponse">
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="lagreBrukerData">
-            <wsdl:input message="tns:lagreBrukerDataRequest" name="lagreBrukerDataRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:lagreBrukerDataResponse" name="lagreBrukerDataResponse">
-            </wsdl:output>
-        </wsdl:operation>
-		<wsdl:operation name="hentSoknadListe">
-            <wsdl:input message="tns:hentSoknadListeRequest" name="hentSoknadListeRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:hentSoknadListeResponse" name="hentSoknadListeResponse">
+            <wsdl:output message="tns:lagreVedleggResponse" name="lagreVedleggResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="avbrytSoknad">
@@ -183,48 +119,12 @@
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="hentSoknadData">
+        <wsdl:operation name="lagreVedlegg">
             <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="hentSoknadDataRequest">
+            <wsdl:input name="lagreVedleggRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="hentSoknadDataResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="hentSoknad">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="hentSoknadRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="hentSoknadResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="hentBrukerData">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="hentBrukerDataRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="hentBrukerDataResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="lagreBrukerData">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="lagreBrukerDataRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="lagreBrukerDataResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="hentSoknadListe">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="hentSoknadListeRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="hentSoknadListeResponse">
+            <wsdl:output name="lagreVedleggResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
