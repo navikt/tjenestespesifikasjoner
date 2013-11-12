@@ -44,10 +44,10 @@
 		<xs:complexContent>
 			<xs:extension base="tns:faktum">
 				<xs:sequence>
-					<xs:element name="uuid" type="xs:string" minOccurs="0" />
 					<xs:element name="innsendingsvalg" type="xs:string" />
 					<xs:element name="skjemanummer" type="xs:string" />
-					<xs:element name="filnavn" type="xs:string" />
+					<xs:element name="uuid" type="xs:string" minOccurs="0" />
+					<xs:element name="filnavn" type="xs:string" minOccurs="0" />
 					<xs:element name="arkivreferanse" type="xs:string" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
