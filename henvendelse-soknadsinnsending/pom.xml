@@ -49,9 +49,6 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/SendSoknad.wsdl</wsdl>
-                                    <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
-                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
