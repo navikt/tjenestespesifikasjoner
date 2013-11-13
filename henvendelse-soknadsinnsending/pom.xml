@@ -49,6 +49,9 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/SendSoknad.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
+                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -97,7 +100,7 @@
                 </configuration>
             </plugin>
 	  </plugins>
-	</build>	
+	</build>
 
     <scm>
         <developerConnection>
@@ -106,5 +109,5 @@
         <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
       <tag>HEAD</tag>
   </scm>
-	
+
 </project>
