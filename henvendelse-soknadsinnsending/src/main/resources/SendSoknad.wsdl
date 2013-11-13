@@ -13,20 +13,25 @@
             <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/sendsoknad/v1/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/sendsoknad/v1/meldinger/meldinger.xsd"/>
 
             <xs:element name="startSoknad" type="meldinger:startSoknadRequest"/>
-            <xs:element name="startSoknadResponse" type="meldinger:startSoknadResponse"/>
-            <xs:element name="sendSoknad" type="meldinger:sendSoknadRequest"/>
-            <xs:element name="sendSoknadResponse" type="meldinger:sendSoknadResponse"/>
-            <xs:element name="avbrytSoknad" type="meldinger:avbrytSoknadRequest"/>
-            <xs:element name="avbrytSoknadResponse" type="meldinger:avbrytSoknadResponse"/>
-            <xs:element name="lagreVedlegg" type="meldinger:lagreVedleggRequest"/>
-            <xs:element name="lagreVedleggResponse" type="meldinger:lagreVedleggResponse"/>
-			<xs:element name="hentVedlegg" type="meldinger:hentVedleggRequest"/>
-            <xs:element name="hentVedleggResponse" type="meldinger:hentVedleggResponse"/>
-            <xs:element name="ping" type="meldinger:pingRequest"/>
-            <xs:element name="pingResponse" type="meldinger:pingResponse"/>
+            <xs:element name="startSoknadResponse" type="meldinger:behandlingsId"/>
+            <xs:element name="sendSoknad" type="meldinger:soknadsdata"/>
+            <xs:element name="sendSoknadResponse" type="meldinger:empty"/>
+            <xs:element name="mellomlagreSoknad" type="meldinger:soknadsdata"/>
+            <xs:element name="mellomlagreSoknadResponse" type="meldinger:empty"/>
+            <xs:element name="hentSoknad" type="meldinger:behandlingsId"/>
+            <xs:element name="hentSoknadResponse" type="meldinger:soknadsdata"/>
+            <xs:element name="avbrytSoknad" type="meldinger:behandlingsId"/>
+            <xs:element name="avbrytSoknadResponse" type="meldinger:empty"/>
+
+            <xs:element name="lagreVedlegg" type="meldinger:vedlegg"/>
+            <xs:element name="lagreVedleggResponse" type="meldinger:empty"/>
+			<xs:element name="hentVedlegg" type="meldinger:vedleggsinfo"/>
+            <xs:element name="hentVedleggResponse" type="meldinger:vedlegg"/>
+
+            <xs:element name="ping" type="meldinger:empty"/>
+            <xs:element name="pingResponse" type="meldinger:empty"/>
         </xs:schema>
     </wsdl:types>
-
 
     <wsdl:message name="startSoknadRequest">
         <wsdl:part element="tns:startSoknad" name="parameters">
@@ -42,6 +47,22 @@
     </wsdl:message>
     <wsdl:message name="sendSoknadResponse">
         <wsdl:part element="tns:sendSoknadResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+	<wsdl:message name="mellomlagreSoknadRequest">
+        <wsdl:part element="tns:mellomlagreSoknad" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="mellomlagreSoknadResponse">
+        <wsdl:part element="tns:mellomlagreSoknadResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadRequest">
+        <wsdl:part element="tns:hentSoknad" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSoknadResponse">
+        <wsdl:part element="tns:hentSoknadResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="avbrytSoknadRequest">
@@ -90,6 +111,18 @@
             <wsdl:output message="tns:sendSoknadResponse" name="sendSoknadResponse">
             </wsdl:output>
         </wsdl:operation>
+		<wsdl:operation name="mellomlagreSoknad">
+            <wsdl:input message="tns:mellomlagreSoknadRequest" name="mellomlagreSoknadRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:mellomlagreSoknadResponse" name="mellomlagreSoknadResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentSoknad">
+            <wsdl:input message="tns:hentSoknadRequest" name="hentSoknadRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
+            </wsdl:output>
+        </wsdl:operation>
         <wsdl:operation name="avbrytSoknad">
             <wsdl:input message="tns:avbrytSoknadRequest" name="avbrytSoknadRequest">
             </wsdl:input>
@@ -133,6 +166,24 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="sendSoknadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		<wsdl:operation name="hentSoknad">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentSoknadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentSoknadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="mellomlagreSoknad">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="mellomlagreSoknadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="mellomlagreSoknadResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
