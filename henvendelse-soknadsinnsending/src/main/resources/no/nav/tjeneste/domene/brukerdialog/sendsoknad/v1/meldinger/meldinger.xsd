@@ -4,8 +4,9 @@
 
     <xs:complexType name="startSoknadRequest">
         <xs:sequence>
+        	<xs:element name="fodselsnummer" type="xs:string"/>
             <xs:element name="type" type="xs:string"/>
-            <xs:element name="soknadsdata" type="tns:soknadsdata"/>
+            <xs:any/>
         </xs:sequence>
     </xs:complexType>
 
