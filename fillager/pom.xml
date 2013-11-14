@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>fillager-tjenestespesifikasjon</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -99,7 +99,7 @@
             scm:git:ssh://git@a34apvl029.devillo.no:7999/dial/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://a34apvl029.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-      <tag>HEAD</tag>
+      <tag>fillager-tjenestespesifikasjon-0.0.1</tag>
   </scm>
 
 </project>
