@@ -23,11 +23,6 @@
             <xs:element name="avbrytSoknad" type="meldinger:behandlingsId"/>
             <xs:element name="avbrytSoknadResponse" type="meldinger:empty"/>
 
-            <xs:element name="lagreVedlegg" type="meldinger:vedlegg"/>
-            <xs:element name="lagreVedleggResponse" type="meldinger:empty"/>
-			<xs:element name="hentVedlegg" type="meldinger:vedleggsinfo"/>
-            <xs:element name="hentVedleggResponse" type="meldinger:vedlegg"/>
-
             <xs:element name="ping" type="meldinger:empty"/>
             <xs:element name="pingResponse" type="meldinger:empty"/>
         </xs:schema>
@@ -73,22 +68,6 @@
         <wsdl:part element="tns:avbrytSoknadResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="lagreVedleggRequest">
-        <wsdl:part element="tns:lagreVedlegg" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="lagreVedleggResponse">
-        <wsdl:part element="tns:lagreVedleggResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentVedleggRequest">
-        <wsdl:part element="tns:hentVedlegg" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="hentVedleggResponse">
-        <wsdl:part element="tns:hentVedleggResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -127,18 +106,6 @@
             <wsdl:input message="tns:avbrytSoknadRequest" name="avbrytSoknadRequest">
             </wsdl:input>
             <wsdl:output message="tns:avbrytSoknadResponse" name="avbrytSoknadResponse">
-            </wsdl:output>
-        </wsdl:operation>
-		<wsdl:operation name="lagreVedlegg">
-            <wsdl:input message="tns:lagreVedleggRequest" name="lagreVedleggRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:lagreVedleggResponse" name="lagreVedleggResponse">
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="hentVedlegg">
-            <wsdl:input message="tns:hentVedleggRequest" name="hentVedleggRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:hentVedleggResponse" name="hentVedleggResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -193,24 +160,6 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="avbrytSoknadResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="lagreVedlegg">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="lagreVedleggRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="lagreVedleggResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-		<wsdl:operation name="hentVedlegg">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="hentVedleggRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="hentVedleggResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
