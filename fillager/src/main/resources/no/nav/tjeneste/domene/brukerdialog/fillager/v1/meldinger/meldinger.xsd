@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
+<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1/meldinger"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
 
     <xs:complexType name="empty" />
 
     <xs:complexType name="vedleggsinfo">
         <xs:sequence>
             <xs:element name="uuid" type="xs:string"/>
-            <xs:element name="behandlingsId" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="vedlegg">
         <xs:sequence>
             <xs:element name="uuid" type="xs:string"/>
-            <xs:element name="behandlingsId" type="xs:string"/>
             <xs:element name="innhold" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream" />
         </xs:sequence>
     </xs:complexType>
