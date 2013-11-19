@@ -130,3 +130,5 @@
 			<xs:enumeration value="SEND_SOKNAD_ETTERSENDING" />
 		</xs:restriction>
 	</xs:simpleType>
+
+</xs:schema>
