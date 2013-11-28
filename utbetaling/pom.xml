@@ -76,9 +76,10 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/utbetaling/no/nav/virksomhet/tjenester/utbetaling/v2/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/utbetaling/no/nav/virksomhet/tjenester/utbetaling/utbetaling.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/utbetaling/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/utbetaling/porttypehack.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
