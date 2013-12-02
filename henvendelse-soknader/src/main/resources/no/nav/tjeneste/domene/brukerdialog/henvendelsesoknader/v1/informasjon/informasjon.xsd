@@ -6,11 +6,16 @@
 	<xs:complexType name="soknad">
 		<xs:sequence>
 			<xs:element name="behandlingsId" type="xs:string" />
-			<xs:element name="henvendelseType" type="tns:henvendelseType" />
-			<xs:element name="henvendelseStatus" type="tns:henvendelseStatus" />
-			<xs:element name="opprettetDato" type="xs:dateTime" />
+			<xs:element name="henvendelseType" type="xs:string">
+				<xs:annotation><xs:documentation>henvendelseType-enum definerer de kjente typene ved genereringstidspunktet</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="hovedskjemaKodeverkId" type="xs:string" />
+			<xs:element name="henvendelseStatus" type="xs:string">
+				<xs:annotation><xs:documentation>henvendelseStatus-enum definerer de kjente typene ved genereringstidspunktet</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="opprettetDato" type="xs:dateTime" />
 			<xs:element name="ettersending" type="xs:boolean" />
+			<xs:element name="innsendt" type="xs:boolean" />
 			<xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0" />
 			<xs:element name="dokumentforventninger" minOccurs="0">
 				<xs:complexType>
@@ -26,7 +31,9 @@
 		<xs:sequence>
 			<xs:element name="kodeverkId" type="xs:string" />
 			<xs:element name="egendefinertTittel" type="xs:string" minOccurs="0" />
-			<xs:element name="innsendingsvalg" type="tns:innsendingsvalg" />
+			<xs:element name="innsendingsvalg" type="tns:innsendingsvalg">
+				<xs:annotation><xs:documentation>innsendingsvalg-enum definerer de kjente typene ved genereringstidspunktet</xs:documentation></xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 
