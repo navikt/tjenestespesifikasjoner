@@ -9,34 +9,38 @@
 			<xs:element name="henvendelseType" type="tns:henvendelseType" />
 			<xs:element name="henvendelseStatus" type="tns:henvendelseStatus" />
 			<xs:element name="opprettetDato" type="xs:dateTime" />
-			<xs:element ref="tns:soknadsdata" minOccurs="0" />
+			<xs:element name="hovedskjemaKodeverkId" type="xs:string" />
+			<xs:element name="ettersending" type="xs:boolean" />
+			<xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0" />
+			<xs:element name="dokumentforventninger" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="dokumentforventning" type="tns:dokumentforventning" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-
-	<xs:element name="soknadsdata">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="hovedskjemaKodeverkId" type="xs:string" />
-				<xs:element name="ettersending" type="xs:boolean" />
-				<xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0" />
-				<xs:element name="dokumentforventninger" minOccurs="0">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="dokumentforventning" type="tns:dokumentforventning" minOccurs="0" maxOccurs="unbounded" />
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
 
 	<xs:complexType name="dokumentforventning">
 		<xs:sequence>
 			<xs:element name="kodeverkId" type="xs:string" />
 			<xs:element name="egendefinertTittel" type="xs:string" minOccurs="0" />
-			<xs:element name="innsendt" type="xs:boolean" />
+			<xs:element name="innsendingsvalg" type="tns:innsendingsvalg" />
 		</xs:sequence>
 	</xs:complexType>
+
+	<xs:simpleType name="innsendingsvalg">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IKKE_VALGT" />
+			<xs:enumeration value="SEND_SENERE" />
+			<xs:enumeration value="LASTET_OPP" />
+			<xs:enumeration value="SEND_I_POST" />
+			<xs:enumeration value="SENDES_AV_ANDRE" />
+			<xs:enumeration value="SENDES_IKKE" />
+			<xs:enumeration value="INNSENDT" />
+		</xs:restriction>
+	</xs:simpleType>
 
 	<xs:simpleType name="henvendelseStatus">
 		<xs:restriction base="xs:string">
