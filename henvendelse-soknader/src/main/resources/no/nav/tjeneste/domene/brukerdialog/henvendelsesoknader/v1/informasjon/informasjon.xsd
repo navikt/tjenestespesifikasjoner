@@ -35,8 +35,6 @@
 			<xs:enumeration value="IKKE_VALGT" />
 			<xs:enumeration value="SEND_SENERE" />
 			<xs:enumeration value="LASTET_OPP" />
-			<xs:enumeration value="SEND_I_POST" />
-			<xs:enumeration value="SENDES_AV_ANDRE" />
 			<xs:enumeration value="SENDES_IKKE" />
 			<xs:enumeration value="INNSENDT" />
 		</xs:restriction>
