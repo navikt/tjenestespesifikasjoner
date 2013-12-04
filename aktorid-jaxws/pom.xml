@@ -10,7 +10,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>aktorid-jaxws</artifactId>
     <packaging>jar</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <build>
         <plugins>
