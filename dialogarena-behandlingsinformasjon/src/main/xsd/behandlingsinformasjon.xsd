@@ -14,8 +14,7 @@
 				<xs:element name="henvendelseType" type="xs:string" minOccurs="0" />
 				<xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0" />
 				<xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0" />
-				<xs:element name="anvendteFakta" type="tns:faktumListe" minOccurs="0" />
-				<xs:element name="produserteFakta" type="tns:faktumListe" minOccurs="0" />
+				<xs:element name="metadata" type="tns:metadataListe" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -29,34 +28,28 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="fakta">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="anvendteFakta" type="tns:faktumListe" minOccurs="0" />
-				<xs:element name="produserteFakta" type="tns:faktumListe" minOccurs="0" />
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-
-	<xs:complexType name="faktumListe">
+	<xs:complexType name="metadataListe">
 		<xs:sequence>
-			<xs:element name="faktum" type="tns:faktum" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="metadata" type="tns:metadata" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="faktum">
+	<xs:complexType name="metadata">
 		<xs:sequence>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="vedlegg">
 		<xs:complexContent>
-			<xs:extension base="tns:faktum">
+			<xs:extension base="tns:metadata">
 				<xs:sequence>
 					<xs:element name="innsendingsvalg" type="xs:string" />
 					<xs:element name="skjemanummer" type="xs:string" />
 					<xs:element name="uuid" type="xs:string" minOccurs="0" />
 					<xs:element name="filnavn" type="xs:string" minOccurs="0" />
+					<xs:element name="mimetype" type="xs:string" minOccurs="0" />
+					<xs:element name="filstorrelse" type="xs:string" minOccurs="0" />
+					<xs:element name="sideantall" type="xs:int" minOccurs="0" />
 					<xs:element name="arkivreferanse" type="xs:string" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
@@ -67,7 +60,7 @@
 		<xs:complexContent>
 			<xs:extension base="tns:vedlegg">
 				<xs:sequence>
-					<xs:element name="journalforendeEnhet" type="xs:string" />
+					<xs:element name="journalforendeEnhet" type="xs:string" minOccurs="0" />
 					<xs:element name="journalpostId" type="xs:string" minOccurs="0" />
 					<xs:element name="journalfortDato" type="xs:dateTime" minOccurs="0" />
 				</xs:sequence>
@@ -75,49 +68,10 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:complexType name="melding">
-		<xs:complexContent>
-			<xs:extension base="tns:faktum">
-				<xs:sequence>
-					<xs:element name="behandlingsId" type="xs:string" />
-					<xs:element name="aktor" type="tns:aktor" />
-					<xs:element name="meldingstekst" type="xs:string" />
-					<xs:element name="traad" type="xs:string" />
-					<xs:element name="temastruktur" type="xs:string" />
-					<xs:element name="opprettetDato" type="xs:dateTime" />
-					<xs:element name="meldingsType" type="xs:string" />
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
-	<xs:complexType name="soknadfaktum">
-		<xs:complexContent>
-			<xs:extension base="tns:faktum">
-				<xs:sequence>
-					<xs:element name="nokkel" type="xs:string" />
-					<xs:element name="verdi" type="xs:string" />
-					<xs:element name="type" type="xs:string" />
-					<xs:element name="sistendret" type="xs:dateTime"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
-
-	<xs:element name="startBehandling">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="type" type="xs:string" />
-				<xs:element ref="tns:behandlingsinformasjon" />
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-
 	<xs:element name="oppdaterMetadata">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="nyeFakta" type="tns:faktumListe" minOccurs="0" />
+				<xs:element name="nyeFakta" type="tns:metadataListe" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
