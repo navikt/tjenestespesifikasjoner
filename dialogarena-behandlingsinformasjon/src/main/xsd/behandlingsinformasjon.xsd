@@ -87,4 +87,13 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="innsendingsvalg">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LASTET_OPP"/>
+            <xs:enumeration value="SEND_SENERE"/>
+            <xs:enumeration value="SENDES_IKKE"/>
+            <xs:enumeration value="IKKE_VALGT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 </xs:schema>
