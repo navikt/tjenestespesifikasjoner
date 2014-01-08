@@ -6,14 +6,14 @@
         <xs:sequence>
         	<xs:element name="fodselsnummer" type="xs:string"/>
             <xs:element name="type" type="xs:string"/>
-            <xs:any/>
+            <xs:any processContents="lax"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="soknadsdata">
         <xs:sequence>
             <xs:element name="behandlingsId" type="xs:string"/>
-            <xs:any/>
+            <xs:any processContents="lax"/>
         </xs:sequence>
     </xs:complexType>
 
