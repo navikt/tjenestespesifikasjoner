@@ -14,11 +14,14 @@
 
             <xs:element name="lagre" type="meldinger:vedlegg"/>
             <xs:element name="lagreResponse" type="meldinger:empty"/>
-			<xs:element name="hent" type="meldinger:vedleggsinfo"/>
-            <xs:element name="hentResponse" type="meldinger:vedlegg"/>
-            <xs:element name="slett" type="meldinger:vedleggsinfo"/>
+			<xs:element name="hent" type="meldinger:uuid"/>
+            <xs:element name="hentResponse" type="meldinger:innhold"/>
+            <xs:element name="slett" type="meldinger:uuid"/>
             <xs:element name="slettResponse" type="meldinger:empty"/>
-
+            <xs:element name="hentAlle" type="meldinger:behandlingsId"/>
+            <xs:element name="hentAlleResponse" type="meldinger:vedleggListe"/>
+            <xs:element name="slettAlle" type="meldinger:behandlingsId"/>
+            <xs:element name="slettAlleResponse" type="meldinger:empty"/>
             <xs:element name="ping" type="meldinger:empty"/>
             <xs:element name="pingResponse" type="meldinger:empty"/>
         </xs:schema>
@@ -42,6 +45,18 @@
     <wsdl:message name="slettResponse">
         <wsdl:part element="tns:slettResponse" name="parameters" />
     </wsdl:message>
+    <wsdl:message name="hentAlleRequest">
+        <wsdl:part element="tns:hentAlle" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="hentAlleResponse">
+        <wsdl:part element="tns:hentAlleResponse" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="slettAlleRequest">
+        <wsdl:part element="tns:slettAlle" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="slettAlleResponse">
+        <wsdl:part element="tns:slettAlleResponse" name="parameters" />
+    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters" />
     </wsdl:message>
@@ -61,6 +76,14 @@
 		<wsdl:operation name="slett">
             <wsdl:input message="tns:slettRequest" name="slettRequest" />
             <wsdl:output message="tns:slettResponse" name="slettResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="hentAlle">
+            <wsdl:input message="tns:hentAlleRequest" name="hentAlleRequest" />
+            <wsdl:output message="tns:hentAlleResponse" name="hentAlleResponse" />
+        </wsdl:operation>
+		<wsdl:operation name="slettAlle">
+            <wsdl:input message="tns:slettAlleRequest" name="slettAlleRequest" />
+            <wsdl:output message="tns:slettAlleResponse" name="slettAlleResponse" />
         </wsdl:operation>
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest" />
@@ -94,6 +117,24 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="slettResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentAlle">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentAlleRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentAlleResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="slettAlle">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="slettAlleRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="slettAlleResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>

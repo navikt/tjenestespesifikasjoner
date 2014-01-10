@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1/meldinger"
+           xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1/meldinger"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
 
     <xs:complexType name="empty" />
 
-    <xs:complexType name="vedleggsinfo">
+    <xs:complexType name="behandlingsId">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="uuid">
         <xs:sequence>
             <xs:element name="uuid" type="xs:string"/>
         </xs:sequence>
@@ -13,8 +19,22 @@
 
     <xs:complexType name="vedlegg">
         <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
             <xs:element name="uuid" type="xs:string"/>
-            <xs:element name="innhold" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream" />
+            <xs:element name="innhold" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vedleggListe">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="innhold" type="meldinger:innhold"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="innhold">
+        <xs:sequence>
+            <xs:element name="uuid" type="xs:string"/>
+            <xs:element name="innhold" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
         </xs:sequence>
     </xs:complexType>
 
