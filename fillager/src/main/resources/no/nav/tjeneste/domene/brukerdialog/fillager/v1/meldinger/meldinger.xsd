@@ -19,8 +19,9 @@
 
     <xs:complexType name="vedlegg">
         <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="behandlingsId" type="xs:string" minOccurs="0"/>
             <xs:element name="uuid" type="xs:string"/>
+            <xs:element name="fnr" type="xs:string"/>
             <xs:element name="innhold" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
         </xs:sequence>
     </xs:complexType>
