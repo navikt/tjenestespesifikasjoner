@@ -83,6 +83,7 @@
                                     </bindingFiles>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
+                                        <extraarg>-xjc-Xequals</extraarg>
                                     </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
