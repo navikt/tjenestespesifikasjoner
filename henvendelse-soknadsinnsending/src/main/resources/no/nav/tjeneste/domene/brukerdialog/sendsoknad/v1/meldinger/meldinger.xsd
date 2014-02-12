@@ -10,6 +10,23 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="hentSoknadResponse">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="behandlingskjedeId" type="xs:string" minOccurs="0"/>
+            <xs:element name="opprettetDato" type="xs:dateTime"/>
+            <xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="sistEndretDato" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="status" type="xs:string">
+                <xs:annotation><xs:documentation>status-enum definerer de kjente statusene ved genereringstidspunktet</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element name="type" type="xs:string">
+                <xs:annotation><xs:documentation>type-enum definerer de kjente typene ved genereringstidspunktet</xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:any processContents="lax"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="soknadsdata">
         <xs:sequence>
             <xs:element name="behandlingsId" type="xs:string"/>
@@ -24,5 +41,22 @@
     </xs:complexType>
 
     <xs:complexType name="empty" />
+
+    <xs:simpleType name="type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DOKUMENTINNSENDING"/>
+            <xs:enumeration value="DOKUMENTINNSENDING_ETTERSENDING"/>
+            <xs:enumeration value="SEND_SOKNAD"/>
+            <xs:enumeration value="SEND_SOKNAD_ETTERSENDING"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UNDER_ARBEID"/>
+            <xs:enumeration value="FERDIG"/>
+            <xs:enumeration value="AVBRUTT_AV_BRUKER"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>

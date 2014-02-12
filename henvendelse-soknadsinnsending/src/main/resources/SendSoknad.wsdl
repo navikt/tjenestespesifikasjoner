@@ -19,7 +19,7 @@
             <xs:element name="mellomlagreSoknad" type="meldinger:soknadsdata"/>
             <xs:element name="mellomlagreSoknadResponse" type="meldinger:empty"/>
             <xs:element name="hentSoknad" type="meldinger:behandlingsId"/>
-            <xs:element name="hentSoknadResponse" type="meldinger:soknadsdata"/>
+            <xs:element name="hentSoknadResponse" type="meldinger:hentSoknadResponse"/>
             <xs:element name="avbrytSoknad" type="meldinger:behandlingsId"/>
             <xs:element name="avbrytSoknadResponse" type="meldinger:empty"/>
 
