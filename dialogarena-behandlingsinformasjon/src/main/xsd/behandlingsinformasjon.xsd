@@ -53,6 +53,7 @@
                     <xs:element name="filstorrelse" type="xs:string" minOccurs="0"/>
                     <xs:element name="sideantall" type="xs:int" minOccurs="0"/>
                     <xs:element name="arkivreferanse" type="xs:string" minOccurs="0"/>
+                    <xs:element name="tilleggsinfo" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
