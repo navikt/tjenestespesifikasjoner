@@ -22,6 +22,8 @@
             <xs:element name="hentSoknadResponse" type="meldinger:hentSoknadResponse"/>
             <xs:element name="avbrytSoknad" type="meldinger:behandlingsId"/>
             <xs:element name="avbrytSoknadResponse" type="meldinger:empty"/>
+            <xs:element name="hentSisteBehandlingIBehandlingsKjede" type="meldinger:behandlingsId"/>
+            <xs:element name="hentSisteBehandlingIBehandlingsKjedeResponse" type="meldinger:hentSoknadResponse"/>
 
             <xs:element name="ping" type="meldinger:empty"/>
             <xs:element name="pingResponse" type="meldinger:empty"/>
@@ -58,6 +60,10 @@
     </wsdl:message>
     <wsdl:message name="hentSoknadResponse">
         <wsdl:part element="tns:hentSoknadResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentSisteBehandlingIBehandlingsKjedeRequest">
+        <wsdl:part element="tns:hentSisteBehandlingIBehandlingsKjede" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="avbrytSoknadRequest">
@@ -102,6 +108,12 @@
             <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="hentSisteBehandlingIBehandlingsKjede">
+            <wsdl:input message="tns:hentSisteBehandlingIBehandlingsKjedeRequest" name="hentSisteBehandlingIBehandlingsKjedeRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
+            </wsdl:output>
+        </wsdl:operation>
         <wsdl:operation name="avbrytSoknad">
             <wsdl:input message="tns:avbrytSoknadRequest" name="avbrytSoknadRequest">
             </wsdl:input>
@@ -139,6 +151,15 @@
 		<wsdl:operation name="hentSoknad">
             <soap:operation soapAction="" style="document"/>
             <wsdl:input name="hentSoknadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentSoknadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentSisteBehandlingIBehandlingsKjede">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentSisteBehandlingIBehandlingsKjedeRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="hentSoknadResponse">
