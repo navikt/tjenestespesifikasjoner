@@ -11,9 +11,19 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="behandlingskjedeElement">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="status" type="xs:string">
+                <xs:annotation><xs:documentation>status-enum definerer de kjente statusene ved genereringstidspunktet</xs:documentation></xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="hentBehandlingskjedeResponse">
         <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="1" name="behandlingskjedeId" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="behandlingskjedeElementer" type="tns:behandlingskjedeElement"/>
         </xs:sequence>
     </xs:complexType>
 
