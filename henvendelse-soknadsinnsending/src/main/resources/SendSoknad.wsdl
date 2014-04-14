@@ -166,7 +166,7 @@
             <wsdl:input name="hentBehandlingskjedeRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="hentSoknadResponse">
+            <wsdl:output name="hentBehandlingskjedeResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
