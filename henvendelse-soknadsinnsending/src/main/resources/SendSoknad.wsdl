@@ -22,8 +22,8 @@
             <xs:element name="hentSoknadResponse" type="meldinger:hentSoknadResponse"/>
             <xs:element name="avbrytSoknad" type="meldinger:behandlingsId"/>
             <xs:element name="avbrytSoknadResponse" type="meldinger:empty"/>
-            <xs:element name="hentSisteBehandlingIBehandlingsKjede" type="meldinger:behandlingsId"/>
-            <xs:element name="hentSisteBehandlingIBehandlingsKjedeResponse" type="meldinger:hentSoknadResponse"/>
+            <xs:element name="hentBehandlingskjede" type="meldinger:behandlingsId"/>
+            <xs:element name="hentBehandlingskjedeResponse" type="meldinger:hentBehandlingskjedeResponse"/>
 
             <xs:element name="ping" type="meldinger:empty"/>
             <xs:element name="pingResponse" type="meldinger:empty"/>
@@ -62,8 +62,8 @@
         <wsdl:part element="tns:hentSoknadResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="hentSisteBehandlingIBehandlingsKjedeRequest">
-        <wsdl:part element="tns:hentSisteBehandlingIBehandlingsKjede" name="parameters">
+    <wsdl:message name="hentBehandlingskjedeRequest">
+        <wsdl:part element="tns:hentBehandlingskjede" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="avbrytSoknadRequest">
@@ -108,8 +108,8 @@
             <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="hentSisteBehandlingIBehandlingsKjede">
-            <wsdl:input message="tns:hentSisteBehandlingIBehandlingsKjedeRequest" name="hentSisteBehandlingIBehandlingsKjedeRequest">
+        <wsdl:operation name="hentBehandlingskjede">
+            <wsdl:input message="tns:hentBehandlingskjedeRequest" name="hentBehandlingskjedeRequest">
             </wsdl:input>
             <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
             </wsdl:output>
@@ -157,9 +157,9 @@
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="hentSisteBehandlingIBehandlingsKjede">
+        <wsdl:operation name="hentBehandlingskjede">
             <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="hentSisteBehandlingIBehandlingsKjedeRequest">
+            <wsdl:input name="hentBehandlingskjedeRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="hentSoknadResponse">

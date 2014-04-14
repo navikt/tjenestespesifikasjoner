@@ -10,6 +10,12 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="hentBehandlingskjedeResponse">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="behandlingskjedeId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="hentSoknadResponse">
         <xs:sequence>
             <xs:element name="behandlingsId" type="xs:string"/>
