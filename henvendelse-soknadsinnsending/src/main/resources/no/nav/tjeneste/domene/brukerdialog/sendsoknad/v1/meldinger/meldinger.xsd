@@ -6,6 +6,7 @@
         <xs:sequence>
         	<xs:element name="fodselsnummer" type="xs:string"/>
             <xs:element name="type" type="xs:string"/>
+            <xs:element name="behandlingskjedeId" type="xs:string" minOccurs="0"/>
             <xs:any processContents="lax"/>
         </xs:sequence>
     </xs:complexType>
