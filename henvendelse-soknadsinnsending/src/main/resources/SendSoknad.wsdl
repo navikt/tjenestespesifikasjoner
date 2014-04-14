@@ -58,6 +58,10 @@
         <wsdl:part element="tns:hentSoknad" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="hentBehandlingskjedeResponse">
+        <wsdl:part element="tns:hentBehandlingskjedeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
     <wsdl:message name="hentSoknadResponse">
         <wsdl:part element="tns:hentSoknadResponse" name="parameters">
         </wsdl:part>
@@ -111,7 +115,7 @@
         <wsdl:operation name="hentBehandlingskjede">
             <wsdl:input message="tns:hentBehandlingskjedeRequest" name="hentBehandlingskjedeRequest">
             </wsdl:input>
-            <wsdl:output message="tns:hentSoknadResponse" name="hentSoknadResponse">
+            <wsdl:output message="tns:hentBehandlingskjedeResponse" name="hentBehandlingskjedeResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="avbrytSoknad">
