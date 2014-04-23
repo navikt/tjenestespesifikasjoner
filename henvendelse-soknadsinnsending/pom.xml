@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sendsoknad-tjenestespesifikasjon</artifactId>
-	<version>0.0.22-SNAPSHOT</version>
+	<version>0.0.22</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -109,7 +109,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>sendsoknad-tjenestespesifikasjon-0.0.22</tag>
     </scm>
 
 </project>
