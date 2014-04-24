@@ -24,7 +24,6 @@
             <xs:element name="avbrytSoknadResponse" type="meldinger:empty"/>
             <xs:element name="hentBehandlingskjede" type="meldinger:behandlingsId"/>
             <xs:element name="hentBehandlingskjedeResponse" type="meldinger:hentBehandlingskjedeResponse"/>
-            <xs:element name="behandlingskjedeElement" type="meldinger:behandlingskjedeElement"/>
 
             <xs:element name="ping" type="meldinger:empty"/>
             <xs:element name="pingResponse" type="meldinger:empty"/>
