@@ -58,16 +58,16 @@
         <wsdl:part element="tns:hentSoknad" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="hentBehandlingskjedeResponse">
-        <wsdl:part element="tns:hentBehandlingskjedeResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
     <wsdl:message name="hentSoknadResponse">
         <wsdl:part element="tns:hentSoknadResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="hentBehandlingskjedeRequest">
         <wsdl:part element="tns:hentBehandlingskjede" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentBehandlingskjedeResponse">
+        <wsdl:part element="tns:hentBehandlingskjedeResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="avbrytSoknadRequest">
