@@ -47,6 +47,7 @@
                 <xs:sequence>
                     <xs:element name="innsendingsvalg" type="xs:string"/>
                     <xs:element name="skjemanummer" type="xs:string" minOccurs="0"/>
+                    <xs:element name="skjemanummerTillegg" type="xs:string" minOccurs="0"/>
                     <xs:element name="uuid" type="xs:string" minOccurs="0"/>
                     <xs:element name="filnavn" type="xs:string" minOccurs="0"/>
                     <xs:element name="mimetype" type="xs:string" minOccurs="0"/>
