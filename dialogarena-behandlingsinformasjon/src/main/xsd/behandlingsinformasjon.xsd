@@ -106,6 +106,8 @@
             <xs:enumeration value="LASTET_OPP"/>
             <xs:enumeration value="SEND_SENERE"/>
             <xs:enumeration value="SENDES_IKKE"/>
+            <xs:enumeration value="VEDLEGG_SENDES_IKKE"/>
+            <xs:enumeration value="VEDLEGG_SENDES_AV_ANDRE"/>
             <xs:enumeration value="IKKE_VALGT"/>
         </xs:restriction>
     </xs:simpleType>
