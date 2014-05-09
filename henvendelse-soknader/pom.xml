@@ -7,7 +7,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>henvendelse-soknader-tjenestespesifikasjon</artifactId>
-	<version>0.0.17-SNAPSHOT</version>
+	<version>0.0.17</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -106,7 +106,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>henvendelse-soknader-tjenestespesifikasjon-0.0.17</tag>
     </scm>
 
 </project>
