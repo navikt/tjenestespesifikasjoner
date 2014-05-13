@@ -60,18 +60,6 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="melding">
-        <xs:complexContent>
-            <xs:extension base="tns:metadata">
-                <xs:sequence>
-                    <xs:element name="traad" type="xs:string"/>
-                    <xs:element name="fritekst" type="xs:string"/>
-                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
     <xs:complexType name="hovedskjema">
         <xs:complexContent>
             <xs:extension base="tns:vedlegg">
