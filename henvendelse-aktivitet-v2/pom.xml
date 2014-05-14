@@ -3,7 +3,7 @@
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>dialogarena</artifactId>
-        <version>1.5.2</version>
+        <version>3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>henvendelse-aktivitet-v2</artifactId>
@@ -15,7 +15,7 @@
     </properties>
 
     <build>
-        <resources>cd 
+        <resources>
             <resource>
                 <directory>src/main/resources</directory>
             </resource>
