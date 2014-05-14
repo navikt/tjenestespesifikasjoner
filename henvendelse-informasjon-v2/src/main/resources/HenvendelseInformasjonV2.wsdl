@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  name="SendSoknadService"
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2">
+    <wsdl:types>
+        <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2"
+                   elementFormDefault="unqualified"
+                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2"
+                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger/meldinger.xsd"/>
+
+            <xs:element name="hentHenvendelseListe" type="meldinger:hentHenvendelseListeRequest"/>
+            <xs:element name="hentHenvendelseListeResponse" type="meldinger:hentHenvendelseListeResponse"/>
+            <xs:element name="hentHenvendelse" type="meldinger:hentHenvendelseRequest"/>
+            <xs:element name="hentHenvendelseResponse" type="meldinger:hentHenvendelseResponse"/>
+            <xs:element name="ping" type="meldinger:pingRequest"/>
+            <xs:element name="pingResponse" type="meldinger:pingResponse"/>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="hentHenvendelseListeRequest">
+        <wsdl:part element="tns:hentHenvendelseListe" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentHenvendelseListeResponse">
+        <wsdl:part element="tns:hentHenvendelseListeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentHenvendelseRequest">
+        <wsdl:part element="tns:hentHenvendelse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentHenvendelseResponse">
+        <wsdl:part element="tns:hentHenvendelseResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pingRequest">
+        <wsdl:part element="tns:ping" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pingResponse">
+        <wsdl:part element="tns:pingResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+
+    <wsdl:portType name="HenvendelseInformasjonV2PortType">
+        <wsdl:operation name="hentHenvendelseListe">
+            <wsdl:input message="tns:hentHenvendelseListeRequest" name="hentHenvendelseListeRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentHenvendelseListeResponse" name="hentHenvendelseListeResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentHenvendelse">
+            <wsdl:input message="tns:hentHenvendelseRequest" name="hentHenvendelseRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentHenvendelseResponse" name="hentHenvendelseResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ping">
+            <wsdl:input message="tns:pingRequest" name="pingRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:pingResponse" name="pingResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="HenvendelseInformasjonV2Binding" type="tns:HenvendelseInformasjonV2PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="hentHenvendelseListe">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentHenvendelseListeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentHenvendelseListeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentHenvendelse">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentHenvendelseRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentHenvendelseResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ping">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="pingRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="pingResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="HenvendelseInformasjonV2Service">
+        <wsdl:port binding="tns:HenvendelseInformasjonV2Binding" name="HenvendelseInformasjonV2Port">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/HenvendelseInformasjonService_v2"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

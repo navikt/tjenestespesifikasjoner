@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
+
+    <xs:complexType name="hentHenvendelseListeRequest">
+        <xs:sequence>
+        	<xs:element name="fodselsnummer" type="xs:string"/>
+            <xs:element name="typer" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="hentHenvendelseListeResponse">
+        <xs:sequence>
+            <xs:any processContents="lax" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="hentHenvendelseRequest">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="hentHenvendelseResponse">
+        <xs:sequence>
+            <xs:any processContents="lax"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pingRequest"/>
+
+    <xs:complexType name="pingResponse"/>
+
+    <xs:simpleType name="type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DOKUMENTINNSENDING"/>
+            <xs:enumeration value="DOKUMENTINNSENDING_ETTERSENDING"/>
+            <xs:enumeration value="SEND_SOKNAD"/>
+            <xs:enumeration value="SEND_SOKNAD_ETTERSENDING"/>
+            <xs:enumeration value="SPORSMAL"/>
+            <xs:enumeration value="SVAR"/>
+            <xs:enumeration value="REFERAT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
