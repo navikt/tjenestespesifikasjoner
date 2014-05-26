@@ -16,9 +16,11 @@
             <xs:element name="lagreResponse" type="meldinger:empty"/>
 			<xs:element name="hent" type="meldinger:uuid"/>
             <xs:element name="hentResponse" type="meldinger:innhold"/>
+            <xs:element name="hentForAktoer" type="meldinger:uuidOgAktorId"/>
+            <xs:element name="hentForAktoerResponse" type="meldinger:innhold"/>
             <xs:element name="slett" type="meldinger:uuid"/>
             <xs:element name="slettResponse" type="meldinger:empty"/>
-            <xs:element name="slettForAktoer" type="meldinger:slettData"/>
+            <xs:element name="slettForAktoer" type="meldinger:uuidOgAktorId"/>
             <xs:element name="slettForAktoerResponse" type="meldinger:empty"/>
             <xs:element name="hentAlle" type="meldinger:behandlingsId"/>
             <xs:element name="hentAlleResponse" type="meldinger:vedleggListe"/>
@@ -40,6 +42,12 @@
     </wsdl:message>
     <wsdl:message name="hentResponse">
         <wsdl:part element="tns:hentResponse" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="hentForAktoerRequest">
+        <wsdl:part element="tns:hentForAktoer" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="hentForAktoerResponse">
+        <wsdl:part element="tns:hentForAktoerResponse" name="parameters" />
     </wsdl:message>
     <wsdl:message name="slettRequest">
         <wsdl:part element="tns:slett" name="parameters" />
@@ -81,6 +89,10 @@
             <wsdl:input message="tns:hentRequest" name="hentRequest" />
             <wsdl:output message="tns:hentResponse" name="hentResponse" />
         </wsdl:operation>
+        <wsdl:operation name="hentForAktoer">
+            <wsdl:input message="tns:hentForAktoerRequest" name="hentForAktoerRequest" />
+            <wsdl:output message="tns:hentForAktoerResponse" name="hentForAktoerResponse" />
+        </wsdl:operation>
 		<wsdl:operation name="slett">
             <wsdl:input message="tns:slettRequest" name="slettRequest" />
             <wsdl:output message="tns:slettResponse" name="slettResponse" />
@@ -120,6 +132,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="hentResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentForAktoer">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="hentForAktoerRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="hentForAktoerResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>

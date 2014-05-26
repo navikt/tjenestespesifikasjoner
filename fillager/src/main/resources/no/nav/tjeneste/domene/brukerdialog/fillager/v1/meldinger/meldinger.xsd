@@ -18,7 +18,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="slettData">
+    <xs:complexType name="uuidOgAktorId">
         <xs:sequence>
             <xs:element name="uuid" type="xs:string"/>
             <xs:element name="aktorId" type="xs:string"/>
