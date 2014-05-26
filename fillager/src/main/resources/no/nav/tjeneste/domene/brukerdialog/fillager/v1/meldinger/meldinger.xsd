@@ -11,9 +11,17 @@
             <xs:element name="behandlingsId" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="uuid">
         <xs:sequence>
             <xs:element name="uuid" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="slettData">
+        <xs:sequence>
+            <xs:element name="uuid" type="xs:string"/>
+            <xs:element name="aktorId" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 

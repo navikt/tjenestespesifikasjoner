@@ -18,6 +18,8 @@
             <xs:element name="hentResponse" type="meldinger:innhold"/>
             <xs:element name="slett" type="meldinger:uuid"/>
             <xs:element name="slettResponse" type="meldinger:empty"/>
+            <xs:element name="slettForAktoer" type="meldinger:slettData"/>
+            <xs:element name="slettForAktoerResponse" type="meldinger:empty"/>
             <xs:element name="hentAlle" type="meldinger:behandlingsId"/>
             <xs:element name="hentAlleResponse" type="meldinger:vedleggListe"/>
             <xs:element name="slettAlle" type="meldinger:behandlingsId"/>
@@ -44,6 +46,12 @@
     </wsdl:message>
     <wsdl:message name="slettResponse">
         <wsdl:part element="tns:slettResponse" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="slettForAktoerRequest">
+        <wsdl:part element="tns:slettForAktoer" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="slettForAktoerResponse">
+        <wsdl:part element="tns:slettForAktoerResponse" name="parameters" />
     </wsdl:message>
     <wsdl:message name="hentAlleRequest">
         <wsdl:part element="tns:hentAlle" name="parameters" />
@@ -76,6 +84,10 @@
 		<wsdl:operation name="slett">
             <wsdl:input message="tns:slettRequest" name="slettRequest" />
             <wsdl:output message="tns:slettResponse" name="slettResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="slettForAktoer">
+            <wsdl:input message="tns:slettForAktoerRequest" name="slettForAktoerRequest" />
+            <wsdl:output message="tns:slettForAktoerResponse" name="slettForAktoerResponse" />
         </wsdl:operation>
         <wsdl:operation name="hentAlle">
             <wsdl:input message="tns:hentAlleRequest" name="hentAlleRequest" />
@@ -117,6 +129,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="slettResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="slettForAktoer">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="slettForAktoerRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="slettForAktoerResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
