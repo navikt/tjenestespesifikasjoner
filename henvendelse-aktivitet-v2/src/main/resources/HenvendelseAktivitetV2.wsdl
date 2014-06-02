@@ -18,6 +18,8 @@
             <xs:element name="sendHenvendelseResponse" type="meldinger:sendHenvendelseResponse"/>
             <xs:element name="ferdigstillHenvendelse" type="meldinger:ferdigstillHenvendelseRequest"/>
             <xs:element name="ferdigstillHenvendelseResponse" type="meldinger:ferdigstillHenvendelseResponse"/>
+            <xs:element name="oppdaterHenvendelse" type="meldinger:oppdaterHenvendelseRequest"/>
+            <xs:element name="oppdaterHenvendelseResponse" type="meldinger:oppdaterHenvendelseResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -47,6 +49,14 @@
         <wsdl:part element="tns:ferdigstillHenvendelseResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="oppdaterHenvendelseRequest">
+        <wsdl:part element="tns:oppdaterHenvendelse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterHenvendelseResponse">
+        <wsdl:part element="tns:oppdaterHenvendelseResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -73,6 +83,12 @@
             <wsdl:input message="tns:ferdigstillHenvendelseRequest" name="ferdigstillHenvendelseRequest">
             </wsdl:input>
             <wsdl:output message="tns:ferdigstillHenvendelseResponse" name="ferdigstillHenvendelseResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterHenvendelse">
+            <wsdl:input message="tns:oppdaterHenvendelseRequest" name="oppdaterHenvendelseRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterHenvendelseResponse" name="oppdaterHenvendelseResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -109,6 +125,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="ferdigstillHenvendelseResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterHenvendelse">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterHenvendelseRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterHenvendelseResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
