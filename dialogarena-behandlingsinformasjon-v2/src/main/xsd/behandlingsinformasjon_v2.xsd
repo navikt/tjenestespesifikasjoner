@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v2"
+           xmlns:tns2="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v2">
+    <xs:import namespace="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1" schemaLocation="behandlingsinformasjon_v2.xsd"/>
+
+    <xs:element name="behandlingsinformasjonV2">
+        <xs:complexContent>
+            <xs:extension base="tns:behandlingsinformasjon">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:element>
+
+    <xs:complexType name="aktor">
+        <xs:sequence>
+            <xs:element name="aktorId" type="xs:string" minOccurs="0"/>
+            <xs:element name="fodselsnummer" type="xs:string" minOccurs="0"/>
+            <xs:element name="navIdent" type="xs:string" minOccurs="0"/>
+            <xs:element name="ansvarligEnhet" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="sporsmal">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="svar">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="sporsmalsId" type="xs:string"/>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="referat">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="kanal" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="henvendelseType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DOKUMENTINNSENDING"/>
+            <xs:enumeration value="DOKUMENTINNSENDING_ETTERSENDING"/>
+            <xs:enumeration value="SEND_SOKNAD"/>
+            <xs:enumeration value="SEND_SOKNAD_ETTERSENDING"/>
+            <xs:enumeration value="SPORSMAL"/>
+            <xs:enumeration value="SVAR"/>
+            <xs:enumeration value="REFERAT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

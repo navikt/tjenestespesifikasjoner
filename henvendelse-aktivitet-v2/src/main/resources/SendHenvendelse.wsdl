@@ -1,23 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/sendhenvendelse"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   name="SendSoknadService"
-                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2">
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/sendhenvendelse">
     <wsdl:types>
-        <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2"
+        <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/sendhenvendelse"
                    elementFormDefault="unqualified"
-                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2"
-                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2/meldinger">
-            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2/meldinger/meldinger.xsd"/>
+                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/sendhenvendelse"
+                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger/meldinger.xsd"/>
 
-            <xs:element name="startHenvendelse" type="meldinger:startHenvendelseRequest"/>
-            <xs:element name="startHenvendelseResponse" type="meldinger:startHenvendelseResponse"/>
             <xs:element name="sendHenvendelse" type="meldinger:sendHenvendelseRequest"/>
             <xs:element name="sendHenvendelseResponse" type="meldinger:sendHenvendelseResponse"/>
-            <xs:element name="ferdigstillHenvendelse" type="meldinger:ferdigstillHenvendelseRequest"/>
-            <xs:element name="ferdigstillHenvendelseResponse" type="meldinger:ferdigstillHenvendelseResponse"/>
             <xs:element name="oppdaterHenvendelse" type="meldinger:oppdaterHenvendelseRequest"/>
             <xs:element name="oppdaterHenvendelseResponse" type="meldinger:oppdaterHenvendelseResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
@@ -25,28 +21,12 @@
         </xs:schema>
     </wsdl:types>
 
-    <wsdl:message name="startHenvendelseRequest">
-        <wsdl:part element="tns:startHenvendelse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="startHenvendelseResponse">
-        <wsdl:part element="tns:startHenvendelseResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
     <wsdl:message name="sendHenvendelseRequest">
         <wsdl:part element="tns:sendHenvendelse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="sendHenvendelseResponse">
         <wsdl:part element="tns:sendHenvendelseResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-	<wsdl:message name="ferdigstillHenvendelseRequest">
-        <wsdl:part element="tns:ferdigstillHenvendelse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="ferdigstillHenvendelseResponse">
-        <wsdl:part element="tns:ferdigstillHenvendelseResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="oppdaterHenvendelseRequest">
@@ -66,23 +46,11 @@
         </wsdl:part>
     </wsdl:message>
 
-    <wsdl:portType name="HenvendelseAktivitetV2PortType">
-        <wsdl:operation name="startHenvendelse">
-            <wsdl:input message="tns:startHenvendelseRequest" name="startHenvendelseRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:startHenvendelseResponse" name="startHenvendelseResponse">
-            </wsdl:output>
-        </wsdl:operation>
+    <wsdl:portType name="SendHenvendelsePortType">
         <wsdl:operation name="sendHenvendelse">
             <wsdl:input message="tns:sendHenvendelseRequest" name="sendHenvendelseRequest">
             </wsdl:input>
             <wsdl:output message="tns:sendHenvendelseResponse" name="sendHenvendelseResponse">
-            </wsdl:output>
-        </wsdl:operation>
-		<wsdl:operation name="ferdigstillHenvendelse">
-            <wsdl:input message="tns:ferdigstillHenvendelseRequest" name="ferdigstillHenvendelseRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:ferdigstillHenvendelseResponse" name="ferdigstillHenvendelseResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="oppdaterHenvendelse">
@@ -99,32 +67,14 @@
         </wsdl:operation>
     </wsdl:portType>
 
-    <wsdl:binding name="HenvendelseAktivitetV2Binding" type="tns:HenvendelseAktivitetV2PortType">
+    <wsdl:binding name="SendHenvendelseBinding" type="tns:SendHenvendelsePortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="startHenvendelse">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="startHenvendelseRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="startHenvendelseResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
         <wsdl:operation name="sendHenvendelse">
             <soap:operation soapAction="" style="document"/>
             <wsdl:input name="sendHenvendelseRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="sendHenvendelseResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="ferdigstillHenvendelse">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="ferdigstillHenvendelseRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="ferdigstillHenvendelseResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
@@ -147,9 +97,9 @@
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:service name="HenvendelseAktivitetV2Service">
-        <wsdl:port binding="tns:HenvendelseAktivitetV2Binding" name="HenvendelseAktivitetV2Port">
-            <soap:address location="http://localhost:8081/domene.Brukerdialog/HenvendelseAktivitetService_v2"/>
+    <wsdl:service name="SendHenvendelseService">
+        <wsdl:port binding="tns:SendHenvendelseBinding" name="SendHenvendelsePort">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/SendHenvendelseService_v2"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

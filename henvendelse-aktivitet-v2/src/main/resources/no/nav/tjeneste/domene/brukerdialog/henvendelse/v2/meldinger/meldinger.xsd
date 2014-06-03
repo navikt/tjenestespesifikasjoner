@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/aktivitet/v2/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
-
-    <xs:complexType name="startHenvendelseRequest">
-        <xs:sequence>
-        	<xs:element name="fodselsnummer" type="xs:string"/>
-            <xs:element name="type" type="xs:string"/>
-            <xs:any processContents="lax"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="startHenvendelseResponse">
-        <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
+<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
 
     <xs:complexType name="sendHenvendelseRequest">
         <xs:sequence>
@@ -30,15 +16,6 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="ferdigstillHenvendelseRequest">
-        <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
-            <xs:any processContents="lax"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="ferdigstillHenvendelseResponse"/>
-
     <xs:complexType name="oppdaterHenvendelseRequest">
         <xs:sequence>
             <xs:element name="behandlingsId" type="xs:string"/>
@@ -46,7 +23,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="oppdaterHenvendelseResponse"></xs:complexType>
+    <xs:complexType name="oppdaterHenvendelseResponse"/>
 
     <xs:complexType name="pingRequest"/>
 

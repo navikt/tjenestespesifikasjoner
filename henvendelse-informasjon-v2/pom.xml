@@ -40,7 +40,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/HenvendelseInformasjonV2.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/Henvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>

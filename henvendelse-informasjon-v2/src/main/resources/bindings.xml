@@ -2,7 +2,7 @@
 <jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
     jaxb:version="2.0">
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger/meldinger.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger/meldinger.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>

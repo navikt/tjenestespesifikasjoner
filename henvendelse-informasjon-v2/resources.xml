@@ -9,7 +9,7 @@
       		<outputDirectory>/</outputDirectory>
 			<directory>target/classes</directory>
 			<includes>
-				<include>**/HenvendelseInformasjonV2.wsdl</include>
+				<include>**/Henvendelse.wsdl</include>
 			</includes>
 		</fileSet>
 		<fileSet>

@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/henvendelse"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   name="SendSoknadService"
-                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2">
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/henvendelse">
     <wsdl:types>
-        <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2"
+        <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/henvendelse"
                    elementFormDefault="unqualified"
-                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2"
-                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger">
-            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger/meldinger.xsd"/>
+                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/henvendelse"
+                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger/meldinger.xsd"/>
 
             <xs:element name="hentHenvendelseListe" type="meldinger:hentHenvendelseListeRequest"/>
             <xs:element name="hentHenvendelseListeResponse" type="meldinger:hentHenvendelseListeResponse"/>
@@ -46,7 +46,7 @@
         </wsdl:part>
     </wsdl:message>
 
-    <wsdl:portType name="HenvendelseInformasjonV2PortType">
+    <wsdl:portType name="HenvendelsePortType">
         <wsdl:operation name="hentHenvendelseListe">
             <wsdl:input message="tns:hentHenvendelseListeRequest" name="hentHenvendelseListeRequest">
             </wsdl:input>
@@ -67,7 +67,7 @@
         </wsdl:operation>
     </wsdl:portType>
 
-    <wsdl:binding name="HenvendelseInformasjonV2Binding" type="tns:HenvendelseInformasjonV2PortType">
+    <wsdl:binding name="HenvendelseBinding" type="tns:HenvendelsePortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="hentHenvendelseListe">
             <soap:operation soapAction="" style="document"/>
@@ -97,9 +97,9 @@
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:service name="HenvendelseInformasjonV2Service">
-        <wsdl:port binding="tns:HenvendelseInformasjonV2Binding" name="HenvendelseInformasjonV2Port">
-            <soap:address location="http://localhost:8081/domene.Brukerdialog/HenvendelseInformasjonService_v2"/>
+    <wsdl:service name="HenvendelseService">
+        <wsdl:port binding="tns:HenvendelseBinding" name="HenvendelsePort">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/Henvendelse_v2"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

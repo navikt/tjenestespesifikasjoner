@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/informasjon/v2/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
+<xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v2/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
 
     <xs:complexType name="hentHenvendelseListeRequest">
         <xs:sequence>
