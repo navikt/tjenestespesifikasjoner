@@ -11,7 +11,7 @@
 
     <xs:complexType name="hentHenvendelseListeResponse">
         <xs:sequence>
-            <xs:any processContents="lax" maxOccurs="unbounded"/>
+            <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
