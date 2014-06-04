@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v2"
+           xmlns:tns="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v2">
+
+    <xs:element name="behandlingsinformasjonV2">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="behandlingsId" type="xs:string" minOccurs="0"/>
+                <xs:element name="behandlingskjedeId" type="xs:string" minOccurs="0"/>
+                <xs:element name="applikasjonsId" type="xs:string" minOccurs="0"/>
+                <xs:element name="aktor" type="tns:aktor" minOccurs="0"/>
+                <xs:element name="tema" type="xs:string" minOccurs="0"/>
+                <xs:element name="henvendelseType" type="xs:string" minOccurs="0"/>
+                <xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
+                <xs:element ref="tns:metadataListe" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="aktor">
+        <xs:sequence>
+            <xs:element name="aktorId" type="xs:string" minOccurs="0"/>
+            <xs:element name="fodselsnummer" type="xs:string" minOccurs="0"/>
+            <xs:element name="navIdent" type="xs:string" minOccurs="0"/>
+            <xs:element name="ansvarligEnhet" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="metadataListe">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="metadata" type="tns:metadata" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="metadata">
+        <xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vedlegg">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="innsendingsvalg" type="xs:string"/>
+                    <xs:element name="skjemanummer" type="xs:string" minOccurs="0"/>
+                    <xs:element name="skjemanummerTillegg" type="xs:string" minOccurs="0"/>
+                    <xs:element name="uuid" type="xs:string" minOccurs="0"/>
+                    <xs:element name="filnavn" type="xs:string" minOccurs="0"/>
+                    <xs:element name="mimetype" type="xs:string" minOccurs="0"/>
+                    <xs:element name="filstorrelse" type="xs:string" minOccurs="0"/>
+                    <xs:element name="sideantall" type="xs:int" minOccurs="0"/>
+                    <xs:element name="arkivreferanse" type="xs:string" minOccurs="0"/>
+                    <xs:element name="tilleggsinfo" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="hovedskjema">
+        <xs:complexContent>
+            <xs:extension base="tns:vedlegg">
+                <xs:sequence>
+                    <xs:element name="journalforendeEnhet" type="xs:string" minOccurs="0"/>
+                    <xs:element name="journalpostId" type="xs:string" minOccurs="0"/>
+                    <xs:element name="journalfortDato" type="xs:dateTime" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="sporsmal">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="svar">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="sporsmalsId" type="xs:string"/>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="referat">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="kanal" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="henvendelseType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DOKUMENTINNSENDING"/>
+            <xs:enumeration value="DOKUMENTINNSENDING_ETTERSENDING"/>
+            <xs:enumeration value="SEND_SOKNAD"/>
+            <xs:enumeration value="SEND_SOKNAD_ETTERSENDING"/>
+            <xs:enumeration value="SPORSMAL"/>
+            <xs:enumeration value="SVAR"/>
+            <xs:enumeration value="REFERAT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="innsendingsvalg">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LASTET_OPP"/>
+            <xs:enumeration value="SEND_SENERE"/>
+            <xs:enumeration value="SENDES_IKKE"/>
+            <xs:enumeration value="VEDLEGG_SENDES_IKKE"/>
+            <xs:enumeration value="VEDLEGG_SENDES_AV_ANDRE"/>
+            <xs:enumeration value="IKKE_VALGT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
