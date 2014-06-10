@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/arkiverUstrukturertKrav" version="2.0" xmlns:arkiverUstrukturertKrav="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/arkiverUstrukturertKrav" xmlns:behandleJournal="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/behandleJournal">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/behandleJournal" schemaLocation="../behandleJournal/behandleJournal.xsd"/>
+  <xsd:complexType name="JournalfoertDokumentInfo">
+    <xsd:complexContent>
+      <xsd:extension base="arkiverUstrukturertKrav:Dokumentbeskrivelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Dokumentbeskrivelse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="begrensetPartsInnsyn" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="tilleggsopplysninger" type="behandleJournal:NoekkelVerdiSett"/>
+      <xsd:element minOccurs="0" name="dokumentType" type="behandleJournal:Dokumenttyper"/>
+      <xsd:element maxOccurs="unbounded" name="beskriverInnhold" type="behandleJournal:DokumentInnhold"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Journalpost">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dokumentDato" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="journalfoerendeEnhetREF" type="behandleJournal:OrganisasjonsenhetID"/>
+      <xsd:element name="kanal" type="behandleJournal:Kommunikasjonskanaler"/>
+      <xsd:element name="mottattDato" type="xsd:dateTime"/>
+      <xsd:element name="signatur" type="behandleJournal:Signatur"/>
+      <xsd:element name="arkivtema" type="behandleJournal:Arkivtemaer"/>
+      <xsd:element maxOccurs="unbounded" name="forBruker" type="behandleJournal:Aktoer"/>
+      <xsd:element name="journalfoertDokument" type="arkiverUstrukturertKrav:JournalfoertDokumentInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

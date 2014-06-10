@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/behandleJournal" version="2.0" xmlns:behandleJournal="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/behandleJournal">
+  <xsd:complexType name="UstrukturertInnhold">
+    <xsd:complexContent>
+      <xsd:extension base="behandleJournal:DokumentInnhold">
+        <xsd:sequence>
+          <xsd:element name="innhold" type="xsd:base64Binary"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EksternPart">
+    <xsd:sequence>
+      <xsd:element name="eksternAktoer" type="behandleJournal:Aktoer"/>
+      <xsd:element name="navn" type="behandleJournal:Navn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Personnavn">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="sammensattNavn" type="behandleJournal:Navn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Kommunikasjonskanaler">
+    <xsd:annotation>
+      <xsd:documentation>elektronisk, scanning, fysisk oppmøte, brev, sms, e-post
+
+http://nav.no/kodeverk/Kodeverk/Kommunikasjonskanaler</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="behandleJournal:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Kommunikasjonskanaler" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Kodeverdi">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="kodeRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Signatur">
+    <xsd:sequence>
+      <xsd:element name="signert" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Organisasjonsidentifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Organisasjon">
+    <xsd:complexContent>
+      <xsd:extension base="behandleJournal:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="orgnummer" type="behandleJournal:Organisasjonsidentifikator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Personidenter">
+    <xsd:annotation>
+      <xsd:documentation>Tillatte typer identer, f.eks. fødselsnummer, D-nummer, ...
+http://nav.no/kodeverk/Kodeverk/Personidenter</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="behandleJournal:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Personidenter" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Kryssreferanse">
+    <xsd:sequence>
+      <xsd:element name="referanseId" type="behandleJournal:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Referanse (intern eller ekstern)&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="referansekode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Definerer type referanse&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType abstract="true" name="Aktoer"/>
+  <xsd:simpleType name="KodeverkID">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="NorskIdent">
+    <xsd:sequence>
+      <xsd:element name="ident" type="behandleJournal:Identifikator"/>
+      <xsd:element name="type" type="behandleJournal:Personidenter"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Dokumenttyper">
+    <xsd:annotation>
+      <xsd:documentation>Ifm arkivdokumenter
+vedtakspakke, kravdialog, faktainnsamling, sjekkliste, varsel, melding, utgående brev, kravdokument
+
+http://nav.no/kodeverk/Kodeverk/Dokumenttyper</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="behandleJournal:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Dokumenttyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Person">
+    <xsd:complexContent>
+      <xsd:extension base="behandleJournal:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="ident" type="behandleJournal:NorskIdent"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoekkelVerdiPar">
+    <xsd:sequence>
+      <xsd:element name="noekkel" type="behandleJournal:Identifikator"/>
+      <xsd:element name="verdi" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="SakID">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="JournalpostID">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Sak">
+    <xsd:sequence>
+      <xsd:element name="saksId" type="behandleJournal:SakID"/>
+      <xsd:element name="fagsystemkode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Fagsystem IDer i henhold Arkiv sine identifikatorer for fagsystemene&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DokumentInnhold">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="filnavn" type="behandleJournal:Navn"/>
+      <xsd:element name="filtype" type="behandleJournal:Arkivfiltyper"/>
+      <xsd:element name="variantformat" type="behandleJournal:Variantformater"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Navn">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="NoekkelVerdiSett">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="inneholderNoekkelVerdiPar" type="behandleJournal:NoekkelVerdiPar"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Arkivfiltyper">
+    <xsd:annotation>
+      <xsd:documentation>Feks. XML, RTF, AFP, PDF
+
+http://nav.no/kodeverk/Kodeverk/Arkivfiltyper</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="behandleJournal:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Arkivfiltyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Variantformater">
+    <xsd:annotation>
+      <xsd:documentation>Brukes ifm dokumentinnhold i arkivdokumenter
+			
+http://nav.no/kodeverk/Kodeverk/Variantformater</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="behandleJournal:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Variantformater" name="kodeverksRef" type="xsd:anySimpleType"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Journaldistribusjon">
+    <xsd:sequence>
+      <xsd:element name="sendtPrintDato" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="OrganisasjonsenhetID">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="StrukturertInnhold">
+    <xsd:complexContent>
+      <xsd:extension base="behandleJournal:DokumentInnhold">
+        <xsd:sequence>
+          <xsd:element name="innhold" type="xsd:base64Binary"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Arkivtemaer">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Arkivtemaer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="behandleJournal:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Arkivtemaer" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

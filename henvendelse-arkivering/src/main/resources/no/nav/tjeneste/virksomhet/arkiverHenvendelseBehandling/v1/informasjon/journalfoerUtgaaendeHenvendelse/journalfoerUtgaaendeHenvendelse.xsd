@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/journalfoerUtgaaendeHenvendelse" version="2.0" xmlns:behandleJournal="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/behandleJournal" xmlns:journalfoerUtgaaendeHenvendelse="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/journalfoerUtgaaendeHenvendelse">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/informasjon/behandleJournal" schemaLocation="../behandleJournal/behandleJournal.xsd"/>
+  <xsd:complexType name="DokumentinfoRelasjon">
+    <xsd:sequence>
+      <xsd:element name="tillknyttetJournalpostSomKode" type="xsd:string"/>
+      <xsd:element name="journalfoertDokument" type="journalfoerUtgaaendeHenvendelse:JournalfoertDokumentInfo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Dokumentbeskrivelse">
+    <xsd:sequence>
+      <xsd:element name="begrensetPartsInnsyn" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="tilleggsopplysninger" type="behandleJournal:NoekkelVerdiSett"/>
+      <xsd:element name="dokumentType" type="behandleJournal:Dokumenttyper"/>
+      <xsd:element maxOccurs="unbounded" name="beskriverInnhold" type="behandleJournal:DokumentInnhold"/>
+      <xsd:element name="sensitivitet" type="xsd:boolean"/>
+      <xsd:element name="tittel" type="xsd:string"/>
+      <xsd:element name="kategorikode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="brevkode" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="JournalfoertDokumentInfo">
+    <xsd:complexContent>
+      <xsd:extension base="journalfoerUtgaaendeHenvendelse:Dokumentbeskrivelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Journalpost">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dokumentDato" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="journalfoerendeEnhetREF" type="behandleJournal:OrganisasjonsenhetID"/>
+      <xsd:element name="kanal" type="behandleJournal:Kommunikasjonskanaler"/>
+      <xsd:element name="signatur" type="behandleJournal:Signatur"/>
+      <xsd:element name="arkivtema" type="behandleJournal:Arkivtemaer"/>
+      <xsd:element maxOccurs="unbounded" name="forBruker" type="behandleJournal:Aktoer"/>
+      <xsd:element name="opprettetAvNavn" type="behandleJournal:Navn"/>
+      <xsd:element name="innhold" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="kryssreferanseListe" type="behandleJournal:Kryssreferanse"/>
+      <xsd:element name="eksternPart" type="behandleJournal:EksternPart"/>
+      <xsd:element name="gjelderSak" type="behandleJournal:Sak"/>
+      <xsd:element maxOccurs="unbounded" name="dokumentinfoRelasjon" type="journalfoerUtgaaendeHenvendelse:DokumentinfoRelasjon"/>
+      <xsd:element minOccurs="0" name="distribusjonAvJournal" type="behandleJournal:Journaldistribusjon"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
