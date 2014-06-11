@@ -72,6 +72,43 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="sporsmal">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="svar">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="sporsmalsId" type="xs:string"/>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="referat">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="kanal" type="xs:string"/>
+                    <xs:element name="fritekst" type="xs:string"/>
+                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:element name="oppdaterMetadata">
         <xs:complexType>
             <xs:sequence>
@@ -86,6 +123,9 @@
             <xs:enumeration value="DOKUMENTINNSENDING_ETTERSENDING"/>
             <xs:enumeration value="SEND_SOKNAD"/>
             <xs:enumeration value="SEND_SOKNAD_ETTERSENDING"/>
+            <xs:enumeration value="SPORSMAL"/>
+            <xs:enumeration value="SVAR"/>
+            <xs:enumeration value="REFERAT"/>
         </xs:restriction>
     </xs:simpleType>
 
