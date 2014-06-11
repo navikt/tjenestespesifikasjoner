@@ -4,7 +4,7 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/sakOgBehandling.xsd" node="/xs:schema">
+    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/sakOgBehandling/sakOgBehandling.xsd" node="/xs:schema">
         <jxb:schemaBindings>
             <jxb:nameXmlTransform>
                 <jxb:typeName prefix="WS"/>
@@ -13,7 +13,7 @@
         </jxb:schemaBindings>
     </jxb:bindings>
 
-    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/finnSakOgBehandlingskjedeListe.xsd" node="/xs:schema">
+    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/finnSakOgBehandlingskjedeListe/finnSakOgBehandlingskjedeListe.xsd" node="/xs:schema">
         <jxb:schemaBindings>
             <jxb:nameXmlTransform>
                 <jxb:typeName prefix="WS"/>
@@ -22,7 +22,7 @@
         </jxb:schemaBindings>
     </jxb:bindings>
 
-    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/hentBehandlingskjedensBehandlinger.xsd" node="/xs:schema">
+    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgBehandling/v1/informasjon/hentBehandlingskjedensBehandlinger/hentBehandlingskjedensBehandlinger.xsd" node="/xs:schema">
         <jxb:schemaBindings>
             <jxb:nameXmlTransform>
                 <jxb:typeName prefix="WS"/>
