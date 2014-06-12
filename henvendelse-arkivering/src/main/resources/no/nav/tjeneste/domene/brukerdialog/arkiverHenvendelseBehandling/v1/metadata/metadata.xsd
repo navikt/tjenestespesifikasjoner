@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/metadata" version="2.0" xmlns:metadata="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/metadata">
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/metadata" version="1.0"
+xmlns:metadata="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/metadata">
   <xsd:simpleType name="ApplikasjonID">
     <xsd:restriction base="xsd:string"/>
   </xsd:simpleType>

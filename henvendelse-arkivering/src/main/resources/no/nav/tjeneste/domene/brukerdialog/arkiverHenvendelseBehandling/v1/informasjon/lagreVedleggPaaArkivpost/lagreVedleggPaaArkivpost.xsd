@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/lagreVedleggPaaJournalpost"
+            xmlns:arkiverHenvendelseBehandling="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling" version="2.0">
+  <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling" schemaLocation="../arkiverHenvendelseBehandling/arkiverHenvendelseBehandling.xsd"/>
+  <xsd:complexType name="Dokumentbeskrivelse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="begrensetPartsInnsyn" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="tilleggsopplysninger" type="arkiverHenvendelseBehandling:NoekkelVerdiSett"/>
+      <xsd:element minOccurs="0" name="dokumentType" type="arkiverHenvendelseBehandling:Dokumenttyper"/>
+      <xsd:element maxOccurs="unbounded" name="beskriverInnhold" type="arkiverHenvendelseBehandling:DokumentInnhold"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArkivertDokumentInfo">
+    <xsd:complexContent>
+      <xsd:extension base="Dokumentbeskrivelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

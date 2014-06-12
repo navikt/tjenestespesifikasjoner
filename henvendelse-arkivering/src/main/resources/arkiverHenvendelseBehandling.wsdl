@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  name="ArkiverHenvendelseBehandling"
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling">
+    <wsdl:types>
+        <xsd:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
+                   elementFormDefault="unqualified"
+                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
+                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/meldinger">
+            <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/meldinger/meldinger.xsd"/>
+
+            <xsd:element name="arkiverHenvendelse" type="meldinger:arkiverHenvendelseRequest"/>
+            <xsd:element name="arkiverHenvendelseResponse" type="meldinger:arkiverHenvendelseResponse"/>
+			<xsd:element name="lagreVedleggPaaArkivpostRequest" type="meldinger:lagreVedleggPaaArkivpostRequest"/>
+            <xsd:element name="lagreVedleggPaaArkivpostResponse" type="meldinger:lagreVedleggPaaArkivpostResponse"/>
+            <xsd:element name="ping" type="meldinger:pingRequest"/>
+            <xsd:element name="pingResponse" type="meldinger:pingResponse"/>
+        </xsd:schema>
+    </wsdl:types>
+
+  <wsdl:message name="arkiverHenvendelseResponse">
+    <wsdl:part name="parameters" element="tns:arkiverHenvendelseResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="arkiverHenvendelseRequest">
+    <wsdl:part name="parameters" element="tns:arkiverHenvendelse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="lagreVedleggPaaArkivpostResponse">
+    <wsdl:part name="parameters" element="tns:lagreVedleggPaaArkivpostResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="lagreVedleggPaaArkivpostRequest">
+    <wsdl:part name="parameters" element="tns:lagreVedleggPaaArkivpost">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="arkiverHenvendelseBehandling_v1">
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="arkiverHenvendelse">
+      <wsdl:input message="tns:arkiverHenvendelseRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:arkiverHenvendelseResponse">
+    </wsdl:output>
+    </wsdl:operation>
+	<wsdl:operation name="lagreVedleggPaaArkivpost">
+      <wsdl:input message="tns:lagreVedleggPaaArkivpostRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:lagreVedleggPaaArkivpostResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
+
+
+    <wsdl:service name="ArkiverHenvendelseService">
+        <wsdl:port binding="tns:ArkivHenvendelseBinding" name="ArkiverHenvendelsePort">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/ArkivHenvendelseBinding_v1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
