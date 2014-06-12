@@ -143,4 +143,25 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:element name="innsendingArkivert">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="behandlingsId" type="xs:string"/>
+                <xs:element name="journalpostId" type="xs:string"/>
+                <xs:element name="journalfortTema" type="xs:string"/>
+                <xs:element name="journalfortDato" type="xs:dateTime"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="oppgaveOpprettet">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="behandlingsId" type="xs:string"/>
+                <xs:element name="oppgaveIdGsak" type="xs:string"/>
+                <xs:element name="henvendelseIdGsak" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 </xs:schema>
