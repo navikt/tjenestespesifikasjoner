@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
@@ -7,7 +8,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>henvendelse-arkivering</artifactId>
-	<version>0.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -91,8 +92,8 @@
                     <descriptor>resources.xml</descriptor>
                 </configuration>
             </plugin>
-	  </plugins>
-	</build>
+        </plugins>
+    </build>
 
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
