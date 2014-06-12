@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
+                  xmlns:tns="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   name="ArkiverHenvendelseBehandling"
-                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling">
+                  targetNamespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling">
     <wsdl:types>
         <xsd:schema
-                xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
+                xmlns:tns="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
                 elementFormDefault="unqualified"
-                targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
-                xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/meldinger">
-            <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/meldinger"
-                        schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/meldinger/meldinger.xsd"/>
+                targetNamespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
+                xmlns:meldinger="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger">
+            <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger"
+                        schemaLocation="no/nav/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger/meldinger.xsd"/>
 
             <xsd:element name="arkiverHenvendelse" type="meldinger:arkiverHenvendelseRequest"/>
             <xsd:element name="arkiverHenvendelseResponse" type="meldinger:arkiverHenvendelseResponse"/>

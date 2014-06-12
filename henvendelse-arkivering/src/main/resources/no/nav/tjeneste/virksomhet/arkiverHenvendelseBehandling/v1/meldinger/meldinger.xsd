@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/meldinger"
+            targetNamespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger"
             version="1.0"
-            xmlns:arkiverHenvendelseBehandling="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling"
-            xmlns:metadata="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/metadata"
-            xmlns:lagreVedleggPaaJournalpost="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/lagreVedleggPaaJournalpost">
+            xmlns:arkiverHenvendelseBehandling="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling"
+            xmlns:metadata="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/metadata"
+            xmlns:lagreVedleggPaaJournalpost="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/lagreVedleggPaaJournalpost">
     <xsd:import namespace="http://nav.no/tjeneste/brukerdialog/arkiverHenvendelseBehandling/v1/metadata"
                 schemaLocation="../metadata/metadata.xsd"/>
     <xsd:import

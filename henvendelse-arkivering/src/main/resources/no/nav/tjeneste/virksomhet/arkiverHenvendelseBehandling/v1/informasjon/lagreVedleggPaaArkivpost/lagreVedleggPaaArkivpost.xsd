@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/lagreVedleggPaaJournalpost"
-            xmlns:arkiverHenvendelseBehandling="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling" version="1.0">
-  <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling" schemaLocation="../arkiverHenvendelseBehandling/arkiverHenvendelseBehandling.xsd"/>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/lagreVedleggPaaJournalpost"
+            xmlns:arkiverHenvendelseBehandling="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling" version="1.0">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling" schemaLocation="../arkiverHenvendelseBehandling/arkiverHenvendelseBehandling.xsd"/>
   <xsd:complexType name="Dokumentbeskrivelse">
     <xsd:sequence>
       <xsd:element minOccurs="0" name="begrensetPartsInnsyn" type="xsd:boolean"/>
