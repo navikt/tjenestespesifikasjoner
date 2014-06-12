@@ -228,8 +228,8 @@ http://nav.no/kodeverk/Kodeverk/Variantformater</xsd:documentation>
       <xsd:element name="innhold" type="xsd:string"/>
       <xsd:element maxOccurs="unbounded" minOccurs="0" name="kryssreferanseListe" type="arkiverHenvendelseBehandling:Kryssreferanse"/>
 
-        <!-- TODO hva skal denne egentlig brukes til? -->
-      <xsd:element name="eksternPart" type="arkiverHenvendelseBehandling:EksternPart"/>
+        <!-- TODO hva skal denne egentlig brukes til? Ikke i bruk i notat, setter til frivillig -->
+      <xsd:element minOccurs="0" name="eksternPart" type="arkiverHenvendelseBehandling:EksternPart"/>
       <xsd:element maxOccurs="unbounded" name="dokumentinfoRelasjon" type="arkiverHenvendelseBehandling:DokumentinfoRelasjon"/>
 	  
 	  <!-- TODO usikker på hva denne settes til, er fra notat, setter den ivertfall valgfri -->
