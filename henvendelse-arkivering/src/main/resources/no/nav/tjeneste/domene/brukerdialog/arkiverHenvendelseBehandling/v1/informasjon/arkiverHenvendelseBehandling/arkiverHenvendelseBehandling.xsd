@@ -197,13 +197,13 @@ http://nav.no/kodeverk/Kodeverk/Variantformater</xsd:documentation>
   </xsd:complexType>
   <xsd:complexType name="Dokumentbeskrivelse">
     <xsd:sequence>
-		<!--TODO satt denne til ikkeobligatorisk -->
-      <xsd:element minOccurs="0" name="begrensetPartsInnsyn" type="xsd:boolean"/>
+		<!--TODO satt denne til false -->
+      <xsd:element name="begrensetPartsInnsyn" type="xsd:boolean"/>
       <xsd:element minOccurs="0" name="tilleggsopplysninger" type="arkiverHenvendelseBehandling:NoekkelVerdiSett"/>
       <xsd:element name="dokumentType" type="arkiverHenvendelseBehandling:Dokumenttyper"/>
       <xsd:element maxOccurs="unbounded" name="beskriverInnhold" type="arkiverHenvendelseBehandling:DokumentInnhold"/>
-      <!--TODO satt denne til ikkeobligatorisk -->
-	  <xsd:element minOccurs="0" name="sensitivitet" type="xsd:boolean"/>
+      <!--TODO satt denne til false -->
+	  <xsd:element name="sensitivitet" type="xsd:boolean"/>
       <xsd:element name="tittel" type="xsd:string"/>
       <xsd:element name="kategorikode" type="xsd:string"/>
       <xsd:element minOccurs="0" name="brevkode" type="xsd:string"/>
@@ -213,7 +213,7 @@ http://nav.no/kodeverk/Kodeverk/Variantformater</xsd:documentation>
   <xsd:complexType name="Arkivpost">
     <xsd:sequence>
 	
-	  <!-- TODO: kanskje kodeverk? Inngående, Utgående, Notat -->
+	  <!-- TODO: Documentation på denne... Inngående, Utgående, Notat -->
 	  <xsd:element name="type" type="xsd:string"/>
 	
 	  <xsd:element minOccurs="0" name="motattDato" type="xsd:dateTime"/>
@@ -221,19 +221,23 @@ http://nav.no/kodeverk/Kodeverk/Variantformater</xsd:documentation>
       <xsd:element name="kanal" type="arkiverHenvendelseBehandling:Kommunikasjonskanaler"/>
 
         <!-- TODO: trengs signatur? -->
-	  <xsd:element name="signatur" type="arkiverHenvendelseBehandling:Signatur"/>
+	  <xsd:element  minOccurs="0" name="signatur" type="arkiverHenvendelseBehandling:Signatur"/>
 
       <xsd:element name="arkivtema" type="arkiverHenvendelseBehandling:Arkivtemaer"/>
+
+       <!-- Hør med fiksdal om denne -->
       <xsd:element maxOccurs="unbounded" name="forBruker" type="arkiverHenvendelseBehandling:Aktoer"/>
       <xsd:element name="innhold" type="xsd:string"/>
       <xsd:element maxOccurs="unbounded" minOccurs="0" name="kryssreferanseListe" type="arkiverHenvendelseBehandling:Kryssreferanse"/>
 
+
+        <!-- Hør med fiksdal om denne -->
         <!-- TODO hva skal denne egentlig brukes til? Ikke i bruk i notat, setter til frivillig -->
       <xsd:element minOccurs="0" name="eksternPart" type="arkiverHenvendelseBehandling:EksternPart"/>
       <xsd:element maxOccurs="unbounded" name="dokumentinfoRelasjon" type="arkiverHenvendelseBehandling:DokumentinfoRelasjon"/>
 	  
-	  <!-- TODO usikker på hva denne settes til, er fra notat, setter den ivertfall valgfri -->
-	   <xsd:element minOccurs="0" name="erOrganinternt" type="xsd:boolean"/>
+	  <!-- TODO usikker på hva denne settes til, er fra notat, setter den til false -->
+	   <xsd:element name="erOrganinternt" type="xsd:boolean"/>
 	  
     </xsd:sequence>
   </xsd:complexType>
