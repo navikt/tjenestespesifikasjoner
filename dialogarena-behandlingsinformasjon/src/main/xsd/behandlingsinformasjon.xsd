@@ -14,6 +14,7 @@
                 <xs:element name="henvendelseType" type="xs:string" minOccurs="0"/>
                 <xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="versjon" type="xs:integer" minOccurs="0"/>
                 <xs:element ref="tns:metadataListe" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
@@ -78,6 +79,8 @@
                 <xs:sequence>
                     <xs:element name="temagruppe" type="xs:string"/>
                     <xs:element name="fritekst" type="xs:string"/>
+                    <xs:element name="henvendelseIdGsak" type="xs:string" minOccurs="0"/>
+                    <xs:element name="oppgaveIdGsak" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
