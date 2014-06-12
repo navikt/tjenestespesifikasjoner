@@ -150,9 +150,17 @@
                 <xs:element name="journalpostId" type="xs:string"/>
                 <xs:element name="journalfortTema" type="xs:string"/>
                 <xs:element name="journalfortDato" type="xs:dateTime"/>
+                <xs:element name="vedleggArkivert" type="tns:vedleggArkivert" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="vedleggArkivert">
+        <xs:sequence>
+            <xs:element name="uuid" type="xs:string"/>
+            <xs:element name="arkivreferanse" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:element name="oppgaveOpprettet">
         <xs:complexType>
@@ -163,5 +171,6 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
 
 </xs:schema>
