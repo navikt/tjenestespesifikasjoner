@@ -29,4 +29,15 @@ xmlns:lagreVedleggPaaJournalpost="http://nav.no/tjeneste/domene/brukerdialog/ark
     <xsd:attributeGroup ref="metadata:Endringssporing"/>
   </xsd:complexType>
 
+    <xsd:complexType name="pingRequest">
+        <xsd:sequence>
+
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="pingResponse">
+        <xsd:sequence>
+        </xsd:sequence>
+
+    </xsd:complexType>
+
 </xsd:schema>

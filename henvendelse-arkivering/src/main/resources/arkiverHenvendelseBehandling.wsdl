@@ -14,7 +14,7 @@
 
             <xsd:element name="arkiverHenvendelse" type="meldinger:arkiverHenvendelseRequest"/>
             <xsd:element name="arkiverHenvendelseResponse" type="meldinger:arkiverHenvendelseResponse"/>
-			<xsd:element name="lagreVedleggPaaArkivpostRequest" type="meldinger:lagreVedleggPaaArkivpostRequest"/>
+			<xsd:element name="lagreVedleggPaaArkivpost" type="meldinger:lagreVedleggPaaArkivpostRequest"/>
             <xsd:element name="lagreVedleggPaaArkivpostResponse" type="meldinger:lagreVedleggPaaArkivpostResponse"/>
             <xsd:element name="ping" type="meldinger:pingRequest"/>
             <xsd:element name="pingResponse" type="meldinger:pingResponse"/>
@@ -65,8 +65,37 @@
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-</wsdl:definitions>
 
+    <wsdl:binding name="ArkivHenvendelseBinding" type="tns:arkiverHenvendelseBehandling_v1">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="arkiverHenvendelse">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="arkiverHenvendelseRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="arkiverHenvendelseResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="lagreVedleggPaaArkivpost">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="lagreVedleggPaaArkivpostRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="lagreVedleggPaaArkivpostResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ping">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="pingRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="pingResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
 
     <wsdl:service name="ArkiverHenvendelseService">
         <wsdl:port binding="tns:ArkivHenvendelseBinding" name="ArkiverHenvendelsePort">
