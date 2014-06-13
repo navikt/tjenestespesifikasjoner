@@ -248,15 +248,19 @@
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="arkivtema" type="arkiverHenvendelseBehandling:Arkivtemaer"/>
-
-            <!-- TODO: Hør med Joark om denne, hvorfor flere? -->
-            <xsd:element maxOccurs="unbounded" name="forBruker" type="arkiverHenvendelseBehandling:Aktoer"/>
+            <xsd:element maxOccurs="unbounded" name="forBruker" type="arkiverHenvendelseBehandling:Aktoer">
+                <xsd:annotation>
+                    <xsd:documentation>Bruker er sakspart. En sak kan gjelde flere parter.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element name="innhold" type="xsd:string"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="kryssreferanseListe"
                          type="arkiverHenvendelseBehandling:Kryssreferanse"/>
-
-            <!-- TODO: Hør med Joark om denne, forskjell fra forBruker? Satt til frivillig intill videre -->
-            <xsd:element minOccurs="0" name="eksternPart" type="arkiverHenvendelseBehandling:EksternPart"/>
+            <xsd:element name="eksternPart" type="arkiverHenvendelseBehandling:EksternPart">
+                <xsd:annotation>
+                    <xsd:documentation>Eksernpart er avsender for inngående dokumenter (mottaker for utgående).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element maxOccurs="unbounded" name="dokumentinfoRelasjon"
                          type="arkiverHenvendelseBehandling:DokumentinfoRelasjon"/>
             <xsd:element name="erOrganinternt" type="xsd:boolean">
