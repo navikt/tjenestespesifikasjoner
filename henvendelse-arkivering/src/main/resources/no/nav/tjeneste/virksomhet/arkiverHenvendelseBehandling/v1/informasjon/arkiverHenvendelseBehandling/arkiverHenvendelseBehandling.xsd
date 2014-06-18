@@ -240,7 +240,7 @@
 
     <xsd:complexType name="Arkivpost">
         <xsd:sequence>
-            <xsd:element name="type" type="arkivpostType"/>
+            <xsd:element name="type" type="arkiverHenvendelseBehandling:arkivpostType"/>
             <xsd:element minOccurs="0" name="motattDato" type="xsd:dateTime"/>
             <xsd:element minOccurs="0" name="dokumentDato" type="xsd:dateTime"/>
             <xsd:element name="kanal" type="arkiverHenvendelseBehandling:Kommunikasjonskanaler"/>
