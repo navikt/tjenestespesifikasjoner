@@ -256,7 +256,11 @@
                     <xsd:documentation>Bruker er sakspart. En sak kan gjelde flere parter.</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="innhold" type="xsd:string"/>
+            <xsd:element name="innhold" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>Beskriver innholdet i forsendelsen.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="kryssreferanseListe"
                          type="arkiverHenvendelseBehandling:Kryssreferanse"/>
             <xsd:element name="eksternPart" type="arkiverHenvendelseBehandling:EksternPart">
