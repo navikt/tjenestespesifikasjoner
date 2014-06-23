@@ -4,7 +4,7 @@
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>dialogarena</artifactId>
-        <version>1.5.2</version>
+        <version>3</version>
     </parent>
     <artifactId>gsak-oppgave-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
@@ -29,7 +29,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-oppgave-tjenestespesifikasjon</artifactId>
-                                    <version>2.1.0</version>
+                                    <version>2.2.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgave</outputDirectory>
                                 </artifactItem>

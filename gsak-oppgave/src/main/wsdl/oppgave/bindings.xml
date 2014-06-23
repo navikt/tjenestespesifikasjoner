@@ -22,14 +22,6 @@
       </jaxb:nameXmlTransform>
     </jaxb:schemaBindings>
   </jaxb:bindings>
-  <jaxb:bindings schemaLocation="no/nav/virksomhet/tjenester/felles/felles.xsd" node="/xsd:schema">
-    <jaxb:schemaBindings>
-      <jaxb:nameXmlTransform>
-	<jaxb:typeName prefix="WS"/>
-	<jaxb:elementName prefix="WS"/>
-      </jaxb:nameXmlTransform>
-    </jaxb:schemaBindings>
-  </jaxb:bindings>
   <jaxb:bindings schemaLocation="no/nav/virksomhet/tjenester/oppgave/feil/feil.xsd" node="/xsd:schema">
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
