@@ -20,7 +20,6 @@
             <xsd:element name="pingResponse" type="meldinger:pingResponse"/>
         </xsd:schema>
     </wsdl:types>
-
     <wsdl:message name="arkiverHenvendelseResponse">
         <wsdl:part name="parameters" element="tns:arkiverHenvendelseResponse">
         </wsdl:part>
@@ -62,8 +61,8 @@
             <wsdl:output name="arkiverHenvendelseResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="ping">
+       </wsdl:operation>
+       <wsdl:operation name="ping">
             <soap:operation soapAction="" style="document"/>
             <wsdl:input name="pingRequest">
                 <soap:body use="literal"/>
