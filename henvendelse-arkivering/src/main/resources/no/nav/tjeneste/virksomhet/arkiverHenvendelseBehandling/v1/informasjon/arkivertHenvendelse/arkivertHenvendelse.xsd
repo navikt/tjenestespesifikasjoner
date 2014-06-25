@@ -279,6 +279,14 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:complexType name="Filter">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="fraDato" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="tilDato" type="xsd:dateTime"/>
+            <xsd:element minOccurs="0" name="maxAntall" type="xsd:integer"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:simpleType name="arkivpostType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="INNGAAENDE"/>

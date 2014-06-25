@@ -45,6 +45,7 @@
     <xsd:complexType name="hentArkiverteHenvendelserRequest">
         <xsd:sequence>
             <xsd:element name="aktorId" type="arkivertHenvendelse:Aktoer"/>
+            <xsd:element name="filter" type="arkivertHenvendelse:Filter"/>
         </xsd:sequence>
         <xsd:attributeGroup ref="metadata:Endringssporing"/>
     </xsd:complexType>
