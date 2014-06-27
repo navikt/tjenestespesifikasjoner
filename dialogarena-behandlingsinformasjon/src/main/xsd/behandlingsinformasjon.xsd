@@ -92,6 +92,7 @@
                 <xs:sequence>
                     <xs:element name="sporsmalsId" type="xs:string"/>
                     <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="kanal" type="xs:string"/>
                     <xs:element name="fritekst" type="xs:string"/>
                     <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
                 </xs:sequence>
