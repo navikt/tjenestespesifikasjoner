@@ -24,7 +24,17 @@
         </xsd:sequence>
         <xsd:attributeGroup ref="metadata:Endringssporing"/>
     </xsd:complexType>
-
+    <xsd:complexType name="settUtgaarDatoResponse">
+        <xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="settUtgaarDatoRequest">
+        <xsd:sequence>
+            <xsd:element name="arkivpostId" type="arkiverHenvendelseBehandling:ArkivpostID"/>
+            <xsd:element name="utgaarDato" type="xsd:dateTime"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="metadata:Endringssporing"/>
+    </xsd:complexType>
     <xsd:complexType name="hentArkiverHenvendelseResponse">
         <xsd:sequence>
             <xsd:element name="arkivpost" type="arkivertHenvendelse:Arkivpost"/>

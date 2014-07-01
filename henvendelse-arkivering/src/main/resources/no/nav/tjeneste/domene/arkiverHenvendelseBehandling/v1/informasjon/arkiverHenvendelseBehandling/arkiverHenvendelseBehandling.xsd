@@ -276,8 +276,25 @@
                     <xsd:documentation>Setter denne i utgangspunktet til false</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
+            <xsd:element name="arkivStatus" type="arkiverHenvendelseBehandling:arkivStatusType">
+                <xsd:annotation>
+                    <xsd:documentation>Settes til ARKIVERT når det arkiveres, oppdateres i egen operasjon</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="utgaarDato" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>Settes når arkivpost blir kassert i egen operasjon</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+
+    <xsd:simpleType name="arkivStatusType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ARKIVERT"/>
+            <xsd:enumeration value="UTGAAT"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
     <xsd:simpleType name="arkivpostType">
         <xsd:restriction base="xsd:string">
