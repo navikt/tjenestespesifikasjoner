@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger"
+            targetNamespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger"
             version="1.0"
-            xmlns:arkiverHenvendelseBehandling="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling"
-            xmlns:arkivertHenvendelse="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
-            xmlns:metadata="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/metadata">
-    <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/metadata"
+            xmlns:arkiverHenvendelseBehandling="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling"
+            xmlns:arkivertHenvendelse="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
+            xmlns:metadata="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/metadata">
+    <xsd:import namespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/metadata"
                 schemaLocation="../metadata/metadata.xsd"/>
     <xsd:import
-            namespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling"
+            namespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkiverHenvendelseBehandling"
             schemaLocation="../informasjon/arkiverHenvendelseBehandling/arkiverHenvendelseBehandling.xsd"/>
-    <xsd:import
-            namespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
+    <xsd:import	
+            namespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
             schemaLocation="../informasjon/arkivertHenvendelse/arkivertHenvendelse.xsd"/>
     <xsd:complexType name="arkiverHenvendelseResponse">
         <xsd:sequence>

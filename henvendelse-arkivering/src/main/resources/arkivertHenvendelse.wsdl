@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:tns="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
+                  xmlns:tns="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   name="ArkivertHenvendelse"
-                  targetNamespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse">
+                  targetNamespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse">
     <wsdl:types>
         <xsd:schema
-                xmlns:tns="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
+                xmlns:tns="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
                 elementFormDefault="unqualified"
-                targetNamespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
-                xmlns:meldinger="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger">
-            <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger"
-                        schemaLocation="no/nav/tjeneste/virksomhet/arkiverHenvendelseBehandling/v1/meldinger/meldinger.xsd"/>
+                targetNamespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/informasjon/arkivertHenvendelse"
+                xmlns:meldinger="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger">
+            <xsd:import namespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger"
+                        schemaLocation="no/nav/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger/meldinger.xsd"/>
 
             <xsd:element name="arkivertHenvendelse" type="meldinger:hentArkiverHenvendelseRequest"/>
             <xsd:element name="arkivertHenvendelseResponse" type="meldinger:hentArkiverHenvendelseResponse"/>
