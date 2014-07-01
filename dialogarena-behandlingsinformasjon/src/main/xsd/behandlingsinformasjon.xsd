@@ -15,6 +15,7 @@
                 <xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="versjon" type="xs:integer" minOccurs="0"/>
+                <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon" minOccurs="0"/>
                 <xs:element ref="tns:metadataListe" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
@@ -144,19 +145,17 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:element name="innsendingArkivert">
+    <xs:element name="innsendingJournalfort">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="behandlingsId" type="xs:string"/>
-                <xs:element name="journalpostId" type="xs:string"/>
-                <xs:element name="journalfortTema" type="xs:string"/>
-                <xs:element name="journalfortDato" type="xs:dateTime"/>
-                <xs:element name="vedleggArkivert" type="tns:vedleggArkivert" maxOccurs="unbounded"/>
+                <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon"/>
+                <xs:element name="vedleggJournalfort" type="tns:vedleggJournalfort" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="vedleggArkivert">
+    <xs:complexType name="vedleggJournalfort">
         <xs:sequence>
             <xs:element name="uuid" type="xs:string"/>
             <xs:element name="arkivreferanse" type="xs:string"/>
@@ -172,6 +171,14 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="journalfortInformasjon">
+        <xs:sequence>
+            <xs:element name="journalpostId" type="xs:string"/>
+            <xs:element name="journalfortTema" type="xs:string"/>
+            <xs:element name="journalfortDato" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
 
 
 </xs:schema>
