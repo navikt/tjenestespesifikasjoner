@@ -12,7 +12,7 @@
                 targetNamespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/arkiverHenvendelseBehandling"
                 xmlns:meldinger="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger">
             <xsd:import namespace="http://nav.no/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger"
-                        schemaLocation="no/nav/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger/meldinger.xsd"/>
+                        schemaLocation="no/nav/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger/meldinger.xsd"/>
 
             <xsd:element name="arkiverHenvendelse" type="meldinger:arkiverHenvendelseRequest"/>
             <xsd:element name="arkiverHenvendelseResponse" type="meldinger:arkiverHenvendelseResponse"/>
