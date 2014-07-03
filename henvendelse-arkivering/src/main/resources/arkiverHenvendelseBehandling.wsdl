@@ -100,7 +100,7 @@
 
     <wsdl:service name="ArkiverHenvendelseService">
         <wsdl:port binding="tns:ArkivHenvendelseBinding" name="ArkiverHenvendelsePort">
-            <soap:address location="http://localhost:8081/domene.Brukerdialog/ArkivHenvendelseBinding_v1"/>
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/ArkiverHenvendelseService_v1"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
