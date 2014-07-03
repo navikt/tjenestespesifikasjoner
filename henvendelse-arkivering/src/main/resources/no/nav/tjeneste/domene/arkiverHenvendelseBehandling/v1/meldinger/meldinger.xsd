@@ -2,14 +2,14 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger"
             version="1.0"
-            xmlns:arkiverhenvendelsebehandling="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkiverhenvendelsebehandling"
+            xmlns:arkiverhenvendelsebehandling="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet/arkiverhenvendelsebehandling"
             xmlns:arkivertHenvendelse="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkivertHenvendelse"
             xmlns:metadata="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/metadata">
     <xsd:import namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/metadata"
                 schemaLocation="../metadata/metadata.xsd"/>
     <xsd:import
-            namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkiverhenvendelsebehandling"
-            schemaLocation="../informasjon/arkiverhenvendelsebehandling/arkiverHenvendelseBehandling.xsd"/>
+            namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet/arkiverhenvendelsebehandling"
+            schemaLocation="../aktivitet/arkiverhenvendelsebehandling/arkiverHenvendelseBehandling.xsd"/>
     <xsd:import	
             namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkivertHenvendelse"
             schemaLocation="../informasjon/arkiverthenvendelse/arkivertHenvendelse.xsd"/>

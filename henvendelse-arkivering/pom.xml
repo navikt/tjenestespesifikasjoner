@@ -41,7 +41,13 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/ArkiverHenvendelseBehandling.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/arkiverHenvendelseBehandling.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
+                                    </bindingFiles>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.directory}/arkivertHenvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
