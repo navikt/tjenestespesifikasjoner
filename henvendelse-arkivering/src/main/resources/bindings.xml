@@ -3,7 +3,7 @@
                xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
                jaxb:version="2.0">
     <jaxb:bindings
-            schemaLocation="no/nav/tjeneste/domene/arkiverHenvendelseBehandling/v1/meldinger/meldinger.xsd"
+            schemaLocation="no/nav/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger/meldinger.xsd"
             node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
