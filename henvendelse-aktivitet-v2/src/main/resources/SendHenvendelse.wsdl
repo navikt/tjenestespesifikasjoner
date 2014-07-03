@@ -16,6 +16,8 @@
             <xs:element name="sendHenvendelseResponse" type="meldinger:sendHenvendelseResponse"/>
             <xs:element name="oppdaterHenvendelse" type="meldinger:oppdaterHenvendelseRequest"/>
             <xs:element name="oppdaterHenvendelseResponse" type="meldinger:oppdaterHenvendelseResponse"/>
+            <xs:element name="oppdaterHenvendelseJournalforingsInformasjon" type="meldinger:oppdaterHenvendelseJournalforingsInformasjonRequest"/>
+            <xs:element name="oppdaterHenvendelseJournalforingsInformasjonResponse" type="meldinger:oppdaterHenvendelseJournalforingsInformasjonResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -35,6 +37,14 @@
     </wsdl:message>
     <wsdl:message name="oppdaterHenvendelseResponse">
         <wsdl:part element="tns:oppdaterHenvendelseResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterHenvendelseJournalforingsInformasjonRequest">
+        <wsdl:part element="tns:oppdaterHenvendelseJournalforingsInformasjon" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterHenvendelseJournalforingsInformasjonResponse">
+        <wsdl:part element="tns:oppdaterHenvendelseJournalforingsInformasjonResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="pingRequest">
@@ -57,6 +67,12 @@
             <wsdl:input message="tns:oppdaterHenvendelseRequest" name="oppdaterHenvendelseRequest">
             </wsdl:input>
             <wsdl:output message="tns:oppdaterHenvendelseResponse" name="oppdaterHenvendelseResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterHenvendelseJournalforingsInformasjon">
+            <wsdl:input message="tns:oppdaterHenvendelseJournalforingsInformasjonRequest" name="oppdaterHenvendelseJournalforingsInformasjonRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterHenvendelseJournalforingsInformasjonResponse" name="oppdaterHenvendelseJournalforingsInformasjonResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -84,6 +100,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="oppdaterHenvendelseResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterHenvendelseJournalforingsInformasjon">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterHenvendelseJournalforingsInformasjonRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterHenvendelseJournalforingsInformasjonResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
