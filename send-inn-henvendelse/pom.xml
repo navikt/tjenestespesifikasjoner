@@ -6,8 +6,8 @@
         <version>3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>henvendelse-aktivitet-v2</artifactId>
-	<version>0.4-SNAPSHOT</version>
+    <artifactId>send-inn-henvendelse</artifactId>
+	<version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -40,7 +40,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/SendHenvendelse.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/SendInnHenvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
