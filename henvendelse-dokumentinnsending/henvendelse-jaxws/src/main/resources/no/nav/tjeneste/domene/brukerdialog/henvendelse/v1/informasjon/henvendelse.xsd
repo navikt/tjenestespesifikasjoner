@@ -42,6 +42,7 @@
         <xs:sequence>
             <xs:element name="behandlingsId" type="xs:string"/>
             <xs:element name="hovedskjemaId" type="xs:string"/>
+            <xs:element name="tema" type="xs:string"/>
             <xs:element name="brukerBehandlingType" type="brukerhenvendelse:brukerBehandlingType"/>
             <xs:element name="dokumentbehandlingType" type="brukerhenvendelse:dokumentbehandlingType"/>
             <xs:element name="status" type="brukerhenvendelse:behandlingsstatus"/>
