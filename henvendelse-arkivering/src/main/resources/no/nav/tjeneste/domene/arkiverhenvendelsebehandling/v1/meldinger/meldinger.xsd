@@ -30,12 +30,12 @@
             <xsd:element name="utgaarDato" type="xsd:dateTime"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="hentArkiverHenvendelseResponse">
+    <xsd:complexType name="hentArkivertHenvendelseResponse">
         <xsd:sequence>
             <xsd:element name="arkivpost" type="arkivertHenvendelse:Arkivpost"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="hentArkiverHenvendelseRequest">
+    <xsd:complexType name="hentArkivertHenvendelseRequest">
         <xsd:sequence>
             <xsd:element name="arkivpostId" type="arkivertHenvendelse:ArkivpostID"/>
         </xsd:sequence>
