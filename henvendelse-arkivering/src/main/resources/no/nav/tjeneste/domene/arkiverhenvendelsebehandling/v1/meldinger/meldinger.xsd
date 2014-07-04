@@ -3,10 +3,7 @@
             targetNamespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger"
             version="1.0"
             xmlns:arkiverhenvendelsebehandling="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet/arkiverhenvendelsebehandling"
-            xmlns:arkivertHenvendelse="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkivertHenvendelse"
-            xmlns:metadata="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/metadata">
-    <xsd:import namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/metadata"
-                schemaLocation="../metadata/metadata.xsd"/>
+            xmlns:arkivertHenvendelse="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkivertHenvendelse">
     <xsd:import
             namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet/arkiverhenvendelsebehandling"
             schemaLocation="../aktivitet/arkiverhenvendelsebehandling/arkiverHenvendelseBehandling.xsd"/>
@@ -22,7 +19,6 @@
         <xsd:sequence>
             <xsd:element name="arkivpost" type="arkiverhenvendelsebehandling:Arkivpost"/>
         </xsd:sequence>
-        <xsd:attributeGroup ref="metadata:Endringssporing"/>
     </xsd:complexType>
     <xsd:complexType name="settUtgaarDatoResponse">
         <xsd:sequence>
@@ -33,7 +29,6 @@
             <xsd:element name="arkivpostId" type="xsd:string"/>
             <xsd:element name="utgaarDato" type="xsd:dateTime"/>
         </xsd:sequence>
-        <xsd:attributeGroup ref="metadata:Endringssporing"/>
     </xsd:complexType>
     <xsd:complexType name="hentArkiverHenvendelseResponse">
         <xsd:sequence>
@@ -44,7 +39,6 @@
         <xsd:sequence>
             <xsd:element name="arkivpostId" type="arkivertHenvendelse:ArkivpostID"/>
         </xsd:sequence>
-        <xsd:attributeGroup ref="metadata:Endringssporing"/>
     </xsd:complexType>
 
     <xsd:complexType name="hentArkiverteHenvendelserResponse">
@@ -57,7 +51,6 @@
             <xsd:element name="aktorId" type="arkivertHenvendelse:Aktoer"/>
             <xsd:element name="filter" type="arkivertHenvendelse:Filter"/>
         </xsd:sequence>
-        <xsd:attributeGroup ref="metadata:Endringssporing"/>
     </xsd:complexType>
 
     <xsd:complexType name="pingRequest">
