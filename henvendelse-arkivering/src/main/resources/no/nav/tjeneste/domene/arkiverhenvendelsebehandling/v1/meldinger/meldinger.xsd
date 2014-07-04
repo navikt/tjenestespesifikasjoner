@@ -2,22 +2,18 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger"
             version="1.0"
-            xmlns:arkiverhenvendelsebehandling="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet/arkiverhenvendelsebehandling"
-            xmlns:arkivertHenvendelse="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkivertHenvendelse">
+            xmlns:typer="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/typer">
     <xsd:import
-            namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet/arkiverhenvendelsebehandling"
-            schemaLocation="../aktivitet/arkiverhenvendelsebehandling/arkiverHenvendelseBehandling.xsd"/>
-    <xsd:import	
-            namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/informasjon/arkivertHenvendelse"
-            schemaLocation="../informasjon/arkiverthenvendelse/arkivertHenvendelse.xsd"/>
+            namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/typer"
+            schemaLocation="../typer/typer.xsd"/>
     <xsd:complexType name="arkiverHenvendelseResponse">
         <xsd:sequence>
-            <xsd:element name="arkivpostId" type="arkiverhenvendelsebehandling:ArkivpostID"/>
+            <xsd:element name="arkivpostId" type="typer:ArkivpostID"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="arkiverHenvendelseRequest">
         <xsd:sequence>
-            <xsd:element name="arkivpost" type="arkiverhenvendelsebehandling:Arkivpost"/>
+            <xsd:element name="arkivpost" type="typer:Arkivpost"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="settUtgaarDatoResponse">
@@ -32,24 +28,24 @@
     </xsd:complexType>
     <xsd:complexType name="hentArkivertHenvendelseResponse">
         <xsd:sequence>
-            <xsd:element name="arkivpost" type="arkivertHenvendelse:Arkivpost"/>
+            <xsd:element name="arkivpost" type="typer:Arkivpost"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="hentArkivertHenvendelseRequest">
         <xsd:sequence>
-            <xsd:element name="arkivpostId" type="arkivertHenvendelse:ArkivpostID"/>
+            <xsd:element name="arkivpostId" type="typer:ArkivpostID"/>
         </xsd:sequence>
     </xsd:complexType>
 
     <xsd:complexType name="hentArkiverteHenvendelserResponse">
         <xsd:sequence>
-            <xsd:element name="arkivpost" type="arkivertHenvendelse:Arkivpost" maxOccurs="unbounded"/>
+            <xsd:element name="arkivpost" type="typer:Arkivpost" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="hentArkiverteHenvendelserRequest">
         <xsd:sequence>
-            <xsd:element name="aktorId" type="arkivertHenvendelse:Aktoer"/>
-            <xsd:element name="filter" type="arkivertHenvendelse:Filter"/>
+            <xsd:element name="aktorId" type="typer:Aktoer"/>
+            <xsd:element name="filter" type="typer:Filter"/>
         </xsd:sequence>
     </xsd:complexType>
 
