@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  name="SendSoknadService"
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse">
+    <wsdl:types>
+        <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse"
+                   elementFormDefault="unqualified"
+                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse"
+                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
+
+            <xs:element name="oppdaterJournalforingInformasjon" type="meldinger:oppdaterInformasjonRequest"/>
+            <xs:element name="oppdaterJournalforingInformasjonResponse" type="meldinger:oppdaterInformasjonResponse"/>
+            <xs:element name="oppdaterArkivInformasjon" type="meldinger:oppdaterInformasjonRequest"/>
+            <xs:element name="oppdaterArkivInformasjonResponse" type="meldinger:oppdaterInformasjonResponse"/>
+            <xs:element name="oppdaterOpprettetOppgaveIdGsak" type="meldinger:oppdaterOpprettetOppgaveIdGsakRequest"/>
+            <xs:element name="oppdaterOpprettetOppgaveIdGsakResponse" type="meldinger:oppdaterOpprettetOppgaveIdGsakResponse"/>
+            <xs:element name="ping" type="meldinger:pingRequest"/>
+            <xs:element name="pingResponse" type="meldinger:pingResponse"/>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="oppdaterJournalforingInformasjonRequest">
+        <wsdl:part element="tns:oppdaterJournalforingInformasjon" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterJournalforingInformasjonResponse">
+        <wsdl:part element="tns:oppdaterJournalforingInformasjonResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterArkivInformasjonRequest">
+        <wsdl:part element="tns:oppdaterArkivInformasjon" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterArkivInformasjonResponse">
+        <wsdl:part element="tns:oppdaterArkivInformasjonResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterOpprettetOppgaveIdGsakRequest">
+        <wsdl:part element="tns:oppdaterOpprettetOppgaveIdGsak" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterOpprettetOppgaveIdGsakResponse">
+        <wsdl:part element="tns:oppdaterOpprettetOppgaveIdGsakResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pingRequest">
+        <wsdl:part element="tns:ping" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pingResponse">
+        <wsdl:part element="tns:pingResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+
+    <wsdl:portType name="BehandleHenvendelsePortType">
+        <wsdl:operation name="oppdaterJournalforingInformasjon">
+            <wsdl:input message="tns:oppdaterJournalforingInformasjonRequest" name="oppdaterJournalforingInformasjonRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterJournalforingInformasjonResponse" name="oppdaterJournalforingInformasjonResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterArkivInformasjon">
+            <wsdl:input message="tns:oppdaterArkivInformasjonRequest" name="oppdaterArkivInformasjonRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterArkivInformasjonResponse" name="oppdaterArkivInformasjonResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterOpprettetOppgaveIdGsak">
+            <wsdl:input message="tns:oppdaterOpprettetOppgaveIdGsakRequest" name="oppdaterOpprettetOppgaveIdGsakRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterOpprettetOppgaveIdGsakResponse" name="oppdaterOpprettetOppgaveIdGsakResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ping">
+            <wsdl:input message="tns:pingRequest" name="pingRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:pingResponse" name="pingResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="BehandleHenvendelseBinding" type="tns:BehandleHenvendelsePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="oppdaterJournalforingInformasjon">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterJournalforingInformasjonRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterJournalforingInformasjonResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterArkivInformasjon">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterArkivInformasjonRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterArkivInformasjonResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterOpprettetOppgaveIdGsak">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterOpprettetOppgaveIdGsakRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterOpprettetOppgaveIdGsakResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ping">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="pingRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="pingResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BehandleHenvendelseService">
+        <wsdl:port binding="tns:BehandleHenvendelseBinding" name="BehandleHenvendelsePort">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/BehandleHenvendelseService_v1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
