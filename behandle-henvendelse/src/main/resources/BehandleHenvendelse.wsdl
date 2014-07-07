@@ -7,10 +7,11 @@
                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse">
     <wsdl:types>
         <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse"
-                   elementFormDefault="unqualified"
-                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse"
-                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger">
-            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
+                    elementFormDefault="unqualified"
+                    targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse"
+                    xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger"
+                    schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
 
             <xs:element name="oppdaterJournalforingInformasjon" type="meldinger:oppdaterInformasjonRequest"/>
             <xs:element name="oppdaterJournalforingInformasjonResponse" type="meldinger:oppdaterInformasjonResponse"/>
