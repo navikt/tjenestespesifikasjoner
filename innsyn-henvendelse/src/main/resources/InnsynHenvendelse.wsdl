@@ -7,10 +7,11 @@
                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse">
     <wsdl:types>
         <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse"
-                   elementFormDefault="unqualified"
-                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse"
-                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger">
-            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
+                    elementFormDefault="unqualified"
+                    targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse"
+                    xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse/meldinger"
+                    schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
 
             <xs:element name="merkSomLest" type="meldinger:merkSomLestRequest"/>
             <xs:element name="merkSomLestResponse" type="meldinger:merkSomLestResponse"/>
