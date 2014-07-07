@@ -9,8 +9,9 @@
         <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/sendinnhenvendelse"
                    elementFormDefault="unqualified"
                    targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/sendinnhenvendelse"
-                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger">
-            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger" schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
+                   xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/sendinnhenvendelse/meldinger">
+            <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/sendinnhenvendelse/meldinger"
+                   schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
 
             <xs:element name="sendInnHenvendelse" type="meldinger:sendInnHenvendelseRequest"/>
             <xs:element name="sendInnHenvendelseResponse" type="meldinger:sendInnHenvendelseResponse"/>
