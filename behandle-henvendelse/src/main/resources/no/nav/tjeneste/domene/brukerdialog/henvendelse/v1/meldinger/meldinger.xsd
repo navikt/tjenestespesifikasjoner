@@ -24,10 +24,4 @@
 
     <xs:complexType name="pingResponse"/>
 
-    <xs:simpleType name="type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="SPORSMAL"/>
-        </xs:restriction>
-    </xs:simpleType>
-
 </xs:schema>

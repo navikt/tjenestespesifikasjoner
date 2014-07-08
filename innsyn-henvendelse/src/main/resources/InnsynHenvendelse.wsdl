@@ -3,7 +3,7 @@
                   xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  name="SendSoknadService"
+                  name="InnsynHenvendelseService"
                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse">
     <wsdl:types>
         <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/innsynhenvendelse"
