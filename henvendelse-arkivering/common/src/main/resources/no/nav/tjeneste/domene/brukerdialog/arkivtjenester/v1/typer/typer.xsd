@@ -113,7 +113,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element minOccurs="0" name="singert" type="xsd:boolean">
+            <xsd:element minOccurs="0" name="signert" type="xsd:boolean">
                 <xsd:annotation>
                     <xsd:documentation>Setter denne i utgangspunktet til false</xsd:documentation>
                 </xsd:annotation>
