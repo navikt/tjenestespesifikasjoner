@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:tns="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   name="ArkiverHenvendelseService"
-                  targetNamespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet">
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet">
     <wsdl:types>
         <xsd:schema
-                xmlns:tns="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet"
+                xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet"
                 elementFormDefault="unqualified"
-                targetNamespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/aktivitet"
-                xmlns:meldinger="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger">
-            <xsd:import namespace="http://nav.no/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger"
-                        schemaLocation="no/nav/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger/meldinger.xsd"/>
+                targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet"
+                xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1">
+            <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1"
+                        schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/meldinger.xsd"/>
 
             <xsd:element name="arkiverHenvendelse" type="meldinger:arkiverHenvendelseRequest"/>
             <xsd:element name="arkiverHenvendelseResponse" type="meldinger:arkiverHenvendelseResponse"/>
@@ -46,7 +46,8 @@
         <wsdl:part name="parameters" element="tns:ping">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:portType name="ArkiverHenvendelseBehandlingV1">
+
+    <wsdl:portType name="ArkiverHenvendelseBehandling_v1">
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest">
             </wsdl:input>
@@ -67,10 +68,10 @@
         </wsdl:operation>
     </wsdl:portType>
 
-    <wsdl:binding name="ArkivHenvendelseBinding" type="tns:ArkiverHenvendelseBehandlingV1">
+    <wsdl:binding name="ArkivHenvendelseBinding" type="tns:ArkiverHenvendelseBehandling_v1">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="arkiverHenvendelse">
-            <soap:operation soapAction="" style="document"/>
+            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet/arkiverHenvendelseRequest" style="document"/>
             <wsdl:input name="arkiverHenvendelseRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -79,7 +80,7 @@
             </wsdl:output>
        </wsdl:operation>
         <wsdl:operation name="settUtgaarDato">
-            <soap:operation soapAction="" style="document"/>
+            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet/settUtgaarDatoRequest" style="document"/>
             <wsdl:input name="settUtgaarDatoRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -88,7 +89,7 @@
             </wsdl:output>
         </wsdl:operation>
        <wsdl:operation name="ping">
-            <soap:operation soapAction="" style="document"/>
+            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet/pingRequest" style="document"/>
             <wsdl:input name="pingRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -98,8 +99,8 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:service name="ArkiverHenvendelseService">
-        <wsdl:port binding="tns:ArkivHenvendelseBinding" name="ArkiverHenvendelsePort">
+    <wsdl:service name="ArkiverHenvendelseService_v1">
+        <wsdl:port binding="tns:ArkivHenvendelseBinding" name="ArkiverHenvendelsePort_v1">
             <soap:address location="http://localhost:8081/domene.Brukerdialog/ArkiverHenvendelseService_v1"/>
         </wsdl:port>
     </wsdl:service>

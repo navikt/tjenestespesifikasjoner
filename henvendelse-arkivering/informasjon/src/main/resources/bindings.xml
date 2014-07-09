@@ -7,7 +7,7 @@
         <xjc:javaType name="org.joda.time.LocalDate" xmlType="xsd:date" adapter="no.nav.sbl.dialogarena.adapters.DateAdapter" />
     </jaxb:globalBindings>
     <jaxb:bindings
-            schemaLocation="no/nav/tjeneste/domene/arkiverhenvendelsebehandling/v1/meldinger/meldinger.xsd"
+            schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/meldinger.xsd"
             node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
