@@ -4,7 +4,7 @@
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>henvendelse-arkivering-tjenestespesifikasjon</artifactId>
-        <version>0.3-SNAPSHOT</version>
+        <version>0.3</version>
     </parent>
     <artifactId>henvendelse-arkivering-aktivitet</artifactId>
     <name>${project.artifactId}</name>
