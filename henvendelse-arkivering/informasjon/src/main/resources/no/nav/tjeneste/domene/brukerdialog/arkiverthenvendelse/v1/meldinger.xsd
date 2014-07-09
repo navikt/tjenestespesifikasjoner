@@ -14,7 +14,7 @@
     </xsd:complexType>
     <xsd:complexType name="hentArkivertHenvendelseRequest">
         <xsd:sequence>
-            <xsd:element name="arkivpostId" type="typer:ArkivpostID"/>
+            <xsd:element name="arkivpostId" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
 
