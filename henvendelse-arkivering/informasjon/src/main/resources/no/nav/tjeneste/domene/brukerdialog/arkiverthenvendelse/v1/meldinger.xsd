@@ -25,7 +25,7 @@
     </xsd:complexType>
     <xsd:complexType name="hentArkiverteHenvendelserRequest">
         <xsd:sequence>
-            <xsd:element name="aktorId" type="typer:Aktoer"/>
+            <xsd:element name="aktorId" type="xsd:string"/>
             <xsd:element name="filter" type="typer:Filter"/>
         </xsd:sequence>
     </xsd:complexType>
