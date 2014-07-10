@@ -172,20 +172,13 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="journalforingElement">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
     <xs:complexType name="journalfortInformasjon">
         <xs:sequence>
             <xs:element name="journalpostId" type="xs:string"/>
             <xs:element name="journalfortTema" type="xs:string"/>
             <xs:element name="journalfortDato" type="xs:dateTime"/>
             <xs:element name="journalfortSaksId" type="xs:string" minOccurs="0"/>
+            <xs:element name="journalforerNavIdent" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 

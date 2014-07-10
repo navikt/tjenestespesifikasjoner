@@ -14,6 +14,14 @@
         <wsdl.directory>src/main/resources</wsdl.directory>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>dialogarena-behandlingsinformasjon</artifactId>
+            <version>0.0.14-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <resources>
             <resource>
@@ -21,6 +29,22 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack dependencies</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includes>**/*.xsd</includes>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
@@ -41,6 +65,10 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/BehandleHenvendelse.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-nexclude</extraarg>
+                                        <extraarg>http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1/</extraarg>
+                                    </extraargs>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>

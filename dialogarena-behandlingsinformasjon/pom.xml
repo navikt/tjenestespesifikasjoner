@@ -26,7 +26,7 @@
 	<build>
 		<resources>
 			<resource>
-				<directory>src/main/resources</directory>
+				<directory>src/main/xsd</directory>
 			</resource>
 		</resources>
 		<plugins>

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
+		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+        xmlns:behandlingsinfo="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1">
+    <xs:import namespace="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1" schemaLocation="classpath:behandlingsinformasjon.xsd"/>
 
-    <xs:complexType name="oppdaterInformasjonRequest">
+    <xs:complexType name="oppdaterJournalfortInformasjonRequest">
         <xs:sequence>
             <xs:element name="behandlingsId" type="xs:string"/>
-            <xs:any processContents="lax"/>
+            <xs:element name="journalfortInformasjon" type="behandlingsinfo:journalfortInformasjon"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="oppdaterInformasjonResponse"/>
+    <xs:complexType name="oppdaterJournalfortInformasjonResponse"/>
 
     <xs:complexType name="oppdaterOpprettetOppgaveIdGsakRequest">
         <xs:sequence>

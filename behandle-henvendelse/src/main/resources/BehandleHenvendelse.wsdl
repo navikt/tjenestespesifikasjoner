@@ -13,10 +13,8 @@
             <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger"
                     schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
 
-            <xs:element name="oppdaterJournalforingInformasjon" type="meldinger:oppdaterInformasjonRequest"/>
-            <xs:element name="oppdaterJournalforingInformasjonResponse" type="meldinger:oppdaterInformasjonResponse"/>
-            <xs:element name="oppdaterArkivInformasjon" type="meldinger:oppdaterInformasjonRequest"/>
-            <xs:element name="oppdaterArkivInformasjonResponse" type="meldinger:oppdaterInformasjonResponse"/>
+            <xs:element name="oppdaterJournalfortInformasjon" type="meldinger:oppdaterJournalfortInformasjonRequest"/>
+            <xs:element name="oppdaterJournalfortInformasjonResponse" type="meldinger:oppdaterJournalfortInformasjonResponse"/>
             <xs:element name="oppdaterOpprettetOppgaveIdGsak" type="meldinger:oppdaterOpprettetOppgaveIdGsakRequest"/>
             <xs:element name="oppdaterOpprettetOppgaveIdGsakResponse" type="meldinger:oppdaterOpprettetOppgaveIdGsakResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
@@ -24,20 +22,12 @@
         </xs:schema>
     </wsdl:types>
 
-    <wsdl:message name="oppdaterJournalforingInformasjonRequest">
-        <wsdl:part element="tns:oppdaterJournalforingInformasjon" name="parameters">
+    <wsdl:message name="oppdaterJournalfortInformasjonRequest">
+        <wsdl:part element="tns:oppdaterJournalfortInformasjon" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="oppdaterJournalforingInformasjonResponse">
-        <wsdl:part element="tns:oppdaterJournalforingInformasjonResponse" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="oppdaterArkivInformasjonRequest">
-        <wsdl:part element="tns:oppdaterArkivInformasjon" name="parameters">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="oppdaterArkivInformasjonResponse">
-        <wsdl:part element="tns:oppdaterArkivInformasjonResponse" name="parameters">
+    <wsdl:message name="oppdaterJournalfortInformasjonResponse">
+        <wsdl:part element="tns:oppdaterJournalfortInformasjonResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="oppdaterOpprettetOppgaveIdGsakRequest">
@@ -58,16 +48,10 @@
     </wsdl:message>
 
     <wsdl:portType name="BehandleHenvendelsePortType">
-        <wsdl:operation name="oppdaterJournalforingInformasjon">
-            <wsdl:input message="tns:oppdaterJournalforingInformasjonRequest" name="oppdaterJournalforingInformasjonRequest">
+        <wsdl:operation name="oppdaterJournalfortInformasjon">
+            <wsdl:input message="tns:oppdaterJournalfortInformasjonRequest" name="oppdaterJournalfortInformasjonRequest">
             </wsdl:input>
-            <wsdl:output message="tns:oppdaterJournalforingInformasjonResponse" name="oppdaterJournalforingInformasjonResponse">
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="oppdaterArkivInformasjon">
-            <wsdl:input message="tns:oppdaterArkivInformasjonRequest" name="oppdaterArkivInformasjonRequest">
-            </wsdl:input>
-            <wsdl:output message="tns:oppdaterArkivInformasjonResponse" name="oppdaterArkivInformasjonResponse">
+            <wsdl:output message="tns:oppdaterJournalfortInformasjonResponse" name="oppdaterJournalfortInformasjonResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="oppdaterOpprettetOppgaveIdGsak">
@@ -86,21 +70,12 @@
 
     <wsdl:binding name="BehandleHenvendelseBinding" type="tns:BehandleHenvendelsePortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="oppdaterJournalforingInformasjon">
+        <wsdl:operation name="oppdaterJournalfortInformasjon">
             <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="oppdaterJournalforingInformasjonRequest">
+            <wsdl:input name="oppdaterJournalfortInformasjonRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="oppdaterJournalforingInformasjonResponse">
-                <soap:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="oppdaterArkivInformasjon">
-            <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="oppdaterArkivInformasjonRequest">
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="oppdaterArkivInformasjonResponse">
+            <wsdl:output name="oppdaterJournalfortInformasjonResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
