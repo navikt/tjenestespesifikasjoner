@@ -2,8 +2,6 @@
 <xs:schema targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger" xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
         xmlns:behandlingsinfo="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1">
-    <xs:import namespace="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1"
-               schemaLocation="behandlingsinformasjon.xsd"/>
 
     <xs:complexType name="oppdaterJournalfortInformasjonRequest">
         <xs:sequence>

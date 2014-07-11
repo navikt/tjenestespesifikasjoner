@@ -10,6 +10,8 @@
                     elementFormDefault="unqualified"
                     targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse"
                     xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger">
+            <xs:import namespace="http://nav.no/melding/domene/brukerdialog/behandlingsinformasjon/v1"
+                       schemaLocation="behandlingsinformasjon.xsd"/>
             <xs:import namespace="http://nav.no/tjeneste/domene/brukerdialog/henvendelse/v1/behandlehenvendelse/meldinger"
                     schemaLocation="no/nav/tjeneste/domene/brukerdialog/henvendelse/v1/meldinger/meldinger.xsd"/>
 
