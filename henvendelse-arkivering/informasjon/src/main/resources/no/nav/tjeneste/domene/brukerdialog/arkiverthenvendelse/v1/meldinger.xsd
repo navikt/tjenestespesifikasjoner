@@ -3,9 +3,6 @@
             targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1"
             version="1.0"
             xmlns:typer="http://nav.no/tjeneste/domene/brukerdialog/arkivtjenester/v1/typer">
-    <xsd:import
-            namespace="http://nav.no/tjeneste/domene/brukerdialog/arkivtjenester/v1/typer"
-            schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkivtjenester/v1/typer/typer.xsd"/>
 
     <xsd:complexType name="hentArkivertHenvendelseResponse">
         <xsd:sequence>

@@ -11,6 +11,9 @@
                 elementFormDefault="unqualified"
                 targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/informasjon"
                 xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1">
+            <xsd:import
+                    namespace="http://nav.no/tjeneste/domene/brukerdialog/arkivtjenester/v1/typer"
+                    schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkivtjenester/v1/typer/typer.xsd"/>
             <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1"
                         schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/meldinger.xsd"/>
 
