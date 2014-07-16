@@ -33,7 +33,7 @@
             <xsd:extension base="typer:Aktoer">
                 <xsd:sequence>
                     <xsd:element name="fodselsnummer" type="xsd:string"/>
-                    <xsd:element name="aktorId" type="xsd:string"/>
+                    <xsd:element name="aktoerId" type="xsd:string"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -79,7 +79,7 @@
             </xsd:element>
             <xsd:element minOccurs="0" maxOccurs="unbounded" name="tilleggsopplysninger"
                          type="typer:NoekkelVerdiPar"/>
-            <xsd:element name="dokumentType" type="xsd:string">
+            <xsd:element name="dokumenttype" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Ifm arkivdokumenter
                         vedtakspakke, kravdialog, faktainnsamling, sjekkliste, varsel, melding, utgående brev, kravdokument
