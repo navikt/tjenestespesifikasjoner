@@ -167,7 +167,7 @@
         <xsd:sequence>
             <xsd:element minOccurs="0" name="fraDato" type="xsd:dateTime"/>
             <xsd:element minOccurs="0" name="tilDato" type="xsd:dateTime"/>
-            <xsd:element minOccurs="0" name="maxAntall" type="xsd:integer"/>
+            <xsd:element minOccurs="0" name="maxAntall" type="xsd:int"/>
         </xsd:sequence>
     </xsd:complexType>
 
