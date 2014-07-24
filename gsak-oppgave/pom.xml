@@ -27,19 +27,19 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-oppgave-tjenestespesifikasjon</artifactId>
-                                    <version>2.2.0</version>
+                                    <groupId>no.nav.tjenester.fim</groupId>
+                                    <artifactId>nav-fim-oppgave-v3-tjenestespesifikasjon</artifactId>
+                                    <version>3.0.0-alpha001</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgave</outputDirectory>
                                 </artifactItem>
-                                <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-oppgavebehandling-tjenestespesifikasjon</artifactId>
+                                <!--ZIP MANGLER artifactItem>
+                                    <groupId>no.nav.tjenester.fim</groupId>
+                                    <artifactId>nav-fim-oppgavebehandling-v3-tjenestespesifikasjon</artifactId>
                                     <version>2.1.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgavebehandling</outputDirectory>
-                                </artifactItem>
+                                </artifactItem-->
                             </artifactItems>
                         </configuration>
                     </execution>
@@ -87,13 +87,13 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                  <wsdl>${wsdl.directory}/oppgave/no/nav/virksomhet/tjenester/oppgave/v2/Binding.wsdl</wsdl>
+                                  <wsdl>${wsdl.directory}/oppgave/no/nav/tjeneste/virksomhet/oppgave/v3/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/oppgave/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/oppgavebehandling/no/nav/virksomhet/tjenester/oppgavebehandling/v2/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/oppgavebehandling/no/nav/tjeneste/virksomhet/oppgavebehandling/v3/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/oppgavebehandling/bindings.xml</bindingFile>
                                     </bindingFiles>
