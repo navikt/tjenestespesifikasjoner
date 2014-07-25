@@ -19,6 +19,8 @@
             <xs:element name="oppdaterJournalfortInformasjonResponse" type="meldinger:oppdaterJournalfortInformasjonResponse"/>
             <xs:element name="oppdaterOpprettetOppgaveIdGsak" type="meldinger:oppdaterOpprettetOppgaveIdGsakRequest"/>
             <xs:element name="oppdaterOpprettetOppgaveIdGsakResponse" type="meldinger:oppdaterOpprettetOppgaveIdGsakResponse"/>
+            <xs:element name="oppdaterHenvendelsesarkivInformasjon" type="meldinger:oppdaterHenvendelsesarkivInformasjonRequest"/>
+            <xs:element name="oppdaterHenvendelsesarkivInformasjonResponse" type="meldinger:oppdaterHenvendelsesarkivInformasjonResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -38,6 +40,14 @@
     </wsdl:message>
     <wsdl:message name="oppdaterOpprettetOppgaveIdGsakResponse">
         <wsdl:part element="tns:oppdaterOpprettetOppgaveIdGsakResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterHenvendelsesarkivInformasjonRequest">
+        <wsdl:part element="tns:oppdaterHenvendelsesarkivInformasjon" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterHenvendelsesarkivInformasjonResponse">
+        <wsdl:part element="tns:oppdaterHenvendelsesarkivInformasjonResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="pingRequest">
@@ -60,6 +70,12 @@
             <wsdl:input message="tns:oppdaterOpprettetOppgaveIdGsakRequest" name="oppdaterOpprettetOppgaveIdGsakRequest">
             </wsdl:input>
             <wsdl:output message="tns:oppdaterOpprettetOppgaveIdGsakResponse" name="oppdaterOpprettetOppgaveIdGsakResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterHenvendelsesarkivInformasjon">
+            <wsdl:input message="tns:oppdaterHenvendelsesarkivInformasjonRequest" name="oppdaterHenvendelsesarkivInformasjonRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterHenvendelsesarkivInformasjonResponse" name="oppdaterHenvendelsesarkivInformasjonResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -87,6 +103,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="oppdaterOpprettetOppgaveIdGsakResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterHenvendelsesarkivInformasjon">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterHenvendelsesarkivInformasjonRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterHenvendelsesarkivInformasjonResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
