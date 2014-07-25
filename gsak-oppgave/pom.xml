@@ -40,6 +40,13 @@
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgavebehandling</outputDirectory>
                                 </artifactItem-->
+                                <artifactItem>
+                                    <groupId>no.nav.tjenester.fim</groupId>
+                                    <artifactId>nav-fim-henvendelsebehandling-v3-tjenestespesifikasjon</artifactId>
+                                    <version>3.0.0-alpha001</version>
+                                    <type>zip</type>
+                                    <outputDirectory>${wsdl.directory}/henvendelsebehandling</outputDirectory>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
@@ -96,6 +103,12 @@
                                     <wsdl>${wsdl.directory}/oppgavebehandling/no/nav/tjeneste/virksomhet/oppgavebehandling/v3/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/oppgavebehandling/bindings.xml</bindingFile>
+                                    </bindingFiles>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.directory}/henvendelsebehandling/no/nav/tjeneste/virksomhet/henvendelsebehandling/v3/Binding.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/henvendelsebehandling/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
