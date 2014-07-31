@@ -27,7 +27,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.fim</groupId>
                                     <artifactId>nav-fim-sakOgBehandling-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.0-alpha007</version>
+                                    <version>1.0.0-alpha010</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/sakOgBehandling</outputDirectory>
                                 </artifactItem>
@@ -75,7 +75,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/sakOgBehandling/no/nav/tjeneste/virksomhet/sakOgBehandling/v1/v1.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/sakOgBehandling/no/nav/tjeneste/virksomhet/sakOgBehandling/v1/sakOgBehandling.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/sakOgBehandling/bindings.xml</bindingFile>
                                     </bindingFiles>
