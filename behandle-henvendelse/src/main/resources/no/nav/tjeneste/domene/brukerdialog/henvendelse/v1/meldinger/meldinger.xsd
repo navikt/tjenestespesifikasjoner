@@ -5,21 +5,18 @@
 
     <xs:complexType name="oppdaterJournalfortInformasjonRequest">
         <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="behandlingId" type="xs:string"/>
             <xs:element name="journalfortInformasjon" type="behandlingsinfo:journalfortInformasjon"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="oppdaterJournalfortInformasjonResponse"/>
 
-    <xs:complexType name="oppdaterOpprettetOppgaveIdGsakRequest">
+    <xs:complexType name="oppdaterOppgaveOpprettetInformasjonRequest">
         <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
-            <xs:element name="oppgaveIdGsak" type="xs:string"/>
+            <xs:element name="oppdaterOppgaveOpprettetInformasjon" type="behandlingsinfo:oppgaveOpprettetInformasjon"/>
         </xs:sequence>
     </xs:complexType>
-
-    <xs:complexType name="oppdaterOpprettetOppgaveIdGsakResponse"/>
+    <xs:complexType name="oppdaterOppgaveOpprettetInformasjonResponse"/>
 
     <xs:complexType name="oppdaterHenvendelsesarkivInformasjonRequest">
         <xs:sequence>
@@ -27,11 +24,9 @@
             <xs:element name="arkivpostId" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="oppdaterHenvendelsesarkivInformasjonResponse"/>
 
     <xs:complexType name="pingRequest"/>
-
     <xs:complexType name="pingResponse"/>
 
 </xs:schema>

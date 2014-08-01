@@ -17,8 +17,8 @@
 
             <xs:element name="oppdaterJournalfortInformasjon" type="meldinger:oppdaterJournalfortInformasjonRequest"/>
             <xs:element name="oppdaterJournalfortInformasjonResponse" type="meldinger:oppdaterJournalfortInformasjonResponse"/>
-            <xs:element name="oppdaterOpprettetOppgaveIdGsak" type="meldinger:oppdaterOpprettetOppgaveIdGsakRequest"/>
-            <xs:element name="oppdaterOpprettetOppgaveIdGsakResponse" type="meldinger:oppdaterOpprettetOppgaveIdGsakResponse"/>
+            <xs:element name="oppdaterOppgaveOpprettetInformasjon" type="meldinger:oppdaterOppgaveOpprettetInformasjonRequest"/>
+            <xs:element name="oppdaterOppgaveOpprettetInformasjonResponse" type="meldinger:oppdaterOppgaveOpprettetInformasjonResponse"/>
             <xs:element name="oppdaterHenvendelsesarkivInformasjon" type="meldinger:oppdaterHenvendelsesarkivInformasjonRequest"/>
             <xs:element name="oppdaterHenvendelsesarkivInformasjonResponse" type="meldinger:oppdaterHenvendelsesarkivInformasjonResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
@@ -34,12 +34,12 @@
         <wsdl:part element="tns:oppdaterJournalfortInformasjonResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="oppdaterOpprettetOppgaveIdGsakRequest">
-        <wsdl:part element="tns:oppdaterOpprettetOppgaveIdGsak" name="parameters">
+    <wsdl:message name="oppdaterOppgaveOpprettetInformasjonRequest">
+        <wsdl:part element="tns:oppdaterOppgaveOpprettetInformasjon" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="oppdaterOpprettetOppgaveIdGsakResponse">
-        <wsdl:part element="tns:oppdaterOpprettetOppgaveIdGsakResponse" name="parameters">
+    <wsdl:message name="oppdaterOppgaveOpprettetInformasjonResponse">
+        <wsdl:part element="tns:oppdaterOppgaveOpprettetInformasjonResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="oppdaterHenvendelsesarkivInformasjonRequest">
@@ -66,10 +66,10 @@
             <wsdl:output message="tns:oppdaterJournalfortInformasjonResponse" name="oppdaterJournalfortInformasjonResponse">
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="oppdaterOpprettetOppgaveIdGsak">
-            <wsdl:input message="tns:oppdaterOpprettetOppgaveIdGsakRequest" name="oppdaterOpprettetOppgaveIdGsakRequest">
+        <wsdl:operation name="oppdaterOppgaveOpprettetInformasjon">
+            <wsdl:input message="tns:oppdaterOppgaveOpprettetInformasjonRequest" name="oppdaterOppgaveOpprettetInformasjonRequest">
             </wsdl:input>
-            <wsdl:output message="tns:oppdaterOpprettetOppgaveIdGsakResponse" name="oppdaterOpprettetOppgaveIdGsakResponse">
+            <wsdl:output message="tns:oppdaterOppgaveOpprettetInformasjonResponse" name="oppdaterOppgaveOpprettetInformasjonResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="oppdaterHenvendelsesarkivInformasjon">
@@ -97,12 +97,12 @@
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="oppdaterOpprettetOppgaveIdGsak">
+        <wsdl:operation name="oppdaterOppgaveOpprettetInformasjon">
             <soap:operation soapAction="" style="document"/>
-            <wsdl:input name="oppdaterOpprettetOppgaveIdGsakRequest">
+            <wsdl:input name="oppdaterOppgaveOpprettetInformasjonRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="oppdaterOpprettetOppgaveIdGsakResponse">
+            <wsdl:output name="oppdaterOppgaveOpprettetInformasjonResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
