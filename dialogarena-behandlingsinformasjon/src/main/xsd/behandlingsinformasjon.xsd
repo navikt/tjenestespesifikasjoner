@@ -15,11 +15,23 @@
                 <xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="versjon" type="xs:integer" minOccurs="0"/>
-                <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon" minOccurs="0"/>
                 <xs:element ref="tns:metadataListe" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="henvendelse">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="behandlingskjedeId" type="xs:string" minOccurs="0"/>
+            <xs:element name="henvendelseType" type="tns:henvendelseType"/>
+            <xs:element name="aktorId" type="xs:string"/>
+            <xs:element name="opprettetDato" type="xs:dateTime"/>
+            <xs:element name="innsendtDato" type="xs:dateTime"/>
+            <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon" minOccurs="0"/>
+            <xs:element ref="tns:metadataListe" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:complexType name="aktor">
         <xs:sequence>
@@ -145,33 +157,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:element name="innsendingJournalfort">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="behandlingsId" type="xs:string"/>
-                <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon"/>
-                <xs:element name="vedleggJournalfort" type="tns:vedleggJournalfort" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:complexType name="vedleggJournalfort">
-        <xs:sequence>
-            <xs:element name="uuid" type="xs:string"/>
-            <xs:element name="arkivreferanse" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="oppgaveOpprettet">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="behandlingsId" type="xs:string"/>
-                <xs:element name="oppgaveIdGsak" type="xs:string"/>
-                <xs:element name="henvendelseIdGsak" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
     <xs:complexType name="journalfortInformasjon">
         <xs:sequence>
             <xs:element name="journalpostId" type="xs:string"/>
@@ -179,8 +164,23 @@
             <xs:element name="journalfortDato" type="xs:dateTime"/>
             <xs:element name="journalfortSaksId" type="xs:string" minOccurs="0"/>
             <xs:element name="journalforerNavIdent" type="xs:string" minOccurs="0"/>
+            <xs:element name="vedleggJournalfort" type="tns:vedleggJournalfort" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="oppgaveOpprettetInformasjon">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="oppgaveIdGsak" type="xs:string"/>
+            <xs:element name="henvendelseIdGsak" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vedleggJournalfort">
+        <xs:sequence>
+            <xs:element name="uuid" type="xs:string"/>
+            <xs:element name="arkivreferanse" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
 
 </xs:schema>
