@@ -20,18 +20,23 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="henvendelse">
-        <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
-            <xs:element name="behandlingskjedeId" type="xs:string" minOccurs="0"/>
-            <xs:element name="henvendelseType" type="tns:henvendelseType"/>
-            <xs:element name="aktorId" type="xs:string"/>
-            <xs:element name="opprettetDato" type="xs:dateTime"/>
-            <xs:element name="innsendtDato" type="xs:dateTime"/>
-            <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon" minOccurs="0"/>
-            <xs:element ref="tns:metadataListe" minOccurs="0"/>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="henvendelse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="behandlingsId" type="xs:string" minOccurs="0"/>
+                <xs:element name="behandlingskjedeId" type="xs:string" minOccurs="0"/>
+                <xs:element name="applikasjonsId" type="xs:string" minOccurs="0"/>
+                <xs:element name="aktor" type="tns:aktor" minOccurs="0"/>
+                <xs:element name="tema" type="xs:string" minOccurs="0"/>
+                <xs:element name="henvendelseType" type="xs:string" minOccurs="0"/>
+                <xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="versjon" type="xs:integer" minOccurs="0"/>
+                <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon" minOccurs="0"/>
+                <xs:element ref="tns:metadataListe" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <xs:complexType name="aktor">
         <xs:sequence>
