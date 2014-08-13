@@ -89,12 +89,21 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="sporsmal">
+    <xs:complexType name="melding" abstract="true">
         <xs:complexContent>
             <xs:extension base="tns:metadata">
                 <xs:sequence>
                     <xs:element name="temagruppe" type="xs:string"/>
                     <xs:element name="fritekst" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="meldingFraBruker">
+        <xs:complexContent>
+            <xs:extension base="tns:melding">
+                <xs:sequence>
                     <xs:element name="henvendelseIdGsak" type="xs:string" minOccurs="0"/>
                     <xs:element name="oppgaveIdGsak" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
@@ -102,28 +111,12 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="svar">
+    <xs:complexType name="meldingTilBruker">
         <xs:complexContent>
-            <xs:extension base="tns:metadata">
+            <xs:extension base="tns:melding">
                 <xs:sequence>
-                    <xs:element name="sporsmalsId" type="xs:string"/>
-                    <xs:element name="temagruppe" type="xs:string"/>
+                    <xs:element name="sporsmalsId" type="xs:string" minOccurs="0"/>
                     <xs:element name="kanal" type="xs:string"/>
-                    <xs:element name="fritekst" type="xs:string"/>
-                    <xs:element name="navident" type="xs:string"/>
-                    <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="referat">
-        <xs:complexContent>
-            <xs:extension base="tns:metadata">
-                <xs:sequence>
-                    <xs:element name="temagruppe" type="xs:string"/>
-                    <xs:element name="kanal" type="xs:string"/>
-                    <xs:element name="fritekst" type="xs:string"/>
                     <xs:element name="navident" type="xs:string"/>
                     <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
                 </xs:sequence>
