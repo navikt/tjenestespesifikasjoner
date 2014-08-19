@@ -26,6 +26,14 @@
     </xs:complexType>
     <xs:complexType name="oppdaterHenvendelsesarkivInformasjonResponse"/>
 
+    <xs:complexType name="oppdaterKontorsperreRequest">
+        <xs:sequence>
+            <xs:element name="behandlingId" type="xs:string"/>
+            <xs:element name="enhet" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="oppdaterKontorsperreResponse"/>
+
     <xs:complexType name="pingRequest"/>
     <xs:complexType name="pingResponse"/>
 

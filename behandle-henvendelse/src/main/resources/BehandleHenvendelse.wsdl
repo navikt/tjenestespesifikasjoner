@@ -21,6 +21,8 @@
             <xs:element name="oppdaterOppgaveOpprettetInformasjonResponse" type="meldinger:oppdaterOppgaveOpprettetInformasjonResponse"/>
             <xs:element name="oppdaterHenvendelsesarkivInformasjon" type="meldinger:oppdaterHenvendelsesarkivInformasjonRequest"/>
             <xs:element name="oppdaterHenvendelsesarkivInformasjonResponse" type="meldinger:oppdaterHenvendelsesarkivInformasjonResponse"/>
+            <xs:element name="oppdaterKontorsperre" type="meldinger:oppdaterKontorsperreRequest"/>
+            <xs:element name="oppdaterKontorsperreResponse" type="meldinger:oppdaterKontorsperreResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -50,6 +52,14 @@
         <wsdl:part element="tns:oppdaterHenvendelsesarkivInformasjonResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="oppdaterKontorsperreRequest">
+        <wsdl:part element="tns:oppdaterKontorsperre" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterKontorsperreResponse">
+        <wsdl:part element="tns:oppdaterKontorsperreResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -76,6 +86,12 @@
             <wsdl:input message="tns:oppdaterHenvendelsesarkivInformasjonRequest" name="oppdaterHenvendelsesarkivInformasjonRequest">
             </wsdl:input>
             <wsdl:output message="tns:oppdaterHenvendelsesarkivInformasjonResponse" name="oppdaterHenvendelsesarkivInformasjonResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterKontorsperre">
+            <wsdl:input message="tns:oppdaterKontorsperreRequest" name="oppdaterKontorsperreRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterKontorsperreResponse" name="oppdaterKontorsperreResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -112,6 +128,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="oppdaterHenvendelsesarkivInformasjonResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterKontorsperre">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterKontorsperreRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterKontorsperreResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
