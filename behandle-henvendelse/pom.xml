@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>behandle-henvendelse</artifactId>
-	<version>0.8-SNAPSHOT</version>
+	<version>0.8</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -125,7 +125,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>behandle-henvendelse-0.8</tag>
     </scm>
 
 </project>
