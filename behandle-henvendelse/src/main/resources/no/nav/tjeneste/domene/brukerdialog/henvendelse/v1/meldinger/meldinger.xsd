@@ -34,6 +34,14 @@
     </xs:complexType>
     <xs:complexType name="oppdaterKontorsperreResponse"/>
 
+    <xs:complexType name="oppdaterTilKasseringRequest">
+        <xs:sequence>
+            <xs:element name="behandlingIdListe" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="oppdaterTilKasseringResponse"/>
+
+
     <xs:complexType name="pingRequest"/>
     <xs:complexType name="pingResponse"/>
 

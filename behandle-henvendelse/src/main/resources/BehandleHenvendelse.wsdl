@@ -23,6 +23,8 @@
             <xs:element name="oppdaterHenvendelsesarkivInformasjonResponse" type="meldinger:oppdaterHenvendelsesarkivInformasjonResponse"/>
             <xs:element name="oppdaterKontorsperre" type="meldinger:oppdaterKontorsperreRequest"/>
             <xs:element name="oppdaterKontorsperreResponse" type="meldinger:oppdaterKontorsperreResponse"/>
+            <xs:element name="oppdaterTilKassering" type="meldinger:oppdaterTilKasseringRequest"/>
+            <xs:element name="oppdaterTilKasseringResponse" type="meldinger:oppdaterTilKasseringResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -60,6 +62,14 @@
         <wsdl:part element="tns:oppdaterKontorsperreResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="oppdaterTilKasseringRequest">
+        <wsdl:part element="tns:oppdaterTilKassering" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="oppdaterTilKasseringResponse">
+        <wsdl:part element="tns:oppdaterTilKasseringResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -92,6 +102,12 @@
             <wsdl:input message="tns:oppdaterKontorsperreRequest" name="oppdaterKontorsperreRequest">
             </wsdl:input>
             <wsdl:output message="tns:oppdaterKontorsperreResponse" name="oppdaterKontorsperreResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterTilKassering">
+            <wsdl:input message="tns:oppdaterTilKasseringRequest" name="oppdaterTilKasseringRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterTilKasseringResponse" name="oppdaterTilKasseringResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -137,6 +153,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="oppdaterKontorsperreResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterTilKassering">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterTilKasseringRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterTilKasseringResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
