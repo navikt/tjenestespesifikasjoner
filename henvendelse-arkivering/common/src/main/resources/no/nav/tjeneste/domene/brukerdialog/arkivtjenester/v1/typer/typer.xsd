@@ -101,6 +101,7 @@
 
     <xsd:complexType name="Arkivpost">
         <xsd:sequence>
+            <xsd:element minOccurs="0" name="arkivpostId" type="xsd:string"/>
             <xsd:element name="type" type="typer:arkivpostType"/>
             <xsd:element minOccurs="0" name="mottattDato" type="xsd:dateTime"/>
             <xsd:element minOccurs="0" name="dokumentDato" type="xsd:dateTime"/>
