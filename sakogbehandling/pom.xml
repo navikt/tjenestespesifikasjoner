@@ -78,6 +78,7 @@
                                     <wsdl>${wsdl.directory}/sakOgBehandling/no/nav/tjeneste/virksomhet/sakOgBehandling/v1/sakOgBehandling.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/sakOgBehandling/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/sakOgBehandling/porttypehack.xml</bindingFile>
                                     </bindingFiles>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
