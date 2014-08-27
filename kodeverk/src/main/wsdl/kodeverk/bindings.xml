@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <jxb:bindings version="1.0"
-  xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  jxb:extensionBindingPrefixes="xjc"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              jxb:extensionBindingPrefixes="xjc"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+              xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+
 
     <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/kodeverk/v2/informasjon/kodeverk.xsd" node="/xs:schema">
         <jxb:schemaBindings>
@@ -38,6 +40,7 @@
                 parseMethod="no.nav.sbl.dialogarena.kodeverk.adapters.DateAdapter.unmarshal"
                 printMethod="no.nav.sbl.dialogarena.kodeverk.adapters.DateAdapter.marshal"
                 />
+        <jaxb:serializable uid="27082014"/>
     </jxb:globalBindings>
 
 
