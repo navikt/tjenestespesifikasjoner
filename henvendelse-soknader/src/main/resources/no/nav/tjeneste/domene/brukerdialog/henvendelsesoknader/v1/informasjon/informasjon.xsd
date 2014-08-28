@@ -16,7 +16,7 @@
 			</xs:element>
 			<xs:element name="opprettetDato" type="xs:dateTime" />
 			<xs:element name="ettersending" type="xs:boolean" />
-            <ex:element name="sistEndretDato" type="xs:dateTime" minOccurs="1" />
+            <ex:element name="sistEndretDato" type="xs:dateTime" />
 			<xs:element name="innsendtDato" type="xs:dateTime" minOccurs="0" />
 			<xs:element name="dokumentforventninger" minOccurs="0">
 				<xs:complexType>
