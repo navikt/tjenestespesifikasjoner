@@ -32,6 +32,8 @@
                 <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="kontorsperreEnhet" type="xs:string" minOccurs="0"/>
                 <xs:element name="markertSomFeilsendtAv" type="xs:string" minOccurs="0"/>
+                <xs:element name="oppgaveIdGsak" type="xs:string" minOccurs="0"/>
+                <xs:element name="henvendelseIdGsak" type="xs:string" minOccurs="0"/>
                 <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon" minOccurs="0"/>
                 <xs:element ref="tns:metadataListe" minOccurs="0"/>
             </xs:sequence>
@@ -104,12 +106,7 @@
 
     <xs:complexType name="meldingFraBruker">
         <xs:complexContent>
-            <xs:extension base="tns:melding">
-                <xs:sequence>
-                    <xs:element name="henvendelseIdGsak" type="xs:string" minOccurs="0"/>
-                    <xs:element name="oppgaveIdGsak" type="xs:string" minOccurs="0"/>
-                </xs:sequence>
-            </xs:extension>
+            <xs:extension base="tns:melding"/>
         </xs:complexContent>
     </xs:complexType>
 
