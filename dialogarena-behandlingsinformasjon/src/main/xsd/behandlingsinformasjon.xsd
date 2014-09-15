@@ -137,9 +137,12 @@
             <xs:enumeration value="DOKUMENTINNSENDING_ETTERSENDING"/>
             <xs:enumeration value="SEND_SOKNAD"/>
             <xs:enumeration value="SEND_SOKNAD_ETTERSENDING"/>
-            <xs:enumeration value="SPORSMAL"/>
-            <xs:enumeration value="SVAR"/>
-            <xs:enumeration value="REFERAT"/>
+            <xs:enumeration value="SPORSMAL_SKRIFTLIG"/>
+            <xs:enumeration value="SVAR_SKRIFTLIG"/>
+            <xs:enumeration value="SVAR_OPPMOTE"/>
+            <xs:enumeration value="SVAR_TELEFON"/>
+            <xs:enumeration value="REFERAT_OPPMOTE"/>
+            <xs:enumeration value="REFERAT_TELEFON"/>
         </xs:restriction>
     </xs:simpleType>
 
