@@ -5,12 +5,11 @@
 
     <xsd:complexType name="sendElektroniskNotifikasjonRequest">
         <xsd:sequence>
-            <xsd:element name="id" type="xsd:string"/>
+            <xsd:element name="fnr" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="sendElektroniskNotifikasjonResponse">
         <xsd:sequence>
-            <xsd:element name="id" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
 
