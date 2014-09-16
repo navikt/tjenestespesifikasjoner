@@ -35,6 +35,10 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>src/main/resources/Aktoer.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-xjc-XhashCode</extraarg>
+                                        <extraarg>-xjc-Xequals</extraarg>
+                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
