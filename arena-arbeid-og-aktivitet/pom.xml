@@ -8,7 +8,7 @@
     </parent>
     <artifactId>arena-arbeid-og-aktivitet</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.0.5-SNAPSHOT</version>
+	<version>1.0.6-alpha001-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -29,7 +29,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.esb.nav</groupId>
                                     <artifactId>nav-tjeneste-arbeidOgAktivitet</artifactId>
-                                    <version>1.0.5</version>
+                                    <version>1.0.6-alpha001</version>
                                     <classifier>wsdlif</classifier>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/arbeid</outputDirectory>
