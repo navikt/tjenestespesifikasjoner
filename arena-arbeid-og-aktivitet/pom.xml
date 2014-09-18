@@ -8,7 +8,7 @@
     </parent>
     <artifactId>arena-arbeid-og-aktivitet</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.0.6-alpha001-SNAPSHOT</version>
+	<version>1.0.6-alpha001</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -158,7 +158,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>arena-arbeid-og-aktivitet-1.0.6-alpha001</tag>
     </scm>
 
 </project>
