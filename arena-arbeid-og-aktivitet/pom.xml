@@ -81,7 +81,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                  <wsdl>${wsdl.directory}/arbeid/no/nav/virksomhet/tjenester/sak/arbeidogaktivitet/arbeidogaktivitet.wsdl</wsdl>
+                                  <wsdl>${wsdl.directory}/arbeid/nav-tjeneste-arbeidOgAktivitet_ArbeidOgAktivitetWSEXP.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/arbeid/bindings.xml</bindingFile>
                                     </bindingFiles>
