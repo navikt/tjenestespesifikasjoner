@@ -175,7 +175,7 @@
     <xsd:simpleType name="arkivStatusType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="ARKIVERT"/>
-            <xsd:enumeration value="UTGAAT"/>
+            <xsd:enumeration value="KASSERT"/>
         </xsd:restriction>
     </xsd:simpleType>
 
