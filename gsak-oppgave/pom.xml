@@ -47,6 +47,14 @@
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/henvendelsebehandling</outputDirectory>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>no.nav.esb.nav</groupId>
+                                    <artifactId>nav-tjeneste-ruting</artifactId>
+                                    <version>1.0.2</version>
+                                    <classifier>wsdlif</classifier>
+                                    <type>zip</type>
+                                    <outputDirectory>${wsdl.directory}/ruting</outputDirectory>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
@@ -109,6 +117,12 @@
                                     <wsdl>${wsdl.directory}/henvendelsebehandling/no/nav/tjeneste/virksomhet/henvendelsebehandling/v3/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/henvendelsebehandling/bindings.xml</bindingFile>
+                                    </bindingFiles>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.directory}/ruting/nav-tjeneste-ruting_RutingWSEXP.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/ruting/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
