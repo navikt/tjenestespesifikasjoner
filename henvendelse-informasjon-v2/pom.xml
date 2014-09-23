@@ -43,6 +43,7 @@
                                     <wsdl>${wsdl.directory}/Henvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/Serializebinding.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
