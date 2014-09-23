@@ -71,6 +71,7 @@
                                     </extraargs>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
+                                        <bindingFile>src/main/resources/SerializeBinding.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
