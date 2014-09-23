@@ -39,6 +39,9 @@
                                         <extraarg>-xjc-XhashCode</extraarg>
                                         <extraarg>-xjc-Xequals</extraarg>
                                     </extraargs>
+                                    <bindingFiles>
+                                        <bindingFile>src/main/resources/SerializeBinding.xml</bindingFile>
+                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
