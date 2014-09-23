@@ -27,6 +27,7 @@
                 parseMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateAdapter.unmarshal"
                 printMethod="no.nav.sbl.dialogarena.henvendelse.adapters.DateAdapter.marshal"
                 />
+        <jxb:serializable />
     </jxb:globalBindings>
 
 </jxb:bindings>
