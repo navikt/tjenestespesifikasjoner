@@ -43,6 +43,7 @@
                                     <wsdl>${wsdl.directory}/InnsynHenvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/SerializeBinding.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
