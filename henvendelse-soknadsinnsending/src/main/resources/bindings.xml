@@ -5,6 +5,7 @@
     <jaxb:globalBindings>
         <xjc:javaType name="org.joda.time.DateTime" xmlType="xsd:dateTime" adapter="no.nav.sbl.dialogarena.adapters.DateTimeAdapter" />
         <xjc:javaType name="org.joda.time.LocalDate" xmlType="xsd:date" adapter="no.nav.sbl.dialogarena.adapters.DateAdapter" />
+        <jaxb:serializable />
     </jaxb:globalBindings>
     <jaxb:bindings schemaLocation="no/nav/tjeneste/domene/brukerdialog/sendsoknad/v1/meldinger/meldinger.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
