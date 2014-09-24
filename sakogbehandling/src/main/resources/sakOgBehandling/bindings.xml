@@ -38,6 +38,7 @@
                 parseMethod="no.nav.sbl.dialogarena.sakogbehandling.adapters.DateTimeAdapter.unmarshal"
                 printMethod="no.nav.sbl.dialogarena.sakogbehandling.adapters.DateTimeAdapter.marshal"
                 />
+        <jxb:serializable />
     </jxb:globalBindings>
 
 </jxb:bindings>
