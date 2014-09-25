@@ -36,6 +36,8 @@
                             <defaultOptions>
                                 <extraargs>
                                     <extraarg>-xjc-Xfluent-api</extraarg>
+                                    <extraarg>-xjc-XhashCode</extraarg>
+                                    <extraarg>-xjc-Xequals</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
