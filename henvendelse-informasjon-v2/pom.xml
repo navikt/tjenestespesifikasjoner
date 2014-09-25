@@ -96,6 +96,13 @@
             </plugin>
 	  </plugins>
 	</build>
+    <dependencies>
+        <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-runtime</artifactId>
+            <version>0.6.4</version>
+        </dependency>
+    </dependencies>
 
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
