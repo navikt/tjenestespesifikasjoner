@@ -29,7 +29,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.esb.nav</groupId>
                                     <artifactId>nav-tjeneste-arbeidOgAktivitet</artifactId>
-                                    <version>1.0.6-alpha001</version>
+                                    <version>1.0.6-alpha002</version>
                                     <classifier>wsdlif</classifier>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/arbeid</outputDirectory>
