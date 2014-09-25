@@ -115,6 +115,7 @@
         <xs:complexContent>
             <xs:extension base="tns:melding">
                 <xs:sequence>
+                    <xs:element name="sporsmalsId" type="xs:string" minOccurs="0"/>
                     <xs:element name="kanal" type="xs:string"/>
                     <xs:element name="navident" type="xs:string"/>
                 </xs:sequence>
