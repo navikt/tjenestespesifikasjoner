@@ -29,7 +29,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.esb.nav</groupId>
                                     <artifactId>nav-tjeneste-sak</artifactId>
-                                    <version>1.1.4-alpha002</version>
+                                    <version>1.1.5-alpha001</version>
                                     <classifier>wsdlif</classifier>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}</outputDirectory>
@@ -77,6 +77,7 @@
                                     <extraarg>-xjc-XhashCode</extraarg>
                                     <extraarg>-xjc-Xequals</extraarg>
                                     <extraarg>-xjc-XtoString</extraarg>
+                                    <extraarg>-xjc-npa</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
