@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>behandleJournal-jaxws</artifactId>
-    <version>2.0.0-alpha009-SNAPSHOT</version>
+    <version>2.0.0-alpha009</version>
     <name>${project.artifactId}</name>
 
     <properties>
@@ -177,7 +177,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>behandleJournal-jaxws-2.0.0-alpha009</tag>
     </scm>
 
 </project>
