@@ -7,23 +7,7 @@
               jxb:extensionBindingPrefixes="xjc"
               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/behandleJournal/v1/informasjon/behandleJournal.xsd" node="/xs:schema">
-        <jxb:schemaBindings>
-            <jxb:nameXmlTransform>
-                <jxb:typeName prefix="XML"/>
-                <jxb:anonymousTypeName prefix="XML"/>
-            </jxb:nameXmlTransform>
-        </jxb:schemaBindings>
-    </jxb:bindings>
 
-    <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/behandleJournal/v1/meldinger/meldinger.xsd" node="/xs:schema">
-        <jxb:schemaBindings>
-            <jxb:nameXmlTransform>
-                <jxb:typeName prefix="XML"/>
-                <jxb:anonymousTypeName prefix="XML"/>
-            </jxb:nameXmlTransform>
-        </jxb:schemaBindings>
-    </jxb:bindings>
 
     <jxb:globalBindings>
         <jxb:javaType

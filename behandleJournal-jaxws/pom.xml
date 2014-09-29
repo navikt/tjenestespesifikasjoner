@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>behandleJournal-jaxws</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>2.0.0-alpha009-SNAPSHOT</version>
     <name>${project.artifactId}</name>
 
     <properties>
@@ -30,8 +30,8 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.fim</groupId>
-                                    <artifactId>nav-fim-behandleJournal-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.0</version>
+                                    <artifactId>nav-fim-behandleJournal-v2-tjenestespesifikasjon</artifactId>
+                                    <version>2.0.0-alpha009</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/behandleJournal</outputDirectory>
                                 </artifactItem>
@@ -78,13 +78,12 @@
                                     <extraarg>-xjc-XhashCode</extraarg>
                                     <extraarg>-xjc-Xequals</extraarg>
                                     <extraarg>-xjc-XtoString</extraarg>
-                                    <extraarg>-xjc-Xvalue-constructor</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>
-                                        ${wsdl.directory}/behandleJournal/no/nav/tjeneste/virksomhet/behandleJournal/v1/BehandleJournal.wsdl
+                                        ${wsdl.directory}/behandleJournal/no/nav/tjeneste/virksomhet/behandleJournal/v2/behandleJournal.wsdl
                                     </wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandleJournal/bindings.xml</bindingFile>
