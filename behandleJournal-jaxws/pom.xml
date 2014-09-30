@@ -83,7 +83,7 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>
-                                        ${wsdl.directory}/behandleJournal/no/nav/tjeneste/virksomhet/behandleJournal/v2/behandleJournal.wsdl
+                                        ${wsdl.directory}/behandleJournal/no/nav/tjeneste/virksomhet/behandleJournal/v2/Binding.wsdl
                                     </wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandleJournal/bindings.xml</bindingFile>
