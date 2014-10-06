@@ -66,7 +66,7 @@
             <xsd:element name="tittel" type="xsd:string"/>
             <xsd:element minOccurs="0" name="brevkode" type="xsd:string"/>
             <xsd:element name="innholdStrukturert" type="xsd:boolean"/>
-            <xsd:element name="innhold" type="xsd:base64Binary"/>
+            <xsd:element name="innhold" type="xsd:base64Binary" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
 
