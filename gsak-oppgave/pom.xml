@@ -8,7 +8,7 @@
     </parent>
     <artifactId>gsak-oppgave-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
-    <version>0.0.12</version>
+    <version>0.0.13-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -196,7 +196,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>gsak-oppgave-tjenestespesifikasjon-0.0.12</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
