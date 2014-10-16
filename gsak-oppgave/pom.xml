@@ -8,7 +8,7 @@
     </parent>
     <artifactId>gsak-oppgave-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
-	<version>0.0.12-SNAPSHOT</version>
+    <version>0.0.12-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -29,29 +29,28 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.fim</groupId>
                                     <artifactId>nav-fim-oppgave-v3-tjenestespesifikasjon</artifactId>
-                                    <version>3.0.0-alpha001</version>
+                                    <version>3.0.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgave</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.fim</groupId>
                                     <artifactId>nav-fim-oppgavebehandling-v3-tjenestespesifikasjon</artifactId>
-                                    <version>3.0.0-alpha001</version>
+                                    <version>3.0.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgavebehandling</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.fim</groupId>
                                     <artifactId>nav-fim-henvendelsebehandling-v3-tjenestespesifikasjon</artifactId>
-                                    <version>3.0.0-alpha001</version>
+                                    <version>3.0.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/henvendelsebehandling</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>no.nav.esb.nav</groupId>
-                                    <artifactId>nav-tjeneste-ruting</artifactId>
+                                    <groupId>no.nav.tjenester</groupId>
+                                    <artifactId>nav-ruting-tjenestespesifikasjon</artifactId>
                                     <version>1.1.0</version>
-                                    <classifier>wsdlif</classifier>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/ruting</outputDirectory>
                                 </artifactItem>
@@ -102,7 +101,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                  <wsdl>${wsdl.directory}/oppgave/no/nav/tjeneste/virksomhet/oppgave/v3/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/oppgave/no/nav/tjeneste/virksomhet/oppgave/v3/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/oppgave/bindings.xml</bindingFile>
                                     </bindingFiles>
@@ -120,7 +119,7 @@
                                     </bindingFiles>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/ruting/nav-tjeneste-ruting_RutingWSEXP.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/ruting/no/nav/virksomhet/tjenester/ruting/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/ruting/bindings.xml</bindingFile>
                                     </bindingFiles>
@@ -180,7 +179,7 @@
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
-			<version>0.6.4</version>
+            <version>0.6.4</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -188,9 +187,9 @@
             <version>2.3</version>
         </dependency>
         <dependency>
-        	<groupId>no.nav.sbl.dialogarena</groupId>
-        	<artifactId>jaxb-adapters</artifactId>
-        	<version>1.1</version>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>1.1</version>
         </dependency>
     </dependencies>
 
