@@ -8,7 +8,7 @@
     </parent>
     <artifactId>dial-nav-tjeneste-sak</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.6</version>
+	<version>1.7-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -158,7 +158,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>dial-nav-tjeneste-sak-1.6</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
