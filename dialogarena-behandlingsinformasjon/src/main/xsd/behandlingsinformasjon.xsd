@@ -12,6 +12,8 @@
                 <xs:element name="aktor" type="tns:aktor" minOccurs="0"/>
                 <xs:element name="tema" type="xs:string" minOccurs="0"/>
                 <xs:element name="henvendelseType" type="xs:string" minOccurs="0"/>
+                <xs:element name="eksternAktor" type="xs:string" minOccurs="0"/>
+                <xs:element name="tilknyttetEnhet" type="xs:string" minOccurs="0"/>
                 <xs:element name="opprettetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element ref="tns:metadataListe" minOccurs="0"/>
@@ -28,6 +30,8 @@
                 <xs:element name="fnr" type="xs:string" minOccurs="0"/>
                 <xs:element name="tema" type="xs:string" minOccurs="0"/>
                 <xs:element name="henvendelseType" type="xs:string"/>
+                <xs:element name="eksternAktor" type="xs:string" minOccurs="0"/>
+                <xs:element name="tilknyttetEnhet" type="xs:string" minOccurs="0"/>
                 <xs:element name="opprettetDato" type="xs:dateTime"/>
                 <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
@@ -143,6 +147,8 @@
             <xs:enumeration value="SVAR_TELEFON"/>
             <xs:enumeration value="REFERAT_OPPMOTE"/>
             <xs:enumeration value="REFERAT_TELEFON"/>
+            <xs:enumeration value="SPORSMAL_MODIA_UTGAAENDE"/>
+            <xs:enumeration value="SVAR_SBL_INNGAAENDE"/>
         </xs:restriction>
     </xs:simpleType>
 
