@@ -9,7 +9,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>elektronisknotifikasjon-utsending-tjenestespesifikasjon</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.4</version>
     <name>${project.artifactId}</name>
     <packaging>jar</packaging>
 
@@ -131,7 +131,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>elektronisknotifikasjon-utsending-tjenestespesifikasjon-1.4</tag>
     </scm>
 
 </project>
