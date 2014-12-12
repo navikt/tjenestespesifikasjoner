@@ -47,6 +47,7 @@
             <xs:enumeration value="VEDLEGG_SENDES_IKKE"/>
             <xs:enumeration value="VEDLEGG_SENDES_AV_ANDRE"/>
 			<xs:enumeration value="INNSENDT" />
+			<xs:enumeration value="VEDLEGG_ALLEREDE_SENDT" />
 		</xs:restriction>
 	</xs:simpleType>
 
