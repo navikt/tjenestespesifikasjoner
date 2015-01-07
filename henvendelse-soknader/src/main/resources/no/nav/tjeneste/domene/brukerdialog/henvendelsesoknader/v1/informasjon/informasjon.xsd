@@ -7,6 +7,7 @@
 		<xs:sequence>
 			<xs:element name="behandlingsId" type="xs:string" />
 			<xs:element name="behandlingsKjedeId" type="xs:string" minOccurs="0"/>
+			<xs:element name="kvitteringsReferanse" type="xs:string" minOccurs="0"/>
 			<xs:element name="henvendelseType" type="xs:string">
 				<xs:annotation><xs:documentation>henvendelseType-enum definerer de kjente typene ved genereringstidspunktet</xs:documentation></xs:annotation>
 			</xs:element>
