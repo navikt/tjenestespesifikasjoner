@@ -190,4 +190,14 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:element name="henvendelseHendelse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="behandlingsId" type="xs:string"/>
+                <xs:element name="henvendelseType" type="xs:string"/>
+                <xs:element name="hendelseType" type="xs:string"/>
+                <xs:element name="dato" type="xs:dateTime"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
