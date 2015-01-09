@@ -7,7 +7,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>dialogarena-behandlingsinformasjon</artifactId>
-	<version>0.0.30-SNAPSHOT</version>
+	<version>0.0.30</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -77,7 +77,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>dialogarena-behandlingsinformasjon-0.0.30</tag>
     </scm>
 
 </project>
