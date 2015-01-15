@@ -41,6 +41,14 @@
     </xs:complexType>
     <xs:complexType name="oppdaterTilKasseringResponse"/>
 
+    <xs:complexType name="knyttBehandlingskjedeTilSakRequest">
+        <xs:sequence>
+            <xs:element name="behandlingskjedeId" type="xs:string"/>
+            <xs:element name="saksId" type="xs:string"/>
+            <xs:element name="temakode" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="knyttBehandlingskjedeTilSakResponse"/>
 
     <xs:complexType name="pingRequest"/>
     <xs:complexType name="pingResponse"/>
