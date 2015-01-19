@@ -167,9 +167,9 @@
 
     <xs:complexType name="journalfortInformasjon">
         <xs:sequence>
-            <xs:element name="journalpostId" type="xs:string"/>
-            <xs:element name="journalfortTema" type="xs:string"/>
-            <xs:element name="journalfortDato" type="xs:dateTime"/>
+            <xs:element name="journalpostId" type="xs:string" minOccurs="0"/>
+            <xs:element name="journalfortTema" type="xs:string" minOccurs="0"/>
+            <xs:element name="journalfortDato" type="xs:dateTime" minOccurs="0"/>
             <xs:element name="journalfortSaksId" type="xs:string" minOccurs="0"/>
             <xs:element name="journalforerNavIdent" type="xs:string" minOccurs="0"/>
             <xs:element name="vedleggJournalfort" type="tns:vedleggJournalfort" minOccurs="0" maxOccurs="unbounded"/>
