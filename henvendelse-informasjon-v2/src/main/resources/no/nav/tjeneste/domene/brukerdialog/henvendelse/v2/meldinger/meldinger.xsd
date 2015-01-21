@@ -27,6 +27,18 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="hentBehandlingskjedeRequest">
+        <xs:sequence>
+            <xs:element name="behandlingskjedeId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="hentBehandlingskjedeResponse">
+        <xs:sequence>
+            <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="pingRequest"/>
 
     <xs:complexType name="pingResponse"/>
