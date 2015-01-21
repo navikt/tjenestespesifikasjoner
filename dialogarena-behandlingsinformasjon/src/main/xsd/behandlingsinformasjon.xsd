@@ -210,7 +210,6 @@
             <xs:enumeration value="KONTORSPERRET" />
             <xs:enumeration value="MARKERT_SOM_FEILSENDT" />
             <xs:enumeration value="KNYTTET_TIL_SAK" />
-            <xs:enumeration value="BEHANDLINGSKJEDE_KNYTTET_TIL_SAK" />
         </xs:restriction>
     </xs:simpleType>
 
