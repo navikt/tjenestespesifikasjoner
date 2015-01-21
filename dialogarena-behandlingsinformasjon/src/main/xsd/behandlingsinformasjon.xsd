@@ -220,6 +220,8 @@
                 <xs:element name="henvendelseType" type="xs:string"/>
                 <xs:element name="hendelseType" type="tns:henvendelseHendelseType"/>
                 <xs:element name="dato" type="xs:dateTime"/>
+                <xs:element name="aktor" type="xs:string" minOccurs="0"/>
+                <xs:element name="enhet" type="xs:string" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
