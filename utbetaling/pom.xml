@@ -26,9 +26,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-utbetaling-tjenestespesifikasjon</artifactId>
-                                    <version>2.0.2</version>
+                                    <groupId>no.nav.tjenester.fim</groupId>
+                                    <artifactId>nav-fim-utbetaling-v1-tjenestespesifikasjon</artifactId>
+                                    <version>1.0.1</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/utbetaling</outputDirectory>
                                 </artifactItem>
@@ -76,10 +76,9 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/utbetaling/no/nav/virksomhet/tjenester/utbetaling/utbetaling.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/utbetaling/no/nav/tjeneste/virksomhet/utbetaling/v1/utbetaling.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/utbetaling/bindings.xml</bindingFile>
-                                        <bindingFile>${wsdl.directory}/utbetaling/porttypehack.xml</bindingFile>
                                     </bindingFiles>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>

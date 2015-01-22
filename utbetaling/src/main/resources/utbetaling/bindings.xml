@@ -4,7 +4,7 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-    <jaxb:bindings schemaLocation="no/nav/virksomhet/okonomi/utbetaling/utbetaling.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/utbetaling/v1/informasjon/informasjon.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -13,7 +13,7 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
-    <jaxb:bindings schemaLocation="no/nav/virksomhet/tjenester/utbetaling/feil/feil.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/utbetaling/v1/feil/feil.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -22,7 +22,7 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
-    <jaxb:bindings schemaLocation="no/nav/virksomhet/tjenester/utbetaling/meldinger/meldinger.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/utbetaling/v1/meldinger/meldinger.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
