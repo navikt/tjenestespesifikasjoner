@@ -45,8 +45,8 @@
   </build>
 
     <scm>
-        <developerConnection>scm:git:http://stash.devillo.no/scm/dial/tjenestespesifikasjoner.git</developerConnection>
-        <url>http://stash.devillo.no:7990/scm/dial/tjenestespesifikasjoner.git</url>
+        <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
+        <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
 
