@@ -204,12 +204,14 @@
             <xs:enumeration value="NOTIFIKASJON_SENDT" />
             <xs:enumeration value="OVERSENDT_JOARK" />
             <xs:enumeration value="OVERSENDT_HENVENDESLSESARKIV" />
-            <xs:enumeration value="RAPPORTERT_SAK_OG_BEHANDLING" />
             <xs:enumeration value="GSAK_OPPGAVE_OPPRETTET" />
             <xs:enumeration value="GSAK_HENVENDELSE_OPPRETTET" />
             <xs:enumeration value="KONTORSPERRET" />
             <xs:enumeration value="MARKERT_SOM_FEILSENDT" />
             <xs:enumeration value="KNYTTET_TIL_SAK" />
+            <xs:enumeration value="SKJEMA_VALGT" />
+            <xs:enumeration value="FAKTA_REGISTRERT" />
+            <xs:enumeration value="SIGNERT_OG_SENDT_INN" />
         </xs:restriction>
     </xs:simpleType>
 
