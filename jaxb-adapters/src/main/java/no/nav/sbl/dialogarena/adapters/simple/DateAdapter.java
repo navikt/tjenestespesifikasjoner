@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 
 public class DateAdapter {
 
-    private static final String DATE_FORMAT = "yyyy-MM-dd+HH:MM";
+    private static final String DATE_FORMAT = "yyyy-MM-dd+HH:mm";
 
     public static DateTime unmarshal(String v) {
         if(v.contains("Z")) {
