@@ -35,8 +35,8 @@
         <jaxb:javaType
                 name="org.joda.time.DateTime"
                 xmlType="xs:date"
-                parseMethod="no.nav.sbl.dialogarena.adapters.DateAdapter.unmarshal"
-                printMethod="no.nav.sbl.dialogarena.adapters.DateAdapter.marshal"
+                parseMethod="no.nav.sbl.dialogarena.adapters.simple.DateAdapter.unmarshal"
+                printMethod="no.nav.sbl.dialogarena.adapters.simple.DateAdapter.marshal"
                 />
         <jaxb:serializable />
     </jaxb:globalBindings>
