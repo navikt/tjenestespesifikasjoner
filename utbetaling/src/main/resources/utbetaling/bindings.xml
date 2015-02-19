@@ -33,10 +33,10 @@
 
     <jaxb:globalBindings>
         <jaxb:javaType
-                name="org.joda.time.DateTime"
+                name="org.joda.time.LocalDate"
                 xmlType="xs:date"
-                parseMethod="no.nav.sbl.dialogarena.adapters.simple.DateTimeAdapter.unmarshal"
-                printMethod="no.nav.sbl.dialogarena.adapters.simple.DateTimeAdapter.marshal"
+                parseMethod="no.nav.sbl.dialogarena.adapters.DateAdapter.unmarshal"
+                printMethod="no.nav.sbl.dialogarena.adapters.DateAdapter.marshal"
                 />
         <jaxb:serializable />
     </jaxb:globalBindings>
