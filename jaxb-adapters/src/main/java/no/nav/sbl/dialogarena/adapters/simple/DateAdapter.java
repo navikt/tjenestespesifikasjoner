@@ -4,9 +4,9 @@ import org.joda.time.DateTime;
 
 import java.text.SimpleDateFormat;
 
-public class DateParser {
+public class DateAdapter {
 
-    private static final String DATE_FORMAT = "yyyy-MM-dd+HH:mm";
+    private static final String DATE_FORMAT = "yyyy-MM-dd+HH:MM";
 
     public static DateTime unmarshal(String v) {
         if(v.contains("Z")) {
