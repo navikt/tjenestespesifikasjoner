@@ -27,6 +27,8 @@
             <xs:element name="oppdaterTilKasseringResponse" type="meldinger:oppdaterTilKasseringResponse"/>
             <xs:element name="knyttBehandlingskjedeTilSak" type="meldinger:knyttBehandlingskjedeTilSakRequest"/>
             <xs:element name="knyttBehandlingskjedeTilSakResponse" type="meldinger:knyttBehandlingskjedeTilSakResponse"/>
+            <xs:element name="knyttBehandlingskjedeTilTema" type="meldinger:knyttBehandlingskjedeTilTemaRequest"/>
+            <xs:element name="knyttBehandlingskjedeTilTemaResponse" type="meldinger:knyttBehandlingskjedeTilTemaResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -80,6 +82,14 @@
         <wsdl:part element="tns:knyttBehandlingskjedeTilSakResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="knyttBehandlingskjedeTilTemaRequest">
+        <wsdl:part element="tns:knyttBehandlingskjedeTilTema" name="parameters">
+        </wsdl:part>
+    </wsdl:message
+            ><wsdl:message name="knyttBehandlingskjedeTilTemaResponse">
+        <wsdl:part element="tns:knyttBehandlingskjedeTilTemaResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -124,6 +134,12 @@
             <wsdl:input message="tns:knyttBehandlingskjedeTilSakRequest" name="knyttBehandlingskjedeTilSakRequest">
             </wsdl:input>
             <wsdl:output message="tns:knyttBehandlingskjedeTilSakResponse" name="knyttBehandlingskjedeTilSakResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="knyttBehandlingskjedeTilTema">
+            <wsdl:input message="tns:knyttBehandlingskjedeTilTemaRequest" name="knyttBehandlingskjedeTilTemaRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:knyttBehandlingskjedeTilTemaResponse" name="knyttBehandlingskjedeTilTemaResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -187,6 +203,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="knyttBehandlingskjedeTilSakResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="knyttBehandlingskjedeTilTema">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="knyttBehandlingskjedeTilTemaRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="knyttBehandlingskjedeTilTemaResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
