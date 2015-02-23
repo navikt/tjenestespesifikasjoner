@@ -212,6 +212,7 @@
             <xs:enumeration value="SKJEMA_VALGT" />
             <xs:enumeration value="FAKTA_REGISTRERT" />
             <xs:enumeration value="SIGNERT_OG_SENDT_INN" />
+            <xs:enumeration value="KNYTTET_TIL_TEMA" />
         </xs:restriction>
     </xs:simpleType>
 
