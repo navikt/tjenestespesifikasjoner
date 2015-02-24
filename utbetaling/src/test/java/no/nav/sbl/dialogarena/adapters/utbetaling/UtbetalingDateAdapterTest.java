@@ -47,7 +47,7 @@ public class UtbetalingDateAdapterTest {
         assertThat(dateTime.getMonthOfYear(), is(1));
         assertThat(dateTime.getDayOfMonth(), is(2));
     }
-    
+
     @Test
     public void marshal() {
         DateTime dateTime = new DateTime(2010, 01, 02, 03, 04);
