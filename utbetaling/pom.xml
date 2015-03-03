@@ -6,7 +6,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>utbetaling-tjenestespesifikasjon</artifactId>
-    <version>1.0.14-SNAPSHOT</version>
+    <version>1.0.14</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -166,7 +166,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>utbetaling-tjenestespesifikasjon-1.0.14</tag>
     </scm>
 
 </project>
