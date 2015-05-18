@@ -40,7 +40,7 @@
                 <xs:element name="markertSomFeilsendtAv" type="xs:string" minOccurs="0"/>
                 <xs:element name="oppgaveIdGsak" type="xs:string" minOccurs="0"/>
                 <xs:element name="henvendelseIdGsak" type="xs:string" minOccurs="0"/>
-                <xs:element name="sattTilAnsatt" type="xs:boolean" minOccurs="0"/>
+                <xs:element name="erTilknyttetAnsatt" type="xs:boolean" minOccurs="0"/>
                 <xs:element name="journalfortInformasjon" type="tns:journalfortInformasjon" minOccurs="0"/>
                 <xs:element ref="tns:metadataListe" minOccurs="0"/>
             </xs:sequence>
