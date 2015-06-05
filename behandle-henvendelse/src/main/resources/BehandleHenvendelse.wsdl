@@ -29,6 +29,8 @@
             <xs:element name="knyttBehandlingskjedeTilSakResponse" type="meldinger:knyttBehandlingskjedeTilSakResponse"/>
             <xs:element name="knyttBehandlingskjedeTilTema" type="meldinger:knyttBehandlingskjedeTilTemaRequest"/>
             <xs:element name="knyttBehandlingskjedeTilTemaResponse" type="meldinger:knyttBehandlingskjedeTilTemaResponse"/>
+            <xs:element name="oppdaterTemagruppe" type="meldinger:oppdaterTemagruppeRequest"/>
+            <xs:element name="oppdaterTemagruppeResponse" type="meldinger:oppdaterTemagruppeResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -90,6 +92,14 @@
         <wsdl:part element="tns:knyttBehandlingskjedeTilTemaResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="oppdaterTemagruppeRequest">
+        <wsdl:part element="tns:oppdaterTemagruppe" name="parameters">
+        </wsdl:part>
+    </wsdl:message
+            ><wsdl:message name="oppdaterTemagruppeResponse">
+        <wsdl:part element="tns:oppdaterTemagruppeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -140,6 +150,12 @@
             <wsdl:input message="tns:knyttBehandlingskjedeTilTemaRequest" name="knyttBehandlingskjedeTilTemaRequest">
             </wsdl:input>
             <wsdl:output message="tns:knyttBehandlingskjedeTilTemaResponse" name="knyttBehandlingskjedeTilTemaResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterTemagruppe">
+            <wsdl:input message="tns:oppdaterTemagruppeRequest" name="oppdaterTemagruppeRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:oppdaterTemagruppeResponse" name="oppdaterTemagruppeResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -212,6 +228,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="knyttBehandlingskjedeTilTemaResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="oppdaterTemagruppe">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="oppdaterTemagruppeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="oppdaterTemagruppeResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>

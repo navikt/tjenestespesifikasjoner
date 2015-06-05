@@ -61,6 +61,14 @@
     </xs:complexType>
     <xs:complexType name="knyttBehandlingskjedeTilTemaResponse"/>
 
+<xs:complexType name="oppdaterTemagruppeRequest">
+        <xs:sequence>
+            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="temagruppe" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="oppdaterTemagruppeResponse"/>
+
     <xs:complexType name="pingRequest"/>
     <xs:complexType name="pingResponse"/>
 
