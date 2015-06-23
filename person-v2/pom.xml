@@ -6,9 +6,9 @@
         <artifactId>dialogarena</artifactId>
         <version>3</version>
     </parent>
-    <artifactId>person-v1-tjenestespesifikasjon</artifactId>
+    <artifactId>person-v2-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>2.0.1-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -29,8 +29,8 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.fim</groupId>
-                                    <artifactId>nav-fim-person-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.4</version>
+                                    <artifactId>nav-fim-person-v2-tjenestespesifikasjon</artifactId>
+                                    <version>2.0.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}</outputDirectory>
                                 </artifactItem>
@@ -83,7 +83,7 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>
-                                        ${wsdl.directory}/no/nav/tjeneste/virksomhet/person/v1/Person.wsdl
+                                        ${wsdl.directory}/no/nav/tjeneste/virksomhet/person/v2/Binding.wsdl
                                     </wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
