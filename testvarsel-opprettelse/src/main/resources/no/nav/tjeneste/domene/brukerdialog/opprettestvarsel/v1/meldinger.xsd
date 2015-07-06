@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/melding/domene/brukerdialog/testvarselopprettelse/v1"
-            xmlns:varsel="http://nav.no/melding/domene/brukerdialog/testvarselopprettelse/v1">
-    <xsd:element name="testvarselopprettelse" type="varsel:testvarselopprettelse"/>
-    <xsd:complexType name="testvarselopprettelse">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1"
+            xmlns:varsel="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1">
+    <xsd:element name="opprettestvarsel" type="varsel:opprettestvarselRequest"/>
+
+    <xsd:complexType name="opprettestvarselRequest">
         <xsd:sequence>
             <xsd:element name="varselType" type="xsd:string">
                 <xsd:annotation>
@@ -22,6 +23,16 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:complexType name="opprettestvarselResponse">
+        <xsd:sequence>
+            <xsd:element name="varselId" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>&lt;p&gt;Id for varsel</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:element name="parameterListe">
         <xsd:complexType>
             <xsd:sequence>
@@ -31,6 +42,16 @@
     </xsd:element>
 
     <xsd:complexType name="parameter">
+        <xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="pingRequest">
+        <xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="pingResponse">
         <xsd:sequence>
         </xsd:sequence>
     </xsd:complexType>
