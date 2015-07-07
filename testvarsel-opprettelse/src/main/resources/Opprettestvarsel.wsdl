@@ -7,7 +7,6 @@
                   targetNamespace="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1">
     <wsdl:types>
         <xsd:schema
-            xmlns:tns="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1"
             elementFormDefault="unqualified"
             targetNamespace="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1"
             xmlns:varsel="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1">
@@ -17,26 +16,26 @@
 
             <xsd:element name="opprettestvarselRequest" type="varsel:opprettestvarselRequest"/>
             <xsd:element name="opprettestvarselResponse" type="varsel:opprettestvarselResponse"/>
-            <xsd:element name="pingRequest" type="varsel:pingRequest"/>
+            <xsd:element name="ping" type="varsel:pingRequest"/>
             <xsd:element name="pingResponse" type="varsel:pingResponse"/>
         </xsd:schema>
     </wsdl:types>
 
 
     <wsdl:message name="opprettestvarselRequest">
-        <wsdl:part name="parameters" element="varsel:opprettestvarselRequest">
+        <wsdl:part name="request" element="varsel:opprettestvarselRequest">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="opprettestvarselResponse">
-        <wsdl:part name="parameters" element="varsel:opprettestvarselResponse">
+        <wsdl:part name="response" element="varsel:opprettestvarselResponse">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="pingRequest">
-        <wsdl:part name="parameters" element="varsel:pingRequest">
+        <wsdl:part name="request" element="varsel:ping">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="pingResponse">
-        <wsdl:part name="parameters" element="varsel:pingResponse">
+        <wsdl:part name="response" element="varsel:pingResponse">
         </wsdl:part>
     </wsdl:message>
 
