@@ -79,7 +79,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v1/varselDittNAV.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
