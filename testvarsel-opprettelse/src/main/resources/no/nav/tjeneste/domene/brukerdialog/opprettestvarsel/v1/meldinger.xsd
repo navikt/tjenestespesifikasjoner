@@ -20,6 +20,11 @@
                     <xsd:documentation>&lt;p&gt;Liste med parametere&lt;/p&gt;</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
+            <xsd:element type="xsd:dateTime" name="utlopsdato" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>&lt;p&gt;Dato og tidspunkt for når varselet blir ugyldig&lt;/p&gt;</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -43,6 +48,8 @@
 
     <xsd:complexType name="parameter">
         <xsd:sequence>
+            <xsd:element name="key" type="xsd:string"/>
+            <xsd:element name="value" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
 
