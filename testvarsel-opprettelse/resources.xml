@@ -9,7 +9,7 @@
       		<outputDirectory>/</outputDirectory>
 			<directory>target/classes</directory>
 			<includes>
-				<include>**/Oppretttestvarsel.wsdl</include>
+				<include>**/Opprettestvarsel.wsdl</include>
 			</includes>
 		</fileSet>
 		<fileSet>
