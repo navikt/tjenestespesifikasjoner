@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1"
-            xmlns:varsel="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1">
-    <xsd:element name="opprettestvarsel" type="varsel:opprettestvarselRequest"/>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1/meldinger"
+            xmlns:meldinger="http://nav.no/melding/domene/brukerdialog/opprettestvarsel/v1/meldinger">
+    <xsd:element name="opprettestvarsel" type="meldinger:opprettestvarselRequest"/>
 
     <xsd:complexType name="opprettestvarselRequest">
         <xsd:sequence>
@@ -15,7 +16,7 @@
                     <xsd:documentation>&lt;p&gt;Fnr for bruker som skal varsles&lt;/p&gt;</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element ref="varsel:parameterListe">
+            <xsd:element ref="meldinger:parameterListe">
                 <xsd:annotation>
                     <xsd:documentation>&lt;p&gt;Liste med parametere&lt;/p&gt;</xsd:documentation>
                 </xsd:annotation>
@@ -41,7 +42,7 @@
     <xsd:element name="parameterListe">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="parameter" type="varsel:parameter" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="parameter" type="meldinger:parameter" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
