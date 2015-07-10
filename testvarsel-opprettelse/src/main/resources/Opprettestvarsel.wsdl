@@ -57,7 +57,7 @@
     <wsdl:binding name="OpprettestvarselBinding" type="varsel:OpprettestvarselPorttype">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="opprettestvarsel">
-            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/opprettestvarsel/v1/opprettestvarselRequest" style="document"/>
+            <soap:operation soapAction="" style="document"/>
             <wsdl:input name="opprettestvarselRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -66,7 +66,7 @@
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
-            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/opprettestvarsel/v1/pingRequest" style="document"/>
+            <soap:operation soapAction="" style="document"/>
             <wsdl:input name="pingRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
