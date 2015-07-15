@@ -3,9 +3,6 @@
                xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
                jaxb:extensionBindingPrefixes="xjc"
                jaxb:version="2.0">
-    <jaxb:globalBindings>
-        <xjc:javaType name="org.joda.time.DateTime" xmlType="xsd:dateTime" adapter="no.nav.sbl.dialogarena.adapters.DateTimeAdapter"/>
-    </jaxb:globalBindings>
     <jaxb:bindings schemaLocation="no/nav/tjeneste/domene/brukerdialog/varseltekster/v1/meldinger.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
