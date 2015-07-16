@@ -1,14 +1,17 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>dialogarena</artifactId>
-        <version>1.5.2</version>
+        <groupId>no.nav.sbl</groupId>
+        <artifactId>mor-pom</artifactId>
+        <version>2</version>
     </parent>
+
+    <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>dial-nav-tjeneste-aktoer_v2</artifactId>
     <name>${project.artifactId}</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
