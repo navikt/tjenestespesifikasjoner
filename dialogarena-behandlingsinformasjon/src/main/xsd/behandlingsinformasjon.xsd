@@ -85,6 +85,7 @@
                     <xs:element name="sideantall" type="xs:int" minOccurs="0"/>
                     <xs:element name="arkivreferanse" type="xs:string" minOccurs="0"/>
                     <xs:element name="tilleggsinfo" type="xs:string" minOccurs="0"/>
+                    <xs:element ref="tns:alternativRepresentasjonListe" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -100,6 +101,23 @@
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="alternativRepresentasjonListe">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="alternativRepresentasjon" type="tns:alternativRepresentasjon" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="alternativRepresentasjon" abstract="true">
+        <xs:sequence>
+            <xs:element name="uuid" type="xs:string" minOccurs="0"/>
+            <xs:element name="filnavn" type="xs:string" minOccurs="0"/>
+            <xs:element name="mimetype" type="xs:string" minOccurs="0"/>
+            <xs:element name="filstorrelse" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="melding" abstract="true">
@@ -196,27 +214,27 @@
 
     <xs:simpleType name="henvendelseHendelseType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="HENVENDELSE_OPPRETTET" />
-            <xs:enumeration value="HENVENDELSE_AVBRUTT" />
-            <xs:enumeration value="HENVENDELSE_AUTOMATISK_AVBRUTT" />
-            <xs:enumeration value="HENVENDELSE_AVSLUTTET" />
-            <xs:enumeration value="HENVENDELSE_LEST" />
-            <xs:enumeration value="HENVENDELSE_IKKE_LEST_INNEN_FRIST" />
-            <xs:enumeration value="HENVENDELSE_IKKE_BESVART_INNEN_FRIST" />
-            <xs:enumeration value="HENVENDELSE_BESVART" />
-            <xs:enumeration value="NOTIFIKASJON_SENDT" />
-            <xs:enumeration value="OVERSENDT_JOARK" />
-            <xs:enumeration value="OVERSENDT_HENVENDESLSESARKIV" />
-            <xs:enumeration value="GSAK_OPPGAVE_OPPRETTET" />
-            <xs:enumeration value="GSAK_HENVENDELSE_OPPRETTET" />
-            <xs:enumeration value="KONTORSPERRET" />
-            <xs:enumeration value="MARKERT_SOM_FEILSENDT" />
-            <xs:enumeration value="KNYTTET_TIL_SAK" />
-            <xs:enumeration value="SKJEMA_VALGT" />
-            <xs:enumeration value="FAKTA_REGISTRERT" />
-            <xs:enumeration value="SIGNERT_OG_SENDT_INN" />
-            <xs:enumeration value="KNYTTET_TIL_TEMA" />
-            <xs:enumeration value="ENDRET_TEMAGRUPPE" />
+            <xs:enumeration value="HENVENDELSE_OPPRETTET"/>
+            <xs:enumeration value="HENVENDELSE_AVBRUTT"/>
+            <xs:enumeration value="HENVENDELSE_AUTOMATISK_AVBRUTT"/>
+            <xs:enumeration value="HENVENDELSE_AVSLUTTET"/>
+            <xs:enumeration value="HENVENDELSE_LEST"/>
+            <xs:enumeration value="HENVENDELSE_IKKE_LEST_INNEN_FRIST"/>
+            <xs:enumeration value="HENVENDELSE_IKKE_BESVART_INNEN_FRIST"/>
+            <xs:enumeration value="HENVENDELSE_BESVART"/>
+            <xs:enumeration value="NOTIFIKASJON_SENDT"/>
+            <xs:enumeration value="OVERSENDT_JOARK"/>
+            <xs:enumeration value="OVERSENDT_HENVENDESLSESARKIV"/>
+            <xs:enumeration value="GSAK_OPPGAVE_OPPRETTET"/>
+            <xs:enumeration value="GSAK_HENVENDELSE_OPPRETTET"/>
+            <xs:enumeration value="KONTORSPERRET"/>
+            <xs:enumeration value="MARKERT_SOM_FEILSENDT"/>
+            <xs:enumeration value="KNYTTET_TIL_SAK"/>
+            <xs:enumeration value="SKJEMA_VALGT"/>
+            <xs:enumeration value="FAKTA_REGISTRERT"/>
+            <xs:enumeration value="SIGNERT_OG_SENDT_INN"/>
+            <xs:enumeration value="KNYTTET_TIL_TEMA"/>
+            <xs:enumeration value="ENDRET_TEMAGRUPPE"/>
         </xs:restriction>
     </xs:simpleType>
 
