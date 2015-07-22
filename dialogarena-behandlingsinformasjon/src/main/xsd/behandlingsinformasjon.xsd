@@ -111,7 +111,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="alternativRepresentasjon" abstract="true">
+    <xs:complexType name="alternativRepresentasjon">
         <xs:sequence>
             <xs:element name="uuid" type="xs:string" minOccurs="0"/>
             <xs:element name="filnavn" type="xs:string" minOccurs="0"/>
