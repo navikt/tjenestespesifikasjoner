@@ -66,6 +66,8 @@
             </xsd:element>
             <xsd:element name="statuskode" type="xsd:string"/>
             <xsd:element name="feilbeskrivelse" type="xsd:string"/>
+            <xsd:element name="epostemne" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="url" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
 
