@@ -9,7 +9,7 @@
                       adapter="no.nav.sbl.dialogarena.adapters.DateAdapter"/>
         <jaxb:serializable/>
     </jaxb:globalBindings>
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgAktivitetInformasjon/v1/meldinger/meldinger.xsd"
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgAktivitet/v1/meldinger/meldinger.xsd"
                    node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
@@ -18,7 +18,7 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgAktivitetInformasjon/v1/informasjon/informasjon.xsd"
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgAktivitet/v1/informasjon/informasjon.xsd"
                    node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
@@ -27,7 +27,7 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgAktivitetInformasjon/v1/feil/feil.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/sakOgAktivitet/v1/feil/feil.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
