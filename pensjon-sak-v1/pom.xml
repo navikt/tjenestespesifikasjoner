@@ -8,7 +8,7 @@
     </parent>
     <artifactId>pensjon-sak-v1-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -193,7 +193,7 @@
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>pensjon-sak-v1-tjenestespesifikasjon-1.0.2</tag>
     </scm>
 
 </project>
