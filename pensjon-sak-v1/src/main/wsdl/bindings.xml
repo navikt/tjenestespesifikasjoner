@@ -7,7 +7,7 @@
         <xjc:javaType name="org.joda.time.LocalDate" xmlType="xsd:date" adapter="no.nav.sbl.dialogarena.adapters.DateAdapter"/>
         <jaxb:serializable />
     </jaxb:globalBindings>
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/pensjonSak/v1/meldinger/meldinger.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/pensjonsak/v1/meldinger/meldinger.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -15,7 +15,7 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/pensjonSak/v1/informasjon/informasjon.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/pensjonsak/v1/informasjon/informasjon.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -23,7 +23,7 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/pensjonSak/v1/feil/feil.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/pensjonsak/v1/feil/feil.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
