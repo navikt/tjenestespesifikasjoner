@@ -33,6 +33,7 @@
 	<xs:complexType name="dokumentforventning">
 		<xs:sequence>
 			<xs:element name="kodeverkId" type="xs:string" />
+			<xs:element name="uuid" type="xs:string" minOccurs="0"/>
 			<xs:element name="tilleggsTittel" type="xs:string" minOccurs="0"/>
             <xs:element name="arkivreferanse" type="xs:string" minOccurs="0"/>
 			<xs:element name="innsendingsvalg" type="xs:string">
