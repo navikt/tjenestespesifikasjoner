@@ -9,7 +9,7 @@
 
 	<artifactId>varsel-inn</artifactId>
 	<groupId>no.nav.sbl.dialogarena</groupId>
-	<version>1.0.5</version>
+	<version>1.0.6-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -79,7 +79,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>varsel-inn-1.0.5</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
