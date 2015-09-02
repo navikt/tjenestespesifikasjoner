@@ -3,7 +3,7 @@
                   xmlns:varsler="http://nav.no/melding/domene/brukerdialog/varsler/v1"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                  name="varslerService"
+                  name="VarslerService"
                   targetNamespace="http://nav.no/melding/domene/brukerdialog/varsler/v1">
     <wsdl:types>
         <xsd:schema
@@ -78,9 +78,9 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:service name="varsler_v1">
-        <wsdl:port binding="varsler:varslerBinding" name="varsler_v1">
-            <soap:address location="http://localhost:8081/domene.Brukerdialog/varsler_v1"/>
+    <wsdl:service name="Varsler_v1">
+        <wsdl:port binding="varsler:varslerBinding" name="Varsler_v1">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/Varsler_v1"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
