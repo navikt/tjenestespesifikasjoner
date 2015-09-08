@@ -8,7 +8,7 @@
     </parent>
     <artifactId>arena-sakOgAktivitet_v1</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.0.10</version>
+	<version>1.0.11-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -157,7 +157,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>arena-sakOgAktivitet_v1-1.0.10</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
