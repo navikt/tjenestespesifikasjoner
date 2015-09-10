@@ -29,7 +29,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-sakOgAktivitet-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.10</version>
+                                    <version>1.0.11</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}</outputDirectory>
                                 </artifactItem>
