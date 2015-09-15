@@ -36,11 +36,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="avbrytHenvendelseResponse">
-        <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:complexType name="avbrytHenvendelseResponse"/>
 
     <xs:complexType name="ferdigstillHenvendelseRequest">
         <xs:sequence>
@@ -49,11 +45,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="ferdigstillHenvendelseResponse">
-        <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
+    <xs:complexType name="ferdigstillHenvendelseResponse"/>
 
     <xs:complexType name="pingRequest"/>
 
