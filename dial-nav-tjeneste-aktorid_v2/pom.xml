@@ -11,7 +11,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>dial-nav-tjeneste-aktoer_v2</artifactId>
     <name>${project.artifactId}</name>
-    <version>1.2</version>
+    <version>1.3-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -169,7 +169,7 @@
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>dial-nav-tjeneste-aktoer_v2-1.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
