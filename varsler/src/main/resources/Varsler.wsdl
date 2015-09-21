@@ -7,17 +7,17 @@
                   targetNamespace="http://nav.no/melding/domene/brukerdialog/varsler/v1">
     <wsdl:types>
         <xsd:schema
-            elementFormDefault="unqualified"
-            targetNamespace="http://nav.no/melding/domene/brukerdialog/varsler/v1"
-            xmlns:varsler="http://nav.no/melding/domene/brukerdialog/varsler/v1"
-            xmlns:meldinger="http://nav.no/melding/domene/brukerdialog/varsler/v1/meldinger">
+                elementFormDefault="unqualified"
+                targetNamespace="http://nav.no/melding/domene/brukerdialog/varsler/v1"
+                xmlns:varsler="http://nav.no/melding/domene/brukerdialog/varsler/v1"
+                xmlns:meldinger="http://nav.no/melding/domene/brukerdialog/varsler/v1/meldinger">
 
             <xsd:import namespace="http://nav.no/melding/domene/brukerdialog/varsler/v1/meldinger"
                         schemaLocation="no/nav/tjeneste/domene/brukerdialog/varsler/v1/meldinger.xsd"/>
 
-            <xsd:element name="hentVarslerRequest" type="meldinger:hentVarslerRequest"/>
+            <xsd:element name="hentVarsler" type="meldinger:hentVarslerRequest"/>
             <xsd:element name="hentVarslerResponse" type="meldinger:hentVarslerResponse"/>
-            
+
             <xsd:element name="ping" type="meldinger:pingRequest"/>
             <xsd:element name="pingResponse" type="meldinger:pingResponse"/>
         </xsd:schema>
@@ -25,7 +25,7 @@
 
 
     <wsdl:message name="hentVarslerRequest">
-        <wsdl:part name="request" element="varsler:hentVarslerRequest">
+        <wsdl:part name="request" element="varsler:hentVarsler">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="hentVarslerResponse">
@@ -78,8 +78,8 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:service name="Varsler_v1">
-        <wsdl:port binding="varsler:varslerBinding" name="Varsler_v1">
+    <wsdl:service name="VarslerPorttypeService">
+        <wsdl:port binding="varsler:varslerBinding" name="VarslerPort">
             <soap:address location="http://localhost:8081/domene.Brukerdialog/Varsler_v1"/>
         </wsdl:port>
     </wsdl:service>
