@@ -7,7 +7,7 @@
         <version>2</version>
     </parent>
     <artifactId>dkif-tjenestespesifikasjon</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
