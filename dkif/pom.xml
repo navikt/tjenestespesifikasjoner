@@ -78,7 +78,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/dkif/no/nav/tjeneste/virksomhet/digitalKontaktinformasjon/v1/DigitalKontaktinformasjon.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/dkif/no/nav/tjeneste/virksomhet/digitalKontaktinformasjon/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/dkif/bindings.xml</bindingFile>
                                     </bindingFiles>
