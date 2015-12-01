@@ -21,6 +21,8 @@
             <xsd:element name="hentArkivertHenvendelseResponse" type="meldinger:hentArkivertHenvendelseResponse"/>
             <xsd:element name="hentArkiverteHenvendelser" type="meldinger:hentArkiverteHenvendelserRequest"/>
             <xsd:element name="hentArkiverteHenvendelserResponse" type="meldinger:hentArkiverteHenvendelserResponse"/>
+            <xsd:element name="hentArkiverteTemagrupper" type="meldinger:hentArkivertTemagrupperRequest"/>
+            <xsd:element name="hentArkiverteTemagrupperResponse" type="meldinger:hentArkivertTemagrupperResponse"/>
             <xsd:element name="ping" type="meldinger:pingRequest"/>
             <xsd:element name="pingResponse" type="meldinger:pingResponse"/>
         </xsd:schema>
@@ -40,6 +42,14 @@
     </wsdl:message>
     <wsdl:message name="hentArkiverteHenvendelserRequest">
         <wsdl:part name="parameters" element="tns:hentArkiverteHenvendelser">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentArkiverteTemagrupperRequest">
+        <wsdl:part name="parameters" element="tns:hentArkiverteTemagrupper">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hentArkiverteTemagrupperResponse">
+        <wsdl:part name="parameters" element="tns:hentArkiverteTemagrupperResponse">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="pingResponse">
@@ -70,7 +80,12 @@
             <wsdl:output message="tns:hentArkiverteHenvendelserResponse" name="hentArkiverteHenvendelserResponse">
             </wsdl:output>
         </wsdl:operation>
-
+        <wsdl:operation name="hentArkiverteTemagrupper">
+            <wsdl:input message="tns:hentArkiverteTemagrupperRequest" name="hentArkiverteTemagrupperRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:hentArkiverteTemagrupperResponse" name="hentArkiverteTemagrupperResponse">
+            </wsdl:output>
+        </wsdl:operation>
     </wsdl:portType>
 
     <wsdl:binding name="ArkivertHenvendelseBinding" type="tns:ArkivertHenvendelseV1">
@@ -91,6 +106,15 @@
             </wsdl:input>
             <wsdl:output name="hentArkiverteHenvendelserResponse">
                 <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hentArkiverteTemagrupper">
+            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/informasjon/hentArkiverteTemagrupperRequest" style="document" />
+            <wsdl:input name="hentArkiverteTemagrupperRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="hentArkiverteTemagrupperResponse">
+                <soap:body use="literal" />
             </wsdl:output>
         </wsdl:operation>
 
