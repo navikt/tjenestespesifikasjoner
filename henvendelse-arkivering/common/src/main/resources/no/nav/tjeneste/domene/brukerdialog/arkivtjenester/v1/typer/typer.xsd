@@ -172,6 +172,16 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:complexType name="ArkivpostTemagruppe">
+        <xsd:sequence>
+            <xsd:element name="aktoerId" type="xsd:string" />
+            <xsd:element name="fodselsnummer" type="xsd:string" />
+            <xsd:element name="arkivpostId" type="xsd:string" />
+            <xsd:element name="temagruppe" type="xsd:string" />
+            <xsd:element name="status" type="typer:arkivStatusType" />
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:simpleType name="arkivStatusType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="ARKIVERT"/>

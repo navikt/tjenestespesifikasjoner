@@ -27,6 +27,18 @@
         </xsd:sequence>
     </xsd:complexType>
 
+
+    <xsd:complexType name="hentArkivertTemagrupperRequest">
+        <xsd:sequence>
+            <xsd:element name="aktoerId" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="hentArkivertTemagrupperResponse">
+        <xsd:sequence>
+            <xsd:element name="arkivposttemagrupper" type="typer:ArkivpostTemagruppe" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:complexType name="pingRequest">
         <xsd:sequence>
         </xsd:sequence>
@@ -34,7 +46,5 @@
     <xsd:complexType name="pingResponse">
         <xsd:sequence>
         </xsd:sequence>
-
     </xsd:complexType>
-
 </xsd:schema>
