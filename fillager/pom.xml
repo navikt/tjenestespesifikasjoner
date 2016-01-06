@@ -92,6 +92,43 @@
                     <descriptor>resources.xml</descriptor>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <goals><goal>transform</goal></goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <transformationSets>
+                        <transformationSet>
+                            <dir>src/main/resources</dir>
+                            <stylesheet>src/main/wsdl-viewer.xsl</stylesheet>
+                            <outputProperties>
+                                <outputProperty>
+                                    <name>omit-xml-declaration</name>
+                                    <value>yes</value>
+                                </outputProperty>
+                            </outputProperties>
+                            <fileMappers>
+                                <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+                                    <pattern>\.wsdl$</pattern>
+                                    <replacement>.html</replacement>
+                                </fileMapper>
+                            </fileMappers>
+                        </transformationSet>
+                    </transformationSets>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.saxon</groupId>
+                        <artifactId>saxon</artifactId>
+                        <version>8.7</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 	  </plugins>
 	</build>
 
