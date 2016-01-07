@@ -1,6 +1,7 @@
 //npm install request:xx
 
 var request = require('request');
+var util = require('util');
 var fs = require('fs');
 
 request = request.defaults({
@@ -10,13 +11,16 @@ request = request.defaults({
     }
 });
 
+var confluencePageId = '162739803';
+var confluenceLink = util.format('http://confluence.adeo.no/pages/viewpage.action?pageId=%s', confluencePageId);
+
 fs.readdir('./target/generated-resources/xml/xslt', function (err, files) {
     var filnavn = files[0];
-    console.log('Filen skal lastes opp er: ', filnavn);
 
-    request.get(
-        {
-            url: 'http://confluence.adeo.no/rest/api/content/162739803/child/attachment',
+    console.log(util.format('Filen : %s lastes opp til siden', filnavn, confluenceLink));
+
+    request.get({
+            url: util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment', confluencePageId),
             json: 'json'
         }, function (error, response, body) {
             if (error) {
@@ -38,7 +42,7 @@ fs.readdir('./target/generated-resources/xml/xslt', function (err, files) {
                 };
 
                 request.post({
-                        url: 'http://confluence.adeo.no/rest/api/content/162739803/child/attachment/att162743363/data',
+                        url: util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment/%s/data', confluencePageId, attachmentId ),
                         headers: {
                             'X-Atlassian-Token': 'nocheck'
                         },
