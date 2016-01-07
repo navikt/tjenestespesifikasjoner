@@ -106,6 +106,7 @@
                         <transformationSet>
                             <dir>src/main/resources</dir>
                             <stylesheet>src/main/wsdl-viewer.xsl</stylesheet>
+                            <includes><include>*.wsdl</include></includes>
                             <outputProperties>
                                 <outputProperty>
                                     <name>omit-xml-declaration</name>
