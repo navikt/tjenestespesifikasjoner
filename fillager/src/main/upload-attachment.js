@@ -1,22 +1,22 @@
 //npm install request:xx
 
-
 var request = require('request');
 var fs = require('fs');
 
-fs.readdir('./target/generated-resources/xml/xslt', function(err, files) {
+fs.readdir('./target/generated-resources/xml/xslt', function (err, files) {
     var filnavn = files[0];
-    console.log('Filen som lastes opp er: ',filnavn);
+    console.log('Filen skal lastes opp er: ', filnavn);
 
     request.get(
-        {   url: 'http://confluence.adeo.no/rest/api/content/162739803/child/attachment',
+        {
+            url: 'http://confluence.adeo.no/rest/api/content/162739803/child/attachment',
             json: 'json',
             auth: {
                 username: 'srvPortaler',
                 password: 'PyTjo3mED6Q96c'
             }
         }, function (error, response, body) {
-            if(error){
+            if (error) {
                 return console.error(error)
             }
             console.log(response.statusCode);
@@ -28,7 +28,31 @@ fs.readdir('./target/generated-resources/xml/xslt', function(err, files) {
                 console.log('PUT');
                 var attachmentId = attachment[0].id;
 
-            }else {
+                var formData = {
+                    comment: 'Automatisk generert wsdl-dokumentasjon - oppdatering - node',
+                    file: fs.createReadStream('./target/generated-resources/xml/xslt/FilLager.html')
+                };
+
+                request.post({
+                        url: 'http://confluence.adeo.no/rest/api/content/162739803/child/attachment/att162743363/data',
+                        auth: {
+                            username: 'srvPortaler',
+                            password: 'PyTjo3mED6Q96c'
+                        },
+                        headers: {
+                            'X-Atlassian-Token': 'nocheck'
+                        },
+                        formData: formData
+                    }, function (error, response, body) {
+                        if (error) {
+                            return console.error(error)
+                        }
+                        console.log(response.statusCode);
+                        console.log(body);
+                    }
+                )
+
+            } else {
                 console.log('POST')
             }
 
