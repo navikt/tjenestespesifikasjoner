@@ -1,5 +1,3 @@
-//npm install request:xx
-
 var request = require('request');
 var util = require('util');
 var fs = require('fs');
