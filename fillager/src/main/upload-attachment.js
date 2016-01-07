@@ -20,46 +20,47 @@ fs.readdir('./target/generated-resources/xml/xslt', function (err, files) {
     console.log(util.format('Filen : %s lastes opp til siden', filnavn, confluenceLink));
 
     request.get({
-            url: util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment', confluencePageId),
-            json: 'json'
-        }, function (error, response, body) {
-            if (error) {
-                return console.error(error)
+        url: util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment', confluencePageId),
+        json: 'json'
+    }, function (error, response, body) {
+        if (error) {
+            return console.error(error)
+        }
+        console.log(response.statusCode);
+
+
+        var uploadRequest = {
+            headers: {
+                'X-Atlassian-Token': 'nocheck'
+            },
+            formData: {
+                conmment: 'Automatisk generert dokumentasjon av wsdl',
+                file: fs.createReadStream(util.format('./target/generated-resources/xml/xslt/%s', filnavn))
             }
-            console.log(response.statusCode);
-            console.log(body.results);
-            var attachment = body.results.filter(function (attachment) {
-                return attachment.title === filnavn;
-            });
-            if (attachment.length > 0) {
-                console.log('Oppdater eksisterende vedlegg');
+        };
 
-                var attachmentId = attachment[0].id;
-
-                var formData = {
-                    comment: 'Automatisk generert wsdl-dokumentasjon - oppdatering - node',
-                    file: fs.createReadStream('./target/generated-resources/xml/xslt/FilLager.html')
-                };
-
-                request.post({
-                        url: util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment/%s/data', confluencePageId, attachmentId ),
-                        headers: {
-                            'X-Atlassian-Token': 'nocheck'
-                        },
-                        formData: formData
-                    }, function (error, response, body) {
-                        if (error) {
-                            return console.error(error)
-                        }
-                        console.log(response.statusCode);
-                        console.log(body);
-                    }
-                )
-
-            } else {
-                console.log('POST')
-            }
-
+        var attachment = body.results.filter(function (attachment) {
+            return attachment.title === filnavn;
         });
+        if (attachment.length > 0) {
+            console.log('Oppdatering av eksisterende dokumentasjon');
+
+            var attachmentId = attachment[0].id;
+            uploadRequest.url = util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment/%s/data', confluencePageId, attachmentId);
+        } else {
+            console.log('Ny dokumentasjon');
+            uploadRequest.url = util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment', confluencePageId);
+        }
+
+        request.post(uploadRequest, function (error, response, body) {
+                if (error) {
+                    return console.error(error)
+                }
+                console.log(response.statusCode);
+                console.log(body);
+            }
+        )
+
+    });
 
 });
