@@ -8,9 +8,10 @@ request = request.defaults({
         password: 'PyTjo3mED6Q96c'
     }
 });
-
-var confluencePageId = '162739803';
+var args = process.argv.slice(2);
+var confluencePageId = args[0];
 var confluenceLink = util.format('http://confluence.adeo.no/pages/viewpage.action?pageId=%s', confluencePageId);
+
 
 fs.readdir('./target/generated-resources/xml/xslt', function (err, files) {
     var filnavn = files[0];
