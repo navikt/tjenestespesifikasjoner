@@ -33,7 +33,7 @@ fs.readdir('./target/generated-resources/xml/xslt', function (err, files) {
                 'X-Atlassian-Token': 'nocheck'
             },
             formData: {
-                conmment: 'Automatisk generert dokumentasjon av wsdl',
+                comment: 'Automatisk generert dokumentasjon av wsdl',
                 file: fs.createReadStream(util.format('./target/generated-resources/xml/xslt/%s', filnavn))
             }
         };
