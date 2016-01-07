@@ -18,19 +18,19 @@ Den genererte html-fila legges på default-location `/target/generated-resources
 
 Opplasting til vedlegg på Confluence skjer via maven-plugin `exec-maven-plugin`. Denne kjører først `npm install` og deretter sciptet `upload-attachment.js`. 
 Det oppretter vedlegget dersom det ikke finnes fra før, men oppdaterer innholdet dersom det finnes et vedlegg med likt filnavn. Opplastingen krever at pagid for siden som 
-skal få vedlegget spesifiseres i pom'en. Opplasting vil kun ta første fil den finner under `/target/generated-resources/xml/xslt`.
+skal få vedlegget spesifiseres i pom'en. Opplasting vil kun ta første fil den finner under `/target/generated-resources/xml/xslt`. Dette er første argument til `upload-attachment.js`
 
 ### Fremover
 
 Ettersom dette kun er en test for å se hvordan dette kan gjennomføres er det problemer som ikke er løst i denne første implementasjonen. 
 
-* Hvordan skal disse filene deles på en måte som gjør at flere kan benytte seg av det?
-    * Hvordan kunne spesifisere confluence-side pr wsdl? 
+* Hvordan skal disse filene deles på en måte som gjør at flere prosjekter kan få generert og lastet opp dokumentasjon?
+    * Hvordan kunne spesifisere confluence-pgae-id som input? 
 * Holder det å forvente wsdlen under `src/main/resource` eller bør dette kunne tilpasses? 
 * Fjerne innsjekkede bruker?
 * Bør det settes opp egne byggjobber som kjører dette slik at vi er sikre på at dokumentasjonen alltid er oppdatert?
-    * Hvordan bør dette i så fall gjennomføres? 
-* Bør det kjøres på clean install som nå eller bør det være en egen byggjobb? 
+    * Hvordan bør dette i så fall gjennomføres? Kan bli mange om det krever en pr appliksjon? 
+* Bør det kjøres på clean install som nå eller bør det være noe som ikke kjører så ofte? 
 
 For en bedre brukervennlighet rundt visningen bør man ta tak i saken [VRK-3791](http://jira/browse/VRK-3791).
 
