@@ -51,12 +51,12 @@ fs.readdir('./target/generated-resources/xml/xslt', function (err, files) {
             uploadRequest.url = util.format('http://confluence.adeo.no/rest/api/content/%s/child/attachment', confluencePageId);
         }
 
-        request.post(uploadRequest, function (error, response, body) {
+        request.post(uploadRequest, function (error, response) {
                 if (error) {
                     return console.error(error)
                 }
                 console.log(response.statusCode);
-                console.log(body);
+                console.log('Filen skal nå være et vedlegg til %s', confluenceLink);
             }
         )
 
