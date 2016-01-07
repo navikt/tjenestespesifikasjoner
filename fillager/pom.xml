@@ -105,7 +105,7 @@
                     <transformationSets>
                         <transformationSet>
                             <dir>src/main/resources</dir>
-                            <stylesheet>src/main/wsdl-viewer.xsl</stylesheet>
+                            <stylesheet>wsdl-viewer.xsl</stylesheet>
                             <includes><include>*.wsdl</include></includes>
                             <outputProperties>
                                 <outputProperty>
