@@ -6,7 +6,7 @@
         <xs:sequence>
         	<xs:element name="fodselsnummer" type="xs:string"/>
             <xs:element name="typer" type="xs:string" maxOccurs="unbounded"/>
-            <xs:element name="statuser" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="statuser" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
