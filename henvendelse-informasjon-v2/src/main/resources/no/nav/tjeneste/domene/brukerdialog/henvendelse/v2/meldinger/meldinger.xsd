@@ -6,6 +6,7 @@
         <xs:sequence>
         	<xs:element name="fodselsnummer" type="xs:string"/>
             <xs:element name="typer" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="statuser" type="xs:string" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -52,6 +53,16 @@
             <xs:enumeration value="SPORSMAL"/>
             <xs:enumeration value="SVAR"/>
             <xs:enumeration value="REFERAT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FERDIG"/>
+            <xs:enumeration value="UNDER_ARBEID"/>
+            <xs:enumeration value="AVBRUTT_AV_BRUKER"/>
+            <xs:enumeration value="AVBRUTT_AUTOMATISK"/>
         </xs:restriction>
     </xs:simpleType>
 
