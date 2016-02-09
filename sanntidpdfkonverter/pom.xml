@@ -80,9 +80,10 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/sanntidpdfkonverterer/no/nav/tjeneste/domene/brevogarkiv/sanntidpdfkonverterer/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/sanntidpdfkonverterer/no/nav/tjeneste/domene/brevogarkiv/sanntidpdfkonverterer/v1/sanntidPdfKonverterer.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/sanntidpdfkonverterer/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/sanntidpdfkonverterer/porttypehack.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
