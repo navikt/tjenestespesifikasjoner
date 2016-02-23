@@ -4,12 +4,12 @@
     <parent>
         <groupId>no.nav.sbl</groupId>
         <artifactId>mor-pom</artifactId>
-        <version>2</version>
+        <version>3</version>
     </parent>
 
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>innsynjournal-tjenestespesifikasjon</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <properties>
         <project />
@@ -64,7 +64,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>2.7.0</version>
+                <version>2.7.9</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
@@ -78,12 +78,14 @@
                                     <extraarg>-xjc-Xfluent-api</extraarg>
                                     <extraarg>-xjc-XhashCode</extraarg>
                                     <extraarg>-xjc-Xequals</extraarg>
-                                    <extraarg>-xjc-XtoString</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/innsynjournal/no/nav/tjeneste/virksomhet/innsynJournal/v1/Binding.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/innsynjournal/bindings.xml</bindingFile>
+                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
