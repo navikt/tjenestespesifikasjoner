@@ -77,10 +77,9 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/joark/no/nav/tjeneste/virksomhet/journal/v2/journal.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/joark/no/nav/tjeneste/virksomhet/journal/v2/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/joark/bindings.xml</bindingFile>
-                                        <bindingFile>${wsdl.directory}/joark/porttypehack.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
