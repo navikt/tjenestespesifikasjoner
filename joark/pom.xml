@@ -27,7 +27,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-journal-v2-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.0</version>
+                                    <version>1.0.2</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/joark</outputDirectory>
                                 </artifactItem>
