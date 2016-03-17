@@ -8,7 +8,7 @@
     </parent>
     <artifactId>brukerprofil-v3-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
-	<version>3.0.2-SNAPSHOT</version>
+	<version>3.0.2</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -157,7 +157,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>brukerprofil-v3-tjenestespesifikasjon-3.0.2</tag>
     </scm>
 
 </project>
