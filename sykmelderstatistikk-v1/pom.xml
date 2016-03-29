@@ -29,7 +29,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-sykmelderstatistikk-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.2</version>
+                                    <version>1.0.3-SNAPSHOT</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/</outputDirectory>
                                 </artifactItem>
