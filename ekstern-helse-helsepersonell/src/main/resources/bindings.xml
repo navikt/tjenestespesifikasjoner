@@ -1,0 +1,18 @@
+<jaxws:bindings version="1.0"
+              xmlns="http://java.sun.com/xml/ns/jaxws"
+              xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+              wsdlLocation="helsepersonell.wsdl"
+>
+    <jaxws:bindings node="wsdl:definitions/wsdl:types/xs:schema">
+        <jxb:schemaBindings>
+            <jxb:nameXmlTransform>
+                <jxb:elementName prefix="WS"/>
+                <jxb:typeName prefix="WS"/>
+                <jxb:anonymousTypeName prefix="WS"/>
+            </jxb:nameXmlTransform>
+        </jxb:schemaBindings>
+    </jaxws:bindings>
+    </jaxws:bindings>
