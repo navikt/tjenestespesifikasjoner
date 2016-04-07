@@ -1,13 +1,23 @@
 <jaxws:bindings version="1.0"
-              xmlns="http://java.sun.com/xml/ns/jaxws"
-              xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
-              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
-              xmlns:xs="http://www.w3.org/2001/XMLSchema"
-              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-              wsdlLocation="helsepersonell.wsdl"
+                xmlns="http://java.sun.com/xml/ns/jaxws"
+                xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+                xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="xjc"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                wsdlLocation="helsepersonell.wsdl"
+                xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jxb:extensionBindingPrefixes="xjc"
+
+
 >
+    <jxb:globalBindings generateElementProperty="false">
+        <xjc:simple />
+    </jxb:globalBindings>
     <jaxws:bindings node="wsdl:definitions/wsdl:types/xs:schema">
-        <jxb:schemaBindings>
+        <jxb:globalBindings generateElementProperty="false">
+            <xjc:simple/>
+        </jxb:globalBindings>
+        <jxb:schemaBindings >
+
             <jxb:nameXmlTransform>
                 <jxb:elementName prefix="WS"/>
                 <jxb:typeName prefix="WS"/>
