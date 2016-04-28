@@ -2,8 +2,8 @@
 <wsdl:definitions name="organisasjonEnhet" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
     <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1/meldinger">
-      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1/feil" schemaLocation="no/nav/tjeneste/virksomhet/organisasjonEnhet/v1/feil/feil.xsd"/>
-      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1/meldinger" schemaLocation="no/nav/tjeneste/virksomhet/organisasjonEnhet/v1/meldinger/meldinger.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1/feil" schemaLocation="no/nav/tjeneste/virksomhet/organisasjonEnhet2/v1/feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjonEnhet/v1/meldinger" schemaLocation="no/nav/tjeneste/virksomhet/organisasjonEnhet2/v1/meldinger/meldinger.xsd"/>
       <xsd:element name="hentEnhetBolk">
         <xsd:complexType>
           <xsd:sequence>
