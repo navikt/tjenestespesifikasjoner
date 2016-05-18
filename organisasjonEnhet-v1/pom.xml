@@ -89,7 +89,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/organisasjonenhet/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/organisasjonEnhet/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/organisasjonenhet/bindings.xml</bindingFile>
                                     </bindingFiles>
