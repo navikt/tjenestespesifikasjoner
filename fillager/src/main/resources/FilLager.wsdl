@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/xsl" href="wsdl-viewer.xsl" ?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   name="FilLagerService"
                   targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1">
+
     <wsdl:types>
         <xs:schema xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/fillager/v1"
                    elementFormDefault="unqualified"
@@ -82,6 +84,7 @@
 
     <wsdl:portType name="FilLagerPortType">
 		<wsdl:operation name="lagre">
+            <wsdl:documentation>Operasjonen tar inn en binærfil sammen med en uid, og lagrer denne for innlogget bruker</wsdl:documentation>
             <wsdl:input message="tns:lagreRequest" name="lagreRequest" />
             <wsdl:output message="tns:lagreResponse" name="lagreResponse" />
         </wsdl:operation>

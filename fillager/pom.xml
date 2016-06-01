@@ -105,7 +105,7 @@
                     <transformationSets>
                         <transformationSet>
                             <dir>src/main/resources</dir>
-                            <stylesheet>wsdl-viewer.xsl</stylesheet>
+                            <stylesheet>wsdl-viewer-confluence.xsl</stylesheet>
                             <includes><include>*.wsdl</include></includes>
                             <outputProperties>
                                 <outputProperty>
@@ -125,11 +125,11 @@
                     <dependency>
                         <groupId>net.sf.saxon</groupId>
                         <artifactId>saxon</artifactId>
-                        <version>8.7</version>
+                        <version>9.1.0.8</version>
                     </dependency>
                 </dependencies>
             </plugin>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
@@ -156,7 +156,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
 	  </plugins>
 	</build>
 

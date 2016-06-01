@@ -26,11 +26,41 @@
     </xs:complexType>
 
     <xs:complexType name="vedlegg">
+        <xs:annotation>
+            <xs:documentation>
+                Et vedlegg inneholder all informasjon om dokumentet. En trenger en kobling mot henvendelse via behandlingsId, en unik uid, fødselsnummeret som det skal lagres på, og innholde som binærstrøm
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string" minOccurs="0"/>
-            <xs:element name="uuid" type="xs:string"/>
-            <xs:element name="fnr" type="xs:string"/>
-            <xs:element name="innhold" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+            <xs:element name="behandlingsId" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Behandlingsid på henvendelsen dokumentet er knyttet mot
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="uuid" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        Unik id for dokumentet. Skal være en unik guid.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fnr" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        Eier av dokumentet. For brukere sjekkes dette opp mot sikkerhetskontekst. For systembruker brukes dette direkte.
+                    </xs:documentation>
+                </xs:annotation>
+
+            </xs:element>
+            <xs:element name="innhold" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream">
+                <xs:annotation>
+                    <xs:documentation>
+                        Binærstrøm av innholdet i fila. Kan være inneholde hva som helst.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
