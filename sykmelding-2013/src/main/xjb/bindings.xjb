@@ -34,14 +34,5 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-
-    <jaxb:bindings schemaLocation="../xsd/syfomelding.xsd" node="/xsd:schema">
-        <jaxb:schemaBindings>
-            <jaxb:nameXmlTransform>
-                <jaxb:typeName prefix="XML"/>
-                <jaxb:elementName prefix="XML"/>
-            </jaxb:nameXmlTransform>
-        </jaxb:schemaBindings>
-    </jaxb:bindings>
 </jaxb:bindings>
 
