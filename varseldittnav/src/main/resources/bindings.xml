@@ -4,7 +4,7 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-    <jaxb:bindings schemaLocation="varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v1/informasjon/informasjon.xsd" node="/xs:schema" >
+    <jaxb:bindings schemaLocation="varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v2/informasjon/informasjon.xsd" node="/xs:schema" >
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -15,7 +15,7 @@
     </jaxb:bindings>
 
 
-    <jaxb:bindings schemaLocation="varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v1/meldinger/meldinger.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v2/meldinger/meldinger.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>

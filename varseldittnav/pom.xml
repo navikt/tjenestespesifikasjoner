@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>varseldittnav-tjenestespesifikasjon</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>2.0.1-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -27,8 +27,8 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-varselDittNAV-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.0</version>
+                                    <artifactId>nav-varselDittNAV-v2-tjenestespesifikasjon</artifactId>
+                                    <version>2.0.2</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/varsel</outputDirectory>
                                 </artifactItem>
@@ -79,7 +79,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/varsel/no/nav/tjeneste/virksomhet/varselDittNAV/v2/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
