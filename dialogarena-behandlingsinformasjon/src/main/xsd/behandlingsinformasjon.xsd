@@ -159,7 +159,7 @@
                     <xs:element name="dokumentIdListe" type="xs:string" maxOccurs="unbounded"/>
                     <xs:element name="ferdigstiltDato" type="xs:dateTime"/>
                     <xs:element name="temanavn" type="xs:string" minOccurs="0"/>
-                    <xs:element name="repeterendeVarsel" type="xs:boolean"/>
+                    <xs:element name="stoppRepeterendeVarsel" type="xs:boolean"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
