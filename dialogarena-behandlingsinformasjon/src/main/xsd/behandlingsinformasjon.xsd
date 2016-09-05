@@ -150,16 +150,36 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="dokumentVarsel">
+    <xs:complexType name="henvendelseVarsel">
         <xs:complexContent>
             <xs:extension base="tns:melding">
+                <xs:sequence>
+                    <xs:element name="stoppRepeterendeVarsel" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentVarsel">
+        <xs:complexContent>
+            <xs:extension base="tns:henvendelseVarsel">
                 <xs:sequence>
                     <xs:element name="journalpostId" type="xs:string"/>
                     <xs:element name="dokumenttittel" type="xs:string"/>
                     <xs:element name="dokumentIdListe" type="xs:string" maxOccurs="unbounded"/>
                     <xs:element name="ferdigstiltDato" type="xs:dateTime"/>
                     <xs:element name="temanavn" type="xs:string" minOccurs="0"/>
-                    <xs:element name="stoppRepeterendeVarsel" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="oppgaveVarsel">
+        <xs:complexContent>
+            <xs:extension base="tns:henvendelseVarsel">
+                <xs:sequence>
+                    <xs:element name="oppgaveType" type="xs:string"/>
+                    <xs:element name="oppgaveURL" type="xs:string"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -176,6 +196,7 @@
     <xs:simpleType name="henvendelseType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="DOKUMENT_VARSEL"/>
+            <xs:enumeration value="OPPGAVE_VARSEL"/>
             <xs:enumeration value="DOKUMENTINNSENDING"/>
             <xs:enumeration value="DOKUMENTINNSENDING_ETTERSENDING"/>
             <xs:enumeration value="SEND_SOKNAD"/>
