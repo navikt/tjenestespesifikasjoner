@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://nav.no/emottak/archiver" 
+	xmlns:wsa="http://www.w3.org/2005/08/addressing" targetNamespace="http://nav.no/emottak/archiver" elementFormDefault="qualified" attributeFormDefault="unqualified"  version="1">
+	<xs:import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="ws-addr.xsd"/>
+
+	<xs:element name="LogAndArchiveRequest">
+		<xs:annotation>
+			<xs:documentation>Logs events and archives messages. Returns messageId which can be used in subsequent calls.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element name="logId" type="xs:string"/>
+					<xs:element name="message" type="MessageType"/>
+				</xs:choice>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="event" minOccurs="0" maxOccurs="unbounded" type="EventType"/>
+					<xs:element name="archive" minOccurs="0" maxOccurs="unbounded" type="ArchiveType"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="LogAndArchiveResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="logId" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+
+	<xs:complexType name="MessageType">
+		<xs:sequence>
+			<xs:element ref="wsa:Action"/>
+			<xs:element ref="wsa:MessageID"/>
+			<xs:element name="serviceConsumer" minOccurs="0" type="xs:string"/>
+			<xs:element name="serviceProducer" minOccurs="0" type="xs:string"/>
+			<xs:element name="ref2logId" minOccurs="0" type="xs:string"/>		
+			<xs:element name="reference" minOccurs="0" type="xs:string"/>
+			<xs:element name="envelopeSigner" minOccurs="0" type="xs:string"/>
+			<xs:element name="envelopeSignerIssuer" minOccurs="0" type="xs:string"/>
+			<xs:element name="documentSigner" minOccurs="0" type="xs:string"/>
+			<xs:element name="documentSignerIssuer" minOccurs="0" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ArchiveType">
+		<xs:sequence>
+			<xs:element name="blob" type="xs:base64Binary"/>
+			<xs:element name="type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ATTACHMENT"/>
+						<xs:enumeration value="SOAP"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="EventNumber">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="EventType">
+		<xs:sequence>
+			<xs:element name="eventNo">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="desc" minOccurs="0" type="xs:string"/>
+			<xs:element name="caller" minOccurs="0" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
