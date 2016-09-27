@@ -7,13 +7,14 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>digisyfo-test</artifactId>
+    <artifactId>juridisk-logg</artifactId>
     <groupId>no.nav.sbl.dialogarena</groupId>
-
     <version>1.0.0-SNAPSHOT</version>
+
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
+
     <build>
         <plugins>
             <plugin>
