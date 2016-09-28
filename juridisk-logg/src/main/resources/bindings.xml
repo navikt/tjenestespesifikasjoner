@@ -10,9 +10,4 @@
             </jxb:nameXmlTransform>
         </jxb:schemaBindings>
     </jxb:bindings>
-    <jxb:bindings schemaLocation="ws-addr.xsd" node="/xs:schema">
-        <jxb:bindings node="//xs:complexType[@name='AttributedURIType']">
-            <jxb:class ref="org.w3._2005._08.addressing.AttributedURIType"/>
-        </jxb:bindings>
-    </jxb:bindings>
 </jxb:bindings>

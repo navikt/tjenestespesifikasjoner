@@ -99,7 +99,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
         <pluginManagement>
             <plugins>
@@ -139,5 +138,4 @@
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

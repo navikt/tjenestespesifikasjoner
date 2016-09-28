@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://nav.no/emottak/archiver" 
 	xmlns:wsa="http://www.w3.org/2005/08/addressing" targetNamespace="http://nav.no/emottak/archiver" elementFormDefault="qualified" attributeFormDefault="unqualified"  version="1">
-	<xs:import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="ws-addr.xsd"/>
+	<!--<xs:import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="../../../../org/w3/_2005/_08/addressing/ws-addr.xsd"/>-->
 
 	<xs:element name="LogAndArchiveRequest">
 		<xs:annotation>
@@ -32,8 +32,8 @@
 
 	<xs:complexType name="MessageType">
 		<xs:sequence>
-			<xs:element ref="wsa:Action"/>
-			<xs:element ref="wsa:MessageID"/>
+			<!--<xs:element ref="wsa:Action"/>-->
+			<!--<xs:element ref="wsa:MessageID"/>-->
 			<xs:element name="serviceConsumer" minOccurs="0" type="xs:string"/>
 			<xs:element name="serviceProducer" minOccurs="0" type="xs:string"/>
 			<xs:element name="ref2logId" minOccurs="0" type="xs:string"/>		
