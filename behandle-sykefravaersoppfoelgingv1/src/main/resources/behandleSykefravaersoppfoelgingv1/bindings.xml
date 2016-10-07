@@ -2,7 +2,7 @@
               xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
               xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <jxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleOppfoelging/v1/feil/feil.xsd"
+    <jxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleSykefravaersoppfoelging/v1/feil/feil.xsd"
                   node="/xsd:schema">
         <jxb:schemaBindings>
             <jxb:nameXmlTransform>
@@ -11,7 +11,7 @@
             </jxb:nameXmlTransform>
         </jxb:schemaBindings>
     </jxb:bindings>
-    <jxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleOppfoelging/v1/meldinger/meldinger.xsd"
+    <jxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleSykefravaersoppfoelging/v1/meldinger/meldinger.xsd"
                   node="/xsd:schema">
         <jxb:schemaBindings>
             <jxb:nameXmlTransform>

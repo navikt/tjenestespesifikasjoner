@@ -6,8 +6,8 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>oppfoelgingv1-tjenestespesifikasjon</artifactId>
     <groupId>no.nav.sbl.dialogarena</groupId>
+    <artifactId>sykefravaersoppfoelgingv1-tjenestespesifikasjon</artifactId>
 
     <version>1.0.1-SNAPSHOT</version>
     <properties>
@@ -28,7 +28,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-oppfoelging-v1-tjenestespesifikasjon</artifactId>
+                                    <artifactId>nav-sykefravaersoppfoelging-v1-tjenestespesifikasjon</artifactId>
                                     <version>1.0.0</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/</outputDirectory>
@@ -72,9 +72,9 @@
                         <configuration>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/oppfoelging/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/sykefravaersoppfoelging/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/oppfoelgingv1/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/sykefravaersoppfoelgingv1/bindings.xml</bindingFile>
                                     </bindingFiles>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
