@@ -8,7 +8,7 @@
     </parent>
     <artifactId>gsak-oppgave-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
-    <version>0.0.13-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -36,7 +36,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.fim</groupId>
                                     <artifactId>nav-fim-oppgavebehandling-v3-tjenestespesifikasjon</artifactId>
-                                    <version>3.0.0</version>
+                                    <version>3.1.1</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/oppgavebehandling</outputDirectory>
                                 </artifactItem>
