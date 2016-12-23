@@ -2,8 +2,8 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://nav.no/melding/virksomhet/veiledervarsel/v1/varsel"
             xmlns:varsel="http://nav.no/melding/virksomhet/veiledervarsel/v1/varsel">
-    <xsd:element name="Varsel" type="varsel:Varsel"/>
-    <xsd:complexType name="Varsel">
+    <xsd:element name="Varsel">
+    <xsd:complexType>
         <xsd:sequence>
             <xsd:element name="type" type="xsd:string"/>
             <xsd:element name="tekst" type="xsd:string"/>
@@ -11,4 +11,5 @@
             <xsd:element name="veilederUserId" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
+    </xsd:element>
 </xsd:schema>
