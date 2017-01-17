@@ -83,7 +83,7 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>
-                                        ${wsdl.directory}/no/nav/tjeneste/pip/egenansatt/v1/Binding.wsdl
+                                        ${wsdl.directory}/no/nav/tjeneste/pip/EgenAnsatt/v1/Binding.wsdl
                                     </wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
