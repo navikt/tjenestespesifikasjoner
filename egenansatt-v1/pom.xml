@@ -29,7 +29,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>no.nav.tjenester.pip</groupId>
-                                    <artifactId>nav-pip-egenansatt-v1-tjenestespesifikasjon</artifactId>
+                                    <artifactId>nav-pip-egenAnsatt-v1-tjenestespesifikasjon</artifactId>
                                     <version>1.0.1</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}</outputDirectory>
