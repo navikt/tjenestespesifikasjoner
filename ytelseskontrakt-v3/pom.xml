@@ -7,8 +7,8 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>no.nav.fo</groupId>
-    <artifactId>enhet-v1-tjenestespesifikasjon</artifactId>
+    <groupId>no.nav.sbl.dialogarena</groupId>
+    <artifactId>ytelseskontrakt-v3-tjenestespesifikasjon</artifactId>
     <version>1.0.1-SNAPSHOT</version>
 
     <properties>
@@ -39,9 +39,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-enhet-tjenestespesifikasjon</artifactId>
-                                    <version>1.2.0</version>
+                                    <groupId>no.nav.tjenester.fim</groupId>
+                                    <artifactId>nav-fim-ytelseskontrakt-v3-tjenestespesifikasjon</artifactId>
+                                    <version>3.0.1</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/tjenestespesifikasjon</outputDirectory>
                                 </artifactItem>
@@ -89,9 +89,9 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/virksomhet/tjenester/enhet/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/ytelseskontrakt/v3/Binding.wsdl</wsdl>
                                     <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/enhet/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/ytelseskontrakt/bindings.xml</bindingFile>
                                     </bindingFiles>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
