@@ -6,6 +6,7 @@
         <version>2.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>oppfoelging-v1-tjenestespesifikasjon</artifactId>
     <version>1.0.5-SNAPSHOT</version>
     <packaging>jar</packaging>
