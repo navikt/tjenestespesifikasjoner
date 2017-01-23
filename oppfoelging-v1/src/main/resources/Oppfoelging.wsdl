@@ -84,7 +84,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ping">
-      <soap:operation soapAction="" style="document"/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/oppfoelging/v1/OppfoelgingPortType/pingRequest" style="document"/>
       <wsdl:input name="pingRequest">
         <soap:body use="literal"/>
       </wsdl:input>
