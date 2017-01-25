@@ -8,7 +8,7 @@
     </parent>
     <artifactId>person-v2-tjenestespesifikasjon</artifactId>
     <name>${project.artifactId}</name>
-	<version>3.0.1-SNAPSHOT</version>
+	<version>3.0.2-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
