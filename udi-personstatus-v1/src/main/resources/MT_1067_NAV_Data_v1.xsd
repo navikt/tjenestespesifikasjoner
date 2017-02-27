@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://udi.no/MT_1067_NAV_Data/v1" xmlns:common="http://udi.no/Common/v2" targetNamespace="http://udi.no/MT_1067_NAV_Data/v1" elementFormDefault="qualified">
+  <xs:import namespace="http://udi.no/Common/v2" schemaLocation="Common_v2.xsd" />
+  <xs:complexType name="Alias">
+    <xs:sequence>
+      <xs:element name="Navn" type="PersonNavn" minOccurs="0" />
+      <xs:element name="Fodselsnummer" type="common:Fodselsnummer" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AliasListe">
+    <xs:sequence>
+      <xs:element name="Alias" type="Alias" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Arbeidsadgang">
+    <xs:sequence>
+      <xs:element name="HarArbeidsadgang" type="JaNeiUavklart" />
+      <xs:element name="TypeArbeidsadgang" type="ArbeidsadgangType" nillable="true" />
+      <xs:element name="ArbeidsOmfang" type="ArbeidOmfangKategori" nillable="true" />
+      <xs:element name="ArbeidsadgangsPeriode" type="Periode" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Avgjorelse">
+    <xs:sequence>
+      <xs:element name="AvgjorelseId" type="xs:string" />
+      <xs:element name="OmgjortavAvgjorelseId" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>AvgjorelseId i en annen avgjørelse som omgjør denne avgjørelsen. Dette er typisk et omgjøringsvedtak, tilbakekallsvedtak, bortfallsvedtak eller lignende</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SakOpprettetDato" type="xs:dateTime" nillable="true" />
+      <xs:element name="SakSoknadMottattDato" type="xs:dateTime" nillable="true" />
+      <xs:element name="Avgjorelsestype" type="Avgjorelsestype">
+        <xs:annotation>
+          <xs:documentation>Opplysninger om vedtak/beslutning er en Tillatelse eller et Utfall</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ErPositiv" type="xs:boolean" nillable="true">
+        <xs:annotation>
+          <xs:documentation>Angir om konklusjon i forhold til hjemmelen som vurderes i avgjørelsen er positiv.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Tillatelse" type="Tillatelse" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Eventuell ekstra informasjon når en avgjørelse er en tillatelse, gitt at tillatelse har informasjon om varighet og/eller gyldighetsperiode</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Utfall" type="Utfall" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Eventuell ekstra informasjon når en avgjørelse er et utfall, gitt at utfall har informasjon om varighet og/eller gjeldende periode</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AvgjorelseDato" type="xs:dateTime" nillable="true">
+        <xs:annotation>
+          <xs:documentation>Dato avgjørelse ble tatt. Må fylles ut for at avgjørelse faglig sett skal være gyldig. Enkelte vedtak/beslutninger ligger likevel uten dato.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EffektueringsDato" type="xs:dateTime" nillable="true">
+        <xs:annotation>
+          <xs:documentation>Effektueringsdato i form av å informere om en avgjørelse</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IverksettelseDato" type="xs:dateTime" nillable="true">
+        <xs:annotation>
+          <xs:documentation>Iverksettelsedato i form av gjennomføring av negative vedtak (avslag og utfallsvedtak)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UtreisefristDato" type="xs:dateTime" nillable="true">
+        <xs:annotation>
+          <xs:documentation>Frist for personen til å forlate landet som følge av negative vedtak (avslag og utfallsvedtak)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Saksnummer" type="xs:string" />
+      <xs:element name="Etat" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Hvilken Etat som fattet vedtaket/avgjørelsen. Mulige verdier: UDI, UNE, POL, UD, etc</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Avgjorelser">
+    <xs:annotation>
+      <xs:documentation>Liste med avgjørelser</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Avgjorelse" type="Avgjorelse" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Avgjorelsestype">
+    <xs:sequence>
+      <xs:element name="UtfallstypeKode" type="common:Kodeverk" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>UDI kodeverk. Type avgjørelse der det ikke er søkt om tillatelse (for eksempel utvisning).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GrunntypeKode" type="common:Kodeverk" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>UDI kodeverk. Oppholdsgrunnlaget som den vurderte tillatelsen faller inn under.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TillatelseKode" type="common:Kodeverk" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>UDI kodeverk. Tillatelse som er vurdert i avgjørelsen.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AvslagEllerBortfallAvPO-BOSellerTilbakekallEllerFormeltVedtak">
+    <xs:sequence>
+      <xs:element name="AvgjorelsesDato" type="xs:dateTime" nillable="true" />
+      <xs:element name="BortfallAvPOellerBOS" type="BortfallAvPOellerBOS" minOccurs="0" />
+      <xs:element name="TilbakeKall" type="TilbakeKall" minOccurs="0" />
+      <xs:element name="AvslagPaSoknadOmOppholdstillatelseRealitetsBehandlet" type="AvslagPaSoknadOmOppholdstillatelseRealitetsBehandlet" minOccurs="0" />
+      <xs:element name="AvslagPaSoknadOmOppholdsrettRealitetsBehandlet" type="AvslagPaSoknadOmOppholdsrettRealitetsBehandlet" minOccurs="0" />
+      <xs:element name="FormeltVedtak" type="FormeltVedtak" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AvslagPaSoknadOmOppholdsrettRealitetsBehandlet">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="AvslagPaSoknadOmOppholdstillatelseRealitetsBehandlet">
+    <xs:sequence>
+      <xs:element name="UtreiseFrist" type="xs:dateTime" nillable="true" />
+      <xs:element name="AvslagsGrunnlagEOS" type="EOSellerEFTAGrunnlagskategoriOppholdstillatelse" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BortfallAvPOellerBOS">
+    <xs:sequence>
+      <xs:element name="VirkningsDato" type="xs:dateTime" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EOSellerEFTABeslutningOmOppholdsrett">
+    <xs:sequence>
+      <xs:element name="OppholdsrettsPeriode" type="Periode" minOccurs="0" />
+      <xs:element name="Effektueringsdato" type="xs:dateTime" nillable="true" />
+      <xs:element name="EOSOppholdsgrunnlag" type="EOSellerEFTAGrunnlagskategoriOppholdsrett" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EOSellerEFTAOpphold">
+    <xs:sequence>
+      <xs:element name="EOSellerEFTABeslutningOmOppholdsrett" type="EOSellerEFTABeslutningOmOppholdsrett" minOccurs="0" />
+      <xs:element name="EOSellerEFTAVedtakOmVarigOppholdsrett" type="EOSellerEFTAVedtakOmVarigOppholdsrett" minOccurs="0" />
+      <xs:element name="EOSellerEFTAOppholdstillatelse" type="EOSellerEFTAOppholdstillatelse" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EOSellerEFTAOppholdstillatelse">
+    <xs:sequence>
+      <xs:element name="OppholdstillatelsePeriode" type="Periode" minOccurs="0" />
+      <xs:element name="Effektueringsdato" type="xs:dateTime" nillable="true" />
+      <xs:element name="EOSOppholdsgrunnlag" type="EOSellerEFTAGrunnlagskategoriOppholdstillatelse" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EOSellerEFTAVedtakOmVarigOppholdsrett">
+    <xs:sequence>
+      <xs:element name="OppholdsrettsPeriode" type="Periode" minOccurs="0" />
+      <xs:element name="Effektueringsdato" type="xs:dateTime" nillable="true" />
+      <xs:element name="EOSOppholdsgrunnlag" type="EOSellerEFTAGrunnlagskategoriOppholdsrett" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FormeltVedtak">
+    <xs:sequence>
+      <xs:element name="UtreiseFrist" type="xs:dateTime" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GjeldendeOppholdsstatus">
+    <xs:sequence>
+      <xs:element name="Uavklart" type="Uavklart" minOccurs="0" />
+      <xs:element name="EOSellerEFTAOpphold" type="EOSellerEFTAOpphold" minOccurs="0" />
+      <xs:element name="OppholdstillatelseEllerOppholdsPaSammeVilkar" type="OppholdstillatelseEllerOppholdsPaSammeVilkar" minOccurs="0" />
+      <xs:element name="IkkeOppholdstillatelseIkkeOppholdsPaSammeVilkarIkkeVisum" type="IkkeOppholdstillatelseIkkeOppholdsPaSammeVilkarIkkeVisum" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HentPersonstatusParameter">
+    <xs:annotation>
+      <xs:documentation>Parametre til bruk av operasjon for henting av oppholdsstatus. Fødselsnummer må være angitt.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Fodselsnummer" type="common:Fodselsnummer" />
+      <xs:element name="AvgjorelserFraDato" type="xs:dateTime" nillable="true" />
+      <xs:element name="InkluderArbeidsadgang" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Benyttes til å bestemme om elementet Arbeidsadgang skal returneres i respons.
+            Dersom feltet er satt til true, så vil elementet Arbeidsadgang bli returnert.
+            Dersom feltet er satt til false, så vil elementet Arbeidsadgang bli satt til null.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InkluderAvgjorelsehistorikk" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Benyttes til å bestemme om elementet Avgjorelsehistorikk skal returneres i respons.
+            Dersom feltet er satt til true, så vil elementet Avgjorelsehistorikk bli returnert.
+            Dersom feltet er satt til false, så vil elementet Avgjorelsehistorikk bli satt til null.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InkluderHarFlyktningstatus" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Benyttes til å bestemme om elementet HarFlyktningstatus skal returneres i respons.
+            Dersom feltet er satt til true, så vil elementet HarFlyktningstatus bli returnert.
+            Dersom feltet er satt til false, så vil elementet HarFlyktningstatus bli satt til null.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InkluderSoknadOmBeskyttelseUnderBehandling" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Benyttes til å bestemme om elementet SoknadOmBeskyttelseUnderBehandling skal returneres i respons.
+            Dersom feltet er satt til true, så vil elementet SoknadOmBeskyttelseUnderBehandling bli returnert.
+            Dersom feltet er satt til false, så vil elementet SoknadOmBeskyttelseUnderBehandling bli satt til null.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ManuellOppgVedUavklartArbeidsadgang" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Hvis det blir funnet en uavklart arbeidsadgang, benyttes ManuellOppgVedUavklartArbeidsadgang til å bestemme om det skal 
+            oppretter oppgave for manuell avklaring eller ikke. NB! Logikk bak flagget er ikke implementert i leveranse 17.02. 
+            Klient må inntil videre benytte false. Ved bruk av true, returneres feilen 'Ugyldig request'</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HentPersonstatusRequestType">
+    <xs:sequence>
+      <xs:element name="Parameter" type="HentPersonstatusParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HentPersonstatusResponseType">
+    <xs:sequence>
+      <xs:element name="Resultat" type="HentPersonstatusResultat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HentPersonstatusResultat">
+    <xs:annotation>
+      <xs:documentation>Resultatsett fra operasjon for henting av oppholdsstatus. Vil være tom hvis person ikke blir funnet i UDB</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OppholdsstatusPerson" type="OppholdsstatusPerson" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IkkeOppholdstillatelseIkkeOppholdsPaSammeVilkarIkkeVisum">
+    <xs:sequence>
+      <xs:element name="UtvistMedInnreiseForbud" type="UtvistMedInnreiseForbud" minOccurs="0" />
+      <xs:element name="AvslagEllerBortfallAvPO-BOSellerTilbakekallEllerFormeltVedtak" type="AvslagEllerBortfallAvPO-BOSellerTilbakekallEllerFormeltVedtak" minOccurs="0" />
+      <xs:element name="OvrigIkkeOpphold" type="OvrigIkkeOpphold" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MangelfullDato">
+    <xs:sequence>
+      <xs:element name="Ar" type="common:Ar" nillable="true" />
+      <xs:element name="Maned" type="common:Maned" nillable="true" />
+      <xs:element name="Dag" type="xs:int" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Navn">
+    <xs:sequence>
+      <xs:element name="Fornavn" type="xs:string" />
+      <xs:element name="Etternavn" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OppholdPaSammeVilkar">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="OppholdsstatusPerson">
+    <xs:sequence>
+      <xs:element name="Fodselsnummer" type="common:Fodselsnummer" />
+      <xs:element name="Navn" type="PersonNavn" minOccurs="0" />
+      <xs:element name="Fodselsdato" type="MangelfullDato" minOccurs="0" />
+      <xs:element name="Alias" type="AliasListe" minOccurs="0" />
+      <xs:element name="GjeldendeOppholdsstatus" type="GjeldendeOppholdsstatus" minOccurs="0" />
+      <xs:element name="Arbeidsadgang" type="Arbeidsadgang" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Angir en persons arbeidsadgang.
+            Inkluderes i respons hvis InkluderArbeidsadgang i HentPersonstatusParameter er satt til true
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Avgjorelsehistorikk" type="Avgjorelser" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Personens avgjørelsehistorikk.
+            Inkluderes i respons hvis InkluderAvgjorelsehistorikk i HentPersonstatusParameter er satt til true
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HarFlyktningstatus" type="xs:boolean" nillable="true">
+        <xs:annotation>
+          <xs:documentation>
+            Angir om personen har flykningstatus. 
+            Inkluderes i respons hvis InkluderHarFlyktningstatus i HentPersonstatusParameter er satt til true
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SoknadOmBeskyttelseUnderBehandling" type="SoknadOmBeskyttelseUnderBehandling" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            Angir om personen har søknad til behandling med kategori Beskyttelse.
+            Inkluderes i respons hvis InkluderSoknadOmBeskyttelseUnderBehandling i HentPersonstatusParameter er satt til true
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SoknadOmBeskyttelseUnderBehandling">
+    <xs:sequence>
+      <xs:element name="ErUnderBehandling" type="xs:boolean" />
+      <xs:element name="Soknadsdato" type="xs:dateTime" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Oppholdstillatelse">
+    <xs:sequence>
+      <xs:element name="OppholdstillatelseType" type="OppholdstillatelseKategori" nillable="true" />
+      <xs:element name="VedtaksDato" type="xs:dateTime" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OppholdstillatelseEllerOppholdsPaSammeVilkar">
+    <xs:sequence>
+      <xs:element name="OppholdstillatelsePeriode" type="Periode" minOccurs="0" />
+      <xs:element name="Effektueringsdato" type="xs:dateTime" nillable="true" />
+      <xs:element name="Oppholdstillatelse" type="Oppholdstillatelse" minOccurs="0" />
+      <xs:element name="OppholdPaSammeVilkar" type="OppholdPaSammeVilkar" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OvrigIkkeOpphold">
+    <xs:sequence>
+      <xs:element name="Arsak" type="OvrigIkkeOppholdsKategori" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Periode">
+    <xs:sequence>
+      <xs:element name="Fra" type="xs:dateTime" nillable="true" />
+      <xs:element name="Til" type="xs:dateTime" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonNavn">
+    <xs:annotation>
+      <xs:documentation>Grunnleggende opplysninger om navn</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Fornavn" type="xs:string" />
+      <xs:element name="Mellomnavn" type="xs:string" minOccurs="0" />
+      <xs:element name="Etternavn" type="xs:string" />
+      <xs:element name="UtvidetNavneinformasjon" type="PersonNavnRiktighet" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonNavnRiktighet">
+    <xs:annotation>
+      <xs:documentation>Utvidede opplysninger om en persons navn</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ErAlias" type="xs:boolean" nillable="true">
+        <xs:annotation>
+          <xs:documentation>En person kan ha flere alias. Angir om navnet er et alias.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ErGjeldende" type="xs:boolean" nillable="true">
+        <xs:annotation>
+          <xs:documentation>En person kan kun ha ett gjeldende navn som ikke er alias</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RiktighetsgradKode" type="common:Kodeverk" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>UDI kodeverk. Riktighetsgraden av navneopplysningene</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TilbakeKall">
+    <xs:sequence>
+      <xs:element name="VirkningsDato" type="xs:dateTime" nillable="true" />
+      <xs:element name="UtreiseFrist" type="xs:dateTime" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Tillatelse">
+    <xs:sequence>
+      <xs:element name="VarighetKode" type="common:Kodeverk" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Varighet" type="xs:int" nillable="true" />
+      <xs:element name="Gyldighetsperiode" type="Periode" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Uavklart">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="Utfall">
+    <xs:sequence>
+      <xs:element name="VarighetKode" type="common:Kodeverk" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Varighet" type="xs:int" nillable="true" />
+      <xs:element name="GjeldendePeriode" type="Periode" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UtvistMedInnreiseForbud">
+    <xs:sequence>
+      <xs:element name="InnreiseForbud" type="JaNeiUavklart" nillable="true" />
+      <xs:element name="VedtaksDato" type="xs:dateTime" nillable="true" />
+      <xs:element name="Varighet" type="Varighet" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Alternativ">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+      <xs:enumeration value="Nei" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ArbeidOmfangKategori">
+    <xs:annotation>
+      <xs:documentation>Typer av arbeidsomfang som angir begrensninger med hensyn til arbeidstid</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IngenKravTilStillingsprosent" />
+      <xs:enumeration value="KunArbeidHeltid" />
+      <xs:enumeration value="KunArbeidDeltid" />
+      <xs:enumeration value="DeltidSamtFerierHeltid" />
+      <xs:enumeration value="Uavklart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ArbeidsadgangType">
+    <xs:annotation>
+      <xs:documentation>Typer av arbeidsbegrensning som angir om arbeidstillatelse er gitt med begrensninger</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BestemtArbeidsgiverEllerOppdragsgiver" />
+      <xs:enumeration value="BestemtArbeidEllerOppdrag" />
+      <xs:enumeration value="BestemtArbeidsgiverOgArbeidEllerBestemtOppdragsgiverOgOppdrag" />
+      <xs:enumeration value="Generell" />
+      <xs:enumeration value="Uavklart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EOSellerEFTAGrunnlagskategoriOppholdsrett">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Varig" />
+      <xs:enumeration value="IngenInformasjon" />
+      <xs:enumeration value="Familie" />
+      <xs:enumeration value="TjenesteytingEllerEtablering" />
+      <xs:enumeration value="Uavklart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EOSellerEFTAGrunnlagskategoriOppholdstillatelse">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EgneMidlerEllerFastePeriodiskeYtelser" />
+      <xs:enumeration value="Arbeid" />
+      <xs:enumeration value="Utdanning" />
+      <xs:enumeration value="TjenesteytingEllerEtablering" />
+      <xs:enumeration value="Familie" />
+      <xs:enumeration value="Uavklart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="JaNeiUavklart">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+      <xs:enumeration value="Nei" />
+      <xs:enumeration value="Uavklart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OppholdsgrunnlagKategori">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Permanent" />
+      <xs:enumeration value="Beskyttelse" />
+      <xs:enumeration value="SterkeMenneskeligeHensynEllerSaerligTilknytningTilNorge" />
+      <xs:enumeration value="Arbeid" />
+      <xs:enumeration value="Utdanning" />
+      <xs:enumeration value="Familie" />
+      <xs:enumeration value="SelvstendigNaeringsvirksomhet" />
+      <xs:enumeration value="Annet" />
+      <xs:enumeration value="Uavklart" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OppholdstillatelseKategori">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Permanent" />
+      <xs:enumeration value="Midlertidig" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OvrigIkkeOppholdsKategori">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OpphevetInnreiseforbud" />
+      <xs:enumeration value="AnnuleringAvVisum" />
+      <xs:enumeration value="UtloptOppholdstillatelse" />
+      <xs:enumeration value="UtloptEOSellerEFTAOppholdsrettEllerEOSellerEFTAOppholdstillatelse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Varighet">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EttAr" />
+      <xs:enumeration value="ToAr" />
+      <xs:enumeration value="FemAr" />
+      <xs:enumeration value="Varig" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
