@@ -1,8 +1,10 @@
-<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
-               xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
-               jaxb:extensionBindingPrefixes="xjc" jaxb:version="2.0">
+<jaxb:bindings version="1.0"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-  <jaxb:bindings schemaLocation="./no/nav/tjeneste/virksomhet/oppfoelging/v1/informasjon/oppfoelging.xsd" node="/xsd:schema" >
+  <jaxb:bindings schemaLocation="./tjenestespesifikasjon/no/nav/tjeneste/virksomhet/oppfoelging/v1/informasjon/oppfoelging/oppfoelging.xsd" node="/xs:schema" >
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
         <jaxb:typeName prefix="WS"/>
@@ -11,7 +13,7 @@
     </jaxb:schemaBindings>
   </jaxb:bindings>
 
-  <jaxb:bindings schemaLocation="./no/nav/tjeneste/virksomhet/oppfoelging/v1/meldinger/meldinger.xsd" node="/xsd:schema">
+  <jaxb:bindings schemaLocation="./tjenestespesifikasjon/no/nav/tjeneste/virksomhet/oppfoelging/v1/meldinger/meldinger.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
         <jaxb:typeName prefix="WS"/>
