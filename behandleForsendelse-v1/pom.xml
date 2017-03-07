@@ -89,9 +89,9 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/behandleforsendelse/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/behandleForsendelse/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/behandleforsendelse/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/behandleForsendelse/bindings.xml</bindingFile>
                                     </bindingFiles>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
