@@ -13,15 +13,6 @@
       <xs:element name="TilDato" type="xs:dateTime" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ApenTilPeriode">
-    <xs:annotation>
-      <xs:documentation>Opplysninger om en periode der tildato kan være ukjent</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="FraDato" type="xs:dateTime" />
-      <xs:element name="TilDato" type="xs:dateTime" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="Credentials">
     <xs:sequence>
       <xs:element name="Brukernavn" type="xs:string" />
@@ -45,11 +36,6 @@
       <xs:element name="Type" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="KodeverkListe">
-    <xs:sequence>
-      <xs:element name="Kodeverk" type="Kodeverk" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="Kodeverksdefinisjon">
     <xs:sequence>
       <xs:element name="Kode" type="xs:string" />
@@ -66,11 +52,6 @@
           <xs:documentation>Angir til hvilken dato kodeelementet er tilgjengelig for registrering i applikasjonene</xs:documentation>
         </xs:annotation>
       </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="Kodeverksdefinisjoner">
-    <xs:sequence>
-      <xs:element name="Kodeverksdefinisjon" type="Kodeverksdefinisjon" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PingRequestType">
