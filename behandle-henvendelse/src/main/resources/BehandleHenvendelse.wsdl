@@ -31,6 +31,8 @@
             <xs:element name="knyttBehandlingskjedeTilTemaResponse" type="meldinger:knyttBehandlingskjedeTilTemaResponse"/>
             <xs:element name="oppdaterTemagruppe" type="meldinger:oppdaterTemagruppeRequest"/>
             <xs:element name="oppdaterTemagruppeResponse" type="meldinger:oppdaterTemagruppeResponse"/>
+            <xs:element name="settOversendtDokmot" type="meldinger:settOversendtDokmotRequest"/>
+            <xs:element name="settOversendtDokmotResponse" type="meldinger:settOversendtDokmotResponse"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -95,9 +97,17 @@
     <wsdl:message name="oppdaterTemagruppeRequest">
         <wsdl:part element="tns:oppdaterTemagruppe" name="parameters">
         </wsdl:part>
-    </wsdl:message
-            ><wsdl:message name="oppdaterTemagruppeResponse">
+    </wsdl:message>
+    <wsdl:message name="oppdaterTemagruppeResponse">
         <wsdl:part element="tns:oppdaterTemagruppeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="settOversendtDokmotRequest">
+        <wsdl:part element="tns:settOversendtDokmot" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="settOversendtDokmotResponse">
+        <wsdl:part element="tns:settOversendtDokmotResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="pingRequest">
@@ -156,6 +166,12 @@
             <wsdl:input message="tns:oppdaterTemagruppeRequest" name="oppdaterTemagruppeRequest">
             </wsdl:input>
             <wsdl:output message="tns:oppdaterTemagruppeResponse" name="oppdaterTemagruppeResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="settOversendtDokmot">
+            <wsdl:input message="tns:settOversendtDokmotRequest" name="settOversendtDokmotRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:settOversendtDokmotResponse" name="settOversendtDokmotResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="ping">
@@ -237,6 +253,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="oppdaterTemagruppeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="settOversendtDokmot">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="settOversendtDokmotRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="settOversendtDokmotResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
