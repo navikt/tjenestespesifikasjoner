@@ -6,6 +6,7 @@
 		<version>3</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
+    <groupId>no.nav.sbl.dialogarena</groupId>
 	<artifactId>dialogarena-behandlingsinformasjon</artifactId>
 	<version>0.0.56-SNAPSHOT</version>
 	<packaging>jar</packaging>
