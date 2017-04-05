@@ -287,6 +287,7 @@
                 <xs:element name="dato" type="xs:dateTime"/>
                 <xs:element name="aktor" type="xs:string" minOccurs="0"/>
                 <xs:element name="enhet" type="xs:string" minOccurs="0"/>
+                <xs:element name="tema" type="xs:string" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
