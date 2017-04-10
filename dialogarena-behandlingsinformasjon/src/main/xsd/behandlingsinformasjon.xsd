@@ -264,6 +264,7 @@
             <xs:enumeration value="HENVENDELSE_BESVART"/>
             <xs:enumeration value="NOTIFIKASJON_SENDT"/>
             <xs:enumeration value="OVERSENDT_JOARK"/>
+            <xs:enumeration value="OVERSENDT_DOKMOT"/>
             <xs:enumeration value="OVERSENDT_HENVENDESLSESARKIV"/>
             <xs:enumeration value="GSAK_OPPGAVE_OPPRETTET"/>
             <xs:enumeration value="GSAK_HENVENDELSE_OPPRETTET"/>
