@@ -2,8 +2,7 @@
                xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
                jaxb:extensionBindingPrefixes="xjc" jaxb:version="2.0">
     <jaxb:globalBindings>
-        <xjc:javaType name="org.joda.time.DateTime" xmlType="xsd:dateTime"
-                      adapter="no.nav.sbl.dialogarena.adapters.DateTimeAdapter"/>
+        <xjc:javaType name="java.time.LocalDateTime" xmlType="xsd:dateTime" adapter="com.migesok.jaxb.adapter.javatime.LocalDateTimeXmlAdapter"/>
         <xjc:simple/>
     </jaxb:globalBindings>
     <jaxb:bindings schemaLocation="../xsd/v1.xsd" node="/xsd:schema">
