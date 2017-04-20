@@ -33,7 +33,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>2.7.4</version>
+                <version>3.1.4</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
@@ -58,6 +58,7 @@
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
+                            <encoding>UTF-8</encoding>
                         </configuration>
                     </execution>
                 </executions>
