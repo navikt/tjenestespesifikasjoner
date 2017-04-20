@@ -22,4 +22,14 @@
     </jaxb:schemaBindings>
   </jaxb:bindings>
 
+  <jaxb:bindings schemaLocation="../tjenestespesifikasjon/no/nav/tjeneste/virksomhet/person/v3/informasjon/informasjon.xsd" node="/xs:schema" >
+    <jaxb:schemaBindings>
+      <jaxb:nameXmlTransform>
+        <jaxb:typeName prefix="WS"/>
+        <jaxb:anonymousTypeName prefix="WS"/>
+      </jaxb:nameXmlTransform>
+
+    </jaxb:schemaBindings>
+  </jaxb:bindings>
+
 </jaxb:bindings>
