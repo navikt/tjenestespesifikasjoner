@@ -4,7 +4,6 @@
 	<xs:import namespace="http://udi.no/Common/v2" schemaLocation="Common_v2.xsd"/>
 	<xs:import namespace="http://udi.no/MT_1067_NAV_Data/v1" schemaLocation="MT_1067_NAV_Data_v1.xsd"/>
 
-
 	<xs:element name="brevdata" type="brevdataType"/>
 
 	<xs:complexType name="brevdataType">
