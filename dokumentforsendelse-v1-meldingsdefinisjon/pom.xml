@@ -9,7 +9,7 @@
 
 	<artifactId>dokumentforsendelse-v1-meldingsdefinisjon</artifactId>
 	<groupId>no.nav.sbl.dialogarena</groupId>
-	<version>1.1.0</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -128,7 +128,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>dokumentforsendelse-v1-meldingsdefinisjon-1.1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
