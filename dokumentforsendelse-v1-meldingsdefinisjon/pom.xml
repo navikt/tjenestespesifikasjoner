@@ -22,7 +22,7 @@
 
 	<properties>
 		<xsd.location>${project.build.directory}/classes</xsd.location>
-		<dokumentforsendelse.version>1.0.1</dokumentforsendelse.version>
+		<dokumentforsendelse.version>1.0.2</dokumentforsendelse.version>
 	</properties>
 
 	<build>
