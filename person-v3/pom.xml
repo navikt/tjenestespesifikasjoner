@@ -41,7 +41,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-person-v3-tjenestespesifikasjon</artifactId>
-                                    <version>3.0.0</version>
+                                    <version>3.0.2</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/tjenestespesifikasjon</outputDirectory>
                                 </artifactItem>
