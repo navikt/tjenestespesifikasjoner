@@ -21,7 +21,8 @@
 	</dependencies>
 
 	<properties>
-		<xsd.location>${project.build.directory}/classes</xsd.location>
+		<xsd.location>${project.build.directory}/classes/tjenestespesifikasjon</xsd.location>
+		<jaxb.location>${project.build.directory}/classes/</jaxb.location>
 		<meldingsdefinisjon.version>1.0.0-SNAPSHOT</meldingsdefinisjon.version>
 	</properties>
 
@@ -65,7 +66,7 @@
 									<directory>src/main/xjb</directory>
 								</resource>
 							</resources>
-							<outputDirectory>${xsd.location}</outputDirectory>
+							<outputDirectory>${jaxb.location}</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
@@ -86,7 +87,7 @@
 				<configuration>
 					<extension>true</extension>
 					<arguments>-Xvalue-constructor -Xfluent-api</arguments>
-					<bindingDirectory>${xsd.location}/</bindingDirectory>
+					<bindingDirectory>${jaxb.location}</bindingDirectory>
 					<schemaDirectory>${xsd.location}/no/nav/melding/virksomhet/soeknadsskjemaEngangsstoenad/v1</schemaDirectory>
 				</configuration>
 				<dependencies>
