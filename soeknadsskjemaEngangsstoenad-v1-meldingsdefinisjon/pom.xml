@@ -29,23 +29,31 @@
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
+				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>copy-local-xsd</id>
+						<id>unpack-xsd</id>
 						<phase>initialize</phase>
 						<goals>
-							<goal>copy-resources</goal>
+							<goal>unpack</goal>
 						</goals>
 						<configuration>
-							<resources>
-								<resource>
-									<directory>src/main/xsd</directory>
-								</resource>
-							</resources>
-							<outputDirectory>${xsd.location}/no/nav/melding/virksomhet/soeknadsskjemaEngangsstoenad/v1</outputDirectory>
+							<artifactItems>
+								<artifactItem>
+									<groupId>no.nav.meldinger.virksomhet</groupId>
+									<artifactId>nav-virksomhet-soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</artifactId>
+									<version>${meldingsdefinisjon.version}</version>
+									<type>zip</type>
+									<outputDirectory>${xsd.location}/</outputDirectory>
+								</artifactItem>
+							</artifactItems>
 						</configuration>
 					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
 					<execution>
 						<id>copy-bindings-files</id>
 						<phase>initialize</phase>
