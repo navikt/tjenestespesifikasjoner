@@ -40,8 +40,8 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>no.nav.meldinger.virksomhet</groupId>
-									<artifactId>nav-virksomhet-soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</artifactId>
+									<groupId>no.nav.foreldrepenger.kontrakter</groupId>
+									<artifactId>soeknadsskjemaEngangsstoenad-v1</artifactId>
 									<version>${meldingsdefinisjon.version}</version>
 									<type>zip</type>
 									<outputDirectory>${xsd.location}/</outputDirectory>
@@ -88,7 +88,7 @@
 					<extension>true</extension>
 					<arguments>-Xvalue-constructor -Xfluent-api</arguments>
 					<bindingDirectory>${jaxb.location}</bindingDirectory>
-					<schemaDirectory>${xsd.location}/no/nav/melding/virksomhet/soeknadsskjemaEngangsstoenad/v1</schemaDirectory>
+					<schemaDirectory>${xsd.location}</schemaDirectory>
 				</configuration>
 				<dependencies>
 					<dependency>

@@ -5,7 +5,7 @@
         <xjc:javaType name="java.time.LocalDate" xmlType="xsd:date" adapter="com.migesok.jaxb.adapter.javatime.LocalDateXmlAdapter"/>
         <xjc:simple/>
     </jaxb:globalBindings>
-    <jaxb:bindings schemaLocation="tjenestespesifikasjon/no/nav/melding/virksomhet/soeknadsskjemaEngangsstoenad/v1/v1.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="tjenestespesifikasjon/foreldrepenger-soeknadsskjemaEngangsstoenad-v1.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
         </jaxb:schemaBindings>
     </jaxb:bindings>
