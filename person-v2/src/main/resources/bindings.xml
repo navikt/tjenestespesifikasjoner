@@ -1,8 +1,11 @@
-<jaxb:bindings version="1.0"
-               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
-               xmlns:xs="http://www.w3.org/2001/XMLSchema"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               jaxb:extensionBindingPrefixes="xjc" jaxb:version="2.0">
+
+    <jaxb:globalBindings>
+        <xjc:javaType name="java.time.OffsetDateTime" xmlType="xsd:dateTime" adapter="com.migesok.jaxb.adapter.javatime.OffsetDateTimeXmlAdapter"/>
+        <xjc:javaType name="java.time.LocalDate" xmlType="xsd:date" adapter="com.migesok.jaxb.adapter.javatime.LocalDateXmlAdapter"/>
+    </jaxb:globalBindings>
 
     <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/person/v2/informasjon/person/person.xsd" node="/xs:schema" >
         <jaxb:schemaBindings>
