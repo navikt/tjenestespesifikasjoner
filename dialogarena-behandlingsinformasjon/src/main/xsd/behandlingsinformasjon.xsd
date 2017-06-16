@@ -30,6 +30,7 @@
                 <xs:element name="fnr" type="xs:string" minOccurs="0"/>
                 <xs:element name="aktorId" type="xs:string" minOccurs="0"/>
                 <xs:element name="tema" type="xs:string" minOccurs="0"/>
+                <xs:element name="behandlingstema" type="xs:string" minOccurs="0"/>
                 <xs:element name="henvendelseType" type="xs:string"/>
                 <xs:element name="eksternAktor" type="xs:string" minOccurs="0"/>
                 <xs:element name="tilknyttetEnhet" type="xs:string" minOccurs="0"/>
