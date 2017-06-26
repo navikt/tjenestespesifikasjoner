@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandleforeldrepengesak-v1-tjenestespesifikasjon</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -164,7 +164,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>behandleforeldrepengesak-v1-tjenestespesifikasjon-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
