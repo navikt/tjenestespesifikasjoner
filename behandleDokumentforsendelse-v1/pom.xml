@@ -89,7 +89,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/behandledokumentforsendelse/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/behandleDokumentforsendelse/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandledokumentforsendelse/bindings.xml</bindingFile>
                                     </bindingFiles>
