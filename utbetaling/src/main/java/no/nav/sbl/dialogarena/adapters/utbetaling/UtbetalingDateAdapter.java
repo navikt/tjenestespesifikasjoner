@@ -24,6 +24,6 @@ public class UtbetalingDateAdapter extends XmlAdapter<String, DateTime>{
     }
 
     public String marshal(DateTime v) {
-        return v.toLocalDateTime().toString(ISODateTimeFormat.dateTime());
+        return v.toLocalDateTime().toString(ISODateTimeFormat.date());
     }
 }
