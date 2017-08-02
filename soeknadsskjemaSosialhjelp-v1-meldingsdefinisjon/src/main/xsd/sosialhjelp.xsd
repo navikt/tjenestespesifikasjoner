@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="SoknadSosialStonad">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Personalia">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Person">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="PersonIdentifikator">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:unsignedLong">
+                                                        <xs:attribute name="kilde" type="xs:string" use="required" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Etternavn">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="kilde" type="xs:string" use="required" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Fornavn">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="kilde" type="xs:string" use="required" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <!--<xs:element name="MobiltelefonNr">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:unsignedInt">-->
+                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="EpostAdresse">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:string">-->
+                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="Sivilstand">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:string">-->
+                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="Adresser">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:sequence>-->
+                                                    <!--<xs:element maxOccurs="unbounded" name="Adresse">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:sequence>-->
+                                                                <!--<xs:element name="GateAdresse" type="xs:string" />-->
+                                                                <!--<xs:element name="CO" type="xs:string" />-->
+                                                                <!--<xs:element name="LeilighetsNummer" type="xs:unsignedShort" />-->
+                                                                <!--<xs:element minOccurs="0" name="Postboks" type="xs:unsignedShort" />-->
+                                                                <!--<xs:element name="PostNummer" type="xs:unsignedShort" />-->
+                                                                <!--<xs:element name="Poststed" type="xs:string" />-->
+                                                            <!--</xs:sequence>-->
+                                                            <!--<xs:attribute name="id" type="xs:string" use="required" />-->
+                                                            <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                <!--</xs:sequence>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="Oppholdssted">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:sequence>-->
+                                                    <!--<xs:element name="Oppholdsadresse">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:simpleContent>-->
+                                                                <!--<xs:extension base="xs:string">-->
+                                                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                                    <!--<xs:attribute name="id" type="xs:string" use="required" />-->
+                                                                <!--</xs:extension>-->
+                                                            <!--</xs:simpleContent>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element name="Oppholdskommune">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:sequence>-->
+                                                                <!--<xs:element name="OrganisasjonsNummer" type="xs:string" />-->
+                                                                <!--<xs:element name="Navn" type="xs:string" />-->
+                                                            <!--</xs:sequence>-->
+                                                            <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                <!--</xs:sequence>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="Statsborgerskap">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:string">-->
+                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="Oppholdsstatus">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:string">-->
+                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="BosattFlyktning">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:string">-->
+                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!--<xs:element name="Familie">-->
+                    <!--<xs:complexType>-->
+                        <!--<xs:sequence>-->
+                            <!--<xs:element maxOccurs="unbounded" name="Familiemedlem">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:sequence>-->
+                                        <!--<xs:element name="Person">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:sequence>-->
+                                                    <!--<xs:element name="PersonIdentifikator">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:simpleContent>-->
+                                                                <!--<xs:extension base="xs:unsignedLong">-->
+                                                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                                <!--</xs:extension>-->
+                                                            <!--</xs:simpleContent>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element name="Etternavn">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:simpleContent>-->
+                                                                <!--<xs:extension base="xs:string">-->
+                                                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                                <!--</xs:extension>-->
+                                                            <!--</xs:simpleContent>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element name="Fornavn">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:simpleContent>-->
+                                                                <!--<xs:extension base="xs:string">-->
+                                                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                                <!--</xs:extension>-->
+                                                            <!--</xs:simpleContent>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element minOccurs="0" name="MobiltelefonNr">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:simpleContent>-->
+                                                                <!--<xs:extension base="xs:unsignedInt">-->
+                                                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                                <!--</xs:extension>-->
+                                                            <!--</xs:simpleContent>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element minOccurs="0" name="EpostAdresse">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:simpleContent>-->
+                                                                <!--<xs:extension base="xs:string">-->
+                                                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                                <!--</xs:extension>-->
+                                                            <!--</xs:simpleContent>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element minOccurs="0" name="Sivilstand">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:simpleContent>-->
+                                                                <!--<xs:extension base="xs:string">-->
+                                                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                                <!--</xs:extension>-->
+                                                            <!--</xs:simpleContent>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                <!--</xs:sequence>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                    <!--</xs:sequence>-->
+                                    <!--<xs:attribute name="type" type="xs:string" use="required" />-->
+                                    <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                        <!--</xs:sequence>-->
+                    <!--</xs:complexType>-->
+                <!--</xs:element>-->
+                <!--<xs:element name="ArbeidUtdanning">-->
+                    <!--<xs:complexType>-->
+                        <!--<xs:sequence>-->
+                            <!--<xs:element name="RegistrertArbeidsSøker">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:simpleContent>-->
+                                        <!--<xs:extension base="xs:boolean">-->
+                                            <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                        <!--</xs:extension>-->
+                                    <!--</xs:simpleContent>-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                            <!--<xs:element name="ArbeidsForhold">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:sequence>-->
+                                        <!--<xs:element name="erYrkesaktiv" type="xs:boolean" />-->
+                                        <!--<xs:element name="arbeid">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:sequence>-->
+                                                    <!--<xs:element name="fremdelesansatt" type="xs:boolean" />-->
+                                                    <!--<xs:element name="arbeidsgivernavn" type="xs:string" />-->
+                                                    <!--<xs:element name="periode">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:sequence>-->
+                                                                <!--<xs:element name="fom" type="xs:date" />-->
+                                                                <!--<xs:element name="tom" />-->
+                                                            <!--</xs:sequence>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element name="jobbetkuninorge" type="xs:boolean" />-->
+                                                    <!--<xs:element name="arbeidsland" type="xs:string" />-->
+                                                    <!--<xs:element name="stilling">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:sequence>-->
+                                                                <!--<xs:element name="stillingsprosent" type="xs:unsignedByte" />-->
+                                                                <!--<xs:element name="stillingstype" type="xs:string" />-->
+                                                            <!--</xs:sequence>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                    <!--<xs:element name="relasjonTilArbeidsgiver">-->
+                                                        <!--<xs:complexType>-->
+                                                            <!--<xs:sequence>-->
+                                                                <!--<xs:element name="harNaerRelasjonTilArbeidsgiver" type="xs:boolean" />-->
+                                                                <!--<xs:element name="beskrivelseIFritekst" type="xs:string" />-->
+                                                            <!--</xs:sequence>-->
+                                                        <!--</xs:complexType>-->
+                                                    <!--</xs:element>-->
+                                                <!--</xs:sequence>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                    <!--</xs:sequence>-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                            <!--<xs:element name="Utdanning">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:simpleContent>-->
+                                        <!--<xs:extension base="xs:string">-->
+                                            <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                        <!--</xs:extension>-->
+                                    <!--</xs:simpleContent>-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                        <!--</xs:sequence>-->
+                    <!--</xs:complexType>-->
+                <!--</xs:element>-->
+                <!--<xs:element name="Okonomi">-->
+                    <!--<xs:complexType>-->
+                        <!--<xs:sequence>-->
+                            <!--<xs:element maxOccurs="unbounded" name="Post">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:sequence>-->
+                                        <!--<xs:element name="Dato" type="xs:date" />-->
+                                        <!--<xs:element name="Beskrivelse" type="xs:string" />-->
+                                        <!--<xs:element name="Brutto" type="xs:unsignedShort" />-->
+                                        <!--<xs:element minOccurs="0" name="Trekk" type="xs:unsignedShort" />-->
+                                        <!--<xs:element minOccurs="0" name="Netto" type="xs:unsignedShort" />-->
+                                    <!--</xs:sequence>-->
+                                    <!--<xs:attribute name="type" type="xs:string" use="required" />-->
+                                    <!--<xs:attribute name="id" type="xs:string" use="required" />-->
+                                    <!--<xs:attribute name="Kilde" type="xs:string" use="required" />-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                        <!--</xs:sequence>-->
+                    <!--</xs:complexType>-->
+                <!--</xs:element>-->
+                <!--<xs:element name="Soknad">-->
+                    <!--<xs:complexType>-->
+                        <!--<xs:sequence>-->
+                            <!--<xs:element name="FritekstHvaSokerDuOm">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:simpleContent>-->
+                                        <!--<xs:extension base="xs:string">-->
+                                            <!--<xs:attribute name="Kilde" type="xs:string" use="required" />-->
+                                        <!--</xs:extension>-->
+                                    <!--</xs:simpleContent>-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                            <!--<xs:element name="Begrunnelse">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:simpleContent>-->
+                                        <!--<xs:extension base="xs:string">-->
+                                            <!--<xs:attribute name="Kilde" type="xs:string" use="required" />-->
+                                        <!--</xs:extension>-->
+                                    <!--</xs:simpleContent>-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                            <!--<xs:element name="Utbetaling">-->
+                                <!--<xs:complexType>-->
+                                    <!--<xs:sequence>-->
+                                        <!--<xs:element name="OnsketUtbetalingsForm">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:string">-->
+                                                        <!--<xs:attribute name="Kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                        <!--<xs:element name="KontoNummer">-->
+                                            <!--<xs:complexType>-->
+                                                <!--<xs:simpleContent>-->
+                                                    <!--<xs:extension base="xs:string">-->
+                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
+                                                    <!--</xs:extension>-->
+                                                <!--</xs:simpleContent>-->
+                                            <!--</xs:complexType>-->
+                                        <!--</xs:element>-->
+                                    <!--</xs:sequence>-->
+                                <!--</xs:complexType>-->
+                            <!--</xs:element>-->
+                        <!--</xs:sequence>-->
+                    <!--</xs:complexType>-->
+                <!--</xs:element>-->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
