@@ -21,16 +21,7 @@
                                                 </xs:simpleContent>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element name="Etternavn">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                    <xs:extension base="xs:string">
-                                                        <xs:attribute name="kilde" type="xs:string" use="required" />
-                                                    </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:element name="Fornavn">
+                                        <xs:element name="Navn">
                                             <xs:complexType>
                                                 <xs:simpleContent>
                                                     <xs:extension base="xs:string">
@@ -48,15 +39,15 @@
                                                 <!--</xs:simpleContent>-->
                                             <!--</xs:complexType>-->
                                         <!--</xs:element>-->
-                                        <!--<xs:element name="EpostAdresse">-->
-                                            <!--<xs:complexType>-->
-                                                <!--<xs:simpleContent>-->
-                                                    <!--<xs:extension base="xs:string">-->
-                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
-                                                    <!--</xs:extension>-->
-                                                <!--</xs:simpleContent>-->
-                                            <!--</xs:complexType>-->
-                                        <!--</xs:element>-->
+                                        <xs:element name="EpostAdresse">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="kilde" type="xs:string" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
                                         <!--<xs:element name="Sivilstand">-->
                                             <!--<xs:complexType>-->
                                                 <!--<xs:simpleContent>-->
@@ -111,15 +102,15 @@
                                                 <!--</xs:sequence>-->
                                             <!--</xs:complexType>-->
                                         <!--</xs:element>-->
-                                        <!--<xs:element name="Statsborgerskap">-->
-                                            <!--<xs:complexType>-->
-                                                <!--<xs:simpleContent>-->
-                                                    <!--<xs:extension base="xs:string">-->
-                                                        <!--<xs:attribute name="kilde" type="xs:string" use="required" />-->
-                                                    <!--</xs:extension>-->
-                                                <!--</xs:simpleContent>-->
-                                            <!--</xs:complexType>-->
-                                        <!--</xs:element>-->
+                                        <xs:element name="Statsborgerskap">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="kilde" type="xs:string" use="required" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
                                         <!--<xs:element name="Oppholdsstatus">-->
                                             <!--<xs:complexType>-->
                                                 <!--<xs:simpleContent>-->
