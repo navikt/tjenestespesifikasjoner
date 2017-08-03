@@ -211,7 +211,47 @@
                         <!--</xs:sequence>-->
                     <!--</xs:complexType>-->
                 <!--</xs:element>-->
-                <!--<xs:element name="ArbeidUtdanning">-->
+                <xs:element name="ArbeidUtdanning">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Arbeidsledig">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:boolean">
+                                            <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Jobb">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:boolean">
+                                            <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Student">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:boolean">
+                                            <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Annet">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:boolean">
+                                            <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
                     <!--<xs:complexType>-->
                         <!--<xs:sequence>-->
                             <!--<xs:element name="RegistrertArbeidsSøker">-->
@@ -278,7 +318,7 @@
                             <!--</xs:element>-->
                         <!--</xs:sequence>-->
                     <!--</xs:complexType>-->
-                <!--</xs:element>-->
+                </xs:element>
                 <!--<xs:element name="Okonomi">-->
                     <!--<xs:complexType>-->
                         <!--<xs:sequence>-->
@@ -306,7 +346,7 @@
                                 <xs:complexType>
                                     <xs:simpleContent>
                                         <xs:extension base="xs:string">
-                                            <xs:attribute name="Kilde" type="xs:string"/>
+                                            <xs:attribute name="Kilde" type="xs:string" use="required"/>
                                         </xs:extension>
                                     </xs:simpleContent>
                                 </xs:complexType>
