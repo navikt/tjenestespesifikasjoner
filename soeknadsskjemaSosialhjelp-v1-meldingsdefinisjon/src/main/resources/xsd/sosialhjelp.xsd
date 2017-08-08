@@ -15,7 +15,7 @@
                                         <xs:complexType>
                                             <xs:simpleContent>
                                                 <xs:extension base="xs:unsignedLong">
-                                                    <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                                    <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                                 </xs:extension>
                                             </xs:simpleContent>
                                         </xs:complexType>
@@ -24,7 +24,7 @@
                                         <xs:complexType>
                                             <xs:simpleContent>
                                                 <xs:extension base="xs:string">
-                                                    <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                                    <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                                 </xs:extension>
                                             </xs:simpleContent>
                                         </xs:complexType>
@@ -42,7 +42,7 @@
                                         <xs:complexType>
                                             <xs:simpleContent>
                                                 <xs:extension base="xs:string">
-                                                    <xs:attribute name="kilde" type="xs:string"/>
+                                                    <xs:attribute name="kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                                 </xs:extension>
                                             </xs:simpleContent>
                                         </xs:complexType>
@@ -72,7 +72,7 @@
                                     <!--<xs:element name="Poststed" type="xs:string"/>-->
                                     <!--</xs:sequence>-->
                                     <!--<xs:attribute name="id" type="xs:string" use="required"/>-->
-                                    <!--<xs:attribute name="kilde" type="xs:string" use="required"/>-->
+                                    <!--<xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>-->
                                     <!--</xs:complexType>-->
                                     <!--</xs:element>-->
                                     <!--</xs:sequence>-->
@@ -107,7 +107,7 @@
                                         <xs:complexType>
                                             <xs:simpleContent>
                                                 <xs:extension base="xs:string">
-                                                    <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                                    <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                                 </xs:extension>
                                             </xs:simpleContent>
                                         </xs:complexType>
@@ -217,7 +217,7 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:boolean">
-                                        <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -226,7 +226,7 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:boolean">
-                                        <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -235,7 +235,7 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:boolean">
-                                        <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -244,7 +244,7 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:boolean">
-                                        <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -253,7 +253,7 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:boolean">
-                                        <xs:attribute name="kilde" type="xs:string" use="required"/>
+                                        <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -266,7 +266,7 @@
                 <!--<xs:complexType>-->
                 <!--<xs:simpleContent>-->
                 <!--<xs:extension base="xs:boolean">-->
-                <!--<xs:attribute name="kilde" type="xs:string" use="required"/>-->
+                <!--<xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>-->
                 <!--</xs:extension>-->
                 <!--</xs:simpleContent>-->
                 <!--</xs:complexType>-->
@@ -319,7 +319,7 @@
                 <!--<xs:complexType>-->
                 <!--<xs:simpleContent>-->
                 <!--<xs:extension base="xs:string">-->
-                <!--<xs:attribute name="kilde" type="xs:string" use="required"/>-->
+                <!--<xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>-->
                 <!--</xs:extension>-->
                 <!--</xs:simpleContent>-->
                 <!--</xs:complexType>-->
@@ -341,7 +341,7 @@
             <!--</xs:sequence>-->
             <!--<xs:attribute name="type" type="xs:string" use="required"/>-->
             <!--<xs:attribute name="id" type="xs:string" use="required"/>-->
-            <!--<xs:attribute name="Kilde" type="xs:string" use="required"/>-->
+            <!--<xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>-->
             <!--</xs:complexType>-->
             <!--</xs:element>-->
             <!--</xs:sequence>-->
@@ -354,7 +354,7 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:string">
-                                        <xs:attribute name="Kilde" type="xs:string" use="required"/>
+                                        <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -363,7 +363,7 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:string">
-                                        <xs:attribute name="Kilde" type="xs:string" use="required"/>
+                                        <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -375,7 +375,7 @@
                         <!--<xs:complexType>-->
                         <!--<xs:simpleContent>-->
                         <!--<xs:extension base="xs:string">-->
-                        <!--<xs:attribute name="Kilde" type="xs:string" use="required"/>-->
+                        <!--<xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>-->
                         <!--</xs:extension>-->
                         <!--</xs:simpleContent>-->
                         <!--</xs:complexType>-->
@@ -384,7 +384,7 @@
                         <!--<xs:complexType>-->
                         <!--<xs:simpleContent>-->
                         <!--<xs:extension base="xs:string">-->
-                        <!--<xs:attribute name="kilde" type="xs:string" use="required"/>-->
+                        <!--<xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>-->
                         <!--</xs:extension>-->
                         <!--</xs:simpleContent>-->
                         <!--</xs:complexType>-->
@@ -397,11 +397,11 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <!--<xs:simpleType name="DinSituasjon">-->
-    <!--<xs:restriction base="xs:string">-->
-    <!--<xs:enumeration value="deltid"/>-->
-    <!--<xs:enumeration value="heltid"/>-->
-    <!--</xs:restriction>-->
-    <!--</xs:simpleType>-->
+    <xs:simpleType name="Kilde">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BRUKER"/>
+            <xs:enumeration value="SYSTEM"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:element name="soknadsosialhjelp" type="soknadsosialhjelp:skjema"/>
 </xs:schema>
