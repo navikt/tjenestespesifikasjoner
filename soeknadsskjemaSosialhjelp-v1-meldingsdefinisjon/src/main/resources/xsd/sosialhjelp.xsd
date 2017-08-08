@@ -14,7 +14,7 @@
                                     <xs:element name="PersonIdentifikator">
                                         <xs:complexType>
                                             <xs:simpleContent>
-                                                <xs:extension base="xs:unsignedLong">
+                                                <xs:extension base="xs:string">
                                                     <xs:attribute name="Kilde" type="soknadsosialhjelp:Kilde" use="required"/>
                                                 </xs:extension>
                                             </xs:simpleContent>
