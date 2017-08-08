@@ -15,7 +15,7 @@
         <build>
         <resources>
             <resource>
-                <directory>src/main/xsd</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <plugins>
@@ -43,6 +43,7 @@
                 <configuration>
                     <extension>true</extension>
                     <arguments>-Xvalue-constructor -Xfluent-api</arguments>
+                    <schemaDirectory>src/main/resources/xsd</schemaDirectory>
                 </configuration>
                 <dependencies>
                     <dependency>

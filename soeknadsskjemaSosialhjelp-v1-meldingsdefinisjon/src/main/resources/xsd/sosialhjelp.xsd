@@ -240,7 +240,7 @@
                                 </xs:simpleContent>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="StudererGrad">
+                        <xs:element name="StudererGrad" minOccurs="0">
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="xs:boolean">
