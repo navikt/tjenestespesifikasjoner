@@ -11,6 +11,8 @@
             </xs:element>
             <xs:element name="Begrunnelse" type="soknadsosialhjelp:Begrunnelse"/>
             <xs:element name="Bosituasjon" type="soknadsosialhjelp:Bosituasjon"/>
+            <xs:element name="InntektFormue" type="soknadsosialhjelp:InntektFormue"/>
+            <xs:element name="Utgifter" type="soknadsosialhjelp:Utgifter"/>
             <xs:element name="vedleggListe" type="soknadsosialhjelp:VedleggListe">
                 <xs:annotation>
                     <xs:documentation>Informasjon om vedleggene som tilhører en søknad</xs:documentation>
@@ -27,6 +29,7 @@
                         <xs:element name="Navn" type="soknadsosialhjelp:string"/>
                         <xs:element name="EpostAdresse" type="soknadsosialhjelp:string"/>
                         <xs:element name="Statsborgerskap" type="soknadsosialhjelp:string"/>
+                        <xs:element name="adresse" type="soknadsosialhjelp:string"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -109,9 +112,73 @@
     </xs:complexType>
     <xs:complexType name="Bosituasjon">
         <xs:sequence>
-            <xs:element name="bosituasjon" type="soknadsosialhjelp:Botype">
-                <xs:annotation><xs:documentation>Hvordan bor bruker</xs:documentation></xs:annotation>
+            <xs:element name="Botype">
+                <xs:annotation>
+                    <xs:documentation>Hvordan bor bruker</xs:documentation>
+                </xs:annotation>
+
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="soknadsosialhjelp:Botype">
+                            <xs:attribute name="kilde" type="soknadsosialhjelp:Kilde" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
             </xs:element>
+            <xs:element name="Institusjon" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="Fengsel" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="Foreldre" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="Krisesenter" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="Venner" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="Familie" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InntektFormue">
+        <xs:sequence>
+            <xs:element name="mottarYtelser" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="soktYtelser" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="mottarBostotte" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="husbanken" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="kommunal" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="eierandeler" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="bolig" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="kjoretoy" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="campingvogn" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="fritidseiendom" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="annet" minOccurs="0" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="annetBeskrivelse" minOccurs="0" type="soknadsosialhjelp:string"/>
+            <xs:element name="bankinnskudd" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="brukskonto" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="sparekonto" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="livsforsikring" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="aksjer" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="bankinnskuddAnnet" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="bankinnskuddAnnetBeskrivelse" type="soknadsosialhjelp:string"/>
+            <xs:element name="mottatUtbetaling" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="inntekter" type="soknadsosialhjelp:boolean">
+                <xs:annotation>
+                    <xs:documentation>Har bruker andre former for inntekter</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="utbytte" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="salg" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="leieinntekter" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="forsikringsutbetaling" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="andreInntekter" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="andreInntekterBeskrivelse" type="soknadsosialhjelp:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Utgifter">
+        <xs:annotation><xs:documentation>Utgifter og gjeld</xs:documentation></xs:annotation>
+        <xs:sequence>
+            <xs:element name="boutgifter" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="utgiftHusleie" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="utgiftStrom" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="utgiftKommunaleAvgifter" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="utgiftOppvarming" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="utgiftAvdragRenterBoliglaan" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="andreUtgifter" type="soknadsosialhjelp:boolean"/>
+            <xs:element name="beskrivelseAndreUtgifter" type="soknadsosialhjelp:string"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="VedleggListe">
@@ -180,7 +247,6 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-
 
     <xs:simpleType name="Sivilstatus">
         <xs:restriction base="xs:string">
