@@ -23,6 +23,8 @@
             <xs:element name="oppdaterHenvendelsesarkivInformasjonResponse" type="meldinger:oppdaterHenvendelsesarkivInformasjonResponse"/>
             <xs:element name="oppdaterKontorsperre" type="meldinger:oppdaterKontorsperreRequest"/>
             <xs:element name="oppdaterKontorsperreResponse" type="meldinger:oppdaterKontorsperreResponse"/>
+            <xs:element name="ferdigstillUtenSvar" type="meldinger:ferdigstillUtenSvarRequest"/>
+            <xs:element name="ferdigstillUtenSvarResponse" type="meldinger:ferdigstillUtenSvarResponse"/>
             <xs:element name="oppdaterTilKassering" type="meldinger:oppdaterTilKasseringRequest"/>
             <xs:element name="oppdaterTilKasseringResponse" type="meldinger:oppdaterTilKasseringResponse"/>
             <xs:element name="knyttBehandlingskjedeTilSak" type="meldinger:knyttBehandlingskjedeTilSakRequest"/>
@@ -68,6 +70,14 @@
     </wsdl:message>
     <wsdl:message name="oppdaterKontorsperreResponse">
         <wsdl:part element="tns:oppdaterKontorsperreResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="ferdigstillUtenSvarRequest">
+        <wsdl:part element="tns:ferdigstillUtenSvar" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="ferdigstillUtenSvarResponse">
+        <wsdl:part element="tns:ferdigstillUtenSvarResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="oppdaterTilKasseringRequest">
@@ -144,6 +154,12 @@
             <wsdl:output message="tns:oppdaterKontorsperreResponse" name="oppdaterKontorsperreResponse">
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="ferdigstillUtenSvar">
+            <wsdl:input message="tns:ferdigstillUtenSvarRequest" name="ferdigstillUtenSvarRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:ferdigstillUtenSvarResponse" name="ferdigstillUtenSvarResponse">
+            </wsdl:output>
+        </wsdl:operation>
         <wsdl:operation name="oppdaterTilKassering">
             <wsdl:input message="tns:oppdaterTilKasseringRequest" name="oppdaterTilKasseringRequest">
             </wsdl:input>
@@ -217,6 +233,15 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="oppdaterKontorsperreResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ferdigstillUtenSvar">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="ferdigstillUtenSvarRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="ferdigstillUtenSvarResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
