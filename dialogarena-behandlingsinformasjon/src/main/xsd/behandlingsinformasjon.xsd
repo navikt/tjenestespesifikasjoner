@@ -257,6 +257,7 @@
             <xs:enumeration value="HENVENDELSE_AVBRUTT"/>
             <xs:enumeration value="HENVENDELSE_AUTOMATISK_AVBRUTT"/>
             <xs:enumeration value="HENVENDELSE_AVSLUTTET"/>
+            <xs:enumeration value="HENVENDELSE_FERDIGSTILT_UTEN_SVAR"/>
             <xs:enumeration value="HENVENDELSE_SLETTET_JOURNALPOST"/>
             <xs:enumeration value="HENVENDELSE_SLETTET_VEDLEGG"/>
             <xs:enumeration value="HENVENDELSE_LEST"/>
