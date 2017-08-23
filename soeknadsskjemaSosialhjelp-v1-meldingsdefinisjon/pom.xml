@@ -12,21 +12,56 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-        <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
+    <properties>
+        <xsd.location>${project.build.directory}/classes/tjenestespesifikasjon/</xsd.location>
+        <jaxb.location>${project.build.directory}/classes/</jaxb.location>
+        <meldingsdefinisjon.version>1.0.11.4</meldingsdefinisjon.version>
+    </properties>
+
+    <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-xsd</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>no.nav.sbl.dialogarena</groupId>
+                                    <artifactId>soknadsosialhjelp-xsd</artifactId>
+                                    <version>${meldingsdefinisjon.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${xsd.location}/</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-bindings-files</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/xjb</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${jaxb.location}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -43,7 +78,8 @@
                 <configuration>
                     <extension>true</extension>
                     <arguments>-Xvalue-constructor -Xfluent-api</arguments>
-                    <schemaDirectory>src/main/resources/xsd</schemaDirectory>
+                    <schemaDirectory>${xsd.location}</schemaDirectory>
+                    <bindingDirectory>${jaxb.location}</bindingDirectory>
                 </configuration>
                 <dependencies>
                     <dependency>
