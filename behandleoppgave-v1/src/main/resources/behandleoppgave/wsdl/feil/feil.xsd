@@ -10,4 +10,11 @@
             <xsd:element name="feilBeskrivelse" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
+
+    <xsd:complexType name="WSSikkerhetsbegrensning">
+        <xsd:sequence>
+            <xsd:element name="feilkilde" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="feilmelding" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
 </xsd:schema>
