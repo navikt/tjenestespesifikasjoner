@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/feil" version="1.0"
+            xmlns:feil="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/feil">
+
+    <xsd:complexType name="WSFerdigstillOppgaveFeilet">
+        <xsd:sequence>
+            <xsd:element name="oppgaveId" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="feilKode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="feilBeskrivelse" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
