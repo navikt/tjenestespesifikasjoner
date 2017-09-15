@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/meldinger" version="1.0"
-            xmlns:meldinger="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/meldinger">
+            xmlns:meldinger="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/meldinger"
+            xmlns:feil="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/feil">
+    <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/feil"
+                schemaLocation="../feil/feil.xsd"/>
 
     <xsd:complexType name="FerdigstillOppgaveRequest">
         <xsd:sequence>
@@ -13,6 +16,8 @@
     <xsd:complexType name="FerdigstillOppgaveResponse">
         <xsd:sequence>
             <xsd:element name="transaksjonOk" type="xsd:boolean" minOccurs="0"/>
+            <xsd:element name="wsFerdigstillOppgaveFeilet" type="feil:WSFerdigstillOppgaveFeilet" minOccurs="0"/>
+            <xsd:element name="wsSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -55,6 +60,7 @@
     <xsd:complexType name="OpprettOppgaveResponse">
         <xsd:sequence>
             <xsd:element name="oppgaveId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="wsSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
 </xsd:schema>
