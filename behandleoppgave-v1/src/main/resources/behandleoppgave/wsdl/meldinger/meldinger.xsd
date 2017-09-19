@@ -15,7 +15,7 @@
 
     <xsd:complexType name="FerdigstillOppgaveResponse">
         <xsd:sequence>
-            <xsd:element name="transaksjonOk" type="xsd:boolean" minOccurs="0"/>
+            <xsd:element name="transaksjonOK" type="xsd:boolean" minOccurs="0"/>
             <xsd:element name="wsFerdigstillOppgaveFeilet" type="feil:WSFerdigstillOppgaveFeilet" minOccurs="0"/>
             <xsd:element name="wsSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning" minOccurs="0"/>
         </xsd:sequence>
