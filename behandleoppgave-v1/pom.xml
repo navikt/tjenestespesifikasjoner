@@ -9,6 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandleoppgave-v1-tjenestespesifikasjon</artifactId>
+    <packaging>jar</packaging>
     <version>1.0.3-SNAPSHOT</version>
 
     <properties>
@@ -101,7 +102,7 @@
                     <execution>
                         <id>include-sources</id>
                         <goals>
-                            <goal>jar-no-fork</goal>
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
