@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/tjeneste/virksomhet/oppfolgingsinfo/v1/meldinger" version="1.0"
+           xmlns:meldinger="http://nav.no/tjeneste/virksomhet/oppfolgingsinfo/v1/meldinger"
+           xmlns:feil="http://nav.no/tjeneste/virksomhet/oppfolgingsinfo/v1/feil">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/oppfolgingsinfo/v1/feil"
+              schemaLocation="../feil/feil.xsd"/>
+
+  <xsd:complexType name="OppfolgingsstatusRequest">
+    <xsd:sequence>
+      <xsd:element name="personident" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="WSSikkerhetsbegrensning">
+    <xsd:sequence>
+      <xsd:element name="feilkilde" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="feilmelding" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OppfolgingsstatusResponse">
+    <xsd:sequence>
+      <xsd:element name="personident" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="erUnderOppfolging" type="xsd:boolean"/>
+      <xsd:element name="veilederIdent" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="wsSikkerhetsbegrensning" type="meldinger:WSSikkerhetsbegrensning" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
+
