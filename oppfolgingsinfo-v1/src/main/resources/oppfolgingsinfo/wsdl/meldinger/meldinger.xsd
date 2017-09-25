@@ -8,7 +8,7 @@
 
   <xsd:complexType name="OppfolgingsstatusRequest">
     <xsd:sequence>
-      <xsd:element name="personident" type="xsd:string"/>
+      <xsd:element name="aktorId" type="xsd:string"/>
     </xsd:sequence>
   </xsd:complexType>
 
@@ -21,7 +21,7 @@
 
   <xsd:complexType name="OppfolgingsstatusResponse">
     <xsd:sequence>
-      <xsd:element name="personident" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="aktorId" type="xsd:string" minOccurs="0"/>
       <xsd:element name="erUnderOppfolging" type="xsd:boolean"/>
       <xsd:element name="veilederIdent" type="xsd:string" minOccurs="0"/>
       <xsd:element name="wsSikkerhetsbegrensning" type="meldinger:WSSikkerhetsbegrensning" minOccurs="0"/>
