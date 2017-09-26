@@ -11,6 +11,16 @@
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="XML"/>
                 <jaxb:elementName prefix="XML"/>
+                <jaxb:anonymousTypeName prefix="XML"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+    <jaxb:bindings schemaLocation="tjenestespesifikasjon/kodeverk.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="XML"/>
+                <jaxb:elementName prefix="XML"/>
+                <jaxb:anonymousTypeName prefix="XML"/>
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
