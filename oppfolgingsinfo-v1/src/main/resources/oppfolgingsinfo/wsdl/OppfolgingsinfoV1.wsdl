@@ -43,6 +43,7 @@
             </xsd:element>
 
             <xsd:element name="wsSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning"/>
+            <xsd:element name="oppfolgingsdata" type="meldinger:Oppfolgingsdata"/>
         </xsd:schema>
     </wsdl:types>
 
