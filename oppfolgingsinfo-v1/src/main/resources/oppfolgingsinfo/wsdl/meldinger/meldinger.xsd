@@ -12,7 +12,7 @@
     </xsd:sequence>
   </xsd:complexType>
 
-  <xsd:complexType name="Oppfolgingsdata">
+  <xsd:complexType name="WSOppfolgingsdata">
     <xsd:sequence>
       <xsd:element name="aktorId" type="xsd:string" minOccurs="0"/>
       <xsd:element name="erUnderOppfolging" type="xsd:boolean"/>
@@ -22,7 +22,7 @@
 
   <xsd:complexType name="OppfolgingsstatusResponse">
     <xsd:sequence>
-      <xsd:element name="oppfolgingsdata" type="meldinger:Oppfolgingsdata" minOccurs="0"/>
+      <xsd:element name="oppfolgingsdata" type="meldinger:WSOppfolgingsdata" minOccurs="0"/>
       <xsd:element name="wsSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>
