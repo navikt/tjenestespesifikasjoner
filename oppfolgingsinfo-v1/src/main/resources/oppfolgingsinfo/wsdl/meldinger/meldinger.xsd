@@ -22,7 +22,7 @@
 
   <xsd:complexType name="OppfolgingsstatusResponse">
     <xsd:sequence>
-      <xsd:element name="oppfolgingsdata" type="meldinger:WSOppfolgingsdata" minOccurs="0"/>
+      <xsd:element name="wsOppfolgingsdata" type="meldinger:WSOppfolgingsdata" minOccurs="0"/>
       <xsd:element name="wsSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>
