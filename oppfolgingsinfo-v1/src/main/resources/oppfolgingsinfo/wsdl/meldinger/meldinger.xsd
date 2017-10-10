@@ -16,7 +16,7 @@
     <xsd:sequence>
       <xsd:element name="aktorId" type="xsd:string" minOccurs="0"/>
       <xsd:element name="erUnderOppfolging" type="xsd:boolean"/>
-      <xsd:element name="veilederIdent" type="xsd:string"/>
+      <xsd:element name="veilederIdent" type="xsd:string" minOccurs="0"/>
       <xsd:element name="reservasjonKRR" type="xsd:boolean" />
       <xsd:element name="manuell" type="xsd:boolean" />
       <xsd:element name="vilkarMaBesvares" type="xsd:boolean" />
