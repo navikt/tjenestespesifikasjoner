@@ -9,7 +9,7 @@
             <outputDirectory>/</outputDirectory>
             <directory>target/classes</directory>
             <includes>
-                <include>**/BehandleOppgaveV1.wsdl</include>
+                <include>**/SakV2.wsdl</include>
             </includes>
         </fileSet>
         <fileSet>

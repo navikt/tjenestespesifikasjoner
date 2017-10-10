@@ -10,7 +10,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>sak-v2-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>2.0.0-TIA-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -88,7 +88,7 @@
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
-                        <phase>generate-test-resources</phase>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>wsdl2java</goal>
                         </goals>
@@ -100,8 +100,8 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <!--<wsdl>${wsdl.directory}/sak/v2/wsdl/SakV2.wsdl</wsdl>-->
-                                    <wsdl>src/main/resources/sak/v2/wsdl/SakV2.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/sak/v2/wsdl/SakV2.wsdl</wsdl>
+                                    <!--wsdl>src/main/resources/sak/v2/wsdl/SakV2.wsdl</wsdl-->
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
                                         <extraarg>-xjc-Xequals</extraarg>
@@ -141,24 +141,23 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<artifactId>maven-assembly-plugin</artifactId>-->
-                <!--<version>2.4</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>lag-zip</id>-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>attached</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<appendAssemblyId>false</appendAssemblyId>-->
-                    <!--<descriptor>resources.xml</descriptor>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>lag-zip</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attached</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptor>resources.xml</descriptor>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -179,11 +178,11 @@
     </build>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.jvnet.jaxb2_commons</groupId>-->
-            <!--<artifactId>jaxb2-basics-runtime</artifactId>-->
-            <!--<version>0.6.5</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-runtime</artifactId>
+            <version>0.6.5</version>
+        </dependency>
     </dependencies>
 
 
