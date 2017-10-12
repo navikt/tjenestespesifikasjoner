@@ -12,10 +12,10 @@
             <xs:element name="pingResponse" type="tns:pingResponse"/>
             <xs:complexType name="finnSakerForBruker">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="arg0" type="tns:wsFinnSakerForBrukerRequest"/>
+                    <xs:element minOccurs="0" name="arg0" type="tns:WSFinnSakerForBrukerRequest"/>
                 </xs:sequence>
             </xs:complexType>
-            <xs:complexType name="wsFinnSakerForBrukerRequest">
+            <xs:complexType name="WSFinnSakerForBrukerRequest">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="brukerId" type="xs:string"/>
                     <xs:element maxOccurs="unbounded" minOccurs="0" name="fagomrader" nillable="true" type="xs:string"/>
@@ -36,7 +36,7 @@
                     <xs:element name="sakId" type="xs:string"/>
                     <xs:element name="sakstype" type="xs:string"/>
                     <xs:element name="fagomraade" type="xs:string"/>
-                    <xs:element maxOccurs="unbounded" name="gjelderBrukerListe" type="tns:wsAktor"/>
+                    <xs:element maxOccurs="unbounded" name="gjelderBrukerListe" type="tns:WSAktor"/>
                 </xs:sequence>
                 <xs:attribute name="versjonsnummer" type="xs:string"/>
                 <xs:attribute name="opprettelsetidspunkt" type="xs:dateTime"/>
@@ -44,9 +44,9 @@
                 <xs:attribute name="endringstidspunkt" type="xs:dateTime"/>
                 <xs:attribute name="endretAv" type="xs:string"/>
             </xs:complexType>
-            <xs:complexType name="wsAktor">
+            <xs:complexType name="WSAktor">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="aktorType" type="tns:wsAktorType"/>
+                    <xs:element minOccurs="0" name="aktorType" type="tns:WSAktorType"/>
                     <xs:element minOccurs="0" name="ident" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
@@ -56,7 +56,7 @@
             <xs:complexType name="pingResponse">
                 <xs:sequence/>
             </xs:complexType>
-            <xs:simpleType name="wsAktorType">
+            <xs:simpleType name="WSAktorType">
                 <xs:restriction base="xs:string">
                     <xs:enumeration value="PERSON"/>
                     <xs:enumeration value="ORGANISASJON"/>
