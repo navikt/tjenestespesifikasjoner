@@ -63,14 +63,14 @@
                     <xs:enumeration value="UKJENT"/>
                 </xs:restriction>
             </xs:simpleType>
-            <xs:element name="WSUgyldigInputException" type="tns:WSUgyldigInputException"/>
-            <xs:complexType name="WSUgyldigInputException">
+            <xs:element name="WSUgyldigInputFault" type="tns:WSUgyldigInputFault"/>
+            <xs:complexType name="WSUgyldigInputFault">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="message" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
-            <xs:element name="WSSikkerhetsbegrensningException" type="tns:WSSikkerhetsbegrensningException"/>
-            <xs:complexType name="WSSikkerhetsbegrensningException">
+            <xs:element name="WSSikkerhetsbegrensningFault" type="tns:WSSikkerhetsbegrensningFault"/>
+            <xs:complexType name="WSSikkerhetsbegrensningFault">
                 <xs:sequence>
                     <xs:element name="feilmelding" nillable="true" type="xs:string"/>
                     <xs:element name="feilkilde" nillable="true" type="xs:string"/>
@@ -88,7 +88,7 @@
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="WSSikkerhetsbegrensningException">
-        <wsdl:part name="WSSikkerhetsbegrensningException" element="tns:WSSikkerhetsbegrensningException">
+        <wsdl:part name="WSSikkerhetsbegrensningException" element="tns:WSSikkerhetsbegrensningFault">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="finnSakerForBruker">
@@ -100,7 +100,7 @@
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="WSUgyldigInputException">
-        <wsdl:part name="WSUgyldigInputException" element="tns:WSUgyldigInputException">
+        <wsdl:part name="WSUgyldigInputException" element="tns:WSUgyldigInputFault">
         </wsdl:part>
     </wsdl:message>
     <wsdl:portType name="SakV2">
