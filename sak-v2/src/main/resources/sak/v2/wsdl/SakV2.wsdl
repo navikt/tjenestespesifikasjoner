@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions name="sakv2" targetNamespace="http://nav.no/tjeneste/virksomhet/sak/v2"
                   xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
-                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/sak/v2"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://nav.no/tjeneste/virksomhet/sak/v2"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
     <wsdl:types>
         <xs:schema xmlns:tns="http://nav.no/tjeneste/virksomhet/sak/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
                    targetNamespace="http://nav.no/tjeneste/virksomhet/sak/v2">
+
             <xs:element name="finnSakerForBruker" type="tns:finnSakerForBruker"/>
             <xs:element name="finnSakerForBrukerResponse" type="tns:finnSakerForBrukerResponse"/>
             <xs:element name="ping" type="tns:ping"/>
             <xs:element name="pingResponse" type="tns:pingResponse"/>
+            <xs:element name="WSUgyldigInputFault" type="tns:WSUgyldigInputFault"/>
+            <xs:element name="WSSikkerhetsbegrensningFault" type="tns:WSSikkerhetsbegrensningFault"/>
+
+            <!--Klasser-->
+            <xs:complexType name="ping">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="pingResponse">
+                <xs:sequence/>
+            </xs:complexType>
             <xs:complexType name="finnSakerForBruker">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="arg0" type="tns:WSFinnSakerForBrukerRequest"/>
+                    <xs:element minOccurs="0" name="finnSakerForBrukerRequest" type="tns:WSFinnSakerForBrukerRequest"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="WSFinnSakerForBrukerRequest">
@@ -50,12 +62,19 @@
                     <xs:element minOccurs="0" name="ident" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
-            <xs:complexType name="ping">
-                <xs:sequence/>
+            <xs:complexType name="WSUgyldigInputFault">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="message" type="xs:string"/>
+                </xs:sequence>
             </xs:complexType>
-            <xs:complexType name="pingResponse">
-                <xs:sequence/>
+            <xs:complexType name="WSSikkerhetsbegrensningFault">
+                <xs:sequence>
+                    <xs:element name="feilmelding" nillable="true" type="xs:string"/>
+                    <xs:element name="feilkilde" nillable="true" type="xs:string"/>
+                </xs:sequence>
             </xs:complexType>
+
+            <!--Enum-->
             <xs:simpleType name="WSAktorType">
                 <xs:restriction base="xs:string">
                     <xs:enumeration value="PERSON"/>
@@ -63,32 +82,15 @@
                     <xs:enumeration value="UKJENT"/>
                 </xs:restriction>
             </xs:simpleType>
-            <xs:element name="WSUgyldigInputFault" type="tns:WSUgyldigInputFault"/>
-            <xs:complexType name="WSUgyldigInputFault">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="message" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="WSSikkerhetsbegrensningFault" type="tns:WSSikkerhetsbegrensningFault"/>
-            <xs:complexType name="WSSikkerhetsbegrensningFault">
-                <xs:sequence>
-                    <xs:element name="feilmelding" nillable="true" type="xs:string"/>
-                    <xs:element name="feilkilde" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="message" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
         </xs:schema>
     </wsdl:types>
+
     <wsdl:message name="ping">
         <wsdl:part name="parameters" element="tns:ping">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="pingResponse">
         <wsdl:part name="parameters" element="tns:pingResponse">
-        </wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="WSSikkerhetsbegrensningException">
-        <wsdl:part name="WSSikkerhetsbegrensningException" element="tns:WSSikkerhetsbegrensningFault">
         </wsdl:part>
     </wsdl:message>
     <wsdl:message name="finnSakerForBruker">
@@ -103,6 +105,11 @@
         <wsdl:part name="WSUgyldigInputException" element="tns:WSUgyldigInputFault">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="WSSikkerhetsbegrensningException">
+        <wsdl:part name="WSSikkerhetsbegrensningException" element="tns:WSSikkerhetsbegrensningFault">
+        </wsdl:part>
+    </wsdl:message>
+
     <wsdl:portType name="SakV2">
         <wsdl:operation name="finnSakerForBruker">
             <wsdl:input name="finnSakerForBruker" message="tns:finnSakerForBruker">
