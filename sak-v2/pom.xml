@@ -10,7 +10,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>sak-v2-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>2.0.0-TIA-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -48,39 +48,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.cxf</groupId>-->
-                <!--<artifactId>cxf-java2ws-plugin</artifactId>-->
-                <!--<version>2.7.9</version>-->
-                <!--<dependencies>-->
-                    <!--<dependency>-->
-                        <!--<groupId>org.apache.cxf</groupId>-->
-                        <!--<artifactId>cxf-rt-frontend-jaxws</artifactId>-->
-                        <!--<version>2.7.9</version>-->
-                    <!--</dependency>-->
-                    <!--<dependency>-->
-                        <!--<groupId>org.apache.cxf</groupId>-->
-                        <!--<artifactId>cxf-rt-frontend-simple</artifactId>-->
-                        <!--<version>2.7.9</version>-->
-                    <!--</dependency>-->
-                <!--</dependencies>-->
-
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>java-to-wsdl</id>-->
-                        <!--<phase>process-classes</phase>-->
-                        <!--<configuration>-->
-                            <!--<className>no.nav.tjeneste.virksomhet.sak.v2.SakV2</className>-->
-                            <!--<outputFile>${wsdl.directory}/sak/v2/wsdl/SakV2.wsdl</outputFile>-->
-                            <!--<genWsdl>true</genWsdl>-->
-                            <!--<verbose>true</verbose>-->
-                        <!--</configuration>-->
-                        <!--<goals>-->
-                            <!--<goal>java2ws</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
@@ -101,7 +68,6 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/sak/v2/wsdl/SakV2.wsdl</wsdl>
-                                    <!--wsdl>src/main/resources/sak/v2/wsdl/SakV2.wsdl</wsdl-->
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
                                         <extraarg>-xjc-Xequals</extraarg>
