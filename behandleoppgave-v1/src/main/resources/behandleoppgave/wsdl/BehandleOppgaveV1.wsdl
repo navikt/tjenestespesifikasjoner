@@ -7,10 +7,7 @@
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <wsdl:types>
         <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1"
-                    xmlns:feil="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/feil"
                     xmlns:meldinger="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/meldinger">
-            <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/feil"
-                        schemaLocation="feil/feil.xsd"/>
             <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/meldinger"
                         schemaLocation="meldinger/meldinger.xsd"/>
 
@@ -36,9 +33,23 @@
                 </xsd:complexType>
             </xsd:element>
 
-            <xsd:element name="wsFerdigstillOppgaveFeilet" type="feil:WSFerdigstillOppgaveFeilet"/>
+            <xsd:element name="WSFerdigstillOppgaveFault">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="oppgaveId" type="xsd:int" minOccurs="0"/>
+                        <xsd:element name="feilmelding" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
 
-            <xsd:element name="wsSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning"/>
+            <xsd:element name="WSSikkerhetsbegrensningFault">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="feilmelding" nillable="true" type="xsd:string"/>
+                        <xsd:element name="feilkilde" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
 
             <xsd:element name="ping">
                 <xsd:complexType>
@@ -65,13 +76,13 @@
         </wsdl:part>
     </wsdl:message>
 
-    <wsdl:message name="wsFerdigstillOppgaveFeilet">
-        <wsdl:part element="impl:wsFerdigstillOppgaveFeilet" name="parameters">
+    <wsdl:message name="WSFerdigstillOppgaveException">
+        <wsdl:part element="impl:WSFerdigstillOppgaveFault" name="WSFerdigstillOppgaveException">
         </wsdl:part>
     </wsdl:message>
 
-    <wsdl:message name="wsSikkerhetsbegrensning">
-        <wsdl:part element="impl:wsSikkerhetsbegrensning" name="parameters">
+    <wsdl:message name="WSSikkerhetsbegrensningException">
+        <wsdl:part element="impl:WSSikkerhetsbegrensningFault" name="WSSikkerhetsbegrensningException">
         </wsdl:part>
     </wsdl:message>
 
@@ -111,7 +122,7 @@
             </wsdl:input>
             <wsdl:output message="impl:opprettOppgaveResponse" name="opprettOppgaveResponse">
             </wsdl:output>
-            <wsdl:fault message="impl:wsSikkerhetsbegrensning" name="wsSikkerhetsbegrensning">
+            <wsdl:fault message="impl:WSSikkerhetsbegrensningException" name="WSSikkerhetsbegrensningException">
             </wsdl:fault>
         </wsdl:operation>
 
@@ -120,9 +131,9 @@
             </wsdl:input>
             <wsdl:output message="impl:ferdigstillOppgaveResponse" name="ferdigstillOppgaveResponse">
             </wsdl:output>
-            <wsdl:fault message="impl:wsFerdigstillOppgaveFeilet" name="wsFerdigstillOppgaveFeilet">
+            <wsdl:fault message="impl:WSFerdigstillOppgaveException" name="WSFerdigstillOppgaveException">
             </wsdl:fault>
-            <wsdl:fault message="impl:wsSikkerhetsbegrensning" name="wsSikkerhetsbegrensning">
+            <wsdl:fault message="impl:WSSikkerhetsbegrensningException" name="WSSikkerhetsbegrensningException">
             </wsdl:fault>
         </wsdl:operation>
 
