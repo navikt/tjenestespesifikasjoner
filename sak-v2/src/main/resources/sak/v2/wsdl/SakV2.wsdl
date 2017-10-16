@@ -35,7 +35,7 @@
             </xs:complexType>
             <xs:complexType name="finnSakerForBrukerResponse">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="return" type="tns:WSFinnSakerForBrukerResponse"/>
+                    <xs:element minOccurs="0" name="response" type="tns:WSFinnSakerForBrukerResponse"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="WSFinnSakerForBrukerResponse">
@@ -47,7 +47,7 @@
                 <xs:sequence>
                     <xs:element name="sakId" type="xs:string"/>
                     <xs:element name="sakstype" type="xs:string"/>
-                    <xs:element name="fagomraade" type="xs:string"/>
+                    <xs:element name="fagomrade" type="xs:string"/>
                     <xs:element maxOccurs="unbounded" name="gjelderBrukerListe" type="tns:WSAktor"/>
                 </xs:sequence>
                 <xs:attribute name="versjonsnummer" type="xs:string"/>
