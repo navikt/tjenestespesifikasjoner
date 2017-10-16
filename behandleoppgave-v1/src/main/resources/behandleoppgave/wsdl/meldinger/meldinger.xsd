@@ -3,18 +3,18 @@
             targetNamespace="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/meldinger" version="1.0"
             xmlns:meldinger="http://nav.no/tjeneste/virksomhet/behandleoppgave/v1/meldinger">
 
-    <xsd:complexType name="FerdigstillOppgaveRequest">
+    <xsd:complexType name="WSFerdigstillOppgaveRequest">
         <xsd:sequence>
             <xsd:element name="oppgaveId" type="xsd:string"/>
             <xsd:element name="ferdigstiltAvEnhetId" type="xsd:int"/>
         </xsd:sequence>
     </xsd:complexType>
 
-    <xsd:complexType name="FerdigstillOppgaveResponse">
+    <xsd:complexType name="WSFerdigstillOppgaveResponse">
         <xsd:sequence/>
     </xsd:complexType>
 
-    <xsd:complexType name="OpprettOppgaveRequest">
+    <xsd:complexType name="WSOpprettOppgaveRequest">
         <xsd:sequence>
             <xsd:element name="wsOpprettOppgave" type="meldinger:WSOpprettOppgave"/>
             <xsd:element name="opprettetAvEnhetId" type="xsd:int"/>
@@ -50,7 +50,7 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    <xsd:complexType name="OpprettOppgaveResponse">
+    <xsd:complexType name="WSOpprettOppgaveResponse">
         <xsd:sequence>
             <xsd:element name="oppgaveId" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>

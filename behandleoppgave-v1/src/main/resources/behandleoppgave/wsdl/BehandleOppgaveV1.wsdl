@@ -14,21 +14,21 @@
             <xsd:element name="opprettOppgaveResponse">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="response" minOccurs="0" type="meldinger:OpprettOppgaveResponse"/>
+                        <xsd:element name="response" minOccurs="0" type="meldinger:WSOpprettOppgaveResponse"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
             <xsd:element name="ferdigstillOppgave">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="request" minOccurs="0" type="meldinger:FerdigstillOppgaveRequest"/>
+                        <xsd:element name="request" minOccurs="0" type="meldinger:WSFerdigstillOppgaveRequest"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
             <xsd:element name="ferdigstillOppgaveResponse">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="response" minOccurs="0" type="meldinger:FerdigstillOppgaveResponse"/>
+                        <xsd:element name="response" minOccurs="0" type="meldinger:WSFerdigstillOppgaveResponse"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
@@ -64,7 +64,7 @@
             <xsd:element name="opprettOppgave">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="request" minOccurs="0" type="meldinger:OpprettOppgaveRequest"/>
+                        <xsd:element name="request" minOccurs="0" type="meldinger:WSOpprettOppgaveRequest"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
