@@ -262,6 +262,7 @@
             <xs:enumeration value="HENVENDELSE_SLETTET_JOURNALPOST"/>
             <xs:enumeration value="HENVENDELSE_SLETTET_VEDLEGG"/>
             <xs:enumeration value="HENVENDELSE_LEST"/>
+            <xs:enumeration value="HENVENDELSE_SLATT_SAMMEN"/>
             <xs:enumeration value="HENVENDELSE_IKKE_LEST_INNEN_FRIST"/>
             <xs:enumeration value="HENVENDELSE_IKKE_BESVART_INNEN_FRIST"/>
             <xs:enumeration value="HENVENDELSE_BESVART"/>
