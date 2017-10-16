@@ -148,7 +148,6 @@
 
     <wsdl:binding name="BehandleOppgaveV1SoapBinding" type="impl:BehandleOppgaveV1">
         <wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
-
         <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
         <wsdl:operation name="opprettOppgave">
@@ -157,14 +156,15 @@
 
             <wsdl:input name="opprettOppgaveRequest">
                 <wsdlsoap:body use="literal"/>
-
             </wsdl:input>
 
             <wsdl:output name="opprettOppgaveResponse">
                 <wsdlsoap:body use="literal"/>
-
             </wsdl:output>
 
+            <wsdl:fault name="WSSikkerhetsbegrensningException">
+                <wsdlsoap:fault name="WSSikkerhetsbegrensningException" use="literal"/>
+            </wsdl:fault>
         </wsdl:operation>
 
         <wsdl:operation name="ferdigstillOppgave">
@@ -173,13 +173,19 @@
 
             <wsdl:input name="ferdigstillOppgaveRequest">
                 <wsdlsoap:body use="literal"/>
-
             </wsdl:input>
 
             <wsdl:output name="ferdigstillOppgaveResponse">
                 <wsdlsoap:body use="literal"/>
-
             </wsdl:output>
+
+            <wsdl:fault name="WSFerdigstillOppgaveException">
+                <wsdlsoap:fault name="WSFerdigstillOppgaveException" use="literal"/>
+            </wsdl:fault>
+
+            <wsdl:fault name="WSSikkerhetsbegrensningException">
+                <wsdlsoap:fault name="WSSikkerhetsbegrensningException" use="literal"/>
+            </wsdl:fault>
 
         </wsdl:operation>
 
@@ -189,12 +195,10 @@
 
             <wsdl:input name="pingRequest">
                 <wsdlsoap:body use="literal"/>
-
             </wsdl:input>
 
             <wsdl:output name="pingResponse">
                 <wsdlsoap:body use="literal"/>
-
             </wsdl:output>
 
         </wsdl:operation>
