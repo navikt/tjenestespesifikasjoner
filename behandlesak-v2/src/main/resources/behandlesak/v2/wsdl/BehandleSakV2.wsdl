@@ -45,9 +45,9 @@
             </xs:complexType>
             <xs:complexType name="WSSak">
                 <xs:sequence>
-                    <xs:element name="fagsystem" type="xs:string"/>
                     <xs:element name="saktype" type="xs:string"/>
                     <xs:element name="fagomrade" type="xs:string"/>
+                    <xs:element name="fagsystem" type="xs:string"/>
                     <xs:element minOccurs="0" name="fagsystemSakId" type="xs:string"/>
                     <xs:element maxOccurs="unbounded" name="gjelderBrukerListe" type="tns:WSAktor"/>
                 </xs:sequence>
