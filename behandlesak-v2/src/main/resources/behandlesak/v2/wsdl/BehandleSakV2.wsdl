@@ -30,7 +30,7 @@
             </xs:complexType>
             <xs:complexType name="WSOpprettSakRequest">
                 <xs:sequence>
-                    <xs:element name="wsSak" type="tns:WSSak"/>
+                    <xs:element name="sak" type="tns:WSSak"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="opprettSakResponse">
@@ -45,10 +45,10 @@
             </xs:complexType>
             <xs:complexType name="WSSak">
                 <xs:sequence>
-                    <xs:element name="sakId" type="xs:string"/>
                     <xs:element name="fagsystem" type="xs:string"/>
-                    <xs:element name="sakstype" type="xs:string"/>
-                    <xs:element name="fagomraade" type="xs:string"/>
+                    <xs:element name="saktype" type="xs:string"/>
+                    <xs:element name="fagomrade" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fagsystemSakId" type="xs:string"/>
                     <xs:element maxOccurs="unbounded" name="gjelderBrukerListe" type="tns:WSAktor"/>
                 </xs:sequence>
             </xs:complexType>
