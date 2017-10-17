@@ -66,8 +66,8 @@
             </xs:complexType>
             <xs:complexType name="WSSikkerhetsbegrensningFault">
                 <xs:sequence>
-                    <xs:element name="feilmelding" nillable="true" type="xs:string"/>
-                    <xs:element name="feilkilde" nillable="true" type="xs:string"/>
+                    <xs:element name="feilmelding" minOccurs="0" type="xs:string"/>
+                    <xs:element name="feilkilde" minOccurs="0" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
 
