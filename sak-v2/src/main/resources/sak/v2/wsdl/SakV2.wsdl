@@ -58,8 +58,8 @@
             </xs:complexType>
             <xs:complexType name="WSAktor">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="aktorType" type="tns:WSAktorType"/>
-                    <xs:element minOccurs="0" name="ident" type="xs:string"/>
+                    <xs:element name="aktorType" type="tns:WSAktorType"/>
+                    <xs:element name="ident" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="WSUgyldigInputFault">
