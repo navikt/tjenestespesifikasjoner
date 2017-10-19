@@ -39,6 +39,7 @@
     <xs:complexType name="ferdigstillUtenSvarRequest">
         <xs:sequence>
             <xs:element name="behandlingskjedeId" type="xs:string"/>
+            <xs:element name="enhetId" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ferdigstillUtenSvarResponse"/>
