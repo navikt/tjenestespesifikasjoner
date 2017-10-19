@@ -186,6 +186,17 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="fiksMetadata">
+        <xs:complexContent>
+            <xs:extension base="tns:metadata">
+                <xs:sequence>
+                    <xs:element name="orgnr" type="xs:string"/>
+                    <xs:element name="kontornavn" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:element name="oppdaterMetadata">
         <xs:complexType>
             <xs:sequence>
