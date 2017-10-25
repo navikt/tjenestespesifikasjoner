@@ -109,7 +109,8 @@
     <xs:element name="alternativRepresentasjonListe">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="alternativRepresentasjon" type="tns:alternativRepresentasjon" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="alternativRepresentasjon" type="tns:alternativRepresentasjon" minOccurs="0"
+                            maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -191,17 +192,11 @@
         <xs:complexContent>
             <xs:extension base="tns:metadata">
                 <xs:sequence>
-                    <xs:element name="verdier" nillable="true">
+                    <xs:element name="verdi" minOccurs="0" maxOccurs="unbounded">
                         <xs:complexType>
                             <xs:sequence>
-                                <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
-                                    <xs:complexType>
-                                        <xs:sequence>
-                                            <xs:element name="key" minOccurs="0" type="xs:string"/>
-                                            <xs:element name="value" minOccurs="0" type="xs:string"/>
-                                        </xs:sequence>
-                                    </xs:complexType>
-                                </xs:element>
+                                <xs:element name="key" minOccurs="0" type="xs:string"/>
+                                <xs:element name="value" minOccurs="0" type="xs:string"/>
                             </xs:sequence>
                         </xs:complexType>
                     </xs:element>
