@@ -187,12 +187,24 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="fiksMetadata">
+    <xs:complexType name="soknadMetadata">
         <xs:complexContent>
             <xs:extension base="tns:metadata">
                 <xs:sequence>
-                    <xs:element name="orgnr" type="xs:string"/>
-                    <xs:element name="kontornavn" type="xs:string"/>
+                    <xs:element name="verdier" nillable="true">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="key" minOccurs="0" type="xs:string"/>
+                                            <xs:element name="value" minOccurs="0" type="xs:string"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
