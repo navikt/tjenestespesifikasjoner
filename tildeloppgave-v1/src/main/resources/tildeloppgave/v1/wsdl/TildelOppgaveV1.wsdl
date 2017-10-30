@@ -27,11 +27,13 @@
             </xs:complexType>
             <xs:complexType name="WSTildelFlereOppgaverRequest">
                 <xs:sequence>
+                    <xs:element name="fagomrade" minOccurs="0" type="xs:string"/>
+                    <xs:element name="underkategori" minOccurs="0" type="xs:string"/>
+                    <xs:element name="oppgavetype" minOccurs="0" type="xs:string"/>
                     <xs:element name="tildelesSaksbehandlerId" type="xs:string"/>
                     <xs:element name="tildeltAvEnhetId" type="xs:int"/>
                     <xs:element name="ikkeTidligereTildeltSaksbehandlerId" minOccurs="0" type="xs:string"/>
-                    <xs:element name="filter" minOccurs="0" type="tns:WSTildelFlereOppgaverFilter"/>
-                    <xs:element name="sok" minOccurs="0" type="tns:WSTildelFlereOppgaverSok"/>
+                    <xs:element name="maksAntallOppgaver" minOccurs="0" type="xs:int"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="tildelFlereOppgaverResponse">
@@ -44,45 +46,6 @@
                     <xs:element maxOccurs="unbounded" name="oppgaveIder" type="xs:int"/>
                 </xs:sequence>
             </xs:complexType>
-            <xs:complexType name="WSTildelFlereOppgaverSok">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="ansvarligEnhetId" type="xs:string"/>
-                    <xs:element minOccurs="0" name="opprettetEnhetId" type="xs:string"/>
-                    <xs:element minOccurs="0" name="ansvarligId" type="xs:string"/>
-                    <xs:element minOccurs="0" name="brukerId" type="xs:string"/>
-                    <xs:element minOccurs="0" name="sakId" type="xs:string"/>
-                    <xs:element minOccurs="0" name="soknadsId" type="xs:string"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="fagomrader" type="xs:string"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="journalpostIder" type="xs:string"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="kravIder" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="WSTildelFlereOppgaverFilter">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="opprettetEnhetNavn" type="xs:string"/>
-                    <xs:element minOccurs="0" name="ansvarligEnhetNavn" type="xs:string"/>
-                    <xs:element minOccurs="0" name="underkategori" type="xs:string"/>
-                    <xs:element minOccurs="0" name="erAktiv" type="xs:boolean"/>
-                    <xs:element minOccurs="0" name="fristFraOgMed" type="xs:dateTime"/>
-                    <xs:element minOccurs="0" name="fristTilOgMed" type="xs:dateTime"/>
-                    <xs:element minOccurs="0" name="opprettetFraOgMed" type="xs:dateTime"/>
-                    <xs:element minOccurs="0" name="opprettetTilOgMed" type="xs:dateTime"/>
-                    <xs:element minOccurs="0" name="opprettetAv" type="xs:string"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="oppgavetyper" type="xs:string"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="brukertyper" type="tns:WSAktorType"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mappeIder" type="xs:string"/>
-                    <xs:element minOccurs="0" name="revurderingstype" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-
-            <!--Enum-->
-            <xs:simpleType name="WSAktorType">
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="PERSON"/>
-                    <xs:enumeration value="ORGANISASJON"/>
-                    <xs:enumeration value="UKJENT"/>
-                </xs:restriction>
-            </xs:simpleType>
         </xs:schema>
     </wsdl:types>
 
