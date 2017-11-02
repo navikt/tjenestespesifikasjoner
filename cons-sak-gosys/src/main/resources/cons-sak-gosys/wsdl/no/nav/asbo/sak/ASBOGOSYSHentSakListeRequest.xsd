@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="no.nav.gosys.asbo.sak" xmlns:bons1="no.nav.gosys.asbo" targetNamespace="no.nav.gosys.asbo.sak">
+    <xsd:include schemaLocation="ASBOGOSYSRolleKode.xsd"/>
+	<xsd:import namespace="no.nav.gosys.asbo" schemaLocation="../ASBOGOSYSFagomrade.xsd"/>
+	<xsd:import namespace="no.nav.gosys.asbo" schemaLocation="../ASBOGOSYSEierKomponent.xsd"/>
+	<xsd:complexType name="ASBOGOSYSHentSakListeRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="brukerId" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="fagomradeListe" type="bons1:ASBOGOSYSFagomrade">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="fagsystemListe" type="bons1:ASBOGOSYSEierKomponent">
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="rolleKodeListe" type="bons0:ASBOGOSYSRolleKode">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

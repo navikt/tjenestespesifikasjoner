@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="no.nav.gosys.asbo" xmlns:bons2="no.nav.gosys.asbo.navorgenhet" targetNamespace="no.nav.gosys.asbo.navansatt">
+    <xsd:import namespace="no.nav.gosys.asbo.navorgenhet" schemaLocation="../navorgenhet/ASBOGOSYSNavEnhet.xsd"/>
+    <xsd:import namespace="no.nav.gosys.asbo" schemaLocation="../ASBOGOSYSFagomrade.xsd"/>
+    <xsd:complexType name="ASBOGOSYSNAVAnsatt">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ansattId" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ansattNavn" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="fornavn" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="etternavn" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="enheter" type="bons2:ASBOGOSYSNavEnhet"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="fagomrader" type="bons0:ASBOGOSYSFagomrade"/>
+        </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

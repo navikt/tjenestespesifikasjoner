@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="no.nav.gosys.asbo.oppgave"
+	xmlns:bons0="no.nav.gosys.asbo.oppgave">
+	<xsd:include schemaLocation="ASBOGOSYSMappe.xsd"></xsd:include>
+	<xsd:complexType name="ASBOGOSYSMappeListe">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="mappeListe"
+				type="bons0:ASBOGOSYSMappe" maxOccurs="unbounded">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

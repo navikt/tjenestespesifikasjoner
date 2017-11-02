@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="no.nav.gosys.asbo.person" targetNamespace="no.nav.gosys.asbo.person">
+    <xsd:include schemaLocation="ASBOGOSYSPerson.xsd"/>
+    <xsd:complexType name="ASBOGOSYSHentPersonRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="person" type="bons0:ASBOGOSYSPerson"/>
+      <xsd:element minOccurs="0" name="hentEgenAnsatt" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
