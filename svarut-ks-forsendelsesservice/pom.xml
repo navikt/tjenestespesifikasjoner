@@ -9,7 +9,7 @@
 	
 	<groupId>no.nav.sbl.dialogarena</groupId>
 	<artifactId>svarut-ks-forsendelsesservice</artifactId>
-	<version>7.0.2-SNAPSHOT</version>
+	<version>8.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -46,7 +46,7 @@
 							</defaultOptions>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>src/main/resources/ForsendelsesServiceV7.wsdl</wsdl>
+									<wsdl>src/main/resources/ForsendelsesServiceV8.wsdl</wsdl>
 									<bindingFiles>
 										<bindingFile>src/main/resources/bindings.xml</bindingFile>
 									</bindingFiles>

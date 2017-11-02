@@ -40,7 +40,7 @@
 
     <xs:complexType name="ferdigstillHenvendelseRequest">
         <xs:sequence>
-            <xs:element name="behandlingsId" type="xs:string"/>
+            <xs:element name="behandlingsId" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
             <xs:any processContents="lax"/>
         </xs:sequence>
     </xs:complexType>

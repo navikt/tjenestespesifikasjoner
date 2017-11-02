@@ -6,7 +6,7 @@
                       adapter="com.migesok.jaxb.adapter.javatime.LocalDateTimeXmlAdapter"/>
         <jaxb:serializable/>
     </jaxb:globalBindings>
-    <jaxb:bindings schemaLocation="ForsendelsesServiceV7.wsdl#types1" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="ForsendelsesServiceV8.wsdl#types1" node="/xsd:schema">
         <jaxb:schemaBindings>
         </jaxb:schemaBindings>
     </jaxb:bindings>

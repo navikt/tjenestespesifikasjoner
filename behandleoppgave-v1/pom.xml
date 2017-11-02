@@ -10,7 +10,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandleoppgave-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.6-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
