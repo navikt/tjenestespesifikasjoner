@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons1="no.nav.gosys.asbo.oppgave"
+	targetNamespace="no.nav.gosys.asbo.oppgave">
+	<xsd:include schemaLocation="ASBOGOSYSOppgave.xsd" />
+	<xsd:complexType name="ASBOGOSYSBestillOppgaveRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="bestillingKode"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="saksIdKLAN"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="tvingNySak"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="oppgave"
+				type="bons1:ASBOGOSYSOppgave">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
