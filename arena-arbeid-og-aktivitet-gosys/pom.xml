@@ -82,9 +82,6 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                   <wsdl>${wsdl.directory}/arbeid/nav-tjeneste-arbeidOgAktivitet_ArbeidOgAktivitetWSEXP.wsdl</wsdl>
-                                    <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/arbeid/bindings.xml</bindingFile>
-                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
