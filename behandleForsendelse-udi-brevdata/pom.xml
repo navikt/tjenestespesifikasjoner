@@ -9,7 +9,7 @@
 
 	<artifactId>behandleForsendelse-udi-brevdata</artifactId>
 	<groupId>no.nav.sbl.dialogarena</groupId>
-	<version>1.0.5-SNAPSHOT</version>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -97,7 +97,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>behandleForsendelse-udi-brevdata-1.0.5</tag>
     </scm>
 
 </project>
