@@ -9,7 +9,7 @@
             <outputDirectory>/</outputDirectory>
             <directory>target/classes</directory>
             <includes>
-                <include>**/RUTINGSchema.wsdl</include>
+                <include>**/nav-tjeneste-medlemskap_MedlemskapWSEXP.wsdl</include>
             </includes>
         </fileSet>
         <fileSet>
