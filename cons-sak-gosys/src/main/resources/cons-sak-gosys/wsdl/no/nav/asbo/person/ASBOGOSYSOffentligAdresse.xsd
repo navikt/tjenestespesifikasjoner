@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="no.nav.gosys.asbo.person">
+  <xsd:complexType name="ASBOGOSYSOffentligAdresse">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="gatenavn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="husnr" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="bokstav" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="bolignr" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

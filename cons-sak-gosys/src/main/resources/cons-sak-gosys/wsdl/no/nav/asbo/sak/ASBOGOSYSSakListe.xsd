@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons1="no.nav.gosys.asbo.sak" targetNamespace="no.nav.gosys.asbo.sak">
+    <xsd:include schemaLocation="ASBOGOSYSSak.xsd"/>
+    <xsd:complexType name="ASBOGOSYSSakListe">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="sakListe" type="bons1:ASBOGOSYSSak">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

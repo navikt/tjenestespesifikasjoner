@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="no.nav.gosys.asbo.navansatt">
+	<xsd:complexType name="ASBOGOSYSFinnArenaNAVAnsattListeRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="enhetId" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ansattIdSokeStreng" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="ansattNavnSokeStreng" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="maxantall" type="xsd:int">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="oppgaveBestillingKode" type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

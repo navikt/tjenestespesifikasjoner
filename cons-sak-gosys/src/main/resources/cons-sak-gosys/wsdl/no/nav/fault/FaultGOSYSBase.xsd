@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="no.nav.gosys.fault">
+  <xsd:complexType name="FaultGOSYSBase">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="errorMessage" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="errorSource" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="errorType" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="rootCause" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="dateTimeStamp" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

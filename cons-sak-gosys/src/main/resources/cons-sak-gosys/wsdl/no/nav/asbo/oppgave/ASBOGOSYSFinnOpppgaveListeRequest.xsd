@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons1="no.nav.gosys.asbo" targetNamespace="no.nav.gosys.asbo.oppgave">
+    <xsd:import namespace="no.nav.gosys.asbo" schemaLocation="../ASBOGOSYSEierKomponent.xsd"/>
+	<xsd:complexType name="ASBOGOSYSFinnOpppgaveListeRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="fnr" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="eierKomponentListe" type="bons1:ASBOGOSYSEierKomponent">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

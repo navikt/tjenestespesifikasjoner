@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="no.nav.gosys.fault" targetNamespace="no.nav.gosys.fault.infotrygdsak">
+    <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../FaultGOSYSBase.xsd"/>
+  <xsd:complexType name="FaultGOSYSUgyldigEnhet">
+    <xsd:complexContent>
+      <xsd:extension base="bons0:FaultGOSYSBase">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>
