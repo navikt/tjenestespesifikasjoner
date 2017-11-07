@@ -6,9 +6,10 @@
         <artifactId>dialogarena</artifactId>
         <version>3</version>
     </parent>
+    <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>arena-arbeid-og-aktivitet-gosys</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
