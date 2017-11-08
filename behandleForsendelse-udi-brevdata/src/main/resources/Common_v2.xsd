@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 rel. 3 sp1 (x64) (http://www.altova.com) by Espen (Utlendingsdirektoratet) -->
+<!-- edited with XMLSpy v2013 (x64) (http://www.altova.com) by tael (Utlendingsdirektoratet) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://udi.no/Common/v2" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://udi.no/Common/v2" elementFormDefault="qualified">
   <xs:annotation>
     <xs:documentation>Felles typer for både interne og eksterne tjenester. Kun typer som er felles på tvers av flere tjenesteområder/domener skal legges her</xs:documentation>
@@ -11,6 +11,15 @@
     <xs:sequence>
       <xs:element name="FraDato" type="xs:dateTime" nillable="true" />
       <xs:element name="TilDato" type="xs:dateTime" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApenTilPeriode">
+    <xs:annotation>
+      <xs:documentation>Opplysninger om en periode der tildato kan være ukjent</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="FraDato" type="xs:dateTime"/>
+      <xs:element name="TilDato" type="xs:dateTime" nillable="true"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Credentials">
@@ -36,6 +45,11 @@
       <xs:element name="Type" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="KodeverkListe">
+    <xs:sequence>
+      <xs:element name="Kodeverk" type="Kodeverk" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="Kodeverksdefinisjon">
     <xs:sequence>
       <xs:element name="Kode" type="xs:string" />
@@ -52,6 +66,11 @@
           <xs:documentation>Angir til hvilken dato kodeelementet er tilgjengelig for registrering i applikasjonene</xs:documentation>
         </xs:annotation>
       </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Kodeverksdefinisjoner">
+    <xs:sequence>
+      <xs:element name="Kodeverksdefinisjon" type="Kodeverksdefinisjon" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PingRequestType">
