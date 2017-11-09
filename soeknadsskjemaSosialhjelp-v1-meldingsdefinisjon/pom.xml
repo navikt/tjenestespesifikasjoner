@@ -15,7 +15,7 @@
     <properties>
         <xsd.location>${project.build.directory}/classes/tjenestespesifikasjon/</xsd.location>
         <jaxb.location>${project.build.directory}/classes/</jaxb.location>
-        <meldingsdefinisjon.version>1.0.21.19</meldingsdefinisjon.version>
+        <meldingsdefinisjon.version>1.0.23.3</meldingsdefinisjon.version>
     </properties>
 
     <build>
