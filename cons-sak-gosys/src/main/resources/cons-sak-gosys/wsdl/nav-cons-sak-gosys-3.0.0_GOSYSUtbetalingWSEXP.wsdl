@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="GOSYSUtbetalingWSEXP_GOSYSUtbetalingHttp_Service" targetNamespace="no.nav.inf.binding" xmlns:Port_0="no.nav.inf" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="no.nav.inf.binding">
+  <wsdl:import namespace="no.nav.inf" location="no/nav/inf/GOSYSUtbetaling.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="GOSYSUtbetalingWSEXP_GOSYSUtbetalingHttpBinding" type="Port_0:GOSYSUtbetaling">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="hentUtbetalingListe">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="hentUtbetalingListeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="hentUtbetalingListeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="faultGOSYSGenerisk">
+        <soap:fault name="faultGOSYSGenerisk" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GOSYSUtbetalingWSEXP_GOSYSUtbetalingHttpService">
+    <wsdl:port name="GOSYSUtbetalingWSEXP_GOSYSUtbetalingHttpPort" binding="this:GOSYSUtbetalingWSEXP_GOSYSUtbetalingHttpBinding">
+      <soap:address location="http://localhost:9080/nav-cons-sak-gosys-3.0.0Web/sca/GOSYSUtbetalingWSEXP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="no.nav.gosys.fault.samhandler"
+	xmlns:bons0="no.nav.gosys.fault">
+	<xsd:import schemaLocation="../FaultGOSYSBase.xsd"
+		namespace="no.nav.gosys.fault">
+	</xsd:import>
+	<xsd:complexType name="FaultGOSYSSamhandlerIkkeFunnet">
+		<xsd:complexContent>
+			<xsd:extension base="bons0:FaultGOSYSBase">
+				<xsd:sequence />
+
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

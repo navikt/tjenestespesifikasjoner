@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- edited with XMLSpy v2010 rel. 3 sp1 (x64) (http://www.altova.com) by XMLSpy 2009 Enterprise Ed., Installed for 30 users (with SMP from 2009-06-19 to 2010-06-20) (NAV ØKONOMITJENESTER) -->
+<!-- edited with XMLSpy v2013 (x64) (http://www.altova.com) by aami (Utlendingsdirektoratet) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://udi.no/MT_1067_NAV_Data/v1" xmlns:common="http://udi.no/Common/v2" targetNamespace="http://udi.no/MT_1067_NAV_Data/v1" elementFormDefault="qualified">
 	<xs:import namespace="http://udi.no/Common/v2" schemaLocation="Common_v2.xsd"/>
 	<xs:complexType name="Alias">
@@ -78,6 +78,11 @@
 			<xs:element name="Flyktingstatus" type="xs:boolean" nillable="true">
 				<xs:annotation>
 					<xs:documentation>Hvis InkluderFlyktningstatus i HentPersonstatusParameter er satt til true, settes feltet Flyktingstatus til true eller false alt etter om avgjørelsen angir flyktningstatus eller ikke. Hvis InkluderFlyktningstatus i HentPersonstatusParameter er satt til false, vil feltet Flyktingstatus være satt til null</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UavklartFlyktningstatus" type="xs:boolean" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Hvis InkluderFlyktningstatus i HentPersonstatusParameter er satt til true, settes feltet UavklartFlyktningstatus til true eller false alt etter om avgjørelsen er en konvertert kode eller ikke. Hvis InkluderFlyktningstatus i HentPersonstatusParameter er satt til false, vil feltet UavklartFlyktningstatus være satt til null</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -211,7 +216,7 @@
 			</xs:element>
 			<xs:element name="AvgjorelserFraDato" type="xs:dateTime" nillable="true">
 				<xs:annotation>
-					<xs:documentation>Kan angis for å filtrere bort avgjørelser fra Avgjorelsehistorikk. Benyttes kun når InkluderAvgjorelsehistorikk er gitt i forespørsel. Inngår i krav F024</xs:documentation>
+					<xs:documentation>Kan angis for å filtrere bort avgjørelser fra Avgjorelsehistorikk. Benyttes kun når InkluderAvgjorelsehistorikk er gitt i forespørsel. Inngår i krav F024, samt tillegg T014</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="InkluderArbeidsadgang" type="xs:boolean">
@@ -236,7 +241,7 @@
 			</xs:element>
 			<xs:element name="ManuellOppgVedUavklartArbeidsadgang" type="xs:boolean">
 				<xs:annotation>
-					<xs:documentation>Hvis det blir funnet en uavklart arbeidsadgang, benyttes ManuellOppgVedUavklartArbeidsadgang til å bestemme om det skal oppretter oppgave for manuell avklaring eller ikke. Inngår i krav F012, samt tillegg 05/17</xs:documentation>
+					<xs:documentation>Hvis det blir funnet en uavklart arbeidsadgang, benyttes ManuellOppgVedUavklartArbeidsadgang til å bestemme om det skal oppretter oppgave for manuell avklaring eller ikke. Inngår i krav F012, samt tillegg T001</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -258,17 +263,17 @@
 		<xs:sequence>
 			<xs:element name="Uttrekkstidspunkt" type="xs:dateTime" nillable="false">
 				<xs:annotation>
-					<xs:documentation>Angir dato og klokkeslett for når uttrekket ble gjort hos UDI. Elementet returneres alltid, uavhengig av inkluderings-flagg. Inngår i tillegg 20/17</xs:documentation>
+					<xs:documentation>Angir dato og klokkeslett for når uttrekket ble gjort hos UDI. Elementet returneres alltid, uavhengig av inkluderings-flagg. Inngår i tillegg T006</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Foresporselsfodselsnummer" type="common:Fodselsnummer">
 				<xs:annotation>
-					<xs:documentation>Fødselsnummer / D-nummer det ble spurt etter. Kan være annet fødselsnummer / D-nummer enn gjeldende person sitt fødselsnummer / D-nummer hvis man spør med alias fødselsnummer / D-nummer. Elementet returneres alltid, uavhengig av inkluderings-flagg. Inngår i tillegg 19/17</xs:documentation>
+					<xs:documentation>Fødselsnummer / D-nummer det ble spurt etter. Kan være annet fødselsnummer / D-nummer enn gjeldende person sitt fødselsnummer / D-nummer hvis man spør med alias fødselsnummer / D-nummer. Elementet returneres alltid, uavhengig av inkluderings-flagg. Inngår i tillegg T005</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="GjeldendePerson" type="GjeldendePerson">
 				<xs:annotation>
-					<xs:documentation>Angir personalia til gjeldende person som ble funnet og benyttet i uttrekk. Elementet returneres alltid, uavhengig av inkluderings-flagg. Inngår i krav F001, F002, samt tillegg 19/17</xs:documentation>
+					<xs:documentation>Angir personalia til gjeldende person som ble funnet og benyttet i uttrekk. Elementet returneres alltid, uavhengig av inkluderings-flagg. Inngår i krav F001, F002, samt tillegg T005</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="GjeldendeOppholdsstatus" type="GjeldendeOppholdsstatus" minOccurs="0">
@@ -283,7 +288,12 @@
 			</xs:element>
 			<xs:element name="Avgjorelsehistorikk" type="Avgjorelser" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Angir gjeldende person sin avgjørelsehistorikk. Inkluderes i respons hvis InkluderAvgjorelsehistorikk i HentPersonstatusParameter er satt til true. Inngår i krav F003, F006, F010, F011, F014, F018, F023, F024, samt tilleggene 14/17, 15/17, 18/17, 22/17, 23/17a, 23/17b, 24/17</xs:documentation>
+					<xs:documentation>Angir gjeldende person sin avgjørelsehistorikk. Inkluderes i respons hvis InkluderAvgjorelsehistorikk i HentPersonstatusParameter er satt til true. Inngår i krav F003, F006, F010, F011, F014, F018, F023, F024, samt tilleggene T002, T003, T004, T008, T009, T010, T011, T013, T014</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UavklartFlyktningstatus" type="xs:boolean" nillable="true">
+				<xs:annotation>
+					<xs:documentation>Angir om gjeldende person sin historikk har avgjørelse(r) med konverterte koder som KAN gi flykningstatus. Inkluderes i respons hvis både InkluderAvgjorelsehistorikk og InkluderFlyktningstatus i HentPersonstatusParameter er satt til true</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="HarFlyktningstatus" type="xs:boolean" nillable="true">
@@ -293,7 +303,7 @@
 			</xs:element>
 			<xs:element name="HistorikkHarFlyktningstatus" type="xs:boolean" nillable="true">
 				<xs:annotation>
-					<xs:documentation>Angir om gjeldende person sin historikk har avgjørelse(r) som omhandler flykningstatus. Inkluderes i respons hvis både InkluderAvgjorelsehistorikk og InkluderFlyktningstatus i HentPersonstatusParameter er satt til true. Inngår i krav F014, samt tillegg 24/17</xs:documentation>
+					<xs:documentation>Angir om gjeldende person sin historikk har avgjørelse(r) som omhandler flykningstatus. Inkluderes i respons hvis både InkluderAvgjorelsehistorikk og InkluderFlyktningstatus i HentPersonstatusParameter er satt til true. Inngår i krav F014, samt tillegg T011</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SoknadOmBeskyttelseUnderBehandling" type="SoknadOmBeskyttelseUnderBehandling" minOccurs="0">
@@ -328,7 +338,7 @@
 	</xs:complexType>
 	<xs:complexType name="SoknadOmBeskyttelseUnderBehandling">
 		<xs:sequence>
-			<xs:element name="ErUnderBehandling" type="xs:boolean"/>
+			<xs:element name="ErUnderBehandling" type="JaNeiUavklart"/>
 			<xs:element name="Soknadsdato" type="xs:dateTime" nillable="true"/>
 		</xs:sequence>
 	</xs:complexType>

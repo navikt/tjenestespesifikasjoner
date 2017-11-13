@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="no.nav.gosys.asbo.person">
+  <xsd:complexType name="ASBOGOSYSAdressesokRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="adresseType" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="sokehint" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="sokeString" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="landKode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="navEnhet" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="postnr" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
