@@ -22,6 +22,13 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:complexType name="WSLagreOppgaveRequest">
+        <xsd:sequence>
+            <xsd:element name="wsLagreOppgave" type="meldinger:WSLagreOppgave"/>
+            <xsd:element name="endretAvEnhetId" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:complexType name="WSOppgave">
         <xsd:sequence>
             <xsd:element name="gjelderBruker" type="meldinger:WSAktor" minOccurs="0"/>
@@ -47,6 +54,17 @@
             <xsd:element name="mappeId" type="xsd:string" minOccurs="0"/>
             <xsd:element name="revurderingstype" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="WSLagreOppgave">
+        <xsd:complexContent>
+            <xsd:extension base="meldinger:WSOppgave">
+                <xsd:sequence>
+                    <xsd:element name="oppgaveId" type="xsd:int"/>
+                    <xsd:element name="versjon" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
     </xsd:complexType>
 
     <xsd:complexType name="WSAktor">
