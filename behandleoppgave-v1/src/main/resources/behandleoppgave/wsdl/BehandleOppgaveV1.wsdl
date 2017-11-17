@@ -51,7 +51,7 @@
                 </xsd:complexType>
             </xsd:element>
 
-            <xsd:element name="WSLagreOppgaveOppgaveIkkeFunnetFault">
+            <xsd:element name="WSOppgaveIkkeFunnetFault">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="feilmelding" nillable="true" type="xsd:string"/>
@@ -60,7 +60,7 @@
                 </xsd:complexType>
             </xsd:element>
 
-            <xsd:element name="WSLagreOppgaveOptimistiskLasingFault">
+            <xsd:element name="WSOptimistiskLasingFault">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="feilmelding" nillable="true" type="xsd:string"/>
@@ -116,12 +116,12 @@
         </wsdl:part>
     </wsdl:message>
 
-    <wsdl:message name="WSLagreOppgaveOppgaveIkkeFunnetException">
-        <wsdl:part element="impl:WSLagreOppgaveOppgaveIkkeFunnetFault" name="WSLagreOppgaveOppgaveIkkeFunnetException"/>
+    <wsdl:message name="WSOppgaveIkkeFunnetException">
+        <wsdl:part element="impl:WSOppgaveIkkeFunnetFault" name="WSOppgaveIkkeFunnetException"/>
     </wsdl:message>
 
-    <wsdl:message name="WSLagreOppgaveOptimistiskLasingException">
-        <wsdl:part element="impl:WSLagreOppgaveOptimistiskLasingFault" name="WSLagreOppgaveOptimistiskLasingException"/>
+    <wsdl:message name="WSOptimistiskLasingException">
+        <wsdl:part element="impl:WSOptimistiskLasingFault" name="WSOptimistiskLasingException"/>
     </wsdl:message>
 
     <wsdl:message name="pingResponse">
@@ -176,8 +176,8 @@
             <wsdl:input message="impl:lagreOppgaveRequest" name="lagreOppgaveRequest"/>
             <wsdl:output message="impl:lagreOppgaveResponse" name="lagreOppgaveResponse"/>
             <wsdl:fault message="impl:WSSikkerhetsbegrensningException" name="WSSikkerhetsbegrensningException"/>
-            <wsdl:fault message="impl:WSLagreOppgaveOppgaveIkkeFunnetException" name="WSLagreOppgaveOppgaveIkkeFunnetException"/>
-            <wsdl:fault message="impl:WSLagreOppgaveOptimistiskLasingException" name="WSLagreOppgaveOptimistiskLasingException"/>
+            <wsdl:fault message="impl:WSOppgaveIkkeFunnetException" name="WSOppgaveIkkeFunnetException"/>
+            <wsdl:fault message="impl:WSOptimistiskLasingException" name="WSOptimistiskLasingException"/>
         </wsdl:operation>
 
         <wsdl:operation name="ferdigstillOppgave">
@@ -233,11 +233,11 @@
             <wsdl:fault name="WSSikkerhetsbegrensningException">
                 <wsdlsoap:fault name="WSSikkerhetsbegrensningException" use="literal"/>
             </wsdl:fault>
-            <wsdl:fault name="WSLagreOppgaveOppgaveIkkeFunnetException">
-                <wsdlsoap:fault name="WSLagreOppgaveOppgaveIkkeFunnetException" use="literal"/>
+            <wsdl:fault name="WSOppgaveIkkeFunnetException">
+                <wsdlsoap:fault name="WSOppgaveIkkeFunnetException" use="literal"/>
             </wsdl:fault>
-            <wsdl:fault name="WSLagreOppgaveOptimistiskLasingException">
-                <wsdlsoap:fault name="WSLagreOppgaveOptimistiskLasingException" use="literal"/>
+            <wsdl:fault name="WSOptimistiskLasingException">
+                <wsdlsoap:fault name="WSOptimistiskLasingException" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>
 
