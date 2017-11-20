@@ -55,7 +55,6 @@
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="feilmelding" nillable="true" type="xsd:string"/>
-                        <xsd:element name="feilkilde" nillable="true" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
@@ -64,7 +63,6 @@
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="feilmelding" nillable="true" type="xsd:string"/>
-                        <xsd:element name="feilkilde" nillable="true" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
