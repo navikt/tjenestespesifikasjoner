@@ -57,14 +57,30 @@
     </xsd:complexType>
 
     <xsd:complexType name="WSLagreOppgave">
-        <xsd:complexContent>
-            <xsd:extension base="meldinger:WSOppgave">
-                <xsd:sequence>
-                    <xsd:element name="oppgaveId" type="xsd:int"/>
-                    <xsd:element name="versjon" type="xsd:int"/>
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
+        <xsd:sequence>
+            <xsd:element name="gjelderBruker" type="meldinger:WSAktor" minOccurs="0"/>
+            <xsd:element name="oppgavetypeKode" type="xsd:string"/>
+            <xsd:element name="fagomradeKode" type="xsd:string"/>
+            <xsd:element name="underkategoriKode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="prioritetKode" type="xsd:string"/>
+            <xsd:element name="beskrivelse" type="xsd:string"/>
+            <xsd:element name="oppfolging" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="aktivFra" type="xsd:date"/>
+            <xsd:element name="aktivTil" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="ansvarligEnhetId" type="xsd:string"/>
+            <xsd:element name="ansvarligId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="dokumentId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="mottattDato" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="saksnummer" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="skannetDato" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="soknadsId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="kravId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lest" type="xsd:boolean"/>
+            <xsd:element name="mappeId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="revurderingstype" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="oppgaveId" type="xsd:int"/>
+            <xsd:element name="versjon" type="xsd:int"/>
+        </xsd:sequence>
     </xsd:complexType>
 
     <xsd:complexType name="WSAktor">
