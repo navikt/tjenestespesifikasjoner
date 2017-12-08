@@ -102,6 +102,9 @@
                                         <extraarg>-p</extraarg>
                                         <extraarg>http://nav.no/virksomhet/tjenester/person/personsok/v1=no.nav.gosys.person.personsok</extraarg>
                                     </extraargs>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/personsok/bindings.xml</bindingFile>
+                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
