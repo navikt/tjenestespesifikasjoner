@@ -48,6 +48,8 @@
                     <xs:element name="sakId" type="xs:string"/>
                     <xs:element name="sakstype" type="xs:string"/>
                     <xs:element name="fagomrade" type="xs:string"/>
+                    <xs:element name="fagsystem" type="xs:string"/>
+                    <xs:element name="fagsystemSakId" minOccurs="0" type="xs:string"/>
                     <xs:element maxOccurs="unbounded" name="gjelderBrukerListe" type="tns:WSAktor"/>
                 </xs:sequence>
                 <xs:attribute name="versjonsnummer" type="xs:string"/>
