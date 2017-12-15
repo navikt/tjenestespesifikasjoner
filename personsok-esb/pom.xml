@@ -87,6 +87,7 @@
                                     <extraarg>-xjc-XhashCode</extraarg>
                                     <extraarg>-xjc-Xequals</extraarg>
                                     <extraarg>-xjc-XtoString</extraarg>
+                                    <extraarg>-xjc-Xbg</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
@@ -120,6 +121,11 @@
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
                         <version>0.6.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.cxf.xjcplugins</groupId>
+                        <artifactId>cxf-xjc-boolean</artifactId>
+                        <version>2.7.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
