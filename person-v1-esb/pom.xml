@@ -9,7 +9,7 @@
 
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>person-v1-esb-tjenestespesifikasjon</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -163,7 +163,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>person-v1-esb-tjenestespesifikasjon-1.0.2</tag>
     </scm>
 
 </project>
