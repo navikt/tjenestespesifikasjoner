@@ -10,7 +10,11 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>oppfolgingsinfo-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
+<<<<<<< Updated upstream
     <version>1.0.0</version>
+=======
+    <version>1.0.5-SNAPSHOT</version>
+>>>>>>> Stashed changes
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
