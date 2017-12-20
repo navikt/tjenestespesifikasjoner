@@ -10,7 +10,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>oppfolgingsinfo-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -159,7 +159,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>oppfolgingsinfo-v1-tjenestespesifikasjon-1.0.0</tag>
+        <tag>oppfolgingsinfo-v1-tjenestespesifikasjon-1.0.5</tag>
     </scm>
 
 </project>
