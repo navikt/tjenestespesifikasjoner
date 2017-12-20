@@ -68,6 +68,9 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/oppfolgingsinfo/wsdl/OppfolgingsinfoV1.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/oppfolgingsinfo/wsdl/SerializeBinding.xml</bindingFile>
+                                    </bindingFiles>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
                                         <extraarg>-xjc-Xequals</extraarg>
