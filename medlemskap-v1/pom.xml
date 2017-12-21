@@ -13,10 +13,8 @@
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
-        <cxf.version>3.1.4</cxf.version>
-        <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
-        <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
-        <jaxb-adapters.version>1.1</jaxb-adapters.version>
+        <cxf.version>2.7.0</cxf.version>
+        <jaxb2-basics.version>0.9.5</jaxb2-basics.version>
     </properties>
 
     <build>
@@ -55,6 +53,26 @@
                 </executions>
             </plugin>
             <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-bindings-files</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${wsdl.directory}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${cxf.version}</version>
@@ -68,15 +86,19 @@
                         <configuration>
                             <defaultOptions>
                                 <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
+                                    <extraarg>-xjc-XhashCode</extraarg>
+                                    <extraarg>-xjc-Xequals</extraarg>
+                                    <extraarg>-xjc-XtoString</extraarg>
+                                    <extraarg>-xjc-Xbg</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/medlemskap/no/nav/virksomhet/tjenester/medlemskap/medlemskap.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/medlemskap/bindings.xml</bindingFile>
+                                    </bindingFiles>
                                     <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
                                         <extraarg>-p</extraarg>
                                         <extraarg>http://nav.no/virksomhet/tjenester/medlemskap/meldinger/v1=no.nav.gosys.medlemskap.meldinger</extraarg>
                                         <extraarg>-p</extraarg>
@@ -95,20 +117,14 @@
                 </executions>
                 <dependencies>
                     <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>${jaxb-fluent-api.version}</version>
-                    </dependency>
-                    <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
                         <version>${jaxb2-basics.version}</version>
                     </dependency>
-
                     <dependency>
-                        <groupId>no.nav.sbl.dialogarena</groupId>
-                        <artifactId>jaxb-adapters</artifactId>
-                        <version>${jaxb-adapters.version}</version>
+                        <groupId>org.apache.cxf.xjcplugins</groupId>
+                        <artifactId>cxf-xjc-boolean</artifactId>
+                        <version>${cxf.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -164,6 +180,11 @@
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
             <version>${jaxb2-basics.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>1.4-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
