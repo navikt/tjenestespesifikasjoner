@@ -11,16 +11,16 @@ public class CalendarAdapter extends XmlAdapter<String, Calendar> {
     private static final String DATE_FORMAT = "yyyy-MM-dd";
 
     @Override
-    public Calendar unmarshal(String v) throws Exception {
-        return parseDate(v);
+    public Calendar unmarshal(String dateString) throws Exception {
+        return parseDate(dateString);
     }
 
     @Override
-    public String marshal(Calendar v) throws Exception {
-        if (v == null) {
+    public String marshal(Calendar calendar) throws Exception {
+        if (calendar == null) {
             return null;
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_FORMAT);
-        return simpleDateFormat.format(v.getTime());
+        return simpleDateFormat.format(calendar.getTime());
     }
 }
