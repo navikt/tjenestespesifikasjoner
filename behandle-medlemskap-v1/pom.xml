@@ -181,7 +181,7 @@
         <dependency>
             <groupId>no.nav.sbl.dialogarena</groupId>
             <artifactId>jaxb-adapters</artifactId>
-            <version>1.4-SNAPSHOT</version>
+            <version>1.5</version>
         </dependency>
     </dependencies>
 
