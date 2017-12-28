@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="no.nav.inf" xmlns:bons2="no.nav.gosys.asbo.oppgave" xmlns:bons3="no.nav.gosys.fault" xmlns:bons4="no.nav.gosys.fault.oppgave" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSOppgave" targetNamespace="no.nav.inf">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Oppgave" xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:bons4="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSOppgave" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Oppgave">
   <wsdl:types>
-    <xsd:schema targetNamespace="no.nav.inf" xmlns:bons0="no.nav.inf" xmlns:bons2="no.nav.gosys.asbo.oppgave" xmlns:bons3="no.nav.gosys.fault" xmlns:bons4="no.nav.gosys.fault.oppgave" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="no.nav.gosys.fault.oppgave" schemaLocation="../fault/oppgave/FaultGOSYSMappeIkkeTom.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSMappeListe.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSMappe.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSFinnMappeListeRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSFeilIInput.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.oppgave" schemaLocation="../fault/oppgave/FaultGOSYSUkjentArbgiver.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.oppgave" schemaLocation="../fault/oppgave/FaultGOSYSPersonInaktiv.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSPersonIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.oppgave" schemaLocation="../fault/oppgave/FaultGOSYSIkkeEntydigSaksopprettelse.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.oppgave" schemaLocation="../fault/oppgave/FaultGOSYSOppgaveIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSOppgave.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSOppgaveIdListe.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSFinnOpppgaveListeRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSHentOppgaveListeRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSBestillOppgaveRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSOppgaveListe.xsd"/>
+    <xsd:schema targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Oppgave" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Oppgave" xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:bons4="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave" schemaLocation="../fault/oppgave/FaultGOSYSMappeIkkeTom.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSMappeListe.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSMappe.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSFinnMappeListeRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSFeilIInput.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave" schemaLocation="../fault/oppgave/FaultGOSYSUkjentArbgiver.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave" schemaLocation="../fault/oppgave/FaultGOSYSPersonInaktiv.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSPersonIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave" schemaLocation="../fault/oppgave/FaultGOSYSIkkeEntydigSaksopprettelse.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave" schemaLocation="../fault/oppgave/FaultGOSYSOppgaveIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSOppgave.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSOppgaveIdListe.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSFinnOpppgaveListeRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSHentOppgaveListeRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSBestillOppgaveRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" schemaLocation="../asbo/oppgave/ASBOGOSYSOppgaveListe.xsd"/>
       <xsd:element name="hentOppgave">
         <xsd:complexType>
           <xsd:sequence>

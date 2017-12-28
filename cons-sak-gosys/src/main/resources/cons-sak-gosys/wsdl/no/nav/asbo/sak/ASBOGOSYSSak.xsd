@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:bons1="no.nav.gosys.asbo"
-	targetNamespace="no.nav.gosys.asbo.sak">
+	xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo"
+	targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/sak">
 	<xsd:import schemaLocation="../ASBOGOSYSBruker.xsd"
-		namespace="no.nav.gosys.asbo">
+		namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo">
 	</xsd:import>
-	<xsd:import namespace="no.nav.gosys.asbo"
+	<xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo"
 		schemaLocation="../ASBOGOSYSEndringsInfo.xsd" />
 	<xsd:complexType name="ASBOGOSYSSak">
 		<xsd:sequence>

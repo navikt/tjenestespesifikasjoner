@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="no.nav.inf" xmlns:bons1="no.nav.gosys.fault" xmlns:bons2="no.nav.gosys.asbo.samhandler" xmlns:bons3="no.nav.gosys.fault.samhandler" xmlns:tns="no.nav.inf" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSSamhandler" targetNamespace="no.nav.inf">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/GOSYSSamhandler" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/samhandler" xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/samhandler" xmlns:tns="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Samhandler" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSSamhandler" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Samhandler">
     <wsdl:types>
-    <xsd:schema xmlns:bons0="no.nav.inf" xmlns:tns="no.nav.inf" targetNamespace="no.nav.inf" xmlns:bons1="no.nav.gosys.fault" xmlns:bons2="no.nav.gosys.asbo.samhandler" xmlns:bons3="no.nav.gosys.fault.samhandler" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="no.nav.gosys.fault.samhandler" schemaLocation="../fault/samhandler/FaultGOSYSOffentligIdIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.samhandler" schemaLocation="../fault/samhandler/FaultGOSYSSamhandlerIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSSamhandlerListe.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSFinnSamhandlerRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSSamhandler.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSHentSamhandlerRequest.xsd"/>
+    <xsd:schema xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Samhandler" xmlns:tns="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/GOSYSSamhandler" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Samhandler" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/samhandler" xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/samhandler" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/samhandler" schemaLocation="../fault/samhandler/FaultGOSYSOffentligIdIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/samhandler" schemaLocation="../fault/samhandler/FaultGOSYSSamhandlerIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSSamhandlerListe.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSFinnSamhandlerRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSSamhandler.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/samhandler" schemaLocation="../asbo/samhandler/ASBOGOSYSHentSamhandlerRequest.xsd"/>
       <xsd:element name="hentSamhandler">
         <xsd:complexType>
           <xsd:sequence>

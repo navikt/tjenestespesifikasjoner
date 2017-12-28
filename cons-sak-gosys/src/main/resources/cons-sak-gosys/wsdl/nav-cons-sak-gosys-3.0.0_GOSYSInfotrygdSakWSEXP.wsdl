@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="GOSYSInfotrygdSakWSEXP_GOSYSInfotrygdSakHttp_Service" targetNamespace="no.nav.inf.binding" xmlns:Port_0="no.nav.inf" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="no.nav.inf.binding">
-  <wsdl:import namespace="no.nav.inf" location="no/nav/inf/GOSYSInfotrygdSak.wsdl">
+<wsdl:definitions name="GOSYSInfotrygdSakWSEXP_GOSYSInfotrygdSakHttp_Service" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak/Binding" xmlns:Port_0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak/Binding">
+  <wsdl:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak" location="no/nav/inf/GOSYSInfotrygdSak.wsdl">
     </wsdl:import>
   <wsdl:binding name="GOSYSInfotrygdSakWSEXP_GOSYSInfotrygdSakHttpBinding" type="Port_0:GOSYSInfotrygdSak">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>

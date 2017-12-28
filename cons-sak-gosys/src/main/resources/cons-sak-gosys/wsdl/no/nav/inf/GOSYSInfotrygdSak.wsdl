@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons1="no.nav.inf" xmlns:bons2="no.nav.gosys.fault" xmlns:bons4="no.nav.gosys.asbo.infotrygdsak" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSInfotrygdSak" targetNamespace="no.nav.inf">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak" xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:bons4="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSInfotrygdSak" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak">
     <wsdl:types>
-    <xsd:schema xmlns:bons3="no.nav.gosys.fault.infotrygdsak" targetNamespace="no.nav.inf" xmlns:bons1="no.nav.inf" xmlns:bons2="no.nav.gosys.fault" xmlns:bons4="no.nav.gosys.asbo.infotrygdsak" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="no.nav.gosys.asbo.infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSInfotrygdSakListe.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSHentInfotrygdSakListeRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.infotrygdsak" schemaLocation="../fault/infotrygdsak/FaultGOSYSUgyldigEnhet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSBestillInfotrygdSakResponse.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSBestillInfotrygdSakRequest.xsd"/>
+    <xsd:schema xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/infotrygdsak" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak" xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:bons4="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSInfotrygdSakListe.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSHentInfotrygdSakListeRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/infotrygdsak" schemaLocation="../fault/infotrygdsak/FaultGOSYSUgyldigEnhet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSBestillInfotrygdSakResponse.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak" schemaLocation="../asbo/infotrygdsak/ASBOGOSYSBestillInfotrygdSakRequest.xsd"/>
       <xsd:element name="bestillInfotrygdSak">
         <xsd:complexType>
           <xsd:sequence>
