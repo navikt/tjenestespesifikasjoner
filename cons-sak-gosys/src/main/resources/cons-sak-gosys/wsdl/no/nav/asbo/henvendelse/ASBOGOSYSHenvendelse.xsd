@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:bons0="no.nav.gosys.asbo"
-	xmlns:bons2="no.nav.gosys.asbo.oppgave"
-	targetNamespace="no.nav.gosys.asbo.henvendelse">
+	xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo"
+	xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave"
+	targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/henvendelse">
 	<xsd:import schemaLocation="../ASBOGOSYSBruker.xsd"
-		namespace="no.nav.gosys.asbo">
+		namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo">
 	</xsd:import>
 	<xsd:import
-		namespace="no.nav.gosys.asbo.oppgave"
+		namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave"
 		schemaLocation="../oppgave/ASBOGOSYSOppgave.xsd" />
-	<xsd:import namespace="no.nav.gosys.asbo"
+	<xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo"
 		schemaLocation="../ASBOGOSYSEndringsInfo.xsd" />
 	<xsd:complexType name="ASBOGOSYSHenvendelse">
 		<xsd:sequence>

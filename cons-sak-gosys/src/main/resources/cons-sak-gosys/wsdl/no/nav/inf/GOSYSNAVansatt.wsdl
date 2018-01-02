@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="no.nav.inf" xmlns:bons1="no.nav.inf" xmlns:bons7="no.nav.gosys.asbo.navansatt" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSNAVansatt" targetNamespace="no.nav.inf">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVansatt" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/inf" xmlns:bons7="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navansatt" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GOSYSNAVansatt" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVansatt">
   <wsdl:types>
-    <xsd:schema xmlns:bons1="no.nav.gosys.fault.navansatt" xmlns:bons2="no.nav.gosys.fault.navorgenhet" xmlns:bons3="no.nav.gosys.fault" xmlns:bons5="no.nav.gosys.asbo.navorgenhet" xmlns:bons8="no.nav.gosys.asbo" targetNamespace="no.nav.inf" xmlns:bons0="no.nav.inf" xmlns:bons7="no.nav.gosys.asbo.navansatt" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="no.nav.gosys.asbo.navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSHentNAVAnsattFagomradeListeRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.navorgenhet" schemaLocation="../fault/navorgenhet/FaultGOSYSNAVOrgEnhetIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault.navansatt" schemaLocation="../fault/navansatt/FaultGOSYSNAVAnsattIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.navorgenhet" schemaLocation="../asbo/navorgenhet/ASBOGOSYSNAVEnhetListe.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.navorgenhet" schemaLocation="../asbo/navorgenhet/ASBOGOSYSNavEnhet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSNAVAnsattListe.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSFinnArenaNAVAnsattListeRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSNAVAnsatt.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo" schemaLocation="../asbo/ASBOGOSYSFagomradeListe.xsd"/>
+    <xsd:schema xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navansatt" xmlns:bons2="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navorgenhet" xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:bons5="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navorgenhet" xmlns:bons8="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVansatt" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVansatt" xmlns:bons7="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navansatt" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSHentNAVAnsattFagomradeListeRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navorgenhet" schemaLocation="../fault/navorgenhet/FaultGOSYSNAVOrgEnhetIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navansatt" schemaLocation="../fault/navansatt/FaultGOSYSNAVAnsattIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navorgenhet" schemaLocation="../asbo/navorgenhet/ASBOGOSYSNAVEnhetListe.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navorgenhet" schemaLocation="../asbo/navorgenhet/ASBOGOSYSNavEnhet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSNAVAnsattListe.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSFinnArenaNAVAnsattListeRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navansatt" schemaLocation="../asbo/navansatt/ASBOGOSYSNAVAnsatt.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo" schemaLocation="../asbo/ASBOGOSYSFagomradeListe.xsd"/>
             <xsd:element name="hentNAVAnsatt">
         <xsd:complexType>
           <xsd:sequence>
