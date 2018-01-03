@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/oppgave/v3/informasjon/oppgave" version="3.0" xmlns:oppgave="http://nav.no/tjeneste/virksomhet/oppgave/v3/informasjon/oppgave">
+  <xsd:complexType name="Enhet">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="id" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Ident til enheten.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="navn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Navn på enheten.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="oppgave:EnhetUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Sporing">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="opprettetInfo" type="oppgave:Sporingsdetalj">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;&lt;span style="font-size:8pt;font-family:Tahoma;"&gt;Når og av hvem som opprettet oppgaven.&lt;/span&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="endretInfo" type="oppgave:Sporingsdetalj">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;&lt;span style="font-size:8pt;font-family:Tahoma;"&gt;Når og av hvem oppgaven ble endret.&lt;/span&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="avsluttetInfo" type="oppgave:Sporingsdetalj">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Når og av hvem som avsluttet oppgaven.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="oppgave:SporingUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Status">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Kodetabell"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Prioritet">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Kodetabell"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MappeUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Kodetabell">
+    <xsd:sequence>
+      <xsd:element name="kode" type="xsd:string"/>
+      <xsd:element name="dekode" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BrukerUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OppgaveUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Henvendelsetype">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Kodetabell"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SporingUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Oppgave">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="oppgaveId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Unik id i fgsak&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="gjelder" type="oppgave:Bruker">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Kompleks type Bruker. Hvilken bruker oppgaven eventuelt er knyttet til.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="status" type="oppgave:Status"/>
+      <xsd:element minOccurs="0" name="aktivFra" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Når oppgaven er aktiv fra.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="aktivTil" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken frist som er satt for å utføre (lukke) oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken applikasjonsbruker som er ansvarlig for å utføre oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Navnet som er koblet til ansvarligId&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken enhet (id), eller gruppe innen enhet, som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligEnhetNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken enhet (navn), eller gruppe innen enhet, som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fagomrade" type="oppgave:Fagomrade">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilket fagområde oppgaven er knyttet til, samt hvilken underkategori den tilhører. ESB er ikke master for fagområdekoder, se FGSAK for en oppdatert oversikt.&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BAR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Barnetrygd&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Bidrag&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Bidrag innkreving&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BIL&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Bil&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ENF&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Enslig forsørger&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;FOR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Foreldre- og svangerskapspenger&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GRA&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Gravferdsstønad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GRU&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Grunn- og hjelpestønad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;HJE&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Hjelpemidker&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;KON&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Kontantstøtte&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Skanning&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OKO&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Økonomi&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OMS&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Omsorgspenger, Pleiepenger og opplæringspenger&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OVR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;4 - Øvrig kundesenter&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;PEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Pensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SUP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Supplerende stønad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;YRK&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Yrkesskade / Ménerstatning&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="underkategori" type="oppgave:Underkategori">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Underkategori til valgt fagområde. ESB er ikke master for fagområdekoder, se FGSAK for en oppdatert oversikt.&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;AFP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;AFP&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ALDERSPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Alderspensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BARNEPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Barnepensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;FAMILIEPLEIER&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Familiepleier&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GJENL_EKTEFELLE&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Gjenlevende ektefelle&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;KRIGSPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Krigspensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OMSORGSPOENG&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Omsorgspoeng&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;UFOREPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Uførepensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="oppgavetype" type="oppgave:Oppgavetype">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken type oppgaven er. ESB er ikke master for fagområdekoder, se FGSAK for en oppdatert oversikt.&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Generell&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;JF_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Journalføring&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SO_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Søknad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;RV_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Revurdering&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GE_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Generell&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SR_MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Retur original&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SF_MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Feilføring person&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SD_MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Diverse skanning&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;IN_BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Innkreving&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;RE_BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Regnskap&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;AR_BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Arkiv&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;DK_OVR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;4 - Div. kundesenter&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ATT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Attestering&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;AUT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Automatisk kontroll&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;JFR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Journalføring&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;KRA&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Krav&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;MAN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Manuell behandling&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OKO_GEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Generell&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="beskrivelse" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Beskrivelse tilhørende oppgavetype-koden, se dokumentasjon for oppgaveType.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="oppfolging" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken oppfølging som er gjort på oppgaven i form av et beskrivelsesfelt&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="prioritet" type="oppgave:Prioritet">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;ESB er ikke master for fagområdekoder, se FGSAK for en oppdatert oversikt.&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;HOY&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Høy&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;LAV&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Lav&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;HOY_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Høy&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;LAV_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Lav&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="versjon" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Felt for optimistisk låsing. Når en oppgave lagres må versjon være likt det som ligger lagret i databasen. For hver gang en oppgave er lagret inkrementeres versjon (+1).&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="lest" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Om oppgaven er lest eller ikke. Ved opprettelse, skal vi få false fra skjermbildet.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="saksnummer" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Id til en Sak&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kravId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;En sak kan ha mange kravId'er koblet til seg,men det er ingen kobling mellom disse i GSAK.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="dokumentId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;ID til et dokument&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="soknadsId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;SøknadsId&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="skannetDato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Datoen dokumentet ble skannet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="mottattDato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Datoen dokumentet ble mottatt&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="normDato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Dato som angir normert behandlingstid, kan ikke endres.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="henvendelseId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Id på Hendelse knyttet til Oppgave&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sporing" type="oppgave:Sporing">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Kompleks type Sporing, samling av sporingsinformasjon tilhørende oppgaven.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="mappe" type="oppgave:Mappe">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Kompleks type Mappe, som kan brukes for gruppering/filtrering av oppgaver.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="henvendelsetype" type="oppgave:Henvendelsetype">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Kodeverk for henvendelsetype&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="revurderingstype" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken revurderingstype oppgaven er&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="oppgave:OppgaveUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Oppgavetype">
+    <xsd:annotation>
+      <xsd:documentation>&lt;p&gt;&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Dekode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Generell&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;JF_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Journalføring&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SO_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Søknad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;RV_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Revurdering&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GE_BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Generell&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SR_MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Retur original&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SF_MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Feilføring person&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SD_MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Diverse skanning&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;IN_BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Innkreving&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;RE_BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Regnskap&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;AR_BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Arkiv&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;DK_OVR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;4 - Div. kundesenter&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ATT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Attestering&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;AUT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Automatisk kontroll&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;JFR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Journalføring&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;KRA&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Krav&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;MAN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Manuell behandling&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OKO_GEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Generell&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Kodetabell">
+        <xsd:sequence>
+          <xsd:element name="attribute1" type="xsd:anyType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Bruker">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="brukerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Unik id til brukeren, kan være fnr, orgnr, etc.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="brukertypeKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvilken type bruker.&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;PERSON&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Person&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ORGANISASJON&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Organisasjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SAMHANDLER&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Samhandler&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;APPBRUKER&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Applikasjonsbruker&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="oppgave:BrukerUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SporingsdetaljUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Mappe">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="fagomradeKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Fagomradet Mappen hører til.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="mappeId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Unik id til Mappen&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="mappeNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Navnet på Mappen&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="enhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Nummer på enheten som Mappen hører til&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="versjon" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Felt for optimistisk låsing. Når en mappe lagres må versjon være likt det som ligger lagret i databasen. For hver gang en mappe er lagret inkrementeres versjon&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="oppgave:MappeUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Underkategori">
+    <xsd:annotation>
+      <xsd:documentation>&lt;p&gt;&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;AFP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;AFP&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ALDERSPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Alderspensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BARNEPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Barnepensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;FAMILIEPLEIER&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Familiepleier&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GJENL_EKTEFELLE&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Gjenlevende ektefelle&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;KRIGSPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Krigspensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OMSORGSPOENG&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Omsorgspoeng&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;UFOREPEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Uførepensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BLANK&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Oppgaver uten underkategori satt (kun input til tjenester)&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Kodetabell"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Fagomrade">
+    <xsd:annotation>
+      <xsd:documentation>&lt;p&gt;&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Dekode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BAR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Barnetrygd&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BID&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;1 - Bidrag&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BII&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;2 - Bidrag innkreving&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BIL&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Bil&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ENF&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Enslig forsørger&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;FOR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Foreldre- og svangerskapspenger&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GRA&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Gravferdsstønad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;GRU&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Grunn- og hjelpestønad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;HJE&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Hjelpemidker&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;KON&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Kontantstøtte&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;MOT&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;3 - Skanning&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OKO&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Økonomi&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OMS&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Omsorgspenger, Pleiepenger og opplæringspenger&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;OVR&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;4 - Øvrig kundesenter&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;PEN&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Pensjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SUP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Supplerende stønad&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;YRK&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Yrkesskade / Ménerstatning&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Kodetabell"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EnhetUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sporingsdetalj">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dato" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;&lt;span style="font-size:8pt;font-family:Tahoma;"&gt;Tidspunktet dataene ble lagt inn.&lt;/span&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="enhet" type="oppgave:Enhet">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Enhet som registrerte inn dataene.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ident" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;&lt;span style="font-size:8pt;font-family:Tahoma;"&gt;Saksbehandler som har registrert inn dataene.&lt;/span&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kildeId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;&lt;span style="font-size:8pt;font-family:Tahoma;"&gt;Kilden til dataene (system) – identifiserer systemet dataene kom fra.&lt;/span&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="oppgave:SporingsdetaljUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Utvidelse">
+    <xsd:sequence>
+      <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##any" processContents="lax"/>
+  </xsd:complexType>
+</xsd:schema>

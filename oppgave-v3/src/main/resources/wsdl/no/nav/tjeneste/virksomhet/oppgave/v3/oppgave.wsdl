@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="oppgave" targetNamespace="http://nav.no/tjeneste/virksomhet/oppgave/v3" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/oppgave/v3" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/oppgave/v3" xmlns:feil="http://nav.no/tjeneste/virksomhet/oppgave/v3/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/oppgave/v3/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/oppgave/v3/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/oppgave/v3/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="hentOppgave">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentOppgaveRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentOppgaveResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentOppgaveResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentOppgaveoppgaveIkkeFunnet" type="feil:OppgaveIkkeFunnet"/>
+      <xsd:element name="finnOppgaveListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnOppgaveListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnOppgaveListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnOppgaveListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnFerdigstiltOppgaveListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnFerdigstiltOppgaveListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnFerdigstiltOppgaveListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnFerdigstiltOppgaveListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnFeilregistrertOppgaveListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnFeilregistrertOppgaveListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnFeilregistrertOppgaveListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnFeilregistrertOppgaveListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnMappeListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnMappeListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnMappeListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnMappeListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnMappeListeResponse">
+    <wsdl:part name="parameters" element="tns:finnMappeListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnFeilregistrertOppgaveListeResponse">
+    <wsdl:part name="parameters" element="tns:finnFeilregistrertOppgaveListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOppgaveListeResponse">
+    <wsdl:part name="parameters" element="tns:finnOppgaveListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnFeilregistrertOppgaveListeRequest">
+    <wsdl:part name="parameters" element="tns:finnFeilregistrertOppgaveListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOppgaveListeRequest">
+    <wsdl:part name="parameters" element="tns:finnOppgaveListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnFerdigstiltOppgaveListeResponse">
+    <wsdl:part name="parameters" element="tns:finnFerdigstiltOppgaveListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnMappeListeRequest">
+    <wsdl:part name="parameters" element="tns:finnMappeListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOppgaveResponse">
+    <wsdl:part name="parameters" element="tns:hentOppgaveResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOppgave_oppgaveIkkeFunnet">
+    <wsdl:part name="oppgaveIkkeFunnet" element="tns:hentOppgaveoppgaveIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnFerdigstiltOppgaveListeRequest">
+    <wsdl:part name="parameters" element="tns:finnFerdigstiltOppgaveListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOppgaveRequest">
+    <wsdl:part name="parameters" element="tns:hentOppgave">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Oppgave_v3">
+    <wsdl:operation name="hentOppgave">
+      <wsdl:input message="tns:hentOppgaveRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentOppgaveResponse">
+    </wsdl:output>
+      <wsdl:fault name="oppgaveIkkeFunnet" message="tns:hentOppgave_oppgaveIkkeFunnet">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="finnOppgaveListe">
+<wsdl:documentation>&lt;p&gt;Tjenesten skal tilby å hente en liste med oppgaver basert på noen begrensingskriterier. Benytter tjenesten finnOppgaver som er en del av Oppgave i FGSAK.&lt;/p&gt;&lt;h4&gt;Søkekriterier&lt;/h4&gt;&lt;p&gt;Man kan hente oppgaver ved å sette forskjellige nøkkelfelter i input. Søket kan videre begrenses med å sette søkefiltre.&lt;/p&gt;&lt;p&gt;Det er påkrevd at man setter minst ett av nøkkelfeltene ved kall av tjenesten, men man bør prøve å begrense søket ved hjelp av filterfeltene for å få et mest mulig målrettet søk mot de oppgavene man vil hente. Et mer begrenset søk er også gunstig for ytelsen, da et ubegrenset søk vil kreve prosessering av potensielt svært store mengder data i baksystemet.&lt;/p&gt;&lt;p&gt;Alle feltene kan kombineres på ulike måter med unntak av:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;HVIS ufordelte er lik true SÅ kan ikke ansvarligId være satt, og omvendt&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;HVIS erUtenMappe er lik true, SÅ kan ikke mappeListe inneholde noen verdier, og omvendt&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input message="tns:finnOppgaveListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnOppgaveListeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnFerdigstiltOppgaveListe">
+<wsdl:documentation>&lt;p&gt;Tjenesten skal tilby å hente en liste med ferdigstilte oppgaver basert på noen begrensingskriterier. Benytter tjenesten finnFerdigstilteOppgaver som leveres av FGSAK.&lt;/p&gt;&lt;h4&gt;Søkekriterier:&lt;/h4&gt;&lt;p&gt;Man kan hente ferdigstilte oppgaver ved å sette forskjellige nøkkelfelter i input. Søket kan videre begrenses med å sette søkefiltre (filterfelter).&lt;/p&gt;&lt;p&gt;Det er påkrevd at man setter minst ett av nøkkelfeltene ved kall av tjenesten, men man bør prøve å begrense søket ved hjelp av filterfeltene for å få et mest mulig målrettet søk mot de oppgavene man vil hente. Et mer begrenset søk er også gunstig for ytelsen, da et ubegrenset søk vil kreve prosessering av potensielt svært store mengder data i baksystemet.&lt;/p&gt;&lt;p&gt;Alle feltene kan kombineres på ulike måter med unntak av:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;HVIS ufordelte er lik true, SÅ kan ikke ansvarligId være satt, og omvendt&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;HVIS erUtenMappe er lik true, SÅ kan ikke mappeListe innholde noen verdier, og omvendt.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Enten sok.brukerId eller (filter.OpprettetFom og filter.OpprettetTom) må ha verdi&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input message="tns:finnFerdigstiltOppgaveListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnFerdigstiltOppgaveListeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnFeilregistrertOppgaveListe">
+<wsdl:documentation>&lt;p&gt;Tjenesten skal tilby å hente en liste med ferdigstilte oppgaver basert på noen begrensingskriterier. Benytter tjenesten finnFeilregistrerteOppgaver som leveres av FGSAK.&lt;/p&gt;&lt;h4&gt;Søkekriterier:&lt;/h4&gt;&lt;p&gt;Man kan hente ferdigstilte oppgaver ved å sette forskjellige nøkkelfelter i input. Søket kan videre begrenses med å sette søkefiltre (filterfelter).&lt;/p&gt;&lt;p&gt;Det er påkrevd at man setter minst ett av nøkkelfeltene ved kall av tjenesten, men man bør prøve å begrense søket ved hjelp av filterfeltene for å få et mest mulig målrettet søk mot de oppgavene man vil hente. Et mer begrenset søk er også gunstig for ytelsen, da et ubegrenset søk vil kreve prosessering av potensielt svært store mengder data i baksystemet.&lt;/p&gt;&lt;p&gt;Alle feltene kan kombineres på ulike måter med unntak av:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;HVIS ufordelte er lik true, SÅ kan ikke ansvarligId være satt, og omvendt&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;HVIS erUtenMappe er lik true, SÅ kan ikke mappeListe innholde noen verdier, og omvendt.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Enten sok.brukerId eller (filter.OpprettetFom og filter.OpprettetTom) må ha verdi&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input message="tns:finnFeilregistrertOppgaveListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnFeilregistrertOppgaveListeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnMappeListe">
+<wsdl:documentation>&lt;p&gt;Tjenesten finnMappeListe leveres av FGSAK.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;EnhetId eller fagomradeKodeListe må være satt&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input message="tns:finnMappeListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnMappeListeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
