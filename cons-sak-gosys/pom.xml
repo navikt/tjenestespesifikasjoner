@@ -65,6 +65,7 @@
                                     <extraarg>-xjc-Xequals</extraarg>
                                     <extraarg>-xjc-XtoString</extraarg>
                                     <extraarg>-xjc-Xbg</extraarg>
+                                    <extraarg>-xjc-npa</extraarg>
                                     <extraarg>-p</extraarg>
                                     <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo=no.nav.gosys.asbo</extraarg>
                                     <extraarg>-p</extraarg>
