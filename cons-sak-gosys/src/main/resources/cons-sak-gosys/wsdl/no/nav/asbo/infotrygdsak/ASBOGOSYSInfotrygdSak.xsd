@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="no.nav.gosys.asbo.infotrygdsak"
-	xmlns:bons0="no.nav.gosys.asbo">
+	targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak"
+	xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo">
 	<xsd:import schemaLocation="../ASBOGOSYSEndringsInfo.xsd"
-		namespace="no.nav.gosys.asbo">
+		namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo">
 	</xsd:import>
 	<xsd:complexType name="ASBOGOSYSInfotrygdSak">
 		<xsd:sequence>

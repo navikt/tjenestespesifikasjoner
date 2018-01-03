@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons1="no.nav.gosys.asbo.person" targetNamespace="no.nav.gosys.asbo.person">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person">
     <xsd:include schemaLocation="ASBOGOSYSFodselsdatosokRequest.xsd"/>
     <xsd:include schemaLocation="ASBOGOSYSNavnesokRequest.xsd"/>
     <xsd:include schemaLocation="ASBOGOSYSAdressesokRequest.xsd"/>
