@@ -66,7 +66,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/wsdl/no/nav/tjeneste/virksomhet/oppgave/v3/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/oppgave/wsdl/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/oppgave/bindings.xml</bindingFile>
                                     </bindingFiles>
