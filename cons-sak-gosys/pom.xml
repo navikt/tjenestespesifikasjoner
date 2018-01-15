@@ -50,7 +50,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>3.1.4</version>
+                <version>3.1.14</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java-person</id>
@@ -66,6 +66,8 @@
                                     <extraarg>-xjc-XtoString</extraarg>
                                     <extraarg>-xjc-Xbg</extraarg>
                                     <extraarg>-xjc-npa</extraarg>
+                                    <extraarg>-xjc-Xsetters</extraarg>
+                                    <extraarg>-xjc-Xsetters-mode=direct</extraarg>
                                     <extraarg>-p</extraarg>
                                     <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo=no.nav.gosys.asbo</extraarg>
                                     <extraarg>-p</extraarg>
@@ -231,7 +233,7 @@
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
-                        <version>0.6.4</version>
+                        <version>0.9.5</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -286,7 +288,7 @@
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
-            <version>0.6.5</version>
+            <version>0.9.5</version>
         </dependency>
     </dependencies>
 
