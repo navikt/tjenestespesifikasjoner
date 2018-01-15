@@ -5,7 +5,7 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-    <jaxb:globalBindings collectionType="indexed">
+    <jaxb:globalBindings>
         <jaxb:javaType
                 name="java.util.Calendar"
                 xmlType="xs:dateTime"
