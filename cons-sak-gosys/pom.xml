@@ -50,7 +50,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>3.1.14</version>
+                <version>2.7.0</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java-person</id>
@@ -180,19 +180,6 @@
                                     </extraargs>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSSakWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/sak=no.nav.gosys.asbo.sak</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/sak=no.nav.gosys.fault.sak</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Sak/Binding=no.nav.inf.binding</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Sak=no.nav.inf</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                                <wsdlOption>
                                     <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSSamhandlerWSEXP.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-p</extraarg>
@@ -233,7 +220,7 @@
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
-                        <version>0.9.5</version>
+                        <version>0.6.5</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -288,7 +275,12 @@
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
-            <version>0.9.5</version>
+            <version>0.6.5</version>
+        </dependency>
+        <dependency>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>1.5</version>
         </dependency>
     </dependencies>
 
