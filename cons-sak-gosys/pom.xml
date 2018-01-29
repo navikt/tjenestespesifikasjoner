@@ -115,19 +115,6 @@
                                     </extraargs>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSInfotrygdVedtakWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdvedtak=no.nav.gosys.asbo.infotrygdvedtak</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/infotrygdvedtak=no.nav.gosys.fault.infotrygdvedtak</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdVedtak/Binding=no.nav.inf.binding</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdVedtak=no.nav.inf</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                                <wsdlOption>
                                     <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSNAVAnsattWSEXP.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-p</extraarg>

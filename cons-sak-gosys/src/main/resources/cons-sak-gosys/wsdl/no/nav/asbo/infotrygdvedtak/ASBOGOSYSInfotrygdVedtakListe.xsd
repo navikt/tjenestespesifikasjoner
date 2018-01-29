@@ -1,12 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdvedtak"
-	targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdvedtak">
-	<xsd:include schemaLocation="ASBOGOSYSInfotrygdVedtak.xsd" />
-	<xsd:complexType name="ASBOGOSYSInfotrygdVedtakListe">
-		<xsd:sequence>			<xsd:element maxOccurs="unbounded" minOccurs="0"
-				name="vedtakListe" type="bons0:ASBOGOSYSInfotrygdVedtak">
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-</xsd:schema>
