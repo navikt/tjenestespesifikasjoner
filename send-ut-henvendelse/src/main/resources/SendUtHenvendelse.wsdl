@@ -21,6 +21,9 @@
             <xs:element name="avbrytHenvendelseResponse" type="meldinger:avbrytHenvendelseResponse"/>
             <xs:element name="ferdigstillHenvendelse" type="meldinger:ferdigstillHenvendelseRequest"/>
             <xs:element name="ferdigstillHenvendelseResponse" type="meldinger:ferdigstillHenvendelseResponse"/>
+            <xs:element name="slaSammenHenvendelser" type="meldinger:slaSammenHenvendelserRequest"/>
+            <xs:element name="slaSammenHenvendelserResponse" type="meldinger:slaSammenHenvendelserResponse"/>
+            <xs:element name="behandlingskjedeId" type="xs:string"/>
             <xs:element name="ping" type="meldinger:pingRequest"/>
             <xs:element name="pingResponse" type="meldinger:pingResponse"/>
         </xs:schema>
@@ -58,6 +61,18 @@
         <wsdl:part element="tns:ferdigstillHenvendelseResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="slaSammenHenvendelserRequest">
+        <wsdl:part element="tns:slaSammenHenvendelser" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="slaSammenHenvendelserResponse">
+        <wsdl:part element="tns:slaSammenHenvendelserResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="WSBehandlingskjedeErAlleredeBesvart">
+        <wsdl:part element="tns:behandlingskjedeId" name="behandlingskjedeId">
+        </wsdl:part>
+    </wsdl:message>
     <wsdl:message name="pingRequest">
         <wsdl:part element="tns:ping" name="parameters">
         </wsdl:part>
@@ -91,6 +106,13 @@
             </wsdl:input>
             <wsdl:output message="tns:ferdigstillHenvendelseResponse" name="ferdigstillHenvendelseResponse">
             </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="slaSammenHenvendelser">
+            <wsdl:input message="tns:slaSammenHenvendelserRequest" name="slaSammenHenvendelserRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:slaSammenHenvendelserResponse" name="slaSammenHenvendelserResponse">
+            </wsdl:output>
+            <wsdl:fault message="tns:WSBehandlingskjedeErAlleredeBesvart" name="slaSammenHenvendelserFault"/>
         </wsdl:operation>
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest">
@@ -137,6 +159,18 @@
             <wsdl:output name="ferdigstillHenvendelseResponse">
                 <soap:body use="literal"/>
             </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="slaSammenHenvendelser">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="slaSammenHenvendelserRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="slaSammenHenvendelserResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="slaSammenHenvendelserFault">
+                <soap:body use="literal"/>
+            </wsdl:fault>
         </wsdl:operation>
         <wsdl:operation name="ping">
             <soap:operation soapAction="" style="document"/>
