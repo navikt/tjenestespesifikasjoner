@@ -50,7 +50,6 @@
     <xs:complexType name="slaSammenHenvendelserRequest">
         <xs:sequence>
             <xs:element name="behandlingsIder" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
-            <xs:any processContents="lax"/>
         </xs:sequence>
     </xs:complexType>
 
