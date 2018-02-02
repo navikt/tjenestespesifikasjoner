@@ -14,7 +14,7 @@
 
     <properties>
         <schema.location>${project.build.directory}/classes/tjenestespesifikasjon/</schema.location>
-        <meldingsdefinisjon.version>1.0.28.5</meldingsdefinisjon.version>
+        <meldingsdefinisjon.version>1.0.61.11</meldingsdefinisjon.version>
     </properties>
 
     <dependencies>
@@ -45,7 +45,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>no.nav.sbl.dialogarena</groupId>
-                                    <artifactId>soknadsosialhjelp-xsd</artifactId>
+                                    <artifactId>soknadsosialhjelp-filformat</artifactId>
                                     <version>${meldingsdefinisjon.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${schema.location}/</outputDirectory>
