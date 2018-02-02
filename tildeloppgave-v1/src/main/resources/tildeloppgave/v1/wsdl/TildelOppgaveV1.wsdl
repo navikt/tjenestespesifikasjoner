@@ -30,6 +30,7 @@
                     <xs:element name="fagomrade" type="xs:string"/>
                     <xs:element name="underkategori" minOccurs="0" type="xs:string"/>
                     <xs:element name="oppgavetype" type="xs:string"/>
+                    <xs:element name="ansvarligEnhetId" minOccurs="0" type="xs:string"/>
                     <xs:element name="tildelesSaksbehandlerId" type="xs:string"/>
                     <xs:element name="tildeltAvEnhetId" type="xs:int"/>
                     <xs:element name="ikkeTidligereTildeltSaksbehandlerId" minOccurs="0" type="xs:string"/>
