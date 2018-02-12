@@ -89,19 +89,6 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSDokBrevWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/dokbrev=no.nav.gosys.asbo.dokbrev</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/dokbrev=no.nav.gosys.fault.dokbrev</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/DokBrev/Binding=no.nav.inf.binding</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/DokBrev=no.nav.inf</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                                <wsdlOption>
                                     <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSInfotrygdSakWSEXP.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-p</extraarg>
