@@ -10,19 +10,16 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>utenrikstjenesten-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
         <cxf.version>3.1.4</cxf.version>
-        <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
         <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
-        <jaxb-adapters.version>1.1</jaxb-adapters.version>
     </properties>
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -66,16 +63,18 @@
                         <configuration>
                             <defaultOptions>
                                 <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
+                                    <extraarg>-xjc-XhashCode</extraarg>
+                                    <extraarg>-xjc-Xequals</extraarg>
+                                    <extraarg>-xjc-XtoString</extraarg>
+                                    <extraarg>-xjc-Xbg</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/eessi/wsdl/DsRi.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/eessi/bindings.xml</bindingFile>
+                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -83,20 +82,13 @@
                 </executions>
                 <dependencies>
                     <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>${jaxb-fluent-api.version}</version>
-                    </dependency>
-                    <dependency>
+                        <groupId>org.apache.cxf.xjcplugins</groupId>
+                        <artifactId>cxf-xjc-boolean</artifactId>
+                        <version>2.7.0</version>
+                    </dependency>                    <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
                         <version>${jaxb2-basics.version}</version>
-                    </dependency>
-
-                    <dependency>
-                        <groupId>no.nav.sbl.dialogarena</groupId>
-                        <artifactId>jaxb-adapters</artifactId>
-                        <version>${jaxb-adapters.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

@@ -47,6 +47,22 @@
 
     <xs:complexType name="ferdigstillHenvendelseResponse"/>
 
+    <xs:complexType name="slaSammenHenvendelserRequest">
+        <xs:sequence>
+            <xs:element name="behandlingsIder" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="slaSammenHenvendelserResponse">
+        <xs:sequence>
+            <xs:element name="behandlingskjedeId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="behandlingskjedeId" type="xs:string"/>
+
+
     <xs:complexType name="pingRequest"/>
 
     <xs:complexType name="pingResponse"/>

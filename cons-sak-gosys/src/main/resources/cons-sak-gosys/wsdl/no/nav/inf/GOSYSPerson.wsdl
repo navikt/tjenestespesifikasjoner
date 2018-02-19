@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="no.nav.inf" xmlns:bons1="no.nav.inf" xmlns:bons3="no.nav.gosys.asbo.person" xmlns:bons4="no.nav.gosys.fault" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PSAKPerson" targetNamespace="no.nav.inf">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Person" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/inf" xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" xmlns:bons4="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PSAKPerson" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Person">
   <wsdl:types>
-    <xsd:schema xmlns:bons1="no.nav.gosys.fault.person" targetNamespace="no.nav.inf" xmlns:bons0="no.nav.inf" xmlns:bons3="no.nav.gosys.asbo.person" xmlns:bons4="no.nav.gosys.fault" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="no.nav.gosys.fault.person" schemaLocation="../fault/person/FaultGOSYSBrukerprofilIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
-            <xsd:import namespace="no.nav.gosys.fault" schemaLocation="../fault/FaultGOSYSPersonIkkeFunnet.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSSlettAdresseRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSHentHistorikkRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSHentSamboerforholdRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSLagreTelefonummerRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSTomRespons.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSLagreAdresseRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSHentPersonRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSPerson.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSHentFamilierelasjonerRequest.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSFinnPersonResponse.xsd"/>
-            <xsd:import namespace="no.nav.gosys.asbo.person" schemaLocation="../asbo/person/ASBOGOSYSFinnPersonRequest.xsd"/>
+    <xsd:schema xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/person" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Person" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Person" xmlns:bons3="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" xmlns:bons4="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault/person" schemaLocation="../fault/person/FaultGOSYSBrukerprofilIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSGenerisk.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/fault" schemaLocation="../fault/FaultGOSYSPersonIkkeFunnet.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSSlettAdresseRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSHentHistorikkRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSHentSamboerforholdRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSLagreTelefonummerRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSTomRespons.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSLagreAdresseRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSHentPersonRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSPerson.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSHentFamilierelasjonerRequest.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSFinnPersonResponse.xsd"/>
+            <xsd:import namespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" schemaLocation="../asbo/person/ASBOGOSYSFinnPersonRequest.xsd"/>
             <xsd:element name="hentPerson">
         <xsd:complexType>
           <xsd:sequence>

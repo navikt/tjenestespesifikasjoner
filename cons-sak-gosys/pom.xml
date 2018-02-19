@@ -10,7 +10,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>cons-sak-gosys-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.6-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -50,146 +50,8 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>3.1.4</version>
+                <version>2.7.0</version>
                 <executions>
-                    <execution>
-                        <id>wsdl-to-java-dokbrev</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSDokBrevWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-infotrygdsak</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSInfotrygdSakWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-infotrygdvedtak</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSInfotrygdVedtakWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-navansatt</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSNAVAnsattWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-orgenhet</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSNAVOrgEnhetWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-oppgave</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSOppgaveWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>wsdl-to-java-person</id>
                         <phase>generate-sources</phase>
@@ -199,107 +61,140 @@
                         <configuration>
                             <defaultOptions>
                                 <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
+                                    <extraarg>-xjc-XhashCode</extraarg>
+                                    <extraarg>-xjc-Xequals</extraarg>
+                                    <extraarg>-xjc-XtoString</extraarg>
+                                    <extraarg>-xjc-Xbg</extraarg>
+                                    <extraarg>-xjc-npa</extraarg>
+                                    <extraarg>-xjc-Xsetters</extraarg>
+                                    <extraarg>-xjc-Xsetters-mode=direct</extraarg>
+                                    <extraarg>-p</extraarg>
+                                    <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo=no.nav.gosys.asbo</extraarg>
+                                    <extraarg>-p</extraarg>
+                                    <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault=no.nav.gosys.fault</extraarg>
+                                    <extraarg>-p</extraarg>
+                                    <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Binding=no.nav.inf.binding</extraarg>
+                                    <extraarg>-p</extraarg>
+                                    <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf=no.nav.inf</extraarg>
+                                    <extraarg>-p</extraarg>
+                                    <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/henvendelse=no.nav.gosys.asbo.henvendelse</extraarg>
+                                    <extraarg>-p</extraarg>
+                                    <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navorgenhet=no.nav.gosys.asbo.navorgenhet</extraarg>
+                                    <extraarg>-p</extraarg>
+                                    <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navorgenhet=no.nav.gosys.fault.navorgenhet</extraarg>
                                 </extraargs>
+                                <bindingFiles>
+                                    <bindingFile>${wsdl.directory}/cons-sak-gosys/bindings.xml</bindingFile>
+                                </bindingFiles>
                             </defaultOptions>
                             <wsdlOptions>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSInfotrygdSakWSEXP.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/infotrygdsak=no.nav.gosys.asbo.infotrygdsak</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/infotrygdsak=no.nav.gosys.fault.infotrygdsak</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak/Binding=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/InfotrygdSak=no.nav.inf</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSNAVAnsattWSEXP.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navansatt=no.nav.gosys.asbo.navansatt</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navansatt=no.nav.gosys.fault.navansatt</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVansatt/Binding=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVansatt=no.nav.inf</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSNAVOrgEnhetWSEXP.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navorgenhet=no.nav.gosys.asbo.navorgenhet</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navorgenhet=no.nav.gosys.fault.navorgenhet</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVOrgEnhet/Binding=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVOrgEnhet=no.nav.inf</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSOppgaveWSEXP.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave=no.nav.gosys.asbo.oppgave</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/oppgave=no.nav.gosys.fault.oppgave</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Oppgave/Binding=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Oppgave=no.nav.inf</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSPersonWSEXP.wsdl</wsdl>
                                     <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person=no.nav.gosys.asbo.person</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/person=no.nav.gosys.fault.person</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Person/Binding=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Person=no.nav.inf</extraarg>
                                     </extraargs>
                                 </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-sak</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSSakWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-samhandler</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSSamhandlerWSEXP.wsdl</wsdl>
                                     <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/samhandler=no.nav.gosys.asbo.samhandler</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/samhandler=no.nav.gosys.fault.samhandler</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Samhandler/Binding2=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Samhandler/Binding=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Samhandler=no.nav.inf</extraarg>
                                     </extraargs>
                                 </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>wsdl-to-java-utbetaling</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                        <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSUtbetalingWSEXP.wsdl</wsdl>
                                     <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/utbetaling=no.nav.gosys.asbo.utbetaling</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/utbetaling=no.nav.gosys.fault.utbetaling</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Utbetaling/Binding=no.nav.inf.binding</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/Utbetaling=no.nav.inf</extraarg>
                                     </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
                     </execution>
-
                 </executions>
                 <dependencies>
                     <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>2.1.8</version>
+                        <groupId>org.apache.cxf.xjcplugins</groupId>
+                        <artifactId>cxf-xjc-boolean</artifactId>
+                        <version>2.7.0</version>
                     </dependency>
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
-                        <version>0.6.4</version>
-                    </dependency>
-
-                    <dependency>
-                        <groupId>no.nav.sbl.dialogarena</groupId>
-                        <artifactId>jaxb-adapters</artifactId>
-                        <version>1.1</version>
+                        <version>0.6.5</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -355,6 +250,11 @@
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
             <version>0.6.5</version>
+        </dependency>
+        <dependency>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>1.5</version>
         </dependency>
     </dependencies>
 

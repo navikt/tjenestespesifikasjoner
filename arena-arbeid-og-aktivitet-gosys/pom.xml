@@ -9,7 +9,7 @@
 
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>arena-arbeid-og-aktivitet-gosys</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.7-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
@@ -61,7 +61,7 @@
                         <configuration>
                             <resources>
                                 <resource>
-                                    <directory>src/main/wsdl</directory>
+                                    <directory>src/main/resources</directory>
                                 </resource>
                             </resources>
                             <outputDirectory>${wsdl.directory}</outputDirectory>
@@ -83,15 +83,18 @@
                         <configuration>
                             <defaultOptions>
                                 <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
                                     <extraarg>-xjc-XhashCode</extraarg>
                                     <extraarg>-xjc-Xequals</extraarg>
                                     <extraarg>-xjc-XtoString</extraarg>
+                                    <extraarg>-xjc-Xbg</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
                                   <wsdl>${wsdl.directory}/arbeid/nav-tjeneste-arbeidOgAktivitet_ArbeidOgAktivitetWSEXP.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${wsdl.directory}/arbeid/bindings.xml</bindingFile>
+                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -99,14 +102,14 @@
                 </executions>
                 <dependencies>
                     <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>2.1.8</version>
-                    </dependency>
-                    <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
                         <version>0.6.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.cxf.xjcplugins</groupId>
+                        <artifactId>cxf-xjc-boolean</artifactId>
+                        <version>2.7.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -144,6 +147,11 @@
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
 			<version>0.6.4</version>
+        </dependency>
+        <dependency>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>1.5</version>
         </dependency>
     </dependencies>
 

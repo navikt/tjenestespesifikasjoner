@@ -4,7 +4,7 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-  <jaxb:bindings schemaLocation="../tjenestespesifikasjon/no/nav/tjeneste/virksomhet/oppgave/v3/informasjon/oppgave/oppgave.xsd" node="/xs:schema" >
+  <jaxb:bindings schemaLocation="../oppgave/wsdl/informasjon/oppgave/oppgave.xsd" node="/xs:schema" >
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
         <jaxb:typeName prefix="WS"/>
@@ -13,7 +13,7 @@
     </jaxb:schemaBindings>
   </jaxb:bindings>
 
-  <jaxb:bindings schemaLocation="../tjenestespesifikasjon/no/nav/tjeneste/virksomhet/oppgave/v3/feil/feil.xsd" node="/xs:schema">
+  <jaxb:bindings schemaLocation="../oppgave/wsdl/feil/feil.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
         <jaxb:typeName prefix="WS"/>
@@ -22,7 +22,7 @@
     </jaxb:schemaBindings>
   </jaxb:bindings>
 
-  <jaxb:bindings schemaLocation="../tjenestespesifikasjon/no/nav/tjeneste/virksomhet/oppgave/v3/meldinger/meldinger.xsd" node="/xs:schema">
+  <jaxb:bindings schemaLocation="../oppgave/wsdl/meldinger/meldinger.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
         <jaxb:typeName prefix="WS"/>
