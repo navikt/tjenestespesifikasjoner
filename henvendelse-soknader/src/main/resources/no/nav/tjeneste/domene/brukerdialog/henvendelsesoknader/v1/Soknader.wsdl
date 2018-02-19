@@ -19,6 +19,14 @@
 				</xs:complexType>
 			</xs:element>
 
+			<xs:element name="hentPaabegynteSoknaderListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="fodselsnummer" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
 			<xs:element name="hentSoknadListeResponse">
 				<xs:complexType>
 					<xs:sequence>
@@ -57,6 +65,10 @@
 			<wsdl:input message="tns:hentSoknadListeRequest" name="hentSoknadListeRequest" />
 			<wsdl:output message="tns:hentSoknadListeResponse" name="hentSoknadListeResponse" />
 		</wsdl:operation>
+		<wsdl:operation name="hentPaabegynteSoknaderListe">
+			<wsdl:input message="tns:hentSoknadListeRequest" name="hentSoknadListeRequest" />
+			<wsdl:output message="tns:hentSoknadListeResponse" name="hentSoknadListeResponse" />
+		</wsdl:operation>
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest" />
             <wsdl:output message="tns:pingResponse" name="pingResponse" />
@@ -66,6 +78,15 @@
 	<wsdl:binding name="HenvendelseSoknaderBinding" type="tns:HenvendelseSoknaderPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="hentSoknadListe">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="hentSoknadListeRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="hentSoknadListeResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="hentPaabegynteSoknaderListe">
 			<soap:operation soapAction="" style="document" />
 			<wsdl:input name="hentSoknadListeRequest">
 				<soap:body use="literal" />
