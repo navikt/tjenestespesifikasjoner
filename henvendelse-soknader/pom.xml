@@ -9,7 +9,7 @@
 	
 	<groupId>no.nav.sbl.dialogarena</groupId>
 	<artifactId>henvendelse-soknader-tjenestespesifikasjon</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -108,7 +108,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>henvendelse-soknader-tjenestespesifikasjon-1.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
