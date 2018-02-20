@@ -35,6 +35,14 @@
 				</xs:complexType>
 			</xs:element>
 
+			<xs:element name="hentPaabegynteSoknaderListeResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="soknad" type="informasjon:soknad" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
 			<xs:element name="ping">
 				<xs:complexType />
 			</xs:element>
@@ -53,6 +61,13 @@
 		<wsdl:part element="meldinger:hentSoknadListeResponse" name="parameters" />
 	</wsdl:message>
 
+	<wsdl:message name="hentPaabegynteSoknaderListeRequest">
+		<wsdl:part element="meldinger:hentPaabegynteSoknaderListe" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="hentPaabegynteSoknaderListeResponse">
+		<wsdl:part element="meldinger:hentPaabegynteSoknaderListeResponse" name="parameters" />
+	</wsdl:message>
+
     <wsdl:message name="pingRequest">
         <wsdl:part element="meldinger:ping" name="parameters" />
     </wsdl:message>
@@ -66,8 +81,8 @@
 			<wsdl:output message="tns:hentSoknadListeResponse" name="hentSoknadListeResponse" />
 		</wsdl:operation>
 		<wsdl:operation name="hentPaabegynteSoknaderListe">
-			<wsdl:input message="tns:hentSoknadListeRequest" name="hentSoknadListeRequest" />
-			<wsdl:output message="tns:hentSoknadListeResponse" name="hentSoknadListeResponse" />
+			<wsdl:input message="tns:hentPaabegynteSoknaderListeRequest" name="hentPaabegynteSoknaderListeRequest" />
+			<wsdl:output message="tns:hentPaabegynteSoknaderListeResponse" name="hentPaabegynteSoknaderListeResponse" />
 		</wsdl:operation>
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest" />
@@ -88,10 +103,10 @@
 		</wsdl:operation>
 		<wsdl:operation name="hentPaabegynteSoknaderListe">
 			<soap:operation soapAction="" style="document" />
-			<wsdl:input name="hentSoknadListeRequest">
+			<wsdl:input name="hentPaabegynteSoknaderListeRequest">
 				<soap:body use="literal" />
 			</wsdl:input>
-			<wsdl:output name="hentSoknadListeResponse">
+			<wsdl:output name="hentPaabegynteSoknaderListeResponse">
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
