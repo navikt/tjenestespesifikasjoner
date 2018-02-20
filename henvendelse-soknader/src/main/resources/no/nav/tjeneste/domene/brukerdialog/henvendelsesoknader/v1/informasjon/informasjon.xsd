@@ -27,7 +27,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="oversendtDokmot" type="xs:boolean" />
 		</xs:sequence>
 	</xs:complexType>
 
