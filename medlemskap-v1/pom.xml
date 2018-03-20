@@ -40,10 +40,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>no.nav.esb.nav</groupId>
-                                    <artifactId>nav-tjeneste-medlemskap</artifactId>
-                                    <version>1.0.0</version>
-                                    <classifier>wsdlif</classifier>
+                                    <groupId>no.nav.tjenester</groupId>
+                                    <artifactId>nav-medlemskap-v2-tjenestespesifikasjon</artifactId>
+                                    <version>2.0.6</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/medlemskap</outputDirectory>
                                 </artifactItem>
@@ -90,26 +89,16 @@
                                     <extraarg>-xjc-Xequals</extraarg>
                                     <extraarg>-xjc-XtoString</extraarg>
                                     <extraarg>-xjc-Xbg</extraarg>
+                                    <extraarg>-xjc-Xsetters</extraarg>
+                                    <extraarg>-xjc-Xsetters-mode=direct</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/medlemskap/no/nav/virksomhet/tjenester/medlemskap/medlemskap.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/medlemskap/no/nav/tjeneste/virksomhet/medlemskap/v2/MedlemskapV2.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/medlemskap/bindings.xml</bindingFile>
                                     </bindingFiles>
-                                    <extraargs>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/medlemskap/meldinger/v1=no.nav.gosys.medlemskap.meldinger</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/medlemskap/feil/v1=no.nav.gosys.medlemskap.feil</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/medlemskap/v1/Binding=no.nav.gosys.medlemskap.binding</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/medlemskap/v1=no.nav.gosys.medlemskap</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/grunnlag/medlemskap/v1=no.nav.gosys.medlemskap.grunnlag</extraarg>
-                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>

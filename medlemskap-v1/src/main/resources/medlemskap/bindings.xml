@@ -6,7 +6,7 @@
                xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
                xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
 
-    <jaxb:globalBindings collectionType="indexed">
+    <jaxb:globalBindings>
         <xjc:javaType name="java.util.Calendar" xmlType="xs:date" adapter="no.nav.sbl.dialogarena.adapters.simple.CalendarAdapter"/>
         <jaxb:javaType
                 name="java.util.Calendar"
@@ -21,5 +21,50 @@
                 printMethod="javax.xml.bind.DatatypeConverter.printTime"
         />
     </jaxb:globalBindings>
+
+    <jaxb:bindings schemaLocation="../medlemskap/no/nav/tjeneste/virksomhet/medlemskap/v2/MedlemskapV2.xsd" node="/xs:schema" >
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="WS"/>
+                <jaxb:anonymousTypeName prefix="WS"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="../medlemskap/no/nav/tjeneste/virksomhet/medlemskap/v2/meldinger/meldinger.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="WS"/>
+                <jaxb:anonymousTypeName prefix="WS"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="../medlemskap/no/nav/tjeneste/virksomhet/medlemskap/v2/informasjon/informasjon.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="WS"/>
+                <jaxb:anonymousTypeName prefix="WS"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="../medlemskap/no/nav/tjeneste/virksomhet/medlemskap/v2/informasjon/kodeverk/kodeverk.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="WS"/>
+                <jaxb:anonymousTypeName prefix="WS"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="../medlemskap/no/nav/tjeneste/felles/v1/informasjon/informasjon.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="WS"/>
+                <jaxb:anonymousTypeName prefix="WS"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
 
 </jaxb:bindings>
