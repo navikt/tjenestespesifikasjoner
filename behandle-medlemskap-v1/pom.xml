@@ -28,30 +28,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fetch-wsdls</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.esb.nav</groupId>
-                                    <artifactId>nav-tjeneste-behandleMedlemskap</artifactId>
-                                    <version>1.0.0</version>
-                                    <classifier>wsdlif</classifier>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.directory}/behandlemedlemskap</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
@@ -89,24 +65,16 @@
                                     <extraarg>-xjc-Xequals</extraarg>
                                     <extraarg>-xjc-XtoString</extraarg>
                                     <extraarg>-xjc-Xbg</extraarg>
+                                    <extraarg>-xjc-Xsetters</extraarg>
+                                    <extraarg>-xjc-Xsetters-mode=direct</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/behandlemedlemskap/no/nav/virksomhet/tjenester/behandleMedlemskap/behandleMedlemskap.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/behandlemedlemskap/wsdl/no/nav/tjeneste/virksomhet/behandleMedlemskap/v2/BehandleMedlemskapV2.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandlemedlemskap/bindings.xml</bindingFile>
                                     </bindingFiles>
-                                    <extraargs>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/behandleMedlemskap/meldinger/v1=no.nav.gosys.behandleMedlemskap.meldinger</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/behandleMedlemskap/feil/v1=no.nav.gosys.behandleMedlemskap.feil</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/behandleMedlemskap/v1/Binding=no.nav.gosys.behandleMedlemskap.binding</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav.no/virksomhet/tjenester/behandleMedlemskap/v1=no.nav.gosys.behandleMedlemskap</extraarg>
-                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
