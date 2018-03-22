@@ -10,7 +10,7 @@
         <xjc:javaType name="java.util.Calendar" xmlType="xs:date" adapter="no.nav.sbl.dialogarena.adapters.simple.CalendarAdapter"/>
     </jaxb:globalBindings>
 
-    <jaxb:bindings schemaLocation="../behandlemedlemskap/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/BehandleMedlemskapV2.xsd" node="/xs:schema" >
+    <jaxb:bindings schemaLocation="../behandlemedlemskap/wsdl/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/BehandleMedlemskapV2.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -19,7 +19,7 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
-    <jaxb:bindings schemaLocation="../behandlemedlemskap/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/meldinger/meldinger.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="../behandlemedlemskap/wsdl/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/meldinger/meldinger.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -28,7 +28,7 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
-    <jaxb:bindings schemaLocation="../behandlemedlemskap/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/informasjon/informasjon.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="../behandlemedlemskap/wsdl/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/informasjon/informasjon.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -37,7 +37,7 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
-    <jaxb:bindings schemaLocation="../behandlemedlemskap/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/informasjon/kodeverk/kodeverk.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="../behandlemedlemskap/wsdl/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/informasjon/kodeverk/kodeverk.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
@@ -46,7 +46,7 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
-    <jaxb:bindings schemaLocation="../behandlemedlemskap/no/nav/tjeneste/felles/v1/informasjon/informasjon.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="../behandlemedlemskap/wsdl/no/nav/tjeneste/felles/v1/informasjon/informasjon.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>
