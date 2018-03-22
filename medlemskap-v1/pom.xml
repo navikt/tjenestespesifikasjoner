@@ -9,7 +9,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>medlemskap-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -158,7 +158,7 @@
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>HEAD</tag>
+        <tag>medlemskap-v1-tjenestespesifikasjon-1.0.2</tag>
     </scm>
 
 </project>
