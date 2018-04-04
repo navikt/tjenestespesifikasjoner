@@ -1,0 +1,43 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sosialhjelp Saksoversikt",
+    "version": "1.0.0",
+    "description": "Dokumentasjon for endepunkter og json-objekter for bruk i Saksoversikt for visning av påbegynte- og innsendte søknader, og ettersending.\n#Sikkerhet\nTODO"
+  },
+  "servers": [{
+    "url": "https://tjenester.nav.no/soknadsosialhjelp-server/metadata"
+  }],
+  "paths": {
+    "/innsendte": {
+      "get": {
+        "summary": "Henter alle innsendte søknader for en bruker som vi ønsker å vise",
+        "operationId": "getInnsendte",
+        "parameters": [{
+          "$ref": "#/components/parameters/brukerToken"
+        }],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/innsendtSoknadRespons.json#/definitions/innsendtSoknadRespons"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "brukerToken": {
+        "name": "brukerToken",
+        "in": "cookie",
+        "description": "Videresendt på vegne av bruker",
+        "required": true
+      }
+    }
+  }
+}

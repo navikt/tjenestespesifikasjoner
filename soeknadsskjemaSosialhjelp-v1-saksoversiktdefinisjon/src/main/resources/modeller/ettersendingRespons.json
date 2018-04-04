@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "ettersendingRespons": {
+      "title": "Wrapper for resulatet",
+      "type": "object",
+      "properties": {
+        "ettersendingsSoknad": {
+          "type": "array",
+          "title": "Liste over innsendte søknader det er mulig å ettersende på",
+          "items": {
+            "$ref": "#/definitions/ettersendingsSoknad"
+          }
+        }
+      }
+    },
+    "ettersendingsSoknad": {
+      "title": "Informasjon om en søknad det er mulig å ettersende på",
+      "type": "object",
+      "properties": {
+        "behandlingsId": {
+          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
+          "type": "string"
+        },
+        "tittel": {
+          "title": "Visningsnavn på søknaden",
+          "type": "string"
+        },
+        "lenke": {
+          "title": "Lenke for å ta bruker til sosialhjelp-systemet for å etersende",
+          "type": "string"
+        },
+        "vedlegg": {
+          "title": "Liste over vedlegg som ikke er sendt",
+          "type": "array",
+          "items": {
+            "$ref": "felles.json#/definitions/vedlegg"
+          }
+        }
+      }
+    }
+  },
+  "$ref": "#/definitions/ettersendingRespons"
+}

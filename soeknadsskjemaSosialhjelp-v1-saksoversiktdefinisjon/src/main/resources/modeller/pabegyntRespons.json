@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "pabegyntRespons": {
+      "title": "Wrapper for resulatet",
+      "type": "object",
+      "properties": {
+        "pabegyntSoknad": {
+          "type": "array",
+          "title": "Liste over påbegynte søknader bruker kan fortsette på",
+          "items": {
+            "$ref": "#/definitions/pabegyntSoknad"
+          }
+        }
+      }
+    },
+    "pabegyntSoknad": {
+      "title": "Informasjon om en søknad det er mulig å fortsette på",
+      "type": "object",
+      "properties": {
+        "behandlingsId": {
+          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
+          "type": "string"
+        },
+        "tittel": {
+          "title": "Visningsnavn på søknaden",
+          "type": "string"
+        },
+        "lenke": {
+          "title": "Lenke for å ta bruker til sosialhjelp-systemet for å fortsette",
+          "type": "string"
+        },
+        "sisteEndring": {
+          "title": "Tidspunkt for siste endring",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "$ref": "#/definitions/pabegyntRespons"
+}
