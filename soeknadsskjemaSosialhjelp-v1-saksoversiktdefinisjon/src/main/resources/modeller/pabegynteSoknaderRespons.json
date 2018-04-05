@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "pabegynteRespons": {
+    "pabegynteSoknaderRespons": {
       "description": "Wrapper for resulatet",
       "type": "object",
       "properties": {
@@ -15,5 +15,5 @@
       }
     }
   },
-  "$ref": "#/definitions/pabegynteRespons"
+  "$ref": "#/definitions/pabegynteSoknaderRespons"
 }

@@ -58,7 +58,6 @@
                 <configuration>
                     <sourceDirectory>${schema.location}</sourceDirectory>
                     <targetPackage>no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt</targetPackage>
-                    <classNamePrefix>Json</classNamePrefix>
                     <generateBuilders>true</generateBuilders>
                     <useCommonsLang3>true</useCommonsLang3>
                 </configuration>
