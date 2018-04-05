@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "innsendteSoknaderRespons": {
+      "title": "Wrapper for resulatet",
+      "type": "object",
+      "properties": {
+        "innsendteSoknader": {
+          "type": "array",
+          "title": "Liste over innsendte søknader",
+          "items": {
+            "$ref": "datatyper.json#/definitions/innsendtSoknad"
+          }
+        }
+      }
+    }
+  },
+  "$ref": "#/definitions/innsendteSoknaderRespons"
+}

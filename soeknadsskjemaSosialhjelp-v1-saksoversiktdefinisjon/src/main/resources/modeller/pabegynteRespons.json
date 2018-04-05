@@ -1,19 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "innsendtSoknadRespons": {
+    "pabegynteRespons": {
       "title": "Wrapper for resulatet",
       "type": "object",
       "properties": {
-        "innsendteSoknader": {
+        "pabegynteSoknader": {
           "type": "array",
-          "title": "Liste over innsendte søknader",
+          "title": "Liste over påbegynte søknader bruker kan fortsette på",
           "items": {
-            "$ref": "datatyper.json#/definitions/innsendtSoknad"
+            "$ref": "datatyper.json#/definitions/pabegyntSoknad"
           }
         }
       }
     }
   },
-  "$ref": "#/definitions/innsendtSoknadRespons"
+  "$ref": "#/definitions/pabegynteRespons"
 }

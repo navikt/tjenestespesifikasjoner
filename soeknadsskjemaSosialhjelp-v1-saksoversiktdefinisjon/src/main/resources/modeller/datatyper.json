@@ -50,6 +50,56 @@
         }
       }
     },
+    "ettersendingsSoknad": {
+      "title": "Informasjon om en søknad det er mulig å ettersende på",
+      "type": "object",
+      "javaType": "no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt.EttersendingsSoknad",
+      "properties": {
+        "behandlingsId": {
+          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
+          "type": "string"
+        },
+        "tittel": {
+          "title": "Visningsnavn på søknaden",
+          "type": "string"
+        },
+        "lenke": {
+          "title": "Lenke for å ta bruker til sosialhjelp-systemet for å etersende",
+          "type": "string"
+        },
+        "vedlegg": {
+          "title": "Liste over vedlegg som ikke er sendt",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/vedlegg"
+          }
+        }
+      }
+    },
+    "pabegyntSoknad": {
+      "title": "Informasjon om en søknad det er mulig å fortsette på",
+      "type": "object",
+      "javaType": "no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt.PabegyntSoknad",
+      "properties": {
+        "behandlingsId": {
+          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
+          "type": "string"
+        },
+        "tittel": {
+          "title": "Visningsnavn på søknaden",
+          "type": "string"
+        },
+        "lenke": {
+          "title": "Lenke for å ta bruker til sosialhjelp-systemet for å fortsette",
+          "type": "string"
+        },
+        "sisteEndring": {
+          "title": "Tidspunkt for siste endring",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "vedlegg": {
       "title": "Informasjon om et vedlegg",
       "type": "object",
