@@ -121,6 +121,7 @@
         },
         "type": {
           "description": "Hvilken type part det er",
+          "type": "string",
           "enum": ["BRUKER", "NAV"]
         }
       }

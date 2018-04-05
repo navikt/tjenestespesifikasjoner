@@ -8,10 +8,15 @@
   "servers": [{
     "url": "https://tjenester.nav.no/soknadsosialhjelp-server/metadata"
   }],
+  "tags": [{
+    "name": "saksoversikt",
+    "description": "Tjenester for metadata om søknader, til bruk i Saksoversikt"
+  }],
   "paths": {
     "/innsendte": {
       "get": {
         "summary": "Henter alle innsendte søknader for en bruker som vi ønsker å vise",
+        "tags": ["saksoversikt"],
         "operationId": "getInnsendte",
         "parameters": [{
           "$ref": "#/components/parameters/brukerToken"
@@ -28,6 +33,48 @@
           }
         }
       }
+    },
+    "/ettersendelse": {
+      "get": {
+        "summary": "Henter alle innsendte søknader for en bruker som det kan ettersendes på",
+        "tags": ["saksoversikt"],
+        "operationId": "getEttersendelse",
+        "parameters": [{
+          "$ref": "#/components/parameters/brukerToken"
+        }],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/ettersendingerRespons.json#/definitions/ettersendingerRespons"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pabegynte": {
+      "get": {
+        "summary": "Henter alle påbegynte søknader for en bruker",
+        "tags": ["saksoversikt"],
+        "operationId": "getPabegynte",
+        "parameters": [{
+          "$ref": "#/components/parameters/brukerToken"
+        }],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/pabegynteSoknaderRespons.json#/definitions/pabegynteSoknaderRespons"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -35,7 +82,7 @@
       "brukerToken": {
         "name": "brukerToken",
         "in": "cookie",
-        "description": "Videresendt på vegne av bruker",
+        "description": "Cookies skal videresendes (pipes) så vi ser requesten som om den kom direkte fra bruker",
         "required": true
       }
     }
