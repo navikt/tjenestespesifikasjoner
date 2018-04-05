@@ -2,12 +2,12 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "ettersendingerRespons": {
-      "title": "Wrapper for resulatet",
+      "description": "Wrapper for resulatet",
       "type": "object",
       "properties": {
         "ettersendingsSoknader": {
           "type": "array",
-          "title": "Liste over innsendte søknader det er mulig å ettersende på",
+          "description": "Liste over innsendte søknader det er mulig å ettersende på",
           "items": {
             "$ref": "datatyper.json#/definitions/ettersendingsSoknad"
           }

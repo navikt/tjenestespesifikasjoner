@@ -2,47 +2,47 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "innsendtSoknad": {
-      "title": "En innsendt søknad",
+      "description": "En innsendt søknad",
       "type": "object",
       "javaType": "no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt.InnsendtSoknad",
       "properties": {
         "behandlingsId": {
-          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
+          "description": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
           "type": "string"
         },
         "temanavn": {
-          "title": "Overskrift for gruppen av søknader",
+          "description": "Overskrift for gruppen av søknader",
           "type": "string"
         },
         "avsender": {
-          "title": "Hvem som har sendt dokumentet",
+          "description": "Hvem som har sendt dokumentet",
           "$ref": "#/definitions/part"
         },
         "mottaker": {
-          "title": "Hvem dokumentet er sendt til",
+          "description": "Hvem dokumentet er sendt til",
           "$ref": "#/definitions/part"
         },
         "lenke": {
-          "title": "Lenke for å ta bruker til søknaden i sosialhjelp-systemet",
+          "description": "Lenke for å ta bruker til søknaden i sosialhjelp-systemet",
           "type": "string"
         },
         "innsendtDato": {
-          "title": "Tidspunktet søknaden ble sendt",
+          "description": "Tidspunktet søknaden ble sendt",
           "type": "string",
           "format": "date-time"
         },
         "hoveddokument": {
-          "title": "Informasjon om hoveddokumentet som bruker sendte",
+          "description": "Informasjon om hoveddokumentet som bruker sendte",
           "type": "object",
           "properties": {
             "tittel": {
-              "title": "Visningsnavn på hoveddokumentet",
+              "description": "Visningsnavn på hoveddokumentet",
               "type": "string"
             }
           }
         },
         "vedlegg": {
-          "title": "Liste over vedlegg som ble lagt ved søknaden",
+          "description": "Liste over vedlegg som ble lagt ved søknaden",
           "type": "array",
           "items": {
             "$ref": "#/definitions/vedlegg"
@@ -51,24 +51,24 @@
       }
     },
     "ettersendingsSoknad": {
-      "title": "Informasjon om en søknad det er mulig å ettersende på",
+      "description": "Informasjon om en søknad det er mulig å ettersende på",
       "type": "object",
       "javaType": "no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt.EttersendingsSoknad",
       "properties": {
         "behandlingsId": {
-          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
+          "description": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
           "type": "string"
         },
         "tittel": {
-          "title": "Visningsnavn på søknaden",
+          "description": "Visningsnavn på søknaden",
           "type": "string"
         },
         "lenke": {
-          "title": "Lenke for å ta bruker til sosialhjelp-systemet for å etersende",
+          "description": "Lenke for å ta bruker til sosialhjelp-systemet for å etersende",
           "type": "string"
         },
         "vedlegg": {
-          "title": "Liste over vedlegg som ikke er sendt",
+          "description": "Liste over vedlegg som ikke er sendt",
           "type": "array",
           "items": {
             "$ref": "#/definitions/vedlegg"
@@ -77,50 +77,50 @@
       }
     },
     "pabegyntSoknad": {
-      "title": "Informasjon om en søknad det er mulig å fortsette på",
+      "description": "Informasjon om en søknad det er mulig å fortsette på",
       "type": "object",
       "javaType": "no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt.PabegyntSoknad",
       "properties": {
         "behandlingsId": {
-          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
+          "description": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
           "type": "string"
         },
         "tittel": {
-          "title": "Visningsnavn på søknaden",
+          "description": "Visningsnavn på søknaden",
           "type": "string"
         },
         "lenke": {
-          "title": "Lenke for å ta bruker til sosialhjelp-systemet for å fortsette",
+          "description": "Lenke for å ta bruker til sosialhjelp-systemet for å fortsette",
           "type": "string"
         },
         "sisteEndring": {
-          "title": "Tidspunkt for siste endring",
+          "description": "Tidspunkt for siste endring",
           "type": "string",
           "format": "date-time"
         }
       }
     },
     "vedlegg": {
-      "title": "Informasjon om et vedlegg",
+      "description": "Informasjon om et vedlegg",
       "type": "object",
       "properties": {
         "tittel": {
-          "title": "Visningsnavn på vedlegget",
+          "description": "Visningsnavn på vedlegget",
           "type": "string"
         }
       }
     },
     "part": {
-      "title": "Informasjon om de i hver ende av en søknad",
+      "description": "Informasjon om de i hver ende av en søknad",
       "type": "object",
       "javaType": "no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt.Part",
       "properties": {
         "visningsNavn": {
-          "title": "Navnet som skal vises for denne parten",
+          "description": "Navnet som skal vises for denne parten",
           "type": "string"
         },
         "type": {
-          "title": "Hvilken type part det er",
+          "description": "Hvilken type part det er",
           "enum": ["BRUKER", "NAV"]
         }
       }

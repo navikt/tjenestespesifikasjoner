@@ -2,12 +2,12 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "innsendteSoknaderRespons": {
-      "title": "Wrapper for resulatet",
+      "description": "Wrapper for resulatet",
       "type": "object",
       "properties": {
         "innsendteSoknader": {
           "type": "array",
-          "title": "Liste over innsendte søknader",
+          "description": "Liste over innsendte søknader",
           "items": {
             "$ref": "datatyper.json#/definitions/innsendtSoknad"
           }
