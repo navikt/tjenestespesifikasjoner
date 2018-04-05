@@ -34,7 +34,7 @@
           "title": "Liste over vedlegg som ikke er sendt",
           "type": "array",
           "items": {
-            "$ref": "felles.json#/definitions/vedlegg"
+            "$ref": "datatyper.json#/definitions/vedlegg"
           }
         }
       }

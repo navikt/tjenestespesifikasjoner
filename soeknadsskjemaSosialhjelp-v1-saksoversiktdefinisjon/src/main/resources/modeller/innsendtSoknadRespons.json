@@ -5,63 +5,11 @@
       "title": "Wrapper for resulatet",
       "type": "object",
       "properties": {
-        "innsendtSoknad": {
+        "innsendteSoknader": {
           "type": "array",
           "title": "Liste over innsendte søknader",
           "items": {
-            "$ref": "#/definitions/innsendtSoknad"
-          }
-        }
-      }
-    },
-    "innsendtSoknad": {
-      "title": "En innsendt søknad",
-      "type": "object",
-      "properties": {
-        "behandlingsId": {
-          "title": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
-          "type": "string"
-        },
-        "temanavn": {
-          "title": "TODO dunno",
-          "type": "string"
-        },
-        "avsender": {
-          "title": "Hvem som har sendt dokumentet",
-          "type": "string"
-        },
-        "mottaker": {
-          "title": "Hvem dokumentet er sendt til",
-          "type": "string"
-        },
-        "retning": {
-          "title": "TODO dunno helt bruk. Enum?",
-          "type": "string"
-        },
-        "lenke": {
-          "title": "Lenke for å ta bruker til søknaden i sosialhjelp-systemet",
-          "type": "string"
-        },
-        "innsendtDato": {
-          "title": "Tidspunktet søknaden ble sendt",
-          "type": "string",
-          "format": "date-time"
-        },
-        "hoveddokument": {
-          "title": "Informasjon om hoveddokumentet som bruker sendte",
-          "type": "object",
-          "properties": {
-            "tittel": {
-              "title": "Visningsnavn på hoveddokumentet",
-              "type": "string"
-            }
-          }
-        },
-        "vedlegg": {
-          "title": "Liste over vedlegg som ble lagt ved søknaden",
-          "type": "array",
-          "items": {
-            "$ref": "felles.json#/definitions/vedlegg"
+            "$ref": "datatyper.json#/definitions/innsendtSoknad"
           }
         }
       }
