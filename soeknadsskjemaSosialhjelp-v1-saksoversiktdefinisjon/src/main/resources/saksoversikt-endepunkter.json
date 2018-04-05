@@ -3,7 +3,7 @@
   "info": {
     "title": "Sosialhjelp Saksoversikt",
     "version": "1.0.0",
-    "description": "Dokumentasjon for endepunkter og json-objekter for bruk i Saksoversikt for visning av påbegynte- og innsendte søknader, og ettersending.\n#Sikkerhet\nTODO"
+    "description": "Dokumentasjon for endepunkter og json-objekter for bruk i Saksoversikt for visning av påbegynte- og innsendte søknader, og ettersending.\n\n##Sikkerhet\n\nTODO"
   },
   "servers": [{
     "url": "https://tjenester.nav.no/soknadsosialhjelp-server/metadata"
@@ -21,7 +21,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "modeller/innsendtSoknadRespons.json#/definitions/innsendtSoknadRespons"
+                  "$ref": "modeller/innsendteSoknaderRespons.json#/definitions/innsendteSoknaderRespons"
                 }
               }
             }
