@@ -32,6 +32,8 @@
                 <xs:element name="tema" type="xs:string" minOccurs="0"/>
                 <xs:element name="behandlingstema" type="xs:string" minOccurs="0"/>
                 <xs:element name="ferdigstiltUtenSvar" type="xs:boolean" minOccurs="0"/>
+                <xs:element name="ferdigstiltUtenSvarAv" type="xs:string" minOccurs="0"/>
+                <xs:element name="ferdigstiltUtenSvarDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="henvendelseType" type="xs:string"/>
                 <xs:element name="eksternAktor" type="xs:string" minOccurs="0"/>
                 <xs:element name="tilknyttetEnhet" type="xs:string" minOccurs="0"/>
@@ -39,8 +41,11 @@
                 <xs:element name="avsluttetDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="lestDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="kontorsperreEnhet" type="xs:string" minOccurs="0"/>
+                <xs:element name="kontorsperretDato" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="kontorsperretAv" type="xs:string" minOccurs="0"/>
                 <xs:element name="brukersEnhet" type="xs:string" minOccurs="0"/>
                 <xs:element name="markertSomFeilsendtAv" type="xs:string" minOccurs="0"/>
+                <xs:element name="markertSomFeilsendtDato" type="xs:dateTime" minOccurs="0"/>
                 <xs:element name="oppgaveIdGsak" type="xs:string" minOccurs="0"/>
                 <xs:element name="henvendelseIdGsak" type="xs:string" minOccurs="0"/>
                 <xs:element name="erTilknyttetAnsatt" type="xs:boolean" minOccurs="0"/>
