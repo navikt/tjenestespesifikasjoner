@@ -3,7 +3,7 @@
   "info": {
     "title": "Sosialhjelp Saksoversikt",
     "version": "1.0.0",
-    "description": "Dokumentasjon for endepunkter og json-objekter for bruk i Saksoversikt for visning av påbegynte- og innsendte søknader, og ettersending.\n\n##Sikkerhet\n\nTODO"
+    "description": "Dokumentasjon for endepunkter og json-objekter for bruk i Saksoversikt for visning av påbegynte- og innsendte søknader, og ettersending.\n\n##Sikkerhet\n\nGjøres aldri kall med fnr, men sendes heller med brukers token, som vi så slår opp, verifiserer og vet da hvem bruker er. Dette sikrer også at Saksoversikt ikke ved et uhell kan spørre på feil bruker eller lignende."
   },
   "servers": [{
     "url": "https://tjenester.nav.no/soknadsosialhjelp-server/metadata"
@@ -80,9 +80,9 @@
   "components": {
     "parameters": {
       "brukerToken": {
-        "name": "brukerToken",
+        "name": "nav-esso",
         "in": "cookie",
-        "description": "Cookies skal videresendes (pipes) så vi ser requesten som om den kom direkte fra bruker",
+        "description": "nav-esso cookien pipes fra bruker, så vi ser requesten som om den kom direkte fra bruker",
         "required": true
       }
     }

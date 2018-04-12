@@ -10,6 +10,10 @@
           "description": "BehandlingsIden søknaden har i Sosialhjelp-systemet",
           "type": "string"
         },
+        "tema": {
+          "description": "Kodeverksverdien for temaet",
+          "type": "string"
+        },
         "temanavn": {
           "description": "Overskrift for gruppen av søknader",
           "type": "string"
