@@ -33,7 +33,8 @@
         "innsendtDato": {
           "description": "Tidspunktet søknaden ble sendt",
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "customPattern": "yyyy-MM-dd'T'HH:mm:ssZ"
         },
         "hoveddokument": {
           "description": "Informasjon om hoveddokumentet som bruker sendte",
@@ -100,7 +101,8 @@
         "sisteEndring": {
           "description": "Tidspunkt for siste endring",
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "customPattern": "yyyy-MM-dd'T'HH:mm:ssZ"
         }
       }
     },
