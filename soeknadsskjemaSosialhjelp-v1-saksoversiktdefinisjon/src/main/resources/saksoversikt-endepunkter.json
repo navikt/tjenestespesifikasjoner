@@ -75,7 +75,37 @@
           }
         }
       }
+    },
+    "/ping": {
+      "get": {
+        "summary": "Sjekker om man kan nå tjenesten",
+        "tags": ["saksoversikt"],
+        "operationId": "getPing",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/pingRespons.json#/definitions/pingRespons"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/pingRespons.json#/definitions/pingRespons"
+                }
+              }
+            }
+          }
+
+        }
+      }
     }
+
   },
   "components": {
     "parameters": {

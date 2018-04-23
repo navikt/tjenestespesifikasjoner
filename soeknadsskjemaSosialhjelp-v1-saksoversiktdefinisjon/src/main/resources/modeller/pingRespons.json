@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "pingRespons": {
+      "description": "Status på endepunkt",
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "Om det er feil eller ikke. Men sjekk HTTP-koden, ved alvorlige feil er det ikke en gang sikkert dette objektet blir returnert",
+          "type": "string",
+          "enum": ["OK", "FEIL"]
+        },
+        "melding": {
+          "description": "Melding om hva som er ok/feil, nyttig for logging/vise på selftest",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$ref": "#/definitions/pingRespons"
+}
