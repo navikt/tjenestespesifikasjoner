@@ -128,19 +128,6 @@
                                     </extraargs>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSNAVOrgEnhetWSEXP.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/navorgenhet=no.nav.gosys.asbo.navorgenhet</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/fault/navorgenhet=no.nav.gosys.fault.navorgenhet</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVOrgEnhet/Binding=no.nav.inf.binding</extraarg>
-                                        <extraarg>-p</extraarg>
-                                        <extraarg>http://nav-cons-sak-gosys-3.0.0/no/nav/inf/NAVOrgEnhet=no.nav.inf</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                                <wsdlOption>
                                     <wsdl>${wsdl.directory}/cons-sak-gosys/wsdl/nav-cons-sak-gosys-3.0.0_GOSYSOppgaveWSEXP.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-p</extraarg>
