@@ -127,7 +127,7 @@
   <binding name="BehandlePerson_v1PortBinding" type="tns:BehandlePerson_v1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
     <operation name="endreNavn">
-      <soap:operation soapAction=""/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleperson/v1/BehandlePerson_v1/endreNavnRequest"/>
       <input>
         <soap:body use="literal"/>
       </input>
@@ -148,7 +148,7 @@
       </fault>
     </operation>
     <operation name="opprettUtenlandskIdentitet">
-      <soap:operation soapAction=""/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleperson/v1/BehandlePerson_v1/opprettUtenlandskIdentitetRequest"/>
       <input>
         <soap:body use="literal"/>
       </input>
@@ -160,7 +160,7 @@
       </fault>
     </operation>
     <operation name="oppdaterUtenlandskIdentitet">
-      <soap:operation soapAction=""/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleperson/v1/BehandlePerson_v1/oppdaterUtenlandskIdentitetRequest"/>
       <input>
         <soap:body use="literal"/>
       </input>
@@ -172,7 +172,7 @@
       </fault>
     </operation>
     <operation name="opphorUtenlandskIdentitet">
-      <soap:operation soapAction=""/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleperson/v1/BehandlePerson_v1/opphorUtenlandskIdentitetRequest"/>
       <input>
         <soap:body use="literal"/>
       </input>
@@ -184,7 +184,7 @@
       </fault>
     </operation>
     <operation name="opprettSikkerhetstiltak">
-      <soap:operation soapAction=""/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleperson/v1/BehandlePerson_v1/opprettSikkerhetstiltakRequest"/>
       <input>
         <soap:body use="literal"/>
       </input>
@@ -196,7 +196,7 @@
       </fault>
     </operation>
     <operation name="opphorSikkerhetstiltak">
-      <soap:operation soapAction=""/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleperson/v1/BehandlePerson_v1/opphorSikkerhetstiltakRequest"/>
       <input>
         <soap:body use="literal"/>
       </input>
@@ -208,7 +208,7 @@
       </fault>
     </operation>
     <operation name="ping">
-      <soap:operation soapAction=""/>
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleperson/v1/BehandlePerson_v1/pingRequest"/>
       <input>
         <soap:body use="literal"/>
       </input>
