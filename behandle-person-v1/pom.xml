@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandle-person-v1-tjenestespesifikasjon</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -41,7 +41,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-behandle-person-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.5.0</version>
+                                    <version>1.6.1</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/tjenestespesifikasjon</outputDirectory>
                                 </artifactItem>
@@ -85,8 +85,6 @@
                             <defaultOptions>
                                 <extraargs>
                                     <extraarg>-xjc-Xfluent-api</extraarg>
-									<extraarg>-xjc-Xsetters</extraarg>
-                                    <extraarg>-xjc-Xsetters-mode=direct</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
@@ -95,6 +93,10 @@
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandleperson/bindings.xml</bindingFile>
                                     </bindingFiles>
+                                    <extraargs>
+                                        <extraarg>-xjc-XhashCode</extraarg>
+                                        <extraarg>-xjc-Xequals</extraarg>
+                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
