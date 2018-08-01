@@ -94,7 +94,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/behandlemedlemskap/no/nav/tjeneste/virksomhet/behandleMedlemskap/v2/BehandleMedlemskapV2.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/behandlemedlemskap/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/BehandleMedlemskapV2.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandlemedlemskap/bindings.xml</bindingFile>
                                     </bindingFiles>
