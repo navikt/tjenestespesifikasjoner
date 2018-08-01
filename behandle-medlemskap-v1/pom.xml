@@ -9,7 +9,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandle-medlemskap-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
         <cxf.version>2.7.0</cxf.version>
@@ -26,6 +26,29 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>fetch-wsdls</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>no.nav.tjenester</groupId>
+                                    <artifactId>nav-behandleMedlemskap-v2-tjenestespesifikasjon</artifactId>
+                                    <version>2.1.1</version>
+                                    <type>zip</type>
+                                    <outputDirectory>${wsdl.directory}/behandlemedlemskap</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -71,7 +94,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/behandlemedlemskap/wsdl/no/nav/tjeneste/virksomhet/behandlemedlemskap/v2/BehandleMedlemskapV2.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/behandlemedlemskap/wsdl/no/nav/tjeneste/virksomhet/behandleMedlemskap/v2/BehandleMedlemskapV2.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandlemedlemskap/bindings.xml</bindingFile>
                                     </bindingFiles>
