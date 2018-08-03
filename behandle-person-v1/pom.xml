@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandle-person-v1-tjenestespesifikasjon</artifactId>
-    <version>1.0.6-SNAPSHOT</version>
+    <version>1.0.7-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -42,6 +42,7 @@
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-behandle-person-v1-tjenestespesifikasjon</artifactId>
                                     <version>1.8.2</version>
+                                    <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/tjenestespesifikasjon</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
