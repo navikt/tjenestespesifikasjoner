@@ -14,7 +14,7 @@
 
     <properties>
         <schema.location>${project.build.directory}/classes/tjenestespesifikasjon/</schema.location>
-        <meldingsdefinisjon.version>1.0.80.22</meldingsdefinisjon.version>
+        <meldingsdefinisjon.version>83.20180810.1107</meldingsdefinisjon.version>
     </properties>
 
     <dependencies>
