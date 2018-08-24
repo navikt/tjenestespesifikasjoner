@@ -29,29 +29,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fetch-wsdls</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-medlemskap-v2-tjenestespesifikasjon</artifactId>
-                                    <version>2.0.6</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.directory}/medlemskap</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
@@ -95,7 +72,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/medlemskap/no/nav/tjeneste/virksomhet/medlemskap/v2/MedlemskapV2.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/medlemskap/wsdl/no/nav/tjeneste/virksomhet/medlemskap/v2/MedlemskapV2.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/medlemskap/bindings.xml</bindingFile>
                                     </bindingFiles>
