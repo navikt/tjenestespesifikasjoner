@@ -9,7 +9,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandle-medlemskap-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
         <cxf.version>2.7.0</cxf.version>
@@ -41,7 +41,7 @@
                                 <artifactItem>
                                     <groupId>no.nav.tjenester</groupId>
                                     <artifactId>nav-behandleMedlemskap-v2-tjenestespesifikasjon</artifactId>
-                                    <version>2.1.1</version>
+                                    <version>2.0.1</version>
                                     <type>zip</type>
                                     <outputDirectory>${wsdl.directory}/behandlemedlemskap</outputDirectory>
                                 </artifactItem>
