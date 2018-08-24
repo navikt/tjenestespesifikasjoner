@@ -9,7 +9,7 @@
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>medlemskap-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
 
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
@@ -27,29 +27,6 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fetch-wsdls</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-medlemskap-v2-tjenestespesifikasjon</artifactId>
-                                    <version>2.1.1</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.directory}/medlemskap</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -95,7 +72,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/medlemskap/no/nav/tjeneste/virksomhet/medlemskap/v2/MedlemskapV2.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/medlemskap/wsdl/no/nav/tjeneste/virksomhet/medlemskap/v2/MedlemskapV2.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/medlemskap/bindings.xml</bindingFile>
                                     </bindingFiles>
