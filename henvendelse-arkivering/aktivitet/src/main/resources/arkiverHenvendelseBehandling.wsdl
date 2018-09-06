@@ -50,7 +50,7 @@
         </wsdl:part>
     </wsdl:message>
 
-    <wsdl:portType name="ArkiverHenvendelseBehandling_v1">
+    <wsdl:portType name="ArkiverHenvendelseBehandling_v2">
         <wsdl:operation name="ping">
             <wsdl:input message="tns:pingRequest" name="pingRequest">
             </wsdl:input>
@@ -71,10 +71,10 @@
         </wsdl:operation>
     </wsdl:portType>
 
-    <wsdl:binding name="ArkivHenvendelseBinding" type="tns:ArkiverHenvendelseBehandling_v1">
+    <wsdl:binding name="ArkivHenvendelseBinding" type="tns:ArkiverHenvendelseBehandling_v2">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="arkiverHenvendelse">
-            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet/arkiverHenvendelseRequest" style="document"/>
+            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v2/aktivitet/arkiverHenvendelseRequest" style="document"/>
             <wsdl:input name="arkiverHenvendelseRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -83,7 +83,7 @@
             </wsdl:output>
        </wsdl:operation>
         <wsdl:operation name="settUtgaarDato">
-            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet/settUtgaarDatoRequest" style="document"/>
+            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v2/aktivitet/settUtgaarDatoRequest" style="document"/>
             <wsdl:input name="settUtgaarDatoRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -92,7 +92,7 @@
             </wsdl:output>
         </wsdl:operation>
        <wsdl:operation name="ping">
-            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v1/aktivitet/pingRequest" style="document"/>
+            <soap:operation soapAction="http://nav.no/tjeneste/domene/brukerdialog/arkiverhenvendelsebehandling/v2/aktivitet/pingRequest" style="document"/>
             <wsdl:input name="pingRequest">
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -102,9 +102,9 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:service name="ArkiverHenvendelseService_v1">
-        <wsdl:port binding="tns:ArkivHenvendelseBinding" name="ArkiverHenvendelsePort_v1">
-            <soap:address location="http://localhost:8081/domene.Brukerdialog/ArkiverHenvendelseService_v1"/>
+    <wsdl:service name="ArkiverHenvendelseService_v2">
+        <wsdl:port binding="tns:ArkivHenvendelseBinding" name="ArkiverHenvendelsePort_v2">
+            <soap:address location="http://localhost:8081/domene.Brukerdialog/ArkiverHenvendelseService_v2"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
