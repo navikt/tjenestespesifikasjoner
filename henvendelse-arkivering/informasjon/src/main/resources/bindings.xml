@@ -8,7 +8,7 @@
         <jaxb:serializable />
     </jaxb:globalBindings>
     <jaxb:bindings
-            schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/meldinger.xsd"
+            schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2/meldinger.xsd"
             node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
