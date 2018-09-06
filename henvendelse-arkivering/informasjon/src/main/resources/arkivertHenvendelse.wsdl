@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/informasjon"
+                  xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2/informasjon"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   name="ArkivertHenvendelseService"
-                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/informasjon">
+                  targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2/informasjon">
     <wsdl:types>
         <xsd:schema
-                xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/informasjon"
+                xmlns:tns="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2/informasjon"
                 elementFormDefault="unqualified"
-                targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/informasjon"
-                xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1">
+                targetNamespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2/informasjon"
+                xmlns:meldinger="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2">
             <xsd:import
-                    namespace="http://nav.no/tjeneste/domene/brukerdialog/arkivtjenester/v1/typer"
-                    schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkivtjenester/v1/typer/typer.xsd"/>
-            <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1"
-                        schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverthenvendelse/v1/meldinger.xsd"/>
+                    namespace="http://nav.no/tjeneste/domene/brukerdialog/arkivtjenester/v2/typer"
+                    schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkivtjenester/v2/typer/typer.xsd"/>
+            <xsd:import namespace="http://nav.no/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2"
+                        schemaLocation="no/nav/tjeneste/domene/brukerdialog/arkiverthenvendelse/v2/meldinger.xsd"/>
 
             <xsd:element name="hentArkivertHenvendelse" type="meldinger:hentArkivertHenvendelseRequest"/>
             <xsd:element name="hentArkivertHenvendelseResponse" type="meldinger:hentArkivertHenvendelseResponse"/>
