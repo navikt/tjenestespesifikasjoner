@@ -1,16 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>no.nav.sbl</groupId>
-        <artifactId>mor-pom</artifactId>
-        <version>3.6</version>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>dokumentinfo-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1-SNAPSHOT</version>
-
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
         <cxf.version>3.1.4</cxf.version>
@@ -18,7 +16,6 @@
         <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
         <jaxb-adapters.version>1.1</jaxb-adapters.version>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -97,11 +94,10 @@
                         <artifactId>jaxb2-basics</artifactId>
                         <version>${jaxb2-basics.version}</version>
                     </dependency>
-
                     <dependency>
                         <groupId>no.nav.sbl.dialogarena</groupId>
                         <artifactId>jaxb-adapters</artifactId>
-                        <version>${jaxb-adapters.version}</version>
+                        <version>2018.10.03-21.46-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -138,20 +134,25 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
-
     <dependencies>
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -159,12 +160,9 @@
             <version>${jaxb2-basics.version}</version>
         </dependency>
     </dependencies>
-
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

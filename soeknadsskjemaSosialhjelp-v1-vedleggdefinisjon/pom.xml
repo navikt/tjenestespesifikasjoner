@@ -1,22 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
-        <groupId>no.nav.sbl</groupId>
-        <artifactId>mor-pom</artifactId>
-        <version>3</version>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>soeknadsskjemaSosialhjelp-v1-vedleggdefinisjon</artifactId>
     <groupId>no.nav.sbl.dialogarena</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <properties>
         <schema.location>${project.build.directory}/classes/tjenestespesifikasjon/</schema.location>
         <meldingsdefinisjon.version>1.0.81.23</meldingsdefinisjon.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -29,7 +25,6 @@
             <version>2.5.4</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -74,7 +69,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -89,12 +83,10 @@
             </plugin>
         </plugins>
     </build>
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

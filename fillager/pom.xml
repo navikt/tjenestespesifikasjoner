@@ -1,19 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>dialogarena</artifactId>
-        <version>1.5.2</version>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>fillager-tjenestespesifikasjon</artifactId>
-	<version>0.0.6-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <properties>
         <wsdl.directory>src/main/resources</wsdl.directory>
     </properties>
-
     <build>
         <resources>
             <resource>
@@ -98,7 +95,9 @@
                 <version>1.0.1</version>
                 <executions>
                     <execution>
-                        <goals><goal>transform</goal></goals>
+                        <goals>
+                            <goal>transform</goal>
+                        </goals>
                     </execution>
                 </executions>
                 <configuration>
@@ -106,7 +105,9 @@
                         <transformationSet>
                             <dir>src/main/resources</dir>
                             <stylesheet>wsdl-viewer-confluence.xsl</stylesheet>
-                            <includes><include>*.wsdl</include></includes>
+                            <includes>
+                                <include>*.wsdl</include>
+                            </includes>
                             <outputProperties>
                                 <outputProperty>
                                     <name>omit-xml-declaration</name>
@@ -129,41 +130,11 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            <!-- <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <executions>
-                    <execution>
-                        <id>exec-npm-install</id>
-                        <phase>generate-resources</phase>
-                        <goals><goal>exec</goal></goals>
-                        <configuration>
-                            <executable>npm</executable>
-                            <arguments><argument>install</argument></arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>exec-node-upload-attachment</id>
-                        <phase>generate-resources</phase>
-                        <goals><goal>exec</goal></goals>
-                        <configuration>
-                            <executable>node</executable>
-                            <arguments>
-                                <argument>upload-attachment.js</argument>
-                                <argument>162739803</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin> -->
-	  </plugins>
-	</build>
-
+        </plugins>
+    </build>
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

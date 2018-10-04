@@ -1,19 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>no.nav.sbl</groupId>
-        <artifactId>mor-pom</artifactId>
-        <version>3</version>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
     <artifactId>ekstern-helse-helsepersonell-tjenestespesifikasjon</artifactId>
     <groupId>no.nav.sbl.dialogarena</groupId>
-
-    <version>1.0.2_3-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.migesok</groupId>
@@ -26,7 +23,6 @@
             <version>0.6.5</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -115,7 +111,6 @@
                         <artifactId>jaxb2-basics</artifactId>
                         <version>0.6.4</version>
                     </dependency>
-
                 </dependencies>
             </plugin>
             <plugin>
@@ -129,7 +124,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
         <pluginManagement>
             <plugins>
@@ -154,13 +148,10 @@
             </plugins>
         </pluginManagement>
     </build>
-
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

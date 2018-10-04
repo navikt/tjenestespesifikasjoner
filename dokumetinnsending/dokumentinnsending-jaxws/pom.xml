@@ -1,20 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>dokumentinnsending-tjenestespesifikasjon</artifactId>
-        <version>1.0.3-SNAPSHOT</version>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>dokumentinnsending-jaxws</artifactId>
     <packaging>jar</packaging>
-
     <properties>
         <wsdl.directory>src/main/resources</wsdl.directory>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -73,4 +69,5 @@
             </plugin>
         </plugins>
     </build>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
 </project>

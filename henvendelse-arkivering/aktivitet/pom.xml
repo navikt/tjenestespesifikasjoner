@@ -1,18 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>henvendelse-arkivering-tjenestespesifikasjon</artifactId>
-        <version>2.0-SNAPSHOT</version>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <artifactId>henvendelse-arkivering-aktivitet</artifactId>
     <name>${project.artifactId}</name>
-
     <properties>
         <wsdl.directory>src/main/resources</wsdl.directory>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>joda-time</groupId>
@@ -29,7 +26,6 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-
     <build>
         <resources>
             <resource>
@@ -125,5 +121,5 @@
             </plugin>
         </plugins>
     </build>
-
+    <version>2018.10.03-21.46-SNAPSHOT</version>
 </project>

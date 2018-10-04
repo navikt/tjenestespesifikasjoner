@@ -1,19 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>dialogarena</artifactId>
-        <version>1.5.2</version>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>besvare-henvendelse-tjenestespesifikasjon</artifactId>
-    <version>0.4-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <properties>
         <wsdl.directory>src/main/resources</wsdl.directory>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>joda-time</groupId>
@@ -21,7 +18,6 @@
             <artifactId>joda-time</artifactId>
         </dependency>
     </dependencies>
-
     <build>
         <resources>
             <resource>
@@ -47,7 +43,7 @@
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
-								<wsdlOption>
+                                <wsdlOption>
                                     <wsdl>${wsdl.directory}/v1/BesvareHenvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
@@ -115,14 +111,11 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
-	</build>
-
+    </build>
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

@@ -1,18 +1,16 @@
-<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>no.nav.sbl</groupId>
-        <artifactId>mor-pom</artifactId>
-        <version>2</version>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <artifactId>arena-sakOgAktivitet_v1</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.0.12-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
         <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -80,7 +78,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                  <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/sakOgAktivitet/v1/Binding.wsdl/</wsdl>
+                                    <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/sakOgAktivitet/v1/Binding.wsdl/</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
@@ -89,23 +87,23 @@
                         </configuration>
                     </execution>
                 </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.java.dev.jaxb2-commons</groupId>
-                            <artifactId>jaxb-fluent-api</artifactId>
-                            <version>2.1.8</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.jvnet.jaxb2_commons</groupId>
-                            <artifactId>jaxb2-basics</artifactId>
-                            <version>0.6.4</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>joda-time</groupId>
-                            <artifactId>joda-time</artifactId>
-                            <version>2.3</version>
-                        </dependency>
-                    </dependencies>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.java.dev.jaxb2-commons</groupId>
+                        <artifactId>jaxb-fluent-api</artifactId>
+                        <version>2.1.8</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-basics</artifactId>
+                        <version>0.6.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>joda-time</groupId>
+                        <artifactId>joda-time</artifactId>
+                        <version>2.3</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
@@ -123,15 +121,21 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -140,7 +144,7 @@
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
-			<version>0.6.4</version>
+            <version>0.6.4</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -148,16 +152,14 @@
             <version>2.3</version>
         </dependency>
         <dependency>
-        	<groupId>no.nav.sbl.dialogarena</groupId>
-        	<artifactId>jaxb-adapters</artifactId>
-        	<version>1.1</version>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>1.1</version>
         </dependency>
     </dependencies>
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>
