@@ -70,7 +70,7 @@
                         <configuration>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/behandlesykmelding/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/behandleSykmelding/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandlesykmeldingv1/bindings.xml</bindingFile>
                                     </bindingFiles>

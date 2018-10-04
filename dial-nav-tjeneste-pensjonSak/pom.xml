@@ -60,7 +60,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>2.7.0</version>
+                <version>${cxf.version}</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
