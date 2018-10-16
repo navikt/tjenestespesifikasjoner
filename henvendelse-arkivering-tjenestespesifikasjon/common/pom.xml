@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>henvendelse-arkivering-tjenestespesifikasjon</artifactId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
         <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <artifactId>henvendelse-arkivering-common</artifactId>
