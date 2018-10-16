@@ -94,6 +94,12 @@ poms.forEach(file => {
                         } else {
                             return plugin;
                         }
+                    }).filter(plugin => {
+                        const artifactId = plugin.artifactId[0];
+                        console.log(artifactId);
+                        return [
+                            'maven-assembly-plugin'
+                        ].indexOf(artifactId) === -1;
                     })
                 }
             };
