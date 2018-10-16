@@ -8,7 +8,7 @@
     <artifactId>henvendelse-arkivering-aktivitet</artifactId>
     <name>${project.artifactId}</name>
     <properties>
-        <wsdl.directory>src/main/resources</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <dependencies>
         <dependency>

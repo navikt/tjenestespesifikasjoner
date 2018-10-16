@@ -7,14 +7,14 @@
 	<fileSets>
 		<fileSet>
       		<outputDirectory>/</outputDirectory>
-			<directory>target/classes</directory>
+			<directory>src/main/wsdl</directory>
 			<includes>
 				<include>**/BehandleHenvendelse.wsdl</include>
 			</includes>
 		</fileSet>
 		<fileSet>
       		<outputDirectory>/</outputDirectory>
-			<directory>target/classes</directory>
+			<directory>src/main/wsdl</directory>
 			<includes>
 				<include>**/*.xsd</include>
 			</includes>

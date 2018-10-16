@@ -9,7 +9,7 @@
     <artifactId>personsok-esb-tjenestespesifikasjon</artifactId>
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <build>
         <plugins>

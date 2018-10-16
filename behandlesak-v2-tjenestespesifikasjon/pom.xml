@@ -10,42 +10,13 @@
     <packaging>jar</packaging>
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
         <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
         <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
         <jaxb-adapters.version>1.1</jaxb-adapters.version>
     </properties>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${wsdl.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>

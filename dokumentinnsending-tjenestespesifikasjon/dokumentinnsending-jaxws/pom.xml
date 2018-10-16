@@ -9,7 +9,7 @@
     <artifactId>dokumentinnsending-jaxws</artifactId>
     <packaging>jar</packaging>
     <properties>
-        <wsdl.directory>src/main/resources</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <build>
         <plugins>

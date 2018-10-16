@@ -10,53 +10,10 @@
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <properties>
-        <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fetch-wsdls</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.tjenester.fim</groupId>
-                                    <artifactId>nav-fim-behandleJournal-v2-tjenestespesifikasjon</artifactId>
-                                    <version>2.3.0</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.directory}/behandleJournal</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/wsdl</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${wsdl.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
@@ -80,10 +37,10 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>
-                                        ${wsdl.directory}/behandleJournal/no/nav/tjeneste/virksomhet/behandleJournal/v2/Binding.wsdl
+                                        ${wsdl.directory}/no/nav/tjeneste/virksomhet/behandleJournal/v2/Binding.wsdl
                                     </wsdl>
                                     <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/behandleJournal/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>

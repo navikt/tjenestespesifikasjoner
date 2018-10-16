@@ -9,7 +9,7 @@
     <artifactId>henvendelse-felles-tjenestespesifikasjon</artifactId>
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>src/main/resources</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <dependencies>
         <dependency>

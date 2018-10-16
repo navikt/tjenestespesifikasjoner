@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
         <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
     </properties>
     <build>

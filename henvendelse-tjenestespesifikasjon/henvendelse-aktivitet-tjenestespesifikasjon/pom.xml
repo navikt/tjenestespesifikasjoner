@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <properties>
-        <wsdl.directory>${project.build.directory}/resources</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <build>
         <plugins>

@@ -8,7 +8,7 @@
     <artifactId>henvendelse-arkivering-informasjon</artifactId>
     <name>${project.artifactId}</name>
     <properties>
-        <wsdl.directory>src/main/resources</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
         <schema.location>${project.build.directory}/schemas</schema.location>
     </properties>
     <dependencies>

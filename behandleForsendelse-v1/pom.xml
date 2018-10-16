@@ -9,62 +9,10 @@
     <artifactId>behandleForsendelse-v1</artifactId>
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fetch-wsdls</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>nav-behandleForsendelse-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.2</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.directory}/tjenestespesifikasjon</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${wsdl.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
@@ -84,7 +32,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/tjenestespesifikasjon/no/nav/tjeneste/virksomhet/behandleForsendelse/v1/Binding.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/behandleForsendelse/v1/Binding.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/behandleForsendelse/bindings.xml</bindingFile>
                                     </bindingFiles>
