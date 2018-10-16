@@ -11,8 +11,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>henvendelse-jaxws</module>
-        <module>henvendelse-informasjon-tjenestespesifikasjon</module>
-        <module>henvendelse-aktivitet-tjenestespesifikasjon</module>
     </modules>
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>

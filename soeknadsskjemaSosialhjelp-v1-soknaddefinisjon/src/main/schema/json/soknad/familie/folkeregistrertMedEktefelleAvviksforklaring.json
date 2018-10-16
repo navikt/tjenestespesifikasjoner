@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	
+	"title": "Forklaring",
+	"type": "object",
+	"javaType": "no.nav.sbl.soknadsosialhjelp.soknad.familie.FolkeregistrertMedEktefelleAvviksforklaring",
+	"properties": {
+		"kilde": {
+			"$ref": "../parts/kildeBruker.json"
+		},
+		"verdi": {
+			"description": "Brukerskrevet tekstlig forklaring (inkl. linjeskift).",
+			"type": "string"
+		}
+	},
+	"required": [
+		"kilde"
+	]
+}

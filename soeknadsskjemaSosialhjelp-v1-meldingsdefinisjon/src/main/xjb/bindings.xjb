@@ -6,7 +6,7 @@
                       adapter="com.migesok.jaxb.adapter.javatime.LocalDateXmlAdapter"/>
         <xjc:simple/>
     </jaxb:globalBindings>
-    <jaxb:bindings schemaLocation="tjenestespesifikasjon/sosialhjelp.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="../xsd/sosialhjelp.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="XML"/>
@@ -15,7 +15,7 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-    <jaxb:bindings schemaLocation="tjenestespesifikasjon/kodeverk.xsd">
+    <jaxb:bindings schemaLocation="../xsd/kodeverk.xsd">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="XML"/>

@@ -17,53 +17,12 @@
         </dependency>
     </dependencies>
     <properties>
-        <xsd.location>${project.build.directory}/classes</xsd.location>
+        <xsd.location>${project.basedir}/src/main/xsd</xsd.location>
         <dokumentforsendelse.version>1.1.2</dokumentforsendelse.version>
     </properties>
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-xsd</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.meldinger.virksomhet.dokument</groupId>
-                                    <artifactId>nav-virksomhet-dokumentforsendelse-v1-meldingsdefinisjon</artifactId>
-                                    <version>${dokumentforsendelse.version}</version>
-                                    <outputDirectory>${xsd.location}/</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/xjb</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${xsd.location}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>

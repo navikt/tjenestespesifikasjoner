@@ -41,9 +41,9 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>src/main/resources/no/nav/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/Meldinger.wsdl</wsdl>
+                                    <wsdl>src/main/wsdl/no/nav/tjeneste/domene/brukerdialog/henvendelsemeldinger/v1/Meldinger.wsdl</wsdl>
                                     <bindingFiles>
-                                        <bindingFile>src/main/resources/bindings.xml</bindingFile>
+                                        <bindingFile>src/main/wsdl/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>

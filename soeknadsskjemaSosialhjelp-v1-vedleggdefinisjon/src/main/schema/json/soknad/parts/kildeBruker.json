@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	
+	"javaType": "no.nav.sbl.soknadsosialhjelp.soknad.common.JsonKildeBruker",
+	"title": "Alltid bruker eller utdatert.",
+	"type": "string",
+	"enum": [
+		"bruker",
+		"utdatert"
+	],
+	"default": "bruker"
+}

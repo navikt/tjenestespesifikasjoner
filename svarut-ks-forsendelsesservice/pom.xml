@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <properties>
         <tjenestespecc.version>1.0.1</tjenestespecc.version>
-        <wsdl.location>${project.build.directory}/classes/tjenestespesifikasjon/</wsdl.location>
+        <wsdl.location>src/main/wsdl</wsdl.location>
     </properties>
     <dependencies>
         <dependency>
@@ -22,49 +22,6 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-xsd</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.tjenester</groupId>
-                                    <artifactId>ekstern-ks-svarUt-tjenestespesifikasjon</artifactId>
-                                    <version>${tjenestespecc.version}</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.location}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${wsdl.location}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>

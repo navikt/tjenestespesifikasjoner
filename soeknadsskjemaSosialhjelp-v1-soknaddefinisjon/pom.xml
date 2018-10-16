@@ -28,24 +28,21 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack-filformat</id>
+                        <id>copy-schema-files</id>
                         <phase>initialize</phase>
                         <goals>
-                            <goal>unpack</goal>
+                            <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.sbl.dialogarena</groupId>
-                                    <artifactId>soknadsosialhjelp-filformat</artifactId>
-                                    <version>${meldingsdefinisjon.version}</version>
-                                    <type>jar</type>
-                                    <outputDirectory>${schema.location}/</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/schema</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${schema.location}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

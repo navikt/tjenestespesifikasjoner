@@ -17,55 +17,12 @@
         </dependency>
     </dependencies>
     <properties>
-        <xsd.location>${project.build.directory}/classes/tjenestespesifikasjon</xsd.location>
-        <jaxb.location>${project.build.directory}/classes/</jaxb.location>
+        <xsd.location>src/main/xsd</xsd.location>
+        <jaxb.location>src/main/xjb</jaxb.location>
         <meldingsdefinisjon.version>1.0.2</meldingsdefinisjon.version>
     </properties>
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-xsd</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.foreldrepenger.kontrakter</groupId>
-                                    <artifactId>soeknadsskjemaEngangsstoenad-v1</artifactId>
-                                    <version>${meldingsdefinisjon.version}</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${xsd.location}/</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/xjb</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${jaxb.location}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>

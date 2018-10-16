@@ -31,13 +31,13 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>src/main/resources/behandleAktivitetsplan.wsdl</wsdl>
+                                    <wsdl>src/main/wsdl/behandleAktivitetsplan.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
                                         <extraarg>-xjc-Xequals</extraarg>
                                     </extraargs>
                                     <bindingFiles>
-                                        <bindingFile>src/main/resources/SerializeBinding.xml</bindingFile>
+                                        <bindingFile>src/main/wsdl/SerializeBinding.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
