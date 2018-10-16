@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="organisasjon" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:feil="http://nav.no/tjeneste/virksomhet/organisasjon/v4/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/organisasjon/v4/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnOrganisasjon">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnOrganisasjonRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnOrganisasjonResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnOrganisasjonResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnOrganisasjonugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnOrganisasjonforMangeForekomster" type="feil:ForMangeForekomster"/>
+      <xsd:element name="hentOrganisasjonsnavnBolk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentOrganisasjonsnavnBolkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentOrganisasjonsnavnBolkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentOrganisasjonsnavnBolkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentOrganisasjon">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentOrganisasjonRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentOrganisasjonResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentOrganisasjonResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentOrganisasjonugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentOrganisasjonorganisasjonIkkeFunnet" type="feil:OrganisasjonIkkeFunnet"/>
+      <xsd:element name="hentNoekkelinfoOrganisasjon">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentNoekkelinfoOrganisasjonRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentNoekkelinfoOrganisasjonResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentNoekkelinfoOrganisasjonResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentNoekkelinfoOrganisasjonugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentNoekkelinfoOrganisasjonorganisasjonIkkeFunnet" type="feil:OrganisasjonIkkeFunnet"/>
+      <xsd:element name="validerOrganisasjon">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:ValiderOrganisasjonRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validerOrganisasjonResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:ValiderOrganisasjonResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validerOrganisasjonugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="validerOrganisasjonorganisasjonIkkeFunnet" type="feil:OrganisasjonIkkeFunnet"/>
+      <xsd:element name="hentVirksomhetsOrgnrForJuridiskOrgnrBolk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnOrganisasjonsendringerListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnOrganisasjonsendringerListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnOrganisasjonsendringerListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnOrganisasjonsendringerListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnOrganisasjonsendringerListeugyldigInput" type="feil:UgyldigInput"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="hentOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:hentOrganisasjon">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjonResponse">
+    <wsdl:part name="parameters" element="tns:finnOrganisasjonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOrganisasjonsnavnBolkRequest">
+    <wsdl:part name="parameters" element="tns:hentOrganisasjonsnavnBolk">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnOrganisasjonugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjonsendringerListe_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnOrganisasjonsendringerListeugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validerOrganisasjon_organisasjonIkkeFunnet">
+    <wsdl:part name="organisasjonIkkeFunnet" element="tns:validerOrganisasjonorganisasjonIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOrganisasjon_organisasjonIkkeFunnet">
+    <wsdl:part name="organisasjonIkkeFunnet" element="tns:hentOrganisasjonorganisasjonIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validerOrganisasjonResponse">
+    <wsdl:part name="parameters" element="tns:validerOrganisasjonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentNoekkelinfoOrganisasjonResponse">
+    <wsdl:part name="parameters" element="tns:hentNoekkelinfoOrganisasjonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOrganisasjonsnavnBolkResponse">
+    <wsdl:part name="parameters" element="tns:hentOrganisasjonsnavnBolkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validerOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:validerOrganisasjon">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentNoekkelinfoOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:hentNoekkelinfoOrganisasjon">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjonsendringerListeRequest">
+    <wsdl:part name="parameters" element="tns:finnOrganisasjonsendringerListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentOrganisasjonugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentNoekkelinfoOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentNoekkelinfoOrganisasjonugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjon_forMangeForekomster">
+    <wsdl:part name="forMangeForekomster" element="tns:finnOrganisasjonforMangeForekomster">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest">
+    <wsdl:part name="parameters" element="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolk">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validerOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:validerOrganisasjonugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+    <wsdl:part name="parameters" element="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentNoekkelinfoOrganisasjon_organisasjonIkkeFunnet">
+    <wsdl:part name="organisasjonIkkeFunnet" element="tns:hentNoekkelinfoOrganisasjonorganisasjonIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjonsendringerListeResponse">
+    <wsdl:part name="parameters" element="tns:finnOrganisasjonsendringerListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:finnOrganisasjon">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOrganisasjonResponse">
+    <wsdl:part name="parameters" element="tns:hentOrganisasjonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Organisasjon_v4">
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnOrganisasjon">
+      <wsdl:input message="tns:finnOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="forMangeForekomster" message="tns:finnOrganisasjon_forMangeForekomster">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:finnOrganisasjon_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentOrganisasjonsnavnBolk">
+      <wsdl:input message="tns:hentOrganisasjonsnavnBolkRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentOrganisasjonsnavnBolkResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hentOrganisasjon">
+      <wsdl:input message="tns:hentOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="organisasjonIkkeFunnet" message="tns:hentOrganisasjon_organisasjonIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentOrganisasjon_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentNoekkelinfoOrganisasjon">
+      <wsdl:input message="tns:hentNoekkelinfoOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentNoekkelinfoOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="organisasjonIkkeFunnet" message="tns:hentNoekkelinfoOrganisasjon_organisasjonIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentNoekkelinfoOrganisasjon_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validerOrganisasjon">
+      <wsdl:input message="tns:validerOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:validerOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="organisasjonIkkeFunnet" message="tns:validerOrganisasjon_organisasjonIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:validerOrganisasjon_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentVirksomhetsOrgnrForJuridiskOrgnrBolk">
+      <wsdl:input message="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnOrganisasjonsendringerListe">
+      <wsdl:input message="tns:finnOrganisasjonsendringerListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnOrganisasjonsendringerListeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ugyldigInput" message="tns:finnOrganisasjonsendringerListe_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

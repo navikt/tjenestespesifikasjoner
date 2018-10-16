@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/metadata" xmlns:metadata="http://nav.no/tjeneste/virksomhet/organisasjon/v4/metadata">
+  <xsd:simpleType name="Dokumentasjonstype">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="arkivertBrev"/>
+      <xsd:enumeration value="behandling"/>
+      <xsd:enumeration value="elektronisk signatur"/>
+      <xsd:enumeration value="fil"/>
+      <xsd:enumeration value="telefon"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="NAVidentifikator">
+    <xsd:restriction base="metadata:Personidentifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="KildetyperPerson">
+    <xsd:annotation>
+      <xsd:documentation>Merk! En saksbehandler er aldri kilde</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="bruker"/>
+      <xsd:enumeration value="lege"/>
+      <xsd:enumeration value="advokat"/>
+      <xsd:enumeration value="saksbehandler">
+        <xsd:annotation>
+          <xsd:documentation>der saksbehandler produserer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="andre"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="decimal">
+    <xsd:restriction base="xsd:decimal"/>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Personkilde">
+    <xsd:attribute name="personkildetype" type="metadata:KildetyperPerson" use="required"/>
+    <xsd:attribute name="personId" type="metadata:Personidentifikator">
+      <xsd:annotation>
+        <xsd:documentation>Pålagt for Bruker , valgfri for andre</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="personkildebeskrivelse" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>(Fri-)tekst, tilleggsopplysninger om personkilden.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="lisensnr" type="metadata:Identifikator">
+      <xsd:annotation>
+        <xsd:documentation>Lisensnummer for lege eller advokat.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="Organisasjonsnummer">
+    <xsd:restriction base="metadata:Organisasjonsidentifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="ApplikasjonID">
+    <xsd:restriction base="metadata:Identifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Organisasjonsidentifikator">
+    <xsd:restriction base="metadata:Identifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Dnummer">
+    <xsd:restriction base="metadata:Personidentifikator"/>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Dokumentasjon">
+    <xsd:attribute name="fomBruksperiodeDokumentasjon" type="xsd:dateTime" use="required"/>
+    <xsd:attribute name="tomBruksperiodeDokumentasjon" type="xsd:dateTime" use="required"/>
+    <xsd:attribute name="dokumentasjonstype" type="metadata:Dokumentasjonstype" use="required"/>
+    <xsd:attribute name="faktumtype" type="xsd:anyURI" use="required"/>
+    <xsd:attribute name="navID_Dokumentasjon" type="metadata:Identifikator" use="required"/>
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="Systemkilde">
+    <xsd:attribute name="applikasjonsId" type="metadata:ApplikasjonID">
+      <xsd:annotation>
+        <xsd:documentation>Identifikator for applikasjonen som opptrer som konsument av en tjeneste (f.eks. aktivitets- eller informasjonstjeneste)</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="systemkildetype" type="metadata:KildetyperSystem" use="required">
+      <xsd:annotation>
+        <xsd:documentation>I hvilken systemkilde er dataattributeet/-ene hentet fra /eller skal de lagres til</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="opprinneligKilde" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Data i NAV kan ha en opprinnelig kilde (master) i eller utenfor NAV. F.eks. POPP, DSF</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="kilde" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Kilde i NAV (kan være lik opprinnelig kilde der opprinnelig kilde er i NAV og master for dataene). F.eks. POPP</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="registrertTidspunktKilde" type="xsd:dateTime" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Når ble data(-ene) registrert .</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="base64Binary">
+    <xsd:restriction base="xsd:base64Binary"/>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Endringssporing">
+    <xsd:annotation>
+      <xsd:documentation>Endringssporing brukes til å representere data om hvilke endringer som er utført på en entitet, av hvem og når.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="endringstidspunkt" type="xsd:dateTime" use="required"/>
+    <xsd:attribute name="endretAv" type="metadata:Identifikator" use="required"/>
+    <xsd:attribute name="endringstype" type="metadata:Endringstyper"/>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="Navn">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Foedselsnummer">
+    <xsd:restriction base="metadata:Personidentifikator"/>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Oppbevaringstid">
+    <xsd:annotation>
+      <xsd:documentation>Er en periode som angis som et tidsintervall fra-og-med og til-og-med, i fortid, nåtid eller fremtid. Datatypen på attributtene er satt til datetime. Dette for å dekke ulike behov mht. "oppløsning"/granularitet på tidsangivelsen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="fomOppbevaringsperiode" type="xsd:dateTime" use="required"/>
+    <xsd:attribute name="tomOppbevaringsperiode" type="xsd:dateTime" use="required"/>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="KildetyperSystem">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="intern"/>
+      <xsd:enumeration value="samhandler"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Bruksperiode">
+    <xsd:attribute name="fomBruksperiode" type="xsd:dateTime"/>
+    <xsd:attribute name="tomBruksperiode" type="xsd:dateTime"/>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="Kontonummer">
+    <xsd:restriction base="metadata:Identifikator"/>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Versjon">
+    <xsd:annotation>
+      <xsd:documentation>Brukes for å tilordne versjonsinformasjon til en "entitet".</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="versjonsnummer" type="xsd:string" use="required"/>
+    <xsd:attribute name="versjoneringsdato" type="xsd:dateTime" use="required"/>
+  </xsd:attributeGroup>
+  <xsd:simpleType name="Klassifiseringskoder">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ekstraHoeyt"/>
+      <xsd:enumeration value="hoeyt"/>
+      <xsd:enumeration value="middels"/>
+      <xsd:enumeration value="moderat"/>
+      <xsd:enumeration value="lavt"/>
+      <xsd:enumeration value="ikkeSatt"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="FaktumtypeID">
+    <xsd:restriction base="metadata:Identifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Endringstyper">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ny"/>
+      <xsd:enumeration value="endret"/>
+      <xsd:enumeration value="slettet">
+        <xsd:annotation>
+          <xsd:documentation>logisk slettet (setter bruksperiode tom)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="utgaatt"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Personidentifikator">
+    <xsd:restriction base="metadata:Identifikator"/>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Klassifikasjon">
+    <xsd:annotation>
+      <xsd:documentation>Modelleringen er basert på følgende kilde:
+
+http://navet.adeo.no/ansatt/Systemsider/sok/solrDokumenterAlle/_attachment/261834?_ts=12d03174608</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="klassifiseringskode" type="metadata:Klassifiseringskoder" use="required"/>
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="Gyldighetsperiode">
+    <xsd:annotation>
+      <xsd:documentation>Er en periode som angis som et tidsintervall fra-og-med og til-og-med, i fortid, nåtid eller fremtid. Datatypen på attributtene er satt til datetime. Dette for å dekke ulike behov mht. "oppløsning"/granularitet på tidsangivelsen.
+
+Gyldighetsperioden angir den perioden dataene den gjelder gjaldt i den virkelige verden.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="fomGyldighetsperiode" type="xsd:dateTime"/>
+    <xsd:attribute name="tomGyldighetsperiode" type="xsd:dateTime"/>
+  </xsd:attributeGroup>
+</xsd:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Binding" targetNamespace="http://nav.no/tjeneste/virksomhet/maalgruppe/v1/Binding" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/maalgruppe/v1/Binding" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl_1="http://nav.no/tjeneste/virksomhet/maalgruppe/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/maalgruppe/v1" location="maalgruppe.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="maalgruppe_v1Binding" type="wsdl_1:maalgruppe_v1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing/>
+    <wsdl:operation name="finnMaalgruppeinformasjonListe">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/maalgruppe/v1/maalgruppe_v1/finnMaalgruppeinformasjonListeRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet">
+        <soap:fault name="personIkkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning">
+        <soap:fault name="sikkerhetsbegrensning" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/maalgruppe/v1/maalgruppe_v1/pingRequest"/>
+      <wsdl:input>
+        <soap:body parts="pingParameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="maalgruppe_v1">
+    <wsdl:port name="maalgruppe_v1Port" binding="tns:maalgruppe_v1Binding">
+      <soap:address location="http://localhost:9080/virksomhet/maalgruppe"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

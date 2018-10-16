@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleArbeidOgAktivitetOppgave/v1/informasjon" xmlns:informasjon="http://nav.no/tjeneste/virksomhet/behandleArbeidOgAktivitetOppgave/v1/informasjon">
+  <xsd:simpleType name="Identifikator">
+    <xsd:annotation>
+      <xsd:documentation>Unik identifikasjon</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Tema">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Aktoer"/>
+  <xsd:complexType name="Prioritet">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Oppgave">
+    <xsd:sequence>
+      <xsd:element name="bruker" type="informasjon:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Bruker er av type Aktoer, som er et abstakt objekt. Aktoer kan enten være Person eller Organisasjon
+
+http://jira.adeo.no/browse/BEGREP-20</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="frist" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Hvilken frist som er satt for å utføre (lukke) oppgaven</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="arenaAnsattId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>Hvilken nav ressurs (applikasjonsbruker) som er ansvarlig for å utføre oppgaven</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="behandlendeEnhetId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>Hvilken nav organisasjonsenhet som er behandlende enhet for oppgaven</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tema" type="informasjon:Tema">
+        <xsd:annotation>
+          <xsd:documentation>Begrep Tema fra begrepskatalogen http://jira.adeo.no/browse/BEGREP-38
+
+Definisjon: En kategori som angir hvilket av NAVs arbeidsområder en oppgave eller et dokument gjelder.
+
+Alternative begrep er Fagområde, formål, kategori, arbeidsområde.
+
+Her brukes den for å definere hvilket tema oppgaven er knyttet til. Se dokumentasjon hos tjenestetilbyder Arena for dokumentasjon på hva dette er.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="beskrivelse" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Tekstlig beskrivelse av oppgaven</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="erUtland" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Flagg som definerer om en oppgave er tilknyttet utland eller ikke. Defaultverdi er false, som markerer at oppgaven ikke er tilknyttet utland.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="prioritet" type="informasjon:Prioritet">
+        <xsd:annotation>
+          <xsd:documentation>Prioritertingsnivå for oppgaven som bestilles. Gyldige verdier er  Meget Høy, Høy eller Middels.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tilleggsinformasjon" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Tilleggsinformasjon knyttet til oppfølging/kommentar til oppgaven</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sakInfo" type="informasjon:SakInfo">
+        <xsd:annotation>
+          <xsd:documentation>Informasjon om saken tilhørende oppgaven</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Organisasjon">
+    <xsd:complexContent>
+      <xsd:extension base="informasjon:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="orgnummer" type="informasjon:Identifikator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SakInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arenaSakId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>Arena spesifikk sakId</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tilknyttetArenaSakId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>Arena spesifikk sakId som er tilknyttet oppgaven</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tvingNySak" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Boolsk felt som angir om man skal tvinge at ny sak opprettes sammen med oppgaven.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Person">
+    <xsd:complexContent>
+      <xsd:extension base="informasjon:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="ident" type="informasjon:Identifikator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Kodeverdi">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="kodeRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Oppgavetype">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>
