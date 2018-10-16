@@ -9,11 +9,6 @@
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <packaging>jar</packaging>
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/xsd</directory>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

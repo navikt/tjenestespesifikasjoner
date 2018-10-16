@@ -47,6 +47,10 @@ function makeRootPom() {
                     groupId: 'no.nav.sbl.dialogarena',
                     artifactId: 'jaxb-adapters',
                     version
+                }, {
+                    groupId: 'joda-time',
+                    artifactId: 'joda-time',
+                    version: '2.10'
                 }]
             }
         }
@@ -80,6 +84,7 @@ poms.forEach(file => {
         const build = res.project.build ? res.project.build[0] : null;
 
         if (build && build.plugins) {
+            delete build.resources;
             res.project.build = {
                 ...build,
                 plugins: {
