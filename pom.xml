@@ -5,7 +5,6 @@
     <version>2018.10.03-21.46-SNAPSHOT</version>
     <name>tjenestespesifikasjoner</name>
     <packaging>pom</packaging>
-
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -13,133 +12,132 @@
         <cxf.version>3.1.6</cxf.version>
         <cxf-xjc-boolean.version>3.1.0</cxf-xjc-boolean.version>
     </properties>
-
     <modules>
         <module>aktorid-jaxws</module>
         <module>altinn-correspondence-agency-external</module>
         <module>altinn-download-queue-external</module>
         <module>altinn-pre-fill</module>
-        <module>arbeidOgAktivitetSak</module>
-        <module>arbeidsfordeling-v1</module>
-        <module>arbeidsforholdv3</module>
+        <module>arbeidogaktivitet-tjenestespesifikasjon</module>
+        <module>arbeidsfordeling-v1-tjenestespesifikasjon</module>
+        <module>arbeidsforholdv3-tjenestespesifikasjon</module>
         <module>arena-arbeid-og-aktivitet-gosys</module>
         <module>arena-arbeid-og-aktivitet</module>
-        <module>arena-maalgruppe</module>
-        <module>arena-personinfo</module>
-        <module>arena-sak-og-aktivitet-informasjon</module>
+        <module>arena-maalgruppe_v1</module>
+        <module>arena-personinfo-tjenestespesifikasjon</module>
+        <module>arena-sakOgAktivitet_v1</module>
         <module>behandle-henvendelse</module>
-        <module>behandle-medlemskap-v1</module>
-        <module>behandle-moete-v1</module>
-        <module>behandle-person-v1</module>
-        <module>behandle-sykefravaersoppfoelgingv1</module>
-        <module>behandle-sykmelding-v1</module>
-        <module>behandleArbeidOgAktivitetOppgave-v1</module>
-        <module>behandleDokumentforsendelse-v1</module>
-        <module>behandleForeldrepengesak-v1</module>
+        <module>behandle-medlemskap-v1-tjenestespesifikasjon</module>
+        <module>behandle-moetev1-tjenestespesifikasjon</module>
+        <module>behandle-person-v1-tjenestespesifikasjon</module>
+        <module>behandle-sykefravaersoppfoelgingv1-tjenestespesifikasjon</module>
+        <module>behandle-sykmeldingv1-tjenestespesifikasjon</module>
+        <module>behandleArbeidOgAktivitetOppgave-v1-tjenestespesifikasjon</module>
+        <module>behandledokumentforsendelse-v1-tjenestespesifikasjon</module>
+        <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
         <module>behandleForsendelse-udi-brevdata</module>
         <module>behandleForsendelse-v1</module>
         <module>behandleJournal-jaxws</module>
-        <module>behandleoppgave-v1</module>
-        <module>behandlesak-v2</module>
-        <module>besvarehenvendelse</module>
-        <module>brukerdialog-behandleAktivitetsplan-v1</module>
-        <module>brukerprofil-v2</module>
-        <module>brukerprofil-v3</module>
-        <module>brukerprofil</module>
-        <module>brukervarsel</module>
-        <module>cons-sak-gosys</module>
-        <module>dial-nav-tjeneste-aktorid_v2</module>
+        <module>behandleoppgave-v1-tjenestespesifikasjon</module>
+        <module>behandlesak-v2-tjenestespesifikasjon</module>
+        <module>besvare-henvendelse-tjenestespesifikasjon</module>
+        <module>brukerdialog-behandleAktivitetsplan-v1-tjenestespesifikasjon</module>
+        <module>brukerprofil-tjenestespesifikasjon</module>
+        <module>brukerprofil-v2-tjenestespesifikasjon</module>
+        <module>brukerprofil-v3-tjenestespesifikasjon</module>
+        <module>brukervarsel-v1-tjenestespesifikasjon</module>
+        <module>cons-sak-gosys-tjenestespesifikasjon</module>
+        <module>dial-nav-tjeneste-aktoer_v2</module>
         <module>dial-nav-tjeneste-behandlesak</module>
         <module>dial-nav-tjeneste-pensjonSak</module>
         <module>dial-nav-tjeneste-sak</module>
-        <module>dialog-v1</module>
+        <module>dialog-v1-tjenestespesifikasjon</module>
         <module>dialogarena-behandlingsinformasjon</module>
         <module>digisyfo-naermesteLeder</module>
-        <module>diskresjonskode-v1</module>
-        <module>dkif</module>
+        <module>digisyfo-sykmelding</module>
+        <module>diskresjonskodev1-tjenestespesifikasjon</module>
+        <module>dkif-tjenestespesifikasjon</module>
         <module>dokumentforsendelse-v1-meldingsdefinisjon</module>
-        <module>dokumentinfo</module>
-        <module>dokumentproduksjon_v2</module>
-        <module>dokumentproduksjon_v3</module>
-        <module>dokumetinnsending</module>
-        <module>egenansatt-v1</module>
-        <module>ekstern-helse-helsepersonell</module>
-        <module>elektronisknotifikasjon-utsending</module>
-        <module>enhet-v1</module>
-        <module>fillager</module>
-        <module>foreldrepengesak-v1</module>
-        <module>gsak-oppgave</module>
-        <module>henvendelse-arkivering</module>
+        <module>dokumentinfo-tjenestespesifikasjon</module>
+        <module>dokumentinnsending-tjenestespesifikasjon</module>
+        <module>dokumentproduksjon-v2-tjenestespesifikasjon</module>
+        <module>dokumentproduksjon-v3-tjenestespesifikasjon</module>
+        <module>egenansatt-v1-tjenestespesifikasjon</module>
+        <module>ekstern-helse-helsepersonell-tjenestespesifikasjon</module>
+        <module>elektronisknotifikasjon-utsending-tjenestespesifikasjon</module>
+        <module>enhet-v1-tjenestespesifikasjon</module>
+        <module>fillager-tjenestespesifikasjon</module>
+        <module>foreldrepengesak-v1-tjenestespesifikasjon</module>
+        <module>gsak-oppgave-tjenestespesifikasjon</module>
+        <module>henvendelse-arkivering-tjenestespesifikasjon</module>
         <module>henvendelse-behandlingsresultat</module>
-        <module>henvendelse-dokumentinnsending</module>
-        <module>henvendelse-felles</module>
+        <module>henvendelse-felles-tjenestespesifikasjon</module>
         <module>henvendelse-informasjon-v2</module>
-        <module>henvendelse-meldinger</module>
-        <module>henvendelse-soknader</module>
-        <module>henvendelse-soknadsinnsending</module>
-        <module>henvendelse-sporsmalinnsending</module>
+        <module>henvendelse-meldinger-tjenestespesifikasjon</module>
+        <module>henvendelse-soknader-tjenestespesifikasjon</module>
+        <module>henvendelse-tjenestespesifikasjon</module>
         <module>innsyn-henvendelse</module>
-        <module>innsyn-journal</module>
-        <module>institusjon-v1</module>
+        <module>innsynjournal-tjenestespesifikasjon</module>
+        <module>institusjon-v1-tjenestespesifikasjon</module>
         <module>jaxb-adapters</module>
-        <module>joark</module>
-        <module>journal-v1</module>
+        <module>joark-tjenestespesifikasjon</module>
+        <module>journal-v1-tjenestespesifikasjon</module>
         <module>juridisk-logg</module>
-        <module>kodeverk</module>
-        <module>medlemskap-v1</module>
-        <module>moete-v1</module>
-        <module>notat</module>
-        <module>oppfoelging-v1</module>
-        <module>oppfolgingsinfo-v1</module>
-        <module>oppgave-v3</module>
-        <module>oppgavebehandling-v3</module>
-        <module>oppgavebehandling</module>
-        <module>organisasjon-ressurs-enhet-v1</module>
-        <module>organisasjon-v4</module>
-        <module>organisasjonEnhet-v1</module>
-        <module>organisasjonEnhet-v2</module>
-        <module>organisasjonEnhetKontaktinformasjon-v1</module>
-        <module>organisasjonEnhetKontaktinformasjon-v2</module>
-        <module>pensjon-sak-v1</module>
-        <module>pensjonsak-esb</module>
+        <module>kodeverk-tjenestespesifikasjon</module>
+        <module>medlemskap-v1-tjenestespesifikasjon</module>
+        <module>moetev1-tjenestespesifikasjon</module>
+        <module>notat-tjenestespesifikasjon</module>
+        <module>oppfoelging-v1-tjenestespesifikasjon</module>
+        <module>oppfolgingsinfo-v1-tjenestespesifikasjon</module>
+        <module>oppgave-v3-tjenestespesifikasjon</module>
+        <module>oppgavebehandling-tjenestespesifikasjon</module>
+        <module>oppgavebehandling-v3-tjenestespesifikasjon</module>
+        <module>organisasjon-ressurs-enhet-v1-tjenestespesifikasjon</module>
+        <module>organisasjonenhet-v1-tjenestespesifikasjon</module>
+        <module>organisasjonenhet-v2-tjenestespesifikasjon</module>
+        <module>organisasjonenhetkontaktinformasjon-v1-tjenestespesifikasjon</module>
+        <module>organisasjonenhetkontaktinformasjon-v2-tjenestespesifikasjon</module>
+        <module>organisasjonv4-tjenestespesifikasjon</module>
+        <module>pensjon-sak-v1-tjenestespesifikasjon</module>
+        <module>pensjonsak-esb-tjenestespesifikasjon</module>
         <module>person-sammenslaatt-v1</module>
         <module>person-splittet-v1</module>
-        <module>person-v1-esb</module>
-        <module>person-v2</module>
-        <module>person-v3</module>
-        <module>personsok-esb</module>
-        <module>pleiepenger-v1</module>
-        <module>sak-v2</module>
-        <module>sakogbehandling</module>
+        <module>person-v1-esb-tjenestespesifikasjon</module>
+        <module>person-v2-tjenestespesifikasjon</module>
+        <module>person-v3-tjenestespesifikasjon</module>
+        <module>personsok-esb-tjenestespesifikasjon</module>
+        <module>pleiepenger-v1-tjenestespesifikasjon</module>
+        <module>sak-v2-tjenestespesifikasjon</module>
+        <module>sakogbehandling-tjenestespesifikasjon</module>
         <module>sanntidpdfkonverter</module>
         <module>send-inn-henvendelse</module>
         <module>send-ut-henvendelse</module>
+        <module>sendsoknad-tjenestespesifikasjon</module>
         <module>soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-saksoversiktdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-soknaddefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-vedleggdefinisjon</module>
-        <module>startRegistreringStatus-v1</module>
+        <module>sporsmalinnsending-tjenestespesifikasjon</module>
+        <module>startregistreringstatus-v1-tjenestespesifikasjon</module>
         <module>svarut-ks-forsendelsesservice</module>
-        <module>sykefravaersoppfoelgingv1</module>
-        <module>sykmelderstatistikk-v1</module>
-        <module>sykmelding-2013</module>
-        <module>sykmeldingv1</module>
+        <module>sykefravaersoppfoelgingv1-tjenestespesifikasjon</module>
+        <module>sykmelderstatistikk-tjenestespesifikasjon</module>
+        <module>sykmeldingv1-tjenestespesifikasjon</module>
         <module>testvarsel-opprettelse</module>
-        <module>tildeloppgave-v1</module>
+        <module>tildeloppgave-v1-tjenestespesifikasjon</module>
         <module>tmp-nav-fim-hendelse-v1</module>
         <module>tps-distribusjonsmelding</module>
         <module>udi-personstatus-v1</module>
-        <module>utbetaling</module>
-        <module>utenrikstjenesten</module>
+        <module>utbetaling-tjenestespesifikasjon</module>
+        <module>utenrikstjenesten-tjenestespesifikasjon</module>
         <module>varsel-inn</module>
-        <module>varseldittnav</module>
+        <module>varseldittnav-tjenestespesifikasjon</module>
         <module>varselkvittering</module>
         <module>varseltekster</module>
         <module>varselutsending</module>
         <module>varsler</module>
-        <module>veiledervarsler</module>
-        <module>ytelseskontrakt-v3</module>
+        <module>veiledervarsel</module>
+        <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -147,6 +145,11 @@
                 <groupId>no.nav.sbl.dialogarena</groupId>
                 <artifactId>jaxb-adapters</artifactId>
                 <version>2018.10.03-21.46-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.10</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

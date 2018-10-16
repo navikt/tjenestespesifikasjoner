@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>henvendelse-tjenestespesifikasjon</artifactId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
         <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
-    <artifactId>henvendelse-informasjon-tjenestespesifikasjon</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>dokumentinnsending-soknad-tjenestespesifikasjon</artifactId>
+    <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <properties>
         <wsdl.directory>${project.build.directory}/resources</wsdl.directory>
@@ -28,7 +28,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>no.nav.sbl.dialogarena</groupId>
-                                    <artifactId>henvendelse-jaxws</artifactId>
+                                    <artifactId>dokumentinnsending-jaxws</artifactId>
                                     <version>${project.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${wsdl.directory}</outputDirectory>
@@ -49,7 +49,7 @@
                 <version>2.4</version>
                 <executions>
                     <execution>
-                        <id>henvendelsesbehandling</id>
+                        <id>soknad</id>
                         <phase>package</phase>
                         <goals>
                             <goal>attached</goal>
