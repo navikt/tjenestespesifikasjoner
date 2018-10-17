@@ -16,7 +16,7 @@
         <dependency>
             <groupId>no.nav.sbl.dialogarena</groupId>
             <artifactId>dialogarena-behandlingsinformasjon</artifactId>
-            <version>1.0.4</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
     <build>
