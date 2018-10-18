@@ -5,7 +5,7 @@ var fs = require('fs');
 request = request.defaults({
     auth: {
         username: 'srvPortaler',
-        password: 'PyTjo3mED6Q96c'
+        password: process.env.SYSTEMUSER_PASSWORD
     }
 });
 var args = process.argv.slice(2);
