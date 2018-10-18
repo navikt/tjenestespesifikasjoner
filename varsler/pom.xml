@@ -53,7 +53,7 @@
                         <version>0.6.4</version>
                     </dependency>
                     <dependency>
-                        <groupId>no.nav.sbl.dialogarena</groupId>
+                        <groupId>no.nav.tjenestespesifikasjoner</groupId>
                         <artifactId>jaxb-adapters</artifactId>
                         <version>2018.10.18-13.19-SNAPSHOT</version>
                     </dependency>
