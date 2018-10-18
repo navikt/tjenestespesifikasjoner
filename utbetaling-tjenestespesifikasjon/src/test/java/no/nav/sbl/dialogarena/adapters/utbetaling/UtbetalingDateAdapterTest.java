@@ -53,7 +53,7 @@ public class UtbetalingDateAdapterTest {
         DateTime dateTime = new DateTime(2010, 01, 02, 03, 04);
         String dateString = adapter.marshal(dateTime);
 
-        assertThat(dateString, is("2010-01-02T03:04:00.000"));
+        assertThat(dateString, is("2010-01-02"));
     }
 
 }
