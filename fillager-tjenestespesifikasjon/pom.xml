@@ -103,8 +103,8 @@
                 <dependencies>
                     <dependency>
                         <groupId>net.sf.saxon</groupId>
-                        <artifactId>saxon</artifactId>
-                        <version>9.1.0.8</version>
+                        <artifactId>Saxon-HE</artifactId>
+                        <version>9.8.0-14</version>
                     </dependency>
                 </dependencies>
             </plugin>
