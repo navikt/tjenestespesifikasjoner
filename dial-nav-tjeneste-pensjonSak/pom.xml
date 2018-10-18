@@ -3,11 +3,11 @@
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>tjenestespesifikasjoner</artifactId>
-        <version>2018.10.03-21.46-SNAPSHOT</version>
+        <version>2018.10.18-13.19-SNAPSHOT</version>
     </parent>
     <artifactId>dial-nav-tjeneste-pensjonSak</artifactId>
     <name>${project.artifactId}</name>
-    <version>2018.10.03-21.46-SNAPSHOT</version>
+    <version>2018.10.18-13.19-SNAPSHOT</version>
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
@@ -89,7 +89,7 @@
         <dependency>
             <groupId>no.nav.sbl.dialogarena</groupId>
             <artifactId>jaxb-adapters</artifactId>
-            <version>2018.10.03-21.46-SNAPSHOT</version>
+            <version>2018.10.18-13.19-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <scm>

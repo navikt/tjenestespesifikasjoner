@@ -7,7 +7,7 @@ const modules = Array.from(new Set(poms.map(file => {
     return file.substr(0, file.indexOf('/'));
 })));
 
-const version = '2018.10.03-21.46-SNAPSHOT';
+const version = '2018.10.18-13.19-SNAPSHOT';
 
 const parent = {
     groupId: 'no.nav.sbl.dialogarena',

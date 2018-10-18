@@ -2,11 +2,11 @@
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>tjenestespesifikasjoner</artifactId>
-        <version>2018.10.03-21.46-SNAPSHOT</version>
+        <version>2018.10.18-13.19-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>elektronisknotifikasjon-utsending-tjenestespesifikasjon</artifactId>
-    <version>2018.10.03-21.46-SNAPSHOT</version>
+    <version>2018.10.18-13.19-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <packaging>jar</packaging>
     <properties>

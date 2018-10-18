@@ -2,18 +2,18 @@
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
         <artifactId>tjenestespesifikasjoner</artifactId>
-        <version>2018.10.03-21.46-SNAPSHOT</version>
+        <version>2018.10.18-13.19-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>dokumentinfo-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>2018.10.03-21.46-SNAPSHOT</version>
+    <version>2018.10.18-13.19-SNAPSHOT</version>
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
         <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
         <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
-        <jaxb-adapters.version>2018.10.03-21.46-SNAPSHOT</jaxb-adapters.version>
+        <jaxb-adapters.version>2018.10.18-13.19-SNAPSHOT</jaxb-adapters.version>
     </properties>
     <build>
         <plugins>
@@ -62,7 +62,7 @@
                     <dependency>
                         <groupId>no.nav.sbl.dialogarena</groupId>
                         <artifactId>jaxb-adapters</artifactId>
-                        <version>2018.10.03-21.46-SNAPSHOT</version>
+                        <version>2018.10.18-13.19-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>

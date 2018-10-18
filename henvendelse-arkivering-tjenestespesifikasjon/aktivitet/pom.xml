@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>tjenestespesifikasjoner</artifactId>
-        <version>2018.10.03-21.46-SNAPSHOT</version>
+        <artifactId>henvendelse-arkivering-tjenestespesifikasjon</artifactId>
+        <version>2018.10.18-13.19-SNAPSHOT</version>
     </parent>
     <artifactId>henvendelse-arkivering-aktivitet</artifactId>
     <name>${project.artifactId}</name>
@@ -99,7 +99,7 @@
             </plugin>
         </plugins>
     </build>
-    <version>2018.10.03-21.46-SNAPSHOT</version>
+    <version>2018.10.18-13.19-SNAPSHOT</version>
     <scm>
         <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
         <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
