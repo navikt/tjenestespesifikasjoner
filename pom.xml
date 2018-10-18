@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>no.nav.sbl.dialogarena</groupId>
+    <groupId>no.nav.tjenestespesifikasjoner</groupId>
     <artifactId>tjenestespesifikasjoner</artifactId>
     <version>2018.10.18-13.19-SNAPSHOT</version>
     <name>tjenestespesifikasjoner</name>

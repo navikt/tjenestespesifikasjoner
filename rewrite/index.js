@@ -10,7 +10,7 @@ const modules = Array.from(new Set(poms.map(file => {
 const version = '2018.10.18-13.19-SNAPSHOT';
 
 const parent = {
-    groupId: 'no.nav.sbl.dialogarena',
+    groupId: 'no.nav.tjenestespesifikasjoner',
     artifactId: 'tjenestespesifikasjoner',
     version
 };
@@ -79,6 +79,7 @@ poms.forEach(file => {
         }
         res.project.parent = parent;
         res.project.version = version;
+        delete res.project.groupId;
 
         const build = res.project.build ? res.project.build[0] : null;
 
@@ -101,7 +102,6 @@ poms.forEach(file => {
                         }
                     }).filter(plugin => {
                         const artifactId = plugin.artifactId[0];
-                        console.log(artifactId);
                         return [
                             'maven-assembly-plugin',
                             'maven-compiler-plugin',
