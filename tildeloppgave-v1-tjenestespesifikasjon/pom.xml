@@ -57,7 +57,7 @@
                         <version>${jaxb2-basics.version}</version>
                     </dependency>
                     <dependency>
-                        <groupId>no.nav.sbl.dialogarena</groupId>
+                        <groupId>no.nav.tjenestespesifikasjoner</groupId>
                         <artifactId>jaxb-adapters</artifactId>
                         <version>2018.10.18-13.19-SNAPSHOT</version>
                     </dependency>

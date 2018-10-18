@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>no.nav.tjenestespesifikasjoner</groupId>
-        <artifactId>tjenestespesifikasjoner</artifactId>
+        <artifactId>henvendelse-arkivering-tjenestespesifikasjon</artifactId>
         <version>2018.10.18-13.19-SNAPSHOT</version>
     </parent>
     <artifactId>henvendelse-arkivering-aktivitet</artifactId>
@@ -16,7 +16,7 @@
             <artifactId>joda-time</artifactId>
         </dependency>
         <dependency>
-            <groupId>no.nav.sbl.dialogarena</groupId>
+            <groupId>no.nav.tjenestespesifikasjoner</groupId>
             <artifactId>jaxb-adapters</artifactId>
         </dependency>
         <dependency>
