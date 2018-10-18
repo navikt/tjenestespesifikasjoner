@@ -15,15 +15,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
@@ -89,8 +80,9 @@
         </plugins>
     </build>
     <scm>
-        <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
-        <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
         <tag>HEAD</tag>
     </scm>
 </project>

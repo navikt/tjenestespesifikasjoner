@@ -82,4 +82,10 @@
         </plugins>
     </build>
     <version>2018.10.03-21.46-SNAPSHOT</version>
+    <scm>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
+        <tag>HEAD</tag>
+    </scm>
 </project>

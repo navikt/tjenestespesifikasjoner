@@ -73,27 +73,12 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.1</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>perform</goal>
-                        </goals>
-                        <configuration>
-                            <pomFileName>${project.basedir}/pom.xml</pomFileName>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
     <scm>
-        <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
-        <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
         <tag>HEAD</tag>
     </scm>
 </project>

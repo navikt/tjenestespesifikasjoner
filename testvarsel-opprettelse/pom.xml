@@ -88,8 +88,9 @@
         </plugins>
     </build>
     <scm>
-        <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
-        <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
         <tag>HEAD</tag>
     </scm>
 </project>

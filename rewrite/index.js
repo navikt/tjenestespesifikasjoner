@@ -77,7 +77,6 @@ poms.forEach(file => {
         if (err) {
             console.error('Could not parse file', file, err);
         }
-        console.log(res);
         res.project.parent = parent;
         res.project.version = version;
 
@@ -85,6 +84,7 @@ poms.forEach(file => {
 
         if (build && build.plugins) {
             delete build.resources;
+            delete build.pluginManagement;
             res.project.build = {
                 ...build,
                 plugins: {
@@ -103,12 +103,30 @@ poms.forEach(file => {
                         const artifactId = plugin.artifactId[0];
                         console.log(artifactId);
                         return [
-                            'maven-assembly-plugin'
+                            'maven-assembly-plugin',
+                            'maven-compiler-plugin',
+                            'maven-release-plugin'
                         ].indexOf(artifactId) === -1;
                     })
                 }
             };
         }
+
+        /*
+        <scm>
+    <developerConnection></developerConnection>
+    <connection>scm:git:git@github.com:navikt/nav-java-codestyle.git</connection>
+    <url>https://github.com/navikt/nav-java-codestyle</url>
+    <tag>HEAD</tag>
+  </scm>
+         */
+
+        res.project.scm = {
+            developerConnection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
+            connection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
+            url: 'https://github.com/navikt/tjenestespesifikasjoner',
+            tag: 'HEAD'
+        };
 
 
 

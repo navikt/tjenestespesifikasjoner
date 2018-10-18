@@ -69,14 +69,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.1</version>
-                <configuration>
-                    <goals>deploy</goals>
-                    <tagBase>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/kodegenerering/tags</tagBase>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -87,8 +79,9 @@
         </dependency>
     </dependencies>
     <scm>
-        <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
-        <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
         <tag>HEAD</tag>
     </scm>
 </project>

@@ -80,9 +80,9 @@
         </dependency>
     </dependencies>
     <scm>
-        <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
-        </developerConnection>
-        <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
-        <tag>udi-personstatus-v1-1.0.5</tag>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
+        <tag>HEAD</tag>
     </scm>
 </project>
