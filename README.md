@@ -1,14 +1,12 @@
+[![Build Status](https://travis-ci.com/navikt/tjenestespesifikasjoner.svg?token=f9LTHkxUqzyjiE6pDoDQ&branch=master)](https://travis-ci.com/navikt/tjenestespesifikasjoner)
+
 # Tjenestespesifikasjoner
 
+Dette prosjektet inneholder tjenestespesifikasjoner for de tjenestene som NAV tilbyr internt.
+De er maskinlesbare i form av WSDL/XSD/JSON-filer, og disse brukes som utgangspunkt for å
+generere Javakode. Denne autogenererte koden blir kompilert og siden publisert, slik at konsumenter
+kan bruke dem til å kommunisere med tjenestene.
 
 ## Bygging
 
-Bruk stash-release-library byggejobb på Jenkins
-http://cisbl.devillo.no/job/stash-release-library/
-
-Velg Build with parameters
-
-REPOSITORY: tjenestespesifikasjoner
-COMPONENT: <navn på mappe>, eks. journal, sykmelderstatistikk-v1 osv.
-PROJECT: felles
-branch: master, men kan velge annet
+`mvn clean install`
