@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	
+	"javaType": "no.nav.sbl.soknadsosialhjelp.soknad.common.JsonKildeSystem",
+	"title": "Alltid system eller utdatert.",
+	"type": "string",
+	"enum": [
+		"system",
+		"utdatert"
+	],
+	"default": "system"
+}

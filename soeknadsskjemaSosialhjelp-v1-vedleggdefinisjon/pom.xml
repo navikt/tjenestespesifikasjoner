@@ -1,22 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
-        <groupId>no.nav.sbl</groupId>
-        <artifactId>mor-pom</artifactId>
-        <version>3</version>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>soeknadsskjemaSosialhjelp-v1-vedleggdefinisjon</artifactId>
     <groupId>no.nav.sbl.dialogarena</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <properties>
-        <schema.location>${project.build.directory}/classes/tjenestespesifikasjon/</schema.location>
-        <meldingsdefinisjon.version>1.0.81.23</meldingsdefinisjon.version>
+        <schema.location>${project.basedir}/src/main/schema</schema.location>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -29,38 +24,14 @@
             <version>2.5.4</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-xsd</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.sbl.dialogarena</groupId>
-                                    <artifactId>soknadsosialhjelp-filformat</artifactId>
-                                    <version>${meldingsdefinisjon.version}</version>
-                                    <type>jar</type>
-                                    <outputDirectory>${schema.location}/</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>0.5.1</version>
                 <configuration>
-                    <sourceDirectory>${schema.location}/json/vedlegg</sourceDirectory>
+                    <sourceDirectory>${schema.location}/json/vedlegg/</sourceDirectory>
                     <targetPackage>no.nav.sbl.soknadsosialhjelp.vedlegg</targetPackage>
                     <classNamePrefix>Json</classNamePrefix>
                     <generateBuilders>true</generateBuilders>
@@ -74,7 +45,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -89,12 +59,10 @@
             </plugin>
         </plugins>
     </build>
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

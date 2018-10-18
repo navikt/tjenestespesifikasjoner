@@ -6,4 +6,4 @@ bin
 .project
 .settings
 */node_modules/
-
+rewrite

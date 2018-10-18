@@ -1,67 +1,22 @@
-<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>dialogarena</artifactId>
-        <version>3</version>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <artifactId>dial-nav-tjeneste-behandlesak</artifactId>
     <name>${project.artifactId}</name>
-    <version>1.2-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
-
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fetch-wsdls</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.tjenester.fim</groupId>
-                                    <artifactId>nav-fim-behandleSak-v1-tjenestespesifikasjon</artifactId>
-                                    <version>1.0.0</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.directory}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/wsdl</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${wsdl.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>2.7.0</version>
+                <version>${cxf.version}</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
@@ -158,15 +113,13 @@
         <dependency>
             <groupId>no.nav.sbl.dialogarena</groupId>
             <artifactId>jaxb-adapters</artifactId>
-            <version>1.1</version>
+            <version>2018.10.03-21.46-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

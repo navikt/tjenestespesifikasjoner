@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/informasjon" xmlns:informasjon="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/informasjon">
+  <xsd:complexType name="AktoerId">
+    <xsd:complexContent>
+      <xsd:extension base="informasjon:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="aktoerId" type="informasjon:Identifikator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Varselbestilling">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="varseltypeId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>Id som identifiserer en varseltype. Dette er blant annet knyttet til malverket for meldingsteksten i varslene som utsendes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="aktoerId" type="informasjon:AktoerId"/>
+      <xsd:element name="person" type="informasjon:Person"/>
+      <xsd:element name="bestilt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Tidspunkt for når varselbestilling er motatt på køen til Varsel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="reVarselingsintervall" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Dersom det skal revarsles, angir feltet hvor hyppig det skal revarsles. Eks: 7 - hver syvende dag.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" name="varselListe" type="informasjon:Varsel">
+        <xsd:annotation>
+          <xsd:documentation>Liste over varsler tilknyttet varselbestilling.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sisteVarselutsendelse" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>dato og tidspunkt for siste utsending av meldingen som tilhører varselet.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Periode">
+    <xsd:annotation>
+      <xsd:documentation>http://jira.adeo.no/browse/BEGREP-166
+
+En periode angis som et tidsintervall fra-og-med og til-og-med, i fortid, nåtid eller fremtid. Datatypen på atributtene er i dette tilfellet satt til bare date. Vær ellers oppmerksom på hva som skjer ifm. fysisk representasjon (xs:date) av klokkeslett i perioden (sommertid + 1:00)
+
+Hvis ingen periode er spesifisert, vil alle varsler returneres. Det er også mulig å kun spesifisere fom eller tom.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="fom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Til-og-med dato</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Varsel">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="kanal" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kanal varsling sendes via, f.eks. sms eller epost</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sendt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Tidspunkt for når varselet ble sendt fra Varsel til Kes varslingstjeneste</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="distribuert" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Tidspunkt for når varsel ble distribuert til kanal</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="kontaktinfo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kontaktinformasjon som ble brukt til å sende varslet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="varseltittel" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Tittel for varselet, benyttes som emne i epostvarsel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="varseltekst" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Selve teksten i varselet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="varselURL" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>URL lenke dersom dette er benyttet i varselet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="reVarsel" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Angir om varselet er et revarsel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Brukervarsel">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="varselbestillingListe" type="informasjon:Varselbestilling">
+        <xsd:annotation>
+          <xsd:documentation/>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Person">
+    <xsd:complexContent>
+      <xsd:extension base="informasjon:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="ident" type="informasjon:Identifikator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Aktoer"/>
+</xsd:schema>

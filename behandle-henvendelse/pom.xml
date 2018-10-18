@@ -1,60 +1,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
-        <groupId>no.nav.sbl</groupId>
-        <artifactId>mor-pom</artifactId>
-        <version>3</version>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>behandle-henvendelse</artifactId>
-	<version>0.22-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <properties>
-        <wsdl.directory>src/main/resources</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>no.nav.sbl.dialogarena</groupId>
             <artifactId>dialogarena-behandlingsinformasjon</artifactId>
-            <version>1.0.4</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
-
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack dependencies</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>unpack-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includes>**/*.xsd</includes>
-                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
@@ -81,7 +47,7 @@
                                     </extraargs>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
-                                        <bindingFile>src/main/resources/SerializeBinding.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/SerializeBinding.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
@@ -113,30 +79,11 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
-                <executions>
-                    <execution>
-                        <id>lag-zip</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>attached</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <appendAssemblyId>false</appendAssemblyId>
-                    <descriptor>resources.xml</descriptor>
-                </configuration>
-            </plugin>
-	  </plugins>
-	</build>
-
+        </plugins>
+    </build>
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

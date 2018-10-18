@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="brukervarsel" targetNamespace="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/" xmlns:feil="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentVarselForBruker">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentVarselForBrukerRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentVarselForBrukerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentVarselForBrukerResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentVarselForBrukerugyldigInput" type="feil:UgydigInput"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="hentVarselForBrukerRequest">
+    <wsdl:part name="parameters" element="tns:hentVarselForBruker">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVarselForBrukerResponse">
+    <wsdl:part name="parameters" element="tns:hentVarselForBrukerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVarselForBruker_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentVarselForBrukerugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Brukervarsel_v1">
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hentVarselForBruker">
+      <wsdl:input message="tns:hentVarselForBrukerRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentVarselForBrukerResponse">
+    </wsdl:output>
+      <wsdl:fault name="ugyldigInput" message="tns:hentVarselForBruker_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

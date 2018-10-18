@@ -1,68 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
-        <groupId>no.nav.sbl</groupId>
-        <artifactId>mor-pom</artifactId>
-        <version>3</version>
+        <groupId>no.nav.sbl.dialogarena</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>soeknadsskjemaSosialhjelp-v1-meldingsdefinisjon</artifactId>
     <groupId>no.nav.sbl.dialogarena</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <properties>
-        <xsd.location>${project.build.directory}/classes/tjenestespesifikasjon/</xsd.location>
-        <jaxb.location>${project.build.directory}/classes/</jaxb.location>
+        <xsd.location>src/main/xsd</xsd.location>
+        <jaxb.location>src/main/xjb</jaxb.location>
         <meldingsdefinisjon.version>1.0.23.3</meldingsdefinisjon.version>
     </properties>
-
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-xsd</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.sbl.dialogarena</groupId>
-                                    <artifactId>soknadsosialhjelp-xsd</artifactId>
-                                    <version>${meldingsdefinisjon.version}</version>
-                                    <type>jar</type>
-                                    <outputDirectory>${xsd.location}/</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/xjb</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${jaxb.location}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
@@ -108,12 +61,10 @@
             </plugin>
         </plugins>
     </build>
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git
         </developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

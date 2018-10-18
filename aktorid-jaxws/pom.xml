@@ -1,17 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>dialogarena</artifactId>
-        <version>1.5.2</version>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>no.nav.sbl.dialogarena</groupId>
     <artifactId>aktorid-jaxws</artifactId>
     <packaging>jar</packaging>
-    <version>1.4-SNAPSHOT</version>
-
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
@@ -48,16 +45,16 @@
                     </execution>
                 </executions>
                 <dependencies>
-                  <dependency>
-                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                    <artifactId>jaxb2-value-constructor</artifactId>
-                    <version>3.0</version>
-		  </dependency>
-                  <dependency>
-                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                    <artifactId>jaxb2-basics</artifactId>
-                    <version>0.6.4</version>
-                  </dependency>
+                    <dependency>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-value-constructor</artifactId>
+                        <version>3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-basics</artifactId>
+                        <version>0.6.4</version>
+                    </dependency>
                 </dependencies>
             </plugin>
             <plugin>
@@ -77,12 +74,11 @@
                 <version>2.4.1</version>
                 <configuration>
                     <goals>deploy</goals>
-		    <tagBase>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/kodegenerering/tags</tagBase>
+                    <tagBase>https://versjonskontroll.adeo.no/svn/nav-sbl/dialogarena/kodegenerering/tags</tagBase>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
     <dependencies>
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -90,12 +86,9 @@
             <version>0.6.4</version>
         </dependency>
     </dependencies>
-
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

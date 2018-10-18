@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/ytelseskontrakt/v3/informasjon/ytelseskontrakt" version="3.0" xmlns:metadata="http://nav.no/tjeneste/virksomhet/ytelseskontrakt/v3/metadata" xmlns:ytelseskontrakt="http://nav.no/tjeneste/virksomhet/ytelseskontrakt/v3/informasjon/ytelseskontrakt">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/ytelseskontrakt/v3/metadata" schemaLocation="../../metadata/metadata.xsd"/>
+  <xsd:complexType name="Vedtak">
+    <xsd:complexContent>
+      <xsd:extension base="ytelseskontrakt:Beslutning">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="periodetypeForYtelse" type="ytelseskontrakt:PeriodetypeForYtelse"/>
+          <xsd:element minOccurs="0" name="uttaksgrad" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="vedtakBruttoBeloep" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="vedtakNettoBeloep" type="xsd:int"/>
+          <xsd:element name="vedtaksperiode" type="ytelseskontrakt:Periode"/>
+          <xsd:element name="status" type="ytelseskontrakt:Vedtaksstatus"/>
+          <xsd:element name="vedtakstype" type="ytelseskontrakt:Vedtakstyper"/>
+          <xsd:element minOccurs="0" name="aktivitetsfase" type="ytelseskontrakt:Aktivitetsfaser"/>
+          <xsd:element minOccurs="0" name="dagsats" type="xsd:int">
+            <xsd:annotation>
+              <xsd:documentation>Dagsats for vedtaket. Dette er uten barnetillegg.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Vedtakstyper">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Rettighetsgruppe">
+    <xsd:sequence>
+      <xsd:element name="rettighetsGruppe" type="ytelseskontrakt:Rettighetsgrupper"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Periode">
+    <xsd:annotation>
+      <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="fom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>
+Merk! 
+
+xsd:date
+
+kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="PeriodetypeForYtelse">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Foedselsnummer">
+    <xsd:restriction base="ytelseskontrakt:Personidentifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Ytelsestyper">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Dagpengekontrakt">
+    <xsd:complexContent>
+      <xsd:extension base="ytelseskontrakt:Ytelseskontrakt">
+        <xsd:sequence>
+          <xsd:element name="antallDagerIgjen" type="xsd:int"/>
+          <xsd:element name="antallUkerIgjen" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="antallDagerIgjenUnderPermittering" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="antallUkerIgjenUnderPermittering" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Rettighetsgrupper">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Aktivitetsfaser">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType abstract="true" name="Beslutning">
+    <xsd:annotation>
+      <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="beslutningsdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Fagsakstatus">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Bruker">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="rettighetsgruppe" type="ytelseskontrakt:Rettighetsgruppe"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Dnummer">
+    <xsd:restriction base="ytelseskontrakt:Personidentifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Vedtaksstatus">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Ytelseskontrakt">
+    <xsd:sequence>
+      <xsd:element name="datoKravMottatt" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="fagsystemSakId" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Unik id til ytelseskontrakt-saken vedtaket eksisterer på = saksnummer i Arena.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="status" type="ytelseskontrakt:Fagsakstatus"/>
+      <xsd:element name="ytelsestype" type="ytelseskontrakt:Ytelsestyper"/>
+      <xsd:element maxOccurs="unbounded" name="ihtVedtak" type="ytelseskontrakt:Vedtak"/>
+      <xsd:element minOccurs="0" name="bortfallsprosentDagerIgjen" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="bortfallsprosentUkerIgjen" type="xsd:int"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:simpleType name="AktoerID">
+    <xsd:restriction base="ytelseskontrakt:Personidentifikator"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Personidentifikator">
+    <xsd:restriction base="ytelseskontrakt:Identifikator"/>
+  </xsd:simpleType>
+</xsd:schema>

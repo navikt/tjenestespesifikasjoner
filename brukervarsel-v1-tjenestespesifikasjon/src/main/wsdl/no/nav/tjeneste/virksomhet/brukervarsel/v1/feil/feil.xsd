@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/feil" xmlns:feil="http://nav.no/tjeneste/virksomhet/brukervarsel/v1/feil">
+  <xsd:complexType abstract="true" name="ForretningsmessigUnntak">
+    <xsd:sequence>
+      <xsd:element name="feilkilde" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kilden der feilen oppsto: applikasjonsnavn, tjenestenavn, operasjonsnavn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilaarsak" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Årsaken til at feilen oppsto</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilmelding" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Melding som beskriver feilen som oppsto</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tidspunkt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Tidspunkt når feilen oppsto</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Sikkerhetsbegrensing">
+    <xsd:annotation>
+      <xsd:documentation>Kastes hvis bruker ikke er internbruker (SAML)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UgydigInput">
+    <xsd:annotation>
+      <xsd:documentation>Kastes hvis påkrevd inputparameter ikke er satt, eller ved ugyldig bruk av datofelt i periode.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

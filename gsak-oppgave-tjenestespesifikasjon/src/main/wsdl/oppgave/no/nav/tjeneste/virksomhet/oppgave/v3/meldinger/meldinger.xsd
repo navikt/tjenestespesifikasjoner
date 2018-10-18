@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/oppgave/v3/meldinger" version="3.0" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/oppgave/v3/meldinger" xmlns:oppgave="http://nav.no/tjeneste/virksomhet/oppgave/v3/informasjon/oppgave">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/oppgave/v3/informasjon/oppgave" schemaLocation="../informasjon/oppgave/oppgave.xsd"/>
+  <xsd:complexType name="FinnMappeListeRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="enhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvis denne er satt så avgrenses mappene til de som gjelder for denne enheten.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="fagomradeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvis denne er satt så avgrenses mappene til de som er gyldig for de spesifiserte fagområdene.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOppgaveListeUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFeilregistrertOppgaveListeUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOppgaveListeResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppgaveListe" type="oppgave:Oppgave">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;En liste av oppgaver&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="totaltAntallTreff" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Det totale antallet treff som tilfredstiller søkekriteriene&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="meldinger:FinnOppgaveListeUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFeilregistrertOppgaveListeRequest">
+    <xsd:sequence>
+      <xsd:element name="sok" type="meldinger:FinnFeilregistrertOppgaveListeSok">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Inneholder felter som avgjør hvilke oppgaver som skal hentes ut. Minst ett av disse søkefeltene må være satt.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="filter" type="meldinger:FinnFeilregistrertOppgaveListeFilter">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Inneholder felter som er med på å begrense uttrekket av Oppgaver.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentOppgaveUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFerdigstiltOppgaveListeResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppgaveListe" type="oppgave:Oppgave">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av kompleks type Oppgave&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="meldinger:FinnFerdigstiltOppgaveListeUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOppgaveListeFilter">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="opprettetEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på enheten som opprettet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetEnhetNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på enhetsnavnet som opprettet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligEnhetNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på hvilket enhetsnavn som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="underkategoriKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Underkategori til fagområde&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="aktiv" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Flagg (true/false) for å kunne hente aktive oppgaver. Dvs oppgaver som har aktivFra dato lik eller eldre enn dagens dato. Hvis false vil alle oppgaver returneres.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="maxAntallSvar" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Antall oppgaver som er ønskelig i response&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ufordelte" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvis true, returneres kun ufordelte oppgaver&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fristFom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Frist fom og tom kan sende inn den ene eller begge. I GSAK utføres følgende logikk: Sjekker om datoTom er &gt;=, =&lt; eller between. Hvis datoTom ikke satt så kommer oppgave ikke med&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fristTom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Frist fom og tom kan sende inn den ene eller begge. I GSAK utføres følgende logikk: Sjekker om datoTom er &gt;=, = eller between. Hvis datoTom ikke satt så kommer oppgave ikke med&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetFom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtermulighet på intervall når oppgaven ble opprettet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetTom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtermulighet på intervall når oppgaven ble opprettet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetAv" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Mulighet til å søke på oppgaver opprettet av denne brukeren&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppgavetypeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på oppgavetyper&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="brukertypeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p &gt;Filter på brukertyper knyttet til Oppgavene&lt;/p&gt;&lt;p &gt;Gyldige verdier for filtrering:&lt;/p&gt;&lt;table  border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td &gt;&lt;p &gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td &gt;&lt;p &gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td &gt;&lt;p &gt;PERSON&lt;/p&gt;&lt;/td&gt;&lt;td &gt;&lt;p &gt;Person&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td &gt;&lt;p &gt;ORGANISASJON&lt;/p&gt;&lt;/td&gt;&lt;td &gt;&lt;p &gt;Organisasjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td &gt;&lt;p &gt;SAMHANDLER&lt;/p&gt;&lt;/td&gt;&lt;td &gt;&lt;p &gt;Samhandler&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td &gt;&lt;p &gt;APPBRUKER&lt;/p&gt;&lt;/td&gt;&lt;td &gt;&lt;p &gt;Applikasjonsbruker&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td &gt;&lt;p &gt;BLANK&lt;/p&gt;&lt;/td&gt;&lt;td &gt;&lt;p &gt;Ingen brukertype satt&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="mappeIdListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av MappeIder. Avgrenser de returnerte oppgavene til de med en av de spesifiserte mappene.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="erUtenMappe" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Avgrenser de returnerte oppgaver til de uten mappe (hvis true)&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="revurderingstype" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Avgrenser søket til å returnere kun oppgaver med en bestemt revurderingstype.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFerdigstiltOppgaveListeSok">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ansvarligEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på hvilken enhet som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Saksbehandler tilordnet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="brukerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvem oppgaven gjelder.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="fagomradeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av fagområde koder&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kravId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;KravId er egen kode brukt av fagsystemer&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sakId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;SakId for fagområdet oppgaven gjelder&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="soknadsId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;SøknadsId&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="journalpostIdListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Attributt for å hente ut Oppgaver tilknyttet en journalpostId.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Feltet tillater å kunne søke eksplisitt på oppgaver opprettet av en enhet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFeilregistrertOppgaveListeFilter">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ansvarligEnhetNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på hvilket enhetsnavn som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="brukertypeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på brukertyper knyttet til Oppgave&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="erUtenMappe" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Avgrenser de returnerte oppgaver til de uten mappe (hvis true)&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fristFom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Frist fom og tom, kan sende inn den ene eller begge. I GSAK utføres følgende logikk: Sjekker om datoTom er &gt;=, =&lt; eller between. Hvis datoTom ikke satt så kommer oppgaven ikke med.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fristTom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Frist fom og tom, kan sende inn den ene eller begge. I GSAK utføres følgende logikk: Sjekker om datoTom er &gt;=, =&lt; eller between. Hvis datoTom ikke satt så kommer oppgaven ikke med.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="inkluderAktiveOppgaver" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Flagg (true/false) for å kunne hente aktive oppgaver. Dvs oppgaver som har aktivFra dato lik eller enn dagens dato&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="inkluderUfordelteOppgaver" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvis true, returneres kun ufordelte oppgaver&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="maksAntallSvar" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Antall oppger som er ønskelig i response&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="mappeIdListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av MappeIder. Avgrenser de returnerte oppgavene til de med en av de spesifiserte mappene.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppgavetypeKodeListe" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="opprettetAv" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Mulighet til å søke på oppgaver opprettet av denne brukeren&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtrer på enheten som opprettet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetEnhetNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtrer på enhetsnavnet som opprettet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetFom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtreringsmulighet på intervall når oppgaven ble opprettet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetTom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtreringsmulighet på intervall for når oppgaven ble opprettet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="underkategoriKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Underkategori til fagområde&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnMappeListeResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="mappeListe" type="oppgave:Mappe">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av kompleks type Mappe som matcher søkekriteriet.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="meldinger:FinnMappeListeUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFerdigstiltOppgaveListeUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFeilregistrertOppgaveListeResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppgaveListe" type="oppgave:Oppgave">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av oppgaver som matcher søkekriteriene&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utvidelse" type="meldinger:FinnFeilregistrertOppgaveListeUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFerdigstiltOppgaveListeFilter">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="inkluderAktiveOppgaver" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Flagg (true/false) for å kunne hente aktive oppgaver. Dvs oppgaver som har aktivFra dato lik eller eldre enn dagens &lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligEnhetNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på hvilket enhetsnavn som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="brukertypeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på brukertyper knyttet til Oppgavene&lt;/p&gt;&lt;p&gt;Gyldige verdier for filtrering:&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;PERSON&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Person&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;ORGANISASJON&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Organisasjon&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;SAMHANDLER&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Samhandler&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;APPBRUKER&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Applikasjonsbruker&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;BLANK&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;Ingen brukertype satt &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="erUtenMappe" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Avgrenser de returnerte oppgave til de uten mappe (hvis true)&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fristFom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Frist fom og tom, kan sende inn den ene eller begge. I GSAK utføres følgende logikk:&lt;/p&gt;&lt;p&gt;Sjekker om datoTom er &gt;=, =&lt; eller between. Hvis datoTOM ikke satt så kommer oppgave ikke med&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fristTom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Frist fom og tom, kan sende inn den ene eller begge. I GSAK utføres følgende logikk:&lt;/p&gt;&lt;p&gt;Sjekker om datoTom er &gt;=, =&lt; eller between. Hvis datoTOM ikke satt så kommer oppgave ikke med&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="mappeIdListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av MappeId’er. Avgrenser de returnerte oppgavene til de med en av de spesifiserte mappene. &lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="maksAntallSvar" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Antall oppgaver som er ønskelig i repsonse&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppgavetypeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på oppgavetyper&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetAv" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Mulighet til å søke på oppgaver opprettet av denne brukeren&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtrer på enheten som opprettet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetEnhetNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtrer på enhetsnavnet som opprettet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetFom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtreringsmulighet på intervall når oppgaven ble opprettet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetTom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filtreringsmulighet på intervall for når oppgaven ble opprettet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="inkluderUfordelteOppgaver" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvis true, returneres kun ufordelte oppgaver&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="underkategoriKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Underkategori til fagområde&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnMappeListeUtvidelse1">
+    <xsd:complexContent>
+      <xsd:extension base="oppgave:Utvidelse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOppgaveListeRequest">
+    <xsd:annotation>
+      <xsd:documentation>&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="sok" type="meldinger:FinnOppgaveListeSok">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Inneholder felter som avgjør hvilke oppgaver som skal hentes ut. Minst ett av disse søkefeltene må være satt.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="filter" type="meldinger:FinnOppgaveListeFilter">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Inneholder felter som er med på å begrense uttrekket av Oppgaver.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sorteringKode" type="meldinger:FinnOppgaveListeSortering">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Kodeverdi for hvordan resultatene skal sorteres. Hvis ikke denne oppgis, benyttes default sortering&lt;span style="color:#000000;"&gt;&lt;/span&gt;.&lt;/p&gt;&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td class="confluenceTh mceSelected"&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTh mceSelected"&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;OPPRETTET_DATO_STIG&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på feltet mottattDato stigende, dvs eldste først&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;OPPRETTET_DATO_SYNK&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på feltet mottattDato synkende, dvs nyeste først&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;FRIST_DATO_STIG&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på feltet fristDato stigende, dvs eldste først&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;FRIST_DATO_SYNK&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på feltet fristDato synkende, dvs nyeste først&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;KRAVTYPE_STIG&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på feltet kravtype stigende, dvs A-Z&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;KRAVTYPE_SYNK&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på feltet kravtype synkende, dvs Z-A&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ikkeTidligereFordeltTil" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Saksbehandlerident&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOppgaveListeSok">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ansvarligEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på hvilken enhet som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Saksbehandler tilordnet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="brukerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvem oppgaven gjelder.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kravId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;KravId er egen kode brukt av fagsystemer&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sakId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;SakId for fagområdet oppgaven gjelder&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="soknadsId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;SøknadsId&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="fagomradeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av fagområde koder&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="journalpostIdListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Attributt for å hente ut Oppgaver tilknyttet en journalpostId.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opprettetEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Feltet tillater å kunne søke eksplisitt på oppgaver opprettet av en enhet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="kravIdListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Attributt for å hente ut oppgaver tilknyttet ett av kravene definert i denne listen&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFerdigstiltOppgaveListeRequest">
+    <xsd:annotation>
+      <xsd:documentation>&lt;p&gt;&lt;/p&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="sok" type="meldinger:FinnFerdigstiltOppgaveListeSok">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Inneholder felter som avgjør hvilke oppgaver som skal hentes ut. Minst ett av disse søkefeltene må være satt.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="filter" type="meldinger:FinnFerdigstiltOppgaveListeFilter">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Inneholder felter som er med på å begrense uttrekket av Oppgaver.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentOppgaveResponse">
+    <xsd:sequence>
+      <xsd:element name="oppgave" type="oppgave:Oppgave"/>
+      <xsd:element minOccurs="0" name="utvidelse" type="meldinger:HentOppgaveUtvidelse1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOppgaveListeSortering">
+    <xsd:sequence>
+      <xsd:element name="sorteringselementKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td class="confluenceTh mceSelected"&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTh mceSelected"&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;OPPRETTET_DATO&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på feltet opprettetDato&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;FRIST_DATO&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Sortering på frist (aktivTil-datoen)&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="sorteringKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;table border="1"&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;col width="50.0%"&gt;&lt;/col&gt;&lt;tr&gt;&lt;td class="confluenceTh mceSelected"&gt;&lt;p&gt;&lt;b&gt;Kode&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTh mceSelected"&gt;&lt;p&gt;&lt;b&gt;Beskrivelse&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;STIGENDE&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Resultatene blir sortert stigende. Ved dato: Fra eldst til nyest.&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;SYNKENDE&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd mceSelected"&gt;&lt;p&gt;Resultatene blir sortert synkende. Ved dato: Fra nyest til eldst.&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnFeilregistrertOppgaveListeSok">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ansvarligEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Filter på hvilken enhet som er ansvarlig for oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ansvarligId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Saksbehandler tilordnet oppgaven&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="brukerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Hvem oppgaven gjelder&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="fagomradeKodeListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Liste av fagområde koder&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="journalpostIdListe" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Attributt for å hente ut Oppgaver tilknyttet en journalpostId&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kravId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;KravId er en egen kode brukt av fagsystemer&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sakId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;SakId er fagområdet oppgaven gjelder&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="soknadsId" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="opprettetEnhetId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Feltet tillater å kunne søke eksplisitt på oppgaver opprettet av en enhet&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentOppgaveRequest">
+    <xsd:sequence>
+      <xsd:element name="oppgaveId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Unik nøkkel til en oppgave.&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

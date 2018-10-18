@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/feil" xmlns:feil="http://nav.no/tjeneste/virksomhet/organisasjon/v4/feil">
+  <xsd:complexType name="OrganisasjonIkkeFunnet">
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="ForretningsmessigUnntak">
+    <xsd:sequence>
+      <xsd:element name="feilkilde" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>"Kildesystemet". Granularitetsnivå hovedtilbyder og ikke "underliggende systemer". ("rootSource")
+
+The source of the error in the form: 
+
+"MODULE: " modulename 
+
+" / COMPONENT: " componentname 
+
+" / IF(OP)" interfacename "("operationaname")" 
+
+" / REF: reference called "IF(OP)" interfacename "("operationaname")"</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilaarsak" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>"rootCause"</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilmelding" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The error message as returned from the source ("rootMessage")</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tidspunkt" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ForMangeForekomster">
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UgyldigInput">
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleDokumentforsendelse/v1/metadata" xmlns:metadata="http://nav.no/tjeneste/virksomhet/behandleDokumentforsendelse/v1/metadata">
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:attributeGroup name="Endringssporing">
+    <xsd:annotation>
+      <xsd:documentation>Endringssporing</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="enhetId" type="metadata:Identifikator">
+      <xsd:annotation>
+        <xsd:documentation>EnhetId for endringssporing, Behandlende enhet</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+</xsd:schema>

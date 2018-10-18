@@ -1,68 +1,22 @@
-<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>no.nav.sbl.dialogarena</groupId>
-        <artifactId>dialogarena</artifactId>
-        <version>3</version>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>2018.10.03-21.46-SNAPSHOT</version>
     </parent>
     <artifactId>arena-arbeid-og-aktivitet</artifactId>
     <name>${project.artifactId}</name>
-	<version>1.0.6-alpha003-SNAPSHOT</version>
+    <version>2018.10.03-21.46-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>${project.build.directory}/classes</wsdl.directory>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
-
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fetch-wsdls</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>no.nav.esb.nav</groupId>
-                                    <artifactId>nav-tjeneste-arbeidOgAktivitet</artifactId>
-                                    <version>1.0.6-alpha001</version>
-                                    <classifier>wsdlif</classifier>
-                                    <type>zip</type>
-                                    <outputDirectory>${wsdl.directory}/arbeid</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-bindings-files</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/wsdl</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${wsdl.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>2.7.0</version>
+                <version>${cxf.version}</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
@@ -81,9 +35,9 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                  <wsdl>${wsdl.directory}/arbeid/nav-tjeneste-arbeidOgAktivitet_ArbeidOgAktivitetWSEXP.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/nav-tjeneste-arbeidOgAktivitet_ArbeidOgAktivitetWSEXP.wsdl</wsdl>
                                     <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/arbeid/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
@@ -124,15 +78,21 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <configuration><skip>true</skip></configuration>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -141,7 +101,7 @@
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
-			<version>0.6.4</version>
+            <version>0.6.4</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -149,16 +109,14 @@
             <version>2.3</version>
         </dependency>
         <dependency>
-        	<groupId>no.nav.sbl.dialogarena</groupId>
-        	<artifactId>jaxb-adapters</artifactId>
-        	<version>1.1</version>
+            <groupId>no.nav.sbl.dialogarena</groupId>
+            <artifactId>jaxb-adapters</artifactId>
+            <version>2018.10.03-21.46-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
     <scm>
         <developerConnection>scm:git:http://stash.devillo.no/scm/felles/tjenestespesifikasjoner.git</developerConnection>
         <url>http://stash.devillo.no:7990/scm/felles/tjenestespesifikasjoner.git</url>
         <tag>HEAD</tag>
     </scm>
-
 </project>

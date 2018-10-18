@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleDokumentforsendelse/v1/feil" xmlns:feil="http://nav.no/tjeneste/virksomhet/behandleDokumentforsendelse/v1/feil">
+  <xsd:complexType abstract="true" name="ForretningsmessigUnntak">
+    <xsd:sequence>
+      <xsd:element name="feilaarsak" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Årsaken til feilet oppstå: System/applikasjons id (hvis tilgjenglig), exception navn, melding</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilkilde" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kilden der feilet oppsto: applikasjonsnavn, tjenestenavn, operasjonsnavn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilmelding" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Beskrivende feilmelding returnert fra kilden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tidspunkt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Dato og tidspunkt feilet oppsto</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="JournalpostIkkeFunnet">
+    <xsd:annotation>
+      <xsd:documentation>Feilen kastes når journalpostId'en som sendes ikke finnes i Joark.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OppdateringIkkeMulig">
+    <xsd:annotation>
+      <xsd:documentation>Returneres hvis det ikke går ann å oppdatere journalposten med sakId</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FerdigstillingIkkeMulig">
+    <xsd:annotation>
+      <xsd:documentation>Returneres hvis det det er noen hindringer som fører til at ferdigstillingen av journalfoeringen ikke er mulig.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UgyldigInput">
+    <xsd:annotation>
+      <xsd:documentation>Komponenten klarer ikke å tolke input'en som er angitt.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sikkerhetsbegrensning">
+    <xsd:annotation>
+      <xsd:documentation>Feilen kastes når tilgangsreglene ikke oppfylles.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

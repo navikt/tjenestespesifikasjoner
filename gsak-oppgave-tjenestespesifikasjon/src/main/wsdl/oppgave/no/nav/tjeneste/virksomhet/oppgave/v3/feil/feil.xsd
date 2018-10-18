@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/oppgave/v3/feil" version="3.0" xmlns:feil="http://nav.no/tjeneste/virksomhet/oppgave/v3/feil">
+  <xsd:complexType name="StelvioFault">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="errorMessage" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="errorSource" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="errorType" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="rootCause" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="dateTimeStamp" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OppgaveIkkeFunnet">
+    <xsd:annotation>
+      <xsd:documentation>&lt;p&gt;Feilmelding som returneres hvis oppgaven med oppgaveId ikke finnes i registeret&lt;/p&gt;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:StelvioFault"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>
