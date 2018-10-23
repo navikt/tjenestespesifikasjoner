@@ -14,7 +14,7 @@
 
     <properties>
         <schema.location>${project.build.directory}/classes/tjenestespesifikasjon/</schema.location>
-        <meldingsdefinisjon.version>105.20180914.1119</meldingsdefinisjon.version>
+        <meldingsdefinisjon.version>1.20181023.1342</meldingsdefinisjon.version>
     </properties>
 
     <dependencies>
@@ -70,6 +70,7 @@
                 <configuration>
                     <includes>
                         <include>${schema.location}/json/soknad/**/*.json</include>
+                        <include>${schema.location}/json/internal/**/*.json</include>
                     </includes>
                     <replacements>
                         <replacement>
@@ -84,7 +85,10 @@
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>0.5.1</version>
                 <configuration>
-                    <sourceDirectory>${schema.location}/json/soknad</sourceDirectory>
+                    <sourcePaths>
+                        <sourcePath>${schema.location}/json/internal</sourcePath>
+                        <sourcePath>${schema.location}/json/soknad</sourcePath>
+                    </sourcePaths>
                     <targetPackage>no.nav.sbl.soknadsosialhjelp.soknad</targetPackage>
                     <classNamePrefix>Json</classNamePrefix>
                     <generateBuilders>true</generateBuilders>
