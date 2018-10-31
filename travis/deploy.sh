@@ -1,9 +1,5 @@
 #!/bin/bash -e
 if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
-    echo "Decrypting GPG key"
-    openssl aes-256-cbc -K $encrypted_a973f24e4f75_key -iv $encrypted_a973f24e4f75_iv \
-    -in travis/codesigning.asc.enc -out travis/codesigning.asc -d
-
     echo "Importing GPG key into keyring"
     gpg --fast-import travis/codesigning.asc
 
