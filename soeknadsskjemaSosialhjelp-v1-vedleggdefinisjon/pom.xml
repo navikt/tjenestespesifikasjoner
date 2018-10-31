@@ -64,4 +64,5 @@
         <url>https://github.com/navikt/tjenestespesifikasjoner</url>
         <tag>HEAD</tag>
     </scm>
+    <name>${project.artifactId}</name>
 </project>
