@@ -53,6 +53,19 @@ function makeRootPom() {
                     version: '2.10'
                 }]
             }
+        },
+        build: {
+            pluginManagement: {
+                plugin: [{
+                    groupId: 'org.apache.maven.plugins',
+                    artifactId: 'maven-source-plugin',
+                    version: '3.0.1'
+                }, {
+                    groupId: 'org.apache.maven.plugins',
+                    artifactId: 'maven-resources-plugin',
+                    version: '3.1.0'
+                }]
+            }
         }
     });
 
