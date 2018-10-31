@@ -8,9 +8,9 @@ if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; the
     VERSION="1.$TIME-$COMMIT-SNAPSHOT"
     echo "Setting version $VERSION"
 
-    mvn versions:set -DnewVersion="$VERSION"
-    mvn versions:commit
+    mvn -B versions:set -DnewVersion="$VERSION"
+    mvn -B versions:commit
 
     echo "Running release"
-    mvn --settings travis/settings.xml deploy -Prelease -DskipTests=true
+    mvn -B --settings travis/settings.xml deploy -Prelease -DskipTests=true
 fi
