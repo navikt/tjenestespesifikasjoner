@@ -4,6 +4,7 @@ jdk:
 - openjdk8
 deploy:
   provider: script
+  skip_cleanup: true
   script: "./travis/deploy.sh"
   on:
     branch: master
