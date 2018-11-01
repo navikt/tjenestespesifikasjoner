@@ -2,11 +2,11 @@
     <parent>
         <groupId>no.nav.tjenestespesifikasjoner</groupId>
         <artifactId>tjenestespesifikasjoner</artifactId>
-        <version>2018.10.18-13.19-SNAPSHOT</version>
+        <version>0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dokumentproduksjon-v3-tjenestespesifikasjon</artifactId>
-    <version>2018.10.18-13.19-SNAPSHOT</version>
+    <version>0-SNAPSHOT</version>
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
@@ -58,7 +58,7 @@
                     <dependency>
                         <groupId>no.nav.tjenestespesifikasjoner</groupId>
                         <artifactId>jaxb-adapters</artifactId>
-                        <version>2018.10.18-13.19-SNAPSHOT</version>
+                        <version>0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -72,6 +72,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
