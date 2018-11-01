@@ -91,7 +91,9 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration/>
+                <configuration>
+                    <doclint>none</doclint>
+                </configuration>
             </plugin>
         </plugins>
     </build>
