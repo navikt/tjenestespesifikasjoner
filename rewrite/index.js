@@ -7,7 +7,7 @@ const modules = Array.from(new Set(poms.map(file => {
     return file.substr(0, file.indexOf('/'));
 })));
 
-const version = 'SNAPSHOT';
+const version = '0-SNAPSHOT';
 
 const parent = {
     groupId: 'no.nav.tjenestespesifikasjoner',
@@ -93,7 +93,11 @@ function makeRootPom() {
                         groupId: 'org.apache.maven.plugins',
                         artifactId: 'maven-resources-plugin',
                         version: '3.1.0'
-                    }]
+                    }/*, {
+                        groupId: 'org.apache.maven.plugins',
+                        artifactId: 'maven-javadoc-plugin',
+                        version: '3.0.1'
+                    }*/]
                 }
             }
         },
@@ -103,20 +107,6 @@ function makeRootPom() {
                 build: {
                     plugins: {
                         plugin: [{
-                            /*
-                            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-                             */
                             groupId: 'org.apache.maven.plugins',
                             artifactId: 'maven-gpg-plugin',
                             version: '1.6',
@@ -161,6 +151,28 @@ poms.forEach(file => {
         res.project.version = version;
         res.project.name = '${project.artifactId}';
 
+
+        [
+            'henvendelse-arkivering-tjenestespesifikasjon',
+            'dokumentinnsending-tjenestespesifikasjon',
+            'henvendelse-arkivering-tjenestespesifikasjon',
+            'henvendelse-tjenestespesifikasjon'
+        ].forEach(name => {
+            if (file.indexOf(name + '/') === 0 &&
+                file !== name + '/pom.xml'
+            ) {
+                res.project.parent = {
+                    ...parent,
+                    artifactId: name
+                };
+            }
+        });
+
+        /*
+        console.log(file);
+        process.exit(1);
+        */
+
         /*
         res.project.description = 'Tjenestespesifikasjoner';
         res.project.url = 'https://github.com/navikt/tjenestespesifikasjoner';
@@ -179,7 +191,7 @@ poms.forEach(file => {
             res.project.build = {
                 ...build,
                 plugins: {
-                    plugin: build.plugins[0].plugin.map(plugin => {
+                    plugin: [...build.plugins[0].plugin.map(plugin => {
                         if (plugin.dependencies) {
                             return {
                                 ...plugin,
@@ -197,10 +209,19 @@ poms.forEach(file => {
                             'maven-compiler-plugin',
                             'maven-release-plugin'
                         ].indexOf(artifactId) === -1;
-                    })
+                    }), {
+                        groupId: 'org.apache.maven.plugins',
+                        artifactId: 'maven-javadoc-plugin'
+                    }]
                 }
             };
         }
+
+        if (res.project.dependencies && res.project.dependencies[0].dependency) {
+            console.log(res.project.dependencies[0].dependency);
+            res.project.dependencies[0].dependency = res.project.dependencies[0].dependency.map(fixJaxbVersion);
+        }
+
 
         res.project.scm = {
             developerConnection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',

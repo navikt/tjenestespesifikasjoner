@@ -3,10 +3,10 @@
     <parent>
         <groupId>no.nav.tjenestespesifikasjoner</groupId>
         <artifactId>tjenestespesifikasjoner</artifactId>
-        <version>2018.10.18-13.19-SNAPSHOT</version>
+        <version>0-SNAPSHOT</version>
     </parent>
     <artifactId>arena-arbeid-og-aktivitet-gosys</artifactId>
-    <version>2018.10.18-13.19-SNAPSHOT</version>
+    <version>0-SNAPSHOT</version>
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
@@ -67,6 +67,14 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -78,7 +86,7 @@
         <dependency>
             <groupId>no.nav.tjenestespesifikasjoner</groupId>
             <artifactId>jaxb-adapters</artifactId>
-            <version>2018.10.18-13.19-SNAPSHOT</version>
+            <version>0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <scm>
