@@ -67,7 +67,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -77,15 +76,7 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <sourceFileIncludes>
-                        <sourceFileInclude>target/generated-sources/**/*.java</sourceFileInclude>
-                    </sourceFileIncludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration/>
             </plugin>
         </plugins>
     </build>

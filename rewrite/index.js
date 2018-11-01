@@ -93,11 +93,11 @@ function makeRootPom() {
                         groupId: 'org.apache.maven.plugins',
                         artifactId: 'maven-resources-plugin',
                         version: '3.1.0'
-                    }/*, {
+                    }, {
                         groupId: 'org.apache.maven.plugins',
                         artifactId: 'maven-javadoc-plugin',
                         version: '3.0.1'
-                    }*/]
+                    }]
                 }
             }
         },
@@ -207,11 +207,41 @@ poms.forEach(file => {
                         return [
                             'maven-assembly-plugin',
                             'maven-compiler-plugin',
-                            'maven-release-plugin'
+                            'maven-release-plugin',
+                            'maven-javadoc-plugin'
                         ].indexOf(artifactId) === -1;
                     }), {
+                        /*
+                        <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceFileIncludes>
+                        <sourceFileInclude>target/generated-sources/**.java</sourceFileInclude>
+                    </sourceFileIncludes>
+                    </configuration>
+                        * */
                         groupId: 'org.apache.maven.plugins',
-                        artifactId: 'maven-javadoc-plugin'
+                        artifactId: 'maven-javadoc-plugin',
+                        executions: {
+                            execution: {
+                                id: 'attach-javadocs',
+                                phase: 'verify',
+                                goals: {
+                                    goal: 'jar'
+                                }
+                            }
+                        },
+                        configuration: {
+                            
+                        }
                     }]
                 }
             };
