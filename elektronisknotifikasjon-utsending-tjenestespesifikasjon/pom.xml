@@ -95,6 +95,7 @@
                 </executions>
                 <configuration>
                     <doclint>none</doclint>
+                    <quiet>true</quiet>
                 </configuration>
             </plugin>
         </plugins>

@@ -240,7 +240,8 @@ poms.forEach(file => {
                             }
                         },
                         configuration: {
-                            doclint: 'none'
+                            doclint: 'none',
+                            quiet: 'true'
                         }
                     }]
                 }
