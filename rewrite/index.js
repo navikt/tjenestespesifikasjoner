@@ -244,6 +244,25 @@ poms.forEach(file => {
                             quiet: 'true'
                         }
                     }]
+                },
+                resources: {
+                    /*
+                    * <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${wsdl.directory}</directory>
+                <targetPath>${project.artifactId}/wsdl</targetPath>
+            </resource>
+        </resources>
+        */
+                    resource: [{
+                        directory: 'src/main/resources'
+                    }, {
+                        directory: '${wsdl.directory}',
+                        targetPath: '${project.artifactId}/wsdl'
+                    }]
                 }
             };
         }

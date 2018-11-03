@@ -99,6 +99,15 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${wsdl.directory}</directory>
+                <targetPath>${project.artifactId}/wsdl</targetPath>
+            </resource>
+        </resources>
     </build>
     <dependencies>
         <dependency>
