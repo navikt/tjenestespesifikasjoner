@@ -50,6 +50,7 @@
         <module>arbeidogaktivitet-tjenestespesifikasjon</module>
         <module>arbeidsfordeling-v1-tjenestespesifikasjon</module>
         <module>arbeidsforholdv3-tjenestespesifikasjon</module>
+        <module>arbeidsgiver-v2-tjenestespesifikasjon</module>
         <module>arena-arbeid-og-aktivitet-gosys</module>
         <module>arena-arbeid-og-aktivitet</module>
         <module>arena-maalgruppe_v1</module>
