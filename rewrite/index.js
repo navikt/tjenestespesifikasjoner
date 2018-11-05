@@ -233,7 +233,7 @@ poms.forEach(file => {
                         executions: {
                             execution: {
                                 id: 'attach-javadocs',
-                                phase: 'verify',
+                                // phase: 'verify',
                                 goals: {
                                     goal: 'jar'
                                 }
