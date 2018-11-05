@@ -5,7 +5,7 @@ if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; the
 
     TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
     COMMIT=$(git rev-parse --short=12 HEAD)
-    VERSION="1.$TIME-$COMMIT-SNAPSHOT"
+    VERSION="1.$TIME-$COMMIT"
     echo "Setting version $VERSION"
 
     mvn -B versions:set -DnewVersion="$VERSION"
