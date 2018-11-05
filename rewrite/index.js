@@ -50,6 +50,13 @@ const distributionManagement = {
     }
 };
 
+const scm = {
+    developerConnection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
+    connection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
+    url: 'https://github.com/navikt/tjenestespesifikasjoner',
+    tag: 'HEAD'
+};
+
 function makeRootPom() {
     const xml = builder.buildObject({
         modelVersion: '4.0.0',
@@ -71,6 +78,7 @@ function makeRootPom() {
         modules: {
             module: modules
         },
+        scm,
         dependencyManagement: {
             dependencies: {
                 dependency: [{
@@ -282,12 +290,7 @@ poms.forEach(file => {
         }
 
 
-        res.project.scm = {
-            developerConnection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
-            connection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
-            url: 'https://github.com/navikt/tjenestespesifikasjoner',
-            tag: 'HEAD'
-        };
+        res.project.scm = scm;
 
         const xml = builder.buildObject(res.project);
         fs.writeFileSync(file, xml);

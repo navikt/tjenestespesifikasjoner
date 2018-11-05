@@ -163,6 +163,12 @@
         <module>veiledervarsel</module>
         <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
     </modules>
+    <scm>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
+        <tag>HEAD</tag>
+    </scm>
     <dependencyManagement>
         <dependencies>
             <dependency>
