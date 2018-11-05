@@ -83,6 +83,37 @@ function makeRootPom() {
             }
         },
         build: {
+            plugins: {
+                plugin: [{
+                    groupId: 'org.apache.maven.plugins',
+                    artifactId: 'maven-release-plugin',
+                    version: '2.5.3',
+                    configuration: {
+                        autoVersionSubmodules: 'true',
+                        useReleaseProfile: 'true',
+                        releaseProfiles: 'release',
+                        goals: 'deploy'
+                    }
+                }, {
+                    groupId: 'org.sonatype.plugins',
+                    artifactId: 'nexus-staging-maven-plugin',
+                    version: '1.6.8',
+                    executions: {
+                        execution: {
+                            id: 'default-deploy',
+                            phase: 'deploy',
+                            goals: {
+                                goal: 'deploy'
+                            }
+                        }
+                    },
+                    configuration: {
+                        nexusUrl: 'https://oss.sonatype.org/',
+                        serverId: 'ossrh',
+                        autoReleaseAfterClose: 'true'
+                    }
+                }]
+            },
             pluginManagement: {
                 plugins: {
                     plugin: [{
@@ -168,19 +199,6 @@ poms.forEach(file => {
             }
         });
 
-        /*
-        console.log(file);
-        process.exit(1);
-        */
-
-        /*
-        res.project.description = 'Tjenestespesifikasjoner';
-        res.project.url = 'https://github.com/navikt/tjenestespesifikasjoner';
-        res.project.licenses = licenses;
-        res.project.developers = developers;
-        res.project.distributionManagement = distributionManagement;
-        */
-
         delete res.project.groupId;
 
         const build = res.project.build ? res.project.build[0] : null;
@@ -246,17 +264,6 @@ poms.forEach(file => {
                     }]
                 },
                 resources: {
-                    /*
-                    * <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-            <resource>
-                <directory>${wsdl.directory}</directory>
-                <targetPath>${project.artifactId}/wsdl</targetPath>
-            </resource>
-        </resources>
-        */
                     resource: [{
                         directory: 'src/main/resources'
                     }, {
@@ -279,11 +286,7 @@ poms.forEach(file => {
             url: 'https://github.com/navikt/tjenestespesifikasjoner',
             tag: 'HEAD'
         };
-
-
-
-        // res.project.dependencies.dependency = res.project.dependencies.dependency.map(fixJaxbVersion);
-
+        
         const xml = builder.buildObject(res.project);
         fs.writeFileSync(file, xml);
     });
