@@ -56,6 +56,8 @@ function makeRootPom() {
         ...parent,
         name: 'tjenestespesifikasjoner',
         packaging: 'pom',
+        description: 'Generated code + WSDL, WSD, JSON schemas etc. for describing how web services communicate in NAV.',
+        url: 'https://github.com/navikt/tjenestespesifikasjoner',
         properties: {
             'maven.compiler.source': '1.8',
             'maven.compiler.target': '1.8',
@@ -286,7 +288,7 @@ poms.forEach(file => {
             url: 'https://github.com/navikt/tjenestespesifikasjoner',
             tag: 'HEAD'
         };
-        
+
         const xml = builder.buildObject(res.project);
         fs.writeFileSync(file, xml);
     });
