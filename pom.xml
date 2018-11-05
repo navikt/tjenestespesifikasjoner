@@ -160,7 +160,6 @@
         <module>varsler</module>
         <module>veiledervarsel</module>
         <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
-        <module>arbeidsgiver-v2-tjenestespesifikasjon</module>
     </modules>
     <dependencyManagement>
         <dependencies>
