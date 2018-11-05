@@ -10,3 +10,16 @@ kan bruke dem til å kommunisere med tjenestene.
 ## Bygging
 
 `mvn clean install`
+
+## Gjøre endringer, release
+
+For å endre spesifikasjoner, lag en branch. Kjør bygget lokalt, da vil du
+få siste endringer med `1-SNAPSHOT` som versjon. Test med en konsument at
+endringene fungerer (sett versjon av tjenestespesifikasjoner til `0-SNAPSHOT` i konsumenten.)
+Når testingen er ferdig, send en pull request til dette repoet.
+
+Hver branch og pull request vil gå gjennom et CI-bygg.
+Etter at en pull request er merget til master-branchen, vil
+CI automatisk gjøre en release av hele repoet til Maven Central.
+Alle modulene i dette repoet får samme versjonsnummer.
+Versjonsnummeret til releasen blir `1.YYYY.MM.DD-HH-MM-commithash`.
