@@ -35,9 +35,6 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/MT_1067_NAV_v1.wsdl</wsdl>
-                                    <packagenames>
-                                        <packagename>http://udi.no.MT_1067_NAV.v1=no.udi.personstatus.v1</packagename>
-                                    </packagenames>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                         <bindingFile>${wsdl.directory}/SerializeBinding.xml</bindingFile>
