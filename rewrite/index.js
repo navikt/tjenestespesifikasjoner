@@ -7,7 +7,7 @@ const modules = Array.from(new Set(poms.map(file => {
     return file.substr(0, file.indexOf('/'));
 })));
 
-const version = '2018.10.18-13.19-SNAPSHOT';
+const version = '0-SNAPSHOT';
 
 const parent = {
     groupId: 'no.nav.tjenestespesifikasjoner',
@@ -25,12 +25,46 @@ const builder = new xml2js.Builder({
     }
 });
 
+const licenses = {
+    license: {
+        name: 'MIT License',
+        url: 'https://opensource.org/licenses/MIT'
+    }
+};
+
+const developers = {
+    developer: {
+        organization: 'NAV (Arbeids- og velferdsdirektoratet) - The Norwegian Labour and Welfare Administration',
+        organizationUrl: 'https://www.nav.no'
+    }
+};
+
+const distributionManagement = {
+    snapshotRepository: {
+        id: 'ossrh',
+        url: 'https://oss.sonatype.org/content/repositories/snapshots'
+    },
+    repository: {
+        id: 'ossrh',
+        url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+    }
+};
+
+const scm = {
+    developerConnection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
+    connection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
+    url: 'https://github.com/navikt/tjenestespesifikasjoner',
+    tag: 'HEAD'
+};
+
 function makeRootPom() {
     const xml = builder.buildObject({
         modelVersion: '4.0.0',
         ...parent,
         name: 'tjenestespesifikasjoner',
         packaging: 'pom',
+        description: 'Generated code + WSDL, WSD, JSON schemas etc. for describing how web services communicate in NAV.',
+        url: 'https://github.com/navikt/tjenestespesifikasjoner',
         properties: {
             'maven.compiler.source': '1.8',
             'maven.compiler.target': '1.8',
@@ -38,13 +72,17 @@ function makeRootPom() {
             'cxf.version': '3.1.6',
             'cxf-xjc-boolean.version': '3.1.0'
         },
+        licenses,
+        developers,
+        distributionManagement,
         modules: {
             module: modules
         },
+        scm,
         dependencyManagement: {
             dependencies: {
                 dependency: [{
-                    groupId: 'no.nav.sbl.dialogarena',
+                    groupId: 'no.nav.tjenestespesifikasjoner',
                     artifactId: 'jaxb-adapters',
                     version
                 }, {
@@ -52,6 +90,79 @@ function makeRootPom() {
                     artifactId: 'joda-time',
                     version: '2.10'
                 }]
+            }
+        },
+        build: {
+            plugins: {
+                plugin: [{
+                    groupId: 'org.apache.maven.plugins',
+                    artifactId: 'maven-release-plugin',
+                    version: '2.5.3',
+                    configuration: {
+                        autoVersionSubmodules: 'true',
+                        useReleaseProfile: 'true',
+                        releaseProfiles: 'release',
+                        goals: 'deploy'
+                    }
+                }, {
+                    groupId: 'org.sonatype.plugins',
+                    artifactId: 'nexus-staging-maven-plugin',
+                    version: '1.6.8',
+                    executions: {
+                        execution: {
+                            id: 'default-deploy',
+                            phase: 'deploy',
+                            goals: {
+                                goal: 'deploy'
+                            }
+                        }
+                    },
+                    configuration: {
+                        nexusUrl: 'https://oss.sonatype.org/',
+                        serverId: 'ossrh',
+                        autoReleaseAfterClose: 'true'
+                    }
+                }]
+            },
+            pluginManagement: {
+                plugins: {
+                    plugin: [{
+                        groupId: 'org.apache.maven.plugins',
+                        artifactId: 'maven-source-plugin',
+                        version: '3.0.1'
+                    }, {
+                        groupId: 'org.apache.maven.plugins',
+                        artifactId: 'maven-resources-plugin',
+                        version: '3.1.0'
+                    }, {
+                        groupId: 'org.apache.maven.plugins',
+                        artifactId: 'maven-javadoc-plugin',
+                        version: '3.0.1'
+                    }]
+                }
+            }
+        },
+        profiles: {
+            profile: {
+                id: 'release',
+                build: {
+                    plugins: {
+                        plugin: [{
+                            groupId: 'org.apache.maven.plugins',
+                            artifactId: 'maven-gpg-plugin',
+                            version: '1.6',
+                            executions: {
+                                execution: {
+                                    id: 'sign-artifacts',
+                                    phase: 'verify',
+                                    goals: {
+                                        goal: 'sign'
+                                    }
+                                }
+                            }
+                        }]
+                    }
+                }
             }
         }
     });
@@ -79,6 +190,25 @@ poms.forEach(file => {
         }
         res.project.parent = parent;
         res.project.version = version;
+        res.project.name = '${project.artifactId}';
+
+
+        [
+            'henvendelse-arkivering-tjenestespesifikasjon',
+            'dokumentinnsending-tjenestespesifikasjon',
+            'henvendelse-arkivering-tjenestespesifikasjon',
+            'henvendelse-tjenestespesifikasjon'
+        ].forEach(name => {
+            if (file.indexOf(name + '/') === 0 &&
+                file !== name + '/pom.xml'
+            ) {
+                res.project.parent = {
+                    ...parent,
+                    artifactId: name
+                };
+            }
+        });
+
         delete res.project.groupId;
 
         const build = res.project.build ? res.project.build[0] : null;
@@ -89,7 +219,7 @@ poms.forEach(file => {
             res.project.build = {
                 ...build,
                 plugins: {
-                    plugin: build.plugins[0].plugin.map(plugin => {
+                    plugin: [...build.plugins[0].plugin.map(plugin => {
                         if (plugin.dependencies) {
                             return {
                                 ...plugin,
@@ -105,32 +235,62 @@ poms.forEach(file => {
                         return [
                             'maven-assembly-plugin',
                             'maven-compiler-plugin',
-                            'maven-release-plugin'
+                            'maven-release-plugin',
+                            'maven-javadoc-plugin'
                         ].indexOf(artifactId) === -1;
-                    })
+                    }), {
+                        /*
+                        <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceFileIncludes>
+                        <sourceFileInclude>target/generated-sources/**.java</sourceFileInclude>
+                    </sourceFileIncludes>
+                    </configuration>
+                        * */
+                        groupId: 'org.apache.maven.plugins',
+                        artifactId: 'maven-javadoc-plugin',
+                        executions: {
+                            execution: {
+                                id: 'attach-javadocs',
+                                // phase: 'verify',
+                                goals: {
+                                    goal: 'jar'
+                                }
+                            }
+                        },
+                        configuration: {
+                            doclint: 'none',
+                            quiet: 'true'
+                        }
+                    }]
+                },
+                resources: {
+                    resource: [{
+                        directory: 'src/main/resources'
+                    }, {
+                        directory: '${wsdl.directory}',
+                        targetPath: '${project.artifactId}/wsdl'
+                    }]
                 }
             };
         }
 
-        /*
-        <scm>
-    <developerConnection></developerConnection>
-    <connection>scm:git:git@github.com:navikt/nav-java-codestyle.git</connection>
-    <url>https://github.com/navikt/nav-java-codestyle</url>
-    <tag>HEAD</tag>
-  </scm>
-         */
-
-        res.project.scm = {
-            developerConnection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
-            connection: 'scm:git:git@github.com:navikt/tjenestespesifikasjoner.git',
-            url: 'https://github.com/navikt/tjenestespesifikasjoner',
-            tag: 'HEAD'
-        };
+        if (res.project.dependencies && res.project.dependencies[0].dependency) {
+            console.log(res.project.dependencies[0].dependency);
+            res.project.dependencies[0].dependency = res.project.dependencies[0].dependency.map(fixJaxbVersion);
+        }
 
 
-
-        // res.project.dependencies.dependency = res.project.dependencies.dependency.map(fixJaxbVersion);
+        res.project.scm = scm;
 
         const xml = builder.buildObject(res.project);
         fs.writeFileSync(file, xml);

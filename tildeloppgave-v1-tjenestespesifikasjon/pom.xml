@@ -2,17 +2,16 @@
     <parent>
         <groupId>no.nav.tjenestespesifikasjoner</groupId>
         <artifactId>tjenestespesifikasjoner</artifactId>
-        <version>2018.10.18-13.19-SNAPSHOT</version>
+        <version>0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>tildeloppgave-v1-tjenestespesifikasjon</artifactId>
     <packaging>jar</packaging>
-    <version>2018.10.18-13.19-SNAPSHOT</version>
+    <version>0-SNAPSHOT</version>
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
         <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
         <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
-        <jaxb-adapters.version>2018.10.18-13.19-SNAPSHOT</jaxb-adapters.version>
     </properties>
     <build>
         <plugins>
@@ -59,7 +58,7 @@
                     <dependency>
                         <groupId>no.nav.tjenestespesifikasjoner</groupId>
                         <artifactId>jaxb-adapters</artifactId>
-                        <version>2018.10.18-13.19-SNAPSHOT</version>
+                        <version>0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -74,7 +73,32 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doclint>none</doclint>
+                    <quiet>true</quiet>
+                </configuration>
+            </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${wsdl.directory}</directory>
+                <targetPath>${project.artifactId}/wsdl</targetPath>
+            </resource>
+        </resources>
     </build>
     <dependencies>
         <dependency>
@@ -89,4 +113,5 @@
         <url>https://github.com/navikt/tjenestespesifikasjoner</url>
         <tag>HEAD</tag>
     </scm>
+    <name>${project.artifactId}</name>
 </project>

@@ -3,7 +3,7 @@
     <parent>
         <groupId>no.nav.tjenestespesifikasjoner</groupId>
         <artifactId>henvendelse-arkivering-tjenestespesifikasjon</artifactId>
-        <version>2018.10.18-13.19-SNAPSHOT</version>
+        <version>0-SNAPSHOT</version>
     </parent>
     <artifactId>henvendelse-arkivering-aktivitet</artifactId>
     <name>${project.artifactId}</name>
@@ -18,6 +18,7 @@
         <dependency>
             <groupId>no.nav.tjenestespesifikasjoner</groupId>
             <artifactId>jaxb-adapters</artifactId>
+            <version>0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -97,9 +98,34 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doclint>none</doclint>
+                    <quiet>true</quiet>
+                </configuration>
+            </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${wsdl.directory}</directory>
+                <targetPath>${project.artifactId}/wsdl</targetPath>
+            </resource>
+        </resources>
     </build>
-    <version>2018.10.18-13.19-SNAPSHOT</version>
+    <version>0-SNAPSHOT</version>
     <scm>
         <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
         <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
