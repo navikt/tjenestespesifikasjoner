@@ -12,5 +12,5 @@ if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; the
     mvn -B versions:commit
 
     echo "Running release"
-    mvn -T 4 -B --settings travis/settings.xml deploy -Prelease -DskipTests=true
+    mvn -T 12 -B --settings travis/settings.xml deploy -Prelease -DskipTests=true
 fi
