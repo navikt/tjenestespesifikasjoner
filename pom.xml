@@ -109,6 +109,7 @@
         <module>kodeverk-tjenestespesifikasjon</module>
         <module>medlemskap-v1-tjenestespesifikasjon</module>
         <module>moetev1-tjenestespesifikasjon</module>
+        <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
         <module>nav-virksomhet-loependeYtelser-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-tiltakOgAktiviteterForBrukere-v1-meldingsdefinisjon</module>
         <module>notat-tjenestespesifikasjon</module>
