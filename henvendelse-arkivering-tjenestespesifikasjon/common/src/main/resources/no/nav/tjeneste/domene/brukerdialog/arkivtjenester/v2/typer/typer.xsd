@@ -17,7 +17,7 @@
         <xsd:sequence>
             <xsd:element name="referanseId" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>&lt;p&gt;Referanse (intern eller ekstern) </p&gt;</xsd:documentation>
+                    <xsd:documentation>&lt;p&gt;Referanse (intern eller ekstern)&lt;/p&gt;</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="referansekode" type="xsd:string">
