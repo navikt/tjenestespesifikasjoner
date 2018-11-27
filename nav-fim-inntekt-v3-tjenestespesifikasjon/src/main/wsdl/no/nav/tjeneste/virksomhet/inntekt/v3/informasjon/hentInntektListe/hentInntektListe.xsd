@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/hentInntektListe" version="3.0" xmlns:hentInntektListe="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/hentInntektListe" xmlns:inntekt="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/inntekt">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/inntekt" schemaLocation="../inntekt/inntekt.xsd"/>
+  <xsd:complexType name="ArbeidsInntektMaaned">
+    <xsd:sequence>
+      <xsd:element name="aarMaaned" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>Hvilken år og måned informasjonen tilhor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="avvikListe" type="inntekt:Avvik">
+        <xsd:annotation>
+          <xsd:documentation>Om avvik på inntektsinformasjon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="arbeidsInntektInformasjon" type="hentInntektListe:ArbeidsInntektInformasjon">
+        <xsd:annotation>
+          <xsd:documentation>Objekt som inneholder informasjon om inntekterne for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArbeidsInntektInformasjon">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="inntektListe" type="inntekt:Inntekt">
+        <xsd:annotation>
+          <xsd:documentation>Liste med inntekterer for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="forskuddstrekkListe" type="inntekt:Forskuddstrekk">
+        <xsd:annotation>
+          <xsd:documentation>Liste med forskuddstrekk for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="fradragListe" type="inntekt:Fradrag">
+        <xsd:annotation>
+          <xsd:documentation>Liste med fradrag for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ArbeidsInntektIdent">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="arbeidsInntektMaaned" type="hentInntektListe:ArbeidsInntektMaaned"/>
+      <xsd:element minOccurs="0" name="ident" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Brukers identifikasjonsnummer, enten fnr/dnr/akoerId</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

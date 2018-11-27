@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/inntekt" version="3.0" xmlns:inntekt="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/inntekt">
+  <xsd:complexType name="Uttrekksperiode">
+    <xsd:sequence>
+      <xsd:element name="maanedFom" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>Startår og -måned for uttrekket.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="maanedTom" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>Sluttår og -måned for uttrekket.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Avloenningstyper">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Avloenningstyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Fradragbeskrivelse">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/FradragBeskrivelse" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="BarnepensjonOgUnderholdsbidrag">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:TilleggsinformasjonDetaljer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="forsoergersFoedselnummer" type="inntekt:Identifikator"/>
+          <xsd:element minOccurs="0" name="tidsrom" type="inntekt:Periode"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Naeringsinntektsbeskrivelse">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Naeringsinntektsbeskrivelse" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Avvik">
+    <xsd:sequence>
+      <xsd:element name="ident" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Ident til aktøren/personen avvik gjelder.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="opplysningspliktig" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Ident til opplyningspliktig (f.eks. en bedrift eller et selskap) avviket gjelder.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="virksomhet" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Ident til virksomheten (avdelingen) innenfor opplysningspliktig (bedriften/selskapet) vedkommende jobber i, hvor avviket er.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="avvikPeriode" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>år og måned som avviket gjelder for</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tekst" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>beskrivelse for avviket</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PersonIdent">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="personIdent" type="inntekt:Identifikator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AldersUfoereEtterlatteAvtalefestetOgKrigspensjon">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:TilleggsinformasjonDetaljer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="grunnpensjonbeloep" type="inntekt:Desimalbeloep"/>
+          <xsd:element minOccurs="0" name="heravEtterlattepensjon" type="inntekt:Desimalbeloep"/>
+          <xsd:element minOccurs="0" name="pensjonsgrad" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="tidsrom" type="inntekt:Periode"/>
+          <xsd:element minOccurs="0" name="tillegspensjonbeloep" type="inntekt:Desimalbeloep"/>
+          <xsd:element minOccurs="0" name="ufoeregradpensjonsgrad" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AktoerId">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="aktoerId" type="inntekt:Identifikator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ForventetInntektInformasjonsopphav">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/ForventetInntektInformasjonsopphav" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Landkoder">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Landkoder" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="TilleggsinformasjonDetaljer"/>
+  <xsd:complexType name="ArbeidsforholdFrilanser">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="antallTimerPerUkeSomEnFullStillingTilsvarer" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="arbeidstidsordning" type="inntekt:Arbeidstidsordning"/>
+      <xsd:element minOccurs="0" name="avloenningstype" type="inntekt:Avloenningstyper"/>
+      <xsd:element minOccurs="0" name="sisteDatoForStillingsprosentendring" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="sisteLoennsendring" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="frilansPeriode" type="inntekt:AapenPeriode"/>
+      <xsd:element minOccurs="0" name="stillingsprosent" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="yrke" type="inntekt:Yrker"/>
+      <xsd:element minOccurs="0" name="arbeidsforholdID" type="inntekt:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>Unikt ID til et arbeidsforhold</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="arbeidsforholdIDnav" type="inntekt:Identifikator"/>
+      <xsd:element name="arbeidsforholdstype" type="inntekt:Arbeidsforholdstyper">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/Arbeidsforholdstyper</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="arbeidsgiver" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Objekt som inneholder en arbeidsgiver (Person eller Organisasjon)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="arbeidstaker" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Arbeidstaker er en person</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Arbeidsgiveravgift">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="virksomhet" type="inntekt:Aktoer"/>
+      <xsd:element minOccurs="0" name="avgiftsgrunnlagBeloep" type="inntekt:Desimalbeloep"/>
+      <xsd:element minOccurs="0" name="avgiftsfradragBeloep" type="inntekt:Desimalbeloep"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="PensjonEllerTrygd">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:Inntekt">
+        <xsd:sequence>
+          <xsd:element name="beskrivelse" type="inntekt:PensjonEllerTrygdebeskrivelse"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Etterbetalingsperiode">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:TilleggsinformasjonDetaljer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="etterbetalingsperiode" type="inntekt:Periode"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArbeidsInntektMaaned">
+    <xsd:sequence>
+      <xsd:element name="aarMaaned" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>Hvilken år og måned informasjonen tilhor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="avvikListe" type="inntekt:Avvik">
+        <xsd:annotation>
+          <xsd:documentation>Om avvik på inntektsinformasjon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="arbeidsInntektInformasjon" type="inntekt:ArbeidsInntektInformasjon">
+        <xsd:annotation>
+          <xsd:documentation>Objekt som inneholder informasjon om inntekterne for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Svalbardinntekt">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:TilleggsinformasjonDetaljer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="antallDager" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="betaltTrygdeavgift" type="inntekt:Desimalbeloep"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Tilleggsinformasjon">
+    <xsd:sequence>
+      <xsd:element name="kategori" type="inntekt:EDAGTilleggsinfoKategorier"/>
+      <xsd:element minOccurs="0" name="tilleggsinformasjonDetaljer" type="inntekt:TilleggsinformasjonDetaljer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Yrker">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Yrker" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArbeidsInntektInformasjon">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="arbeidsforholdListe" type="inntekt:ArbeidsforholdFrilanser">
+        <xsd:annotation>
+          <xsd:documentation>Liste med arbeidsforhold for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="inntektListe" type="inntekt:Inntekt">
+        <xsd:annotation>
+          <xsd:documentation>Liste med inntekterer for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="forskuddstrekkListe" type="inntekt:Forskuddstrekk">
+        <xsd:annotation>
+          <xsd:documentation>Liste med forskuddstrekk for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="fradragListe" type="inntekt:Fradrag">
+        <xsd:annotation>
+          <xsd:documentation>Liste med fradrag for perioden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Ainntektsfilter">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/A-inntektsfilter" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Arbeidsforholdstyper">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Arbeidsforholdstyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersontypeForReiseKostLosji">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/PersontypeForReiseKostLosji" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="YtelseFraOffentligeBeskrivelse">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/YtelseFraOffentligeBeskrivelse" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ForventetInntekt">
+    <xsd:sequence>
+      <xsd:element name="aar" type="xsd:gYear"/>
+      <xsd:element name="beloep" type="inntekt:Beloep"/>
+      <xsd:element name="hendelse" type="inntekt:ForventetInntektHendelser">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/ForventetInntektHendelse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="type" type="inntekt:ForventetInntektTyper">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/ForventetInntektType</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="informasjonsopphav" type="inntekt:ForventetInntektInformasjonsopphav">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/ForventetInntektKilde</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="endringstidspunkt" type="xsd:dateTime">
+      <xsd:annotation>
+        <xsd:documentation>Attribut for sporing</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="Sikkerhetsavvik">
+    <xsd:sequence>
+      <xsd:element name="ident" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>personidet sikkerhetsavviket gjelder. *Betinget påkrevd: ENTEN ident ELLER aktørId må være fylt ut med gyldig verdi. Begge kan ikke være satt.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tekst" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>beskrivelse av sikkerhetsavviket</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Fordel">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Fordel" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Organisasjon">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="orgnummer" type="inntekt:Organisasjonsnummer"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Formaal">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Formaal" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Informasjonsstatuser">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Informasjonsstatuser" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Forskuddstrekk">
+    <xsd:sequence>
+      <xsd:element name="beloep" type="inntekt:Beloep">
+        <xsd:annotation>
+          <xsd:documentation>Beløp for forskuddstrekk</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="beskrivelse" type="inntekt:Forskuddstrekksbeskrivelse">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/ForskuddstrekkBeskrivelse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="forskuddstrekkPeriode" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>måned og år som forskuddstrekk gjelder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="leveringstidspunkt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Leveringstidspunktet for forskuddstrekket</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opplysningspliktig" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>opplysningspliktig aktør</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="innsender" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>innsender av forskuddstrekk</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utbetaler" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>utbetaler av forskuddtrekk</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="forskuddstrekkGjelder" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Person som forskuddtrekket gjelder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Aarstall">
+    <xsd:restriction base="xsd:gYear"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Loennsbeskrivelse">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Loennsbeskrivelse" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Personidenter">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Personidenter" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Periode">
+    <xsd:sequence>
+      <xsd:element name="startDato" type="xsd:date"/>
+      <xsd:element name="sluttDato" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Loennsinntekt">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:Inntekt">
+        <xsd:sequence>
+          <xsd:element name="beskrivelse" type="inntekt:Loennsbeskrivelse"/>
+          <xsd:element minOccurs="0" name="antall" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PensjonEllerTrygdebeskrivelse">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/PensjonEllerTrygdebeskrivelse" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Desimalbeloep">
+    <xsd:restriction base="xsd:decimal"/>
+  </xsd:simpleType>
+  <xsd:simpleType name="Organisasjonsnummer">
+    <xsd:restriction base="inntekt:Identifikator"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Kodeverdi">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="kodeRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Naeringsinntekt">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:Inntekt">
+        <xsd:sequence>
+          <xsd:element name="beskrivelse" type="inntekt:Naeringsinntektsbeskrivelse"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ReiseKostOgLosji">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:TilleggsinformasjonDetaljer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="persontype" type="inntekt:PersontypeForReiseKostLosji"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="YtelseFraOffentlige">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:Inntekt">
+        <xsd:sequence>
+          <xsd:element name="beskrivelse" type="inntekt:YtelseFraOffentligeBeskrivelse"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Inntektsstatuser">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Inntektsstatuser" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ForventetInntektHendelser">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/ForventetInntektHendelser" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="BonusFraForsvaret">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:TilleggsinformasjonDetaljer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="aaretUtbetalingenGjelderFor" type="inntekt:Aarstall"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Fradrag">
+    <xsd:sequence>
+      <xsd:element name="beloep" type="inntekt:Desimalbeloep">
+        <xsd:annotation>
+          <xsd:documentation>Fradragsbeløp</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="beskrivelse" type="inntekt:Fradragbeskrivelse">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/FradragBeskrivelse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fradragsperiode" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>periode for fradraget, år og måned</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="leveringstidspunkt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Leveringstidspunkt for fradraget</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="inntektspliktig" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>hvem inntektspliktig er</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utbetaler" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>hvem utbetaler er</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="innsender" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>hvem innsender er</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fradragGjelder" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>hvem fradraget gjelder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ForventetInntektTyper">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/ForventetInntektTyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="AapenPeriode">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="fom" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="tom" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="InntektsInformasjonsopphav">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/InntektsInformasjonsopphav" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Beloep">
+    <xsd:restriction base="xsd:int"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Inntjeningsforhold">
+    <xsd:complexContent>
+      <xsd:extension base="inntekt:TilleggsinformasjonDetaljer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="inntjeningsforhold" type="inntekt:SpesielleInntjeningsforhold"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Forskuddstrekksbeskrivelse">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/ForskuddstrekkBeskrivelse" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="SpesielleInntjeningsforhold">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/SpesielleInntjeningsforhold" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArbeidsInntektIdent">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="arbeidsInntektMaaned" type="inntekt:ArbeidsInntektMaaned"/>
+      <xsd:element name="ident" type="inntekt:Aktoer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="EDAGTilleggsinfoKategorier">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/EDAGTilleggsinfoKategorier" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Arbeidstidsordning">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Arbeidstidsordninger" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Inntektsperiodetype">
+    <xsd:simpleContent>
+      <xsd:extension base="inntekt:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Inntektsperiodetyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Inntekt">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="arbeidsforholdREF" type="inntekt:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>referens til et arbeidsforhold unikt ID</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="beloep" type="inntekt:Desimalbeloep">
+        <xsd:annotation>
+          <xsd:documentation>Beløp pa inntekt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="fordel" type="inntekt:Fordel">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/Fordel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="inntektskilde" type="inntekt:InntektsInformasjonsopphav"/>
+      <xsd:element name="inntektsperiodetype" type="inntekt:Inntektsperiodetype">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/Inntektsperiodetyper</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="inntektsstatus" type="inntekt:Inntektsstatuser"/>
+      <xsd:element minOccurs="0" name="levereringstidspunkt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>dato inntekten leveredes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opptjeningsland" type="inntekt:Landkoder">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/Landkoder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opptjeningsperiode" type="inntekt:Periode">
+        <xsd:annotation>
+          <xsd:documentation>periode som opptjeningen skjedde</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="skattemessigBosattLand" type="inntekt:Landkoder">
+        <xsd:annotation>
+          <xsd:documentation>Refererer til kodeverk: http://nav.no/kodeverk/Kodeverk/Landkoder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="utbetaltIPeriode" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>utbetalt under måned og år</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opplysningspliktig" type="inntekt:Aktoer"/>
+      <xsd:element minOccurs="0" name="inntektsinnsender" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>innsender av inntektsinformasjon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="virksomhet" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>utbetaler av inntekt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tilleggsinformasjon" type="inntekt:Tilleggsinformasjon"/>
+      <xsd:element minOccurs="0" name="inntektsmottaker" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>mottaker av inntekt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="inngaarIGrunnlagForTrekk" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="utloeserArbeidsgiveravgift" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="informasjonsstatus" type="inntekt:Informasjonsstatuser">
+        <xsd:annotation>
+          <xsd:documentation>Informasjonsstatus benyttes av mottaker til summering og tilpasset visning av informasjon for saksbehandler.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Aktoer"/>
+</xsd:schema>

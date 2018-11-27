@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/hentAbonnerteInntekterBolk" version="3.0" xmlns:hentAbonnerteInntekterBolk="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/hentAbonnerteInntekterBolk" xmlns:inntekt="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/inntekt">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/informasjon/inntekt" schemaLocation="../inntekt/inntekt.xsd"/>
+  <xsd:complexType name="AbonnerteInntekterPerIdent">
+    <xsd:sequence>
+      <xsd:element name="ident" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Unik Id (akoterId, PersonIdent(fnr eller d-nummer)) til bruker</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="abonnerteInntekterMaanedListe" type="hentAbonnerteInntekterBolk:AbonnerteInntekterMaaned"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SpoerringPeriode">
+    <xsd:sequence>
+      <xsd:element name="sluttmaaned" type="xsd:gYearMonth"/>
+      <xsd:element name="startmaaned" type="xsd:gYearMonth"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AbonnerteInntekterMaaned">
+    <xsd:sequence>
+      <xsd:element name="maaned" type="xsd:gYearMonth">
+        <xsd:annotation>
+          <xsd:documentation>Hvilken måned og år informasjonen tilhører</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="beloep" type="inntekt:Desimalbeloep">
+        <xsd:annotation>
+          <xsd:documentation>Totalsum for brukers inntekt for måneden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="avviksbeskrivelse" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Beskrivelse av avviket, eks. at inntektsinformasjonen er så mangelfull at informasjonen ikke returneres</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="sumOpplysningspliktigListe" type="hentAbonnerteInntekterBolk:SumOpplysningspliktig">
+        <xsd:annotation>
+          <xsd:documentation>Liste bestående av inntekten fra hver opplysningspliktig for den spesifikke måneden. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SumOpplysningspliktig">
+    <xsd:sequence>
+      <xsd:element name="opplysningspliktig" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Unik Id til opplysningspliktig. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="beloep" type="inntekt:Desimalbeloep">
+        <xsd:annotation>
+          <xsd:documentation>Totalsum for brukers inntekt for måneden for denne opplysningspliktige. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="avviksbeskrivelse" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Beskrivelse av avviket, eks. at inntektsinformasjonen er så mangelfull at informasjonen ikke returneres for den spesifikke måneden.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AbonnerteInntekterIdentOgPeriode">
+    <xsd:sequence>
+      <xsd:element name="ident" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Unik Id (akoterId, PersonIdent(fnr eller d-nummer)) til bruker</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="spoerringPeriode" type="hentAbonnerteInntekterBolk:SpoerringPeriode"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UnntakForIdent">
+    <xsd:annotation>
+      <xsd:documentation>Unik id til bruker der det oppstod feil ved henting av inntekt.
+
+Objektet brukes for å returnere identer som av ulik årsak det ikke var mulig å hente inntektsinformasjon på. Eksempel kan være at personen ikke var kjent i baksystemet, og dermed at det ikke returneres noe informasjon for vedkommende. Brukes som en del av respons, og ikke som en exception.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ident" type="inntekt:Aktoer">
+        <xsd:annotation>
+          <xsd:documentation>Unik id til bruker der det oppstod feil ved henting av inntekt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="unntaksmelding" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Beskrivelse av unntaket som skjedde</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilkode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kode som beskriver feilen. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Inntekt" targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/inntekt/v3" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3" xmlns:feil="http://nav.no/tjeneste/virksomhet/inntekt/v3/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/inntekt/v3/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="hentForventetInntekt">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentForventetInntektRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentForventetInntektResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentForventetInntektResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentForventetInntektugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentForventetInntektsikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="hentForventetInntektpersonIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentInntektListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentInntektListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentInntektListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentInntektListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentInntektListesikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="hentInntektListeugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentInntektListeharIkkeTilgangTilOensketAInntektsfilter" type="feil:HarIkkeTilgangTilOensketAInntektsfilter"/>
+      <xsd:element name="hentInntektListeBolk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentInntektListeBolkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentInntektListeBolkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentInntektListeBolkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentInntektListeBolkugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentInntektListeBolkharIkkeTilgangTilOensketAInntektsfilter" type="feil:HarIkkeTilgangTilOensketAInntektsfilter"/>
+      <xsd:element name="hentInntektListeForOpplysningspliktig">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentInntektListeForOpplysningspliktigRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentInntektListeForOpplysningspliktigResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentInntektListeForOpplysningspliktigResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentInntektListeForOpplysningspliktigugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentInntektListeForOpplysningspliktigharIkkeTilgangTilOensketAInntektsfilter" type="feil:HarIkkeTilgangTilOensketAInntektsfilter"/>
+      <xsd:element name="hentAbonnerteInntekterBolk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentAbonnerteInntekterBolkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentAbonnerteInntekterBolkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentAbonnerteInntekterBolkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentAbonnerteInntekterBolkugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentAbonnerteInntekterBolkharIkkeTilgangTilOensketAInntektsfilter" type="feil:HarIkkeTilgangTilOensketAInntektsfilter"/>
+      <xsd:element name="hentDetaljerteAbonnerteInntekter">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentDetaljerteAbonnerteInntekterRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentDetaljerteAbonnerteInntekterResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentDetaljerteAbonnerteInntekterResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentDetaljerteAbonnerteInntekterugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="hentDetaljerteAbonnerteInntekterpersonIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="hentDetaljerteAbonnerteInntektersikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="hentDetaljerteAbonnerteInntektermanglendeAbonnent" type="feil:ManglendeAbonnent"/>
+      <xsd:element name="hentDetaljerteAbonnerteInntekterharIkkeTilgangTilOensketAInntektsfilter" type="feil:HarIkkeTilgangTilOensketAInntektsfilter"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="hentForventetInntekt_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:hentForventetInntektsikkerhetsbegrensning">
+<wsdl:documentation>Hvis konsument ikke har tilgang til å hente ut dataene som forespurt. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentAbonnerteInntekterBolk_harIkkeTilgangTilOensketAInntektsfilter">
+    <wsdl:part name="harIkkeTilgangTilOensketAInntektsfilter" element="tns:hentAbonnerteInntekterBolkharIkkeTilgangTilOensketAInntektsfilter">
+<wsdl:documentation>Hvis konsument ikke har tilgang til ønsket a-inntektsfilter. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeBolkRequest">
+    <wsdl:part name="parameters" element="tns:hentInntektListeBolk">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentAbonnerteInntekterBolkRequest">
+    <wsdl:part name="parameters" element="tns:hentAbonnerteInntekterBolk">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentAbonnerteInntekterBolkResponse">
+    <wsdl:part name="parameters" element="tns:hentAbonnerteInntekterBolkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentDetaljerteAbonnerteInntekter_manglendeAbonnent">
+    <wsdl:part name="manglendeAbonnent" element="tns:hentDetaljerteAbonnerteInntektermanglendeAbonnent">
+<wsdl:documentation>Hvis forespurt abonnert inntekt ikke finnes/er gyldig for forespurt bruker. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentForventetInntekt_personIkkeFunnet">
+    <wsdl:part name="personIkkeFunnet" element="tns:hentForventetInntektpersonIkkeFunnet">
+<wsdl:documentation>Hvis ident eller aktoer-id ikke finnes i Inntektskomponenten. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListe_harIkkeTilgangTilOensketAInntektsfilter">
+    <wsdl:part name="harIkkeTilgangTilOensketAInntektsfilter" element="tns:hentInntektListeharIkkeTilgangTilOensketAInntektsfilter">
+<wsdl:documentation>Hvis konsument ikke har tilgang til ønsket a-inntektsfilter. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListe_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:hentInntektListesikkerhetsbegrensning">
+<wsdl:documentation>Hvis konsument ikke har tilgang til å hente ut dataene som forespurt. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentAbonnerteInntekterBolk_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentAbonnerteInntekterBolkugyldigInput">
+<wsdl:documentation>Hvis innsendte parametere var i ugyldig format eller hadde ugyldig verdi, slik som for eksempel kodeverdi. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentDetaljerteAbonnerteInntekterRequest">
+    <wsdl:part name="parameters" element="tns:hentDetaljerteAbonnerteInntekter">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentDetaljerteAbonnerteInntekter_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentDetaljerteAbonnerteInntekterugyldigInput">
+<wsdl:documentation>Hvis innsendte parametere var i ugyldig format eller hadde ugyldig verdi, slik som for eksempel kodeverdi. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentDetaljerteAbonnerteInntekter_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:hentDetaljerteAbonnerteInntektersikkerhetsbegrensning">
+<wsdl:documentation>Hvis konsument ikke har tilgang til å hente ut dataene som forespurt. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListe_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentInntektListeugyldigInput">
+<wsdl:documentation>Hvis innsendte parametere var i ugyldig format eller hadde ugyldig verdi, slik som for eksempel kodeverdi. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeForOpplysningspliktigResponse">
+    <wsdl:part name="parameters" element="tns:hentInntektListeForOpplysningspliktigResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentForventetInntekt_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentForventetInntektugyldigInput">
+<wsdl:documentation>Hvis innsendte parametere var i ugyldig format eller hadde ugyldig verdi, slik som for eksempel kodeverdi. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentDetaljerteAbonnerteInntekter_harIkkeTilgangTilOensketAInntektsfilter">
+    <wsdl:part name="harIkkeTilgangTilOensketAInntektsfilter" element="tns:hentDetaljerteAbonnerteInntekterharIkkeTilgangTilOensketAInntektsfilter">
+<wsdl:documentation>Hvis konsument ikke har tilgang til ønsket a-inntektsfilter. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeRequest">
+    <wsdl:part name="parameters" element="tns:hentInntektListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeForOpplysningspliktig_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentInntektListeForOpplysningspliktigugyldigInput">
+<wsdl:documentation>Hvis innsendte parametere var i ugyldig format eller hadde ugyldig verdi, slik som for eksempel kodeverdi. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeBolk_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentInntektListeBolkugyldigInput">
+<wsdl:documentation>Hvis innsendte parametere var i ugyldig format eller hadde ugyldig verdi, slik som for eksempel kodeverdi. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentForventetInntektRequest">
+    <wsdl:part name="parameters" element="tns:hentForventetInntekt">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeForOpplysningspliktig_harIkkeTilgangTilOensketAInntektsfilter">
+    <wsdl:part name="harIkkeTilgangTilOensketAInntektsfilter" element="tns:hentInntektListeForOpplysningspliktigharIkkeTilgangTilOensketAInntektsfilter">
+<wsdl:documentation>Hvis konsument ikke har tilgang til ønsket a-inntektsfilter. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeBolk_harIkkeTilgangTilOensketAInntektsfilter">
+    <wsdl:part name="harIkkeTilgangTilOensketAInntektsfilter" element="tns:hentInntektListeBolkharIkkeTilgangTilOensketAInntektsfilter">
+<wsdl:documentation>Hvis konsument ikke har tilgang til ønsket a-inntektsfilter. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeResponse">
+    <wsdl:part name="parameters" element="tns:hentInntektListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentDetaljerteAbonnerteInntekter_personIkkeFunnet">
+    <wsdl:part name="personIkkeFunnet" element="tns:hentDetaljerteAbonnerteInntekterpersonIkkeFunnet">
+<wsdl:documentation>Hvis ident eller aktoer-id ikke finnes i Inntektskomponenten. </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentForventetInntektResponse">
+    <wsdl:part name="parameters" element="tns:hentForventetInntektResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeBolkResponse">
+    <wsdl:part name="parameters" element="tns:hentInntektListeBolkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentInntektListeForOpplysningspliktigRequest">
+    <wsdl:part name="parameters" element="tns:hentInntektListeForOpplysningspliktig">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentDetaljerteAbonnerteInntekterResponse">
+    <wsdl:part name="parameters" element="tns:hentDetaljerteAbonnerteInntekterResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Inntekt_v3">
+    <wsdl:operation name="hentForventetInntekt">
+<wsdl:documentation>Henter informasjon om forventede inntekter utfra fnr/dnr og et år.
+
+Operasjonen skal returnere en persons forventede inntekter for inneværende år, neste år eller både inneværende og neste år. </wsdl:documentation>
+      <wsdl:input message="tns:hentForventetInntektRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentForventetInntektResponse">
+    </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet" message="tns:hentForventetInntekt_personIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentForventetInntekt_sikkerhetsbegrensning">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentForventetInntekt_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hentInntektListe">
+<wsdl:documentation>Operasjonen tar imot en gyldig id (fnr eller aktør-id), et gyldig a-inntektsfilter, en gyldig formålskode, og en gyldig inntektsperiode.
+
+Returnerer informasjon om inntekter for en gitt id og periode. Inntektsinformasjonen og mulige avvik grupperes siden over måned.
+
+NB: Denne operasjonen henter informasjon fra SKD (skattedirektoratet) ved forespørsel, og bruker ikke data lagret lokalt i Inntektskomponenten. </wsdl:documentation>
+      <wsdl:input message="tns:hentInntektListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentInntektListeResponse">
+    </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter" message="tns:hentInntektListe_harIkkeTilgangTilOensketAInntektsfilter">
+    </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentInntektListe_sikkerhetsbegrensning">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentInntektListe_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentInntektListeBolk">
+<wsdl:documentation>Operasjonen tar imot en liste med inntektsmottaker, et a-inntektsfilter, en formålskode, og en inntektsperiode.
+
+Operasjonen returnerer en liste med inntektsmottaker som inneholder inntektsinformasjon for hver måned i innsendt periode, eller avvik om informasjon avviker under måneden.
+
+Operasjonen returnerer en liste med sikkerhetsavvik i stedet for å returnere et feilmelding.
+
+NB: Denne operasjonen henter informasjon fra SKD (skattedirektoratet) ved forespørsel, og bruker ikke data lagret lokalt i Inntektskomponenten. </wsdl:documentation>
+      <wsdl:input message="tns:hentInntektListeBolkRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentInntektListeBolkResponse">
+    </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter" message="tns:hentInntektListeBolk_harIkkeTilgangTilOensketAInntektsfilter">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentInntektListeBolk_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentInntektListeForOpplysningspliktig">
+<wsdl:documentation>Operasjonen tar imot en gyldig id (fnr eller aktør-id), et gyldig a-inntektsfilter, en gyldig formålskode, og en gyldig inntektsperiode.
+
+Returnerer informasjon om inntekter for en ident og periode. Inntektsinformasjonen og mulige avvik grupperes siden over måned. </wsdl:documentation>
+      <wsdl:input message="tns:hentInntektListeForOpplysningspliktigRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentInntektListeForOpplysningspliktigResponse">
+    </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter" message="tns:hentInntektListeForOpplysningspliktig_harIkkeTilgangTilOensketAInntektsfilter">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentInntektListeForOpplysningspliktig_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentAbonnerteInntekterBolk">
+<wsdl:documentation>Operasjonen tar imot en liste med inntektsmottakere med tilhørende perioder, og returnerer abonnerte inntekter for hver inntektsmottaker. Dersom det ikke kan returneres inntekter for en inntektsmottaker, vil unntaket returneres i UnntakForIdent-listen, og det blir ikke returnert inntekter for inntektsmottakeren.
+
+NB: denne tjenesten bruker kun data lagret lokalt i Inntektskomponenten. Dersom det ikke finnes gyldige abonnement for en inntektsmottaker i hele den forespurte perioden, og Inntektskomponenten dermed ikke har noen garanti for at inntektene finnes lokalt, vil man få en unntak i stedet for inntekter.
+
+NB: maksimalt antall tillatte inntektsmottakere i forespørselen styres av systemproperty hentAbonnerteInntekterBolk.maxBolk. Dersom denne ikke er satt, tillates det kun 100 inntektsmottakere i forespørsel. </wsdl:documentation>
+      <wsdl:input message="tns:hentAbonnerteInntekterBolkRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentAbonnerteInntekterBolkResponse">
+    </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter" message="tns:hentAbonnerteInntekterBolk_harIkkeTilgangTilOensketAInntektsfilter">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentAbonnerteInntekterBolk_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentDetaljerteAbonnerteInntekter">
+<wsdl:documentation>Operasjonen tar imot en gyldig id (fnr eller aktør-id), et gyldig a-inntektsfilter, en gyldig formålskode, og en gyldig inntektsperiode.
+
+Returnerer detaljert informasjon om abonnerte inntekter i Inntektskomponenten for den gitte id'en og perioden. Inntektsinformasjonen og mulige avvik grupperes siden over måned. Operasjonen har mulighet til å returnere inntektsdata for et gitt historisk tidspunkt, slik at saksbehandler kan se de inntektene som var gyldige ved dette tidspunktet.
+
+NB: Denne operasjonen henter kun informasjon fra lokalt i Inntektskomponenten, og det er dermed ingen garanti om at inntekten finnes der. </wsdl:documentation>
+      <wsdl:input message="tns:hentDetaljerteAbonnerteInntekterRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentDetaljerteAbonnerteInntekterResponse">
+    </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter" message="tns:hentDetaljerteAbonnerteInntekter_harIkkeTilgangTilOensketAInntektsfilter">
+    </wsdl:fault>
+      <wsdl:fault name="personIkkeFunnet" message="tns:hentDetaljerteAbonnerteInntekter_personIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentDetaljerteAbonnerteInntekter_sikkerhetsbegrensning">
+    </wsdl:fault>
+      <wsdl:fault name="manglendeAbonnent" message="tns:hentDetaljerteAbonnerteInntekter_manglendeAbonnent">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentDetaljerteAbonnerteInntekter_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

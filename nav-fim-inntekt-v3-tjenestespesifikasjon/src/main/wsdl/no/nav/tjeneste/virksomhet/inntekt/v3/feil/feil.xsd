@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/feil" version="3.0" xmlns:feil="http://nav.no/tjeneste/virksomhet/inntekt/v3/feil">
+  <xsd:complexType name="ManglendeAbonnent">
+    <xsd:annotation>
+      <xsd:documentation>Hvis det ikke finnes et abonnent med samme formål (fra input) som dekker hele forespurt tidsperiode.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sikkerhetsbegrensning">
+    <xsd:annotation>
+      <xsd:documentation>PS! Det er ingen sikkerhetsbegrensninger ved tjenestekall fra skallsikrede tjenester (f.eks. Pesys eller DinPensjon).
+
+   · 
+
+Kode 6 (strengt fortrolig adresse)
+
+   · 
+
+Kode 7 (fortrolig adresse)
+
+   · 
+
+Egen ansatt</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="sikkerhetsbegrensning" type="feil:Sikkerhetsbegrensninger"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Kodeverdi">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="kodeRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonIkkeFunnet">
+    <xsd:annotation>
+      <xsd:documentation>Hvis ident eller aktoer-id ikke finnes i Inntektskomponenten.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="HarIkkeTilgangTilOensketAInntektsfilter">
+    <xsd:annotation>
+      <xsd:documentation>Hvis konsument ikke har tilgang til ønsket a-inntektsfilter.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sikkerhetsbegrensninger">
+    <xsd:simpleContent>
+      <xsd:extension base="feil:Kodeverdi">
+        <xsd:attribute fixed="http://nav.no/kodeverk/Kodeverk/Sikkerhetsbegrensninger" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ForretningsmessigUnntak">
+    <xsd:sequence>
+      <xsd:element name="feilaarsak" type="xsd:string"/>
+      <xsd:element name="feilkilde" type="xsd:string"/>
+      <xsd:element name="feilmelding" type="xsd:string"/>
+      <xsd:element name="tidspunkt" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UgyldigInput">
+    <xsd:annotation>
+      <xsd:documentation>Hvis innsendte parametere var i ugyldig format eller hadde ugyldig verdi, slik som for eksempel kodeverdi.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Binding" targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/Binding" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/inntekt/v3/Binding" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl_1="http://nav.no/tjeneste/virksomhet/inntekt/v3" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/inntekt/v3" location="Inntekt.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="Inntekt_v3Binding" type="wsdl_1:Inntekt_v3">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing/>
+    <wsdl:operation name="hentForventetInntekt">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/inntekt/v3/Inntekt_v3/hentForventetInntektRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet">
+        <soap:fault name="personIkkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning">
+        <soap:fault name="sikkerhetsbegrensning" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigInput">
+        <soap:fault name="ugyldigInput" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/inntekt/v3/Inntekt_v3/pingRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hentInntektListe">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/inntekt/v3/Inntekt_v3/hentInntektListeRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter">
+        <soap:fault name="harIkkeTilgangTilOensketAInntektsfilter" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning">
+        <soap:fault name="sikkerhetsbegrensning" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigInput">
+        <soap:fault name="ugyldigInput" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentInntektListeBolk">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/inntekt/v3/Inntekt_v3/hentInntektListeBolkRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter">
+        <soap:fault name="harIkkeTilgangTilOensketAInntektsfilter" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigInput">
+        <soap:fault name="ugyldigInput" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentInntektListeForOpplysningspliktig">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/inntekt/v3/Inntekt_v3/hentInntektListeForOpplysningspliktigRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter">
+        <soap:fault name="harIkkeTilgangTilOensketAInntektsfilter" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigInput">
+        <soap:fault name="ugyldigInput" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentAbonnerteInntekterBolk">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/inntekt/v3/Inntekt_v3/hentAbonnerteInntekterBolkRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter">
+        <soap:fault name="harIkkeTilgangTilOensketAInntektsfilter" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigInput">
+        <soap:fault name="ugyldigInput" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentDetaljerteAbonnerteInntekter">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/inntekt/v3/Inntekt_v3/hentDetaljerteAbonnerteInntekterRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="harIkkeTilgangTilOensketAInntektsfilter">
+        <soap:fault name="harIkkeTilgangTilOensketAInntektsfilter" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="personIkkeFunnet">
+        <soap:fault name="personIkkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning">
+        <soap:fault name="sikkerhetsbegrensning" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="manglendeAbonnent">
+        <soap:fault name="manglendeAbonnent" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigInput">
+        <soap:fault name="ugyldigInput" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Inntekt_v3">
+    <wsdl:port name="Inntekt_v3Port" binding="tns:Inntekt_v3Binding">
+      <soap:address location="http://localhost:9080/virksomhet/inntekt_v3"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
