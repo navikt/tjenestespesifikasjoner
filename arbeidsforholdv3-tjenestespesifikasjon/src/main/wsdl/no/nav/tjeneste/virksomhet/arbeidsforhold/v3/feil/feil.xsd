@@ -9,11 +9,6 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
-  <xsd:complexType name="ArbeidsforholdIkkeFunnet">
-    <xsd:complexContent>
-      <xsd:extension base="feil:ForretningsmessigUnntak"/>
-    </xsd:complexContent>
-  </xsd:complexType>
   <xsd:complexType abstract="true" name="ForretningsmessigUnntak">
     <xsd:sequence>
       <xsd:element name="feilkilde" type="xsd:string">
@@ -54,6 +49,11 @@
         <xsd:attribute name="kodeRef" type="xsd:anyURI"/>
       </xsd:extension>
     </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArbeidsforholdIkkeFunnet">
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType name="UgyldigInput">
     <xsd:complexContent>
