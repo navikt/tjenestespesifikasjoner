@@ -7,14 +7,14 @@
       <xsd:element name="finnArbeidsforholdPrArbeidsgiver">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="request" type="meldinger:FinnArbeidsforholdPrArbeidsgiverRequest"/>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidsgiverRequest"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
       <xsd:element name="finnArbeidsforholdPrArbeidsgiverResponse">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="respone" type="meldinger:FinnArbeidsforholdPrArbeidsgiverResponse"/>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidsgiverResponse"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -24,14 +24,14 @@
       <xsd:element name="finnArbeidsforholdPrArbeidstaker">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="request" type="meldinger:FinnArbeidsforholdPrArbeidstakerRequest"/>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidstakerRequest"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
       <xsd:element name="finnArbeidsforholdPrArbeidstakerResponse">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="response" type="meldinger:FinnArbeidsforholdPrArbeidstakerResponse"/>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidstakerResponse"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -40,14 +40,14 @@
       <xsd:element name="hentArbeidsforholdHistorikk">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="request" type="meldinger:HentArbeidsforholdHistorikkRequest"/>
+            <xsd:element name="parameters" type="meldinger:HentArbeidsforholdHistorikkRequest"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
       <xsd:element name="hentArbeidsforholdHistorikkResponse">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="response" type="meldinger:HentArbeidsforholdHistorikkResponse"/>
+            <xsd:element name="parameters" type="meldinger:HentArbeidsforholdHistorikkResponse"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -70,14 +70,14 @@
       <xsd:element name="finnArbeidstakerePrArbeidsgiver">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="request" type="meldinger:FinnArbeidstakerePrArbeidsgiverRequest"/>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidstakerePrArbeidsgiverRequest"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
       <xsd:element name="finnArbeidstakerePrArbeidsgiverResponse">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="response" type="meldinger:FinnArbeidstakerePrArbeidsgiverResponse"/>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidstakerePrArbeidsgiverResponse"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
