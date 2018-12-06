@@ -92,6 +92,7 @@
         <module>fillager-tjenestespesifikasjon</module>
         <module>foreldrepengesak-v1-tjenestespesifikasjon</module>
         <module>gsak-oppgave-tjenestespesifikasjon</module>
+        <module>hentsykepengeliste</module>
         <module>henvendelse-arkivering-tjenestespesifikasjon</module>
         <module>henvendelse-behandlingsresultat</module>
         <module>henvendelse-felles-tjenestespesifikasjon</module>
