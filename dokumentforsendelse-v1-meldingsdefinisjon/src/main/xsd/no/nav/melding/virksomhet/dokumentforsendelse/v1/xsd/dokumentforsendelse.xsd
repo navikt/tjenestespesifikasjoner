@@ -77,9 +77,19 @@
 		</xsd:simpleContent>
 	</xsd:complexType>
 
-	<xsd:complexType abstract="true" name="Dokumentinformasjon">
+	<xsd:complexType abstract="true" name="DokumentInformasjonHoveddokument">
 		<xsd:sequence>
-			<xsd:element name="dokumenttypeId" type="dokumentforsendelse:Identifikator"/>
+			<xsd:element name="dokumenttypeId" type="dokumentforsendelse:Identifikator" minOccurs="0"/>
+			<xsd:element name="netsId" type="dokumentforsendelse:Identifikator" minOccurs="0"/>
+			<xsd:element minOccurs="0" name="brukeroppgittTittel" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" name="dokumentinnholdListe" type="dokumentforsendelse:Dokumentinnhold"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType abstract="true" name="DokumentInformasjonVedlegg">
+		<xsd:sequence>
+			<xsd:element name="dokumenttypeId" type="dokumentforsendelse:Identifikator" minOccurs="0"/>
+			<xsd:element name="netsId" type="dokumentforsendelse:Identifikator" minOccurs="0"/>
 			<xsd:element minOccurs="0" name="brukeroppgittTittel" type="xsd:string"/>
 			<xsd:element maxOccurs="unbounded" name="dokumentinnholdListe" type="dokumentforsendelse:Dokumentinnhold"/>
 		</xsd:sequence>
@@ -87,12 +97,12 @@
 
 	<xsd:complexType name="Vedlegg">
 		<xsd:complexContent>
-			<xsd:extension base="dokumentforsendelse:Dokumentinformasjon"/>
+			<xsd:extension base="dokumentforsendelse:DokumentInformasjonVedlegg"/>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="Hoveddokument">
 		<xsd:complexContent>
-			<xsd:extension base="dokumentforsendelse:Dokumentinformasjon"/>
+			<xsd:extension base="dokumentforsendelse:DokumentInformasjonHoveddokument"/>
 		</xsd:complexContent>
 	</xsd:complexType>
 
