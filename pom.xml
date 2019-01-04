@@ -92,7 +92,6 @@
         <module>fillager-tjenestespesifikasjon</module>
         <module>foreldrepengesak-v1-tjenestespesifikasjon</module>
         <module>gsak-oppgave-tjenestespesifikasjon</module>
-        <module>hentsykepengeliste</module>
         <module>henvendelse-arkivering-tjenestespesifikasjon</module>
         <module>henvendelse-behandlingsresultat</module>
         <module>henvendelse-felles-tjenestespesifikasjon</module>
@@ -113,6 +112,35 @@
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v5-tjenestespesifikasjon</module>
+        <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandleBrukerprofil-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandleJournal-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandleSakOgBehandling-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-brukerhendelse-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-brukerprofil-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-coma-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-draco-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-echo-tjenestespesifikasjon</module>
+        <module>nav-fim-foreldrepenger-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-henvendelsesbehandling-tjenestespesifikasjon</module>
+        <module>nav-fim-journal-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-kodeverk-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-oppfoelging-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-oppfolging-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-organisasjon-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-organisasjon-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-person-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-personsok-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-sakOgBehandling-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-sykepenger-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-virgo-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-virgo-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-ytelse-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-ytelseskontrakt-v1-tjenestespesifikasjon</module>
+        <module>nav-hentsykepengeliste-v2-tjenestespesifikasjon</module>
+        <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
+        <module>nav-pip-pipEgenAnsatt-v1-tjenestespesifikasjon</module>
         <module>nav-virksomhet-loependeYtelser-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-tiltakOgAktiviteterForBrukere-v1-meldingsdefinisjon</module>
         <module>notat-tjenestespesifikasjon</module>
