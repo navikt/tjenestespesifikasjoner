@@ -18,3 +18,6 @@ env:
 before_install:
 - openssl aes-256-cbc -K $encrypted_a973f24e4f75_key -iv $encrypted_a973f24e4f75_iv
   -in travis/codesigning.asc.enc -out travis/codesigning.asc -d
+cache:
+  directories:
+  - $HOME/.m2
