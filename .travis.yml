@@ -1,6 +1,6 @@
 language: java
 install: true # skips the Travis dependency install step
-script: mvn -B clean install
+script: mvn -T 2C -B clean install
 jdk:
 - openjdk8
 deploy:
