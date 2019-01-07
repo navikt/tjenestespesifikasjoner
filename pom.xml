@@ -129,6 +129,7 @@
         <module>nav-fim-henvendelsesbehandling-tjenestespesifikasjon</module>
         <module>nav-fim-journal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-kodeverk-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-kodeverk-v2-tjenestespesifikasjon</module>
         <module>nav-fim-oppfoelging-v1-tjenestespesifikasjon</module>
         <module>nav-fim-oppfolging-v1-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v1-tjenestespesifikasjon</module>
