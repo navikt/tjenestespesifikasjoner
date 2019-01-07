@@ -134,6 +134,7 @@
         <module>nav-fim-oppfolging-v1-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v1-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-organisasjon-v3-tjenestespesifikasjon</module>
         <module>nav-fim-person-v1-tjenestespesifikasjon</module>
         <module>nav-fim-personsok-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sakOgBehandling-v1-tjenestespesifikasjon</module>
