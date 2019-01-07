@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="arbeidsforhold" targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidsforhold/v3" xmlns:tns="http://nav.no/tjeneste/virksomhet/arbeidsforhold/v3" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidsforhold/v3" xmlns:feil="http://nav.no/tjeneste/virksomhet/arbeidsforhold/v3/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/arbeidsforhold/v3/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arbeidsforhold/v3/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arbeidsforhold/v3/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="finnArbeidsforholdPrArbeidsgiver">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidsgiverRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidsforholdPrArbeidsgiverResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidsgiverResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidsforholdPrArbeidsgiverugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnArbeidsforholdPrArbeidsgiverforMangeForekomster" type="feil:ForMangeForekomster"/>
+      <xsd:element name="finnArbeidsforholdPrArbeidsgiversikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="finnArbeidsforholdPrArbeidstaker">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidstakerRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidsforholdPrArbeidstakerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidsforholdPrArbeidstakerResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidsforholdPrArbeidstakerugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnArbeidsforholdPrArbeidstakersikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="hentArbeidsforholdHistorikk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:HentArbeidsforholdHistorikkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentArbeidsforholdHistorikkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:HentArbeidsforholdHistorikkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentArbeidsforholdHistorikkarbeidsforholdIkkeFunnet" type="feil:ArbeidsforholdIkkeFunnet"/>
+      <xsd:element name="hentArbeidsforholdHistorikksikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidstakerePrArbeidsgiver">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidstakerePrArbeidsgiverRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidstakerePrArbeidsgiverResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="parameters" type="meldinger:FinnArbeidstakerePrArbeidsgiverResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidstakerePrArbeidsgiverugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnArbeidstakerePrArbeidsgiversikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnArbeidsforholdPrArbeidsgiverRequest">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidsgiver" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidsgiverResponse">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidsgiverResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidsgiverUgyldigInput">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidsgiverugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidsgiverForMangeForekomster">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidsgiverforMangeForekomster" name="forMangeForekomster"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidsgiverSikkerhetsbegrensning">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidsgiversikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidstakerRequest">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidstaker" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidstakerResponse">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidstakerResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidstakerUgyldigInput">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidstakerugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsforholdPrArbeidstakerSikkerhetsbegrensning">
+    <wsdl:part element="tns:finnArbeidsforholdPrArbeidstakersikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="hentArbeidsforholdHistorikkRequest">
+    <wsdl:part element="tns:hentArbeidsforholdHistorikk" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="hentArbeidsforholdHistorikkResponse">
+    <wsdl:part element="tns:hentArbeidsforholdHistorikkResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="hentArbeidsforholdHistorikkArbeidsforholdIkkeFunnet">
+    <wsdl:part element="tns:hentArbeidsforholdHistorikkarbeidsforholdIkkeFunnet" name="arbeidsforholdIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="hentArbeidsforholdHistorikkSikkerhetsbegrensning">
+    <wsdl:part element="tns:hentArbeidsforholdHistorikksikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidstakerePrArbeidsgiverRequest">
+    <wsdl:part element="tns:finnArbeidstakerePrArbeidsgiver" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidstakerePrArbeidsgiverResponse">
+    <wsdl:part element="tns:finnArbeidstakerePrArbeidsgiverResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidstakerePrArbeidsgiverUgyldigInput">
+    <wsdl:part element="tns:finnArbeidstakerePrArbeidsgiverugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidstakerePrArbeidsgiverSikkerhetsbegrensning">
+    <wsdl:part element="tns:finnArbeidstakerePrArbeidsgiversikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:portType name="Arbeidsforhold_v3">
+    <wsdl:operation name="finnArbeidsforholdPrArbeidsgiver">
+      <wsdl:input message="tns:finnArbeidsforholdPrArbeidsgiverRequest"/>
+      <wsdl:output message="tns:finnArbeidsforholdPrArbeidsgiverResponse"/>
+      <wsdl:fault message="tns:finnArbeidsforholdPrArbeidsgiverUgyldigInput" name="finnArbeidsforholdPrArbeidsgiverFault"/>
+      <wsdl:fault message="tns:finnArbeidsforholdPrArbeidsgiverForMangeForekomster" name="finnArbeidsforholdPrArbeidsgiverFault1"/>
+      <wsdl:fault message="tns:finnArbeidsforholdPrArbeidsgiverSikkerhetsbegrensning" name="finnArbeidsforholdPrArbeidsgiverFault2"/>
+    </wsdl:operation>
+    <wsdl:operation name="finnArbeidsforholdPrArbeidstaker">
+      <wsdl:input message="tns:finnArbeidsforholdPrArbeidstakerRequest"/>
+      <wsdl:output message="tns:finnArbeidsforholdPrArbeidstakerResponse"/>
+      <wsdl:fault message="tns:finnArbeidsforholdPrArbeidstakerUgyldigInput" name="finnArbeidsforholdPrArbeidstakerFault"/>
+      <wsdl:fault message="tns:finnArbeidsforholdPrArbeidstakerSikkerhetsbegrensning" name="finnArbeidsforholdPrArbeidstakerFault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="hentArbeidsforholdHistorikk">
+      <wsdl:input message="tns:hentArbeidsforholdHistorikkRequest"/>
+      <wsdl:output message="tns:hentArbeidsforholdHistorikkResponse"/>
+      <wsdl:fault message="tns:hentArbeidsforholdHistorikkArbeidsforholdIkkeFunnet" name="hentArbeidsforholdHistorikkFault"/>
+      <wsdl:fault message="tns:hentArbeidsforholdHistorikkSikkerhetsbegrensning" name="hentArbeidsforholdHistorikkFault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="finnArbeidstakerePrArbeidsgiver">
+      <wsdl:input message="tns:finnArbeidstakerePrArbeidsgiverRequest"/>
+      <wsdl:output message="tns:finnArbeidstakerePrArbeidsgiverResponse"/>
+      <wsdl:fault message="tns:finnArbeidstakerePrArbeidsgiverUgyldigInput" name="finnArbeidstakerePrArbeidsgiverFault"/>
+      <wsdl:fault message="tns:finnArbeidstakerePrArbeidsgiverSikkerhetsbegrensning" name="finnArbeidstakerePrArbeidsgiverFault1"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
