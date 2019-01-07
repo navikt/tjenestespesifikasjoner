@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/informasjon" xmlns:info="http://nav.no/tjeneste/virksomhet/organisasjon/v4/informasjon" xmlns:metadata="http://nav.no/tjeneste/virksomhet/organisasjon/v4/metadata">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/metadata" schemaLocation="../metadata/metadata.xsd"/>
+  <xsd:complexType name="BankkontonummerUtland">
+    <xsd:annotation>
+      <xsd:documentation>Utenlandsk bankkontonummer, se bankkontonummer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:Bankkontonummer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="iban" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>IBAN er et internasjonalt identifikasjonssystem for bankkontoer ved grenseoverskridende betalinger. IBAN er en utbygging av bedriftens eksisterende kontonummer i banken ved transaksjoner til og fra utlandet. Med IBAN oppnår bedriften en høyere sikkerhet for at inn- og utbetalinger over landegrensene hurtigst mulig sendes via bankens systemer.
+
+Kilde: Den danske bank</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="swift" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Når du skal motta en betaling fra utlandet, må du oppgi en SWIFT-adresse. Den forteller hvilken bank du er kunde i. SWIFT-adressen er det samme som BIC (Bank Identifier Code), ABA-nummer eller Routing-nummer. Det er ikke det samme som IBAN-nummeret. 
+
+Forkortelsen SWIFT: SWIFT står for Society for Worldwide Interbank Financial Telecommunication. Det er et datanettverk som utveksler betalingsdata mellom flere tusen finansforetak i drøyt 200 land.
+
+Kilde: Forenklet fremstilling fra Den danske bank</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="landkode" type="info:Landkoder">
+            <xsd:annotation>
+              <xsd:documentation>Landet bankkontoen forvaltes i. Avledes fra bankens land.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="bankkode" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Bankkoden har i mange land utviklet seg til å være en viktig nøkkel som gjør det mulig for banken å sørge for rask utførelse av utbetalinger til utlandet.
+
+Bankkoden kan brukes sammen med SWIFT-adresse. Kodens format og lengde varierer mellom ulike land.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="bankadresse" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Kontaktadresse for en utenlandsk bank.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="valuta" type="info:Valutaer">
+            <xsd:annotation>
+              <xsd:documentation>Et lands myntsort.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Navn">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Organisasjon">
+    <xsd:sequence>
+      <xsd:element name="orgnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="navn" type="info:SammensattNavn">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjons navn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="organisasjonDetaljer" type="info:OrganisasjonsDetaljer">
+        <xsd:annotation>
+          <xsd:documentation>Detaljer om organisasjon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Organisasjonsnavn">
+    <xsd:sequence>
+      <xsd:element name="navn" type="info:SammensattNavn">
+        <xsd:annotation>
+          <xsd:documentation>Informasjon om organisasjonsnavn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="redigertNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Informasjon om endringer i organisasjonsnavn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="JuridiskEnhetDetaljer">
+    <xsd:annotation>
+      <xsd:documentation>Juridisk enhet (kalles også juridisk person)
+
+En juridisk enhet er et rettssubjekt som uten å være en fysisk person kan ha rettigheter og plikter og foreta rettshandler. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="sektorkode" type="info:Sektorkoder">
+        <xsd:annotation>
+          <xsd:documentation>Statistisk standard som deler den norske økonomien inn i enheter med samme samfunnsøkonomiske funksjon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="enhetstype" type="info:EnhetstyperJuridiskEnhet">
+        <xsd:annotation>
+          <xsd:documentation>Definerer hvilke enhetstyper fra Enhetsregisteret som skal tolkes som juridisk enhet. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="registrertStiftelsesregisteret" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="harAnsatte" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="kapitalopplysninger" type="info:Kapitalopplysninger"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="registrertIForetaksregisteret" type="info:Foretaksregisteret"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="StrukturertAdresse">
+    <xsd:complexContent>
+      <xsd:extension base="info:GeografiskAdresse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="tilleggsadresse" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Navn på sted, f.eks. "Meskumski" i Re kommune.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="tilleggsadresseType" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Stedstype</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Telefonfunksjoner">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Telefonfunksjoner</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Telefonfunksjoner" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="JuridiskEnhet">
+    <xsd:annotation>
+      <xsd:documentation>Juridisk enhet (kalles også juridisk person)
+
+En juridisk enhet er et rettssubjekt som uten å være en fysisk person kan ha rettigheter og plikter og foreta rettshandler. 
+
+En juridisk enhet er øverste nivå i et organisasjonshierarki. 
+
+Alle organisasjonsformer med unnak av ikkenæringsdrivende virksomhet (AAFY), Bedrift (BEDR) og orgledd (ORGL) betraktes som juridiske enheter. (I noen tilfeller kan et orgledd også betraktes som en juridisk enhet. )
+
+Eksempler på juridiske enheter er aksjeselskap, ansvarlig selskap, enkeltpersonforetak, samvirkeforetak, kommune, stat, stiftelser</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:Organisasjon">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bestaarAvOrgledd" type="info:BestaarAvOrgledd">
+            <xsd:annotation>
+              <xsd:documentation>Organisasjonsledd er en organisasjonsform som kun brukes innenfor offentlig sektor</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="driverVirksomhet" type="info:DriverVirksomhet">
+            <xsd:annotation>
+              <xsd:documentation>Assosiasjonsklasse mellom JuridiskeEnhet og Virksomheter den driver , som holder på attributter på selve relasjonen dem, samt metadata som gyldighets- og bruksperiode for opplysningen.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="fisjonJuridiskEnhet" type="info:FisjonJuridiskEnhet">
+            <xsd:annotation>
+              <xsd:documentation>Assosiasjonsklasse mellom to JuridiskeEnheter ifm. Fisjon, som holder på attributter på selve relasjonen den juridiske enhetene som fisjoneres til juridiske enheter, samt metadata som bruksperiode for opplysningen.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="fusjonJuridiskEnhet" type="info:FusjonJuridiskEnhet">
+            <xsd:annotation>
+              <xsd:documentation>Assosiasjonsklasse mellom to JuridiskeEnheter ifm. Fusjon, som holder på attributter på selve relasjonen de juridiske enhetene som fusjoneres til en juridisk enhet, samt metadata som bruksperiode for opplysningen. Man kan ved instansiering av klassen velge om man vil instansiere relasjonen til det andre Juridiskenhet (til/fra) eller vha. avledet attributt (de har samme navn)</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="knytningJuridiskEnhet" type="info:KnytningJuridiskEnhet">
+            <xsd:annotation>
+              <xsd:documentation>Assosiasjonsklasse for knytninger mellom JuridiskeEnheter, som holder på attributter på selve relasjonen som knytningstype, samt metadata som gyldighetsperiode og bruksperiode for opplysningen</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="juridiskEnhetDetaljer" type="info:JuridiskEnhetDetaljer">
+            <xsd:annotation>
+              <xsd:documentation>Detaljer om en juridisk enhet er et rettssubjekt som uten å være en fysisk person kan ha rettigheter og plikter og foreta rettshandler</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DriverVirksomhet">
+    <xsd:annotation>
+      <xsd:documentation>Assosiasjonsklasse mellom JuridiskeEnhet og Virksomheter den driver , som holder på attributter på selve relasjonen dem, samt metadata som gyldighets- og bruksperiode for opplysningen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="virksomhet" type="info:Virksomhet">
+        <xsd:annotation>
+          <xsd:documentation>Er en lokalt avgrenset funksjonell enhet hvor det hovedsaklig drives aktiviteter som faller innenfor en bestemt næringsgruppe</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Bankkonto">
+    <xsd:sequence>
+      <xsd:element name="Formaal" type="info:FormaalKontonummer"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="Valutaer">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Valutaer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Valutaer" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="EnhetstyperJuridiskEnhet">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/EnhetstyperJuridiskEnhet</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/EnhetstyperJuridiskEnhet" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Stedsadresse">
+    <xsd:annotation>
+      <xsd:documentation>Felles supertype til ulike fysiske adresser i norge/utland</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:StrukturertAdresse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Kodeverdi">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="kodeRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Organisasjonsidentifikator">
+    <xsd:restriction base="info:Identifikator"/>
+  </xsd:simpleType>
+  <xsd:complexType abstract="true" name="SammensattNavn"/>
+  <xsd:complexType name="OrganisasjonSammendrag">
+    <xsd:annotation>
+      <xsd:documentation/>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="orgnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="redigertNavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Informasjon om endringer i organisasjonsnavn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="enhetstype" type="info:Enhetstyper">
+        <xsd:annotation>
+          <xsd:documentation>Felt som definerer hvilke enhetstyper fra Enhetsregisteret</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="opphoertEnhet" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="orgLeddOrgnummer" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsnummer i organisasjonsledd. Organisasjonsleed er en organisasjonsform som kun brukes innenfor offentlig sektor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="juridiskOrgnummer" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Juridisk organisasjonsnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="adresselinje1" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Adresse 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="adresselinje2" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Adresse 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="adresselinje3" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Adresse 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kommunenummer" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Teknisk gjeld: Kommunenummer types i foerste omgang til string, da Kommunenummer som kodeverk ikke er lagt inn i FIM/Kodeverksloesningen per. 05.09.13</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="land" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Land hvor organisasjon registrert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kommunenavn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kommunenavn hvor organisasjon registrert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="postnummer" type="info:Postnummer">
+        <xsd:annotation>
+          <xsd:documentation>Postnummer hvor organisasjon registrert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="poststed" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Poststed hvor organisasjon registrert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BankkontoNorge">
+    <xsd:complexContent>
+      <xsd:extension base="info:Bankkonto">
+        <xsd:sequence>
+          <xsd:element name="bankkonto" type="info:Bankkontonummer">
+            <xsd:annotation>
+              <xsd:documentation>Norges bankkontonummer er et nummer bestående av 11 siffer som identifiserer bank, kontoform og konto.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Internettadresse">
+    <xsd:complexContent>
+      <xsd:extension base="info:ElektroniskAdresse">
+        <xsd:sequence>
+          <xsd:element name="identifikator" type="info:Identifikator">
+            <xsd:annotation>
+              <xsd:documentation>Elektroniske adresser som kan brukes i kommunikasjon med den adressen er assosiert med.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RegistreringHjemland">
+    <xsd:sequence>
+      <xsd:element name="registrernummerHjemland" type="info:Identifikator"/>
+      <xsd:element name="navn" type="info:SammensattNavn"/>
+      <xsd:element name="postadresse" type="info:SemistrukturertAdresse"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="BestaarAvOrgledd">
+    <xsd:annotation>
+      <xsd:documentation>Tilfelle1:
+
+Assosiasjonsklasse mellom Virksomhet og Orgledd for å holde på attributter på selve relasjonen, samt metadata som gyldighetsperiode og bruksperiode.
+
+Tilfelle2:
+
+Assosiasjonsklasse mellom to Orgledd (over-/underOrgledd) som holder på attributter på selve relasjonen dem, samt metadata som gyldighetsperiode og bruksperiode.
+
+Tilfelle3:
+
+Assosiasjonsklasse mellom JuridiskeEnhet og Orgledd den består av, som holder på attributter på selve relasjonen , samt metadata som gyldighetsperiode og bruksperiode for opplysningen.
+
+Avhengig av tilfelle så må enten Virksomhet, Orgledd eller JuridiskEnhet være instansiert</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="orgLedd" type="info:Orgledd">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsledd er en organisasjonsform som kun brukes innenfor offentlig sektor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="InngaarIJuridiskEnhet">
+    <xsd:annotation>
+      <xsd:documentation>Assosiasjonsklasse mellom to JuridiskeEnhet og de Orgledd den består av, som holder på attributter på selve relasjonen , samt metadata som gyldighetsperiode og bruksperiode for opplysningen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="juridiskEnhet" type="info:JuridiskEnhet">
+        <xsd:annotation>
+          <xsd:documentation>En juridisk enhet er et rettssubjekt som uten å være en fysisk person kan ha rettigheter og plikter og foreta rettshandler</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="Organisasjonsfilter">
+    <xsd:sequence>
+      <xsd:element name="organisasjonsnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsnummer for organisasjonen som navnet har hentes for</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="hentingsdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Dato som informasjonen skal hentes for</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Maalformer">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/M_c3_a5lformer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/M_c3_a5lformer" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Organisasjonsstatuser">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Organisasjonsstatuser</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Organisasjonsstatuser" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ForetaksformUtland">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/ForetaksformUtland</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/ForetaksformUtland" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="VirksomhetDetaljer">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="oppstartsdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="eierskiftedato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="enhetstype" type="info:EnhetstyperVirksomhet">
+        <xsd:annotation>
+          <xsd:documentation>Definerer hvilke enhetstyper fra Enhetsregisteret som skal tolkes som virksomhet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ubemannetVirksomhet" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Angir om virksomheten er ubemannet eller ikke.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="nedleggelsesdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Foretaksregisteret">
+    <xsd:sequence>
+      <xsd:element name="registrertForetaksregisteret" type="xsd:boolean"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="Postnummer">
+    <xsd:annotation>
+      <xsd:documentation>Poststed angir et postadministrativt område med
+
+en dekadisk kode (postnummer) for nummerering av navngitte, postadministrative områder
+
+http://nav.no/kodeverk/Kodeverk/Postnummer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Postnummer" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Formaal">
+    <xsd:annotation>
+      <xsd:documentation>Fritekstfelt som beskriver formålet til organisasjonen. Basert på formålet utledes næringskodene.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="formaal" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fritekstfelt som beskriver formålet til organisasjonen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="KnytningJuridiskEnhet">
+    <xsd:annotation>
+      <xsd:documentation>Assosiasjonsklasse for knytninger mellom JuridiskeEnheter, som holder på attributter på selve relasjonen som knytningstype, samt metadata som gyldighetsperiode og bruksperiode for opplysningen.
+
+                                ------------------
+
+                                * Konsern
+
+                                * Interkommunale selskap (?)
+
+                                Husk roller morselskap
+
+                        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="knytningstype" type="info:Knytninger">
+        <xsd:annotation>
+          <xsd:documentation>Definerer gyldige knytninger mellom juridiske enheter enhetsregisteret.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="juridiskEnhet" type="info:JuridiskEnhet">
+        <xsd:annotation>
+          <xsd:documentation>En juridisk enhet er et rettssubjekt som uten å være en fysisk person kan ha rettigheter og plikter og foreta rettshandler</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="Landkoder">
+    <xsd:annotation>
+      <xsd:documentation>Sett med unike koder for land.
+
+http://nav.no/kodeverk/Kodeverk/Landkoder
+
+(fra TPS)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Landkoder" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="ElektroniskAdresse">
+    <xsd:annotation>
+      <xsd:documentation>Elektroniske adresser som kan brukes i kommunikasjon med den adressen er assosiert med.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:Adresse"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Enhetstyper">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Enhetstyper
+
+Hierarkisk kodeverk som kommer senere</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Enhetstyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="OrganisasjonsDetaljer">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="orgnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Avledet fra self.organisasjon-&gt;orgnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="registreringsDato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="datoSistEndret" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="gjeldendeMaalform" type="info:Maalformer">
+        <xsd:annotation>
+          <xsd:documentation>Målform fra ER: kun bokmål og nynorsk</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="opphoersdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="dublettAv" type="info:Organisasjon"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="dubletter" type="info:Organisasjon"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="registrertMVA" type="info:MVA">
+        <xsd:annotation>
+          <xsd:documentation>Hvis MVA registrert eller ikke</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="bankkonto" type="info:Bankkonto">
+        <xsd:annotation>
+          <xsd:documentation>Bankkontonummer er et nummer bestående av 11 siffer som identifiserer bank, kontoform og konto.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="telefaks" type="info:Telefonnummer">
+        <xsd:annotation>
+          <xsd:documentation>Den tallkombinasjonen som gir forbindelse med en abonnent.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="telefon" type="info:Telefonnummer">
+        <xsd:annotation>
+          <xsd:documentation>Den tallkombinasjonen som gir forbindelse med en abonnent.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="status" type="info:Organisasjonsstatus">
+        <xsd:annotation>
+          <xsd:documentation>Definerer gyldige statuser for organisasjoner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="forretningsadresse" type="info:GeografiskAdresse">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsforretningsadresse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="postadresse" type="info:GeografiskAdresse">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonspostadresse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="navSpesifikkInformasjon" type="info:NAVSpesifikkInformasjon">
+        <xsd:annotation>
+          <xsd:documentation>Ekstra NAV-spesifisk info</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="internettadresse" type="info:Internettadresse">
+        <xsd:annotation>
+          <xsd:documentation>Internett adresse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="epostadresse" type="info:Epost">
+        <xsd:annotation>
+          <xsd:documentation>E-post adresse</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="naering" type="info:Naering">
+        <xsd:annotation>
+          <xsd:documentation>Næringskoder er en statistisk standard.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="underlagtHjemlandetsLovgivningOgForetaksform" type="info:UnderlagtHjemlandetsLovgivningOgForetaksform">
+        <xsd:annotation>
+          <xsd:documentation>Gjelder NUF og kanskje UTLA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="navn" type="info:Organisasjonsnavn">
+        <xsd:annotation>
+          <xsd:documentation>Informasjon om organisasjonsnavn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="formaal" type="info:Formaal">
+        <xsd:annotation>
+          <xsd:documentation>Fritekstfelt som beskriver formålet til organisasjonen. Basert på formålet utledes næringskodene</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="mobiltelefon" type="info:Telefonnummer">
+        <xsd:annotation>
+          <xsd:documentation>Den tallkombinasjonen som gir forbindelse med en abonnent.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="stiftelsesdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Dato for når organisasjonen ble stiftet.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="registreringHjemland" type="info:RegistreringHjemland"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Knytninger">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Knytninger</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Knytninger" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="NoeklerAdresseleddSemistrukturerteAdresser">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/N_c3_b8klerAdresseleddSemistrukturerteAdresser</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/N_c3_b8klerAdresseleddSemistrukturerteAdresser" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="OrgLeddDetaljer">
+    <xsd:annotation>
+      <xsd:documentation>Informasjon om organisasjonsledd 
+
+enhetstype=ORGL</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="enhetstype" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Alltid lik "ORGL"</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sektorkode" type="info:Sektorkoder">
+        <xsd:annotation>
+          <xsd:documentation>Statistisk standard som deler den norske økonomien inn i enheter med samme samfunnsøkonomiske funksjon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SemistrukturertAdresse">
+    <xsd:complexContent>
+      <xsd:extension base="info:GeografiskAdresse">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="adresseledd" type="info:NoekkelVerdiAdresse">
+            <xsd:annotation>
+              <xsd:documentation>adresseledd inneholder kombinasjon av en type adresseledd og verdi for adresseleddet.
+
+kke tillatt med to adresseledd med samme nøkkel.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BankkontoUtland">
+    <xsd:complexContent>
+      <xsd:extension base="info:Bankkonto">
+        <xsd:sequence>
+          <xsd:element name="bankkontoUtland" type="info:BankkontonummerUtland">
+            <xsd:annotation>
+              <xsd:documentation>Utenlandsk bankkontonummer er et nummer bestående av 11 siffer som identifiserer bank, kontoform og konto.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sektorkoder">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Sektorkoder</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Sektorkoder" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Virksomhet">
+    <xsd:annotation>
+      <xsd:documentation>Kan ha 3 koder: enhetstype = BEDR eller AAFY eller ADOS
+
+Bedrift (BEDR)
+
+Bedrift er en lokalt avgrenset funksjonell enhet hvor det hovedsaklig drives aktiviteter som faller innenfor en bestemt næringsgruppe.
+
+Ikke-næringsdrivende virksomhet (AAFY)
+
+En ikke-næringsdrivende virksomhet er en underenhet som bli bruk på enheter som ikke utøver noen form for næringsvirksomhet. Sameie og konkursbo kan være eksempler på slike enheter. Eksempelvis skal et skolekorps lønne en dirigent. Korpset driver ikke næreingsvirksomhet, og av den grunn vil korpset få tildelt et organisasjosnummer på en ikke-næringsdrivende virksomhet. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:Organisasjon">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bestaarAvOrgledd" type="info:BestaarAvOrgledd">
+            <xsd:annotation>
+              <xsd:documentation>Organisasjonsledd er en organisasjonsform som kun brukes innenfor offentlig sektor</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="inngaarIJuridiskEnhet" type="info:InngaarIJuridiskEnhet">
+            <xsd:annotation>
+              <xsd:documentation>Assosiasjonsklasse mellom to JuridiskeEnhet og de Orgledd den består av, som holder på attributter på selve relasjonen , samt metadata som gyldighetsperiode og bruksperiode for opplysningen.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="virksomhetDetaljer" type="info:VirksomhetDetaljer">
+            <xsd:annotation>
+              <xsd:documentation>Detaljer om virksomhet</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FormaalKontonummer">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Form_c3_a5lKontonummer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Form_c3_a5lKontonummer" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Kapitalopplysninger">
+    <xsd:sequence>
+      <xsd:element name="valuta" type="info:Valutaer">
+        <xsd:annotation>
+          <xsd:documentation>I hvilken valuta er kapitalen registrert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="kapital" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Aksekapital eller selskapskapital
+
+(lengde 18 fra ER)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="kapitalInnbetalt" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Innbetalt kapital
+
+(lengde 18 fra ER)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kapitalBundetKs" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="fritekst" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="FisjonJuridiskEnhet">
+    <xsd:annotation>
+      <xsd:documentation>Assosiasjonsklasse mellom to JuridiskeEnheter ifm. Fisjon, som holder på attributter på selve relasjonen den juridiske enhetene som fisjoneres til juridiske enheter, samt metadata som bruksperiode for opplysningen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="virkningsdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="juridiskEnhet" type="info:JuridiskEnhet">
+        <xsd:annotation>
+          <xsd:documentation>En juridisk enhet er et rettssubjekt som uten å være en fysisk person kan ha rettigheter og plikter og foreta rettshandler</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="MVA">
+    <xsd:sequence>
+      <xsd:element name="registrertIMVA" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Hvis MVA registrert eller ikke</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="StedsadresseNorge">
+    <xsd:annotation>
+      <xsd:documentation>Fysiske adresser i Norge.
+
+Landkoden settes lik Norge for disse adresseforekomstene.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:Stedsadresse">
+        <xsd:sequence>
+          <xsd:element name="poststed" type="info:Postnummer">
+            <xsd:annotation>
+              <xsd:documentation>Poststed angir et postadministrativt område med
+
+en dekadisk kode (postnummer) for nummerering av navngitte, postadministrative områder</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="bolignummer" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Boligens nummer</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="kommunenummer" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Kommunens nummer</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GeografiskAdresse">
+    <xsd:complexContent>
+      <xsd:extension base="info:Adresse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adresseId" type="info:Identifikator">
+            <xsd:annotation>
+              <xsd:documentation>Foregriper løsning for sentralt adresseregister med kilder som f.eks. matrikkelen.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="landkode" type="info:Landkoder">
+            <xsd:annotation>
+              <xsd:documentation>Dette kodeverket består av trebokstavskoder for land. Kodeverket er i leveranse 1 levert med term på norsk bokmål.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnntakForOrgnr">
+    <xsd:sequence>
+      <xsd:element name="unntaksmelding" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unntaket som skjedde</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="organisasjonsnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsnummer for organisasjonen som har feilet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NoekkelVerdiAdresse">
+    <xsd:sequence>
+      <xsd:element name="noekkel" type="info:NoeklerAdresseleddSemistrukturerteAdresser"/>
+      <xsd:element name="verdi" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OrgnrForOrganisasjon">
+    <xsd:sequence>
+      <xsd:element name="juridiskOrganisasjonsnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Juridiskt organisasjonsnummer for organisasjonen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="organisasjonsnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsnummer for virksomheten</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NavnForOrganisasjon">
+    <xsd:sequence>
+      <xsd:element name="navn" type="info:SammensattNavn">
+        <xsd:annotation>
+          <xsd:documentation>Navnet for organisasjonen som har hentes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="organisasjonsnummer" type="info:Organisasjonsnummer">
+        <xsd:annotation>
+          <xsd:documentation>Organisasjonsnummer for organisasjonen som navnet har hentes for</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Bankkontonummer">
+    <xsd:annotation>
+      <xsd:documentation>Begrep-142
+
+Et bankkontonummer er et nummer bestående av 11 siffer som identifiserer bank, kontoform og konto.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:ElektroniskAdresse">
+        <xsd:sequence>
+          <xsd:element name="bankkontonummer" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Tallkombinasjon som unikt dentifiserer en bankkonto</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="banknavn" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Navn på banken som forvalter den aktuelle bankkontoen.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Organisasjonsstatus">
+    <xsd:sequence>
+      <xsd:element name="statuskode" type="info:Organisasjonsstatuser">
+        <xsd:annotation>
+          <xsd:documentation>Definerer gyldige statuser for organisasjoner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="Retningsnumre">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Retningsnumre</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Retningsnumre" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnderlagtHjemlandetsLovgivningOgForetaksform">
+    <xsd:annotation>
+      <xsd:documentation>Gjelder NUF og kanskje UTLA</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="landkode" type="info:Landkoder">
+        <xsd:annotation>
+          <xsd:documentation>Dette består av trebokstavskoder for land. Kodeverket er i leveranse 1 levert med term på norsk bokmål.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="foretaksform" type="info:ForetaksformUtland"/>
+      <xsd:element minOccurs="0" name="beskrivelseHjemland" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="beskrivelseNorge" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:simpleType name="Organisasjonsnummer">
+    <xsd:restriction base="info:Organisasjonsidentifikator"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Naering">
+    <xsd:annotation>
+      <xsd:documentation>Næringskoder (NACE)
+
+Næringskoder er en statistisk standard. Den danner grunnlag for koding av enheter etter viktigste aktivitet i SSB.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="naeringskode" type="info:Naeringskoder">
+        <xsd:annotation>
+          <xsd:documentation>Statistisk standard for næringsgruppering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="hjelpeenhet" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>Viser om næringskoden er hjelpeenhetskode  (true) eller ordinær næringskode (false)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Orgledd">
+    <xsd:annotation>
+      <xsd:documentation>Organisasjonsledd er en organisasjonsform som kun brukes innenfor offentlig sektor. Dette er for eksempel mellomliggende enheter under kommuner, fylkeskommuner og staten ved de enkelte departementene. Organsiasjonsformen brukes som arbeidsgiverenheter med tilknyttede bedrifter, og skal gjenspeile den juridiske enhetens reelle organisasjonsstruktur. Organisasjonsstruktur kan registreres i felere nivåer. 
+
+enhetstype=ORGL</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:Organisasjon">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="underOrgledd" type="info:BestaarAvOrgledd"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="overOrgledd" type="info:BestaarAvOrgledd"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="driverVirksomhet" type="info:DriverVirksomhet">
+            <xsd:annotation>
+              <xsd:documentation>Assosiasjonsklasse mellom JuridiskeEnhet og Virksomheter den driver , som holder på attributter på selve relasjonen dem, samt metadata som gyldighets- og bruksperiode for opplysningen</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="inngaarIJuridiskEnhet" type="info:InngaarIJuridiskEnhet">
+            <xsd:annotation>
+              <xsd:documentation>Assosiasjonsklasse mellom to JuridiskeEnhet og de Orgledd den består av, som holder på attributter på selve relasjonen , samt metadata som gyldighetsperiode og bruksperiode for opplysningen</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="orgleddDetaljer" type="info:OrgLeddDetaljer">
+            <xsd:annotation>
+              <xsd:documentation>Informasjon om organisasjonsledd enhetstype=ORGL</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Gateadresse">
+    <xsd:annotation>
+      <xsd:documentation>En geografisk adresse som angir geografisk plassering i veiadresse form. Vil brukes om adresser i Norge.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:StedsadresseNorge">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="gatenummer" type="xsd:int">
+            <xsd:annotation>
+              <xsd:documentation>Nummerering av alle gater/veger, som sammen med kommunenummer danner en gateident som er en unik ident for gater. Se: http://www.kartverket.no/Documents/Standard/SOSI%20kap3%20Produktspesifikasjoner/FKB%204.02%202011-12-01/16-Vegnett-2011-12-01.pdf?si=F70448E07081040EBE926B848977BF4E&amp;amp;rid=635723058&amp;amp;sn=Statkart</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="gatenavn" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Adressenavn er definert i matrikkelforskriften § 2 bokstav  e, som navn på gate, veg, sti, plass eller område, brukt som del av den offisielle adressen. Et adressenavn skal være entydig innenfor samme kommune. To gater kan således ikke ha samme navn i samme kommune.
+
+Dersom to eller flere kommuner har et felles adresseringsområde skal navnet være entydig innenfor alle de aktuelle kommunene. 
+
+http://tinglysing.no/Eiendom-og-areal/Matrikkelen/For-matrikkelforere/Veiledning-undertema/1-Innledning/2-Definisjoner/21-Definisjon-av-begreper-som-finnes-i-matrikkelen-/</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="husnummer" type="xsd:int">
+            <xsd:annotation>
+              <xsd:documentation>Hvilket nummer i en gateadresse bygningen eller eiendommen har. Adressenummer er definert i matrikkelforskriften § 2 bokstav f som et nummer og en eventuell bokstav som entydig identifiserer eiendommer, anlegg, bygninger eller innganger til bygninger innenfor en adresserbar gate, veg, sti, plass eller område.
+
+http://tinglysing.no/Eiendom-og-areal/Matrikkelen/For-matrikkelforere/Veiledning-undertema/1-Innledning/2-Definisjoner/21-Definisjon-av-begreper-som-finnes-i-matrikkelen-/</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="husbokstav" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Husbokstav brukes i tillegg til gatenavn og -nummer for å skille seksjoner med samme adresse fra hverandre. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EnhetstyperVirksomhet">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/EnhetstyperVirksomhet</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/EnhetstyperVirksomhet" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="UstrukturertNavn">
+    <xsd:complexContent>
+      <xsd:extension base="info:SammensattNavn">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" name="navnelinje" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NAVSpesifikkInformasjon">
+    <xsd:sequence>
+      <xsd:element name="erIA" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation>True om organisasjonen er en IA-bedrift, false dersom ikke</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Adresse">
+    <xsd:annotation>
+      <xsd:documentation>Adresse er en opplysning som representerer en elektronisk eller fysisk stedsangivelse. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence/>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="FusjonJuridiskEnhet">
+    <xsd:annotation>
+      <xsd:documentation>Assosiasjonsklasse mellom to JuridiskeEnheter ifm. Fusjon, som holder på attributter på selve relasjonen de juridiske enhetene som fusjoneres til en juridisk enhet, samt metadata som bruksperiode for opplysningen.
+
+Man kan ved instansiering av klassen velge om man vil instansiere relasjonen til det andre Juridiskenhet (til/fra) eller vha. avledet attributt (de har samme navn)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="virkningsdato" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="juridiskEnhet" type="info:JuridiskEnhet">
+        <xsd:annotation>
+          <xsd:documentation>En juridisk enhet er et rettssubjekt som uten å være en fysisk person kan ha rettigheter og plikter og foreta rettshandler</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
+  </xsd:complexType>
+  <xsd:complexType name="Epost">
+    <xsd:annotation>
+      <xsd:documentation>Forkortelse for elektronisk post.
+
+Elektronisk post er et system for sending av elektroniske dokumenter, brev og meldinger mellom datamaskiner.
+
+(Språkrådet)
+
+Presisering: e-postens mottaker er en gitt mottaker.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:ElektroniskAdresse">
+        <xsd:sequence>
+          <xsd:element name="identifikator" type="info:Identifikator">
+            <xsd:annotation>
+              <xsd:documentation>Elektronisk post</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Telefontyper">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/Telefontyper</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Telefontyper" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Telefonnummer">
+    <xsd:annotation>
+      <xsd:documentation>Den tallkombinasjonen som gir forbindelse med en abonnent.
+
+(Språkrådet)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="info:ElektroniskAdresse">
+        <xsd:sequence>
+          <xsd:element name="identifikator" type="info:Identifikator">
+            <xsd:annotation>
+              <xsd:documentation>Selve telefonnummeret, uten retningsnummer. Se landkode. attributt.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="type" type="info:Telefontyper">
+            <xsd:annotation>
+              <xsd:documentation>Type på telefonenhet. Del av nøkkel i TPS.  Kan brukes til å avgjøre kommunikasjonsform og innhold i kommunikasjon med bruker. Eksempler er: mobil, fast, faks.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="funksjon" type="info:Telefonfunksjoner">
+            <xsd:annotation>
+              <xsd:documentation>Funksjoner i telenettet som er knyttet til dette telefonnummeret. Eksempler: telefonsamtale, sms, faks og video.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="retningsnummer" type="info:Retningsnumre">
+            <xsd:annotation>
+              <xsd:documentation>Unik kode (retningsnummer) for land innen et gitt kodeverk for retningsnumre.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Naeringskoder">
+    <xsd:annotation>
+      <xsd:documentation>http://nav.no/kodeverk/Kodeverk/N_c3_a6ringskoder</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="info:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/N_c3_a6ringskoder" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

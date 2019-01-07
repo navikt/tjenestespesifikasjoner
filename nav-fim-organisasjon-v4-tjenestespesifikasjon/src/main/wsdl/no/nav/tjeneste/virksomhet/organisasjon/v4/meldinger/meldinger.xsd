@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/meldinger" xmlns:info="http://nav.no/tjeneste/virksomhet/organisasjon/v4/informasjon" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/organisasjon/v4/meldinger">
+  <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/informasjon" schemaLocation="../informasjon/informasjon.xsd"/>
+  <xsd:complexType name="HentOrganisasjonRequest">
+    <xsd:sequence>
+      <xsd:element name="orgnummer" type="info:Organisasjonsnummer"/>
+      <xsd:element minOccurs="0" name="inkluderHistorikk" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="inkluderHierarki" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="orgnrForOrganisasjonListe" type="info:OrgnrForOrganisasjon">
+        <xsd:annotation>
+          <xsd:documentation>Liste med objekt som inneholder organisasjonsnummer og juridisk organisasjonsnummer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="unntakForOrgnrListe" type="info:UnntakForOrgnr">
+        <xsd:annotation>
+          <xsd:documentation>Liste med objekt som inneholder de unntak som har skjet og organisasjonsnummret for organisasjonen som feilede</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOrganisasjonResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="organisasjonSammendragListe" type="info:OrganisasjonSammendrag"/>
+      <xsd:element minOccurs="0" name="totaltAntall" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValiderOrganisasjonResponse">
+    <xsd:sequence>
+      <xsd:element name="gyldigOrgnummer" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOrganisasjonsendringerListeResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="organisasjonsnummerListe" type="info:Organisasjonsnummer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentNoekkelinfoOrganisasjonRequest">
+    <xsd:sequence>
+      <xsd:element name="orgnummer" type="info:Organisasjonsnummer"/>
+      <xsd:element minOccurs="0" name="gyldigDato" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentOrganisasjonsnavnBolkRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="organisasjonsfilterListe" type="info:Organisasjonsfilter">
+        <xsd:annotation>
+          <xsd:documentation>Liste med organisasjonsnummer som navn skal hentes for</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentOrganisasjonsnavnBolkResponse">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="navnForOrganisasjonListe" type="info:NavnForOrganisasjon">
+        <xsd:annotation>
+          <xsd:documentation>Liste med objekt som inneholder organisasjonsnummer og tilhørende navn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="unntakForOrgnrListe" type="info:UnntakForOrgnr">
+        <xsd:annotation>
+          <xsd:documentation>Liste med objekt som inneholder de unntak som har skjet og organisasjonsnummret for organisasjonen som feilede</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentNoekkelinfoOrganisasjonResponse">
+    <xsd:sequence>
+      <xsd:element name="orgnummer" type="info:Organisasjonsnummer"/>
+      <xsd:element name="navn" type="info:SammensattNavn"/>
+      <xsd:element minOccurs="0" name="adresse" type="info:GeografiskAdresse"/>
+      <xsd:element name="enhetstype" type="info:Enhetstyper"/>
+      <xsd:element minOccurs="0" name="opphoersdato" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentOrganisasjonResponse">
+    <xsd:sequence>
+      <xsd:element name="organisasjon" type="info:Organisasjon"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOrganisasjonsendringerListeRequest">
+    <xsd:sequence>
+      <xsd:element name="finnEndringerFom" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="organisasjonsfilterListe" type="info:Organisasjonsfilter">
+        <xsd:annotation>
+          <xsd:documentation>Liste med organisasjonsnummer som navn skal hentes for</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ValiderOrganisasjonRequest">
+    <xsd:sequence>
+      <xsd:element name="orgnummer" type="info:Organisasjonsnummer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FinnOrganisasjonRequest">
+    <xsd:sequence>
+      <xsd:element name="navn" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="postnummer" type="info:Postnummer"/>
+      <xsd:element minOccurs="0" name="kommunenummer" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Teknisk gjeld: Kommunenummer types i foerste omgang til string, da Kommunenummer som kodeverk ikke er lagt inn i FIM/Kodeverksloesningen per. 05.09.13</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="enhetstype" type="info:Enhetstyper"/>
+      <xsd:element minOccurs="0" name="aktivEnhet" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="naering1Kode" type="info:Naeringskoder"/>
+      <xsd:element minOccurs="0" name="maksAntall" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
