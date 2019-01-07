@@ -138,6 +138,7 @@
         <module>nav-fim-organisasjon-v4-tjenestespesifikasjon</module>
         <module>nav-fim-person-v1-tjenestespesifikasjon</module>
         <module>nav-fim-personsok-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-sak-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sakOgBehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sykepenger-v1-tjenestespesifikasjon</module>
         <module>nav-fim-virgo-v1-tjenestespesifikasjon</module>

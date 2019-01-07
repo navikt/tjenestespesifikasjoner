@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Binding" targetNamespace="http://nav.no/tjeneste/virksomhet/sak/v1/Binding" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nav.no/tjeneste/virksomhet/sak/v1/Binding" xmlns:wsdl_1="http://nav.no/tjeneste/virksomhet/sak/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="sak.wsdl" namespace="http://nav.no/tjeneste/virksomhet/sak/v1"/>
+  <wsdl:binding name="Sak_v1Binding" type="wsdl_1:Sak_v1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="finnSak">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/sak/v1/BindingfinnSak/"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="finnSakFault">
+        <soap:fault name="finnSakFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="finnSakFault1">
+        <soap:fault name="finnSakFault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentSak">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/sak/v1/BindinghentSak/"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="hentSakFault">
+        <soap:fault name="hentSakFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/sak/v1/Bindingping/"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Sak_v1">
+    <wsdl:port binding="tns:Sak_v1Binding" name="Sak_v1Port">
+      <soap:address location="http://nav.no/tjeneste/virksomhet/sak/v1/BindingSak_v1/Sak_v1Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

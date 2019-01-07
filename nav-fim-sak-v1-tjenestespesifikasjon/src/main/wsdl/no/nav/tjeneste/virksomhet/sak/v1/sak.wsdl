@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="sak" targetNamespace="http://nav.no/tjeneste/virksomhet/sak/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/sak/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/sak/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/sak/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/sak/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/sak/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/sak/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="finnSak">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnSakRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnSakResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnSakResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnSakugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnSakforMangeForekomster" type="feil:ForMangeForekomster"/>
+      <xsd:element name="hentSak">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentSakRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentSakResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentSakResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentSaksakIkkeFunnet" type="feil:SakIkkeFunnet"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnSakRequest">
+    <wsdl:part element="tns:finnSak" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnSakResponse">
+    <wsdl:part element="tns:finnSakResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnSakUgyldigInput">
+    <wsdl:part element="tns:finnSakugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnSakForMangeForekomster">
+    <wsdl:part element="tns:finnSakforMangeForekomster" name="forMangeForekomster"/>
+  </wsdl:message>
+  <wsdl:message name="hentSakRequest">
+    <wsdl:part element="tns:hentSak" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="hentSakResponse">
+    <wsdl:part element="tns:hentSakResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="hentSakSakIkkeFunnet">
+    <wsdl:part element="tns:hentSaksakIkkeFunnet" name="sakIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Sak_v1">
+    <wsdl:operation name="finnSak">
+      <wsdl:input message="tns:finnSakRequest"/>
+      <wsdl:output message="tns:finnSakResponse"/>
+      <wsdl:fault message="tns:finnSakUgyldigInput" name="finnSakFault"/>
+      <wsdl:fault message="tns:finnSakForMangeForekomster" name="finnSakFault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="hentSak">
+      <wsdl:input message="tns:hentSakRequest"/>
+      <wsdl:output message="tns:hentSakResponse"/>
+      <wsdl:fault message="tns:hentSakSakIkkeFunnet" name="hentSakFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
