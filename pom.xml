@@ -151,6 +151,7 @@
         <module>nav-inngaaendeJournal-v1-tjenestespesifikasjon</module>
         <module>nav-journal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v3-tjenestespesifikasjon</module>
+        <module>nav-meldekortUtbetalingsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
         <module>nav-pip-pipEgenAnsatt-v1-tjenestespesifikasjon</module>
         <module>nav-virksomhet-loependeYtelser-v1-meldingsdefinisjon</module>

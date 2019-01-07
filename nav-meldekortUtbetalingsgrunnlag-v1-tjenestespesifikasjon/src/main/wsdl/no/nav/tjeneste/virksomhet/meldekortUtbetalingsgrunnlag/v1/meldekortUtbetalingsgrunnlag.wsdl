@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="meldekortUtbetalingsgrunnlag" targetNamespace="http://nav.no/tjeneste/virksomhet/meldekortUtbetalingsgrunnlag/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/meldekortUtbetalingsgrunnlag/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/meldekortUtbetalingsgrunnlag/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/meldekortUtbetalingsgrunnlag/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/meldekortUtbetalingsgrunnlag/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/meldekortUtbetalingsgrunnlag/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/meldekortUtbetalingsgrunnlag/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="finnMeldekortUtbetalingsgrunnlagListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnMeldekortUtbetalingsgrunnlagListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnMeldekortUtbetalingsgrunnlagListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnMeldekortUtbetalingsgrunnlagListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnMeldekortUtbetalingsgrunnlagListesikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="finnMeldekortUtbetalingsgrunnlagListeugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnMeldekortUtbetalingsgrunnlagListeaktoerIkkeFunnet" type="feil:AktoerIkkeFunnet"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnMeldekortUtbetalingsgrunnlagListeRequest">
+    <wsdl:part element="tns:finnMeldekortUtbetalingsgrunnlagListe" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnMeldekortUtbetalingsgrunnlagListeResponse">
+    <wsdl:part element="tns:finnMeldekortUtbetalingsgrunnlagListeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnMeldekortUtbetalingsgrunnlagListeSikkerhetsbegrensning">
+    <wsdl:part element="tns:finnMeldekortUtbetalingsgrunnlagListesikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="finnMeldekortUtbetalingsgrunnlagListeUgyldigInput">
+    <wsdl:part element="tns:finnMeldekortUtbetalingsgrunnlagListeugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnMeldekortUtbetalingsgrunnlagListeAktoerIkkeFunnet">
+    <wsdl:part element="tns:finnMeldekortUtbetalingsgrunnlagListeaktoerIkkeFunnet" name="aktoerIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="meldekortUtbetalingsgrunnlag_v1">
+    <wsdl:operation name="finnMeldekortUtbetalingsgrunnlagListe">
+      <wsdl:input message="tns:finnMeldekortUtbetalingsgrunnlagListeRequest"/>
+      <wsdl:output message="tns:finnMeldekortUtbetalingsgrunnlagListeResponse"/>
+      <wsdl:fault message="tns:finnMeldekortUtbetalingsgrunnlagListeSikkerhetsbegrensning" name="finnMeldekortUtbetalingsgrunnlagListeFault"/>
+      <wsdl:fault message="tns:finnMeldekortUtbetalingsgrunnlagListeUgyldigInput" name="finnMeldekortUtbetalingsgrunnlagListeFault1"/>
+      <wsdl:fault message="tns:finnMeldekortUtbetalingsgrunnlagListeAktoerIkkeFunnet" name="finnMeldekortUtbetalingsgrunnlagListeFault2"/>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
