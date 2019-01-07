@@ -5,6 +5,7 @@
       <xsd:element name="orgnummer" type="info:Organisasjonsnummer"/>
       <xsd:element minOccurs="0" name="inkluderHistorikk" type="xsd:boolean"/>
       <xsd:element minOccurs="0" name="inkluderHierarki" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="inkluderAnsatte" type="xsd:boolean"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="HentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">

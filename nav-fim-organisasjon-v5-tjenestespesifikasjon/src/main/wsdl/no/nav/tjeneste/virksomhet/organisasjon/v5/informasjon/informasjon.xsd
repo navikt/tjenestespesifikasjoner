@@ -688,6 +688,7 @@ Hierarkisk kodeverk som kommer senere</xsd:documentation>
           <xsd:documentation>Liste av orgform for en organisasjon</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="ansatte" minOccurs="0" maxOccurs="unbounded" type="info:Ansatte"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="Knytninger">
@@ -1252,5 +1253,16 @@ Presisering: e-postens mottaker er en gitt mottaker.</xsd:documentation>
         <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/N_c3_a6ringskoder" name="kodeverksRef" type="xsd:anyURI"/>
       </xsd:extension>
     </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Ansatte">
+    <xsd:sequence>
+      <xsd:element name="antall" type="xsd:positiveInteger">
+        <xsd:annotation>
+          <xsd:documentation>Antall ansatte</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="metadata:Bruksperiode"/>
+    <xsd:attributeGroup ref="metadata:Gyldighetsperiode"/>
   </xsd:complexType>
 </xsd:schema>
