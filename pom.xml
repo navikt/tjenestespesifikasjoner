@@ -115,7 +115,6 @@
         <module>nav-fim-behandleJournal-v2-tjenestespesifikasjon</module>
         <module>nav-fim-behandleJournal-v3-tjenestespesifikasjon</module>
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
-        <module>nav-fim-organisasjon-v5-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
         <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
         <module>nav-fim-behandleBrukerprofil-v1-tjenestespesifikasjon</module>
@@ -132,10 +131,12 @@
         <module>nav-fim-kodeverk-v2-tjenestespesifikasjon</module>
         <module>nav-fim-oppfoelging-v1-tjenestespesifikasjon</module>
         <module>nav-fim-oppfolging-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-oppgave-v3-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v1-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v2-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v3-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v4-tjenestespesifikasjon</module>
+        <module>nav-fim-organisasjon-v5-tjenestespesifikasjon</module>
         <module>nav-fim-person-v1-tjenestespesifikasjon</module>
         <module>nav-fim-personsok-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sak-v1-tjenestespesifikasjon</module>
