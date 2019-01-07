@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="infotrygdBeregningsgrunnlag" targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdBeregningsgrunnlag/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/infotrygdBeregningsgrunnlag/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdBeregningsgrunnlag/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/infotrygdBeregningsgrunnlag/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/infotrygdBeregningsgrunnlag/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/infotrygdBeregningsgrunnlag/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/infotrygdBeregningsgrunnlag/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="finnGrunnlagListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnGrunnlagListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnGrunnlagListeugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnGrunnlagListesikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="finnGrunnlagListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnGrunnlagListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnGrunnlagListepersonIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnGrunnlagListeRequest">
+    <wsdl:part element="tns:finnGrunnlagListe" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnGrunnlagListeResponse">
+    <wsdl:part element="tns:finnGrunnlagListeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnGrunnlagListeUgyldigInput">
+    <wsdl:part element="tns:finnGrunnlagListeugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnGrunnlagListeSikkerhetsbegrensning">
+    <wsdl:part element="tns:finnGrunnlagListesikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="finnGrunnlagListePersonIkkeFunnet">
+    <wsdl:part element="tns:finnGrunnlagListepersonIkkeFunnet" name="personIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="pingParameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="infotrygdBeregningsgrunnlag_v1">
+    <wsdl:operation name="finnGrunnlagListe">
+      <wsdl:input message="tns:finnGrunnlagListeRequest"/>
+      <wsdl:output message="tns:finnGrunnlagListeResponse"/>
+      <wsdl:fault message="tns:finnGrunnlagListeUgyldigInput" name="finnGrunnlagListeFault"/>
+      <wsdl:fault message="tns:finnGrunnlagListeSikkerhetsbegrensning" name="finnGrunnlagListeFault1"/>
+      <wsdl:fault message="tns:finnGrunnlagListePersonIkkeFunnet" name="finnGrunnlagListeFault2"/>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
