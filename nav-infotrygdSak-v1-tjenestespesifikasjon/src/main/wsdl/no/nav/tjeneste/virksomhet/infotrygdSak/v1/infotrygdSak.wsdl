@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="infotrygdSak" targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="finnSakListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnSakListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnSakListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnSakListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnSakListeugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnSakListesikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="finnSakListepersonIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnSakListeRequest">
+    <wsdl:part element="tns:finnSakListe" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnSakListeResponse">
+    <wsdl:part element="tns:finnSakListeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnSakListeUgyldigInput">
+    <wsdl:part element="tns:finnSakListeugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnSakListeSikkerhetsbegrensning">
+    <wsdl:part element="tns:finnSakListesikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="finnSakListePersonIkkeFunnet">
+    <wsdl:part element="tns:finnSakListepersonIkkeFunnet" name="personIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="infotrygdSak_v1">
+    <wsdl:operation name="finnSakListe">
+      <wsdl:documentation>Finner saker med og uten vedtak fra SAK/IS/VEDTAK basene til Infotrygd </wsdl:documentation>
+      <wsdl:input message="tns:finnSakListeRequest"/>
+      <wsdl:output message="tns:finnSakListeResponse"/>
+      <wsdl:fault message="tns:finnSakListeUgyldigInput" name="finnSakListeFault"/>
+      <wsdl:fault message="tns:finnSakListeSikkerhetsbegrensning" name="finnSakListeFault1"/>
+      <wsdl:fault message="tns:finnSakListePersonIkkeFunnet" name="finnSakListeFault2"/>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
