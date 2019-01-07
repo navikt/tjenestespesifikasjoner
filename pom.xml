@@ -140,6 +140,7 @@
         <module>nav-fim-ytelse-v1-tjenestespesifikasjon</module>
         <module>nav-fim-ytelseskontrakt-v1-tjenestespesifikasjon</module>
         <module>nav-hentsykepengeliste-v2-tjenestespesifikasjon</module>
+        <module>nav-inngaaendeJournal-v1-tjenestespesifikasjon</module>
         <module>nav-journal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v3-tjenestespesifikasjon</module>
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
