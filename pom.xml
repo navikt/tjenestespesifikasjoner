@@ -60,7 +60,6 @@
         <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
         <module>behandleForsendelse-udi-brevdata</module>
         <module>behandleForsendelse-v1</module>
-        <module>behandleJournal-jaxws</module>
         <module>behandleoppgave-v1-tjenestespesifikasjon</module>
         <module>behandlesak-v2-tjenestespesifikasjon</module>
         <module>besvare-henvendelse-tjenestespesifikasjon</module>
@@ -110,12 +109,13 @@
         <module>medlemskap-v1-tjenestespesifikasjon</module>
         <module>moetev1-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-behandleJournal-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandleJournal-v2-tjenestespesifikasjon</module>
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
         <module>nav-fim-organisasjon-v5-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
         <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
         <module>nav-fim-behandleBrukerprofil-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleJournal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-behandleSakOgBehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-brukerhendelse-v1-tjenestespesifikasjon</module>
         <module>nav-fim-brukerprofil-v1-tjenestespesifikasjon</module>
