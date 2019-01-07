@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="organisasjon" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:tns="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="organisasjon" targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
     <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4" xmlns:feil="http://nav.no/tjeneste/virksomhet/organisasjon/v4/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/organisasjon/v4/meldinger">
       <xsd:import namespace="http://nav.no/tjeneste/virksomhet/organisasjon/v4/feil" schemaLocation="feil/feil.xsd"/>
@@ -6,14 +7,14 @@
       <xsd:element name="ping">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+            
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
       <xsd:element name="pingResponse">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+            
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -126,122 +127,172 @@
       <xsd:element name="finnOrganisasjonsendringerListeugyldigInput" type="feil:UgyldigInput"/>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="pingRequest">
-    <wsdl:part element="tns:ping" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="pingResponse">
-    <wsdl:part element="tns:pingResponse" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="finnOrganisasjonRequest">
-    <wsdl:part element="tns:finnOrganisasjon" name="parameters"/>
+  <wsdl:message name="hentOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:hentOrganisasjon">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="finnOrganisasjonResponse">
-    <wsdl:part element="tns:finnOrganisasjonResponse" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="finnOrganisasjonUgyldigInput">
-    <wsdl:part element="tns:finnOrganisasjonugyldigInput" name="ugyldigInput"/>
-  </wsdl:message>
-  <wsdl:message name="finnOrganisasjonForMangeForekomster">
-    <wsdl:part element="tns:finnOrganisasjonforMangeForekomster" name="forMangeForekomster"/>
+    <wsdl:part name="parameters" element="tns:finnOrganisasjonResponse">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="hentOrganisasjonsnavnBolkRequest">
-    <wsdl:part element="tns:hentOrganisasjonsnavnBolk" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:hentOrganisasjonsnavnBolk">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="hentOrganisasjonsnavnBolkResponse">
-    <wsdl:part element="tns:hentOrganisasjonsnavnBolkResponse" name="parameters"/>
+  <wsdl:message name="finnOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnOrganisasjonugyldigInput">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="hentOrganisasjonRequest">
-    <wsdl:part element="tns:hentOrganisasjon" name="parameters"/>
+  <wsdl:message name="finnOrganisasjonsendringerListe_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnOrganisasjonsendringerListeugyldigInput">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="hentOrganisasjonResponse">
-    <wsdl:part element="tns:hentOrganisasjonResponse" name="parameters"/>
+  <wsdl:message name="validerOrganisasjon_organisasjonIkkeFunnet">
+    <wsdl:part name="organisasjonIkkeFunnet" element="tns:validerOrganisasjonorganisasjonIkkeFunnet">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="hentOrganisasjonUgyldigInput">
-    <wsdl:part element="tns:hentOrganisasjonugyldigInput" name="ugyldigInput"/>
-  </wsdl:message>
-  <wsdl:message name="hentOrganisasjonOrganisasjonIkkeFunnet">
-    <wsdl:part element="tns:hentOrganisasjonorganisasjonIkkeFunnet" name="organisasjonIkkeFunnet"/>
-  </wsdl:message>
-  <wsdl:message name="hentNoekkelinfoOrganisasjonRequest">
-    <wsdl:part element="tns:hentNoekkelinfoOrganisasjon" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="hentNoekkelinfoOrganisasjonResponse">
-    <wsdl:part element="tns:hentNoekkelinfoOrganisasjonResponse" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="hentNoekkelinfoOrganisasjonUgyldigInput">
-    <wsdl:part element="tns:hentNoekkelinfoOrganisasjonugyldigInput" name="ugyldigInput"/>
-  </wsdl:message>
-  <wsdl:message name="hentNoekkelinfoOrganisasjonOrganisasjonIkkeFunnet">
-    <wsdl:part element="tns:hentNoekkelinfoOrganisasjonorganisasjonIkkeFunnet" name="organisasjonIkkeFunnet"/>
-  </wsdl:message>
-  <wsdl:message name="validerOrganisasjonRequest">
-    <wsdl:part element="tns:validerOrganisasjon" name="parameters"/>
+  <wsdl:message name="hentOrganisasjon_organisasjonIkkeFunnet">
+    <wsdl:part name="organisasjonIkkeFunnet" element="tns:hentOrganisasjonorganisasjonIkkeFunnet">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="validerOrganisasjonResponse">
-    <wsdl:part element="tns:validerOrganisasjonResponse" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:validerOrganisasjonResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="validerOrganisasjonUgyldigInput">
-    <wsdl:part element="tns:validerOrganisasjonugyldigInput" name="ugyldigInput"/>
+  <wsdl:message name="hentNoekkelinfoOrganisasjonResponse">
+    <wsdl:part name="parameters" element="tns:hentNoekkelinfoOrganisasjonResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="validerOrganisasjonOrganisasjonIkkeFunnet">
-    <wsdl:part element="tns:validerOrganisasjonorganisasjonIkkeFunnet" name="organisasjonIkkeFunnet"/>
+  <wsdl:message name="hentOrganisasjonsnavnBolkResponse">
+    <wsdl:part name="parameters" element="tns:hentOrganisasjonsnavnBolkResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="hentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest">
-    <wsdl:part element="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolk" name="parameters"/>
+  <wsdl:message name="validerOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:validerOrganisasjon">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
-    <wsdl:part element="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse" name="parameters"/>
+  <wsdl:message name="hentNoekkelinfoOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:hentNoekkelinfoOrganisasjon">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="finnOrganisasjonsendringerListeRequest">
-    <wsdl:part element="tns:finnOrganisasjonsendringerListe" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:finnOrganisasjonsendringerListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentOrganisasjonugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentNoekkelinfoOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentNoekkelinfoOrganisasjonugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjon_forMangeForekomster">
+    <wsdl:part name="forMangeForekomster" element="tns:finnOrganisasjonforMangeForekomster">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest">
+    <wsdl:part name="parameters" element="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolk">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validerOrganisasjon_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:validerOrganisasjonugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+    <wsdl:part name="parameters" element="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentNoekkelinfoOrganisasjon_organisasjonIkkeFunnet">
+    <wsdl:part name="organisasjonIkkeFunnet" element="tns:hentNoekkelinfoOrganisasjonorganisasjonIkkeFunnet">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="finnOrganisasjonsendringerListeResponse">
-    <wsdl:part element="tns:finnOrganisasjonsendringerListeResponse" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:finnOrganisasjonsendringerListeResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="finnOrganisasjonsendringerListeUgyldigInput">
-    <wsdl:part element="tns:finnOrganisasjonsendringerListeugyldigInput" name="ugyldigInput"/>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOrganisasjonRequest">
+    <wsdl:part name="parameters" element="tns:finnOrganisasjon">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentOrganisasjonResponse">
+    <wsdl:part name="parameters" element="tns:hentOrganisasjonResponse">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="Organisasjon_v4">
     <wsdl:operation name="ping">
-      <wsdl:input message="tns:pingRequest"/>
-      <wsdl:output message="tns:pingResponse"/>
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="finnOrganisasjon">
-      <wsdl:input message="tns:finnOrganisasjonRequest"/>
-      <wsdl:output message="tns:finnOrganisasjonResponse"/>
-      <wsdl:fault message="tns:finnOrganisasjonUgyldigInput" name="finnOrganisasjonFault"/>
-      <wsdl:fault message="tns:finnOrganisasjonForMangeForekomster" name="finnOrganisasjonFault1"/>
+      <wsdl:input message="tns:finnOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="forMangeForekomster" message="tns:finnOrganisasjon_forMangeForekomster">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:finnOrganisasjon_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="hentOrganisasjonsnavnBolk">
-      <wsdl:input message="tns:hentOrganisasjonsnavnBolkRequest"/>
-      <wsdl:output message="tns:hentOrganisasjonsnavnBolkResponse"/>
+      <wsdl:input message="tns:hentOrganisasjonsnavnBolkRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentOrganisasjonsnavnBolkResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="hentOrganisasjon">
-      <wsdl:input message="tns:hentOrganisasjonRequest"/>
-      <wsdl:output message="tns:hentOrganisasjonResponse"/>
-      <wsdl:fault message="tns:hentOrganisasjonUgyldigInput" name="hentOrganisasjonFault"/>
-      <wsdl:fault message="tns:hentOrganisasjonOrganisasjonIkkeFunnet" name="hentOrganisasjonFault1"/>
+      <wsdl:input message="tns:hentOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="organisasjonIkkeFunnet" message="tns:hentOrganisasjon_organisasjonIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentOrganisasjon_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="hentNoekkelinfoOrganisasjon">
-      <wsdl:input message="tns:hentNoekkelinfoOrganisasjonRequest"/>
-      <wsdl:output message="tns:hentNoekkelinfoOrganisasjonResponse"/>
-      <wsdl:fault message="tns:hentNoekkelinfoOrganisasjonUgyldigInput" name="hentNoekkelinfoOrganisasjonFault"/>
-      <wsdl:fault message="tns:hentNoekkelinfoOrganisasjonOrganisasjonIkkeFunnet" name="hentNoekkelinfoOrganisasjonFault1"/>
+      <wsdl:input message="tns:hentNoekkelinfoOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentNoekkelinfoOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="organisasjonIkkeFunnet" message="tns:hentNoekkelinfoOrganisasjon_organisasjonIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentNoekkelinfoOrganisasjon_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="validerOrganisasjon">
-      <wsdl:input message="tns:validerOrganisasjonRequest"/>
-      <wsdl:output message="tns:validerOrganisasjonResponse"/>
-      <wsdl:fault message="tns:validerOrganisasjonUgyldigInput" name="validerOrganisasjonFault"/>
-      <wsdl:fault message="tns:validerOrganisasjonOrganisasjonIkkeFunnet" name="validerOrganisasjonFault1"/>
+      <wsdl:input message="tns:validerOrganisasjonRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:validerOrganisasjonResponse">
+    </wsdl:output>
+      <wsdl:fault name="organisasjonIkkeFunnet" message="tns:validerOrganisasjon_organisasjonIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:validerOrganisasjon_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="hentVirksomhetsOrgnrForJuridiskOrgnrBolk">
-      <wsdl:input message="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest"/>
-      <wsdl:output message="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse"/>
+      <wsdl:input message="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentVirksomhetsOrgnrForJuridiskOrgnrBolkResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="finnOrganisasjonsendringerListe">
-      <wsdl:input message="tns:finnOrganisasjonsendringerListeRequest"/>
-      <wsdl:output message="tns:finnOrganisasjonsendringerListeResponse"/>
-      <wsdl:fault message="tns:finnOrganisasjonsendringerListeUgyldigInput" name="finnOrganisasjonsendringerListeFault"/>
+      <wsdl:input message="tns:finnOrganisasjonsendringerListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnOrganisasjonsendringerListeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ugyldigInput" message="tns:finnOrganisasjonsendringerListe_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
