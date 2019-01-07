@@ -80,6 +80,51 @@
         <soap:fault name="sikkerhetsbegrensning" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="hentEkteskapshistorikk">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/person/v3/Person_v3/hentEkteskapshistorikkRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet">
+        <soap:fault name="personIkkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning">
+        <soap:fault name="sikkerhetsbegrensning" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentPersonerMedSammeAdresse">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/person/v3/Person_v3/hentPersonerMedSammeAdresseRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ikkeFunnet">
+        <soap:fault name="ikkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning">
+        <soap:fault name="sikkerhetsbegrensning" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentPersonhistorikk">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/person/v3/Person_v3/hentPersonhistorikkRequest"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet">
+        <soap:fault name="personIkkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning">
+        <soap:fault name="sikkerhetsbegrensning" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Person_v3">
     <wsdl:port name="Person_v3Port" binding="tns:Person_v3Binding">

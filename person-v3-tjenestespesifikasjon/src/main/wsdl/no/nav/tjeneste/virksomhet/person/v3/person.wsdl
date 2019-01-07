@@ -75,6 +75,54 @@
       </xsd:element>
       <xsd:element name="hentGeografiskTilknytningsikkerhetsbegrensing" type="feil:Sikkerhetsbegrensning"/>
       <xsd:element name="hentGeografiskTilknytningpersonIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="hentEkteskapshistorikk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentEkteskapshistorikkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentEkteskapshistorikkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentEkteskapshistorikkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentEkteskapshistorikkIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="hentEkteskapshistorikkSikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="hentPersonerMedSammeAdresse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentPersonerMedSammeAdresseRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentPersonerMedSammeAdresseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentPersonerMedSammeAdresseResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentPersonerMedSammeAdresseIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="hentPersonerMedSammeAdresseSikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="hentPersonhistorikk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentPersonhistorikkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentPersonhistorikkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentPersonhistorikkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentPersonhistorikkIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="hentPersonhistorikkSikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
       <xsd:element name="hentVerge">
         <xsd:complexType>
           <xsd:sequence>
@@ -169,6 +217,54 @@
     <wsdl:part name="parameters" element="tns:ping">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="hentEkteskapshistorikkRequest">
+    <wsdl:part name="parameters" element="tns:hentEkteskapshistorikk">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentEkteskapshistorikkResponse">
+    <wsdl:part name="parameters" element="tns:hentEkteskapshistorikkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentEkteskapshistorikk_personIkkeFunnet">
+    <wsdl:part name="ekteskapshistorikkIkkeFunnet" element="tns:hentEkteskapshistorikkIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentEkteskapshistorikk_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:hentEkteskapshistorikkSikkerhetsbegrensning">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonerMedSammeAdresseRequest">
+    <wsdl:part name="parameters" element="tns:hentPersonerMedSammeAdresse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonerMedSammeAdresseResponse">
+    <wsdl:part name="parameters" element="tns:hentPersonerMedSammeAdresseResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonerMedSammeAdresse_ikkeFunnet">
+    <wsdl:part name="personerMedSammeAdresseIkkeFunnet" element="tns:hentPersonerMedSammeAdresseIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonerMedSammeAdresse_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:hentPersonerMedSammeAdresseSikkerhetsbegrensning">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonhistorikkRequest">
+    <wsdl:part name="parameters" element="tns:hentPersonhistorikk">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonhistorikkResponse">
+    <wsdl:part name="parameters" element="tns:hentPersonhistorikkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonhistorikk_personIkkeFunnet">
+    <wsdl:part name="personIkkeFunnet" element="tns:hentPersonhistorikkIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentPersonhistorikk_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:hentPersonhistorikkSikkerhetsbegrensning">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="Person_v3">
     <wsdl:operation name="hentPerson">
       <wsdl:input message="tns:hentPersonRequest">
@@ -218,6 +314,36 @@
       <wsdl:fault name="personIkkeFunnet" message="tns:hentVerge_personIkkeFunnet">
       </wsdl:fault>
       <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentVerge_sikkerhetsbegrensning">
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentEkteskapshistorikk">
+      <wsdl:input message="tns:hentEkteskapshistorikkRequest">
+      </wsdl:input>
+      <wsdl:output message="tns:hentEkteskapshistorikkResponse">
+      </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet" message="tns:hentEkteskapshistorikk_personIkkeFunnet">
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentEkteskapshistorikk_sikkerhetsbegrensning">
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentPersonerMedSammeAdresse">
+      <wsdl:input message="tns:hentPersonerMedSammeAdresseRequest">
+      </wsdl:input>
+      <wsdl:output message="tns:hentPersonerMedSammeAdresseResponse">
+      </wsdl:output>
+      <wsdl:fault name="ikkeFunnet" message="tns:hentPersonerMedSammeAdresse_ikkeFunnet">
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentPersonerMedSammeAdresse_sikkerhetsbegrensning">
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentPersonhistorikk">
+      <wsdl:input message="tns:hentPersonhistorikkRequest">
+      </wsdl:input>
+      <wsdl:output message="tns:hentPersonhistorikkResponse">
+      </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet" message="tns:hentPersonhistorikk_personIkkeFunnet">
+      </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentPersonhistorikk_sikkerhetsbegrensning">
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
