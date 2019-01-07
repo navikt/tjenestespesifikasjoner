@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="behandleInngaaendeJournal" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ferdigstillJournalfoering">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FerdigstillJournalfoeringRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ferdigstillJournalfoeringResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ferdigstillJournalfoeringsikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="ferdigstillJournalfoeringobjektIkkeFunnet" type="feil:ObjektIkkeFunnet"/>
+      <xsd:element name="ferdigstillJournalfoeringjournalpostIkkeInngaaende" type="feil:JournalpostIkkeInngaeende"/>
+      <xsd:element name="ferdigstillJournalfoeringferdigstillingIkkeMulig" type="feil:FerdigstillingIkkeMulig"/>
+      <xsd:element name="ferdigstillJournalfoeringugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="oppdaterJournalpost">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:OppdaterJournalpostRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="oppdaterJournalpostResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="oppdaterJournalpostsikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="oppdaterJournalpostobjektIkkeFunnet" type="feil:ObjektIkkeFunnet"/>
+      <xsd:element name="oppdaterJournalpostugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="oppdaterJournalpostjournalpostIkkeInngaaende" type="feil:JournalpostIkkeInngaeende"/>
+      <xsd:element name="oppdaterJournalpostoppdateringIkkeMulig" type="feil:OppdateringIkkeMulig"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ferdigstillJournalfoeringRequest">
+    <wsdl:part element="tns:ferdigstillJournalfoering" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ferdigstillJournalfoeringResponse">
+    <wsdl:part element="tns:ferdigstillJournalfoeringResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ferdigstillJournalfoeringSikkerhetsbegrensning">
+    <wsdl:part element="tns:ferdigstillJournalfoeringsikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="ferdigstillJournalfoeringObjektIkkeFunnet">
+    <wsdl:part element="tns:ferdigstillJournalfoeringobjektIkkeFunnet" name="objektIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="ferdigstillJournalfoeringJournalpostIkkeInngaaende">
+    <wsdl:part element="tns:ferdigstillJournalfoeringjournalpostIkkeInngaaende" name="journalpostIkkeInngaaende"/>
+  </wsdl:message>
+  <wsdl:message name="ferdigstillJournalfoeringFerdigstillingIkkeMulig">
+    <wsdl:part element="tns:ferdigstillJournalfoeringferdigstillingIkkeMulig" name="ferdigstillingIkkeMulig"/>
+  </wsdl:message>
+  <wsdl:message name="ferdigstillJournalfoeringUgyldigInput">
+    <wsdl:part element="tns:ferdigstillJournalfoeringugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="oppdaterJournalpostRequest">
+    <wsdl:part element="tns:oppdaterJournalpost" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="oppdaterJournalpostResponse">
+    <wsdl:part element="tns:oppdaterJournalpostResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="oppdaterJournalpostSikkerhetsbegrensning">
+    <wsdl:part element="tns:oppdaterJournalpostsikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="oppdaterJournalpostObjektIkkeFunnet">
+    <wsdl:part element="tns:oppdaterJournalpostobjektIkkeFunnet" name="objektIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="oppdaterJournalpostUgyldigInput">
+    <wsdl:part element="tns:oppdaterJournalpostugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="oppdaterJournalpostJournalpostIkkeInngaaende">
+    <wsdl:part element="tns:oppdaterJournalpostjournalpostIkkeInngaaende" name="journalpostIkkeInngaaende"/>
+  </wsdl:message>
+  <wsdl:message name="oppdaterJournalpostOppdateringIkkeMulig">
+    <wsdl:part element="tns:oppdaterJournalpostoppdateringIkkeMulig" name="oppdateringIkkeMulig"/>
+  </wsdl:message>
+  <wsdl:portType name="BehandleInngaaendeJournal_v1">
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ferdigstillJournalfoering">
+      <wsdl:input message="tns:ferdigstillJournalfoeringRequest"/>
+      <wsdl:output message="tns:ferdigstillJournalfoeringResponse"/>
+      <wsdl:fault message="tns:ferdigstillJournalfoeringSikkerhetsbegrensning" name="ferdigstillJournalfoeringFault"/>
+      <wsdl:fault message="tns:ferdigstillJournalfoeringObjektIkkeFunnet" name="ferdigstillJournalfoeringFault1"/>
+      <wsdl:fault message="tns:ferdigstillJournalfoeringJournalpostIkkeInngaaende" name="ferdigstillJournalfoeringFault2"/>
+      <wsdl:fault message="tns:ferdigstillJournalfoeringFerdigstillingIkkeMulig" name="ferdigstillJournalfoeringFault3"/>
+      <wsdl:fault message="tns:ferdigstillJournalfoeringUgyldigInput" name="ferdigstillJournalfoeringFault4"/>
+    </wsdl:operation>
+    <wsdl:operation name="oppdaterJournalpost">
+      <wsdl:input message="tns:oppdaterJournalpostRequest"/>
+      <wsdl:output message="tns:oppdaterJournalpostResponse"/>
+      <wsdl:fault message="tns:oppdaterJournalpostSikkerhetsbegrensning" name="oppdaterJournalpostFault"/>
+      <wsdl:fault message="tns:oppdaterJournalpostObjektIkkeFunnet" name="oppdaterJournalpostFault1"/>
+      <wsdl:fault message="tns:oppdaterJournalpostUgyldigInput" name="oppdaterJournalpostFault2"/>
+      <wsdl:fault message="tns:oppdaterJournalpostJournalpostIkkeInngaaende" name="oppdaterJournalpostFault3"/>
+      <wsdl:fault message="tns:oppdaterJournalpostOppdateringIkkeMulig" name="oppdaterJournalpostFault4"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
