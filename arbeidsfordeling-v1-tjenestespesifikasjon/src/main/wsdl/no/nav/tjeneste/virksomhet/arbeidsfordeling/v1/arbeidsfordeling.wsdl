@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="arbeidsfordeling" targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="arbeidsfordeling" targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/" xmlns:tns="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
     <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/" xmlns:feil="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/meldinger">
       <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arbeidsfordeling/v1/feil" schemaLocation="feil/feil.xsd"/>
@@ -46,60 +45,44 @@
       <xsd:element name="finnAlleBehandlendeEnheterListeugyldigInput" type="feil:UgyldigInput"/>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="pingRequest">
-    <wsdl:part name="parameters" element="tns:ping">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="finnBehandlendeEnhetListeRequest">
-    <wsdl:part name="parameters" element="tns:finnBehandlendeEnhetListe">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="pingResponse">
-    <wsdl:part name="parameters" element="tns:pingResponse">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="finnAlleBehandlendeEnheterListe_ugyldigInput">
-    <wsdl:part name="ugyldigInput" element="tns:finnAlleBehandlendeEnheterListeugyldigInput">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="finnAlleBehandlendeEnheterListeRequest">
-    <wsdl:part name="parameters" element="tns:finnAlleBehandlendeEnheterListe">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="finnAlleBehandlendeEnheterListeResponse">
-    <wsdl:part name="parameters" element="tns:finnAlleBehandlendeEnheterListeResponse">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="finnBehandlendeEnhetListe_ugyldigInput">
-    <wsdl:part name="ugyldigInput" element="tns:finnBehandlendeEnhetListeugyldigInput">
-    </wsdl:part>
+    <wsdl:part element="tns:finnBehandlendeEnhetListe" name="parameters"/>
   </wsdl:message>
   <wsdl:message name="finnBehandlendeEnhetListeResponse">
-    <wsdl:part name="parameters" element="tns:finnBehandlendeEnhetListeResponse">
-    </wsdl:part>
+    <wsdl:part element="tns:finnBehandlendeEnhetListeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnBehandlendeEnhetListeUgyldigInput">
+    <wsdl:part element="tns:finnBehandlendeEnhetListeugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnAlleBehandlendeEnheterListeRequest">
+    <wsdl:part element="tns:finnAlleBehandlendeEnheterListe" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnAlleBehandlendeEnheterListeResponse">
+    <wsdl:part element="tns:finnAlleBehandlendeEnheterListeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnAlleBehandlendeEnheterListeUgyldigInput">
+    <wsdl:part element="tns:finnAlleBehandlendeEnheterListeugyldigInput" name="ugyldigInput"/>
   </wsdl:message>
   <wsdl:portType name="Arbeidsfordeling_v1">
     <wsdl:operation name="finnBehandlendeEnhetListe">
-      <wsdl:input message="tns:finnBehandlendeEnhetListeRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:finnBehandlendeEnhetListeResponse">
-    </wsdl:output>
-      <wsdl:fault name="ugyldigInput" message="tns:finnBehandlendeEnhetListe_ugyldigInput">
-    </wsdl:fault>
+      <wsdl:input message="tns:finnBehandlendeEnhetListeRequest"/>
+      <wsdl:output message="tns:finnBehandlendeEnhetListeResponse"/>
+      <wsdl:fault message="tns:finnBehandlendeEnhetListeUgyldigInput" name="finnBehandlendeEnhetListeFault"/>
     </wsdl:operation>
     <wsdl:operation name="ping">
-      <wsdl:input message="tns:pingRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:pingResponse">
-    </wsdl:output>
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
     </wsdl:operation>
     <wsdl:operation name="finnAlleBehandlendeEnheterListe">
-      <wsdl:input message="tns:finnAlleBehandlendeEnheterListeRequest">
-    </wsdl:input>
-      <wsdl:output message="tns:finnAlleBehandlendeEnheterListeResponse">
-    </wsdl:output>
-      <wsdl:fault name="ugyldigInput" message="tns:finnAlleBehandlendeEnheterListe_ugyldigInput">
-    </wsdl:fault>
+      <wsdl:input message="tns:finnAlleBehandlendeEnheterListeRequest"/>
+      <wsdl:output message="tns:finnAlleBehandlendeEnheterListeResponse"/>
+      <wsdl:fault message="tns:finnAlleBehandlendeEnheterListeUgyldigInput" name="finnAlleBehandlendeEnheterListeFault"/>
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
