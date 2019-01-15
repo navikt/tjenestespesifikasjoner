@@ -98,7 +98,7 @@
             </resource>
             <resource>
                 <directory>${wsdl.directory}</directory>
-                <targetPath>${project.artifactId}/wsdl</targetPath>
+                <targetPath>wsdl</targetPath>
             </resource>
         </resources>
     </build>

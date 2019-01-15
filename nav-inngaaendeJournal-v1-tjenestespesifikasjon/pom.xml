@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <wsdl.directory>src/main/resources/wsdl/no/nav/tjeneste/virksomhet/inngaaendeJournal/v1</wsdl.directory>
+        <wsdl.directory>src/main/resources/wsdl</wsdl.directory>
     </properties>
 
     <build>
@@ -35,7 +35,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/inngaaendeJournal.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/no/nav/tjeneste/virksomhet/inngaaendeJournal/v1/inngaaendeJournal.wsdl</wsdl>
                                     <wsdlLocation>classpath:wsdl/no/nav/tjeneste/virksomhet/inngaaendeJournal/v1/Binding.wsdl</wsdlLocation>
                                     <bindingFiles>
                                         <bindingFile>${basedir}/src/main/resources/inngaaendeJournal.xjb</bindingFile>
@@ -83,8 +83,8 @@
         </plugins>
         <resources>
             <resource>
-                <directory>${wsdl.directory}</directory>
-                <targetPath>${project.artifactId}/wsdl</targetPath>
+                <directory>src/main/resources/wsdl</directory>
+                <targetPath>wsdl</targetPath>
             </resource>
         </resources>
     </build>

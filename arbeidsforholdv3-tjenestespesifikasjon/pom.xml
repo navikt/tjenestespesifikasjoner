@@ -72,17 +72,12 @@
                 <directory>src/main/resources</directory>
             </resource>
             <resource>
-                <directory>${wsdl.directory}</directory>
-                <targetPath>${project.artifactId}/wsdl</targetPath>
+                <directory>src/main/wsdl</directory>
+                <targetPath>wsdl</targetPath>
             </resource>
         </resources>
     </build>
     <dependencies>
-        <dependency>
-            <groupId>com.migesok</groupId>
-            <artifactId>jaxb-java-time-adapters</artifactId>
-            <version>1.1.3</version>
-        </dependency>
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
