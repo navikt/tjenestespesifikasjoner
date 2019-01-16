@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="infotrygdSak" targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="infotrygdSak" targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
     <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/meldinger">
       <xsd:import namespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/feil" schemaLocation="feil/feil.xsd"/>
@@ -32,39 +33,52 @@
       </xsd:element>
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="finnSakListe_personIkkeFunnet">
+    <wsdl:part name="personIkkeFunnet" element="tns:finnSakListepersonIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="finnSakListeRequest">
-    <wsdl:part element="tns:finnSakListe" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:finnSakListe">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="finnSakListeResponse">
-    <wsdl:part element="tns:finnSakListeResponse" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="finnSakListeUgyldigInput">
-    <wsdl:part element="tns:finnSakListeugyldigInput" name="ugyldigInput"/>
-  </wsdl:message>
-  <wsdl:message name="finnSakListeSikkerhetsbegrensning">
-    <wsdl:part element="tns:finnSakListesikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
-  </wsdl:message>
-  <wsdl:message name="finnSakListePersonIkkeFunnet">
-    <wsdl:part element="tns:finnSakListepersonIkkeFunnet" name="personIkkeFunnet"/>
-  </wsdl:message>
-  <wsdl:message name="pingRequest">
-    <wsdl:part element="tns:ping" name="parameters"/>
+  <wsdl:message name="finnSakListe_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:finnSakListesikkerhetsbegrensning">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="pingResponse">
-    <wsdl:part element="tns:pingResponse" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnSakListeResponse">
+    <wsdl:part name="parameters" element="tns:finnSakListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnSakListe_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnSakListeugyldigInput">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="infotrygdSak_v1">
     <wsdl:operation name="finnSakListe">
-      <wsdl:documentation>Finner saker med og uten vedtak fra SAK/IS/VEDTAK basene til Infotrygd </wsdl:documentation>
-      <wsdl:input message="tns:finnSakListeRequest"/>
-      <wsdl:output message="tns:finnSakListeResponse"/>
-      <wsdl:fault message="tns:finnSakListeUgyldigInput" name="finnSakListeFault"/>
-      <wsdl:fault message="tns:finnSakListeSikkerhetsbegrensning" name="finnSakListeFault1"/>
-      <wsdl:fault message="tns:finnSakListePersonIkkeFunnet" name="finnSakListeFault2"/>
+      <wsdl:input message="tns:finnSakListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnSakListeResponse">
+    </wsdl:output>
+      <wsdl:fault name="personIkkeFunnet" message="tns:finnSakListe_personIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:finnSakListe_sikkerhetsbegrensning">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:finnSakListe_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ping">
-      <wsdl:input message="tns:pingRequest"/>
-      <wsdl:output message="tns:pingResponse"/>
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

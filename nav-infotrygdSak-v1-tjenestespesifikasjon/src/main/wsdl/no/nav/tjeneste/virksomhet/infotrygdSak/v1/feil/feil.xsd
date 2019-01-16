@@ -23,14 +23,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="UgyldigInput">
-    <xsd:complexContent>
-      <xsd:extension base="feil:ForretningsmessigUnntak"/>
-    </xsd:complexContent>
-  </xsd:complexType>
-  <xsd:complexType name="Sikkerhetsbegrensninger">
-    <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Sikkerhetsbegrensninger" name="kodeverksRef" type="xsd:anyURI"/>
-  </xsd:complexType>
   <xsd:complexType name="Sikkerhetsbegrensning">
     <xsd:complexContent>
       <xsd:extension base="feil:ForretningsmessigUnntak">
@@ -40,7 +32,23 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  <xsd:complexType name="Kodeverdi">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="kodeRef" type="xsd:anyURI"/>
+        <xsd:attribute name="termnavn" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sikkerhetsbegrensninger">
+    <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Sikkerhetsbegrensninger" name="kodeverksRef" type="xsd:anyURI"/>
+  </xsd:complexType>
   <xsd:complexType name="PersonIkkeFunnet">
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UgyldigInput">
     <xsd:complexContent>
       <xsd:extension base="feil:ForretningsmessigUnntak"/>
     </xsd:complexContent>

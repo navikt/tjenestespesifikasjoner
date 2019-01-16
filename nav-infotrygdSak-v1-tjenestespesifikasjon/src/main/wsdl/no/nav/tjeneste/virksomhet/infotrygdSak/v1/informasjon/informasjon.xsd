@@ -1,27 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/informasjon" xmlns:informasjon="http://nav.no/tjeneste/virksomhet/infotrygdSak/v1/informasjon">
-  <xsd:simpleType name="Identifikator">
-    <xsd:annotation>
-      <xsd:documentation>Identifikator Begrep-619</xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string"/>
-  </xsd:simpleType>
-  <xsd:complexType name="Periode">
-    <xsd:annotation>
-      <xsd:documentation>Periode fom og tom</xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:element name="fom" type="xsd:date">
-        <xsd:annotation>
-          <xsd:documentation>Fra-og-med dato</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element minOccurs="0" name="tom" type="xsd:date">
-        <xsd:annotation>
-          <xsd:documentation>Til-og-med dato</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:sequence>
-  </xsd:complexType>
   <xsd:complexType name="Kodeverdi">
     <xsd:simpleContent>
       <xsd:extension base="xsd:string">
@@ -30,6 +7,12 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:annotation>
+      <xsd:documentation>Identifikator Begrep-619</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
   <xsd:complexType name="Tema">
     <xsd:annotation>
       <xsd:documentation>Felles kodeverk for tema</xsd:documentation>
@@ -58,19 +41,22 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
-  <xsd:complexType name="Behandlingstema">
+  <xsd:complexType name="Periode">
     <xsd:annotation>
-      <xsd:documentation>Felles kodeverk for behandlingstema</xsd:documentation>
+      <xsd:documentation>Periode fom og tom</xsd:documentation>
     </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="informasjon:Kodeverdi">
-        <xsd:attribute default="https://confluence.adeo.no/pages/viewpage.action?pageId=220537850" name="kodeverksRef" type="xsd:anyURI">
-          <xsd:annotation>
-            <xsd:documentation>Referanse til felles kodeverk</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:simpleContent>
+    <xsd:sequence>
+      <xsd:element name="fom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Til-og-med dato</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="Status">
     <xsd:annotation>
@@ -81,6 +67,20 @@
         <xsd:attribute default="https://confluence.adeo.no/pages/viewpage.action?pageId=220537850" name="kodeverksRef" type="xsd:anyURI">
           <xsd:annotation>
             <xsd:documentation>Referanse til kodeverket</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Behandlingstema">
+    <xsd:annotation>
+      <xsd:documentation>Felles kodeverk for behandlingstema</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute default="https://confluence.adeo.no/pages/viewpage.action?pageId=220537850" name="kodeverksRef" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>Referanse til felles kodeverk</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
       </xsd:extension>
@@ -102,7 +102,7 @@
   </xsd:complexType>
   <xsd:complexType name="InfotrygdSak">
     <xsd:annotation>
-      <xsd:documentation>Informasjon om en infotrygdsak. Kommer fra SAK basen</xsd:documentation>
+      <xsd:documentation>Informasjon om en infotrygdsak</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element minOccurs="0" name="sakId" type="informasjon:Identifikator">
@@ -163,9 +163,6 @@
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="InfotrygdVedtak">
-    <xsd:annotation>
-      <xsd:documentation>En InfotrygdSak med vedtak. Kommer fra IS eller VEDTAK basen</xsd:documentation>
-    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="informasjon:InfotrygdSak">
         <xsd:sequence>
