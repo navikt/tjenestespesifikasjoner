@@ -15,11 +15,6 @@
             <version>1.1.3</version>
         </dependency>
     </dependencies>
-	    <properties>
-        <xsd.location>src/main/xsd</xsd.location>
-        <jaxb.location>src/main/xjb</jaxb.location>
-        <meldingsdefinisjon.version>1.0.0</meldingsdefinisjon.version>
-    </properties>
     <build>
         <plugins>
             <plugin>
@@ -81,13 +76,6 @@
             </plugin>
         </plugins>
         <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-            <resource>
-                <directory>${wsdl.directory}</directory>
-                <targetPath>wsdl</targetPath>
-            </resource>
         </resources>
     </build>
     <scm>
