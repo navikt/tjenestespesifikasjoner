@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>no.nav.dok</groupId>
+		<artifactId>soap-parent-pom</artifactId>
+		<version>1.0.1</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>no.nav.tjenester</groupId>
+	<artifactId>nav-innsynJournal-v2-tjenestespesifikasjon</artifactId>
+	<version>2.0.3-SNAPSHOT</version>
+	<name>${project.artifactId}</name>
+
+	<properties>
+		<wsdl.directory>src/main/resources/wsdl/no/nav/tjeneste/virksomhet/innsynJournal/v2</wsdl.directory>
+	</properties>
+
+	<scm>
+		<developerConnection>scm:git:http://stash.devillo.no/scm/boaf/virksomhet-innsynjournal-v2.git</developerConnection>
+		<url>http://stash.devillo.no/scm/boaf/virksomhet-innsynjournal-v2.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>wsdl-to-java</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+						<configuration>
+							<defaultOptions>
+								<extraargs>
+									<extraarg>-xjc-Xfluent-api</extraarg>
+									<extraarg>-xjc-XhashCode</extraarg>
+									<extraarg>-xjc-Xequals</extraarg>
+									<extraarg>-xjc-XtoString</extraarg>
+									<extraarg>-client</extraarg>
+								</extraargs>
+							</defaultOptions>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${wsdl.directory}/Binding.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/no/nav/tjeneste/virksomhet/innsynJournal/v2/Binding.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/innsynJournal.xjb</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>net.java.dev.jaxb2-commons</groupId>
+						<artifactId>jaxb-fluent-api</artifactId>
+						<version>2.1.8</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jvnet.jaxb2_commons</groupId>
+						<artifactId>jaxb2-basics</artifactId>
+						<version>0.6.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
