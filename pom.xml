@@ -108,6 +108,7 @@
         <module>kodeverk-tjenestespesifikasjon</module>
         <module>medlemskap-v1-tjenestespesifikasjon</module>
         <module>moetev1-tjenestespesifikasjon</module>
+        <module>nav-altinn-inntektsmelding</module>
         <module>nav-arbeidsforhold-v3-tjenestespesifikasjon</module>
         <module>nav-behandleInngaaendeJournal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
