@@ -2,32 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
-		<groupId>no.nav.dok</groupId>
-		<artifactId>soap-parent-pom</artifactId>
-		<version>1.0.1</version>
-	</parent>
+        <groupId>no.nav.tjenestespesifikasjoner</groupId>
+        <artifactId>tjenestespesifikasjoner</artifactId>
+        <version>0-SNAPSHOT</version>
+    </parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>no.nav.tjenester</groupId>
 	<artifactId>nav-innsynJournal-v2-tjenestespesifikasjon</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
-	<name>${project.artifactId}</name>
+	<version>0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<properties>
 		<wsdl.directory>src/main/resources/wsdl/no/nav/tjeneste/virksomhet/innsynJournal/v2</wsdl.directory>
 	</properties>
-
-	<scm>
-		<developerConnection>scm:git:http://stash.devillo.no/scm/boaf/virksomhet-innsynjournal-v2.git</developerConnection>
-		<url>http://stash.devillo.no/scm/boaf/virksomhet-innsynjournal-v2.git</url>
-		<tag>HEAD</tag>
-	</scm>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>2.7.4</version>
 				<executions>
 					<execution>
 						<id>wsdl-to-java</id>
@@ -72,5 +66,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<scm>
+        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
+        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
+        <tag>HEAD</tag>
+    </scm>
+    <name>${project.artifactId}</name>
 	
 </project>
