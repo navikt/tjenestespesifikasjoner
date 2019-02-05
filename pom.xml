@@ -151,6 +151,7 @@
         <module>nav-infotrygdBeregningsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-infotrygdSak-v1-tjenestespesifikasjon</module>
         <module>nav-inngaaendeJournal-v1-tjenestespesifikasjon</module>
+        <module>nav-innsynJournal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v3-tjenestespesifikasjon</module>
         <module>nav-meldekortUtbetalingsgrunnlag-v1-tjenestespesifikasjon</module>
