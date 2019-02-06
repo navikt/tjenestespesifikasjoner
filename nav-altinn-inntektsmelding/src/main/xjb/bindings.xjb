@@ -28,5 +28,14 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
+    <jaxb:bindings schemaLocation="../xsd/Inntektsmelding_kodelister_20190122.xsd" node="/xsd:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="XML"/>
+                <jaxb:elementName prefix="XML"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
 </jaxb:bindings>
 
