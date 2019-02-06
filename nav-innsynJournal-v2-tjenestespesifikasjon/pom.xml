@@ -16,6 +16,22 @@
 		<wsdl.directory>src/main/resources/wsdl/no/nav/tjeneste/virksomhet/innsynJournal/v2</wsdl.directory>
 	</properties>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics</artifactId>
+			<version>0.6.4</version>
+			<scope>compile</scope>
+			<optional>true</optional>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
