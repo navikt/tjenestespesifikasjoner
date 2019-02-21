@@ -159,7 +159,10 @@
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
         <module>nav-pip-pipEgenAnsatt-v1-tjenestespesifikasjon</module>
         <module>nav-virksomhet-loependeYtelser-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-opprettOppgavehenvendelse-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-stoppReVarsel-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-tiltakOgAktiviteterForBrukere-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-varselMedHandling-v1-meldingsdefinisjon</module>
         <module>no-nav-dok-tjenester-mottainngaaendeforsendelse</module>
         <module>notat-tjenestespesifikasjon</module>
         <module>oppfoelging-v1-tjenestespesifikasjon</module>
