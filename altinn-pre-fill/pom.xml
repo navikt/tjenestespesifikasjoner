@@ -32,6 +32,9 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${wsdl.directory}/PreFillBasic.svc.wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${basedir}/src/main/xjb/binding.xjb</bindingFile>
+                                    </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
