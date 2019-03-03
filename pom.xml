@@ -13,6 +13,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cxf.version>3.1.6</cxf.version>
         <cxf-xjc-boolean.version>3.1.0</cxf-xjc-boolean.version>
+        <org.jvnet.jaxb2.version>0.11.1</org.jvnet.jaxb2.version>
+        <net.java.dev.jaxb2.version>2.1.8</net.java.dev.jaxb2.version>
     </properties>
     <licenses>
         <license>
@@ -235,6 +237,16 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>2.10</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jvnet.jaxb2_commons</groupId>
+                <artifactId>jaxb2-basics</artifactId>
+                <version>${org.jvnet.jaxb2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jvnet.jaxb2_commons</groupId>
+                <artifactId>jaxb2-basics-runtime</artifactId>
+                <version>${org.jvnet.jaxb2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

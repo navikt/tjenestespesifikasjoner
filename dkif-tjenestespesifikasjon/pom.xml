@@ -46,12 +46,12 @@
                     <dependency>
                         <groupId>net.java.dev.jaxb2-commons</groupId>
                         <artifactId>jaxb-fluent-api</artifactId>
-                        <version>2.1.8</version>
+                        <version>${net.java.dev.jaxb2.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-basics</artifactId>
-                        <version>0.6.4</version>
+                        <version>${org.jvnet.jaxb2.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -97,7 +97,6 @@
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
-            <version>0.11.1</version>
         </dependency>
     </dependencies>
     <scm>
