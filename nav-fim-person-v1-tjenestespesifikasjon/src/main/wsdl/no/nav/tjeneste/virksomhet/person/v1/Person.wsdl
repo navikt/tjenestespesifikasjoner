@@ -42,10 +42,10 @@
 	<wsdl:message name="hentKjerneinformasjonResponse">
 		<wsdl:part name="parameters" element="tns:hentKjerneinformasjonResponse"/>
 	</wsdl:message>
-	<wsdl:message name="hentKjerneinformasjonFault">
+	<wsdl:message name="hentKjerneinformasjon_personIkkeFunnet">
 		<wsdl:part name="personIkkeFunnet" element="tns:hentKjerneinformasjonpersonIkkeFunnet"/>
 	</wsdl:message>
-	<wsdl:message name="hentKjerneinformasjonFault1">
+	<wsdl:message name="hentKjerneinformasjon_sikkerhetsbegrensning">
 		<wsdl:part name="sikkerhetsbegrensning" element="tns:hentKjerneinformasjonsikkerhetsbegrensning"/>
 	</wsdl:message>
 	<wsdl:message name="pingRequest">
@@ -58,8 +58,8 @@
 		<wsdl:operation name="hentKjerneinformasjon">
 			<wsdl:input name="hentKjerneinformasjonRequest" message="tns:hentKjerneinformasjonRequest"/>
 			<wsdl:output name="hentKjerneinformasjonResponse" message="tns:hentKjerneinformasjonResponse"/>
-			<wsdl:fault name="hentKjerneinformasjonFault" message="tns:hentKjerneinformasjonFault"/>
-			<wsdl:fault name="hentKjerneinformasjonFault1" message="tns:hentKjerneinformasjonFault1"/>
+			<wsdl:fault name="personIkkeFunnet" message="tns:hentKjerneinformasjon_personIkkeFunnet"/>
+			<wsdl:fault name="sikkerhetsbegrensning" message="tns:hentKjerneinformasjon_sikkerhetsbegrensning"/>
 		</wsdl:operation>
 		<wsdl:operation name="ping">
 			<wsdl:input name="pingRequest" message="tns:pingRequest"/>
@@ -76,11 +76,11 @@
 			<wsdl:output name="hentKjerneinformasjonResponse">
 				<soap:body use="literal"/>
 			</wsdl:output>
-			<wsdl:fault name="hentKjerneinformasjonFault">
-				<soap:fault name="hentKjerneinformasjonFault" use="literal"/>
+			<wsdl:fault name="personIkkeFunnet">
+				<soap:fault name="personIkkeFunnet" use="literal"/>
 			</wsdl:fault>
-			<wsdl:fault name="hentKjerneinformasjonFault1">
-				<soap:fault name="hentKjerneinformasjonFault1" use="literal"/>
+			<wsdl:fault name="sikkerhetsbegrensning">
+				<soap:fault name="sikkerhetsbegrensning" use="literal"/>
 			</wsdl:fault>
 		</wsdl:operation>
 		<wsdl:operation name="ping">
