@@ -18,8 +18,17 @@
             </jaxb:nameXmlTransform>
         </jaxb:schemaBindings>
     </jaxb:bindings>
-	
-    <jaxb:bindings schemaLocation="../xsd/Inntektsmelding_kodelister_20180924.xsd" node="/xsd:schema">
+
+    <jaxb:bindings schemaLocation="../xsd/Inntektsmelding20181211.xsd" node="/xsd:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="XML"/>
+                <jaxb:elementName prefix="XML"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="../xsd/Inntektsmelding_kodelister_20190122.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="XML"/>
