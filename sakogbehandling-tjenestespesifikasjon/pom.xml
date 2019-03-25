@@ -15,7 +15,6 @@
             <plugin>
                 <groupId>org.jvnet.jax-ws-commons</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
-                <version>2.3.1-b20150201.1248</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
