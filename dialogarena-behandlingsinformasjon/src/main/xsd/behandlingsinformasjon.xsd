@@ -224,6 +224,7 @@
             <xs:enumeration value="SEND_SOKNAD_ETTERSENDING"/>
             <xs:enumeration value="SEND_SOKNAD_KOMMUNAL"/>
             <xs:enumeration value="SPORSMAL_SKRIFTLIG"/>
+            <xs:enumeration value="SPORSMAL_SKRIFTLIG_DIREKTE"/>
             <xs:enumeration value="SVAR_SKRIFTLIG"/>
             <xs:enumeration value="SVAR_OPPMOTE"/>
             <xs:enumeration value="SVAR_TELEFON"/>
