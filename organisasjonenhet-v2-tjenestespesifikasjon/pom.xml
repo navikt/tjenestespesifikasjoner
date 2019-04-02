@@ -15,7 +15,6 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>3.1.4</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
@@ -44,23 +43,6 @@
                         </configuration>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>${net.java.dev.jaxb2.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-basics</artifactId>
-                        <version>${org.jvnet.jaxb2.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>no.nav.tjenestespesifikasjoner</groupId>
-                        <artifactId>jaxb-adapters</artifactId>
-                        <version>${project.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>

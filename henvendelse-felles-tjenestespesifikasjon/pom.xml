@@ -14,7 +14,6 @@
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
-            <version>2.3</version>
         </dependency>
     </dependencies>
     <build>
@@ -22,7 +21,6 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>2.7.4</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>

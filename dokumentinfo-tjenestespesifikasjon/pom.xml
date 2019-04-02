@@ -10,15 +10,12 @@
     <version>0-SNAPSHOT</version>
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
-        <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
-        <jaxb2-basics.version>0.6.5</jaxb2-basics.version>
     </properties>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>${cxf.version}</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
@@ -46,24 +43,7 @@
                         </configuration>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>${jaxb-fluent-api.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-basics</artifactId>
-                        <version>${jaxb2-basics.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>no.nav.tjenestespesifikasjoner</groupId>
-                        <artifactId>jaxb-adapters</artifactId>
-                        <version>0-SNAPSHOT</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
                 <executions>
@@ -106,7 +86,6 @@
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
-            <version>${jaxb2-basics.version}</version>
         </dependency>
     </dependencies>
     <scm>
