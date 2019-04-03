@@ -44,13 +44,19 @@
     </xs:complexType>
     <xs:complexType name="ferdigstillUtenSvarResponse"/>
 
-
     <xs:complexType name="oppdaterTilKasseringRequest">
         <xs:sequence>
             <xs:element name="behandlingIdListe" type="xs:string" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="oppdaterTilKasseringResponse"/>
+
+    <xs:complexType name="markerTraadForHasteKasseringRequest">
+        <xs:sequence>
+            <xs:element name="behandlingIdListe" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="markerTraadForHasteKasseringResponse"/>
 
     <xs:complexType name="knyttBehandlingskjedeTilSakRequest">
         <xs:sequence>
