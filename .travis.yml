@@ -17,7 +17,7 @@ script:
         mvn -B versions:commit
 
         echo "Running release"
-        travis_wait 50 mvn -q -T 20 -B --settings travis/settings.xml deploy -Prelease -DskipTests=true
+        travis_wait 50 mvn -q -T 12 -B --settings travis/settings.xml deploy -Prelease -DskipTests=true
     fi
 jdk:
 - openjdk8
