@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1/informasjon" xmlns:informasjon="http://nav.no/tjeneste/virksomhet/behandleInngaaendeJournal/v1/informasjon">
-  <xsd:complexType abstract="true" name="Aktoer"/>
-  <xsd:simpleType name="Identifikator">
-    <xsd:restriction base="xsd:string"/>
-  </xsd:simpleType>
   <xsd:complexType name="Kodeverdi">
     <xsd:simpleContent>
       <xsd:extension base="xsd:string">
@@ -11,12 +7,55 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
+  <xsd:complexType name="Tema">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Tema" name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
   <xsd:complexType name="Dokumentkategori">
     <xsd:simpleContent>
       <xsd:extension base="informasjon:Kodeverdi">
         <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Dokumentkategorier" name="kodeverksRef" type="xsd:anyURI"/>
       </xsd:extension>
     </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Aktoer"/>
+  <xsd:complexType name="Organisasjon">
+    <xsd:annotation>
+      <xsd:documentation>Informasjon om organisasjonen</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="informasjon:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="organisasjonsnummer" type="informasjon:Identifikator">
+            <xsd:annotation>
+              <xsd:documentation>Organisasjonsnummer tilhørende bruker</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Person">
+    <xsd:annotation>
+      <xsd:documentation>Informasjon om person</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="informasjon:Aktoer">
+        <xsd:sequence>
+          <xsd:element name="ident" type="informasjon:Identifikator">
+            <xsd:annotation>
+              <xsd:documentation>Fnr/Dnr tilhørende bruker</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType name="Avsender">
     <xsd:annotation>
@@ -35,45 +74,6 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="Person">
-    <xsd:annotation>
-      <xsd:documentation>Informasjon om person</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="informasjon:Aktoer">
-        <xsd:sequence>
-          <xsd:element name="ident" type="informasjon:Identifikator">
-            <xsd:annotation>
-              <xsd:documentation>Fnr/Dnr tilhørende bruker</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  <xsd:complexType name="Tema">
-    <xsd:simpleContent>
-      <xsd:extension base="informasjon:Kodeverdi">
-        <xsd:attribute default="http://nav.no/kodeverk/Kodeverk/Tema" name="kodeverksRef" type="xsd:anyURI"/>
-      </xsd:extension>
-    </xsd:simpleContent>
-  </xsd:complexType>
-  <xsd:complexType name="Organisasjon">
-    <xsd:annotation>
-      <xsd:documentation>Informasjon om organisasjonen</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="informasjon:Aktoer">
-        <xsd:sequence>
-          <xsd:element name="organisasjonsnummer" type="informasjon:Identifikator">
-            <xsd:annotation>
-              <xsd:documentation>Organisasjonsnummer tilhørende bruker</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
   <xsd:complexType name="ArkivSak">
     <xsd:annotation>
       <xsd:documentation>Informasjon om saksobjektet</xsd:documentation>
@@ -87,6 +87,28 @@
       <xsd:element name="arkivSakSystem" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation>Angivelse av hvilket fagsystem saken tilhører. Gyldige verdier "GSAK" eller "PEN"</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Dokumentinformasjon">
+    <xsd:annotation>
+      <xsd:documentation>Informasjon om dokumentet</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dokumentkategori" type="informasjon:Dokumentkategori">
+        <xsd:annotation>
+          <xsd:documentation>Kode for dokumentkategori fra felles kodeverk</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="dokumentId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>Unik id for dokumentet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tittel" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Tittel på dokumentet</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
@@ -116,6 +138,11 @@
           <xsd:documentation>Informasjon om saksobjektet</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element minOccurs="0" name="forsendelseInnsendt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Dato på hoveddokument/forsendelse (dato påført dokumentet av avsender, eller av NAV).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
       <xsd:element minOccurs="0" name="tema" type="informasjon:Tema">
         <xsd:annotation>
           <xsd:documentation>Kode for tema fra felles kodeverk</xsd:documentation>
@@ -134,28 +161,6 @@
       <xsd:element maxOccurs="unbounded" minOccurs="0" name="vedleggListe" type="informasjon:Dokumentinformasjon">
         <xsd:annotation>
           <xsd:documentation>Liste med informasjon om vedlegg</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:sequence>
-  </xsd:complexType>
-  <xsd:complexType name="Dokumentinformasjon">
-    <xsd:annotation>
-      <xsd:documentation>Informasjon om dokumentet</xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:element minOccurs="0" name="dokumentkategori" type="informasjon:Dokumentkategori">
-        <xsd:annotation>
-          <xsd:documentation>Kode for dokumentkategori fra felles kodeverk</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="dokumentId" type="informasjon:Identifikator">
-        <xsd:annotation>
-          <xsd:documentation>Unik id for dokumentet</xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element minOccurs="0" name="tittel" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation>Tittel på dokumentet</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>

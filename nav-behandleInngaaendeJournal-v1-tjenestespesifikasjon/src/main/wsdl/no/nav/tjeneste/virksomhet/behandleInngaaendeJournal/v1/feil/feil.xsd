@@ -7,6 +7,11 @@
       <xsd:element name="tidspunkt" type="xsd:dateTime"/>
     </xsd:sequence>
   </xsd:complexType>
+  <xsd:complexType name="JournalpostIkkeInngaeende">
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="FerdigstillingIkkeMulig">
     <xsd:complexContent>
       <xsd:extension base="feil:ForretningsmessigUnntak"/>
@@ -23,11 +28,6 @@
     </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType name="ObjektIkkeFunnet">
-    <xsd:complexContent>
-      <xsd:extension base="feil:ForretningsmessigUnntak"/>
-    </xsd:complexContent>
-  </xsd:complexType>
-  <xsd:complexType name="JournalpostIkkeInngaeende">
     <xsd:complexContent>
       <xsd:extension base="feil:ForretningsmessigUnntak"/>
     </xsd:complexContent>
