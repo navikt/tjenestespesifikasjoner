@@ -1,7 +1,7 @@
 <jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
                jaxb:extensionBindingPrefixes="xjc" jaxb:version="2.0">
-    
+
     <jaxb:globalBindings>
         <xjc:javaType name="java.time.LocalDateTime" xmlType="xsd:dateTime"
                       adapter="com.migesok.jaxb.adapter.javatime.LocalDateTimeXmlAdapter"/>
@@ -37,5 +37,13 @@
         </jaxb:schemaBindings>
     </jaxb:bindings>
 
-</jaxb:bindings>
+    <jaxb:bindings schemaLocation="../xsd/Inntektsmelding_kodelister_20190409.xsd" node="/xsd:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:typeName prefix="XML"/>
+                <jaxb:elementName prefix="XML"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
 
+</jaxb:bindings>
