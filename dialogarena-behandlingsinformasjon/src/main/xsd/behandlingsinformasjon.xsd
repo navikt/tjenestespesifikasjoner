@@ -321,6 +321,7 @@
             <xs:enumeration value="GSAK_HENVENDELSE_OPPRETTET"/>
             <xs:enumeration value="KONTORSPERRET"/>
             <xs:enumeration value="MARKERT_SOM_FEILSENDT"/>
+            <xs:enumeration value="MARKERT_SOM_HASTEKASSERING"/>
             <xs:enumeration value="KNYTTET_TIL_SAK"/>
             <xs:enumeration value="SKJEMA_VALGT"/>
             <xs:enumeration value="FAKTA_REGISTRERT"/>
