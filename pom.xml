@@ -47,6 +47,7 @@
         <module>aktorid-jaxws</module>
         <module>altinn-correspondence-agency-external</module>
         <module>altinn-download-queue-external</module>
+        <module>altinn-notification-agency-external-basic</module>
         <module>altinn-pre-fill</module>
         <module>arbeidogaktivitet-tjenestespesifikasjon</module>
         <module>arbeidsfordeling-v1-tjenestespesifikasjon</module>
