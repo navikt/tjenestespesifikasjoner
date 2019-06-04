@@ -30,7 +30,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/CorrespondenceAgencyExternalBasgic.svc.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/CorrespondenceAgencyExternalBasic.svc.wsdl</wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
