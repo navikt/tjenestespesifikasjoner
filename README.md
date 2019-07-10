@@ -9,6 +9,9 @@ kan bruke dem til å kommunisere med tjenestene.
 
 ## Bygging
 
+Java 8 trenges pga `javax.xml.bind.*` bygg virker ikke lenger med Java versjon >= 9.
+https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception-in-j
+
 `mvn clean install`
 
 ## Gjøre endringer, release
