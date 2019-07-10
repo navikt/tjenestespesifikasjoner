@@ -129,6 +129,11 @@ Listen vil bare inneholde meldekort som har ført til utbetaling.</xsd:documenta
           <xsd:documentation>Dato for når krav/søknad ble registrert mottatt.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="dagsats" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation>Vedtakets dagsats. Satsen vil inkludere eventuelle barnetillegg.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="Sak">
