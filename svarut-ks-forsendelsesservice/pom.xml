@@ -9,8 +9,7 @@
     <version>0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
-        <tjenestespecc.version>1.0.1</tjenestespecc.version>
-        <wsdl.location>src/main/wsdl</wsdl.location>
+        <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
     <dependencies>
         <dependency>
@@ -39,9 +38,9 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.location}/svarUt.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/svarUt.wsdl</wsdl>
                                     <bindingFiles>
-                                        <bindingFile>${wsdl.location}/bindings.xml</bindingFile>
+                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                             </wsdlOptions>
