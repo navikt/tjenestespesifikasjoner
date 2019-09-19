@@ -33,9 +33,9 @@
                 <configuration>
                     <extension>true</extension>
                     <arguments>-Xvalue-constructor -Xfluent-api</arguments>
-                    <bindingDirectory>${project.basedir}/src/main/xsd/</bindingDirectory>
+                    <bindingDirectory>src/main/wsdl/</bindingDirectory>
                     <schemaDirectory>
-                        src/main/xsd
+                        src/main/wsdl
                     </schemaDirectory>
                 </configuration>
                 <dependencies>

@@ -2,7 +2,7 @@
                xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
                jaxb:extensionBindingPrefixes="xjc" jaxb:version="2.0">
 
-    <jaxb:bindings schemaLocation="../xsd/v1.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="v1.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="XML"/>
