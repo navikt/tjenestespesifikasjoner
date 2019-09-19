@@ -7,15 +7,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>no.nav.meldinger.virksomhet</groupId>
     <artifactId>nav-virksomhet-dokumentnotifikasjon-v1-meldingsdefinisjon</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>0-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>dokumentnotifikasjon-v1-tjenestespesifikasjon</name>
 
-    <properties>
-        <xsd.location>${project.basedir}/src/main/xsd</xsd.location>
-        <dokumentnotifikasjon.version>1.0.2</dokumentnotifikasjon.version>
-    </properties>
     <build>
         <plugins>
             <plugin>
