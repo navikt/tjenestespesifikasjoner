@@ -6,7 +6,7 @@ sudo apt-get install ca-certificates
 
 echo "GPG version"
 gpg --version
-echo $GPG_KEY_BASE64 | base64 -D > key.gpg
+echo $GPG_KEY_BASE64 | base64 -d > key.gpg
 echo "Importing GPG key into keyring"
 gpg --yes --batch --fast-import key.gpg
 
