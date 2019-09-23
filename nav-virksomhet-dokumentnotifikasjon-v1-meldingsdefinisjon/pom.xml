@@ -17,7 +17,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>1.5</version>
+                <version>${jaxb2-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>xjc</id>
@@ -38,7 +38,7 @@
                     <dependency>
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-value-constructor</artifactId>
-                        <version>3.0</version>
+                        <version>${jaxb2-value-constructor.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -72,12 +72,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <scm>
-        <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
-        <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
-        <url>https://github.com/navikt/tjenestespesifikasjoner</url>
-        <tag>HEAD</tag>
-    </scm>
 
 </project>
