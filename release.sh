@@ -1,9 +1,12 @@
 #!/bin/bash
 set -e
 
-echo "Importing GPG key into keyring"
+echo "GPG version"
 gpg --version
+echo "GPG2 version"
+gpg2 --version
 echo $GPG_KEY > key.gpg
+echo "Importing GPG key into keyring"
 gpg --yes --batch --fast-import key.gpg
 
 TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
