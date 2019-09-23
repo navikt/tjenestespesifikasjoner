@@ -1,14 +1,8 @@
 #!/bin/bash
 set -e
 
-sudo apt-get update
-sudo apt-get install ca-certificates
-
-echo "GPG version"
-gpg --version
-echo $GPG_KEY_BASE64 | base64 -d > key.gpg
 echo "Importing GPG key into keyring"
-gpg --yes --batch --fast-import key.gpg
+echo $GPG_KEY_BASE64 | base64 -d > key.gpg | gpg --yes --batch --fast-import
 
 TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
 COMMIT=$(git rev-parse --short=12 HEAD)
@@ -19,4 +13,4 @@ mvn -B versions:set -DnewVersion="$VERSION"
 mvn -B versions:commit
 
 echo "Running release"
-mvn -T 12 -B --settings maven-settings.xml deploy -Prelease # -DskipTests=true
+export GPG_TTY=$(tty) && mvn -T 12 -B --settings maven-settings.xml deploy -Prelease # -DskipTests=true
