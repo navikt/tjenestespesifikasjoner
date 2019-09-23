@@ -1,11 +1,8 @@
 #!/bin/bash
 set -e
 
-sudo apt-get update
-sudo apt-get install ca-certificates
-
 echo "Importing GPG key into keyring"
-echo $GPG_KEY_BASE64 | base64 -d > key.gpg | gpg --yes --batch --fast-import
+echo $GPG_KEY_BASE64 | base64 -d | gpg --yes --batch --fast-import
 
 TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
 COMMIT=$(git rev-parse --short=12 HEAD)
