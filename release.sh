@@ -1,6 +1,9 @@
 #!/bin/bash
+set -e
+
 echo "Importing GPG key into keyring"
-echo $GPG_KEY | gpg --fast-import
+echo $GPG_KEY > key.gpg
+gpg --fast-import key.gpg
 
 TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
 COMMIT=$(git rev-parse --short=12 HEAD)
