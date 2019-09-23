@@ -1,10 +1,11 @@
 #!/bin/bash
 set -e
 
+apt-get update
+apt-get install ca-certificates
+
 echo "GPG version"
 gpg --version
-echo "GPG2 version"
-gpg2 --version
 echo $GPG_KEY > key.gpg
 echo "Importing GPG key into keyring"
 gpg --yes --batch --fast-import key.gpg
