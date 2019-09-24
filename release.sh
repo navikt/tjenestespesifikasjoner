@@ -13,4 +13,4 @@ mvn -B versions:set -DnewVersion="$VERSION"
 mvn -B versions:commit
 
 echo "Running release"
-export GPG_TTY=$(tty) && mvn -T 12 -B --settings maven-settings.xml deploy -Prelease # -DskipTests=true
+export GPG_TTY=$(tty) && mvn -B --settings maven-settings.xml deploy -Prelease # -DskipTests=true
