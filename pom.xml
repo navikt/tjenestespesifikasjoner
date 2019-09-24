@@ -301,6 +301,8 @@
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                     <serverId>ossrh</serverId>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    <!-- The default is 5 minutes, but for this huge project, the staging might take a while -->
+                    <stagingProgressTimeoutMinutes>15</stagingProgressTimeoutMinutes>
                 </configuration>
             </plugin>
         </plugins>
@@ -424,6 +426,12 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
