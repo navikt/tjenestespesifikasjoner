@@ -171,6 +171,7 @@
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
         <module>nav-pip-pipEgenAnsatt-v1-tjenestespesifikasjon</module>
         <module>nav-virksomhet-dokumentnotifikasjon-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-hendelsehandterer-behandlingstatus-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-loependeYtelser-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-opprettOppgavehenvendelse-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-paaloepteUtgifter-v1-meldingsdefinisjon</module>
