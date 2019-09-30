@@ -1,7 +1,0 @@
-<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-				wsdlLocation="./wsdl/no/nav/tjeneste/virksomhet/dokumentproduksjon/v2/Binding.wsdl" >
-	<jaxws:bindings node="wsdl:definitions/wsdl:service[@name='Dokumentproduksjon_v2']">
-		<jaxws:class name="DokumentproduksjonV2_Service"/>
-	</jaxws:bindings>
-</jaxws:bindings>
