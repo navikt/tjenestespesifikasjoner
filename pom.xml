@@ -57,6 +57,7 @@
         <module>arena-arbeid-og-aktivitet</module>
         <module>arena-maalgruppe_v1</module>
         <module>arena-personinfo-tjenestespesifikasjon</module>
+        <module>arena-nav-behandleArbeidsytelseSak-v1-tjenestespesifikasjon</module>
         <module>arena-sakOgAktivitet_v1</module>
         <module>behandle-henvendelse</module>
         <module>behandle-medlemskap-v1-tjenestespesifikasjon</module>
