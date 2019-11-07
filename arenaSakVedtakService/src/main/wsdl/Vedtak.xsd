@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by NAV (Aetat Arbeidsdirektoratet) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://arena.nav.no/services/lib/sakvedtak" targetNamespace="http://arena.nav.no/services/lib/sakvedtak" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="VedtakfaktaAAP.xsd"/>
+	<xs:complexType name="Vedtak">
+		<xs:sequence>
+			<xs:element name="vedtakId" type="xs:string"/>
+			<xs:element name="sakskode" type="xs:string"/>
+			<xs:element name="vedtakType" type="xs:string"/>
+			<xs:element name="vedtakTypeKode" type="xs:string"/>
+			<xs:element name="vedtakStatus" type="xs:string"/>
+			<xs:element name="vedtakStatusKode" type="xs:string"/>
+			<xs:element name="utfall" type="xs:string" minOccurs="0"/>
+			<xs:element name="utfallKode" type="xs:string" minOccurs="0"/>
+			<xs:element name="fraDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="tilDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="navEnhet" type="xs:string"/>
+			<xs:element name="rettighet" type="xs:string"/>
+			<xs:element name="rettighetKode" type="xs:string"/>
+			<xs:element name="vedtakfaktaAAP" type="ns1:VedtakfaktaAAP" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

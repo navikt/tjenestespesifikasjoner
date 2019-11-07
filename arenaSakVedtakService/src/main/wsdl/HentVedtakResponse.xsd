@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:arens1="http://arena.nav.no/services/lib/sakvedtak" xmlns:tns="http://arena.nav.no/services/sakvedtakservice" targetNamespace="http://arena.nav.no/services/sakvedtakservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://arena.nav.no/services/lib/sakvedtak" schemaLocation="Vedtak.xsd"/>
+	<xs:complexType name="HentVedtakResponse">
+		<xs:sequence>
+			<xs:element name="vedtak" type="arens1:Vedtak" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="hentVedtakResult" type="tns:HentVedtakResponse"/>
+</xs:schema>

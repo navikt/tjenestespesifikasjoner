@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://arena.nav.no/services/lib/sakvedtak" targetNamespace="http://arena.nav.no/services/lib/sakvedtak" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Mappes til objektet vedtak i domenemodellen. -->
+	<xs:complexType name="VedtakInfo">
+		<xs:sequence>
+			<xs:element name="vedtakId" type="xs:string"/>
+			<xs:element name="vedtakType" type="xs:string"/>
+			<xs:element name="vedtakTypeKode" type="xs:string"/>
+			<xs:element name="vedtakStatus" type="xs:string"/>
+			<xs:element name="vedtakStatusKode" type="xs:string"/>
+			<xs:element name="utfall" type="xs:string" minOccurs="0"/>
+			<xs:element name="utfallKode" type="xs:string" minOccurs="0"/>
+			<xs:element name="rettighet" type="xs:string"/>
+			<xs:element name="rettighetKode" type="xs:string"/>
+			<xs:element name="fraDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="tilDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="saksbehandlerIdent" type="xs:string" minOccurs="0"/>
+			<xs:element name="regDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="vedtakDato" type="xs:date" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

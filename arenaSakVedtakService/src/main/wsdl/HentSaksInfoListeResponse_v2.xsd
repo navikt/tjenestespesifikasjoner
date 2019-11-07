@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:arens1="http://arena.nav.no/services/lib/sakvedtak" xmlns:ns1="http://arena.nav.no/services/sakvedtakservice" targetNamespace="http://arena.nav.no/services/sakvedtakservice" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2">
+	<xs:import namespace="http://arena.nav.no/services/lib/sakvedtak" schemaLocation="./SaksInfoListe.xsd"/>
+	<xs:include schemaLocation="Bruker.xsd"/>
+	<xs:complexType name="HentSaksInfoListe_v2Response">
+		<xs:sequence>
+			<xs:element name="bruker" type="ns1:Bruker"/>
+			<xs:element name="saksInfoListe" type="arens1:SaksInfoListe"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="hentSaksInfoListe_v2Result" type="ns1:HentSaksInfoListe_v2Response"/>
+</xs:schema>
