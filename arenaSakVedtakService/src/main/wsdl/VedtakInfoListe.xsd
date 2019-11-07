@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:arens1="http://arena.nav.no/services/lib/sakvedtak" targetNamespace="http://arena.nav.no/services/lib/sakvedtak" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="VedtakInfo.xsd"/>
+	<xs:complexType name="VedtakInfoListe">
+		<xs:sequence>
+			<xs:element name="vedtakInfo" type="arens1:VedtakInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

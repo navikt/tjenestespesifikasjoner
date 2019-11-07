@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://arena.nav.no/services/sakvedtakservice" targetNamespace="http://arena.nav.no/services/sakvedtakservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="HentVedtakRequest">
+		<xs:sequence>
+			<xs:element name="vedtaksId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="hentVedtak" type="tns:HentVedtakRequest"/>
+</xs:schema>

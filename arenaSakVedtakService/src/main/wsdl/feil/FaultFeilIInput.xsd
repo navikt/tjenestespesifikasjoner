@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://arena.nav.no/services/lib/fault" targetNamespace="http://arena.nav.no/services/lib/fault">
+	<xsd:include schemaLocation="FaultBase.xsd"/>
+	<xsd:complexType name="FaultFeilIInput">
+		<xsd:complexContent>
+			<xsd:extension base="tns:FaultBase">
+				<xsd:sequence/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:element name="faultFeilIInput" type="tns:FaultFeilIInput"/>
+</xsd:schema>

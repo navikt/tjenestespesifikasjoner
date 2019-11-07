@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://arena.nav.no/services/sakvedtakservice" targetNamespace="http://arena.nav.no/services/sakvedtakservice" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2">
+	<xs:include schemaLocation="Bruker.xsd"/>
+	<xs:complexType name="HentSaksInfoListeRequest_v2">
+		<xs:sequence>
+			<xs:element name="bruker" type="tns:Bruker"/>
+			<xs:element name="saksId" type="xs:int" minOccurs="0"/>
+			<xs:element name="fomDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="tomDato" type="xs:date" minOccurs="0"/>
+			<xs:element name="tema" type="xs:string" minOccurs="0"/>
+			<xs:element name="lukket" type="xs:boolean" default="false" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="hentSaksInfoListe_v2" type="tns:HentSaksInfoListeRequest_v2"/>
+</xs:schema>
