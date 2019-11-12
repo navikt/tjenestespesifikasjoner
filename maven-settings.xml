@@ -1,11 +1,6 @@
 <settings>
     <servers>
         <server>
-            <id>ossrh</id>
-            <username>${env.SONATYPE_USERNAME}</username>
-            <password>${env.SONATYPE_PASSWORD}</password>
-        </server>
-        <server>
             <id>github</id>
             <username>navikt</username>
             <password>${env.GITHUB_TOKEN}</password>
