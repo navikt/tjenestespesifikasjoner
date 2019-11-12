@@ -37,7 +37,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/navikt</url>
+            <url>https://maven.pkg.github.com/navikt/tjenestespesifikasjoner</url>
         </repository>
     </distributionManagement>
     <modules>
