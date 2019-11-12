@@ -13,4 +13,4 @@ mvn -B versions:set -DnewVersion="$VERSION"
 mvn -B versions:commit
 
 echo "Running release"
-export GPG_TTY=$(tty) && mvn -B --settings maven-settings.xml deploy -PreleaseGithub -Dgithub.token=$GITHUB_TOKEN # -DskipTests=true
+export GPG_TTY=$(tty) && mvn -B --settings maven-settings.xml deploy -PreleaseGithub # -DskipTests=true

@@ -445,13 +445,6 @@
                     <url>https://maven.pkg.github.com/navikt/tjenestespesifikasjoner</url>
                 </repository>
             </distributionManagement>
-            <servers>
-                <server>
-                    <id>github</id>
-                    <username>navikt</username>
-                    <password>${github.token}</password>
-                </server>
-            </servers>
         </profile>
     </profiles>
 </project>
