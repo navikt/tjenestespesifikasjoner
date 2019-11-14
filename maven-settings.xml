@@ -1,9 +1,0 @@
-<settings>
-    <servers>
-        <server>
-            <id>github</id>
-            <username>eirslett</username>
-            <password>${env.GITHUB_PUBLISH_TOKEN}</password>
-        </server>
-    </servers>
-</settings>

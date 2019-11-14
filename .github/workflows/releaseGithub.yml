@@ -18,3 +18,4 @@ jobs:
         run: ./releaseGithub.sh
         env:
           GITHUB_PUBLISH_TOKEN: ${{ secrets.GITHUB_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
