@@ -2,7 +2,7 @@
     <servers>
         <server>
             <id>github</id>
-            <username>x-access-token</username>
+            <username>eirslett</username>
             <password>${env.GITHUB_PUBLISH_TOKEN}</password>
         </server>
     </servers>
