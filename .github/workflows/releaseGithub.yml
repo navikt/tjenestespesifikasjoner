@@ -17,6 +17,4 @@ jobs:
       - name: Run Maven release
         run: ./releaseGithub.sh
         env:
-          GPG_KEY_BASE64: ${{ secrets.GPG_KEY_BASE64 }}
-          GPG_KEY_NAME: ${{ secrets.GPG_KEY_NAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          GITHUB_PUBLISH_TOKEN: ${{ secrets.GITHUB_PUBLISH_TOKEN }}
