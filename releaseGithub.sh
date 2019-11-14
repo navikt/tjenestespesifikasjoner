@@ -10,4 +10,4 @@ mvn -B versions:set -DnewVersion="$VERSION"
 mvn -B versions:commit
 
 echo "Running release"
-mvn -B deploy
+mvn -B --settings maven-settings.xml deploy

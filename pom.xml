@@ -269,13 +269,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <servers>
-        <server>
-            <id>github</id>
-            <username>navikt</username>
-            <password>${env.GITHUB_TOKEN}</password>
-        </server>
-    </servers>
     <build>
         <pluginManagement>
             <plugins>
