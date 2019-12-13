@@ -7,8 +7,10 @@
   <jaxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleDokumentforsendelse/v1/feil/feil.xsd" node="/xs:schema" >
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
+<!--
         <jaxb:typeName prefix="WS"/>
         <jaxb:anonymousTypeName prefix="WS"/>
+-->
       </jaxb:nameXmlTransform>
     </jaxb:schemaBindings>
   </jaxb:bindings>
@@ -16,8 +18,10 @@
   <jaxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleDokumentforsendelse/v1/meldinger/meldinger.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
+<!--
         <jaxb:typeName prefix="WS"/>
         <jaxb:anonymousTypeName prefix="WS"/>
+-->
       </jaxb:nameXmlTransform>
     </jaxb:schemaBindings>
   </jaxb:bindings>
@@ -25,10 +29,11 @@
   <jaxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleDokumentforsendelse/v1/informasjon/informasjon.xsd" node="/xs:schema" >
     <jaxb:schemaBindings>
       <jaxb:nameXmlTransform>
+<!--
         <jaxb:typeName prefix="WS"/>
         <jaxb:anonymousTypeName prefix="WS"/>
+-->
       </jaxb:nameXmlTransform>
-
     </jaxb:schemaBindings>
   </jaxb:bindings>
 
