@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/navikt/tjenestespesifikasjoner.svg?token=f9LTHkxUqzyjiE6pDoDQ&branch=master)](https://travis-ci.com/navikt/tjenestespesifikasjoner)
+[![Build Status](https://github.com/navikt/tjenestespesifikasjoner/workflows/Release%20(Github%20Package%20Registry)/badge.svg)](https://github.com/navikt/tjenestespesifikasjoner/actions?query=workflow%3A%22Release+%28Github+Package+Registry%29%22)
 
 # Tjenestespesifikasjoner
 
