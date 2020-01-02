@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>no.stelvio.maven.poms</groupId>
+		<artifactId>maven-service-specification-pom</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>no.nav.tjenester</groupId>
+	<artifactId>nav-arbeidsgiver-tjenestespesifikasjon</artifactId>
+	<version>2.0.0</version>
+	<packaging>service-specification</packaging>
+	<name>Tjenestespesifikasjon: Arbeidsgiver (virksomhet)</name>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.jvnet.jax-ws-commons</groupId>
+					<artifactId>jaxws-maven-plugin</artifactId>
+					<configuration>
+						<wsdlFiles>
+							<wsdlFile>no/nav/virksomhet/tjenester/arbeidsgiver/v2/Binding.wsdl</wsdlFile>
+						</wsdlFiles>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<scm>
+		<connection>scm:svn:https://versjonskontroll.adeo.no/svn/nav/tags/nav-arbeidsgiver-tjenestespesifikasjon-2.0.0</connection>
+		<developerConnection>scm:svn:https://versjonskontroll.adeo.no/svn/nav/tags/nav-arbeidsgiver-tjenestespesifikasjon-2.0.0</developerConnection>
+	</scm>
+	<properties>
+		<!-- Syntax: http://localhost:9080/<logical bus>-tjeneste-<service name>_v<major version>Web/sca/<export name> -->
+		<endpointAddress>http://localhost:9080/nav-tjeneste-arbeidsgiver_v2Web/sca/ArbeidsgiverWSEXP</endpointAddress>
+		<scm.connection>scm:svn:https://versjonskontroll.adeo.no/svn/nav/trunk/tjenester/spesifikasjon/implementasjon/virksomhet/nav-arbeidsgiver-tjenestespesifikasjon</scm.connection>
+	</properties>
+</project>
