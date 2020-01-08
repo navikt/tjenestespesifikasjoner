@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="avstemming" targetNamespace="http://nav.no/virksomhet/tjenester/avstemming/v1" xmlns:tns="http://nav.no/virksomhet/tjenester/avstemming/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/virksomhet/tjenester/avstemming/v1" xmlns:kad="http://nav.no/virksomhet/tjenester/avstemming/informasjon/konsistensavstemmingsdata/v1" xmlns:meldinger="http://nav.no/virksomhet/tjenester/avstemming/meldinger/v1">
+      <xsd:import namespace="http://nav.no/virksomhet/tjenester/avstemming/informasjon/konsistensavstemmingsdata/v1" schemaLocation="informasjon/konsistensavstemmingsdata/konsistensavstemmingsdata.xsd"/>
+      <xsd:import namespace="http://nav.no/virksomhet/tjenester/avstemming/meldinger/v1" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="sendAsynkronAvstemmingsdata">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:SendAsynkronAvstemmingsdataRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendAsynkronAvstemmingsdataResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendAsynkronKonsistensavstemmingsdata">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="kad:SendAsynkronKonsistensavstemmingsdataRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendAsynkronKonsistensavstemmingsdataResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sendAsynkronAvstemmingsdataRequest">
+    <wsdl:part element="tns:sendAsynkronAvstemmingsdata" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="sendAsynkronAvstemmingsdataResponse">
+    <wsdl:part element="tns:sendAsynkronAvstemmingsdataResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="sendAsynkronKonsistensavstemmingsdataRequest">
+    <wsdl:part element="tns:sendAsynkronKonsistensavstemmingsdata" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="sendAsynkronKonsistensavstemmingsdataResponse">
+    <wsdl:part element="tns:sendAsynkronKonsistensavstemmingsdataResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Avstemming">
+    <wsdl:operation name="sendAsynkronAvstemmingsdata">
+      <wsdl:documentation>Operasjonen mottar en asynkron melding fra PEN og sender den videre til MQ som går mot Avstemmingskomponenten (Økonomi). Alle avstemminger starter med en 110-melding hvor aksjonskoden er ’START’. Selve avstemmingsdataene overføres sammen med en 110-melding hvor aksjonskoden er ’DATA’. Alle avstemminger avsluttes med en 110-melding hvor aksjonskoden er ’AVSL’. </wsdl:documentation>
+      <wsdl:input message="tns:sendAsynkronAvstemmingsdataRequest"/>
+      <wsdl:output message="tns:sendAsynkronAvstemmingsdataResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="sendAsynkronKonsistensavstemmingsdata">
+      <wsdl:input message="tns:sendAsynkronKonsistensavstemmingsdataRequest"/>
+      <wsdl:output message="tns:sendAsynkronKonsistensavstemmingsdataResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
