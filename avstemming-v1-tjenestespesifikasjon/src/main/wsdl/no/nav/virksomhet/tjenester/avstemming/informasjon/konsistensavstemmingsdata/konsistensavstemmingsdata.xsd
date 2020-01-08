@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/virksomhet/tjenester/avstemming/informasjon/konsistensavstemmingsdata/v1" version="1.1" xmlns:kad="http://nav.no/virksomhet/tjenester/avstemming/informasjon/konsistensavstemmingsdata/v1">
+  <xsd:complexType name="Valuta">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="valutaType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Valutatype</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="valuta" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Valuta</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="valutaFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Når ny valuta gjelder fra.  Format åååå-mm-dd</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="feilregistrering" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Settes til J hvis valutaen var en feilregistrering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Oppdragslinje">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="vedtakId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fagsystemets id av vedtaket</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="delytelseId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fagsystemets id av delytelsen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="linjeId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Oppdragsbasens id av oppdragslinjen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="klassifikasjonKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Klassifisering (stønadsklasse, inkl ferie)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="klassifkasjonFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato på klassifiseringen. Format åååå-mm-dd</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="vedtakPeriode" type="kad:Periode">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato / til-og-med dato på vedtaket/utbetalingen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sats" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Satsen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="satstypeKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Satstype (engangs, dag, uke, 14-dag, mnd, år)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fradragTillegg" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Betinget påkrevd:  F eller T. Må kun fylles ut hvis sats finnes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="skyldnerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Skyldner (fnr/orgnr), default er behandlende enhets orgnr</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="skyldnerFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato på skyldner. Format åååå-mm-dd</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kravhaverId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Hvem kravet gjelder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kravhaverFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato på kravhaver.  Format åååå-mm-dd </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kundeidentifikasjon" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>kid</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="kundeidentifikasjonFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>fra om med når KID. Format åååå-mm-dd </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="brukKjoreplan" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Anngir om utbetalingen skal skje i dag eller i henhold til kjøreplan</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="saksbehandlerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Saksbehandler</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utbetalesTilId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Utbetalingsmottaker (fnr/orgnr)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utbetalesFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato på utbetalingen.  Format åååå-mm-dd </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="arbeidsgiverKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>(Kodeverk som er benyttet av Sykepenger rutina)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="henvisning" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Henvisning til grunndokumentasjon (legitimering av kostnad)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="soknadsType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Årsaken til at vedtaket ble fattet.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="refFagsystemId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fagsystemets id av vedtaket som endres</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="refOppdragId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Oppdragsbasens id av vedtaket som endres</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="refDelytelseId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Id av delytelsen som endres (fagsystemets)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="refLinjeId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Oppdragsbasens id av delytelsen som endres.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="linjetekstListe" type="kad:Tekst">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Linjetekst</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="linjeenhetListe" type="kad:Enhet">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Linjeenhet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="gradListe" type="kad:Grad">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Grad</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="attestantListe" type="kad:Attestant">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Attestant</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="valutaListe" type="kad:Valuta">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Valuta</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Belopsgrense">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="grenseType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kan være f.eks. min- og max utbetalingsbeløp.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="belopsgrense" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Grensebeløpet til utbetaling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="grensePeriode" type="kad:Periode">
+        <xsd:annotation>
+          <xsd:documentation>Når grensebeløpet gjelder fra-og-med / til-og-med</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="feilregistrering" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Settes til J hvis beløpsgrensen var en feilregistrering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="konsistensavstemmingsdata" type="kad:Konsistensavstemmingsdata"/>
+  <xsd:complexType name="Periode">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="fom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Format åååå-mm-dd</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Format åååå-mm-dd</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Konsistensavstemmingsdata">
+    <xsd:annotation>
+      <xsd:documentation>Etter START-recorden skal avstemmingsdataene for konsistensavstemmingen overføres som sammensatte meldinger pr. offnr.
+
+Hver slik melding skal starte med id-110 med aksjonskode ’DATA’. Deretter følger de id-kodene som ble brukt da dataene opprinnelig ble overført fra avleverende til mottakende system. For avstemming mot Oppdragssystemet vil dette være deres id-kode 110, 120, 150 osv. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="aksjonsdata" type="kad:Aksjonsdata"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdragsdataListe" type="kad:Oppdragsdata"/>
+      <xsd:element minOccurs="0" name="totaldata" type="kad:Totaldata"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Aksjonsdata">
+    <xsd:annotation>
+      <xsd:documentation>Enhver avstemming må initieres og avsluttes med en 110-record, på det formatet som er beskrevet her</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="aksjonsType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Aksjonskoden settes til ’START’ når avstemmingen starter og ’AVSL’ når alle avstemmingsdata er overført. Aksjonskode ’DATA’ benyttes når selve avstemmingsdatene skal overføres. Aksjonskode ’HENT’ benyttes dersom mottakende komponent har behov for å finne avstemminger som er påbegynt fra avleverende komponent, men mangler data fra mottakende komponent. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="kildeType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Skal ha verdien ’AVLEV’ når en avstemming initieres fra avleverende komponent og ’MOTT’ når det er mottakende komponent som skal overføre sine data.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="avstemmingType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>identifiserer hvilken type avstemming det gjelder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="avleverendeKomponentKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifiserer avleverende komponent av dataene som skal avstemmes, dvs ‘PESYS’ når dataene kommer fra PESYS.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="mottakendeKomponentKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifiserer mottakende komponent av dataene som skal avstemmes, skal verdien være ‘OS’.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="underkomponentKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Videre må det sendes med hvilken underkomponent (fagområde) avstemmingen gjelder, f.eks ‘PENAP’. Betinget:  Må fylles ut hvis underkomponenten finnes som egen avstemmingsenhet.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="nokkelFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifikasjon av data som skal grensesnittavstemmes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="nokkelTom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifikasjon av data som skal grensesnittavstemmes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tidspunktAvstemmingTom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Angir høyeste tidspunkt for transaksjoner som skal inngå i konsistensavstemming (format: åååå-mm-dd-hh.mm.ss.nnnnnn) Betinget: Må sendes i enten START eller AVSL, men ikke for hver Aksjonsdata.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="avleverendeAvstemmingId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Avleverende systems unike avstemmings-id</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="brukerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Brukerid må ha en verdi, men dette kan gjerne være noe som identifiserer programmet som genererer dataene (dvs en fast verdi)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Totaldata">
+    <xsd:sequence>
+      <xsd:element name="totalAntall" type="xsd:integer"/>
+      <xsd:element name="totalBelop" type="xsd:decimal"/>
+      <xsd:element name="fortegn" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Angir om beløp er tillegg (T) eller fradrag (F). </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Enhet">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="enhetType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Enhetstype angir hva slags type enhet som mottas. Kodeverk for enhet, for eks BEH eller BOS. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="enhet" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Enhet identifiserer den aktuelle enheten</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="enhetFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Dato-enhet-fom angir når denne gjelder fra (åååå-mm-dd)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Grad">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="gradKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Hvilken grad som mottas (uføregrad/utbetalingsgrad, yrkesskadegrad, tidskontograd, dekningsgrad etc.)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="grad" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Tall i prosent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Oppdragsdata">
+    <xsd:sequence>
+      <xsd:element name="fagomradeKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fagområdekoden identifiserer fagområdet og eventuelle underområder innenfor dette. Fagområdets kode i Oppdragssystemet.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="fagsystemId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Fagsystemets id av stønaden/oppdraget</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="oppdragId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Oppdragsbasens id av oppdraget</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utbetalingsfrekvens" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Utbetalingsfrekvens angir med hvilken frekvens oppdraget skal beregnes/utbetales</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="forfallsdato" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Forfallsdato, spesifikt for oppdraget . Format åååå-mm-dd </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="stonadId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Stønadens identifikator (eks. startdato)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="oppdragGjelderId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Vanligvis stønadsmottager</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="oppdragGjelderFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Dato fra når fnr/orgnr gjelder fra. Format åååå-mm-dd </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="saksbehandlerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Saksbehandler</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdragsenhetListe" type="kad:Enhet">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Oppdragsenhet</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="belopsgrenseListe" type="kad:Belopsgrense">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Belopsgrense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="tekstListe" type="kad:Tekst">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Tekst</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdragslinjeListe" type="kad:Oppdragslinje">
+        <xsd:annotation>
+          <xsd:documentation>Liste av kompleks type Oppdragslinje</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="bilagstype" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>113/O13</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Attestant">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="attestantId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Attestant (funksjonærid)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ugyldigFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Dato for når attestasjonen ikke er gyldig lengre.  Format åååå-mm-dd</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Tekst">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="tekstlinjeNummer" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Fortløpende nummerering av tekst knyttet til et oppdrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tekstKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Tekstkoder (melding på utbetalingskort).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tekst" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Utbetalingstekst (melding på utbetalingskort). ”Fjern” medfører at teksten markeres som utgått.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tekstPeriode" type="kad:Periode">
+        <xsd:annotation>
+          <xsd:documentation>Når teksten gjelder fra-og-med / til-og-med. Format åååå-mm-dd .</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="feilregistrering" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Settes til J hvis teksten var en feilregistrering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendAsynkronKonsistensavstemmingsdataRequest">
+    <xsd:sequence>
+      <xsd:element name="konsistensavstemmingsdata" type="kad:Konsistensavstemmingsdata"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

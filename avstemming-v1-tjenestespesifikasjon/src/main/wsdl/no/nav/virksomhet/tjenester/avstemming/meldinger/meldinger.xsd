@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" targetNamespace="http://nav.no/virksomhet/tjenester/avstemming/meldinger/v1" version="1.0" xmlns:meldinger="http://nav.no/virksomhet/tjenester/avstemming/meldinger/v1">
+  <xsd:simpleType name="AksjonType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="START">
+        <xsd:annotation>
+          <xsd:documentation>Aksjonskoden settes til ’START’ når avstemmingen starter</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DATA">
+        <xsd:annotation>
+          <xsd:documentation>Aksjonskode ’DATA’ benyttes når selve avstemmingsdatene skal overføres.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AVSL">
+        <xsd:annotation>
+          <xsd:documentation>’AVSL’ når alle avstemmingsdata er overført.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HENT">
+        <xsd:annotation>
+          <xsd:documentation>Aksjonskode ’HENT’ benyttes dersom mottakende komponent har behov for å finne avstemminger som er påbegynt fra avleverende komponent, men mangler data fra mottakende komponent.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Totaldata">
+    <xsd:annotation>
+      <xsd:documentation>Grensesnittavstemmingen skal minimum bestå av en id-110 (aksjonskode ’DATA) og en totalrecord (id-120) i tillegg til START- og SLUTT-recorden.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="totalAntall" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Antall overførte meldinger</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="totalBelop" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Sum beløp på øverførte meldinger</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="fortegn" type="meldinger:Fortegn">
+        <xsd:annotation>
+          <xsd:documentation>Angir om beløp er tillegg (T) eller fradrag (F)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Avstemmingsdata">
+    <xsd:annotation>
+      <xsd:documentation>Etter START-recorden skal avstemmingsdataene for konsistensavstemmingen overføres som sammensatte meldinger pr. offnr.
+
+Hver slik melding skal starte med id-110 med aksjonskode ’DATA’. Deretter følger de id-kodene som ble brukt da dataene opprinnelig ble overført fra avleverende til mottakende system. For avstemming mot Oppdragssystemet vil dette være deres id-kode 110, 120, 150 osv.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="aksjon" type="meldinger:Aksjonsdata"/>
+      <xsd:element minOccurs="0" name="total" type="meldinger:Totaldata"/>
+      <xsd:element minOccurs="0" name="periode" type="meldinger:Periodedata"/>
+      <xsd:element minOccurs="0" name="grunnlag" type="meldinger:Grunnlagsdata"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="detalj" type="meldinger:Detaljdata"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Grunnlagsdata">
+    <xsd:annotation>
+      <xsd:documentation>Grunnlagsrecord (id-130) for å skille mellom antall godkjente og avviste meldinger, antall godkjente med varsel og antall meldinger hvor avleverende system ikke har mottatt kvitteringsmelding.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="godkjentAntall" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Antall godkjente meldinger</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="godkjentBelop" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Sum beløp på godkjente meldinger</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="godkjentFortegn" type="meldinger:Fortegn">
+        <xsd:annotation>
+          <xsd:documentation>Angir om beløp er tillegg (T) eller fradrag (F)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="varselAntall" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Antall meldinger med varsel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="varselBelop" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Sum beløp på meldinger med varsel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="varselFortegn" type="meldinger:Fortegn">
+        <xsd:annotation>
+          <xsd:documentation>Angir om beløp er tillegg (T) eller fradrag (F)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="avvistAntall" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Antall avviste meldinger</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="avvistBelop" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Sum beløp på avviste meldinger</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="avvistFortegn" type="meldinger:Fortegn">
+        <xsd:annotation>
+          <xsd:documentation>Angir om beløp er tillegg (T) eller fradrag (F)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="manglerAntall" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Antall meldinger hvor det ikke er mottatt kvittering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="manglerBelop" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Sum beløp på meldinger hvor det ikke er mottatt kvittering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="manglerFortegn" type="meldinger:Fortegn">
+        <xsd:annotation>
+          <xsd:documentation>Angir om beløp er tillegg (T) eller fradrag (F)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Aksjonsdata">
+    <xsd:annotation>
+      <xsd:documentation>Enhver avstemming må initieres og avsluttes med en 110-record, på det formatet som er beskrevet her</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="aksjonType" type="meldinger:AksjonType">
+        <xsd:annotation>
+          <xsd:documentation>Aksjonskoden settes til ’START’ når avstemmingen starter og ’AVSL’ når alle avstemmingsdata er overført. Aksjonskode ’DATA’ benyttes når selve avstemmingsdatene skal overføres. Aksjonskode ’HENT’ benyttes dersom mottakende komponent har behov for å finne avstemminger som er påbegynt fra avleverende komponent, men mangler data fra mottakende komponent. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="kildeType" type="meldinger:KildeType">
+        <xsd:annotation>
+          <xsd:documentation>Skal ha verdien ’AVLEV’ når en avstemming initieres fra avleverende komponent og ’MOTT’ når det er mottakende komponent som skal overføre sine data.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="avstemmingType" type="meldinger:AvstemmingType">
+        <xsd:annotation>
+          <xsd:documentation>identifiserer hvilken type avstemming det gjelder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="avleverendeKomponentKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifiserer avleverende komponent av dataene som skal avstemmes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="mottakendeKomponentKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifiserer mottakende komponent av dataene som skal avstemmes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="underkomponentKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>f.eks. hvilket fagområde som skal avstemmes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="nokkelFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifikasjon av data som skal grensesnittavstemmes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="nokkelTom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identifikasjon av data som skal grensesnittavstemmes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tidspunktAvstemmingTom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Angir høyeste tidspunkt for transaksjoner som skal inngå i konsistensavstemming (format: åååå-mm-dd-hh.mm.ss.nnnnnn)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="avleverendeAvstemmingId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Avleverende systems unike avstemmings-id</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="brukerId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>saksbehandler</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="DetaljType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="VARS">
+        <xsd:annotation>
+          <xsd:documentation>Godkjent med varsel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AVVI">
+        <xsd:annotation>
+          <xsd:documentation>Avvist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MANG">
+        <xsd:annotation>
+          <xsd:documentation>Manglende kvittering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AvstemmingType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="GRSN">
+        <xsd:annotation>
+          <xsd:documentation>Grensesnittavstemming</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KONS">
+        <xsd:annotation>
+          <xsd:documentation>Konsistensavstemming</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PERI">
+        <xsd:annotation>
+          <xsd:documentation>Periodeavstemming</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Fortegn">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="T">
+        <xsd:annotation>
+          <xsd:documentation>Tillegg</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="F">
+        <xsd:annotation>
+          <xsd:documentation>Fradrag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="KildeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AVLEV">
+        <xsd:annotation>
+          <xsd:documentation>Avleverende komponent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MOTT">
+        <xsd:annotation>
+          <xsd:documentation>Mottakende komponent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Detaljdata">
+    <xsd:annotation>
+      <xsd:documentation>Grensesnittavstemmingen kan inneholde detaljer på avviste meldinger, godkjente meldinger med varsel og meldinger hvor avleverende system ikke har mottatt kvitteringsmelding. Det kan ikke overføres 140-data uten at det også er overført en id-130. Det må overføres ID140 dersom det finnes avviste meldinger eller meldinger hvor det mangler kvittering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="detaljType" type="meldinger:DetaljType">
+        <xsd:annotation>
+          <xsd:documentation>Angir hvilken type detaljen gjelder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="offnr" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Hvem detaljen hjelder, kan inneholde dnr/fnr, TSS-nr eller Orgnr.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="avleverendeTransaksjonNokkel" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Avleverende systems identifikasjon av vedtaket</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="meldingKode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Meldingkode på varsel/feil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="alvorlighetsgrad" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Angir alvorlighetsgraden på varsel/feil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tekstMelding" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Meldingstekst på varsel/feil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tidspunkt" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Når meldingen ble sendt/mottatt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="avstemmingsdata" type="meldinger:Avstemmingsdata"/>
+  <xsd:complexType name="Periodedata">
+    <xsd:annotation>
+      <xsd:documentation>Avleverende system må også sende med en perioderecord som definerer for hvilken periode avstemmingen gjelder.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="datoAvstemtFom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Angir når avstemmingen gjelder fra, dato og time (ååååmmddhh)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="datoAvstemtTom" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Angir når avstemmingen gjelder til, dato og time (ååååmmddhh)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendAsynkronAvstemmingsdataRequest">
+    <xsd:sequence>
+      <xsd:element name="avstemmingsdata" type="meldinger:Avstemmingsdata"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
