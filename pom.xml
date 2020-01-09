@@ -186,6 +186,7 @@
         <module>oppfoelging-v1-tjenestespesifikasjon</module>
         <module>oppfolgingsinfo-v1-tjenestespesifikasjon</module>
         <module>oppgave-v3-tjenestespesifikasjon</module>
+        <module>oppgavebegrenset-v1-tjenestespesifikasjon</module>
         <module>oppgavebehandling-tjenestespesifikasjon</module>
         <module>oppgavebehandling-v3-tjenestespesifikasjon</module>
         <module>organisasjon-ressurs-enhet-v1-tjenestespesifikasjon</module>
