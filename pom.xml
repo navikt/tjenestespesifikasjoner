@@ -48,6 +48,7 @@
         <module>altinn-notification-agency-external-basic</module>
         <module>altinn-pre-fill</module>
         <module>arbeidogaktivitet-tjenestespesifikasjon</module>
+        <module>arbeidsevnevurdering-v1-tjenestespesifikasjon</module>
         <module>arbeidsfordeling-v1-tjenestespesifikasjon</module>
         <module>arbeidsforholdv3-tjenestespesifikasjon</module>
         <module>arbeidsgiver-v2-tjenestespesifikasjon</module>

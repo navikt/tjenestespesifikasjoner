@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="arbeidsevnevurdering" targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidsevnevurdering/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/arbeidsevnevurdering/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidsevnevurdering/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/arbeidsevnevurdering/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/arbeidsevnevurdering/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arbeidsevnevurdering/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arbeidsevnevurdering/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="finnArbeidsevnevurdering">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:finnArbeidsevnevurderingRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidsevnevurderingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:finnArbeidsevnevurderingResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnArbeidsevnevurderingpersonIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="finnArbeidsevnevurderingugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="finnArbeidsevnevurderingsikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnArbeidsevnevurderingRequest">
+    <wsdl:part element="tns:finnArbeidsevnevurdering" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsevnevurderingResponse">
+    <wsdl:part element="tns:finnArbeidsevnevurderingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsevnevurderingPersonIkkeFunnet">
+    <wsdl:part element="tns:finnArbeidsevnevurderingpersonIkkeFunnet" name="personIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsevnevurderingUgyldigInput">
+    <wsdl:part element="tns:finnArbeidsevnevurderingugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="finnArbeidsevnevurderingSikkerhetsbegrensning">
+    <wsdl:part element="tns:finnArbeidsevnevurderingsikkerhetsbegrensning" name="sikkerhetsbegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Arbeidsevnevurdering_v1">
+    <wsdl:operation name="finnArbeidsevnevurdering">
+      <wsdl:input message="tns:finnArbeidsevnevurderingRequest"/>
+      <wsdl:output message="tns:finnArbeidsevnevurderingResponse"/>
+      <wsdl:fault message="tns:finnArbeidsevnevurderingPersonIkkeFunnet" name="finnArbeidsevnevurderingFault"/>
+      <wsdl:fault message="tns:finnArbeidsevnevurderingUgyldigInput" name="finnArbeidsevnevurderingFault1"/>
+      <wsdl:fault message="tns:finnArbeidsevnevurderingSikkerhetsbegrensning" name="finnArbeidsevnevurderingFault2"/>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
