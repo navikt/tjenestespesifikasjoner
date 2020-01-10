@@ -71,6 +71,7 @@
         <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
         <module>behandleForsendelse-udi-brevdata</module>
         <module>behandleForsendelse-v1</module>
+        <module>behandleinntekt-v1-tjenestespesifikasjon</module>
         <module>behandleoppgave-v1-tjenestespesifikasjon</module>
         <module>behandlesak-v2-tjenestespesifikasjon</module>
         <module>besvare-henvendelse-tjenestespesifikasjon</module>

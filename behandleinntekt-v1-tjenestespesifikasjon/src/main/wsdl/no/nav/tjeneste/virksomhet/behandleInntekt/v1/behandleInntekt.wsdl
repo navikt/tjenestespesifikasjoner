@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="behandleInntekt" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1" xmlns:tns="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1" xmlns:feil="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1/feil" schemaLocation="../feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1/meldinger" schemaLocation="../meldinger/meldinger.xsd"/>
+      <xsd:element name="lagreForventetInntekt">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:LagreForventetInntektRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="lagreForventetInntektResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="lagreForventetInntektpersonIkkeFunnet" type="feil:PersonIkkeFunnet"/>
+      <xsd:element name="lagreForventetInntektsikkerhetsBegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="lagreForventetInntektugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="lagreForventetInntektListeBolk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:LagreForventetInntektListeBolkRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="lagreForventetInntektListeBolkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:LagreForventetInntektListeBolkResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="lagreForventetInntektRequest">
+    <wsdl:part element="tns:lagreForventetInntekt" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="lagreForventetInntektResponse">
+    <wsdl:part element="tns:lagreForventetInntektResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="lagreForventetInntektPersonIkkeFunnet">
+    <wsdl:part element="tns:lagreForventetInntektpersonIkkeFunnet" name="personIkkeFunnet"/>
+  </wsdl:message>
+  <wsdl:message name="lagreForventetInntektSikkerhetsBegrensning">
+    <wsdl:part element="tns:lagreForventetInntektsikkerhetsBegrensning" name="sikkerhetsBegrensning"/>
+  </wsdl:message>
+  <wsdl:message name="lagreForventetInntektUgyldigInput">
+    <wsdl:part element="tns:lagreForventetInntektugyldigInput" name="ugyldigInput"/>
+  </wsdl:message>
+  <wsdl:message name="pingRequest">
+    <wsdl:part element="tns:ping" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="lagreForventetInntektListeBolkRequest">
+    <wsdl:part element="tns:lagreForventetInntektListeBolk" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="lagreForventetInntektListeBolkResponse">
+    <wsdl:part element="tns:lagreForventetInntektListeBolkResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="BehandleInntekt_v1">
+    <wsdl:operation name="lagreForventetInntekt">
+      <wsdl:input message="tns:lagreForventetInntektRequest"/>
+      <wsdl:output message="tns:lagreForventetInntektResponse"/>
+      <wsdl:fault message="tns:lagreForventetInntektPersonIkkeFunnet" name="lagreForventetInntektFault"/>
+      <wsdl:fault message="tns:lagreForventetInntektSikkerhetsBegrensning" name="lagreForventetInntektFault1"/>
+      <wsdl:fault message="tns:lagreForventetInntektUgyldigInput" name="lagreForventetInntektFault2"/>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest"/>
+      <wsdl:output message="tns:pingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="lagreForventetInntektListeBolk">
+      <wsdl:input message="tns:lagreForventetInntektListeBolkRequest"/>
+      <wsdl:output message="tns:lagreForventetInntektListeBolkResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Binding" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleInntekt/v1/Binding/" xmlns:behandleinntekt="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nav.no/tjeneste/virksomhet/behandleInntekt/v1/Binding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="behandleInntekt.wsdl" namespace="http://nav.no/tjeneste/virksomhet/behandleinntekt/v1"/>
+  <wsdl:binding name="BehandleInntekt_v1Binding" type="behandleinntekt:BehandleInntekt_v1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="lagreForventetInntekt">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleInntekt/v1/Binding/lagreForventetInntekt/"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="lagreForventetInntektFault">
+        <soap:fault name="lagreForventetInntektFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="lagreForventetInntektFault1">
+        <soap:fault name="lagreForventetInntektFault1" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="lagreForventetInntektFault2">
+        <soap:fault name="lagreForventetInntektFault2" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleInntekt/v1/Binding/ping/"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lagreForventetInntektListeBolk">
+      <soap:operation soapAction="http://nav.no/tjeneste/virksomhet/behandleInntekt/v1/Binding/lagreForventetInntektListeBolk/"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BehandleInntekt">
+    <wsdl:port binding="tns:BehandleInntekt_v1Binding" name="BehandleInntekt_v1Port">
+      <soap:address location="http://nav.no/tjeneste/virksomhet/behandleInntekt/v1/Binding/BehandleInntekt/BehandleInntekt_v1Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
