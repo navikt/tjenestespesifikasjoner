@@ -237,6 +237,7 @@
         <module>varseltekster</module>
         <module>varselutsending</module>
         <module>varsler</module>
+        <module>vedlikehold-inntektsabonnement-v1-tjenestespesifikasjon</module>
         <module>veiledervarsel</module>
         <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
         <module>nav-tiltakOgAktivitet-v1-tjenestespesifikasjon</module>
