@@ -60,6 +60,7 @@
         <module>arena-sakOgAktivitet_v1</module>
         <module>arenaSakVedtakService</module>
         <module>avstemming-v1-tjenestespesifikasjon</module>
+        <module>behandle-altinnmelding-v1-tjenestespesifikasjon</module>
         <module>behandle-henvendelse</module>
         <module>behandle-medlemskap-v1-tjenestespesifikasjon</module>
         <module>behandle-moetev1-tjenestespesifikasjon</module>
@@ -212,6 +213,7 @@
         <module>send-inn-henvendelse</module>
         <module>send-ut-henvendelse</module>
         <module>sendsoknad-tjenestespesifikasjon</module>
+        <module>servicemeldingMedKontaktinformasjon-v1-tjenestespesifikasjon</module>
         <module>soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-saksoversiktdefinisjon</module>
