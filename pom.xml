@@ -211,6 +211,7 @@
         <module>send-inn-henvendelse</module>
         <module>send-ut-henvendelse</module>
         <module>sendsoknad-tjenestespesifikasjon</module>
+        <module>servicemeldingMedKontaktinformasjon-v1-tjenestespesifikasjon</module>
         <module>soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-saksoversiktdefinisjon</module>
