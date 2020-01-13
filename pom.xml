@@ -60,6 +60,7 @@
         <module>arena-sakOgAktivitet_v1</module>
         <module>arenaSakVedtakService</module>
         <module>avstemming-v1-tjenestespesifikasjon</module>
+        <module>behandle-altinnmelding-v1-tjenestespesifikasjon</module>
         <module>behandle-henvendelse</module>
         <module>behandle-medlemskap-v1-tjenestespesifikasjon</module>
         <module>behandle-moetev1-tjenestespesifikasjon</module>
