@@ -90,6 +90,7 @@
         <module>dialogarena-behandlingsinformasjon</module>
         <module>digisyfo-naermesteLeder</module>
         <module>digisyfo-sykmelding</module>
+        <module>digisyfo-sykepengesoeknadarbeidsgiver</module>
         <module>diskresjonskodev1-tjenestespesifikasjon</module>
         <module>dkif-tjenestespesifikasjon</module>
         <module>dokumentforsendelse-v1-meldingsdefinisjon</module>

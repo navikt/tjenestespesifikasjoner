@@ -6,7 +6,7 @@
         <artifactId>tjenestespesifikasjoner</artifactId>
         <version>0-SNAPSHOT</version>
     </parent>
-    <artifactId>digisyfo-sykepengesoeknadArbeidsgiver</artifactId>
+    <artifactId>digisyfo-sykepengesoeknadarbeidsgiver</artifactId>
     <version>0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <dependencies>
