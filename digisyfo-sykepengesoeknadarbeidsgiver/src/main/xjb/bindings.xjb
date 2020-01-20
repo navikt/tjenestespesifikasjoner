@@ -8,7 +8,7 @@
                       adapter="com.migesok.jaxb.adapter.javatime.LocalDateXmlAdapter"/>
     </jaxb:globalBindings>
 
-    <jaxb:bindings schemaLocation="../xsd/schema.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="../xsd/sykepengesoeknadarbeidsgiver.xsd" node="/xsd:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="XML"/>
