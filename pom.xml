@@ -245,6 +245,7 @@
         <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
         <module>nav-tiltakOgAktivitet-v1-tjenestespesifikasjon</module>
         <module>subscription-nav-emottak-eletter-web</module>
+        <module>ekstern-nhn-flrexportservice-tjenestespesifikasjon</module>
     </modules>
     <scm>
         <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
