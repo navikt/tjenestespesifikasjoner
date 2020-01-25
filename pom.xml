@@ -100,6 +100,7 @@
         <module>dokumentproduksjon-v3-tjenestespesifikasjon</module>
         <module>egenansatt-v1-tjenestespesifikasjon</module>
         <module>ekstern-helse-helsepersonell-tjenestespesifikasjon</module>
+        <module>ekstern-nhn-flrexportservice-tjenestespesifikasjon</module>
         <module>elektronisknotifikasjon-utsending-tjenestespesifikasjon</module>
         <module>enhet-v1-tjenestespesifikasjon</module>
         <module>fillager-tjenestespesifikasjon</module>
@@ -176,6 +177,7 @@
         <module>nav-oppfoelgingsstatus-v2-tjenestespesifikasjon</module>
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
         <module>nav-pip-pipEgenAnsatt-v1-tjenestespesifikasjon</module>
+        <module>nav-tiltakOgAktivitet-v1-tjenestespesifikasjon</module>
         <module>nav-virksomhet-dokumentnotifikasjon-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-hendelsehandterer-behandlingstatus-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-loependeYtelser-v1-meldingsdefinisjon</module>
@@ -222,6 +224,7 @@
         <module>soeknadsskjemaSosialhjelp-v1-vedleggdefinisjon</module>
         <module>sporsmalinnsending-tjenestespesifikasjon</module>
         <module>startregistreringstatus-v1-tjenestespesifikasjon</module>
+        <module>subscription-nav-emottak-eletter-web</module>
         <module>svarut-ks-forsendelsesservice</module>
         <module>sykefravaersoppfoelgingv1-tjenestespesifikasjon</module>
         <module>sykmelderstatistikk-tjenestespesifikasjon</module>
@@ -243,9 +246,6 @@
         <module>vedlikehold-inntektsabonnement-v1-tjenestespesifikasjon</module>
         <module>veiledervarsel</module>
         <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
-        <module>nav-tiltakOgAktivitet-v1-tjenestespesifikasjon</module>
-        <module>subscription-nav-emottak-eletter-web</module>
-        <module>ekstern-nhn-flrexportservice-tjenestespesifikasjon</module>
     </modules>
     <scm>
         <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
