@@ -203,6 +203,7 @@
         <module>organisasjonv4-tjenestespesifikasjon</module>
         <module>pensjon-sak-v1-tjenestespesifikasjon</module>
         <module>pensjonsak-esb-tjenestespesifikasjon</module>
+        <module>pensjonsinformasjon-v1-tjenestespesifikasjon</module>
         <module>person-sammenslaatt-v1</module>
         <module>person-splittet-v1</module>
         <module>person-v1-esb-tjenestespesifikasjon</module>

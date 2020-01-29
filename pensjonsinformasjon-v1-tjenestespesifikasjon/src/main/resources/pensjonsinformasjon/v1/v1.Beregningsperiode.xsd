@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/pensjon/v1/beregningsperiode"
+           version="1.0">
+
+    <xs:complexType name="v1.Beregningsperiode">
+        <xs:sequence>
+            <xs:element form="qualified" name="fom" type="xs:dateTime"/>
+            <xs:element form="qualified" minOccurs="0" name="tom" type="xs:dateTime"/>
+            <xs:element form="qualified" name="uforetidspunkt" type="xs:dateTime"/>
+            <xs:element form="qualified" name="uforegrad" type="xs:int"/>
+            <xs:element form="qualified" name="ifu" type="xs:int"/>
+            <xs:element form="qualified" minOccurs="0" name="inntektBruktIAvkortingen" type="xs:int"/>
+            <xs:element form="qualified" minOccurs="0" name="ferdiglignetInntekt" type="xs:boolean"/>
+            <xs:element form="qualified" name="klagebehandles" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
