@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns2="http://nav.no/pensjon/v1/beregningsperiodeList"
+           xmlns:ns1="http://nav.no/pensjon/v1/beregningsperiode"
+           targetNamespace="http://nav.no/pensjon/v1/uforeopplysninger"
+           version="1.0">
+
+    <xs:import namespace="http://nav.no/pensjon/v1/beregningsperiode"
+               schemaLocation="v1.Beregningsperiode.xsd"/>
+
+    <xs:import namespace="http://nav.no/pensjon/v1/beregningsperiodeList"
+               schemaLocation="v1.BeregningsperioderListe.xsd"/>
+
+    <xs:complexType name="v1.Uforeopplysninger">
+        <xs:sequence>
+            <xs:element form="qualified" minOccurs="0" name="sakStatus" type="xs:string"/>
+            <xs:element form="qualified" minOccurs="0" name="forsteVirkningspunkt" type="xs:dateTime"/>
+            <xs:element form="qualified" minOccurs="0" name="beregningsperioderListe"
+                        type="ns2:v1.BeregningsperioderListe"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

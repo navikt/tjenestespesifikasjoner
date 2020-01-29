@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/pensjon/v1/avdodesYtelse"
+           version="1.0">
+
+  <xs:complexType name="v1.AvdodesYtelse">
+      <xs:sequence>
+         <xs:element form="qualified" name="sakType" type="xs:string"/>
+         <xs:element form="qualified" name="sakId" type="xs:long"/>
+         <xs:element form="qualified" name="forsteVirkningstidspunkt" type="xs:dateTime"/>
+      </xs:sequence>
+  </xs:complexType>
+</xs:schema>
