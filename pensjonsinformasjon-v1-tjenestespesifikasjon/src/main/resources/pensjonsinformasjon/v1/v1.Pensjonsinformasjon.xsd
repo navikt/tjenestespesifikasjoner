@@ -15,7 +15,6 @@
            xmlns:brukersBarnListe="http://nav.no/pensjon/v1/brukersBarnListe"
            xmlns:kravHistorikkListe="http://nav.no/pensjon/v1/kravHistorikkListe"
            xmlns:ektefellePartnerSamboerListe="http://nav.no/pensjon/v1/ektefellePartnerSamboerListe"
-           xmlns:uforeopplysninger="http://nav.no/pensjon/v1/uforeopplysninger"
            attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://nav.no/pensjon/v1/pensjonsinformasjon">
 
     <xs:import namespace="http://nav.no/pensjon/v1/ytelsePerMaanedListe" schemaLocation="v1.YtelsePerMaanedListe.xsd"/>
@@ -34,7 +33,6 @@
     <xs:import namespace="http://nav.no/pensjon/v1/brukersBarnListe" schemaLocation="v1.BrukersBarnListe.xsd"/>
     <xs:import namespace="http://nav.no/pensjon/v1/kravHistorikkListe" schemaLocation="v1.KravHistorikkListe.xsd"/>
     <xs:import namespace="http://nav.no/pensjon/v1/ektefellePartnerSamboerListe" schemaLocation="v1.EktefellePartnerSamboerListe.xsd"/>
-    <xs:import namespace="http://nav.no/pensjon/v1/uforeopplysninger" schemaLocation="v1.Uforeopplysninger.xsd"/>
 
     <xs:element name="pensjonsinformasjon" type="Pensjonsinformasjon"/>
     <xs:complexType name="Pensjonsinformasjon">
@@ -55,7 +53,6 @@
             <xs:element name="brukersBarnListe" type="brukersBarnListe:v1.BrukersBarnListe"/>
             <xs:element name="kravHistorikkListe" type="kravHistorikkListe:v1.KravHistorikkListe"/>
             <xs:element name="ektefellePartnerSamboerListe" type="ektefellePartnerSamboerListe:v1.EktefellePartnerSamboerListe"/>
-            <xs:element name="uforeopplysninger" type="uforeopplysninger:v1.Uforeopplysninger"/>
         </xs:all>
     </xs:complexType>
 </xs:schema>

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:ns2="http://nav.no/pensjon/v1/avdodesYtelseListe"
-           xmlns:ns1="http://nav.no/pensjon/v1/avdodesYtelse"
            targetNamespace="http://nav.no/pensjon/v1/avdod"
            version="1.0">
 
-  <xs:import namespace="http://nav.no/pensjon/v1/avdodesYtelse"
-              schemaLocation="v1.AvdodesYtelse.xsd"/>
-
-  <xs:import namespace="http://nav.no/pensjon/v1/avdodesYtelseListe"
-              schemaLocation="v1.AvdodesYtelseListe.xsd"/>
-
   <xs:complexType name="v1.Avdod">
       <xs:sequence>
-         <xs:element form="qualified" minOccurs="0" name="avdodSoker" type="xs:string"/>
+         <xs:element form="qualified" minOccurs="0" name="avdod" type="xs:string"/>
          <xs:element form="qualified" minOccurs="0" name="avdodMor" type="xs:string"/>
          <xs:element form="qualified" minOccurs="0" name="avdodFar" type="xs:string"/>
          <xs:element form="qualified" name="avdodAktorId" type="xs:string"/>
@@ -30,18 +22,6 @@
                      type="xs:boolean"/>
          <xs:element form="qualified" minOccurs="0" name="avdodFarVurdereTrygdeavtale"
                      type="xs:boolean"/>
-         <xs:element form="qualified" minOccurs="0" name="dodsfallAvdodSkyldesYrkeskade"
-                     type="xs:boolean"/>
-         <xs:element form="qualified" minOccurs="0" name="dodsfallMorSkyldesYrkeskade"
-                     type="xs:boolean"/>
-         <xs:element form="qualified" minOccurs="0" name="dodsfallFarSkyldesYrkeskade"
-                     type="xs:boolean"/>
-         <xs:element form="qualified" minOccurs="0" name="avdodesYtelser"
-                     type="ns2:v1.AvdodesYtelseListe"/>
-         <xs:element form="qualified" minOccurs="0" name="avdodMorsYtelser"
-                     type="ns2:v1.AvdodesYtelseListe"/>
-         <xs:element form="qualified" minOccurs="0" name="avdodFarsYtelser"
-                     type="ns2:v1.AvdodesYtelseListe"/>
       </xs:sequence>
   </xs:complexType>
 </xs:schema>
