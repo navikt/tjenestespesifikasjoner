@@ -39,7 +39,6 @@
                 <configuration>
                     <schemaDirectory>${basedir}/src/main/resources/pensjonsinformasjon/v1</schemaDirectory>
                     <outputDirectory>target/classes</outputDirectory>
-                    <packageName>no.nav.pensjon.v1.pensjonsinformasjon</packageName>
                 </configuration>
             </plugin>
             <plugin>

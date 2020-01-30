@@ -19,8 +19,6 @@
             <xs:element form="qualified" minOccurs="0" name="uforetidspunkt" type="xs:dateTime"/>
             <xs:element form="qualified" minOccurs="0" name="yrkesskade" type="xs:boolean"/>
             <xs:element form="qualified" minOccurs="0" name="inntektEtterUforhet" type="xs:int"/>
-            <xs:element form="qualified" minOccurs="0" name="dodsfallAvdodSkyldesYrkesskade"
-                        type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
