@@ -248,6 +248,7 @@
         <module>vedlikehold-inntektsabonnement-v1-tjenestespesifikasjon</module>
         <module>veiledervarsel</module>
         <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
+        <module>pensjon-vedtaksbrev-tjenestespesifikasjon</module>
     </modules>
     <scm>
         <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
