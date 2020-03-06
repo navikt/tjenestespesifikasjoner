@@ -16,29 +16,20 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-codegen-plugin</artifactId>
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
-                        <phase>generate-sources</phase>
                         <goals>
-                            <goal>wsdl2java</goal>
+                            <goal>wsimport</goal>
                         </goals>
                         <configuration>
-                            <defaultOptions>
-                                <extraargs>
-                                    <extraarg>-xjc-Xfluent-api</extraarg>
-                                </extraargs>
-                            </defaultOptions>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <extraargs>
-                                        <extraarg>-xjc-XhashCode</extraarg>
-                                        <extraarg>-xjc-Xequals</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
+                            <wsdlFiles>
+                                <wsdlFile>no/nav/tjeneste/domene/pensjon/vedtaksbrev/Binding.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <wsdlDirectory>${wsdl.directory}</wsdlDirectory>
+                            <sourceDestDir>target/generated-sources</sourceDestDir>
                         </configuration>
                     </execution>
                 </executions>
@@ -49,7 +40,7 @@
                     <execution>
                         <id>include-sources</id>
                         <goals>
-                            <goal>jar-no-fork</goal>
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -81,12 +72,6 @@
             </resource>
         </resources>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>org.jvnet.jaxb2_commons</groupId>
-            <artifactId>jaxb2-basics-runtime</artifactId>
-        </dependency>
-    </dependencies>
     <scm>
         <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>
         <connection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</connection>
