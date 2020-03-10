@@ -11,7 +11,7 @@
     <artifactId>pensjon-behandleAutomatiskOmregning-v1-tjenestespesifikasjon</artifactId>
     <version>0-SNAPSHOT</version>
     <properties>
-        <wsdl.directory>src/main/wsdl</wsdl.directory>
+        <wsdl.directory>src/main/wsdl/</wsdl.directory>
     </properties>
     <build>
         <plugins>
@@ -26,7 +26,7 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>no/nav/tjeneste/domene/pensjon/behandleAutomatiskOmregning/v1/Binding.wsdl</wsdlFile>
+                                <wsdlFile>no.nav.tjeneste.domene.pensjon.behandleAutomatiskOmregning.v1/Binding.wsdl</wsdlFile>
                             </wsdlFiles>
                             <wsdlDirectory>${wsdl.directory}</wsdlDirectory>
                             <sourceDestDir>target/generated-sources</sourceDestDir>
