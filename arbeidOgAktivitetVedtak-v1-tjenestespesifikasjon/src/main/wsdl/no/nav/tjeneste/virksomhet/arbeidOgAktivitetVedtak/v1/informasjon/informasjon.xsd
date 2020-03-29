@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/informasjon" xmlns:informasjon="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/informasjon">
+  <xsd:simpleType name="Identifikator">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+  <xsd:complexType name="Periode">
+    <xsd:annotation>
+      <xsd:documentation>En periode angir et tidsintervall med fra-og-med og til-og-med.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="fom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Fra-og-med dato. Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="tom" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation>Til-og-med dato. Merk! xsd:date kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndteres av konsumenter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Kodeverdi">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="kodeRef" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>Referanse til kode som blir brukt</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="termnavn" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Termnavn på koden som blir brukt</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Vedtakstyper">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="VedtaksfaktaAAP">
+    <xsd:annotation>
+      <xsd:documentation>Vedtaksfakta for AAP</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="dagsatsUBT" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Dagsats uten barnetillegg i kroner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="dagsatsMBT" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Dagsats med barnetillegg i kroner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="dagsatsMBTFS" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Dagsat med barnetillegg før samordning i kroner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="antallBarn" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Antall barn med stønad.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="beregningsgrunnlag" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Beregningsgrunnlag i kroner</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Rettighetstyper">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sakstyper">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Aktivitetsfase">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute name="kodeverksRef" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>Referanse til kodeverket som blir brukt</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Vedtaksstatuser">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Utfall">
+    <xsd:simpleContent>
+      <xsd:extension base="informasjon:Kodeverdi">
+        <xsd:attribute name="kodeverksRef" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Vedtak">
+    <xsd:annotation>
+      <xsd:documentation>Vedtaket som ble etterspurt</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="vedtakId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>VedtaketsId i Arena</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="sakstype" type="informasjon:Sakstyper">
+        <xsd:annotation>
+          <xsd:documentation>Kodeverdi for sakstyper</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="vedtakstype" type="informasjon:Vedtakstyper">
+        <xsd:annotation>
+          <xsd:documentation>Kodeverdi for vedtakstyper</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="vedtaksstatus" type="informasjon:Vedtaksstatuser">
+        <xsd:annotation>
+          <xsd:documentation>Kodeverdi for vedtaksstatus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="utfall" type="informasjon:Utfall">
+        <xsd:annotation>
+          <xsd:documentation>Kodeverdi for vedtakets utfall</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="periode" type="informasjon:Periode">
+        <xsd:annotation>
+          <xsd:documentation>Fom og tom dato for vedtaket</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="enhetId" type="informasjon:Identifikator">
+        <xsd:annotation>
+          <xsd:documentation>NAV-enhet som behandler vedtaket</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="rettighetstype" type="informasjon:Rettighetstyper">
+        <xsd:annotation>
+          <xsd:documentation>Kodeverdi for rettighetstyper</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="aktivitetsfase" type="informasjon:Aktivitetsfase">
+        <xsd:annotation>
+          <xsd:documentation>Kodeverdi for aktivitetsfase</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="vedtaksfaktaAAP" type="informasjon:VedtaksfaktaAAP">
+        <xsd:annotation>
+          <xsd:documentation>Vedtaksfakta for AAP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

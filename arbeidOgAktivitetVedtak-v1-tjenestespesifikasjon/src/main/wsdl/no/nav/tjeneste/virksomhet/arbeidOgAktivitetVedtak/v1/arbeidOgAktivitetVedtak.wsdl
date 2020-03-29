@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="arbeidOgAktivitetVedtak" targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/" xmlns:feil="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/meldinger">
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/feil" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/meldinger" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="hentVedtak">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:HentVedtakRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentVedtakResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:HentVedtakResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="hentVedtakvedtakIkkeFunnet" type="feil:VedtakIkkeFunnet"/>
+      <xsd:element name="hentVedtaksikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="hentVedtakugyldigInput" type="feil:UgyldigInput"/>
+      <xsd:element name="ping">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="pingResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnVedtakListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnVedtakListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnVedtakListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnVedtakListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnVedtakListesikkerhetsbegrensning" type="feil:Sikkerhetsbegrensning"/>
+      <xsd:element name="finnVedtakListeugyldigInput" type="feil:UgyldigInput"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVedtakResponse">
+    <wsdl:part name="parameters" element="tns:hentVedtakResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVedtakRequest">
+    <wsdl:part name="parameters" element="tns:hentVedtak">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnVedtakListeResponse">
+    <wsdl:part name="parameters" element="tns:finnVedtakListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnVedtakListe_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:finnVedtakListesikkerhetsbegrensning">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVedtak_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:hentVedtakugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnVedtakListeRequest">
+    <wsdl:part name="parameters" element="tns:finnVedtakListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVedtak_vedtakIkkeFunnet">
+    <wsdl:part name="vedtakIkkeFunnet" element="tns:hentVedtakvedtakIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentVedtak_sikkerhetsbegrensning">
+    <wsdl:part name="sikkerhetsbegrensning" element="tns:hentVedtaksikkerhetsbegrensning">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnVedtakListe_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnVedtakListeugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="arbeidOgAktivitetVedtak_v1">
+    <wsdl:operation name="hentVedtak">
+      <wsdl:input message="tns:hentVedtakRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:hentVedtakResponse">
+    </wsdl:output>
+      <wsdl:fault name="vedtakIkkeFunnet" message="tns:hentVedtak_vedtakIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:hentVedtak_sikkerhetsbegrensning">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:hentVedtak_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finnVedtakListe">
+      <wsdl:input message="tns:finnVedtakListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnVedtakListeResponse">
+    </wsdl:output>
+      <wsdl:fault name="sikkerhetsbegrensning" message="tns:finnVedtakListe_sikkerhetsbegrensning">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigInput" message="tns:finnVedtakListe_ugyldigInput">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

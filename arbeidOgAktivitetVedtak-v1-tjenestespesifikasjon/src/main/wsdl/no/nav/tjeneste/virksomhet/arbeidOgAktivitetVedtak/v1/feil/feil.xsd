@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/feil" xmlns:feil="http://nav.no/tjeneste/virksomhet/arbeidOgAktivitetVedtak/v1/feil">
+  <xsd:complexType name="ForretningsmessigUnntak">
+    <xsd:sequence>
+      <xsd:element name="feilkilde" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Kilden der feilen oppstod: applikasjonsnavn, tjenestenavn, operasjonsnavn.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilaarsak" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Årsaken til at feilen oppstod: system/application id (hvis tilgjengelig), exception navn, melding.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="feilmelding" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Beskrivende feilmelding returnert fra kilden</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="tidspunkt" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Dato og tidspunkt for når feilen oppstod.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="VedtakIkkeFunnet">
+    <xsd:annotation>
+      <xsd:documentation>Kastes dersom vedtaket ikke finnes</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Sikkerhetsbegrensning">
+    <xsd:annotation>
+      <xsd:documentation>Ved tilgangsnekt for saksbehandler.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UgyldigInput">
+    <xsd:annotation>
+      <xsd:documentation>Kastes dersom tjenestekallet inneholder ugyldige verdier</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="feil:ForretningsmessigUnntak"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>
