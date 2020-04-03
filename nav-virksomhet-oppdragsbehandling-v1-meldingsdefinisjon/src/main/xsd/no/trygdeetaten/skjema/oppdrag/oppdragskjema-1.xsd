@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.trygdeetaten.no/skjema/oppdrag" xmlns:xsd_1="http://www.trygdeetaten.no/skjema/oppdrag">
+    <xsd:annotation>
+        <xsd:documentation>Skjemaet er basert på APP030 Interface Spesifikasjoner ver 2.5.doc</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 1.0 - 2005.01.28 - Første utgave</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 1.1 - 2005.02.10 - Lagt til element oppdragInput158, samt feltene kravhaverId,
+            datoKravhaverForm og typeSoknad i oppdragInput150 og oppdragOutput150
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 1.1 - 2005.02.10 - Lagt til element oppdragInput158, samt feltene kravhaverId,
+            datoKravhaverForm og typeSoknad i oppdragInput150 og oppdragOutput150
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 1.3 - 2005.04.19 - Omfattende endringer på struktur for enklere mapping
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 1.4 - 2005.06.20 - Lagt til avstemming-610</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 1.5 - 2005.11.07 - Fjernet begrensinger på felt lengder for mmel</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 2.0 - 2017.04.27 - Lagt til refusjonsinfo-156</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 2.1 - 2018.04.10 - Rettelser på refusjonsinfo-156</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 2.2 - 2018.06.07 - PK-54778: Rettelse på Oppdrags-linje-150. Setter</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>ver 2.3 - 2019.02.15 - PK-56864: Lagt til ompostering-116</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
+        <xsd:documentation>Dette skjemaet er utviklet for klienter som skal sende og motta meldinger mot Oppdrag.
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="oppdrag">
+        <xsd:annotation>
+            <xsd:documentation>Dette er root-elementet mot Oppdrag</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="mmel" type="xsd_1:mmel"/>
+            <xsd:element minOccurs="0" name="oppdrag-110" type="xsd_1:oppdrag-110"/>
+            <xsd:element minOccurs="0" name="hent-oppdrag-195" type="xsd_1:hent-oppdrag-195"/>
+            <xsd:element minOccurs="0" name="simulerings-periode-300" type="xsd_1:simulerings-periode-300"/>
+            <xsd:element minOccurs="0" name="simulerings-resultat-301" type="xsd_1:simulerings-resultat-301"/>
+            <xsd:element minOccurs="0" name="avstemming-610" type="xsd_1:avstemming-610"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="oppdrag-110-kodeAksjon">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="1"/>
+            <xsd:enumeration value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="hent-oppdrag-195-kodeAksjon">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="4"/>
+            <xsd:enumeration value="5"/>
+            <xsd:enumeration value="6"/>
+            <xsd:enumeration value="7"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="valuta-190">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 190-rekord, Valuta</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="typeValuta">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="FAKT"/>
+                        <xsd:enumeration value="FRAM"/>
+                        <xsd:enumeration value="UTB"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="valuta">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="datoValutaFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="feilreg" type="xsd_1:Tfeilreg"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="utbetales-til-155">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 154-rekord, utbetales til
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="utbetalesTilId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element name="datoUtbetalesTilIdFom" type="xsd_1:Tdato"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="tekst-140">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en 140-rekord, Tekst</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tekstLnr" type="xsd_1:TtekstLnr"/>
+            <xsd:element minOccurs="0" name="kodeTekst">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="tekst">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="datoTekstFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="datoTekstTom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="feilreg" type="xsd_1:Tfeilreg"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="skyldner-153">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 153-rekord, skyldner
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="skyldnerId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element name="datoSkyldnerFom" type="xsd_1:Tdato"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="simuleringsStoppNivaa">
+        <xsd:annotation>
+            <xsd:documentation>Simulering, Output 313-rekord</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="behandlendeEnhet" type="xsd_1:Tenhet"/>
+            <xsd:element name="bilagsType" type="xsd_1:TbilagsType"/>
+            <xsd:element name="fagsystemId" type="xsd_1:TfagsystemId"/>
+            <xsd:element name="feilkonto" type="xsd_1:TJaNei"/>
+            <xsd:element name="forfall" type="xsd_1:Tdato"/>
+            <xsd:element name="kid" type="xsd_1:Tkid"/>
+            <xsd:element name="kodeFagomraade" type="xsd_1:TkodeFagomraade"/>
+            <xsd:element maxOccurs="unbounded" name="simuleringsLinjer" type="xsd_1:simuleringsLinjer">
+                <xsd:annotation>
+                    <xsd:documentation>Array med Linjer</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="oppdragsId" type="xsd:long"/>
+            <xsd:element name="stoppnivaId" type="xsd:int"/>
+            <xsd:element name="utbetalesTilId" type="xsd:string"/>
+            <xsd:element name="utbetalesTilNavn" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="simulerings-resultat-301">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder alle output 301-rekord linjene, Simulering</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="simulerings-resultat-linje-301"
+                         type="xsd_1:simulerings-resultat-linje-301"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="simuleringsResultat"
+                         type="xsd_1:simuleringsResultat"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="simuleringsResultat">
+        <xsd:annotation>
+            <xsd:documentation>Simulering, Output 311-rekord</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="belop" type="xsd_1:Tbelop"/>
+            <xsd:element name="datoKjores" type="xsd_1:Tdato"/>
+            <xsd:element name="gjelderId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element name="gjelderNavn" type="xsd_1:Tnavn"/>
+            <xsd:element name="kodeFaggruppe" type="xsd_1:TkodeFaggruppe"/>
+            <xsd:element maxOccurs="unbounded" name="simuleringsPerioder" type="xsd_1:simuleringsPerioder">
+                <xsd:annotation>
+                    <xsd:documentation>Liste med perioder</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="simuleringsPerioder">
+        <xsd:annotation>
+            <xsd:documentation>Simulering, Output 312-rekord</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="periodeFom" type="xsd_1:Tdato"/>
+            <xsd:element name="periodeTom" type="xsd_1:Tdato"/>
+            <xsd:element maxOccurs="unbounded" name="simuleringsStoppNivaa" type="xsd_1:simuleringsStoppNivaa">
+                <xsd:annotation>
+                    <xsd:documentation>Liste med Stoppnivåer</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="simulerings-periode-300">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 300-rekord, Simulering
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="datoSimulerFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="datoSimulerTom" type="xsd_1:Tdato"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="simuleringsLinjer">
+        <xsd:annotation>
+            <xsd:documentation>Simulering, Output 314-rekord</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="antallSats" type="xsd:double"/>
+            <xsd:element name="behandlingsKode" type="xsd:string"/>
+            <xsd:element name="belop" type="xsd:double"/>
+            <xsd:element name="bostedsenhet" type="xsd:string"/>
+            <xsd:element name="delytelseId" type="xsd:string"/>
+            <xsd:element name="faktiskFom" type="xsd:date"/>
+            <xsd:element name="faktiskTom" type="xsd:date"/>
+            <xsd:element name="funksjonaerId" type="xsd:string"/>
+            <xsd:element name="kontostreng" type="xsd:string"/>
+            <xsd:element name="korrigering" type="xsd:string"/>
+            <xsd:element name="kravhaverId" type="xsd:string"/>
+            <xsd:element name="linjeId" type="xsd:int"/>
+            <xsd:element name="sats" type="xsd:double"/>
+            <xsd:element name="skyldnerId" type="xsd:string"/>
+            <xsd:element name="stonadId" type="xsd:string"/>
+            <xsd:element name="tilbakeforing" type="xsd:string"/>
+            <xsd:element name="trekkvedtakId" type="xsd:long"/>
+            <xsd:element name="typeSats" type="xsd:string"/>
+            <xsd:element name="uforeGrad" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="oppdrags-status-111">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 111-rekord, Oppdragstatus
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeStatus" type="xsd_1:TkodeStatus"/>
+            <xsd:element name="datoStatusFom" type="xsd_1:Tdato"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="oppdrag-gjelder-112">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 112-rekord, Oppdraggjelder
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="oppdragGjelderId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element name="datoOppdragGjelderFom" type="xsd_1:Tdato"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="linje-tekst-158">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 158-rekord</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tekstLnr" type="xsd_1:TtekstLnr"/>
+            <xsd:element minOccurs="0" name="tekstKode">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="tekst">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="datoTekstFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="datoTekstTom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="feilreg" type="xsd_1:Tfeilreg"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="linje-status-151">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 151-rekord, linjestatus
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeStatusLinje" type="xsd_1:TkodeStatusLinje"/>
+            <xsd:element name="datoStatusFom" type="xsd_1:Tdato"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="linje-enhet-160">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 160-rekord, Linjeenhet
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="typeEnhet" type="xsd_1:TtypeEnhet"/>
+            <xsd:element minOccurs="0" name="enhet" type="xsd_1:Tenhet"/>
+            <xsd:element name="datoEnhetFom" type="xsd_1:Tdato"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="klassifikasjon-152">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 152-rekord, klassifikasjon
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeKlassifik" type="xsd_1:TkodeKlassifik"/>
+            <xsd:element name="datoKlassifikFom" type="xsd_1:Tdato"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="kid-154">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 154-rekord, KID</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kid" type="xsd_1:Tkid"/>
+            <xsd:element name="datoKidFom" type="xsd_1:Tdato"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="hent-oppdrag-195">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 195-rekord, Hent oppdrag
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeAksjon" type="xsd_1:hent-oppdrag-195-kodeAksjon"/>
+            <xsd:element minOccurs="0" name="kodeFagomraade" type="xsd_1:TkodeFagomraade"/>
+            <xsd:element minOccurs="0" name="fagsystemId" type="xsd_1:TfagsystemId"/>
+            <xsd:element minOccurs="0" name="oppdragsId" type="xsd_1:ToppdragsId"/>
+            <xsd:element minOccurs="0" name="oppdragGjelderId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element minOccurs="0" name="datoFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="datoTom" type="xsd_1:Tdato"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="grad-170">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 170-rekord, Grad</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="typeGrad">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="grad" type="xsd_1:Tgrad"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="simulerings-resultat-linje-301">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 301-rekord, Simulering
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="fagsystemId" type="xsd_1:TfagsystemId"/>
+            <xsd:element name="oppdragGjelderId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element name="bostedsEnhet" type="xsd_1:Tenhet"/>
+            <xsd:element name="utbetFrekvens" type="xsd_1:TutbetFrekvens"/>
+            <xsd:element name="vedtakId" type="xsd_1:TvedtakId"/>
+            <xsd:element name="delytelseId" type="xsd_1:TdelytelseId"/>
+            <xsd:element name="utbetalesTilId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element minOccurs="0" name="gironr">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="11"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="behandlEnhet" type="xsd_1:Tenhet"/>
+            <xsd:element name="datoKjores" type="xsd_1:Tdato"/>
+            <xsd:element name="datoBeregnFom" type="xsd_1:Tdato"/>
+            <xsd:element name="datoBeregnTom" type="xsd_1:Tdato"/>
+            <xsd:element name="kontostreng">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="7"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="kodeBeh">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="kontotekst">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="belop" type="xsd_1:Tbelop"/>
+            <xsd:element name="fradragTillegg" type="xsd_1:TfradragTillegg"/>
+            <xsd:element minOccurs="0" name="grad" type="xsd_1:Tgrad"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="oppdrags-enhet-120">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en 120-rekord, Oppdragsenhet
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="typeEnhet" type="xsd_1:TtypeEnhet"/>
+            <xsd:element minOccurs="0" name="enhet" type="xsd_1:Tenhet"/>
+            <xsd:element name="datoEnhetFom" type="xsd_1:Tdato"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="bilagstype-113">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 113-rekord: Bilagstype
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="bilagsType" type="xsd_1:TbilagsType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="belops-grense-130">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en 130-rekord, Beløpsgrense</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="typeGrense">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="4"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="belopGrense" type="xsd_1:Tbelop"/>
+            <xsd:element name="datoGrenseFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="datoGrenseTom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="feilreg" type="xsd_1:Tfeilreg"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="avstemming-610">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en 610-rekord, Avstemming</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeAksjon">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="A"/>
+                        <xsd:enumeration value="B"/>
+                        <xsd:enumeration value="C"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="kodeFagomraade" type="xsd_1:TkodeFagomraade"/>
+            <xsd:element minOccurs="0" name="avstemmingId">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="11"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="oppdrag-110" type="xsd_1:oppdrag-110"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="avstemming-115">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 115-rekord: Avstemming
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeKomponent" type="xsd_1:TkodeKomponent"/>
+            <xsd:element name="nokkelAvstemming" type="xsd_1:TnokkelAvstemming"/>
+            <xsd:element name="tidspktMelding" type="xsd_1:TtidspktMelding"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ompostering-116">
+        <xsd:annotation>
+            <xsd:documentation>Ompostering - Referanse ID 116</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="omPostering" type="xsd_1:TJaNei"/>
+            <xsd:element minOccurs="0" name="datoOmposterFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="feilreg" type="xsd_1:Tfeilreg"/>
+            <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="attestant-180">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 180-rekord, Attestasjon
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="attestantId">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="8"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="datoUgyldigFom" type="xsd_1:Tdato"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="oppdrags-linje-150">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en 150-rekord, Oppdragslinje
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeEndringLinje">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="NY"/>
+                        <xsd:enumeration value="ENDR"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="kodeStatusLinje" type="xsd_1:TkodeStatusLinje"/>
+            <xsd:element minOccurs="0" name="datoStatusFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="vedtakId" type="xsd_1:TvedtakId"/>
+            <xsd:element minOccurs="0" name="delytelseId" type="xsd_1:TdelytelseId"/>
+            <xsd:element minOccurs="0" name="linjeId" type="xsd_1:TlinjeId"/>
+            <xsd:element name="kodeKlassifik" type="xsd_1:TkodeKlassifik"/>
+            <xsd:element minOccurs="0" name="datoKlassifikFom" type="xsd_1:Tdato"/>
+            <xsd:element name="datoVedtakFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="datoVedtakTom" type="xsd_1:Tdato"/>
+            <xsd:element name="sats" type="xsd_1:Tsats"/>
+            <xsd:element name="fradragTillegg" type="xsd_1:TfradragTillegg"/>
+            <xsd:element name="typeSats" type="xsd_1:TtypeSats"/>
+            <xsd:element minOccurs="0" name="skyldnerId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element minOccurs="0" name="datoSkyldnerFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="kravhaverId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element minOccurs="0" name="datoKravhaverFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="kid" type="xsd_1:Tkid"/>
+            <xsd:element minOccurs="0" name="datoKidFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="brukKjoreplan" type="xsd_1:TbrukKjoreplan"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+            <xsd:element minOccurs="0" name="utbetalesTilId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element minOccurs="0" name="datoUtbetalesTilIdFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="kodeArbeidsgiver" type="xsd_1:TkodeArbeidsgiver"/>
+            <xsd:element minOccurs="0" name="henvisning" type="xsd_1:Thenvisning"/>
+            <xsd:element minOccurs="0" name="typeSoknad">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="refFagsystemId" type="xsd_1:TfagsystemId"/>
+            <xsd:element minOccurs="0" name="refOppdragsId" type="xsd_1:ToppdragsId"/>
+            <xsd:element minOccurs="0" name="refDelytelseId" type="xsd_1:TdelytelseId"/>
+            <xsd:element minOccurs="0" name="refLinjeId" type="xsd_1:TlinjeId"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="linje-status-151" type="xsd_1:linje-status-151"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="klassifikasjon-152" type="xsd_1:klassifikasjon-152"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="skyldner-153" type="xsd_1:skyldner-153"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="kid-154" type="xsd_1:kid-154"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="utbetales-til-155" type="xsd_1:utbetales-til-155"/>
+            <xsd:element minOccurs="0" name="refusjonsinfo-156" type="xsd_1:refusjonsinfo-156"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="linje-tekst-158" type="xsd_1:linje-tekst-158"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="linje-enhet-160" type="xsd_1:linje-enhet-160"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="grad-170" type="xsd_1:grad-170"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="attestant-180" type="xsd_1:attestant-180"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="valuta-190" type="xsd_1:valuta-190"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="oppdrag-110">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en 110-rekord, Oppdrag</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="kodeAksjon" type="xsd_1:oppdrag-110-kodeAksjon"/>
+            <xsd:element name="kodeEndring">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="NY"/>
+                        <xsd:enumeration value="ENDR"/>
+                        <xsd:enumeration value="UEND"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="kodeStatus" type="xsd_1:TkodeStatus"/>
+            <xsd:element minOccurs="0" name="datoStatusFom" type="xsd_1:Tdato"/>
+            <xsd:element name="kodeFagomraade" type="xsd_1:TkodeFagomraade"/>
+            <xsd:element minOccurs="0" name="fagsystemId" type="xsd_1:TfagsystemId"/>
+            <xsd:element minOccurs="0" name="oppdragsId" type="xsd_1:ToppdragsId"/>
+            <xsd:element minOccurs="0" name="utbetFrekvens" type="xsd_1:TutbetFrekvens"/>
+            <xsd:element minOccurs="0" name="datoForfall" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="stonadId" type="xsd_1:TstonadId"/>
+            <xsd:element name="oppdragGjelderId" type="xsd_1:TfnrOrgnr"/>
+            <xsd:element name="datoOppdragGjelderFom" type="xsd_1:Tdato"/>
+            <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdrags-status-111"
+                         type="xsd_1:oppdrags-status-111"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdrag-gjelder-112"
+                         type="xsd_1:oppdrag-gjelder-112"/>
+            <xsd:element minOccurs="0" name="bilagstype-113" type="xsd_1:bilagstype-113"/>
+            <xsd:element minOccurs="0" name="avstemming-115" type="xsd_1:avstemming-115"/>
+            <xsd:element minOccurs="0" name="ompostering-116" type="xsd_1:ompostering-116"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdrags-enhet-120" type="xsd_1:oppdrags-enhet-120"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="belops-grense-130" type="xsd_1:belops-grense-130"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="tekst-140" type="xsd_1:tekst-140"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdrags-linje-150" type="xsd_1:oppdrags-linje-150"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="mmel">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en status output</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="systemId" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="kodeMelding" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="alvorlighetsgrad">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="00"/>
+                        <xsd:enumeration value="04"/>
+                        <xsd:enumeration value="08"/>
+                        <xsd:enumeration value="12"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="beskrMelding" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="sqlKode" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="sqlState" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="sqlMelding" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="mqCompletionKode" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="mqReasonKode" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="programId" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="sectionNavn" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="TutbetFrekvens">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til utbetalingsfrekvens som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DAG"/>
+            <xsd:enumeration value="UKE"/>
+            <xsd:enumeration value="MND"/>
+            <xsd:enumeration value="14DG"/>
+            <xsd:enumeration value="ENG"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TfradragTillegg">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til fradragTillegg som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="F"/>
+            <xsd:enumeration value="T"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TkodeStatus">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kodeStatus som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="NY"/>
+            <xsd:enumeration value="LOPE"/>
+            <xsd:enumeration value="HVIL"/>
+            <xsd:enumeration value="SPER"/>
+            <xsd:enumeration value="IKAT"/>
+            <xsd:enumeration value="ATTE"/>
+            <xsd:enumeration value="ANNU"/>
+            <xsd:enumeration value="OPPH"/>
+            <xsd:enumeration value="FBER"/>
+            <xsd:enumeration value="REAK"/>
+            <xsd:enumeration value="KORR"/>
+            <xsd:enumeration value="FEIL"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TkodeStatusLinje">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kodeStatusLinje som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="OPPH"/>
+            <xsd:enumeration value="HVIL"/>
+            <xsd:enumeration value="SPER"/>
+            <xsd:enumeration value="REAK"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TtypeSats">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til typeSats som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DAG"/>
+            <xsd:enumeration value="UKE"/>
+            <xsd:enumeration value="14DB"/>
+            <xsd:enumeration value="MND"/>
+            <xsd:enumeration value="AAR"/>
+            <xsd:enumeration value="ENG"/>
+            <xsd:enumeration value="AKTO"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TkodeArbeidsgiver">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kodeArbeidsgiver som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="A"/>
+            <xsd:enumeration value="S"/>
+            <xsd:enumeration value="P"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tdato">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til dato elementer som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:date"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="ToppdragsId">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til oppdragsid som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="9999999999"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TfnrOrgnr">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til fnr og orgnr som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="9"/>
+            <xsd:maxLength value="11"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tnavn">
+        <xsd:annotation>
+            <xsd:documentation>Gjelder ID navn</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="0"/>
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tenhet">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til enhet (tknr evnt orgnr+avd) som kommer
+                fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="4"/>
+            <xsd:maxLength value="13"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TbilagsType">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til bilagstype som sendes fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TsaksbehId">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til saksbehandlerId som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TJaNei">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til feilreg som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tfeilreg">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til feilreg som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TfagsystemId">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til fagsystemId som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TvedtakId">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til vedtakId som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TdelytelseId">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til delytelseId som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tbelop">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til beløp som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tgrad">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til grad som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxInclusive value="999"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TtidspktReg">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til tidspktReg som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="26"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TkodeKlassifik">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kodeKlassifik som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="50"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tkid">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kid som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="26"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TkodeFaggruppe">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kodeFaggruppe som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="8"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TkodeFagomraade">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kodeFagomraade som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="8"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TstonadId">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til stonadId som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TtypeEnhet">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til typeEnhet som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="4"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TlinjeId">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til linjeId som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxInclusive value="99999"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tsats">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til sats som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="13"/>
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TbrukKjoreplan">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til brukKjoreplan som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Thenvisning">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til henvisning som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TtekstLnr">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til tekstlnr som kommer fra/til Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxInclusive value="99"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TkodeKomponent">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til kodeKomponent som kommer fra/til
+                Oppdrag.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TnokkelAvstemming">
+        <xsd:annotation>
+            <xsd:documentation>Brukes for å identifisere data som skal avstemmes.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TtidspktMelding">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til tidspktMelding.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="26"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="refusjonsinfo-156">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en output 156-rekord, REFUSJONSINFO
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="maksDato" type="xsd_1:Tdato" minOccurs="0"/>
+            <xsd:element name="refunderesId" type="xsd_1:TfnrOrgnr" minOccurs="0"/>
+            <xsd:element name="datoFom" type="xsd_1:Tdato"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="oppdrag" type="xsd_1:oppdrag"/>
+</xsd:schema>
