@@ -135,6 +135,7 @@
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
         <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandleArbeidsforhold-v1-tjenestespesifikasjon</module>
         <module>nav-fim-behandleBrukerprofil-v1-tjenestespesifikasjon</module>
         <module>nav-fim-behandleSakOgBehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-brukerhendelse-v1-tjenestespesifikasjon</module>
