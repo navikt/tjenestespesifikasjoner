@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="simulerFpServiceWSBinding"
+                  targetNamespace="http://nav.no/system/os/eksponering/simulerFpServiceWSBinding"
+				  xmlns:simulerFpService="http://nav.no/system/os/tjenester/simulerFpService/simulerFpServiceGrensesnitt"
+				  xmlns:tns="http://nav.no/system/os/eksponering/simulerFpServiceWSBinding"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+				  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+				  
+  <wsdl:import namespace="http://nav.no/system/os/tjenester/simulerFpService/simulerFpServiceGrensesnitt" location="../tjenester/simulerFpService/simulerFpServiceGrensesnitt.wsdl">
+  </wsdl:import>
+  
+  <wsdl:binding name="simulerFpServiceBinding" type="simulerFpService:simulerFpService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing/>
+    <wsdl:operation name="sendInnOppdrag">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="feilUnderBehandling">
+        <soap:fault name="feilUnderBehandling" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+	
+    <wsdl:operation name="simulerBeregning">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="feilUnderBehandling">
+        <soap:fault name="feilUnderBehandling" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+	
+  </wsdl:binding>
+  
+  <wsdl:service name="simulerFpService">
+    <wsdl:port name="simulerFpServicePort" binding="tns:simulerFpServiceBinding">
+      <soap:address location="http://localhost:9080/system/os/eksponering/simulerFpServiceWSBinding"/>
+    </wsdl:port>
+  </wsdl:service>
+  
+</wsdl:definitions>
