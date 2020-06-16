@@ -232,6 +232,7 @@
             <xs:enumeration value="REFERAT_OPPMOTE"/>
             <xs:enumeration value="REFERAT_TELEFON"/>
             <xs:enumeration value="SPORSMAL_MODIA_UTGAAENDE"/>
+            <xs:enumeration value="INFOMELDING_MODIA_UTGAAENDE"/>
             <xs:enumeration value="SVAR_SBL_INNGAAENDE"/>
         </xs:restriction>
     </xs:simpleType>
