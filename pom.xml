@@ -238,6 +238,7 @@
         <module>sykmelderstatistikk-tjenestespesifikasjon</module>
         <module>sykmeldingv1-tjenestespesifikasjon</module>
         <module>testvarsel-opprettelse</module>
+        <module>tilbakekreving-v1-tjenestespesifikasjon</module>
         <module>tildeloppgave-v1-tjenestespesifikasjon</module>
         <module>tmp-nav-fim-hendelse-v1</module>
         <module>tps-distribusjonsmelding</module>
