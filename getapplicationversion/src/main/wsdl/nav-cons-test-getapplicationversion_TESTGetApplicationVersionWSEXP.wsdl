@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="TESTGetApplicationVersionWSEXP_TESTGetApplicationVersionHttp_Service" targetNamespace="http://nav.no/inf/Binding" xmlns:Port_0="http://nav.no/inf" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="http://nav.no/inf/Binding">
-  <wsdl:import namespace="http://nav.no/inf" location="no/nav/inf/TESTGetApplicationVersion.wsdl">
-    </wsdl:import>
+<wsdl:definitions name="TESTGetApplicationVersionWSEXP_TESTGetApplicationVersionHttp_Service" targetNamespace="http://nav-lib-test/no/nav/inf/Binding" xmlns:Port_0="http://nav-lib-test/no/nav/inf" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:this="http://nav-lib-test/no/nav/inf/Binding">
+  <wsdl:import namespace="http://nav-lib-test/no/nav/inf" location="no/nav/inf/TESTGetApplicationVersion.wsdl">
+  </wsdl:import>
   <wsdl:binding name="TESTGetApplicationVersionWSEXP_TESTGetApplicationVersionHttpBinding" type="Port_0:TESTGetApplicationVersion">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="joarkGetApplicationVersion">
