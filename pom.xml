@@ -124,6 +124,7 @@
         <module>juridisk-logg</module>
         <module>kodeverk-tjenestespesifikasjon</module>
         <module>medlemskap-v1-tjenestespesifikasjon</module>
+        <module>melding-virksomhet-dokumentproduksjon</module>
         <module>moetev1-tjenestespesifikasjon</module>
         <module>nav-altinn-inntektsmelding</module>
         <module>nav-arbeidsforhold-v3-tjenestespesifikasjon</module>
