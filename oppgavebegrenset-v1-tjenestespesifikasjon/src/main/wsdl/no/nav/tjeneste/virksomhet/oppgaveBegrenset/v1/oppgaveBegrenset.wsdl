@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="oppgaveBegrenset" targetNamespace="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/" xmlns:tns="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="oppgaveBegrenset" targetNamespace="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
     <xsd:schema targetNamespace="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/" xmlns:feil="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/feil" xmlns:meldinger="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/meldinger">
       <xsd:import namespace="http://nav.no/tjeneste/virksomhet/oppgaveBegrenset/v1/feil" schemaLocation="Feil/Feil.xsd"/>
@@ -21,14 +22,14 @@
       <xsd:element name="ping">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+            
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
       <xsd:element name="pingResponse">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element minOccurs="0" name="plassholder" type="xsd:anyType"/>
+            
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -49,44 +50,60 @@
       <xsd:element name="finnOppgaveIdListeForSakIdugyldigInput" type="feil:UgyldigInput"/>
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="finnOppgaveIdListeForPersonidentRequest">
-    <wsdl:part element="tns:finnOppgaveIdListeForPersonident" name="parameters"/>
-  </wsdl:message>
   <wsdl:message name="finnOppgaveIdListeForPersonidentResponse">
-    <wsdl:part element="tns:finnOppgaveIdListeForPersonidentResponse" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:finnOppgaveIdListeForPersonidentResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="finnOppgaveIdListeForPersonidentUgyldigInput">
-    <wsdl:part element="tns:finnOppgaveIdListeForPersonidentugyldigInput" name="ugyldigInput"/>
-  </wsdl:message>
-  <wsdl:message name="pingRequest">
-    <wsdl:part element="tns:ping" name="parameters"/>
-  </wsdl:message>
-  <wsdl:message name="pingResponse">
-    <wsdl:part element="tns:pingResponse" name="parameters"/>
+  <wsdl:message name="finnOppgaveIdListeForPersonidentRequest">
+    <wsdl:part name="parameters" element="tns:finnOppgaveIdListeForPersonident">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="finnOppgaveIdListeForSakIdRequest">
-    <wsdl:part element="tns:finnOppgaveIdListeForSakId" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:finnOppgaveIdListeForSakId">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:message name="finnOppgaveIdListeForSakIdResponse">
-    <wsdl:part element="tns:finnOppgaveIdListeForSakIdResponse" name="parameters"/>
+    <wsdl:part name="parameters" element="tns:finnOppgaveIdListeForSakIdResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="finnOppgaveIdListeForSakIdUgyldigInput">
-    <wsdl:part element="tns:finnOppgaveIdListeForSakIdugyldigInput" name="ugyldigInput"/>
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOppgaveIdListeForPersonident_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnOppgaveIdListeForPersonidentugyldigInput">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnOppgaveIdListeForSakId_ugyldigInput">
+    <wsdl:part name="ugyldigInput" element="tns:finnOppgaveIdListeForSakIdugyldigInput">
+    </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="OppgaveBegrenset_v1">
     <wsdl:operation name="finnOppgaveIdListeForPersonident">
-      <wsdl:input message="tns:finnOppgaveIdListeForPersonidentRequest"/>
-      <wsdl:output message="tns:finnOppgaveIdListeForPersonidentResponse"/>
-      <wsdl:fault message="tns:finnOppgaveIdListeForPersonidentUgyldigInput" name="finnOppgaveIdListeForPersonidentFault"/>
+      <wsdl:input message="tns:finnOppgaveIdListeForPersonidentRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnOppgaveIdListeForPersonidentResponse">
+    </wsdl:output>
+      <wsdl:fault name="ugyldigInput" message="tns:finnOppgaveIdListeForPersonident_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ping">
-      <wsdl:input message="tns:pingRequest"/>
-      <wsdl:output message="tns:pingResponse"/>
+      <wsdl:input message="tns:pingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="finnOppgaveIdListeForSakId">
-      <wsdl:input message="tns:finnOppgaveIdListeForSakIdRequest"/>
-      <wsdl:output message="tns:finnOppgaveIdListeForSakIdResponse"/>
-      <wsdl:fault message="tns:finnOppgaveIdListeForSakIdUgyldigInput" name="finnOppgaveIdListeForSakIdFault"/>
+      <wsdl:input message="tns:finnOppgaveIdListeForSakIdRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnOppgaveIdListeForSakIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ugyldigInput" message="tns:finnOppgaveIdListeForSakId_ugyldigInput">
+    </wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
