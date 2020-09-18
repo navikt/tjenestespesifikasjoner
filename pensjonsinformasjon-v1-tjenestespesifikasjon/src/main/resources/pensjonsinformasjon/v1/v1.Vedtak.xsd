@@ -14,6 +14,7 @@
          <xs:element form="qualified" minOccurs="0" name="boddArbeidetUtland" type="xs:boolean"/>
          <xs:element form="qualified" minOccurs="0" name="vurdereTrygdeAvtale" type="xs:boolean"/>
          <xs:element form="qualified" minOccurs="0" name="datoFattetVedtak" type="xs:dateTime"/>
+         <xs:element form="qualified" name="vedtakStatus" type="xs:string"/>
       </xs:sequence>
   </xs:complexType>
 </xs:schema>
