@@ -34,11 +34,11 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/MT_1067_NAV_v1.wsdl</wsdl>
-                                    <bindingFiles>
-                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
-                                        <bindingFile>${wsdl.directory}/SerializeBinding.xml</bindingFile>
-                                    </bindingFiles>
+                                    <wsdl>${wsdl.directory}/personstatus.wsdl</wsdl>
+<!--                                    <bindingFiles>-->
+<!--                                        <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>-->
+<!--                                        <bindingFile>${wsdl.directory}/SerializeBinding.xml</bindingFile>-->
+<!--                                    </bindingFiles>-->
                                 </wsdlOption>
                             </wsdlOptions>
                             <encoding>UTF-8</encoding>

@@ -1,4 +1,4 @@
-#!/bin/bash
+  #!/bin/bash
 
 function update() {
   mkdir -p tmp
@@ -13,3 +13,4 @@ function update() {
 # update "behandleinntekt-v1-tjenestespesifikasjon" "http://maven.adeo.no/nexus/content/groups/public/no/nav/tjenester/fim/nav-fim-behandleInntekt-v1-tjenestespesifikasjon/1.1.0/nav-fim-behandleInntekt-v1-tjenestespesifikasjon-1.1.0.zip"
 # update "oppgavebegrenset-v1-tjenestespesifikasjon" "http://maven.adeo.no/nexus/content/groups/public/no/nav/tjenester/nav-oppgaveBegrenset-v1-tjenestespesifikasjon/1.0.11/nav-oppgaveBegrenset-v1-tjenestespesifikasjon-1.0.11.zip"
 # update "dokumentproduksjon-v3-tjenestespesifikasjon" "http://maven.adeo.no/nexus/service/local/artifact/maven/redirect?a=nav-dokumentproduksjon-v3-tjenestespesifikasjon&e=zip&g=no.nav.tjenester&r=m2internal&v=3.3.0"
+update "udi-personstatus-v1" "http://maven.adeo.no/nexus/content/groups/public/no/nav/tjenester/ekstern-udi-personstatus-tjenestespesifikasjon/1.2.0/ekstern-udi-personstatus-tjenestespesifikasjon-1.2.0.zip"
