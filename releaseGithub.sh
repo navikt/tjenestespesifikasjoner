@@ -10,4 +10,4 @@ mvn -B versions:set -DnewVersion="$VERSION"
 mvn -B versions:commit
 
 echo "Running release"
-mvn -B --settings maven-settings.xml deploy -Dmaven.wagon.http.pool=false -DretryFailedDeploymentCount=5
+mvn -B --settings maven-settings.xml deploy -Dmaven.wagon.http.pool=false -DretryFailedDeploymentCount=5 -pl :arbeidOgAktivitetVedtak-v1-tjenestespesifikasjon
