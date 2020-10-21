@@ -48,7 +48,7 @@
         <module>altinn-notification-agency-external-basic</module>
         <module>altinn-pre-fill</module>
         <module>arbeidogaktivitet-tjenestespesifikasjon</module>
-        <module>arbeidOgAktivitetVedtak-v1-tjenestespesifikasjon</module>
+        <module>arbeidogaktivitetvedtak-v1-tjenestespesifikasjon</module>
         <module>arbeidsevnevurdering-v1-tjenestespesifikasjon</module>
         <module>arbeidsfordeling-v1-tjenestespesifikasjon</module>
         <module>arbeidsforholdv3-tjenestespesifikasjon</module>
@@ -57,7 +57,7 @@
         <module>arena-arbeid-og-aktivitet</module>
         <module>arena-maalgruppe_v1</module>
         <module>arena-personinfo-tjenestespesifikasjon</module>
-        <module>arena-nav-behandleArbeidsytelseSak-v1-tjenestespesifikasjon</module>
+        <module>arena-nav-behandlearbeidsytelsesak-v1-tjenestespesifikasjon</module>
         <module>arena-sakOgAktivitet_v1</module>
         <module>arenaSakVedtakService</module>
         <module>avstemming-v1-tjenestespesifikasjon</module>
