@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.altinn.no/services/Intermediary/Receipt/2009/10" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="ReceiptAgencyExternalBasicSF" targetNamespace="http://www.altinn.no/services/Intermediary/Receipt/2009/10">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://www.altinn.no/services/Intermediary/Receipt/2009/10/Imports">
+            <xsd:import schemaLocation="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc?xsd=xsd0" namespace="http://www.altinn.no/services/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc?xsd=xsd2" namespace="http://www.altinn.no/services/common/fault/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc?xsd=xsd3" namespace="http://www.altinn.no/services/Intermediary/Receipt/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc?xsd=xsd4" namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc?xsd=xsd5" namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc?xsd=xsd6" namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2015/06"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="IReceiptAgencyExternalBasic_Test_InputMessage">
+        <wsdl:part xmlns:q1="http://www.altinn.no/services/2009/10" name="parameters" element="q1:Test"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_Test_OutputMessage">
+        <wsdl:part xmlns:q2="http://www.altinn.no/services/2009/10" name="parameters" element="q2:TestResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_Test_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q3="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q3:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptBasic_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptBasic"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptBasic_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptBasicResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptBasic_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q4="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q4:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptBasicV2_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptBasicV2"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptBasicV2_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptBasicV2Response"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptBasicV2_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q5="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q5:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptListBasic_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptListBasic"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptListBasic_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptListBasicResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptListBasic_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q6="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q6:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptListBasicV2_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptListBasicV2"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptListBasicV2_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetReceiptListBasicV2Response"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_GetReceiptListBasicV2_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q7="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q7:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_SaveReceiptBasic_InputMessage">
+        <wsdl:part name="parameters" element="tns:SaveReceiptBasic"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_SaveReceiptBasic_OutputMessage">
+        <wsdl:part name="parameters" element="tns:SaveReceiptBasicResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_SaveReceiptBasic_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q8="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q8:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_UpdateReceiptBasic_InputMessage">
+        <wsdl:part name="parameters" element="tns:UpdateReceiptBasic"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_UpdateReceiptBasic_OutputMessage">
+        <wsdl:part name="parameters" element="tns:UpdateReceiptBasicResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IReceiptAgencyExternalBasic_UpdateReceiptBasic_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q9="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q9:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:portType name="IReceiptAgencyExternalBasic">
+        <wsdl:documentation><summary> Service contract for the receipt service exposed to agency. Contains GetReceipt, GetReceiptList and SaveReceipt methods for implementation </summary></wsdl:documentation>
+        <wsdl:operation name="Test">
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" message="tns:IReceiptAgencyExternalBasic_Test_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse" message="tns:IReceiptAgencyExternalBasic_Test_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault" name="AltinnFaultFault" message="tns:IReceiptAgencyExternalBasic_Test_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptBasic">
+            <wsdl:documentation><summary> This method has been deprecated, use GetReceiptBasicV2 instead. </summary> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn - mandatory parameter.</param> <param name="systemPassword">System password is the password for the corresponding registered agency system - mandatory parameter.</param> <param name="receipt">Receipt search criteria.</param> <returns>The identified receipt.</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasic" message="tns:IReceiptAgencyExternalBasic_GetReceiptBasic_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasicResponse" message="tns:IReceiptAgencyExternalBasic_GetReceiptBasic_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasicAltinnFaultFault" name="AltinnFaultFault" message="tns:IReceiptAgencyExternalBasic_GetReceiptBasic_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptBasicV2">
+            <wsdl:documentation><summary> This operations enables the retrieval of a receipt based on a number of different inputs. Input values have the following priority: ReceiptId, WorkFlowReference, any other reference. If the receipt is a child receipt, then the parent receipt is also retrieved. If the given party have access to the parent, then the parent receipt will be returned with the original receipt as one of the sub receipts. </summary> <remarks> The operation will throw an exception if no receipt is found. </remarks> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn.</param> <param name="systemPassword">System password is the password for the corresponding registered agency system.</param> <param name="receipt">Receipt search criteria.</param> <returns>The identified receipt.</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasicV2" message="tns:IReceiptAgencyExternalBasic_GetReceiptBasicV2_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasicV2Response" message="tns:IReceiptAgencyExternalBasic_GetReceiptBasicV2_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasicV2AltinnFaultFault" name="AltinnFaultFault" message="tns:IReceiptAgencyExternalBasic_GetReceiptBasicV2_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptListBasic">
+            <wsdl:documentation><summary> This method has been deprecated, use GetReceiptListBasicV2 instead. </summary> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn.</param> <param name="systemPassword">System password is the password for the corresponding registered agency system.</param> <param name="receiptTypeName">Type of the Receipt - mandatory parameter.</param> <param name="dateFrom">From which date onwards - mandatory parameter.</param> <param name="dateTo">To which date - mandatory parameter.</param> <returns>List of receipts.</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasic" message="tns:IReceiptAgencyExternalBasic_GetReceiptListBasic_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasicResponse" message="tns:IReceiptAgencyExternalBasic_GetReceiptListBasic_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasicAltinnFaultFault" name="AltinnFaultFault" message="tns:IReceiptAgencyExternalBasic_GetReceiptListBasic_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptListBasicV2">
+            <wsdl:documentation><summary> This operation enables the search for a list of receipts based on a given receipt type and a date and time span for when the receipt was changed. </summary> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn.</param> <param name="systemPassword">System password is the password for the corresponding registered agency system.</param> <param name="receiptTypeName">Type of receipts to search for.</param> <param name="dateFrom">The start date and time for time span of the search.</param> <param name="dateTo">The end date and time for time span of the search.</param> <returns>A list of receipts that match the search criteria.</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasicV2" message="tns:IReceiptAgencyExternalBasic_GetReceiptListBasicV2_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasicV2Response" message="tns:IReceiptAgencyExternalBasic_GetReceiptListBasicV2_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasicV2AltinnFaultFault" name="AltinnFaultFault" message="tns:IReceiptAgencyExternalBasic_GetReceiptListBasicV2_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="SaveReceiptBasic">
+            <wsdl:documentation><summary> This method has been deprecated, use UpdateReceiptBasic instead. </summary> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn.</param> <param name="systemPassword">System password is the password for the corresponding registered agency system.</param> <param name="receipt">The search criteria and new receipt details to be stored.</param> <returns>The updated receipt with references and sub receipts.</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/SaveReceiptBasic" message="tns:IReceiptAgencyExternalBasic_SaveReceiptBasic_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/SaveReceiptBasicResponse" message="tns:IReceiptAgencyExternalBasic_SaveReceiptBasic_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/SaveReceiptBasicAltinnFaultFault" name="AltinnFaultFault" message="tns:IReceiptAgencyExternalBasic_SaveReceiptBasic_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateReceiptBasic">
+            <wsdl:documentation><summary> This operation enables updating of an existing receipt. Receipt can be identified with receipt id or an archive reference. The logic will update receipt status and text, add new references, and update sub receipts with references. Sub receipts must be identified with their ids and must already exist as child receipts for the main receipt. </summary> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn.</param> <param name="systemPassword">System password is the password for the corresponding registered agency system.</param> <param name="receipt">The search criteria and new receipt details to be stored.</param> <returns>The updated receipt with references and sub receipts.</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/UpdateReceiptBasic" message="tns:IReceiptAgencyExternalBasic_UpdateReceiptBasic_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/UpdateReceiptBasicResponse" message="tns:IReceiptAgencyExternalBasic_UpdateReceiptBasic_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/UpdateReceiptBasicAltinnFaultFault" name="AltinnFaultFault" message="tns:IReceiptAgencyExternalBasic_UpdateReceiptBasic_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BasicHttpBinding_IReceiptAgencyExternalBasic" type="tns:IReceiptAgencyExternalBasic">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Test">
+            <soap:operation soapAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptBasic">
+            <soap:operation soapAction="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasic" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptBasicV2">
+            <soap:operation soapAction="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptBasicV2" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptListBasic">
+            <soap:operation soapAction="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasic" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetReceiptListBasicV2">
+            <soap:operation soapAction="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/GetReceiptListBasicV2" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="SaveReceiptBasic">
+            <soap:operation soapAction="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/SaveReceiptBasic" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateReceiptBasic">
+            <soap:operation soapAction="http://www.altinn.no/services/Intermediary/Receipt/2009/10/IReceiptAgencyExternalBasic/UpdateReceiptBasic" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ReceiptAgencyExternalBasicSF">
+        <wsdl:port name="BasicHttpBinding_IReceiptAgencyExternalBasic" binding="tns:BasicHttpBinding_IReceiptAgencyExternalBasic">
+            <soap:address location="https://tt02.altinn.no/IntermediaryExternal/ReceiptAgencyExternalBasic.svc"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
