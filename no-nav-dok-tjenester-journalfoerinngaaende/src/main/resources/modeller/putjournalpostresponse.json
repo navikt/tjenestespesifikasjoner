@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "components": {
+    "schemas": {
+      "s": {
+        "type": "string",
+        "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.response.Status",
+        "enum": [
+          "MANGLER",
+          "MANGLER_IKKE"
+        ]
+      },
+      "dokument": {
+        "type": "object",
+        "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.response.Dokument",
+        "properties": {
+          "dokumentId": {
+            "description": "Unik identifikator for dokumentet",
+            "type": "string"
+          },
+          "tittel": {
+            "description": "Tittel på dokumentet",
+            "$ref": "#/components/schemas/s"
+          },
+          "dokumentKategori": {
+            "description": "Hvordan type dokument det er snakk om (eks. søknad, klage/anke)",
+            "$ref": "#/components/schemas/s"
+          }
+        },
+        "additionalProperties": false
+      },
+      "mangler": {
+        "description": "Objekt som angir hvilke parametre som mangler for å kunne endelig journalføre",
+        "type": "object",
+        "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.response.Mangler",
+        "properties": {
+          "avsenderNavn": {
+            "description": "Verdi som beskriver om navn tilhørende avsender mangler",
+            "$ref": "#/components/schemas/s"
+          },
+          "bruker": {
+            "description": " Verdi som beskriver om bruker mangler",
+            "$ref": "#/components/schemas/s"
+          },
+          "arkivSak": {
+            "description": "Verdi som beskriver om arkivsak mangler",
+            "$ref": "#/components/schemas/s"
+          },
+          "tema": {
+            "description": "Verdi som beskriver om kode for tema fra felles kodeverk mangler",
+            "$ref": "#/components/schemas/s"
+          },
+          "tittel": {
+            "description": "Verdi som beskriver om beskrivelse av innhold mangler",
+            "$ref": "#/components/schemas/s"
+          },
+          "dokumenter": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/dokument"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "definitions": {
+    "putJournalpostResponse": {
+      "description": "Responseobjekt for put-kall. Ved oppdatering uten endelig journalføring forsøkt vil kallet returnere journalpostId eller en feilmelding. Ved oppdatering med endelig journalføring forsøkt, vil kallet returnere journalpostId ved suksessfull oppdatering, eller dersom ett eller flere av feltene mangler vil feltet Mangler være satt, og ved feil vil en feilmelding returneres.",
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.PutJournalpostResponse",
+      "properties": {
+        "journalpostId": {
+          "description": "JournalpostId forsøkt oppdatert",
+          "type": "string"
+        },
+        "harEndeligJF": {
+          "description": "Har endelig journalført journalpost",
+          "type": "boolean"
+        },
+        "mangler": {
+          "$ref": "#/components/schemas/mangler"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/definitions/putJournalpostResponse"
+}

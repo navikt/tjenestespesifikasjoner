@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "postLogiskVedleggRequest": {
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.PostLogiskVedleggRequest",
+      "properties": {
+        "tittel": {
+          "type": "string",
+          "description": "Tittelen på det logiske vedlegget."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/definitions/postLogiskVedleggRequest"
+}

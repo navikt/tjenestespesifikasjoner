@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "dokument": {
+      "description": "Dokument som er tilknyttet en journalpost",
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.Dokument",
+      "properties": {
+        "dokumentId": {
+          "description": "Unik identifikator på dokumentet i Joark",
+          "type": "string"
+        },
+        "dokumentTypeId": {
+          "description": "ID som definerer typen dokument, for eksempel \"I000005\" (Søknad om foreldrepenger ved fødsel)",
+          "type": "string"
+        },
+        "navSkjemaId": {
+          "description": "ID som beskriver typen dokument, for eksempel \"NAV 14-05.09\" (Søknad om foreldrepenger ved fødsel)",
+          "type": "string"
+        },
+        "tittel": {
+          "description": "Tittel som beskriver dokumentet, feks \"Søknad om foreldrepenger ved fødsel\"",
+          "type": "string"
+        },
+        "dokumentKategori": {
+          "description": "Kategorien dokumentet faller innunder, for eksempel \"SOK\" for søknad eller \"KA\" for klage/anke",
+          "type": "string"
+        },
+        "variant": {
+          "description": "Liste over versjoner/varianter av samme dokument i Joark. De ulike variantene av et dokument skal ha samme informasjonsinnhold, men har forskjellige formater og bruksområder. For eksempel kan en variant være beregnet for visning og en annen for automatisk saksbehandling.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/variant"
+          }
+        },
+        "logiskVedleggListe": {
+          "description": "Kun for skannede forsendendelser. For skannede forsendelser kan én PDF-fil inneholde flere ulike dokumenter lagt etter hverandre (f.eks et søknadsskjema og en lønnslipp). Lønnslippen vil da være et logisk vedlegg til søknaden.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/logiskVedlegg"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "avsender": {
+      "description": "Avsender av forsendelsen",
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.Avsender",
+      "properties": {
+        "avsenderType": {
+          "description": "Person eller organisasjon",
+          "type": "string",
+          "enum": ["PERSON", "ORGANISASJON"]
+        },
+        "identifikator": {
+          "description": "Identifikator til personen/organisasjonen som i Joark er angitt som bruker på journalposten",
+          "type": "string",
+          "minLength": 9,
+          "maxLength": 11,
+          "pattern": "^[0-9]*$"
+        },
+        "navn" :{
+          "description": "Navn på personbrukere skal lagres på formatet etternavn, fornavn mellomnavn",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "bruker": {
+      "description": "Bruker",
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.Bruker",
+      "properties": {
+        "brukerType": {
+          "description": "Person eller organisasjon",
+          "type": "string",
+          "enum": ["PERSON", "ORGANISASJON"]
+        },
+        "identifikator": {
+          "description": "Identifikator til personen/organisasjonen som i Joark er angitt som bruker på journalposten",
+          "type": "string",
+          "minLength": 9,
+          "maxLength": 11,
+          "pattern": "^[0-9]*$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "variant": {
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.Variant",
+      "properties": {
+        "arkivFilType": {
+          "description": "Dokumentets filtype, for eksempel \"PDF/A\", \"XML\" eller \"JSON\".",
+          "type": "string"
+        },
+        "variantFormat": {
+          "description": "ARKIV brukes for dokumentvariant i menneskelesbart format (for eksempel PDF/A). Gosys og nav.no henter arkivvariant og viser denne til bruker. ORIGINAL brukes for dokumentvariant i maskinlesbart format (for eksempel XML og JSON) som brukes for automatisk saksbehandling. Alle arkivdokumenter må ha en arkivvariant.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["arkivFilType", "variantFormat"]
+    },
+    "logiskVedlegg": {
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.LogiskVedlegg",
+      "properties": {
+        "logiskVedleggId": {
+          "description": "Unik identifikator på det logiske vedlegget i Joark",
+          "type": "string"
+        },
+        "logiskVedleggTittel": {
+          "description": "Tittel som beskriver det logiske vedlegget, feks 'Søknad om foreldrepenger ved fødsel'",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

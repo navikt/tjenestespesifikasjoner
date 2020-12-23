@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "putDokumentResponse": {
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.PutDokumentResponse",
+      "properties": {
+        "dokumentId" : {
+          "type": "string",
+          "description": "ID som definerer dokumentet som har blitt oppdatert."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/definitions/putDokumentResponse"
+}

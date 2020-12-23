@@ -193,6 +193,7 @@
         <module>nav-virksomhet-stoppReVarsel-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-tiltakOgAktiviteterForBrukere-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-varselMedHandling-v1-meldingsdefinisjon</module>
+        <module>no-nav-dok-tjenester-journalfoerinngaaende</module>
         <module>no-nav-dok-tjenester-mottainngaaendeforsendelse</module>
         <module>nav-system-os-simuler-fp-service-tjenestespesifikasjon</module>
         <module>notat-tjenestespesifikasjon</module>

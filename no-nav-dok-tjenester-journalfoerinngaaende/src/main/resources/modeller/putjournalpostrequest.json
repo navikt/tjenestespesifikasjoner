@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "putJournalpostRequest": {
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.PutJournalpostRequest",
+      "properties": {
+        "forsoekEndeligJF": {
+          "type": "boolean",
+          "description": "Settes til true dersom operasjonen skal forsøke å ferdigstille journalføringen. Settes til false dersom operasjonen ikke skal forsøke å ferdigstille journalføringen."
+        },
+        "avsender": {
+          "type": "object",
+          "$ref": "datatyper.json#/definitions/avsender",
+          "description": "Avsender av forsendelsen"
+        },
+        "bruker": {
+          "type": "object",
+          "$ref": "datatyper.json#/definitions/bruker",
+          "description": ""
+        },
+        "arkivSak": {
+          "description": "Objekt som inneholder unik nøkkel 'saksnummer som forsendelse skal journalføres mot + hvilket system saksnummeret tilhører'.",
+          "type": "object",
+          "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.ArkivSakWithArkivsakSystemEnum",
+          "properties": {
+            "arkivSakSystem": {
+              "description": "Angir hvorvidt arkivsaken befinner seg i GSAK (FS22) eller PSAK (PEN).",
+              "type": "string",
+              "enum": ["GSAK", "PSAK"]
+            },
+            "arkivSakId": {
+              "description": "Saksnummeret i arkivSakSystemet",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["arkivSakSystem", "arkivSakId"]
+        },
+        "tema": {
+          "type": "string",
+          "description": "Fagområdet som forsendelsen tilhører, for eksempel \"FOR\" for Foreldrepenger"
+        },
+        "tittel": {
+          "type": "string",
+          "description": "Tittel som beskriver forsendelsen samlet, for eksempel \"Ettersendelse til søknad om foreldrepenger\". Feltet vil bli vist frem i brukers journal på nav.no, samt i Gosys og fagsystemer."
+        },
+        "journalfEnhet": {
+          "type": "string",
+          "description": "Enhetsnummeret til NAV-enheten som mottar og behandler dokumentet. JournalfEnhet må angis dersom parameter FoersokEndeligJF er satt, ellers ikke."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/definitions/putJournalpostRequest"
+}

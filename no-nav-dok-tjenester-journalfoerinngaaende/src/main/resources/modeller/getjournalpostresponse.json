@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "getJournalpostResponse": {
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.GetJournalpostResponse",
+      "properties": {
+        "journalTilstand": {
+          "description": "Angir journalpostens tilstand, inkludert hvorvidt forsendelsen er midlertidig eller endelig journalført. Gyldige verdier er 'ENDELIG', 'MIDLERTIDIG' eller 'UTGAAR'",
+          "type": "string",
+          "enum": [
+            "ENDELIG",
+            "MIDLERTIDIG",
+            "UTGAAR"
+          ]
+        },
+        "avsender": {
+          "description": "Avsender av forsendelsen",
+          "type": "object",
+          "$ref": "datatyper.json#/definitions/avsender"
+        },
+        "brukerListe": {
+          "description": "En liste over brukere tilknyttet journalposten. Det vil normalt kun være én bruker. NB: Etter journalføring er det saksparten på arkivsaken som er å anse som den formelle brukeren på journalposten",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "datatyper.json#/definitions/bruker"
+          }
+        },
+        "arkivSak": {
+          "description": "Objekt som inneholder unik nøkkel 'saksnummer som forsendelse skal journalføres mot + hvilket system saksnummeret tilhører'.",
+          "type": "object",
+          "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.ArkivSakNoArkivsakSystemEnum",
+          "properties": {
+            "arkivSakSystem": {
+              "description": "Angir hvorvidt arkivsaken befinner seg (f.eks GSAK (FS22) eller PSAK (PEN)).",
+              "type": "string"
+            },
+            "arkivSakId": {
+              "description": "Saksnummeret i arkivSakSystemet",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["arkivSakSystem", "arkivSakId"]
+        },
+        "tema": {
+          "description": "Fagområdet som forsendelsen tilhører, for eksempel \"FOR\" for Foreldrepenger",
+          "type": "string"
+        },
+        "tittel": {
+          "description": "Tittel som beskriver forsendelsen samlet, for eksempel \"Ettersendelse til søknad om foreldrepenger\". Feltet vil bli vist frem i brukers journal på nav.no, samt i Gosys og fagsystemer.",
+          "type": "string"
+        },
+        "kanalReferanseId": {
+          "description": "Unik id for den inngående forsendelsen. Benyttes for overføring/persistering av kanalspesifikke Id`er (f.eks Altinn ArchiveReference, eller HenvendelseId for DittNAV).",
+          "type": "string"
+        },
+        "forsendelseMottatt": {
+          "description": "Tidspunktet forsendelsen ble mottatt hos NAV",
+          "type": "string",
+          "format": "date-time",
+          "customPattern": "yyyy-MM-dd'T'HH:mm:ssZ"
+        },
+        "mottaksKanal": {
+          "description": "Kanalen avsender brukte ved innsending. F.eks. NAV_NO eller ALTINN",
+          "type": "string"
+        },
+        "journalfEnhet": {
+          "description": "Inneholder enhetsnummeret på NAV-enheten som mottar og behandler forsendelsen. Dersom forsendelsen behandles maskinelt vil journalførendeEnhet være \"9999\". Feltet skal normalt populeres først ved endelig journalføring. I spesialtilfeller vil det allerede på arkiveringstidspunktet være kjent hvilken enhet som skal behandle forsendelsen. Da kan feltet bli satt ved midlertidig journalføring, og behandlende fagsystem kan velge å bruke JournalfEnhet til å rute forsendelsen videre.",
+          "type": "string"
+        },
+        "dokumentListe": {
+          "description": "Liste over alle dokumenter som er tilknyttet journalposten",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "datatyper.json#/definitions/dokument"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/definitions/getJournalpostResponse"
+}

@@ -1,0 +1,157 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "journalfoerinngaaende",
+    "version": "1.0.0",
+    "description": "TJOARK070"
+  },
+  "servers": [
+    {
+      "url": "TODO"
+    }
+  ],
+  "tags": [
+    {
+      "name": "journalfoerinngaaende"
+    }
+  ],
+  "paths": {
+    "/journalposter/{jpid}": {
+      "get": {
+        "description": "Returnerer metadata om en inngående journalpost og tilhørende dokumenter (fysiske og logiske) basert på journalpostId.",
+        "parameters": [
+          {
+            "name": "jpid",
+            "in": "path",
+            "description": "JournalpostId",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/getjournalpostresponse.json#/definitions/getJournalpostResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put" : {
+        "description": "Denne operasjonen tillater kun oppdatering på journalpostnivå, ikke på dokumentnivå.",
+        "parameters": [
+          {
+            "name": "jpid",
+            "in": "path",
+            "description": "JournalpostId",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "modeller/putjournalpostrequest.json#/definitions/putJournalpostRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Put OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/putjournalpostresponse.json#/definitions/putJournalpostResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/journalposter/{jpid}/dokumenter/{dokumentid}": {
+      "put": {
+        "description": "PUT-operasjon som brukes for å oppdatere metadata om et dokument i arkivet.",
+        "parameters": [
+          {
+            "name": "jpid",
+            "in": "path",
+            "description": "JournalpostId",
+            "required": true
+          },
+          {
+            "name": "dokumentid",
+            "in": "path",
+            "description": "DokumentId",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "modeller/putdokumentrequest.json#/definitions/putDokumentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Put OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "modeller/putdokumentresponse.json#/definitions/putDokumentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/journalposter/{jpid}/dokumenter/{dokumentid}/logiskeVedlegg": {
+      "post": {
+
+      }
+    },
+    "/journalposter/{jpid}/dokumenter/{dokumentid}/logiskeVedlegg/{logiskVedleggId}": {
+      "put": {
+
+      },
+      "delete": {
+
+      }
+    }
+  }
+}

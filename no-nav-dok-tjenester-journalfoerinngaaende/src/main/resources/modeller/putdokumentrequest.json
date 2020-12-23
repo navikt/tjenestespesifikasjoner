@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "putDokumentRequest": {
+      "type": "object",
+      "javaType": "no.nav.dok.tjenester.journalfoerinngaaende.PutDokumentRequest",
+      "properties": {
+        "dokumentTypeId" : {
+          "type": "string",
+          "description": "ID som definerer typen dokument, for eksempel \"I000005\" (Søknad om foreldrepenger ved fødsel)"
+        },
+        "navSkjemaId": {
+          "type": "string",
+          "description": "ID som beskriver typen dokument, for eksempel \"NAV 14-05.09\" (Søknad om foreldrepenger ved fødsel)"
+        },
+        "tittel": {
+          "type": "string",
+          "description": "Tittel som beskriver forsendelsen samlet, for eksempel \"Ettersendelse til søknad om foreldrepenger\". Feltet vil bli vist frem i brukers journal på nav.no, samt i Gosys og fagsystemer."
+        },
+        "dokumentKategori": {
+          "type": "string",
+          "description": "Sier noe om hvordan type dokument det er."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/definitions/putDokumentRequest"
+}
