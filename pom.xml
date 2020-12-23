@@ -130,6 +130,7 @@
         <module>nav-arbeidsforhold-v3-tjenestespesifikasjon</module>
         <module>nav-behandleArbeidssoeker-v1-tjenestespesifikasjon</module>
         <module>nav-behandleInngaaendeJournal-v1-tjenestespesifikasjon</module>
+        <module>nav-behandleMedlemskap-v2-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
         <module>nav-fim-behandleJournal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-behandleJournal-v2-tjenestespesifikasjon</module>
