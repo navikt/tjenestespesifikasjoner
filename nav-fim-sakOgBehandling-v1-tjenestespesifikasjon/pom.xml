@@ -26,9 +26,9 @@
 						</goals>
 						<configuration>
 							<wsdlFiles>
-								<wsdlFile>SakOgBehandling.wsdl</wsdlFile>
+								<wsdlFile>Binding.wsdl</wsdlFile>
 							</wsdlFiles>
-							<wsdlDirectory>${wsdl.directory}</wsdlDirectory>
+							<wsdlDirectory>${wsdl.directory}/no/nav/tjeneste/virksomhet/sakOgBehandling/v1</wsdlDirectory>
 							<sourceDestDir>target/generated-sources</sourceDestDir>
 						</configuration>
 					</execution>
