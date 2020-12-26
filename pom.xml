@@ -166,6 +166,7 @@
         <module>nav-fim-sak-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sakOgBehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sykepenger-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-utbetaling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-virgo-v1-tjenestespesifikasjon</module>
         <module>nav-fim-virgo-v2-tjenestespesifikasjon</module>
         <module>nav-fim-ytelse-v1-tjenestespesifikasjon</module>
