@@ -58,8 +58,8 @@
         <module>arena-maalgruppe_v1</module>
         <module>arena-personinfo-tjenestespesifikasjon</module>
         <module>arena-nav-behandlearbeidsytelsesak-v1-tjenestespesifikasjon</module>
-        <module>arena-sakOgAktivitet_v1</module>
-        <module>arenaSakVedtakService</module>
+        <module>arena-sakogaktivitet_v1</module>
+        <module>arenasakvedtakservice</module>
         <module>avstemming-v1-tjenestespesifikasjon</module>
         <module>behandle-altinnmelding-v1-tjenestespesifikasjon</module>
         <module>behandle-henvendelse</module>
@@ -68,7 +68,7 @@
         <module>behandle-person-v1-tjenestespesifikasjon</module>
         <module>behandle-sykefravaersoppfoelgingv1-tjenestespesifikasjon</module>
         <module>behandle-sykmeldingv1-tjenestespesifikasjon</module>
-        <module>behandleArbeidOgAktivitetOppgave-v1-tjenestespesifikasjon</module>
+        <module>behandlearbeidogaktivitetoppgave-v1-tjenestespesifikasjon</module>
         <module>behandledokumentforsendelse-v1-tjenestespesifikasjon</module>
         <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
         <module>behandleForsendelse-udi-brevdata</module>
@@ -77,7 +77,7 @@
         <module>behandleoppgave-v1-tjenestespesifikasjon</module>
         <module>behandlesak-v2-tjenestespesifikasjon</module>
         <module>besvare-henvendelse-tjenestespesifikasjon</module>
-        <module>brukerdialog-behandleAktivitetsplan-v1-tjenestespesifikasjon</module>
+        <module>brukerdialog-behandleaktivitetsplan-v1-tjenestespesifikasjon</module>
         <module>brukerprofil-tjenestespesifikasjon</module>
         <module>brukerprofil-v2-tjenestespesifikasjon</module>
         <module>brukerprofil-v3-tjenestespesifikasjon</module>
@@ -137,9 +137,9 @@
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
         <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleArbeidsforhold-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleBrukerprofil-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleSakOgBehandling-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlearbeidsforhold-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlebrukerprofil-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlesakogbehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-brukerhendelse-v1-tjenestespesifikasjon</module>
         <module>nav-fim-brukerprofil-v1-tjenestespesifikasjon</module>
         <module>nav-fim-coma-v2-tjenestespesifikasjon</module>
@@ -190,8 +190,8 @@
         <module>nav-virksomhet-paaloepteUtgifter-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-soeknadsskjema-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-stoppReVarsel-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-tiltakOgAktiviteterForBrukere-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-varselMedHandling-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-tiltakogaktiviteterforbrukere-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-varselmedhandling-v1-meldingsdefinisjon</module>
         <module>no-nav-dok-tjenester-mottainngaaendeforsendelse</module>
         <module>nav-system-os-simuler-fp-service-tjenestespesifikasjon</module>
         <module>notat-tjenestespesifikasjon</module>
@@ -225,7 +225,7 @@
         <module>send-inn-henvendelse</module>
         <module>send-ut-henvendelse</module>
         <module>sendsoknad-tjenestespesifikasjon</module>
-        <module>servicemeldingMedKontaktinformasjon-v1-tjenestespesifikasjon</module>
+        <module>servicemeldingmedkontaktinformasjon-v1-tjenestespesifikasjon</module>
         <module>soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-meldingsdefinisjon</module>
         <module>soeknadsskjemaSosialhjelp-v1-saksoversiktdefinisjon</module>

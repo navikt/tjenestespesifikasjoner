@@ -7,7 +7,7 @@
         <version>0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>nav-virksomhet-tiltakOgAktiviteterForBrukere-v1-meldingsdefinisjon</artifactId>
+    <artifactId>nav-virksomhet-tiltakogaktiviteterforbrukere-v1-meldingsdefinisjon</artifactId>
     <version>0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Arena batch for tiltak og aktiviteter som legges på felles filserver</name>
