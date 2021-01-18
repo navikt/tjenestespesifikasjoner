@@ -68,7 +68,7 @@
         <module>behandle-person-v1-tjenestespesifikasjon</module>
         <module>behandle-sykefravaersoppfoelgingv1-tjenestespesifikasjon</module>
         <module>behandle-sykmeldingv1-tjenestespesifikasjon</module>
-        <module>behandleArbeidOgAktivitetOppgave-v1-tjenestespesifikasjon</module>
+        <module>behandlearbeidogaktivitetoppgave-v1-tjenestespesifikasjon</module>
         <module>behandledokumentforsendelse-v1-tjenestespesifikasjon</module>
         <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
         <module>behandleForsendelse-udi-brevdata</module>
