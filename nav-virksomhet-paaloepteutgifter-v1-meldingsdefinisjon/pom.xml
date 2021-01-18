@@ -7,7 +7,7 @@
         <version>0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>nav-virksomhet-stoppReVarsel-v1-meldingsdefinisjon</artifactId>
+    <artifactId>nav-virksomhet-paaloepteutgifter-v1-meldingsdefinisjon</artifactId>
     <version>0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <dependencies>
@@ -19,7 +19,6 @@
     </dependencies>
     <properties>
         <xsd.location>${project.basedir}/src/main/xsd</xsd.location>
-        <dokumentforsendelse.version>1.1.2</dokumentforsendelse.version>
     </properties>
     <build>
         <plugins>
@@ -39,9 +38,7 @@
                     <extension>true</extension>
                     <arguments>-Xvalue-constructor -Xfluent-api</arguments>
                     <bindingDirectory>${project.basedir}/src/main/xsd/</bindingDirectory>
-                    <schemaDirectory>
-                        src/main/xsd/no/nav/melding/virksomhet/stoppReVarsel/v1
-                    </schemaDirectory>
+                    <schemaDirectory>${xsd.location}</schemaDirectory>
                 </configuration>
                 <dependencies>
                     <dependency>

@@ -7,9 +7,10 @@
         <version>0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>nav-virksomhet-opprettOppgavehenvendelse-v1-meldingsdefinisjon</artifactId>
+    <artifactId>nav-virksomhet-loependeytelser-v1-meldingsdefinisjon</artifactId>
     <version>0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>Arena batch for løpende ytelser som legges på felles filserver</name>
     <dependencies>
         <dependency>
             <groupId>com.migesok</groupId>
@@ -40,16 +41,9 @@
                     <arguments>-Xvalue-constructor -Xfluent-api</arguments>
                     <bindingDirectory>${project.basedir}/src/main/xsd/</bindingDirectory>
                     <schemaDirectory>
-                        src/main/xsd/no/nav/melding/virksomhet/opprettOppgavehenvendelse/v1
+                        ${project.basedir}/src/main/xsd/no/nav/melding/virksomhet/loependeYtelser/v1
                     </schemaDirectory>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-value-constructor</artifactId>
-                        <version>3.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
