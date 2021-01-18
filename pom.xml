@@ -59,7 +59,7 @@
         <module>arena-personinfo-tjenestespesifikasjon</module>
         <module>arena-nav-behandlearbeidsytelsesak-v1-tjenestespesifikasjon</module>
         <module>arena-sakogaktivitet_v1</module>
-        <module>arenaSakVedtakService</module>
+        <module>arenasakvedtakservice</module>
         <module>avstemming-v1-tjenestespesifikasjon</module>
         <module>behandle-altinnmelding-v1-tjenestespesifikasjon</module>
         <module>behandle-henvendelse</module>
