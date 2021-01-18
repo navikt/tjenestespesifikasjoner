@@ -39,7 +39,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/arenaSakVedtakService.wsdl/</wsdl>
+                                    <wsdl>${wsdl.directory}/arenasakvedtakservice.wsdl/</wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
