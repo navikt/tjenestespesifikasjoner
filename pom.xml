@@ -172,8 +172,8 @@
         <module>nav-hentsykepengeliste-v2-tjenestespesifikasjon</module>
         <module>nav-infotrygdberegningsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-infotrygdsak-v1-tjenestespesifikasjon</module>
-        <module>nav-inngaaendeJournal-v1-tjenestespesifikasjon</module>
-        <module>nav-innsynJournal-v2-tjenestespesifikasjon</module>
+        <module>nav-inngaaendejournal-v1-tjenestespesifikasjon</module>
+        <module>nav-innsynjournal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v3-tjenestespesifikasjon</module>
         <module>nav-meldekortutbetalingsgrunnlag-v1-tjenestespesifikasjon</module>
