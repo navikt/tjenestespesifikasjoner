@@ -6,7 +6,7 @@
         <artifactId>tjenestespesifikasjoner</artifactId>
         <version>0-SNAPSHOT</version>
     </parent>
-    <artifactId>arena-sakOgAktivitet_v1</artifactId>
+    <artifactId>arena-sakogaktivitet_v1</artifactId>
     <name>${project.artifactId}</name>
     <version>0-SNAPSHOT</version>
     <properties>
