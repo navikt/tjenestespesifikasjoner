@@ -131,9 +131,9 @@
         <module>nav-behandleArbeidssoeker-v1-tjenestespesifikasjon</module>
         <module>nav-behandleInngaaendeJournal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleJournal-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleJournal-v2-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleJournal-v3-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlejournal-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlejournal-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlejournal-v3-tjenestespesifikasjon</module>
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
         <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
