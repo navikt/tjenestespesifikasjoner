@@ -6,7 +6,7 @@
 		<version>0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>nav-fim-behandleJournal-v3-tjenestespesifikasjon</artifactId>
+	<artifactId>nav-fim-behandlejournal-v3-tjenestespesifikasjon</artifactId>
 	<version>0-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<properties>
@@ -43,7 +43,7 @@
 									<serviceName>BehandleJournal_v3</serviceName>
 									<bindingFiles>
 										<bindingFile>${basedir}/src/main/resources/Binding.xjb</bindingFile>
-										<bindingFile>${basedir}/src/main/resources/behandleJournal.xjb</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/behandlejournal.xjb</bindingFile>
 									</bindingFiles>
 								</wsdlOption>
 							</wsdlOptions>

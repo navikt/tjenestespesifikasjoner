@@ -4,7 +4,7 @@
                   xmlns:tns="http://nav.no/tjeneste/virksomhet/behandleJournal/v2/Binding"
                   xmlns:wsdl_1="http://nav.no/tjeneste/virksomhet/behandleJournal/v2"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-    <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2" location="behandleJournal.wsdl">
+    <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v2" location="behandlejournal.wsdl">
     </wsdl:import>
     <wsdl:binding name="behandleJournal_v2Binding" type="wsdl_1:behandleJournal_v2">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
