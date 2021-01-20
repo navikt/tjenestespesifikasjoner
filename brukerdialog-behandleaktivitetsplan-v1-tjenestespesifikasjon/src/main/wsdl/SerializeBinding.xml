@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jaxws:bindings wsdlLocation="behandleAktivitetsplan.wsdl"
+<jaxws:bindings wsdlLocation="behandleaktivitetsplan.wsdl"
                 xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
