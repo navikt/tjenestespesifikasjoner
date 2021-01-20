@@ -7,7 +7,7 @@
 		<version>0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>nav-fim-behandleBrukerprofil-v1-tjenestespesifikasjon</artifactId>
+	<artifactId>nav-fim-behandlebrukerprofil-v1-tjenestespesifikasjon</artifactId>
 	<version>0-SNAPSHOT</version>
 	<properties>
 		<wsdl.directory>src/main/wsdl</wsdl.directory>
@@ -26,7 +26,7 @@
 						</goals>
 						<configuration>
 							<wsdlFiles>
-								<wsdlFile>BehandleBrukerprofil.wsdl</wsdlFile>
+								<wsdlFile>behandlebrukerprofil.wsdl</wsdlFile>
 							</wsdlFiles>
 							<wsdlDirectory>${wsdl.directory}/no/nav/tjeneste/virksomhet/behandleBrukerprofil/v1</wsdlDirectory>
 							<sourceDestDir>target/generated-sources</sourceDestDir>
