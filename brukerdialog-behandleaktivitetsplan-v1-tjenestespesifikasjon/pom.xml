@@ -30,7 +30,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>src/main/wsdl/behandleAktivitetsplan.wsdl</wsdl>
+                                    <wsdl>src/main/wsdl/behandleaktivitetsplan.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
                                         <extraarg>-xjc-Xequals</extraarg>
