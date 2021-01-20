@@ -77,7 +77,7 @@
         <module>behandleoppgave-v1-tjenestespesifikasjon</module>
         <module>behandlesak-v2-tjenestespesifikasjon</module>
         <module>besvare-henvendelse-tjenestespesifikasjon</module>
-        <module>brukerdialog-behandleAktivitetsplan-v1-tjenestespesifikasjon</module>
+        <module>brukerdialog-behandleaktivitetsplan-v1-tjenestespesifikasjon</module>
         <module>brukerprofil-tjenestespesifikasjon</module>
         <module>brukerprofil-v2-tjenestespesifikasjon</module>
         <module>brukerprofil-v3-tjenestespesifikasjon</module>
@@ -128,8 +128,8 @@
         <module>moetev1-tjenestespesifikasjon</module>
         <module>nav-altinn-inntektsmelding</module>
         <module>nav-arbeidsforhold-v3-tjenestespesifikasjon</module>
-        <module>nav-behandleArbeidssoeker-v1-tjenestespesifikasjon</module>
-        <module>nav-behandleInngaaendeJournal-v1-tjenestespesifikasjon</module>
+        <module>nav-behandlearbeidssoeker-v1-tjenestespesifikasjon</module>
+        <module>nav-behandleinngaaendejournal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
         <module>nav-fim-behandleJournal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-behandleJournal-v2-tjenestespesifikasjon</module>
