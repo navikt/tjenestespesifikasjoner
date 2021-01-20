@@ -163,7 +163,7 @@
         <module>nav-fim-person-v1-tjenestespesifikasjon</module>
         <module>nav-fim-personsok-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sak-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-sakOgBehandling-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-sakogbehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sykepenger-v1-tjenestespesifikasjon</module>
         <module>nav-fim-virgo-v1-tjenestespesifikasjon</module>
         <module>nav-fim-virgo-v2-tjenestespesifikasjon</module>
@@ -172,7 +172,7 @@
         <module>nav-hentsykepengeliste-v2-tjenestespesifikasjon</module>
         <module>nav-infotrygdberegningsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-infotrygdsak-v1-tjenestespesifikasjon</module>
-        <module>nav-inngaaendeJournal-v1-tjenestespesifikasjon</module>
+        <module>nav-inngaaendejournal-v1-tjenestespesifikasjon</module>
         <module>nav-innsynjournal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v3-tjenestespesifikasjon</module>
