@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions name="Binding" targetNamespace="http://nav.no/tjeneste/virksomhet/inntekt/v3/Binding" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/inntekt/v3/Binding" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl_1="http://nav.no/tjeneste/virksomhet/inntekt/v3" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/inntekt/v3" location="Inntekt.wsdl">
+  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/inntekt/v3" location="inntekt.wsdl">
     </wsdl:import>
   <wsdl:binding name="Inntekt_v3Binding" type="wsdl_1:Inntekt_v3">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>

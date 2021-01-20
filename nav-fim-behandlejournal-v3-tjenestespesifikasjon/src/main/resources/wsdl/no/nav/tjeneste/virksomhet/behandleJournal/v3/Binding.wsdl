@@ -5,7 +5,7 @@
 				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 				  xmlns:wsdl_1="http://nav.no/tjeneste/virksomhet/behandleJournal/v3"
 				  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-	<wsdl:import namespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v3" location="behandleJournal.wsdl">
+	<wsdl:import namespace="http://nav.no/tjeneste/virksomhet/behandleJournal/v3" location="behandlejournal.wsdl">
 	</wsdl:import>
 	<wsdl:binding name="behandleJournal_v3Binding" type="wsdl_1:behandleJournal_v3">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
