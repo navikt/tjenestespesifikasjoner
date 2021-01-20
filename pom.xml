@@ -85,7 +85,7 @@
         <module>cons-sak-gosys-tjenestespesifikasjon</module>
         <module>dial-nav-tjeneste-aktoer_v2</module>
         <module>dial-nav-tjeneste-behandlesak</module>
-        <module>dial-nav-tjeneste-pensjonSak</module>
+        <module>dial-nav-tjeneste-pensjonsak</module>
         <module>dial-nav-tjeneste-sak</module>
         <module>dialog-v1-tjenestespesifikasjon</module>
         <module>dialogarena-behandlingsinformasjon</module>

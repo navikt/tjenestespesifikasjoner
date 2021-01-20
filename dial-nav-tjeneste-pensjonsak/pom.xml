@@ -6,7 +6,7 @@
         <artifactId>tjenestespesifikasjoner</artifactId>
         <version>0-SNAPSHOT</version>
     </parent>
-    <artifactId>dial-nav-tjeneste-pensjonSak</artifactId>
+    <artifactId>dial-nav-tjeneste-pensjonsak</artifactId>
     <name>${project.artifactId}</name>
     <version>0-SNAPSHOT</version>
     <properties>
