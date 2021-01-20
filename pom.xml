@@ -72,7 +72,7 @@
         <module>behandledokumentforsendelse-v1-tjenestespesifikasjon</module>
         <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
         <module>behandleforsendelse-udi-brevdata</module>
-        <module>behandleForsendelse-v1</module>
+        <module>behandleforsendelse-v1</module>
         <module>behandleinntekt-v1-tjenestespesifikasjon</module>
         <module>behandleoppgave-v1-tjenestespesifikasjon</module>
         <module>behandlesak-v2-tjenestespesifikasjon</module>
