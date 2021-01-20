@@ -43,7 +43,7 @@
 									<serviceName>BehandleJournal_v3</serviceName>
 									<bindingFiles>
 										<bindingFile>${basedir}/src/main/resources/Binding.xjb</bindingFile>
-										<bindingFile>${basedir}/src/main/resources/behandlejournal.xjb</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/behandleJournal.xjb</bindingFile>
 									</bindingFiles>
 								</wsdlOption>
 							</wsdlOptions>
