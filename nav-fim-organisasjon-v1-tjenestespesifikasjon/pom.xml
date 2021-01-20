@@ -26,7 +26,7 @@
 						</goals>
 						<configuration>
 							<wsdlFiles>
-								<wsdlFile>Organisasjon.wsdl</wsdlFile>
+								<wsdlFile>organisasjon.wsdl</wsdlFile>
 							</wsdlFiles>
 							<wsdlDirectory>${wsdl.directory}/no/nav/tjeneste/virksomhet/organisasjon/v1</wsdlDirectory>
 							<sourceDestDir>target/generated-sources</sourceDestDir>

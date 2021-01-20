@@ -8,7 +8,7 @@
 				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 				  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 				  
-  <wsdl:import namespace="http://nav.no/system/os/tjenester/simulerFpService/simulerFpServiceGrensesnitt" location="../tjenester/simulerFpService/simulerFpServiceGrensesnitt.wsdl">
+  <wsdl:import namespace="http://nav.no/system/os/tjenester/simulerFpService/simulerFpServiceGrensesnitt" location="../tjenester/simulerFpService/simulerfpservicegrensesnitt.wsdl">
   </wsdl:import>
   
   <wsdl:binding name="simulerFpServiceBinding" type="simulerFpService:simulerFpService">
