@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions name="Binding" targetNamespace="http://nav.no/tjeneste/virksomhet/behandleArbeidssoeker/v1/Binding" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/behandleArbeidssoeker/v1/Binding" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl_1="http://nav.no/tjeneste/virksomhet/behandleArbeidssoeker/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/behandleArbeidssoeker/v1" location="behandleArbeidssoeker.wsdl">
+  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/behandleArbeidssoeker/v1" location="behandlearbeidssoeker.wsdl">
     </wsdl:import>
   <wsdl:binding name="BehandleArbeidssoeker_v1Binding" type="wsdl_1:BehandleArbeidssoeker_v1">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
