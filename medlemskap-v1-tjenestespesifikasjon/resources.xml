@@ -9,7 +9,7 @@
             <outputDirectory>/</outputDirectory>
             <directory>target/classes</directory>
             <includes>
-                <include>**/nav-tjeneste-medlemskap_MedlemskapWSEXP.wsdl</include>
+                <include>**/nav-tjeneste-medlemskap_medlemskapwsexp.wsdl</include>
             </includes>
         </fileSet>
         <fileSet>

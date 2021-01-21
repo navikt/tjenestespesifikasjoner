@@ -12,7 +12,7 @@
       <xsd:import namespace="http://nav.no/tjeneste/virksomhet/medlemskap/v2/informasjon" schemaLocation="informasjon/informasjon.xsd"/>
     </xsd:schema>
     <xsd:schema>
-      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/medlemskap/v2" schemaLocation="MedlemskapV2.xsd"/>
+      <xsd:import namespace="http://nav.no/tjeneste/virksomhet/medlemskap/v2" schemaLocation="medlemskapv2.xsd"/>
     </xsd:schema>
     <xsd:schema>
       <xsd:import namespace="http://nav.no/tjeneste/felles/v1/informasjon" schemaLocation="../../../felles/v1/informasjon/informasjon.xsd"/>
