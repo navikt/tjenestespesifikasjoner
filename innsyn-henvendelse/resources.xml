@@ -9,7 +9,7 @@
       		<outputDirectory>/</outputDirectory>
 			<directory>target/classes</directory>
 			<includes>
-				<include>**/InnsynHenvendelse.wsdl</include>
+				<include>**/innsynhenvendelse.wsdl</include>
 			</includes>
 		</fileSet>
 		<fileSet>
