@@ -9,7 +9,7 @@
       		<outputDirectory>/</outputDirectory>
 			<directory>target/classes</directory>
 			<includes>
-				<include>**/Sporsmalinnsending.wsdl</include>
+				<include>**/sporsmalinnsending.wsdl</include>
 			</includes>
 		</fileSet>
 		<fileSet>
