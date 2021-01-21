@@ -32,7 +32,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/InnsynHenvendelse.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/innsynhenvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                         <bindingFile>${wsdl.directory}/SerializeBinding.xml</bindingFile>
