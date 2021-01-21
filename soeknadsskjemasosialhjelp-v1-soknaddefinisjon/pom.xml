@@ -6,11 +6,12 @@
         <version>0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>soeknadsskjemaSosialhjelp-v1-vedleggdefinisjon</artifactId>
+    <artifactId>soeknadsskjemasosialhjelp-v1-soknaddefinisjon</artifactId>
     <version>0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
-        <schema.location>${project.basedir}/src/main/schema</schema.location>
+        <schema.location>${project.build.directory}/classes/tjenestespesifikasjon/</schema.location>
+        <meldingsdefinisjon.version>1.20181023.1342</meldingsdefinisjon.version>
     </properties>
     <dependencies>
         <dependency>
@@ -21,17 +22,65 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-        </dependency>
+         </dependency>
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-schema-files</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/schema</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${schema.location}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>${schema.location}/json/soknad/**/*.json</include>
+                        <include>${schema.location}/json/internal/**/*.json</include>
+                    </includes>
+                    <replacements>
+                        <replacement>
+                            <token>ONLY_CODEGEN\$ref</token>
+                            <value>\$ref</value>
+                        </replacement>
+                    </replacements>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>0.5.1</version>
                 <configuration>
-                    <sourceDirectory>${schema.location}/json/vedlegg/</sourceDirectory>
-                    <targetPackage>no.nav.sbl.soknadsosialhjelp.vedlegg</targetPackage>
+                    <sourcePaths>
+                        <sourcePath>${schema.location}/json/internal</sourcePath>
+                        <sourcePath>${schema.location}/json/soknad</sourcePath>
+                    </sourcePaths>
+                    <targetPackage>no.nav.sbl.soknadsosialhjelp.soknad</targetPackage>
                     <classNamePrefix>Json</classNamePrefix>
                     <generateBuilders>true</generateBuilders>
                     <useCommonsLang3>true</useCommonsLang3>

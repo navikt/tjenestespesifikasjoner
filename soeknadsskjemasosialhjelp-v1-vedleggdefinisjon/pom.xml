@@ -6,11 +6,11 @@
         <version>0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>soeknadsskjemaSosialhjelp-v1-saksoversiktdefinisjon</artifactId>
+    <artifactId>soeknadsskjemasosialhjelp-v1-vedleggdefinisjon</artifactId>
     <version>0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
-        <schema.location>${project.build.directory}/classes/modeller/</schema.location>
+        <schema.location>${project.basedir}/src/main/schema</schema.location>
     </properties>
     <dependencies>
         <dependency>
@@ -21,37 +21,18 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-         </dependency>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${project.build.directory}/classes/</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>0.5.1</version>
                 <configuration>
-                    <sourceDirectory>${schema.location}</sourceDirectory>
-                    <targetPackage>no.nav.sbl.soknadsosialhjelp.tjeneste.saksoversikt</targetPackage>
+                    <sourceDirectory>${schema.location}/json/vedlegg/</sourceDirectory>
+                    <targetPackage>no.nav.sbl.soknadsosialhjelp.vedlegg</targetPackage>
+                    <classNamePrefix>Json</classNamePrefix>
                     <generateBuilders>true</generateBuilders>
                     <useCommonsLang3>true</useCommonsLang3>
                 </configuration>

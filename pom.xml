@@ -207,7 +207,7 @@
         <module>organisasjonenhetkontaktinformasjon-v1-tjenestespesifikasjon</module>
         <module>organisasjonenhetkontaktinformasjon-v2-tjenestespesifikasjon</module>
         <module>organisasjonv4-tjenestespesifikasjon</module>
-        <module>pensjon-behandleAutomatiskOmregning-v1-tjenestespesifikasjon</module>
+        <module>pensjon-behandleautomatiskomregning-v1-tjenestespesifikasjon</module>
         <module>pensjon-sak-v1-tjenestespesifikasjon</module>
         <module>pensjon-vedtaksbrev-tjenestespesifikasjon</module>
         <module>pensjonsak-esb-tjenestespesifikasjon</module>
@@ -225,12 +225,12 @@
         <module>send-inn-henvendelse</module>
         <module>send-ut-henvendelse</module>
         <module>sendsoknad-tjenestespesifikasjon</module>
-        <module>servicemeldingMedKontaktinformasjon-v1-tjenestespesifikasjon</module>
-        <module>soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-meldingsdefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-saksoversiktdefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-soknaddefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-vedleggdefinisjon</module>
+        <module>servicemeldingmedkontaktinformasjon-v1-tjenestespesifikasjon</module>
+        <module>soeknadsskjemaengangsstoenad-v1-meldingsdefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-meldingsdefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-saksoversiktdefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-soknaddefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-vedleggdefinisjon</module>
         <module>sporsmalinnsending-tjenestespesifikasjon</module>
         <module>startregistreringstatus-v1-tjenestespesifikasjon</module>
         <module>subscription-nav-emottak-eletter-web</module>
