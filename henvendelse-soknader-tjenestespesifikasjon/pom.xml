@@ -39,7 +39,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>src/main/wsdl/no/nav/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/Soknader.wsdl</wsdl>
+                                    <wsdl>src/main/wsdl/no/nav/tjeneste/domene/brukerdialog/henvendelsesoknader/v1/soknader.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>src/main/wsdl/bindings.xml</bindingFile>
                                     </bindingFiles>

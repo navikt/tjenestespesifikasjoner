@@ -9,7 +9,7 @@
       		<outputDirectory>/</outputDirectory>
 			<directory>target/classes</directory>
 			<includes>
-				<include>**/Henvendelse.wsdl</include>
+				<include>**/henvendelse.wsdl</include>
 			</includes>
 		</fileSet>
 		<fileSet>
