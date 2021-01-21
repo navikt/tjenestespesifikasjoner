@@ -7,7 +7,7 @@
 		<version>0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>nav-fim-echo-tjenestespesifikasjon</artifactId>
+	<artifactId>xnav-fim-echo-tjenestespesifikasjon</artifactId>
 	<version>0-SNAPSHOT</version>
 	<properties>
 		<wsdl.directory>src/main/wsdl</wsdl.directory>
@@ -26,7 +26,7 @@
 						</goals>
 						<configuration>
 							<wsdlFiles>
-								<wsdlFile>Echo.wsdl</wsdlFile>
+								<wsdlFile>echo.wsdl</wsdlFile>
 							</wsdlFiles>
 							<wsdlDirectory>${wsdl.directory}</wsdlDirectory>
 							<sourceDestDir>target/generated-sources</sourceDestDir>

@@ -1,9 +1,0 @@
-<jaxws:bindings
-        xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-        wsdlLocation="./wsdl/no/nav/tjeneste/virksomhet/inngaaendeJournal/v1/inngaaendeJournal.wsdl" version="2.1">
-    <jaxws:bindings node="wsdl:definitions/wsdl:portType[@name='InngaaendeJournal_v1']">
-        <jaxws:package name="no.nav.tjeneste.virksomhet.inngaaendejournal.v1.binding"/>
-    </jaxws:bindings>
-</jaxws:bindings>

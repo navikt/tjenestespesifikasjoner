@@ -60,8 +60,8 @@
         <module>arena-maalgruppe_v1</module>
         <module>arena-personinfo-tjenestespesifikasjon</module>
         <module>arena-nav-behandlearbeidsytelsesak-v1-tjenestespesifikasjon</module>
-        <module>arena-sakOgAktivitet_v1</module>
-        <module>arenaSakVedtakService</module>
+        <module>arena-sakogaktivitet_v1</module>
+        <module>arenasakvedtakservice</module>
         <module>avstemming-v1-tjenestespesifikasjon</module>
         <module>behandle-altinnmelding-v1-tjenestespesifikasjon</module>
         <module>behandle-henvendelse</module>
@@ -70,16 +70,16 @@
         <module>behandle-person-v1-tjenestespesifikasjon</module>
         <module>behandle-sykefravaersoppfoelgingv1-tjenestespesifikasjon</module>
         <module>behandle-sykmeldingv1-tjenestespesifikasjon</module>
-        <module>behandleArbeidOgAktivitetOppgave-v1-tjenestespesifikasjon</module>
+        <module>behandlearbeidogaktivitetoppgave-v1-tjenestespesifikasjon</module>
         <module>behandledokumentforsendelse-v1-tjenestespesifikasjon</module>
         <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
-        <module>behandleForsendelse-udi-brevdata</module>
-        <module>behandleForsendelse-v1</module>
+        <module>behandleforsendelse-udi-brevdata</module>
+        <module>behandleforsendelse-v1</module>
         <module>behandleinntekt-v1-tjenestespesifikasjon</module>
         <module>behandleoppgave-v1-tjenestespesifikasjon</module>
         <module>behandlesak-v2-tjenestespesifikasjon</module>
         <module>besvare-henvendelse-tjenestespesifikasjon</module>
-        <module>brukerdialog-behandleAktivitetsplan-v1-tjenestespesifikasjon</module>
+        <module>brukerdialog-behandleaktivitetsplan-v1-tjenestespesifikasjon</module>
         <module>brukerprofil-tjenestespesifikasjon</module>
         <module>brukerprofil-v2-tjenestespesifikasjon</module>
         <module>brukerprofil-v3-tjenestespesifikasjon</module>
@@ -87,11 +87,11 @@
         <module>cons-sak-gosys-tjenestespesifikasjon</module>
         <module>dial-nav-tjeneste-aktoer_v2</module>
         <module>dial-nav-tjeneste-behandlesak</module>
-        <module>dial-nav-tjeneste-pensjonSak</module>
+        <module>dial-nav-tjeneste-pensjonsak</module>
         <module>dial-nav-tjeneste-sak</module>
         <module>dialog-v1-tjenestespesifikasjon</module>
         <module>dialogarena-behandlingsinformasjon</module>
-        <module>digisyfo-naermesteLeder</module>
+        <module>digisyfo-naermesteleder</module>
         <module>digisyfo-sykmelding</module>
         <module>digisyfo-sykepengesoeknadarbeidsgiver</module>
         <module>diskresjonskodev1-tjenestespesifikasjon</module>
@@ -130,18 +130,18 @@
         <module>moetev1-tjenestespesifikasjon</module>
         <module>nav-altinn-inntektsmelding</module>
         <module>nav-arbeidsforhold-v3-tjenestespesifikasjon</module>
-        <module>nav-behandleArbeidssoeker-v1-tjenestespesifikasjon</module>
-        <module>nav-behandleInngaaendeJournal-v1-tjenestespesifikasjon</module>
+        <module>nav-behandlearbeidssoeker-v1-tjenestespesifikasjon</module>
+        <module>nav-behandleinngaaendejournal-v1-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleJournal-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleJournal-v2-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleJournal-v3-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlejournal-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlejournal-v2-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlejournal-v3-tjenestespesifikasjon</module>
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
         <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleArbeidsforhold-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleBrukerprofil-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandleSakOgBehandling-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlearbeidsforhold-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlebrukerprofil-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-behandlesakogbehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-brukerhendelse-v1-tjenestespesifikasjon</module>
         <module>nav-fim-brukerprofil-v1-tjenestespesifikasjon</module>
         <module>nav-fim-coma-v2-tjenestespesifikasjon</module>
@@ -165,35 +165,35 @@
         <module>nav-fim-person-v1-tjenestespesifikasjon</module>
         <module>nav-fim-personsok-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sak-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-sakOgBehandling-v1-tjenestespesifikasjon</module>
+        <module>nav-fim-sakogbehandling-v1-tjenestespesifikasjon</module>
         <module>nav-fim-sykepenger-v1-tjenestespesifikasjon</module>
         <module>nav-fim-virgo-v1-tjenestespesifikasjon</module>
         <module>nav-fim-virgo-v2-tjenestespesifikasjon</module>
         <module>nav-fim-ytelse-v1-tjenestespesifikasjon</module>
         <module>nav-fim-ytelseskontrakt-v1-tjenestespesifikasjon</module>
         <module>nav-hentsykepengeliste-v2-tjenestespesifikasjon</module>
-        <module>nav-infotrygdBeregningsgrunnlag-v1-tjenestespesifikasjon</module>
-        <module>nav-infotrygdSak-v1-tjenestespesifikasjon</module>
-        <module>nav-inngaaendeJournal-v1-tjenestespesifikasjon</module>
-        <module>nav-innsynJournal-v2-tjenestespesifikasjon</module>
+        <module>nav-infotrygdberegningsgrunnlag-v1-tjenestespesifikasjon</module>
+        <module>nav-infotrygdsak-v1-tjenestespesifikasjon</module>
+        <module>nav-inngaaendejournal-v1-tjenestespesifikasjon</module>
+        <module>nav-innsynjournal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v2-tjenestespesifikasjon</module>
         <module>nav-journal-v3-tjenestespesifikasjon</module>
-        <module>nav-meldekortUtbetalingsgrunnlag-v1-tjenestespesifikasjon</module>
+        <module>nav-meldekortutbetalingsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-medlemskap-v2-tjenestespesifikasjon</module>
         <module>nav-oppfoelgingsstatus-v2-tjenestespesifikasjon</module>
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
-        <module>nav-pip-pipEgenAnsatt-v1-tjenestespesifikasjon</module>
-        <module>nav-tiltakOgAktivitet-v1-tjenestespesifikasjon</module>
+        <module>nav-pip-pipegenansatt-v1-tjenestespesifikasjon</module>
+        <module>nav-tiltakogaktivitet-v1-tjenestespesifikasjon</module>
         <module>nav-virksomhet-dokumentnotifikasjon-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-hendelsehandterer-behandlingstatus-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-loependeYtelser-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-loependeytelser-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-oppdragsbehandling-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-opprettOppgavehenvendelse-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-paaloepteUtgifter-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-opprettoppgavehenvendelse-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-paaloepteutgifter-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-soeknadsskjema-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-stoppReVarsel-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-tiltakOgAktiviteterForBrukere-v1-meldingsdefinisjon</module>
-        <module>nav-virksomhet-varselMedHandling-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-stopprevarsel-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-tiltakogaktiviteterforbrukere-v1-meldingsdefinisjon</module>
+        <module>nav-virksomhet-varselmedhandling-v1-meldingsdefinisjon</module>
         <module>no-nav-dok-tjenester-mottainngaaendeforsendelse</module>
         <module>nav-system-os-simuler-fp-service-tjenestespesifikasjon</module>
         <module>notat-tjenestespesifikasjon</module>
@@ -209,7 +209,7 @@
         <module>organisasjonenhetkontaktinformasjon-v1-tjenestespesifikasjon</module>
         <module>organisasjonenhetkontaktinformasjon-v2-tjenestespesifikasjon</module>
         <module>organisasjonv4-tjenestespesifikasjon</module>
-        <module>pensjon-behandleAutomatiskOmregning-v1-tjenestespesifikasjon</module>
+        <module>pensjon-behandleautomatiskomregning-v1-tjenestespesifikasjon</module>
         <module>pensjon-sak-v1-tjenestespesifikasjon</module>
         <module>pensjon-vedtaksbrev-tjenestespesifikasjon</module>
         <module>pensjonsak-esb-tjenestespesifikasjon</module>
@@ -227,12 +227,12 @@
         <module>send-inn-henvendelse</module>
         <module>send-ut-henvendelse</module>
         <module>sendsoknad-tjenestespesifikasjon</module>
-        <module>servicemeldingMedKontaktinformasjon-v1-tjenestespesifikasjon</module>
-        <module>soeknadsskjemaEngangsstoenad-v1-meldingsdefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-meldingsdefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-saksoversiktdefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-soknaddefinisjon</module>
-        <module>soeknadsskjemaSosialhjelp-v1-vedleggdefinisjon</module>
+        <module>servicemeldingmedkontaktinformasjon-v1-tjenestespesifikasjon</module>
+        <module>soeknadsskjemaengangsstoenad-v1-meldingsdefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-meldingsdefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-saksoversiktdefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-soknaddefinisjon</module>
+        <module>soeknadsskjemasosialhjelp-v1-vedleggdefinisjon</module>
         <module>sporsmalinnsending-tjenestespesifikasjon</module>
         <module>startregistreringstatus-v1-tjenestespesifikasjon</module>
         <module>subscription-nav-emottak-eletter-web</module>

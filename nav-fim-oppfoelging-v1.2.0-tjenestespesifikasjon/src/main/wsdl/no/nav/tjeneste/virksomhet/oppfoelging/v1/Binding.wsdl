@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions name="Binding" targetNamespace="http://nav.no/tjeneste/virksomhet/oppfoelging/v1/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/tjeneste/virksomhet/oppfoelging/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/oppfoelging/v1/" location="Oppfoelging.wsdl">
+  <wsdl:import namespace="http://nav.no/tjeneste/virksomhet/oppfoelging/v1/" location="oppfoelging.wsdl">
     </wsdl:import>
   <wsdl:binding name="OppfoelgingPortTypeBinding" type="tns:OppfoelgingPortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>

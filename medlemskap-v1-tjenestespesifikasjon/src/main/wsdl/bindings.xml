@@ -22,7 +22,7 @@
         />
     </jaxb:globalBindings>
 
-    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/medlemskap/v2/MedlemskapV2.xsd" node="/xs:schema">
+    <jaxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/medlemskap/v2/medlemskapv2.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>
                 <jaxb:typeName prefix="WS"/>

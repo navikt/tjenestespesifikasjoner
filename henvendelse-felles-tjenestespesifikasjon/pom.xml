@@ -37,7 +37,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/Henvendelse.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/henvendelse.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>

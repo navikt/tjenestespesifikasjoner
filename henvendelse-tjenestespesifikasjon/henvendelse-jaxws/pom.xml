@@ -38,13 +38,13 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/HenvendelsesBehandling.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/henvendelsesbehandling.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/Oppdaterehenvendelsesbehandling.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/oppdaterehenvendelsesbehandling.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings2.xml</bindingFile>
                                     </bindingFiles>

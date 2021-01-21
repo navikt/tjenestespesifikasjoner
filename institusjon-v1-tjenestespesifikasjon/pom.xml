@@ -32,7 +32,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/Institusjon.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/institusjon.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-xjc-XhashCode</extraarg>
                                         <extraarg>-xjc-Xequals</extraarg>

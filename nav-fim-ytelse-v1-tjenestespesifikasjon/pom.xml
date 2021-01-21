@@ -26,7 +26,7 @@
 						</goals>
 						<configuration>
 							<wsdlFiles>
-								<wsdlFile>Ytelse.wsdl</wsdlFile>
+								<wsdlFile>ytelse.wsdl</wsdlFile>
 							</wsdlFiles>
 							<wsdlDirectory>${wsdl.directory}</wsdlDirectory>
 							<sourceDestDir>target/generated-sources</sourceDestDir>

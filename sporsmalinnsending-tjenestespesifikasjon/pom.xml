@@ -38,7 +38,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${wsdl.directory}/Sporsmalinnsending.wsdl</wsdl>
+                                    <wsdl>${wsdl.directory}/sporsmalinnsending.wsdl</wsdl>
                                     <bindingFiles>
                                         <bindingFile>${wsdl.directory}/bindings.xml</bindingFile>
                                     </bindingFiles>
