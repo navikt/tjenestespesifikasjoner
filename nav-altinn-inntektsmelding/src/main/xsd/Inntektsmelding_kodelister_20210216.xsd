@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:no:nav:inntektsmelding:xml:kodeliste:20190122">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:no:nav:inntektsmelding:xml:kodeliste:20210216">
 	<xsd:annotation>
-		<xsd:documentation>Kodelister til bruker for NAVs elektroniske tjeneste for innsending av inntektsmelding fra arbeidsgivere. Oppdatert 19.10.2018. Rettet feil i kodeliste. "Ikke Sykemeldt" er erstattet med riktig benevnelse "IkkeFravaer" i kodeliste BegrunnelseIngenEllerRedusertUtbetalingKodeliste. Oppdatert 22.01.2019 Lagt til "StreikEllerLockout" i kodeliste BegrunnelseIngenEllerRedusertUtbetalingKodeliste.</xsd:documentation>
+		<xsd:documentation>Kodelister til bruker for NAVs elektroniske tjeneste for innsending av inntektsmelding fra arbeidsgivere. Oppdatert 19.10.2018. Rettet feil i kodeliste. "Ikke Sykemeldt" er erstattet med riktig benevnelse "IkkeFravaer" i kodeliste BegrunnelseIngenEllerRedusertUtbetalingKodeliste. Oppdatert 22.01.2019 Lagt til "StreikEllerLockout" i kodeliste BegrunnelseIngenEllerRedusertUtbetalingKodeliste. Oppdatert 16.02.2021 Lagt til koder "PleiepengerBarn" og "PleiepengerNaerstaaende" i YtelseKodeliste. Lagt til koder "FerieEllerAvspasering" og "IkkeFullStillingsandel" i BegrunnelseIngenEllerRedusertUtbetalingKodeliste</xsd:documentation>
 	</xsd:annotation>
 	<xsd:simpleType name="YtelseKodeliste">
 		<xsd:restriction base="xsd:string">
@@ -11,6 +11,8 @@
 			<xsd:enumeration value="Pleiepenger"/>
 			<xsd:enumeration value="Omsorgspenger"/>
 			<xsd:enumeration value="Opplaeringspenger"/>
+			<xsd:enumeration value="PleiepengerBarn"/>
+			<xsd:enumeration value="PleiepengerNaerstaaende"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="ÅrsakInnsendingKodeliste">
@@ -42,6 +44,11 @@
 			<xsd:enumeration value="BetvilerArbeidsufoerhet"/>
 			<xsd:enumeration value="IkkeFravaer"/>
 			<xsd:enumeration value="StreikEllerLockout"/>
+			<xsd:enumeration value="Permittering"/>
+			<xsd:enumeration value="FiskerMedHyre"/>
+			<xsd:enumeration value="Saerregler"/>
+			<xsd:enumeration value="FerieEllerAvspasering"/>
+			<xsd:enumeration value="IkkeFullStillingsandel"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="NaturalytelseKodeliste">
