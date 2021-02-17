@@ -49,6 +49,7 @@
 			<xsd:enumeration value="Saerregler"/>
 			<xsd:enumeration value="FerieEllerAvspasering"/>
 			<xsd:enumeration value="IkkeFullStillingsandel"/>
+			<xsd:enumeration value="TidligereVirksomhet"/>			
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="NaturalytelseKodeliste">
