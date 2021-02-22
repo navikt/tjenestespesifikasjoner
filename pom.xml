@@ -115,6 +115,7 @@
         <module>henvendelse-meldinger-tjenestespesifikasjon</module>
         <module>henvendelse-soknader-tjenestespesifikasjon</module>
         <module>henvendelse-tjenestespesifikasjon</module>
+        <module>infotrygd-vedtak</module>
         <module>innsyn-henvendelse</module>
         <module>innsynjournal-tjenestespesifikasjon</module>
         <module>institusjon-v1-tjenestespesifikasjon</module>
