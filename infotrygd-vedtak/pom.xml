@@ -41,7 +41,7 @@
                     <execution>
                         <id>include-sources</id>
                         <goals>
-                            <goal>jr-no-fork</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
