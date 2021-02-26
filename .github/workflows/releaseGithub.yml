@@ -16,7 +16,7 @@ jobs:
         run: |
           COMMIT_COUNT=$(git rev-list --all --count)
           TAG_NAME="$(echo $GITHUB_SHA | cut -c1-7)"
-          echo "RELEASE_TAG="${COMMIT_COUNT}.${TAG_NAME}" >> $GITHUB_ENV
+          echo "RELEASE_TAG=${COMMIT_COUNT}.${TAG_NAME}" >> $GITHUB_ENV
       - name: Set changelog
         # (Escape newlines see https://github.com/actions/create-release/issues/25)
         run: |
