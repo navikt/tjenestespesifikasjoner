@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/navikt/tjenestespesifikasjoner/workflows/Release%20(Github%20Package%20Registry)/badge.svg)](https://github.com/navikt/tjenestespesifikasjoner/actions?query=workflow%3A%22Release+%28Github+Package+Registry%29%22)
+[![](https://jitpack.io/v/navikt/tjenestespesifikasjoner.svg)](https://jitpack.io/#navikt/tjenestespesifikasjoner)
 
 # Tjenestespesifikasjoner
 
@@ -6,6 +6,41 @@ Dette prosjektet inneholder tjenestespesifikasjoner for de tjenestene som NAV ti
 De er maskinlesbare i form av WSDL/XSD/JSON-filer, og disse brukes som utgangspunkt for å
 generere Javakode. Denne autogenererte koden blir kompilert og siden publisert, slik at konsumenter
 kan bruke dem til å kommunisere med tjenestene.
+
+## Bruk
+
+[Tjenestespesifikasjoner er nå tilgjengelig på JitPack.](https://jitpack.io/#navikt/tjenestespesifikasjoner)
+
+### Gradle
+
+```
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.navikt.tjenestespesifikasjoner:navn-på-modul:Tag'
+}
+```
+
+### Maven
+
+```
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	
+	<dependency>
+	    <groupId>com.github.navikt.tjenestespesifikasjoner</groupId>
+	    <artifactId>navn-på-modul</artifactId>
+	    <version>Tag</version>
+	</dependency>
+```
+
+
 
 ## Bygging
 
