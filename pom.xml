@@ -182,6 +182,7 @@
         <module>nav-oppfoelgingsstatus-v2-tjenestespesifikasjon</module>
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
         <module>nav-pip-pipegenansatt-v1-tjenestespesifikasjon</module>
+        <module>nav-signatur-v1-tjenestespesfikasjon</module>
         <module>nav-tiltakogaktivitet-v1-tjenestespesifikasjon</module>
         <module>nav-virksomhet-dokumentnotifikasjon-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-hendelsehandterer-behandlingstatus-v1-meldingsdefinisjon</module>
