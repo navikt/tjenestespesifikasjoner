@@ -183,6 +183,7 @@
         <module>nav-oppfoelgingsstatus-v2-tjenestespesifikasjon</module>
         <module>nav-organisasjonEndringer-v1-tjenestespesifikasjon</module>
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
+        <module>nav-fim-tssws-organisasjon-v4-tjenestespesifikasjon</module>
         <module>nav-pip-pipegenansatt-v1-tjenestespesifikasjon</module>
         <module>nav-signatur-v1-tjenestespesfikasjon</module>
         <module>nav-tiltakogaktivitet-v1-tjenestespesifikasjon</module>
