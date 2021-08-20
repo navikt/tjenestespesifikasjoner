@@ -181,6 +181,7 @@
         <module>nav-meldekortutbetalingsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-medlemskap-v2-tjenestespesifikasjon</module>
         <module>nav-oppfoelgingsstatus-v2-tjenestespesifikasjon</module>
+        <module>nav-organisasjonEndringer-v1-tjenestespesifikasjon</module>
         <module>nav-pip-diskresjonskode-tjenestespesifikasjon</module>
         <module>nav-pip-pipegenansatt-v1-tjenestespesifikasjon</module>
         <module>nav-signatur-v1-tjenestespesfikasjon</module>
