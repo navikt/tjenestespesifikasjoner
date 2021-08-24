@@ -560,6 +560,11 @@
           <xsd:documentation>&lt;p&gt;Fødselsnummer på familiemedlem&lt;/p&gt;</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="maanedligUtgiftTilsynFam" type="xsd:integer" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Dokumenterte, månedlige utgifter tilsyn familiemedlem&lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="Barn">
@@ -587,6 +592,11 @@
       <xsd:element maxOccurs="unbounded" minOccurs="0" name="aarsakTilBarnepass" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation>&lt;p&gt;Årsaken til at barnet trenger barnepass. &lt;/p&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="maanedligUtgiftTilsynBarn" type="xsd:integer" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>&lt;p&gt;Dokumenterte, månedlige utgifter tilsyn barn&lt;/p&gt;</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
