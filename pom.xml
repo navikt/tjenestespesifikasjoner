@@ -131,6 +131,7 @@
         <module>nav-altinn-inntektsmelding</module>
         <module>nav-arbeidsforhold-v3-tjenestespesifikasjon</module>
         <module>nav-behandlearbeidssoeker-v1-tjenestespesifikasjon</module>
+        <module>nav-behandledagpengeoppgave-v1-tjenestespesifikasjon</module>
         <module>nav-behandleinngaaendejournal-v1-tjenestespesifikasjon</module>
         <module>nav-behandletiltaksgjennomfoering-v1-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
