@@ -198,6 +198,7 @@
         <module>nav-virksomhet-stopprevarsel-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-tiltakogaktiviteterforbrukere-v1-meldingsdefinisjon</module>
         <module>nav-virksomhet-varselmedhandling-v1-meldingsdefinisjon</module>
+        <module>nav-ytelsevedtak-v1-tjenestespesifikasjon</module>
         <module>no-nav-dok-tjenester-mottainngaaendeforsendelse</module>
         <module>nav-system-os-simuler-fp-service-tjenestespesifikasjon</module>
         <module>notat-tjenestespesifikasjon</module>
