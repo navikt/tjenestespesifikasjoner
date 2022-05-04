@@ -37,7 +37,7 @@ jobs:
           mvn -B versions:set -DnewVersion="$RELEASE_TAG"
           mvn -B versions:commit
           echo "Running release"
-          mvn -B --settings maven-settings.xml deploy -Dmaven.wagon.http.pool=false
+          mvn -B --settings maven-settings.xml -pl -nav-organisasjonEndringer-v1-tjenestespesifikasjon deploy -Dmaven.wagon.http.pool=false
 
       - name: Create Release
         id: create_release
