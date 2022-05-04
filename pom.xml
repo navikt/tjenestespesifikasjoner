@@ -230,6 +230,7 @@
         <module>pleiepenger-v1-tjenestespesifikasjon</module>
         <module>sak-v2-tjenestespesifikasjon</module>
         <module>sakogbehandling-tjenestespesifikasjon</module>
+        <module>samhandler-tjenestespesifikasjon</module>
         <module>sanntidpdfkonverter</module>
         <module>send-inn-henvendelse</module>
         <module>send-ut-henvendelse</module>
