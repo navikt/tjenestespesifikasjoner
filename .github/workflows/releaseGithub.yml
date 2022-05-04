@@ -34,7 +34,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mvn -B versions:set -DnewVersion="RELEASE_TAG"
+          mvn -B versions:set -DnewVersion="$RELEASE_TAG"
           mvn -B versions:commit
           echo "Running release"
           mvn -B --settings maven-settings.xml deploy -Dmaven.wagon.http.pool=false
