@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://arena.nav.no/services/organisasjonservice" targetNamespace="http://arena.nav.no/services/organisasjonservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="HentSaksbehandlerListeRequest">
+		<xs:sequence>
+			<!-- Et av de tre neste elementene MÅ være satt.-->
+			<xs:element name="enhetId" type="xs:string" minOccurs="0"/>
+			<xs:element name="ansattIdSokeStreng" type="xs:string" minOccurs="0"/>
+			<xs:element name="ansattNavnSokeStreng" type="xs:string" minOccurs="0"/>
+			<xs:element name="maxAntall" type="xs:int" minOccurs="0"/>
+			<xs:element name="oppgaveBestillingKode" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="hentSaksbehandlerListe" type="ns1:HentSaksbehandlerListeRequest"/>
+</xs:schema>
