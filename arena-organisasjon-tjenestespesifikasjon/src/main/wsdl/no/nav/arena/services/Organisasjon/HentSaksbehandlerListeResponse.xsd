@@ -6,5 +6,5 @@
 			<xs:element name="saksbehandlerListe" type="arens1:NAVAnsattListe"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="hentSaksbehandlerListeResult" type="HentSaksbehandlerListeResponse">	</xs:element>
+	<xs:element name="hentSaksbehandlerListeResult" type="HentSaksbehandlerListeResponse"/>
 </xs:schema>
