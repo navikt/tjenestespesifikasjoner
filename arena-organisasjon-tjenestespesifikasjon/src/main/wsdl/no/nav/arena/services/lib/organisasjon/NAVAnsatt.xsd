@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://arena.nav.no/services/lib/organisasjon" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="NAVAnsatt">
+		<xs:sequence>
+			<xs:element name="ansattId" type="xs:string"/>
+			<xs:element name="ansattNavn" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

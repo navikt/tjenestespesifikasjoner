@@ -56,6 +56,7 @@
         <module>arena-arbeid-og-aktivitet-gosys</module>
         <module>arena-arbeid-og-aktivitet</module>
         <module>arena-maalgruppe_v1</module>
+        <module>arena-organisasjon-tjenestespesifikasjon</module>
         <module>arena-personinfo-tjenestespesifikasjon</module>
         <module>arena-nav-behandlearbeidsytelsesak-v1-tjenestespesifikasjon</module>
         <module>arena-sakogaktivitet_v1</module>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:arens1="http://arena.nav.no/services/lib/organisasjon" xmlns="http://arena.nav.no/services/organisasjonservice" targetNamespace="http://arena.nav.no/services/organisasjonservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://arena.nav.no/services/lib/organisasjon" schemaLocation="../lib/organisasjon/NAVAnsattListe.xsd"/>
+	<xs:complexType name="HentSaksbehandlerListeResponse">
+		<xs:sequence>
+			<xs:element name="saksbehandlerListe" type="arens1:NAVAnsattListe"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="hentSaksbehandlerListeResult" type="HentSaksbehandlerListeResponse"/>
+</xs:schema>
