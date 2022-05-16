@@ -5,7 +5,7 @@
 			<!--Skjemaer for request/response-typer for ArenaOrganisasjonService.-->
 			<xs:include schemaLocation="no/nav/arena/services/Organisasjon/HentSaksbehandlerListeRequest.xsd"/>
 			<xs:include schemaLocation="no/nav/arena/services/Organisasjon/HentSaksbehandlerListeResponse.xsd"/>
-			<!--Navnerom  og elementdeklarasjon for generelle feil.-->
+			<!--Navnerom og elementdeklarasjon for generelle feil.-->
 			<xs:import namespace="http://arena.nav.no/services/lib/fault" schemaLocation="no/nav/arena/services/lib/fault/faults.xsd"/>
 		</xs:schema>
 	</wsdl:types>
@@ -26,7 +26,7 @@
 			<wsdl:input name="hentSaksbehandlerListeRequest" message="tns:hentSaksbehandlerListeRequestMsg"/>
 			<wsdl:output name="hentSaksbehandlerListeResponse" message="tns:hentSaksbehandlerListeResponseMsg"/>
 			<wsdl:fault name="faultGenerisk" message="tns:faultGeneriskMsg"/>
-			<wsdl:fault name="faultEnhetIkkeFunnet" message="tns:faultEnhetIkkeFunnetMsg"/>			
+			<wsdl:fault name="faultEnhetIkkeFunnet" message="tns:faultEnhetIkkeFunnetMsg"/>
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="ArenaOrganisasjonServiceBinding" type="tns:OrganisasjonPortType">
