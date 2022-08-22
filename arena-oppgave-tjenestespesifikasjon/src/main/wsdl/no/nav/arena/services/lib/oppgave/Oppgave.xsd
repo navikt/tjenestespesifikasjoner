@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://arena.nav.no/services/lib/oppgave" targetNamespace="http://arena.nav.no/services/lib/oppgave" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="Oppgave">
+		<xs:sequence>
+			<xs:element name="fodselsnummer" type="xs:string" minOccurs="0"/>
+			<xs:element name="aktivTil" type="xs:date" minOccurs="0"/>
+			<xs:element name="ansvarligId" type="xs:string" minOccurs="0"/>
+			<xs:element name="ansvarligNavn" type="xs:string" minOccurs="0"/>
+			<xs:element name="ansvarligEnhetId" type="xs:string" minOccurs="0"/>
+			<xs:element name="ansvarligEnhetNavn" type="xs:string" minOccurs="0"/>
+			<xs:element name="fagomrade" type="xs:string" minOccurs="0"/>
+			<xs:element name="prioritet" type="xs:string" minOccurs="0"/>
+			<xs:element name="beskrivelse" type="xs:string" minOccurs="0"/>
+			<xs:element name="oppfolging" type="xs:string" minOccurs="0"/>
+			<xs:element name="prosessId" type="xs:string" minOccurs="0"/>
+			<xs:element name="prosessNavn" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

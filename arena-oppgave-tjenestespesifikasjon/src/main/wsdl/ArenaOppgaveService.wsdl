@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://arena.nav.no/services/oppgaveservice" xmlns:faults="http://arena.nav.no/services/lib/fault" targetNamespace="http://arena.nav.no/services/oppgaveservice">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://arena.nav.no/services/oppgaveservice" targetNamespace="http://arena.nav.no/services/oppgaveservice">
+            <!--Skjemaer for request/response-typer for ArenaOppgaveService.-->
+			<xs:include schemaLocation="no/nav/arena/services/Oppgave/HentOppgaveListeRequest.xsd"/>
+			<xs:include schemaLocation="no/nav/arena/services/Oppgave/HentOppgaveListeResponse.xsd"/>
+			<!--Navnerom for generelle feil.-->
+			<xs:import namespace="http://arena.nav.no/services/lib/fault" schemaLocation="no/nav/arena/services/lib/fault/faults.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="hentOppgaveListeRequestMsg">
+		<wsdl:part name="hentOppgaveListeParameters" element="tns:hentOppgaveListe"/>
+	</wsdl:message>
+	<wsdl:message name="hentOppgaveListeResponseMsg">
+		<wsdl:part name="hentOppgaveListeResult" element="tns:hentOppgaveListeResult"/>
+	</wsdl:message>
+	<wsdl:message name="faultGeneriskMsg">
+		<wsdl:part name="faultGenerisk" element="faults:faultGenerisk"/>
+	</wsdl:message>
+	<wsdl:portType name="OppgavePortType">
+		<wsdl:operation name="hentOppgaveListe">
+			<wsdl:input name="hentOppgaveListeRequest" message="tns:hentOppgaveListeRequestMsg"/>
+			<wsdl:output name="hentOppgaveListeResponse" message="tns:hentOppgaveListeResponseMsg"/>
+			<wsdl:fault name="faultGenerisk" message="tns:faultGeneriskMsg"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ArenaOppgaveServiceBinding" type="tns:OppgavePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="hentOppgaveListe">
+			<soap:operation soapAction="hentOppgaveListe" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultGenerisk">
+				<soap:fault name="faultGenerisk" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ArenaOppgaveService">
+		<wsdl:port name="ArenaOppgaveServicePort" binding="tns:ArenaOppgaveServiceBinding">
+			<soap:address location="https://arena.adeo.no/arena_ws/services/ArenaOppgaveService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
