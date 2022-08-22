@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:arens1="http://arena.nav.no/services/lib/oppgave" xmlns:tns="http://arena.nav.no/services/oppgaveservice" targetNamespace="http://arena.nav.no/services/oppgaveservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://arena.nav.no/services/lib/oppgave" schemaLocation="../lib/oppgave/OppgaveListe.xsd"/>
+	<xs:complexType name="HentOppgaveListeResponse">
+		<xs:sequence>
+			<xs:element name="oppgaveListe" type="arens1:OppgaveListe"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="hentOppgaveListeResult" type="tns:HentOppgaveListeResponse"/>
+</xs:schema>
