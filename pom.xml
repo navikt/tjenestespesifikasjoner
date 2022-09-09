@@ -257,6 +257,7 @@
         <module>tps-distribusjonsmelding</module>
         <module>udi-personstatus-v1</module>
         <module>utbetaling-tjenestespesifikasjon</module>
+        <module>utbetalingstransaksjon-v1-meldingsdefinisjon</module>
         <module>utenrikstjenesten-tjenestespesifikasjon</module>
         <module>varsel-inn</module>
         <module>varseldittnav-tjenestespesifikasjon</module>
