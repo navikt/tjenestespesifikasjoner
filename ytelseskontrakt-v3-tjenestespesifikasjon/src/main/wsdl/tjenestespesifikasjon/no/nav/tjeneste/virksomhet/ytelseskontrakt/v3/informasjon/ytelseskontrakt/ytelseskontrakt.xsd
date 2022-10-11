@@ -110,7 +110,7 @@ kan valgfritt returneres med eller uten tidssone av tilbyder. Dette må håndter
   <xsd:complexType name="Ytelseskontrakt">
     <xsd:sequence>
       <xsd:element name="datoKravMottatt" type="xsd:date"/>
-      <xsd:element minOccurs="0" name="fagsystemSakId" type="xsd:int">
+      <xsd:element minOccurs="0" name="fagsystemSakId" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation>Unik id til ytelseskontrakt-saken vedtaket eksisterer på = saksnummer i Arena.</xsd:documentation>
         </xsd:annotation>
