@@ -16,6 +16,7 @@
             <xsd:element name="datoFra" type="xsd:date" />
             <xsd:element name="datoTil" type="xsd:date" />
             <xsd:element name="rentetillegg" type="xsd:decimal" minOccurs="0" />
+            <xsd:element name="foreldetForDato" type="xsd:date" minOccurs="0" />
             <xsd:element name="foreldetBelop" type="xsd:decimal" minOccurs="0" />
             <xsd:element name="vedtakstype" type="xsd:string" />
             <xsd:element name="vedtakId" type="xsd:integer" />
