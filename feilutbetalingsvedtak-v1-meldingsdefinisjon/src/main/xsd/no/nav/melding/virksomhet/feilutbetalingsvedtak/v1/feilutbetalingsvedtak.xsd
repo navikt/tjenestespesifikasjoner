@@ -22,6 +22,7 @@
             <xsd:element name="vedtakId" type="xsd:integer" />
             <xsd:element name="stonadstype" type="xsd:string" />
             <xsd:element name="referanse" type="xsd:string" />
+            <xsd:element name="grunnlagsbelopSkylddeling" type="xsd:decimal" minOccurs="0" />
             <xsd:element name="skylddelingsgrad" type="xsd:integer" minOccurs="0" />
             <xsd:element name="totaltTilbakebetalingsbelop" type="xsd:decimal" />
             <xsd:element name="belopsdetaljerListe" type="tns:Belopsdetaljer" maxOccurs="unbounded" />
