@@ -1,6 +1,0 @@
-<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
-                xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-    <jaxws:bindings node="wsdl:definitions//wsdl:portType[@name='Utbetaling']">
-        <jaxws:class name="UtbetalingPortType"/>
-    </jaxws:bindings>
-</jaxws:bindings>

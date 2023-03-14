@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/varselDittNAV/v2/informasjon" xmlns:informasjon="http://nav.no/tjeneste/virksomhet/varselDittNAV/v2/informasjon">
-  <xsd:simpleType name="Identifikator">
-    <xsd:restriction base="xsd:string"/>
-  </xsd:simpleType>
-  <xsd:simpleType name="AktoerId">
-    <xsd:restriction base="xsd:string"/>
-  </xsd:simpleType>
-</xsd:schema>

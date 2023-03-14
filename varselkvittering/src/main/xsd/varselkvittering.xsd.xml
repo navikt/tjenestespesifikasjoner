@@ -1,9 +1,0 @@
-<var:varselKvittering xmlns:var="http://nav.no/melding/virksomhet/varselKvittering/v1/varselKvittering">
-<varselId>string</varselId>
-<!--Optional:-->
-<mottakerinformasjon>string</mottakerinformasjon>
-<utsendingstidspunkt>2008-09-29T03:49:45</utsendingstidspunkt>
-<status>string</status>
-<!--Optional:-->
-<feilmelding>string</feilmelding>
-</var:varselKvittering>

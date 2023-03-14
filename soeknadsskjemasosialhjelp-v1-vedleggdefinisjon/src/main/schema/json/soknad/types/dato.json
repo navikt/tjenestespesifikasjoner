@@ -1,7 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-06/schema#",
-	
-	"title": "En dato med formatet YYYY-MM-DD.",
-	"type": "string",
-	"pattern": "^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$"
-}

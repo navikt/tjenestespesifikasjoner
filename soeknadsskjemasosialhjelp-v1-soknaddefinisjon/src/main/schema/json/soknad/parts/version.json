@@ -1,8 +1,0 @@
-{
-	"$schema": "http://json-schema.org/draft-06/schema#",
-	"title": "Søknadsdataversjonen.",
-	"description": "Versjonsnummeret følger reglene definert i \"https://semver.org/\" med følgende unntak/presiseringer: \n1. Ny majorversjon betyr en ny søknadsfil.\n2. Ny minorversjon betyr at feltet \"kompatibilitet\" kan ha blitt brukt.\n3. Ny patchversjon brukes ved endringer som skjer bakoverkompatibelt uten bruk av \"kompatibilitet\"-feltet.",
-	"type": "string",
-	"pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[a-zA-Z0-9]+)?(\\+[a-zA-Z0-9]+)?$",
-	"default": "1.0.3"
-}

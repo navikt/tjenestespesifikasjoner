@@ -1,9 +1,0 @@
-<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
-                xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-	
-    <!-- forhåpentligvis midlertidig fiks for å få navnet på generert porttype-klasse til
-     å matche navnet i wsdlen (pga av underscore i navnet i wsdl som blir borte ved wsdl2java -->
-    <jaxws:bindings node="wsdl:definitions//wsdl:portType[@name='sanntidPdfKonverterer_v1']">
-        <jaxws:class name="SanntidPdfKonvertererService_v1"/>
-    </jaxws:bindings>
-</jaxws:bindings>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://arena.nav.no/services/lib/fault" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="FaultGenerisk.xsd"/>
-	<xs:include schemaLocation="FaultFeilIInput.xsd"/>
-</xs:schema>

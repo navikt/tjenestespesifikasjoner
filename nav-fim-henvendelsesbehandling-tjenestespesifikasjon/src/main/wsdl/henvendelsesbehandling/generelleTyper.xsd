@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://nav.no/tjeneste/virksomhet/henvendelsesbehandling/v1/informasjon/generelleTyper" xmlns:generelleTyper="http://nav.no/tjeneste/virksomhet/henvendelsesbehandling/v1/informasjon/generelleTyper" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:simpleType name="Identifikator">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-</xs:schema>

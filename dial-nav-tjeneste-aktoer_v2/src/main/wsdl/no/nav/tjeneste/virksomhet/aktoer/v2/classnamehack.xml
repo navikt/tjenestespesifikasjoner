@@ -1,9 +1,0 @@
-<bindings
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-        wsdlLocation="v2.wsdl"
-                    xmlns="http://java.sun.com/xml/ns/jaxws">
-    <bindings node="wsdl:definitions//wsdl:portType[@name='Aktoer_v2']">
-        <class name="Aktoer_v2"/>
-    </bindings>
-</bindings>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/innsynJournal/v2/feil" xmlns:feil="http://nav.no/tjeneste/virksomhet/innsynJournal/v2/feil">
-  <xsd:complexType name="FunctionalFault"/>
-  <xsd:complexType name="TechnicalFault"/>
-</xsd:schema>

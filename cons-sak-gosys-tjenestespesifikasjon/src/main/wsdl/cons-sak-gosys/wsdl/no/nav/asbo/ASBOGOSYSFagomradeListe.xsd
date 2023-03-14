@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo">
-    <xsd:include schemaLocation="ASBOGOSYSFagomrade.xsd"/>
-    <xsd:complexType name="ASBOGOSYSFagomradeListe">
-    <xsd:sequence>
-      <xsd:element maxOccurs="unbounded" minOccurs="0" name="fagomrader" type="bons1:ASBOGOSYSFagomrade"/>
-    </xsd:sequence>
-  </xsd:complexType>
-</xsd:schema>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://nav.no/tjeneste/virksomhet/behandleBrukerprofil/v1/meldinger" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:meldinger="htp://nav.no/tjeneste/virksomhet/behandleBrukerprofil/v1/meldinger" xmlns:informasjon="http://nav.no/tjeneste/virksomhet/behandleBrukerprofil/v1/informasjon">
-	<xs:import namespace="http://nav.no/tjeneste/virksomhet/behandleBrukerprofil/v1/informasjon" schemaLocation="../informasjon/behandleBrukerprofil.xsd"/>
-	<xs:complexType name="OppdaterKontaktinformasjonOgPreferanserRequest">
-		<xs:sequence>
-			<xs:element name="person" type="informasjon:Person" minOccurs="1" maxOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-</xs:schema>

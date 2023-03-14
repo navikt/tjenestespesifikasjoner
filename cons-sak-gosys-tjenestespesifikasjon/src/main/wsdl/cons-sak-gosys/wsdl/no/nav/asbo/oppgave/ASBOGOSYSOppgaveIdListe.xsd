@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/oppgave">
-    <xsd:include schemaLocation="ASBOGOSYSOppgaveId.xsd"/>
-    <xsd:complexType name="ASBOGOSYSOppgaveIdListe">
-    <xsd:sequence>
-      <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppgaveIder" type="bons0:ASBOGOSYSOppgaveId"/>
-    </xsd:sequence>
-  </xsd:complexType>
-</xsd:schema>

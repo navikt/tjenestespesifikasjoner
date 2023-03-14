@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://nav.no/tjeneste/virksomhet/journal/v1/informasjon/multippel" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:multippel="http://nav.no/tjeneste/virksomhet/journal/v1/informasjon/multippel">
-	<xs:complexType name="Signatur">
-		<xs:sequence>
-			<xs:element name="signert" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-</xs:schema>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://nav.no/tjeneste/virksomhet/henvendelsesbehandling/v1/informasjon/part" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:part="http://nav.no/tjeneste/virksomhet/henvendelsesbehandling/v1/informasjon/part">
-	<xs:complexType name="Part">
-		<xs:sequence>
-			<xs:element name="partid" type="xs:string" minOccurs="0" maxOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-</xs:schema>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons1="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person" targetNamespace="http://nav-cons-sak-gosys-3.0.0/no/nav/asbo/person">
-    <xsd:include schemaLocation="ASBOGOSYSAnnenAdresse.xsd"/>
-    <xsd:complexType name="ASBOGOSYSAnnenAdresseListe">
-    <xsd:sequence>
-      <xsd:element maxOccurs="unbounded" minOccurs="0" name="adresseLinjer" type="bons1:ASBOGOSYSAnnenAdresse"/>
-    </xsd:sequence>
-  </xsd:complexType>
-</xsd:schema>

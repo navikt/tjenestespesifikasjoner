@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nav.no/tjeneste/virksomhet/digitalKontaktinformasjon/v1/metadata" xmlns:metadata="http://nav.no/tjeneste/virksomhet/digitalKontaktinformasjon/v1/metadata">
-  <xsd:attributeGroup name="SistVerifisert">
-    <xsd:attribute name="sistVerifisert" type="xsd:dateTime"/>
-  </xsd:attributeGroup>
-  <xsd:attributeGroup name="SistOppdatert">
-    <xsd:attribute name="sistOppdatert" type="xsd:dateTime"/>
-  </xsd:attributeGroup>
-</xsd:schema>
