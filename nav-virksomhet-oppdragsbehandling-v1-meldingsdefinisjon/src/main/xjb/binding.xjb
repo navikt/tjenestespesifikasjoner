@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annox="http://annox.dev.java.net"
-			   xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
-			   version="2.1"
-			   jaxb:extensionBindingPrefixes="xjc annox">
-	<!-- Annotate the following classes with XmlRootElement -->
-	<jaxb:bindings schemaLocation="../xsd/no/trygdeetaten/skjema/oppdrag/oppdragskjema-1.xsd" node="/xs:schema">
-		<jaxb:bindings node="xs:complexType[@name='oppdrag']">
-			<annox:annotate>
-				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="oppdrag" />
-			</annox:annotate>
-		</jaxb:bindings>
-	</jaxb:bindings>
+<jaxb:bindings version="3.0" xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:annox="http://annox.dev.java.net"
+               jaxb:extensionBindingPrefixes="xjc annox">
+    <jaxb:bindings schemaLocation="test.xsd">
+        <jaxb:bindings schemaLocation="../xsd/no/trygdeetaten/skjema/oppdrag/oppdragskjema-1.xsd" node="/xs:schema">
+            <jaxb:bindings node="xs:complexType[@name='oppdrag']">
+                <annox:annotate>
+                    <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="oppdrag"/>
+                </annox:annotate>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
 </jaxb:bindings>
