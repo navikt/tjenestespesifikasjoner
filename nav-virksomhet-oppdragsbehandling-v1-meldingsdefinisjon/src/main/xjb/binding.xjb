@@ -11,18 +11,5 @@
 				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="oppdrag" />
 			</annox:annotate>
 		</jaxb:bindings>
-		<!--
-		<jaxb:bindings node="xs:complexType[@name='Dokumentbestillingsinformasjon']/xs:sequence/xs:element[@name='utledRegisterInfo']">
-			<annox:annotate target="field">@java.lang.Deprecated</annox:annotate>
-			<annox:annotate target="getter">@java.lang.Deprecated</annox:annotate>
-			<annox:annotate target="setter">@java.lang.Deprecated</annox:annotate>
-		</jaxb:bindings>
-		<jaxb:bindings node="xs:complexType[@name='ProduserIkkeRedigerbartDokument']/xs:sequence/xs:any">
-			<jaxb:property name="brevdata"/>
-		</jaxb:bindings>
-		<jaxb:bindings node="xs:complexType[@name='Vedleggbestillingsinformasjon']/xs:sequence/xs:any">
-			<jaxb:property name="brevdata"/>
-		</jaxb:bindings>
-		-->
 	</jaxb:bindings>
 </jaxb:bindings>
