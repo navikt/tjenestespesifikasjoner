@@ -1,10 +1,11 @@
 package no.nav.sbl.dialogarena.adapters.simple;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import static javax.xml.bind.DatatypeConverter.parseDate;
+import static jakarta.xml.bind.DatatypeConverter.parseDate;
 
 public class CalendarAdapter extends XmlAdapter<String, Calendar> {
 
