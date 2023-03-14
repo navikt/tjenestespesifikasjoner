@@ -11,6 +11,13 @@
     <packaging>jar</packaging>
     <version>0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+    </dependencies>
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
@@ -18,8 +25,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <groupId>com.sun.xml.ws</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <id>wsdl-to-java</id>
