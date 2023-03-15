@@ -2,16 +2,9 @@
                xmlns:aa="https://gitlab.com/virtual-machinist/any-annotate"
                extensionBindingPrefixes="aa"
 >
-    <jaxb:globalBindings>
-        <jaxb:serializable uid="1"/>
-
-        <jaxb:javaType name="java.util.Calendar" xmlType="xs:dateTime"
-                       parseMethod="jakarta.xml.bind.DatatypeConverter.parseDateTime"
-                       printMethod="jakarta.xml.bind.DatatypeConverter.printDateTime"/>
-    </jaxb:globalBindings>
     <jaxb:bindings schemaLocation="../xsd/no/trygdeetaten/skjema/oppdrag/oppdragskjema-1.xsd" node="/xs:schema">
         <jaxb:bindings node="xs:complexType[@name='oppdrag']">
-            <aa:any-annotate>@jakarta.xml.bind.annotation.XmlRootElement</aa:any-annotate>
+            <aa:any-annotate>@jakarta.xml.bind.annotation.XmlRootElement(name = "oppdrag")</aa:any-annotate>
         </jaxb:bindings>
     </jaxb:bindings>
 
