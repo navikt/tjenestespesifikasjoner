@@ -5,18 +5,6 @@
     <artifactId>tjenestespesifikasjoner</artifactId>
     <version>0-SNAPSHOT</version>
     <name>tjenestespesifikasjoner</name>
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
-            <version>4.0.2</version>
-        </dependency>
-    </dependencies>
     <packaging>pom</packaging>
     <description>Generated code + WSDL, WSD, JSON schemas etc. for describing how web services communicate in NAV.
     </description>
@@ -27,14 +15,9 @@
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <cxf-xjc-boolean.version>3.1.0</cxf-xjc-boolean.version>
-        <org.jvnet.jaxb2.version>0.12.0</org.jvnet.jaxb2.version>
-        <net.java.dev.jaxb2.version>2.1.8</net.java.dev.jaxb2.version>
         <jackson-annotations.version>2.9.0</jackson-annotations.version>
         <joda-time.version>2.10</joda-time.version>
-        <jaxb2-maven-plugin.version>2.5.0</jaxb2-maven-plugin.version>
-        <jaxb2-value-constructor.version>3.0</jaxb2-value-constructor.version>
-        <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
+        <jakarta-xml-bind-runtime.version>4.0.2</jakarta-xml-bind-runtime.version>
     </properties>
     <licenses>
         <license>
@@ -80,16 +63,6 @@
                 <version>${joda-time.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.patrodyne.jvnet</groupId>
-                <artifactId>hisrc-basicjaxb</artifactId>
-                <version>0.12.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.patrodyne.jvnet</groupId>
-                <artifactId>hisrc-basicjaxb-runtime</artifactId>
-                <version>2.1.0</version>
-            </dependency>
-            <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson-annotations.version}</version>
@@ -99,6 +72,16 @@
                 <artifactId>jaxws-ri</artifactId>
                 <version>4.0.1</version>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-rt</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>${jakarta-xml-bind-runtime.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

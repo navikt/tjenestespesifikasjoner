@@ -14,7 +14,6 @@
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
-			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 

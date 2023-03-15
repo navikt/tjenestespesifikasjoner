@@ -15,6 +15,13 @@
     <properties>
         <xsd.location>${project.basedir}/src/main/xsd/no/trygdeetaten/skjema/oppdrag/oppdragskjema-1.xsd</xsd.location>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
