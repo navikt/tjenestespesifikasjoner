@@ -67,38 +67,6 @@
     </dependencies>
     <build>
         <plugins>
-            <!--
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>xjc</id>
-                        <goals>
-                            <goal>xjc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <extension>true</extension>
-                    <arguments>-Xvalue-constructor -Xfluent-api</arguments>
-                    <schemaDirectory>${xsd.location}</schemaDirectory>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-value-constructor</artifactId>
-                        <version>3.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>2.1.8</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            -->
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-xjc-plugin</artifactId>
@@ -131,48 +99,6 @@
                         </configuration>
                     </execution>
                 </executions>
-                <!--                <dependencies>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-core</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-rt-frontend-jaxws</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-rt-transports-http</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-rt-ws-security</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-rt-features-logging</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-rt-bindings-soap</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-rt-ws-policy</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>org.apache.cxf</groupId>
-                                        <artifactId>cxf-rt-frontend-simple</artifactId>
-                                        <version>${cxf.version}</version>
-                                    </dependency>
-                                </dependencies>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
