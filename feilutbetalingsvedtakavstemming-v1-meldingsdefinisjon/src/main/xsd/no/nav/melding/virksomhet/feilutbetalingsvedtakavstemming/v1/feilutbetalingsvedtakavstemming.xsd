@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://nav.no/melding/virksomhet/feilutbetalingsvedtakavstemming/v1"
+    xmlns:tns="http://nav.no/melding/virksomhet/feilutbetalingsvedtakavstemming/v1">
+
+    <xsd:element name="feilutbetalingsvedtakAvstemming" type="tns:FeilutbetalingsvedtakAvstemming" />
+
+    <xsd:complexType name="FeilutbetalingsvedtakAvstemming">
+        <xsd:annotation>
+          <xsd:documentation>Se sysdok "Arena - Tjenestekonsument MQ - OS/UR feilutbetalingsvedtakAvstemming" for en beskrivelse av elementene.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="datoAvstemt" type="xsd:date" />
+            <xsd:element name="totalAntall" type="xsd:integer" />
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
