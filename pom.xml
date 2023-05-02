@@ -108,6 +108,7 @@
         <module>elektronisknotifikasjon-utsending-tjenestespesifikasjon</module>
         <module>enhet-v1-tjenestespesifikasjon</module>
         <module>feilutbetalingsvedtak-v1-meldingsdefinisjon</module>
+        <module>feilutbetalingsvedtakavstemming-v1-meldingsdefinisjon</module>
         <module>fillager-tjenestespesifikasjon</module>
         <module>foreldrepengesak-v1-tjenestespesifikasjon</module>
         <module>getapplicationversion</module>
