@@ -39,6 +39,9 @@
         <xsd:documentation>ver 2.3 - 2019.02.15 - PK-56864: Lagt til ompostering-116</xsd:documentation>
     </xsd:annotation>
     <xsd:annotation>
+        <xsd:documentation>ver 2.4 - 2024.02.02 - TOB-3323: Lagt til avvis-118</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
         <xsd:documentation>Dette skjemaet er utviklet for klienter som skal sende og motta meldinger mot Oppdrag.
         </xsd:documentation>
     </xsd:annotation>
@@ -509,6 +512,26 @@
             <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
         </xsd:sequence>
     </xsd:complexType>
+    <xsd:complexType name="avvent-118">
+        <xsd:annotation>
+            <xsd:documentation> Avvent - Referanse ID 118</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="datoAvventFom" type="xsd_1:Tdatozos8"/>
+            <xsd:element minOccurs="0" name="datoAvventTom" type="xsd_1:Tdatozos8"/>
+            <xsd:element minOccurs="0" name="kodeArsak" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="datoOverfores" type="xsd_1:Tdatozos8"/>
+            <xsd:element minOccurs="0" name="feilreg">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                        <xsd:enumeration value="J"/>
+                        <xsd:enumeration value="N"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
     <xsd:complexType name="attestant-180">
         <xsd:annotation>
             <xsd:documentation>Inneholder elementene som skal være med i en input 180-rekord, Attestasjon
@@ -621,6 +644,7 @@
             <xsd:element minOccurs="0" name="bilagstype-113" type="xsd_1:bilagstype-113"/>
             <xsd:element minOccurs="0" name="avstemming-115" type="xsd_1:avstemming-115"/>
             <xsd:element minOccurs="0" name="ompostering-116" type="xsd_1:ompostering-116"/>
+            <xsd:element minOccurs="0" name="avvent-118" type="xsd_1:avvent-118"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdrags-enhet-120" type="xsd_1:oppdrags-enhet-120"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="belops-grense-130" type="xsd_1:belops-grense-130"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="tekst-140" type="xsd_1:tekst-140"/>
@@ -746,6 +770,16 @@
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:date"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tdatozos8">
+        <xsd:annotation>
+            <xsd:documentation>Typen beskriver formatet og begrensningene til dato elementer med lengde 8 (yyyymmdd)
+                som kommer fra/til OppdragZ.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[1,2][9,0]\d\d[0,1]\d[0-3]\d"/>
+        </xsd:restriction>
     </xsd:simpleType>
     <xsd:simpleType name="ToppdragsId">
         <xsd:annotation>
