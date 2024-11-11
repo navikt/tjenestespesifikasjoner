@@ -42,6 +42,9 @@
         <xsd:documentation>ver 2.4 - 2024.02.02 - TOB-3323: Lagt til avvis-118</xsd:documentation>
     </xsd:annotation>
     <xsd:annotation>
+        <xsd:documentation>ver 2.5 - 2024.11.07 - TOB-3875: Lagt til vedtakssats-157</xsd:documentation>
+    </xsd:annotation>
+    <xsd:annotation>
         <xsd:documentation>Dette skjemaet er utviklet for klienter som skal sende og motta meldinger mot Oppdrag.
         </xsd:documentation>
     </xsd:annotation>
@@ -270,6 +273,14 @@
             <xsd:element name="datoOppdragGjelderFom" type="xsd_1:Tdato"/>
             <xsd:element name="tidspktReg" type="xsd_1:TtidspktReg"/>
             <xsd:element name="saksbehId" type="xsd_1:TsaksbehId"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="vedtakssats-157">
+        <xsd:annotation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 157-rekord, vedtaksstatus</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="vedtakssats" type="xsd_1:Tsats"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="linje-tekst-158">
@@ -514,7 +525,7 @@
     </xsd:complexType>
     <xsd:complexType name="avvent-118">
         <xsd:annotation>
-            <xsd:documentation> Avvent - Referanse ID 118</xsd:documentation>
+            <xsd:documentation>Avvent - Referanse ID 118</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element minOccurs="0" name="datoAvventFom" type="xsd_1:Tdatozos8"/>
@@ -604,6 +615,7 @@
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="kid-154" type="xsd_1:kid-154"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="utbetales-til-155" type="xsd_1:utbetales-til-155"/>
             <xsd:element minOccurs="0" name="refusjonsinfo-156" type="xsd_1:refusjonsinfo-156"/>
+            <xsd:element minOccurs="0" name="vedtakssats-157" type="xsd_1:vedtakssats-157"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="linje-tekst-158" type="xsd_1:linje-tekst-158"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="linje-enhet-160" type="xsd_1:linje-enhet-160"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="grad-170" type="xsd_1:grad-170"/>
