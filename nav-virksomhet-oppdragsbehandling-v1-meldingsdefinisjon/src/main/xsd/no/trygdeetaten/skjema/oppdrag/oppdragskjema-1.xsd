@@ -39,7 +39,7 @@
         <xsd:documentation>ver 2.3 - 2019.02.15 - PK-56864: Lagt til ompostering-116</xsd:documentation>
     </xsd:annotation>
     <xsd:annotation>
-        <xsd:documentation>ver 2.4 - 2024.02.02 - TOB-3323: Lagt til avvis-118</xsd:documentation>
+        <xsd:documentation>ver 2.4 - 2024.02.02 - TOB-3323: Lagt til avvent-118</xsd:documentation>
     </xsd:annotation>
     <xsd:annotation>
         <xsd:documentation>ver 2.5 - 2024.11.07 - TOB-3875: Lagt til vedtakssats-157</xsd:documentation>
@@ -528,10 +528,10 @@
             <xsd:documentation>Avvent - Referanse ID 118</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="datoAvventFom" type="xsd_1:Tdatozos8"/>
-            <xsd:element minOccurs="0" name="datoAvventTom" type="xsd_1:Tdatozos8"/>
+            <xsd:element minOccurs="0" name="datoAvventFom" type="xsd_1:Tdato"/>
+            <xsd:element minOccurs="0" name="datoAvventTom" type="xsd_1:Tdato"/>
             <xsd:element minOccurs="0" name="kodeArsak" type="xsd:string"/>
-            <xsd:element minOccurs="0" name="datoOverfores" type="xsd_1:Tdatozos8"/>
+            <xsd:element minOccurs="0" name="datoOverfores" type="xsd_1:Tdato"/>
             <xsd:element minOccurs="0" name="feilreg">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:string">
@@ -782,16 +782,6 @@
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:date"/>
-    </xsd:simpleType>
-    <xsd:simpleType name="Tdatozos8">
-        <xsd:annotation>
-            <xsd:documentation>Typen beskriver formatet og begrensningene til dato elementer med lengde 8 (yyyymmdd)
-                som kommer fra/til OppdragZ.
-            </xsd:documentation>
-        </xsd:annotation>
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[1,2][9,0]\d\d[0,1]\d[0-3]\d"/>
-        </xsd:restriction>
     </xsd:simpleType>
     <xsd:simpleType name="ToppdragsId">
         <xsd:annotation>
