@@ -2,7 +2,12 @@
     <xsd:element name="vedtakHendelser" type="vedtakHendelser:VedtakHendelser"/>
     <xsd:complexType name="VedtakHendelser">
         <xsd:sequence>
-            <xsd:element name="aktoerID" type="vedtakHendelser:AktoerID"/>
+            <xsd:element name="aktoerID" type="vedtakHendelser:AktoerID" minOccurs="0"/>
+            <xsd:element name="fodselsnr" type="vedtakHendelser:Identifikator" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>Enten fodselsnr eller aktoerID må være spesifisert.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
             <xsd:element name="avslutningsstatus" type="vedtakHendelser:Avslutningsstatuser">
                 <xsd:annotation>
                     <xsd:documentation>&lt;p&gt;Kode som sier hvordan behandlingen er avsluttet.&lt;/p&gt;</xsd:documentation>
