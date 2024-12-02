@@ -277,7 +277,7 @@
     </xsd:complexType>
     <xsd:complexType name="vedtakssats-157">
         <xsd:annotation>
-            <xsd:documentation>Inneholder elementene som skal være med i en input 157-rekord, vedtaksstatus</xsd:documentation>
+            <xsd:documentation>Inneholder elementene som skal være med i en input 157-rekord, vedtakssats</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="vedtakssats" type="xsd_1:Tsats"/>
@@ -656,7 +656,7 @@
             <xsd:element minOccurs="0" name="bilagstype-113" type="xsd_1:bilagstype-113"/>
             <xsd:element minOccurs="0" name="avstemming-115" type="xsd_1:avstemming-115"/>
             <xsd:element minOccurs="0" name="ompostering-116" type="xsd_1:ompostering-116"/>
-            <xsd:element minOccurs="0" name="avvent-118" type="xsd_1:avvent-118"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="avvent-118" type="xsd_1:avvent-118"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="oppdrags-enhet-120" type="xsd_1:oppdrags-enhet-120"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="belops-grense-130" type="xsd_1:belops-grense-130"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="tekst-140" type="xsd_1:tekst-140"/>
