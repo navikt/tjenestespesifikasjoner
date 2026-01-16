@@ -1,7 +1,7 @@
-<jaxws:bindings version="1.0"
-                xmlns="http://java.sun.com/xml/ns/jaxws"
-                xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
-                xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="xjc"
+<jaxws:bindings version="3.0"
+                xmlns="https://jakarta.ee/xml/ns/jaxws"
+                xmlns:jaxws="https://jakarta.ee/xml/ns/jaxws"
+                xmlns:jxb="https://jakarta.ee/xml/ns/jaxb" jxb:version="xjc"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                 wsdlLocation="helsepersonell.wsdl"
@@ -10,12 +10,12 @@
 
 >
     <jxb:globalBindings generateElementProperty="false">
-        <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="com.migesok.jaxb.adapter.javatime.LocalDateTimeXmlAdapter" />
+        <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="io.github.threetenjaxb.core.LocalDateTimeXmlAdapter" />
         <xjc:simple />
     </jxb:globalBindings>
     <jaxws:bindings node="wsdl:definitions/wsdl:types/xs:schema">
         <jxb:globalBindings generateElementProperty="false">
-            <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="com.migesok.jaxb.adapter.javatime.LocalDateTimeXmlAdapter" />
+            <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="io.github.threetenjaxb.core.LocalDateTimeXmlAdapter" />
             <xjc:simple/>
         </jxb:globalBindings>
         <jxb:schemaBindings >

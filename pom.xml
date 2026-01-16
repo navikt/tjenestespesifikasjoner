@@ -12,13 +12,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cxf.version>3.2.11</cxf.version>
+        <cxf.version>4.1.4</cxf.version>
         <cxf-xjc-boolean.version>3.1.0</cxf-xjc-boolean.version>
         <org.jvnet.jaxb2.version>0.12.0</org.jvnet.jaxb2.version>
         <net.java.dev.jaxb2.version>2.1.8</net.java.dev.jaxb2.version>
         <jackson-annotations.version>2.9.0</jackson-annotations.version>
         <joda-time.version>2.10</joda-time.version>
-        <jaxb2-maven-plugin.version>1.5</jaxb2-maven-plugin.version>
+        <jaxb2-maven-plugin.version>4.0.0</jaxb2-maven-plugin.version>
         <jaxb2-value-constructor.version>3.0</jaxb2-value-constructor.version>
         <jaxb-fluent-api.version>2.1.8</jaxb-fluent-api.version>
     </properties>
@@ -42,6 +42,7 @@
     </distributionManagement>
     <modules>
         <module>aktorid-jaxws</module>
+        <!--
         <module>altinn-correspondence-agency-external</module>
         <module>altinn-correspondence-agency-external-basic</module>
         <module>altinn-download-queue-external</module>
@@ -61,7 +62,9 @@
         <module>arena-personinfo-tjenestespesifikasjon</module>
         <module>arena-nav-behandlearbeidsytelsesak-v1-tjenestespesifikasjon</module>
         <module>arena-sakogaktivitet_v1</module>
-        <module>arena-vedtakhendelser</module>
+        -->
+        <!--module>arena-vedtakhendelser</module-->
+        <!--
         <module>arenasakvedtakservice</module>
         <module>avstemming-v1-tjenestespesifikasjon</module>
         <module>behandle-altinnmelding-v1-tjenestespesifikasjon</module>
@@ -74,7 +77,9 @@
         <module>behandlearbeidogaktivitetoppgave-v1-tjenestespesifikasjon</module>
         <module>behandledokumentforsendelse-v1-tjenestespesifikasjon</module>
         <module>behandleforeldrepengesak-v1-tjenestespesifikasjon</module>
-        <module>behandleforsendelse-udi-brevdata</module>
+        -->
+        <!--module>behandleforsendelse-udi-brevdata</module-->
+        <!--
         <module>behandleforsendelse-v1</module>
         <module>behandleinntekt-v1-tjenestespesifikasjon</module>
         <module>behandleoppgave-v1-tjenestespesifikasjon</module>
@@ -97,7 +102,9 @@
         <module>digisyfo-sykepengesoeknadarbeidsgiver</module>
         <module>diskresjonskodev1-tjenestespesifikasjon</module>
         <module>dkif-tjenestespesifikasjon</module>
-        <module>dokumentforsendelse-v1-meldingsdefinisjon</module>
+        -->
+        <!--module>dokumentforsendelse-v1-meldingsdefinisjon</module-->
+        <!--
         <module>dokumentinfo-tjenestespesifikasjon</module>
         <module>dokumentinnsending-tjenestespesifikasjon</module>
         <module>dokumentproduksjon-v2-tjenestespesifikasjon</module>
@@ -105,10 +112,12 @@
         <module>egenansatt-v1-tjenestespesifikasjon</module>
         <module>ekstern-helse-helsepersonell-tjenestespesifikasjon</module>
         <module>ekstern-nhn-flrexportservice-tjenestespesifikasjon</module>
+        -->
         <module>elektronisknotifikasjon-utsending-tjenestespesifikasjon</module>
         <module>enhet-v1-tjenestespesifikasjon</module>
-        <module>feilutbetalingsvedtak-v1-meldingsdefinisjon</module>
-        <module>feilutbetalingsvedtakavstemming-v1-meldingsdefinisjon</module>
+        <!--module>feilutbetalingsvedtak-v1-meldingsdefinisjon</module-->
+        <!--module>feilutbetalingsvedtakavstemming-v1-meldingsdefinisjon</module-->
+        <!--
         <module>fillager-tjenestespesifikasjon</module>
         <module>foreldrepengesak-v1-tjenestespesifikasjon</module>
         <module>getapplicationversion</module>
@@ -271,6 +280,7 @@
         <module>varsler</module>
         <module>vedlikehold-inntektsabonnement-v1-tjenestespesifikasjon</module>
         <module>veiledervarsel</module>
+        -->
         <module>ytelseskontrakt-v3-tjenestespesifikasjon</module>
     </modules>
     <scm>
@@ -306,6 +316,63 @@
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson-annotations.version}</version>
             </dependency>
+
+            <!-- Jakarta XML Web Services API -->
+            <!--
+            <dependency>
+                <groupId>jakarta.xml.ws</groupId>
+                <artifactId>jakarta.xml.ws-api</artifactId>
+                <version>4.0.2</version>
+            </dependency>
+            -->
+            <!-- Jakarta XML Web Services Runtime (e.g., from GlassFish Metro) -->
+            <!--
+            <dependency>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-rt</artifactId>
+                <version>4.0.2</version>
+            </dependency>
+            -->
+            <!-- If you also need JAXB (XML Binding), add this -->
+            <!--
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>4.0.4</version>
+            </dependency>
+            -->
+            <!--
+            <dependency>
+                <groupId>jakarta.xml.ws</groupId>
+                <artifactId>jakarta.xml.ws-api</artifactId>
+                <version>4.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-rt</artifactId>
+                <version>4.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>4.0.4</version>
+            </dependency>
+            -->
+            <dependency>
+                <groupId>org.jvnet.jaxb</groupId>
+                <artifactId>jaxb-plugins</artifactId>
+                <version>4.0.12</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>4.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.ws</groupId>
+                <artifactId>jakarta.xml.ws-api</artifactId>
+                <version>4.0.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
@@ -327,9 +394,9 @@
                     <version>3.0.0-M1</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.jvnet.jax-ws-commons</groupId>
+                    <groupId>com.sun.xml.ws</groupId>
                     <artifactId>jaxws-maven-plugin</artifactId>
-                    <version>2.3.1-b20150201.1248</version>
+                    <version>4.0.3</version>
                     <configuration>
                         <vmArgs>
                             <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
@@ -351,18 +418,16 @@
                     </executions>
                     <configuration>
                         <extension>true</extension>
-                        <arguments>-Xvalue-constructor -Xfluent-api</arguments>
+                        <plugins>
+                            <plugin>value-constructor</plugin>
+                            <plugin>fluent-api</plugin>
+                        </plugins>
                     </configuration>
                     <dependencies>
                         <dependency>
-                            <groupId>org.jvnet.jaxb2_commons</groupId>
-                            <artifactId>jaxb2-value-constructor</artifactId>
-                            <version>${jaxb2-value-constructor.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>net.java.dev.jaxb2-commons</groupId>
-                            <artifactId>jaxb-fluent-api</artifactId>
-                            <version>${jaxb-fluent-api.version}</version>
+                            <groupId>org.jvnet.jaxb</groupId>
+                            <artifactId>jaxb-plugins</artifactId>
+                            <version>4.0.12</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -381,14 +446,9 @@
                     </executions>
                     <dependencies>
                         <dependency>
-                            <groupId>net.java.dev.jaxb2-commons</groupId>
-                            <artifactId>jaxb-fluent-api</artifactId>
-                            <version>${jaxb-fluent-api.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.jvnet.jaxb2_commons</groupId>
-                            <artifactId>jaxb2-basics</artifactId>
-                            <version>${org.jvnet.jaxb2.version}</version>
+                            <groupId>org.jvnet.jaxb</groupId>
+                            <artifactId>jaxb-plugins</artifactId>
+                            <version>4.0.12</version>
                         </dependency>
                         <dependency>
                             <groupId>no.nav.tjenestespesifikasjoner</groupId>

@@ -1,6 +1,6 @@
 package no.nav.tjeneste.virksomhet.sykmelding.v1.adapter;
 
-import com.migesok.jaxb.adapter.javatime.TemporalAccessorXmlAdapter;
+import io.github.threetenjaxb.core.TemporalAccessorXmlAdapter;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

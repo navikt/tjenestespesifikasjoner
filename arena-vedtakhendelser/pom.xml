@@ -16,7 +16,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>1.5</version>
+                <version>4.0.0</version>
                 <executions>
                     <execution>
                         <id>xjc</id>
@@ -27,10 +27,13 @@
                 </executions>
                 <configuration>
                     <extension>true</extension>
-                    <arguments>-Xvalue-constructor -Xfluent-api</arguments>
-                    <schemaDirectory>
-                        ${wsdl.directory}
-                    </schemaDirectory>
+                    <plugins>
+                        <plugin>value-constructor</plugin>
+                        <plugin>fluent-api</plugin>
+                    </plugins>
+                    <sources>
+                        <source>${wsdl.directory}</source>
+                    </sources>
                     <bindingDirectory>${wsdl.directory}/vedtakHendelser</bindingDirectory>
                     <bindingFiles>bindings.xml</bindingFiles>
                 </configuration>
@@ -71,9 +74,13 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>org.jvnet.jaxb2_commons</groupId>
-            <artifactId>jaxb2-basics-runtime</artifactId>
-         </dependency>
+            <groupId>org.jvnet.jaxb</groupId>
+            <artifactId>jaxb-plugins</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
+        </dependency>
     </dependencies>
     <scm>
         <developerConnection>scm:git:git@github.com:navikt/tjenestespesifikasjoner.git</developerConnection>

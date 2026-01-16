@@ -11,6 +11,10 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>joda-time</groupId>
              <artifactId>joda-time</artifactId>
         </dependency>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<jxb:bindings version="1.0"
-              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+<jxb:bindings version="3.0"
               xmlns:xs="http://www.w3.org/2001/XMLSchema"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               jxb:extensionBindingPrefixes="xjc"
               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
-              xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+              xmlns:jxb="https://jakarta.ee/xml/ns/jaxb">
 
 
     <jxb:bindings schemaLocation="no/nav/tjeneste/virksomhet/kodeverk/v2/informasjon/kodeverk.xsd" node="/xs:schema">

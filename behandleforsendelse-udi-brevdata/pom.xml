@@ -27,7 +27,10 @@
                 </executions>
                 <configuration>
                     <extension>true</extension>
-                    <arguments>-Xvalue-constructor -Xfluent-api</arguments>
+                    <plugins>
+                        <plugin>value-constructor</plugin>
+                        <plugin>fluent-api</plugin>
+                    </plugins>
                     <bindingDirectory>${xsd.location}/</bindingDirectory>
                     <schemaDirectory>src/main/resources</schemaDirectory>
                 </configuration>

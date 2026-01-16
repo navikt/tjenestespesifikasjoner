@@ -1,4 +1,4 @@
-<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+<jaxws:bindings xmlns:jaxws="https://jakarta.ee/xml/ns/jaxws"
                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
 	
     <!-- forhåpentligvis midlertidig fiks for å få navnet på generert porttype-klasse til

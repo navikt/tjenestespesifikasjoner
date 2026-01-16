@@ -1,5 +1,5 @@
 <jaxws:bindings
-        xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+        xmlns:jaxws="https://jakarta.ee/xml/ns/jaxws"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
         wsdlLocation="./wsdl/no/nav/tjeneste/virksomhet/inngaaendeJournal/v1/inngaaendejournal.wsdl" version="2.1">

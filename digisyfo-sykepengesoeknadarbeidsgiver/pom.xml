@@ -11,9 +11,13 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>com.migesok</groupId>
-            <artifactId>jaxb-java-time-adapters</artifactId>
-            <version>1.1.3</version>
+            <groupId>io.github.threeten-jaxb</groupId>
+            <artifactId>threeten-jaxb-core</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -21,7 +25,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>1.5</version>
+                <version>4.0.0</version>
                 <executions>
                     <execution>
                         <id>xjc</id>
@@ -32,15 +36,18 @@
                 </executions>
                 <configuration>
                     <extension>true</extension>
-                    <arguments>-Xvalue-constructor -Xfluent-api</arguments>
+                    <plugins>
+                        <plugin>value-constructor</plugin>
+                        <plugin>fluent-api</plugin>
+                    </plugins>
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>org.jvnet.jaxb2_commons</groupId>
-                        <artifactId>jaxb2-value-constructor</artifactId>
-                        <version>3.0</version>
+                        <groupId>org.jvnet.jaxb</groupId>
+                        <artifactId>jaxb-plugins</artifactId>
+                        <version>4.0.12</version>
                     </dependency>
-                 </dependencies>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

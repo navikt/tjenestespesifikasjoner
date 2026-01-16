@@ -12,6 +12,12 @@
     <properties>
         <wsdl.directory>src/main/wsdl</wsdl.directory>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
