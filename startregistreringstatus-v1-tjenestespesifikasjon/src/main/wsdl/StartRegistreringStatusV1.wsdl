@@ -42,6 +42,8 @@
                 </xsd:complexType>
             </xsd:element>
             <xsd:element name="WSStartRegistreringStatus" type="meldinger:WSStartRegistreringStatus"/>
+            <xsd:element name="WSFeilVedHentingAvStatusIArena" type="feil:WSFeilVedHentingAvStatusIArena"/>
+            <xsd:element name="WSSikkerhetsbegrensning" type="feil:WSSikkerhetsbegrensning"/>
         </xsd:schema>
     </wsdl:types>
 
@@ -79,8 +81,8 @@
         <wsdl:operation name="hentStartRegistreringStatus">
             <wsdl:input name="hentStartRegistreringRequest" message="impl:hentStartRegistreringStatus"/>
             <wsdl:output name="hentStartRegistreringStatusResponse" message="impl:hentStartRegistreringStatusResponse"/>
-            <wsdl:fault name="feilVedHentingAvStatusFraArenaException" message="feilVedHentingAvStatusFraArenaException"/>
-            <wsdl:fault name="sikkerhetsbegrensningException" message="sikkerhetsbegrensningException"/>
+            <wsdl:fault name="feilVedHentingAvStatusFraArenaException" message="impl:feilVedHentingAvStatusFraArenaException"/>
+            <wsdl:fault name="sikkerhetsbegrensningException" message="impl:sikkerhetsbegrensningException"/>
         </wsdl:operation>
     </wsdl:portType>
 

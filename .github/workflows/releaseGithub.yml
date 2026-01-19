@@ -31,15 +31,16 @@ jobs:
           text="${text//$'\r'/%0D}"
           echo "CHANGELOG=$text" >> $GITHUB_ENV
 
-      - name: Set up JDK 1.8
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 8
+          java-version: 17
           cache: maven
       - name: Deploy artifacts to github maven repository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JDK_JAVA_OPTIONS: "--add-opens=java.base/java.lang=ALL-UNNAMED"
         run: |
           mvn -B versions:set -DnewVersion="$RELEASE_TAG"
           mvn -B versions:commit
