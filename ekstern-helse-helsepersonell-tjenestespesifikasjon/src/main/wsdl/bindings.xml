@@ -14,12 +14,7 @@
         <xjc:simple />
     </jxb:globalBindings>
     <jaxws:bindings node="wsdl:definitions/wsdl:types/xs:schema">
-        <jxb:globalBindings generateElementProperty="false">
-            <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="com.migesok.jaxb.adapter.javatime.LocalDateTimeXmlAdapter" />
-            <xjc:simple/>
-        </jxb:globalBindings>
         <jxb:schemaBindings >
-
             <jxb:nameXmlTransform>
                 <jxb:elementName prefix="WS"/>
                 <jxb:typeName prefix="WS"/>

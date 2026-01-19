@@ -44,10 +44,14 @@ dependencies {
 
 ## Bygging
 
-Java 8 trenges pga `javax.xml.bind.*` bygg virker ikke lenger med Java versjon >= 9.
-https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception-in-j
+I IntelliJ IDEA må man ha VM options i Run/Debug Configuration:  
+`--add-opens=java.base/java.lang=ALL-UNNAMED`
 
-`mvn clean install`
+For å bygge fra kommandolinje:
+```
+export MAVEN_OPTS="--add-opens=java.base/java.lang=ALL-UNNAMED"
+mvn clean install
+```
 
 ## Gjøre endringer, release
 
