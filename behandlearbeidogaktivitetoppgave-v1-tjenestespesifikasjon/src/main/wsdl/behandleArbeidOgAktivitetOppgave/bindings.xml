@@ -1,8 +1,8 @@
-<jaxb:bindings version="1.0"
-               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+<jaxb:bindings version="3.0"
+               xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
+               xsi:schemaLocation="https://jakarta.ee/xml/ns/jaxb https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd">
 
   <jaxb:bindings schemaLocation="../no/nav/tjeneste/virksomhet/behandleArbeidOgAktivitetOppgave/v1/informasjon/informasjon.xsd" node="/xs:schema" >
     <jaxb:schemaBindings>

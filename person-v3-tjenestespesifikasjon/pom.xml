@@ -42,9 +42,9 @@
                 </executions>
                 <dependencies>
                     <dependency>
-                        <groupId>net.java.dev.jaxb2-commons</groupId>
-                        <artifactId>jaxb-fluent-api</artifactId>
-                        <version>${net.java.dev.jaxb2.version}</version>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-fluent-api</artifactId>
+                        <version>${jaxb-fluent-api.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
