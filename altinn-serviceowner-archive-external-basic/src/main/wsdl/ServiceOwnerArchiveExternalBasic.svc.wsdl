@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="ServiceOwnerArchiveExternalBasicSF" targetNamespace="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/Imports">
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd0" namespace="http://www.altinn.no/services/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd2" namespace="http://www.altinn.no/services/common/fault/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd3" namespace="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd4" namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd5" namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd6" namespace="http://schemas.altinn.no/services/serviceEntity/2009/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd8" namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2010/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd9" namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2010/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd10" namespace="http://schemas.altinn.no/services/ServiceEngine/Workflow/2010/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd11" namespace="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd12" namespace="http://schemas.altinn.no/services/Archive/ShipmentStatus/2014/02"/>
+            <xsd:import schemaLocation="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc?xsd=xsd13" namespace="http://schemas.altinn.no/Archive/2013/06"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_Test_InputMessage">
+        <wsdl:part xmlns:q1="http://www.altinn.no/services/2009/10" name="parameters" element="q1:Test"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_Test_OutputMessage">
+        <wsdl:part xmlns:q2="http://www.altinn.no/services/2009/10" name="parameters" element="q2:TestResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_Test_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q3="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q3:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasic_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchivedFormTaskBasic"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasic_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchivedFormTaskBasicResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasic_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q4="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q4:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasicV2_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchivedFormTaskBasicV2"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasicV2_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchivedFormTaskBasicV2Response"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasicV2_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q5="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q5:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasic_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchiveShipmentStatusExternalBasic"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasic_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchiveShipmentStatusExternalBasicResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasic_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q6="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q6:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasicV2_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchiveShipmentStatusExternalBasicV2"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasicV2_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetArchiveShipmentStatusExternalBasicV2Response"/>
+    </wsdl:message>
+    <wsdl:message name="IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasicV2_AltinnFaultFault_FaultMessage">
+        <wsdl:part xmlns:q7="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q7:AltinnFault"/>
+    </wsdl:message>
+    <wsdl:portType name="IServiceOwnerArchiveExternalBasic">
+        <wsdl:documentation><summary> External service contract on basic binding for the Service Owner Archive service </summary></wsdl:documentation>
+        <wsdl:operation name="Test">
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" message="tns:IServiceOwnerArchiveExternalBasic_Test_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse" message="tns:IServiceOwnerArchiveExternalBasic_Test_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault" name="AltinnFaultFault" message="tns:IServiceOwnerArchiveExternalBasic_Test_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchivedFormTaskBasic">
+            <wsdl:documentation><summary> Retrieve an ArchivedFormTaskBE object containing all forms and attachments for the specific form task based on the reportee elementId provided. </summary> <param name="systemUserName"> System user name is the relevant agency system name that is registered in Altinn - mandatory parameter </param> <param name="systemPassword"> System password is the password for the corresponding registered agency system - mandatory parameter </param> <param name="reporteeElementID"> Identifier for a Reportee Element to get - mandatory parameter </param> <param name="languageID"> Localization Language (English 1033, Bokmål 1044, Nynorsk 2068) - optional parameter </param> <returns> Archived Form Task details </returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasic" message="tns:IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasic_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasicResponse" message="tns:IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasic_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasicAltinnFaultFault" name="AltinnFaultFault" message="tns:IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasic_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchivedFormTaskBasicV2">
+            <wsdl:documentation><summary> Retrieve an ArchivedFormTaskBE object containing all forms and attachments for the specific form task based on the reportee elementId provided. </summary> <remarks> This operation is versioned as V2 as it contain some additional information. Preferred over GetArchivedFormTaskBasic. </remarks> <param name="systemUserName"> System user name is the relevant agency system name that is registered in Altinn - mandatory parameter </param> <param name="systemPassword"> System password is the password for the corresponding registered agency system - mandatory parameter </param> <param name="reporteeElementID"> Identifier for a Reportee Element to get - mandatory parameter </param> <param name="languageID"> Localization Language (English 1033, Bokmål 1044, Nynorsk 2068) - optional parameter </param> <returns> Archived Form Task details </returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasicV2" message="tns:IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasicV2_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasicV2Response" message="tns:IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasicV2_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasicV2AltinnFaultFault" name="AltinnFaultFault" message="tns:IServiceOwnerArchiveExternalBasic_GetArchivedFormTaskBasicV2_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchiveShipmentStatusExternalBasic">
+            <wsdl:documentation><summary> Retrieves shipment details of the reportee elements that service owner searches </summary> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn - mandatory parameter</param> <param name="systemPassword">System password is the password for the corresponding registered agency system - mandatory parameter</param> <param name="searchArchiveShipmentStatus">Search details entered by the service owner</param> <returns>List of archive shipment status</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasic" message="tns:IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasic_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasicResponse" message="tns:IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasic_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasicAltinnFaultFault" name="AltinnFaultFault" message="tns:IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasic_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchiveShipmentStatusExternalBasicV2">
+            <wsdl:documentation><summary> Retrieves shipment details of the reportee elements that service owner searches </summary> <param name="systemUserName">System user name is the relevant agency system name that is registered in Altinn - mandatory parameter</param> <param name="systemPassword">System password is the password for the corresponding registered agency system - mandatory parameter</param> <param name="searchArchiveShipmentStatus">Search details entered by the service owner</param> <returns>List of archive shipment status</returns></wsdl:documentation>
+            <wsdl:input wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasicV2" message="tns:IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasicV2_InputMessage"/>
+            <wsdl:output wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasicV2Response" message="tns:IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasicV2_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasicV2AltinnFaultFault" name="AltinnFaultFault" message="tns:IServiceOwnerArchiveExternalBasic_GetArchiveShipmentStatusExternalBasicV2_AltinnFaultFault_FaultMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BasicHttpBinding_IServiceOwnerArchiveExternalBasic" type="tns:IServiceOwnerArchiveExternalBasic">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Test">
+            <soap:operation soapAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchivedFormTaskBasic">
+            <soap:operation soapAction="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasic" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchivedFormTaskBasicV2">
+            <soap:operation soapAction="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchivedFormTaskBasicV2" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchiveShipmentStatusExternalBasic">
+            <soap:operation soapAction="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasic" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="GetArchiveShipmentStatusExternalBasicV2">
+            <soap:operation soapAction="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2009/10/IServiceOwnerArchiveExternalBasic/GetArchiveShipmentStatusExternalBasicV2" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AltinnFaultFault">
+                <soap:fault name="AltinnFaultFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ServiceOwnerArchiveExternalBasicSF">
+        <wsdl:port name="BasicHttpBinding_IServiceOwnerArchiveExternalBasic" binding="tns:BasicHttpBinding_IServiceOwnerArchiveExternalBasic">
+            <soap:address location="https://tt02.altinn.no/ArchiveExternal/ServiceOwnerArchiveExternalBasic.svc"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
