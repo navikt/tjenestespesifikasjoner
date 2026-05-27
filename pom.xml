@@ -121,10 +121,8 @@
         <module>henvendelse-tjenestespesifikasjon</module>
         <module>infotrygd-vedtak</module>
         <module>innsyn-henvendelse</module>
-        <module>innsynjournal-tjenestespesifikasjon</module>
         <module>institusjon-v1-tjenestespesifikasjon</module>
         <module>jaxb-adapters</module>
-        <module>joark-tjenestespesifikasjon</module>
         <module>journal-v1-tjenestespesifikasjon</module>
         <module>juridisk-logg</module>
         <module>kodeverk-tjenestespesifikasjon</module>
@@ -139,9 +137,6 @@
         <module>nav-behandleinngaaendejournal-v1-tjenestespesifikasjon</module>
         <module>nav-behandletiltaksgjennomfoering-v1-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v2-tjenestespesifikasjon</module>
-        <module>nav-fim-behandlejournal-v1-tjenestespesifikasjon</module>
-        <module>nav-fim-behandlejournal-v2-tjenestespesifikasjon</module>
-        <module>nav-fim-behandlejournal-v3-tjenestespesifikasjon</module>
         <module>nav-fim-inntekt-v3-tjenestespesifikasjon</module>
         <module>nav-fim-aktoer-v1-tjenestespesifikasjon</module>
         <module>nav-fim-arbeidsforhold-v1-tjenestespesifikasjon</module>
@@ -180,10 +175,6 @@
         <module>nav-hentsykepengeliste-v2-tjenestespesifikasjon</module>
         <module>nav-infotrygdberegningsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-infotrygdsak-v1-tjenestespesifikasjon</module>
-        <module>nav-inngaaendejournal-v1-tjenestespesifikasjon</module>
-        <module>nav-innsynjournal-v2-tjenestespesifikasjon</module>
-        <module>nav-journal-v2-tjenestespesifikasjon</module>
-        <module>nav-journal-v3-tjenestespesifikasjon</module>
         <module>nav-meldekortutbetalingsgrunnlag-v1-tjenestespesifikasjon</module>
         <module>nav-medlemskap-v2-tjenestespesifikasjon</module>
         <module>nav-oppfoelgingsstatus-v2-tjenestespesifikasjon</module>
