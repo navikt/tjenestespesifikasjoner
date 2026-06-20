@@ -46,6 +46,8 @@
         <module>altinn-download-queue-external</module>
         <module>altinn-notification-agency-external-basic</module>
         <module>altinn-pre-fill</module>
+        <module>altinn-receipt-agency-external-basic</module>
+        <module>altinn-serviceowner-archive-external-basic</module>
         <module>arbeidogaktivitet-tjenestespesifikasjon</module>
         <module>arbeidogaktivitetvedtak-v1-tjenestespesifikasjon</module>
         <module>arbeidsevnevurdering-v1-tjenestespesifikasjon</module>
